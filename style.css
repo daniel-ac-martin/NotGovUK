@@ -1,0 +1,447 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+p {
+    max-width: 46em;
+}
+
+body {
+    font-family: 'GDS Transport', 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+body.internal {
+    font-family: 'Inter UI', 'Arial', sans-serif;
+}
+
+#top, #middle, #bottom {
+    overflow: auto;
+    flex: 0 0 auto;
+}
+
+#top > .inner,
+#middle > .inner,
+#bottom > .inner {
+    padding: 0.625em 0;
+    max-width: 68.75em;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.internal #top > .inner,
+.internal #middle > .inner,
+.internal #bottom > .inner {
+    max-width: none;
+    margin: 0 0.625em;
+}
+
+#top > .inner {
+    align-items: center;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#top {
+    background-color: #0b0c0c;
+    color: white;
+    /*
+    border-bottom: 0.625rem solid #1d70b8;
+    */
+    font-weight: bold;
+}
+
+#top a,
+#top a:visited,
+#top a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#top a:hover {
+    text-decoration: underline;
+}
+
+#middle {
+    background-color: white;
+    color: #0b0c0c;
+    flex: 1 0 auto;
+}
+
+#middle > .inner {
+    border-top: 0.625rem solid #1d70b8;
+}
+
+.home-office #middle > .inner,
+.hmpo #middle > .inner {
+    border-color: #9325b2;
+}
+
+#middle a {
+    color: #1d70b8;
+}
+
+#middle a:hover {
+    color: #003078;
+}
+
+#middle a:visited {
+    color: #4c2c92;
+}
+
+#phase-banner {
+    flex: 0 1 100%;
+}
+
+#phase-banner > strong {
+    display: inline-block;
+    padding: 5px 8px 4px 8px;
+    background-color: #1d70b8;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.home-office #phase-banner > strong,
+.hmpo #phase-banner > strong {
+    background-color: #9325b2;
+}
+
+#breadcrumbs {
+    flex: 0 1 100%;
+    line-height: 1.25;
+    margin: 1em 0 0.625em 0;
+}
+
+#breadcrumbs ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#breadcrumbs ol li {
+    display: inline-block;
+    margin-right: 0.3em;
+}
+
+#breadcrumbs ol li:before {
+    display: inline-block;
+    content: '>';
+    color: #6f777b;
+    padding-right: 0.5em;
+}
+
+#breadcrumbs ol li:first-child:before {
+    content: '';
+    padding-right: 0;
+}
+
+#breadcrumbs a,
+#breadcrumbs a:active,
+#breadcrumbs a:focus,
+#breadcrumbs a:hover,
+#breadcrumbs a:visited {
+    color: #0b0c0c;
+}
+
+#middle main {
+    flex: 1 1 auto;
+}
+
+#middle aside {
+    flex: 0 1 20em;
+    border-top: 0.625rem solid #1d70b8;
+    margin-left: 2em;
+}
+
+.home-office #middle aside,
+.hmpo #middle aside {
+    border-color: #9325b2;
+}
+
+body, #bottom {
+    background-color: #f3f2f1;
+    color: #0b0c0c;
+}
+
+#bottom {
+    border-top: 1px solid #b1b4b6;
+}
+
+#logo {
+    display: inline-block;
+    background-image: url('./images/crown.png');
+    background-repeat: no-repeat;
+    border-bottom: 1px solid black;
+    flex: 0 0 10.25rem;
+    min-height: 2em;
+}
+
+#logo:hover {
+    border-bottom: 1px solid white;
+    text-decoration: none !important;
+}
+
+#logo:before {
+    content: 'GOV.UK';
+    margin-left: 2.5rem;
+    font-size: 2em;
+}
+
+.home-office #logo:before {
+    content: 'Home Office';
+    font-size: 1.25em;
+    position: relative;
+    top: 0.375rem;
+}
+
+.hmpo #logo:before {
+    content: 'HMPO';
+}
+
+#service-title {
+    font-size: 1.5em;
+}
+
+#nav {
+    flex: 0 1 auto;
+}
+
+#nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul li {
+    display: inline;
+    margin-right: 0.7em;
+}
+
+#sign-out {
+    flex: 0 0 9.625rem;
+    text-align: right;
+    padding-right: 0.625em;
+}
+
+#bottom > .inner {
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 3em;
+}
+
+#open-government-license {
+    background-image: url('./images/ogl.svg');
+    background-repeat: no-repeat;
+    padding-left: 3.3em;
+    flex: 1 1 auto;
+}
+
+#crown-copyright {
+    display: inline-block;
+    background-image: url('./images/govuk-crest.svg');
+    background-position: 50% 0;
+    background-size: 125px 102px;
+    background-repeat: no-repeat;
+    padding-top: 112px;
+    text-align: center;
+    flex: 0 1 auto;
+}
+
+.internal #open-government-license,
+.internal #crown-copyright {
+    display: none;
+}
+
+/**********************************************************************
+ * COMPONENTS                                                         *
+ **********************************************************************/
+
+/* Back link */
+
+/* Button */
+input[type=button],
+input[type=submit],
+.button {
+    font-family: inherit;
+    font-size: inherit;
+    display: inline-block;
+    background-color: #00703c;
+    color: white !important;
+    padding: 0.5rem 0.625rem 0.44rem;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 0 #002d18;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+.button:hover {
+    background-color: #005a30;
+}
+
+input[type=button].start,
+input[type=submit].start,
+.start.button {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+input[type=button],
+input[type=sumbit].secondary,
+.secondary.button {
+    background-color: #f3f2f1;
+    color: #0b0c0c !important;
+    box-shadow: 0 2px 0 #929191;
+}
+
+input[type=button]:hover,
+input[type=sumbit].secondary:hover,
+.secondary.button:hover {
+    background-color: #dbdad9;
+}
+
+input[type=button].warning,
+input[type=submit].warning,
+.warning.button {
+    background-color: #d4351c;
+    color: white !important;
+    box-shadow: 0 2px 0 #55150b;
+}
+
+input[type=button].warning:hover,
+input[type=submit].warning:hover,
+.warning.button:hover {
+    background-color: #aa2a16;
+}
+
+input[type=button]:disabled,
+input[type=submit]:disabled,
+.disabled.button {
+    cursor: default;
+    opacity: 0.5;
+}
+
+input[type=submit]:disabled:hover,
+.disabled.button:hover {
+    background-color: #00703c;
+}
+
+input[type=button]:disabled:hover,
+.disabled.secondary.button:hover {
+    background-color: #f3f2f1;
+}
+
+input[type=submit].warning:disabled:hover,
+input[type=button].warning:disabled:hover,
+.disabled.warning.button:hover {
+    background-color: #d4351c;
+}
+
+/* Checkbox */
+
+/* Date input /*
+
+/* Details /*
+/* Error message /*
+/* Error summary /*
+
+/* Fieldset */
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+legend {
+    font-size: 1.1875rem;
+    font-weight: bold;
+}
+
+.hint {
+    display: block;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+    margin-bottom: 1em;
+    color: #6f777b;
+}
+
+/* File upload /*
+/* Inset text /*
+/* Panel /*
+
+/* Radio */
+.radio {
+    display: block;
+    position: relative;
+    float: left;
+    padding-left: 2.5em;
+    min-height: 2.5em;
+    margin-bottom: 0.625em;
+}
+
+.radio input[type=radio] {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: -0.125em;
+    left: -0.125em;
+    width: 2.75em;
+    height: 2.75em;
+    margin: 0;
+    opacity: 0;
+}
+
+.radio label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.6em 0.8em;
+    touch-action: manipulation;
+}
+
+.radio label:before,
+.radio label:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.radio label:before {
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 2.5em;
+    height: 2.5em;
+    border: 2px solid currentColor;
+    background-color: transparent;
+}
+
+.radio label:after {
+    top: 0.625em;
+    left: 0.625em;
+    width: 0;
+    height: 0;
+    border: 0.625em solid currentColor;
+    background-color: currentColor;
+    opacity: 0;
+}
+
+.radio input:checked + label:after {
+    opacity: 1;
+}
+
+/* Select /*
+/* Skip link /*
+/* Summary list /*
+/* Table /*
+/* Tabs /*
+/* Tag /*
+/* Text input /*
+/* Textarea /*
+/* Warning text /*
+
