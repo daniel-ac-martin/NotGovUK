@@ -214,6 +214,13 @@ hr {
 #top, #middle, #bottom {
     overflow: auto;
     flex: 0 0 auto;
+    padding: 0 1em;
+}
+
+@media (min-width: 40.0625em) {
+    #top, #middle, #bottom {
+        padding: 0 2em;
+    }
 }
 
 #top > .inner,
@@ -399,7 +406,6 @@ body, #bottom {
 #sign-out {
     flex: 0 0 9.625rem;
     text-align: right;
-    padding-right: 0.625em;
 }
 
 #bottom > .inner {
