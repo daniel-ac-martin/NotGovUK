@@ -189,14 +189,16 @@ body.internal {
     font-size: 0.9375rem;
 }
 
-main {
-    font-size: 19px;
-    font-size: 1.1875rem;
-}
+@media (min-width: 40.0625em) {
+    main {
+        font-size: 19px;
+        font-size: 1.1875rem;
+    }
 
-main.internal {
-    font-size: 18px;
-    font-size: 1.125rem;
+    main.internal {
+        font-size: 18px;
+        font-size: 1.125rem;
+    }
 }
 
 p {
