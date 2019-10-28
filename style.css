@@ -4,10 +4,6 @@ html, body {
     height: 100%;
 }
 
-p {
-    max-width: 46em;
-}
-
 body {
     font-family: 'GDS Transport', 'Arial', sans-serif;
     display: flex;
@@ -16,6 +12,10 @@ body {
 
 body.internal {
     font-family: 'Inter UI', 'Arial', sans-serif;
+}
+
+p {
+    max-width: 46em;
 }
 
 #top, #middle, #bottom {
