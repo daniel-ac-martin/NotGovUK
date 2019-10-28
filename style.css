@@ -437,6 +437,28 @@ legend {
 
 /* Select */
 /* Skip link */
+#skip-link, .skip-link {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    color: transparent;
+    padding: 0.625em 1em;
+    line-height: 1.25;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+}
+
+#skip-link:focus, .skip-link:focus {
+    position: static;
+    height: auto;
+    width: auto;
+    background-color: #fd0;
+    color: #0b0c0c;
+    outline: 0.1875em solid #fd0;
+    overflow: visible;
+}
+
 /* Summary list */
 /* Table */
 /* Tabs */
