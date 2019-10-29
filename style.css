@@ -582,9 +582,21 @@ input[type=submit],
     padding: 0.5rem 0.625rem 0.44rem;
     border: 2px solid transparent;
     box-shadow: 0 2px 0 #002d18;
-    margin-bottom: 2rem;
+    box-sizing: border-box;
     text-decoration: none;
     cursor: pointer;
+    line-height: 1.1875;
+    width: 100%;
+    margin-bottom: 1.375rem;
+}
+
+@media (min-width: 40.0625em) {
+    input[type=button],
+    input[type=submit],
+    .button {
+        width: auto;
+        margin-bottom: 2rem;
+    }
 }
 
 input[type=button]:hover,
@@ -593,11 +605,39 @@ input[type=submit]:hover,
     background-color: #005a30;
 }
 
+input[type=button]:focus,
+input[type=submit]:focus,
+.button:focus {
+    border-color: #fd0;
+    outline: 3px solid transparent;
+    box-shadow: inset 0 0 0 1px #fd0 !important;
+}
+
+input[type=button]:focus:not(:active):not(:hover),
+input[type=submit]:focus:not(:active):not(:hover),
+.button:focus:not(:active):not(:hover) {
+    border-color: #fd0;
+    color: #0b0c0c !important;
+    background-color: #fd0;
+    box-shadow: 0 2px 0 #0b0c0c !important;
+}
+
 input[type=button].start,
 input[type=submit].start,
 .start.button {
+    display: inline-flex;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.125em;
+    line-height: 1;
+    justify-content: center;
+}
+
+@media (min-width: 40.0625em) {
+    input[type=button].start,
+    input[type=submit].start,
+    .start.button {
+        font-size: 1.26em;
+    }
 }
 
 input[type=button],
