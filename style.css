@@ -221,6 +221,22 @@ main.internal {
     }
 }
 
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.125em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
 p {
     max-width: 46em;
 }
@@ -427,6 +443,21 @@ body, #bottom {
 /* Lead paragraph */
 p.lead {
     font-size: 1.26em;
+}
+
+/* Small paragraph */
+p.small {
+    font-size: 0.875em;
+}
+
+/* Captions in headings */
+.caption {
+    display: block;
+    color: #6f777b;
+    font-size: 0.5625em;
+    font-weight: normal;
+    margin-bottom: 0.28em;
+    line-height: 1.11;
 }
 
 /**********************************************************************
