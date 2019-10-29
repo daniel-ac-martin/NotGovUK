@@ -221,32 +221,6 @@ main.internal {
     }
 }
 
-h1 {
-    font-size: 2em;
-}
-
-h2 {
-    font-size: 1.5em;
-}
-
-h3 {
-    font-size: 1.125em;
-}
-
-h4 {
-    font-size: 1em;
-}
-
-p {
-    max-width: 46em;
-}
-
-hr {
-    border: 0;
-    border-bottom: 1px solid #b1b4b6;
-    margin: 1em 0;
-}
-
 #top, #middle, #bottom {
     overflow: auto;
     flex: 0 0 auto;
@@ -440,14 +414,24 @@ body, #bottom {
     display: none;
 }
 
-/* Lead paragraph */
-p.lead {
-    font-size: 1.26em;
+/**********************************************************************
+ * TYPOGRAPHY                                                         *
+ **********************************************************************/
+/* Headings */
+h1 {
+    font-size: 2em;
 }
 
-/* Small paragraph */
-p.small {
-    font-size: 0.875em;
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.125em;
+}
+
+h4 {
+    font-size: 1em;
 }
 
 /* Captions in headings */
@@ -458,6 +442,28 @@ p.small {
     font-weight: normal;
     margin-bottom: 0.28em;
     line-height: 1.11;
+}
+
+/* Paragraphs */
+p {
+    max-width: 46em;
+}
+
+/* Lead paragraph */
+p.lead {
+    font-size: 1.26em;
+}
+
+/* Small paragraph */
+p.small {
+    font-size: 0.875em;
+}
+
+/* Section break */
+hr {
+    border: 0;
+    border-bottom: 1px solid #b1b4b6;
+    margin: 1em 0;
 }
 
 /**********************************************************************
