@@ -746,6 +746,11 @@ input[type=button].warning:disabled:hover,
     margin-bottom: 0.625em;
 }
 
+.checkboxes .item:last-child,
+.radios .item:last-child {
+    margin-bottom: 0;
+}
+
 @media (min-width: 40.0625em) {
     .checkboxes .item, .radios .item {
         float: left;
