@@ -101,41 +101,45 @@
                         <input type="button" class="warning" value="Delete" />
                         <input type="submit" disabled="disabled" value="Delete" />
                         <h2>Checkboxes</h2>
-                        <fieldset class="form-group checkboxes">
-                            <legend>Which types of waste do you transport?</legend>
-                            <span class="hint">Select all that apply.</span>
-                            <div class="item">
-                                <input id="waste-type-1" name="waste-type" type="checkbox" value="1" />
-                                <label for="waste-type-1">Waste from animal carcasses</label>
-                            </div>
-                            <div class="item">
-                                <input id="waste-type-2" name="waste-type" type="checkbox" value="2" />
-                                <label for="waste-type-2">Waste from mines or quarries</label>
-                            </div>
-                            <div class="item">
-                                <input id="waste-type-4" name="waste-type" type="checkbox" value="4" disabled="disabled" />
-                                <label for="waste-type-4">Farm or agricultural waste </label>
-                            </div>
-                        </fieldset>
+                        <div class="form-group">
+                            <fieldset class="checkboxes">
+                                <legend>Which types of waste do you transport?</legend>
+                                <span class="hint">Select all that apply.</span>
+                                <div class="item">
+                                    <input id="waste-type-1" name="waste-type" type="checkbox" value="1" />
+                                    <label for="waste-type-1">Waste from animal carcasses</label>
+                                </div>
+                                <div class="item">
+                                    <input id="waste-type-2" name="waste-type" type="checkbox" value="2" />
+                                    <label for="waste-type-2">Waste from mines or quarries</label>
+                                </div>
+                                <div class="item">
+                                    <input id="waste-type-4" name="waste-type" type="checkbox" value="4" disabled="disabled" />
+                                    <label for="waste-type-4">Farm or agricultural waste </label>
+                                </div>
+                            </fieldset>
+                        </div>
                         <h2>Phase banner</h2>
                         <div class="phase-banner"><strong>Beta</strong> This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</div>
                         <h2>Radios</h2>
-                        <fieldset class="form-group radios">
-                            <legend>Have you changed your name?</legend>
-                            <span class="hint">This includes changing your last name or spelling your name differently.</span>
-                            <div class="item">
-                                <input id="changed-name-1" name="changed-name" type="radio" value="1" />
-                                <label for="changed-name-1">Yes</label>
-                            </div>
-                            <div class="item">
-                                <input id="changed-name-0" name="changed-name" type="radio" value="0" />
-                                <label for="changed-name-0">No</label>
-                            </div>
-                            <div class="item">
-                                <input id="changed-name-2" name="changed-name" type="radio" value="2" disabled="disabled" />
-                                <label for="changed-name-2">Maybe</label>
-                            </div>
-                        </fieldset>
+                        <div class="form-group">
+                            <fieldset class="radios">
+                                <legend>Have you changed your name?</legend>
+                                <span class="hint">This includes changing your last name or spelling your name differently.</span>
+                                <div class="item">
+                                    <input id="changed-name-1" name="changed-name" type="radio" value="1" />
+                                    <label for="changed-name-1">Yes</label>
+                                </div>
+                                <div class="item">
+                                    <input id="changed-name-0" name="changed-name" type="radio" value="0" />
+                                    <label for="changed-name-0">No</label>
+                                </div>
+                                <div class="item">
+                                    <input id="changed-name-2" name="changed-name" type="radio" value="2" disabled="disabled" />
+                                    <label for="changed-name-2">Maybe</label>
+                                </div>
+                            </fieldset>
+                        </div>
                         <h2>Text input</h2>
                         <div class="form-group">
                             <label for="event-name">Event name</label>
