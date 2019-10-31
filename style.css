@@ -414,6 +414,51 @@ body, #bottom {
     display: none;
 }
 
+/* Overrides */
+.width-full,
+.width-three-quarters,
+.width-two-thirds,
+.width-one-half,
+.width-one-third,
+.width-one-quarter {
+    width: 100% !important;
+}
+
+@media (min-width: 40.0625em) {
+    .width-three-quarters {
+        width: 75% !important;
+    }
+
+    .width-two-thirds {
+        width: 66.66% !important;
+    }
+
+    .width-one-half {
+        width: 50% !important;
+    }
+
+    .width-one-third {
+        width: 33.33% !important;
+    }
+
+    .width-one-quarter {
+        width: 25% !important;
+    }
+}
+
+.invisible {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+}
+
 /**********************************************************************
  * TYPOGRAPHY                                                         *
  **********************************************************************/
@@ -814,17 +859,46 @@ fieldset {
     border: 0;
 }
 
+.form-group {
+    margin-bottom: 1.25em;
+}
+
+.form-group.error {
+    padding-left: 0.9375em;
+    border-left: 0.3125em solid #d4351c;
+}
+
 legend {
     font-size: 1.1875rem;
     font-weight: bold;
     padding: 0;
 }
 
-.hint {
+label, .hint, .message {
     display: block;
     line-height: 1.25;
-    margin-bottom: 1em;
+    margin: 0 0 0.9375em 0;
+}
+
+label {
+    margin: 0 0 0.3125em 0;
+}
+
+.hint {
     color: #6f777b;
+}
+
+.message {
+    clear: both;
+    font-weight: bold;
+}
+
+.error .message {
+    color: #d4351c;
+}
+
+label + .hint {
+    margin-bottom: 0.625em;
 }
 
 /* File upload */
@@ -856,7 +930,6 @@ legend {
     background-color: #9325b2;
 }
 
-
 /* Select */
 /* Skip link */
 #skip-link, .skip-link {
@@ -886,6 +959,66 @@ legend {
 /* Tabs */
 /* Tag */
 /* Text input */
+input {
+    line-height: 1.25;
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.5em;
+    padding: 0.3125em;
+    border: 2px solid #0b0c0c;
+    appearance: none;
+    -moz-appearance: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.error input {
+    border: 4px solid #d4351c;
+}
+
+input:focus {
+    outline: 3px solid #fd0;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 2px;
+}
+
+.error input:focus {
+    border-color: #0b0c0c;
+    box-shadow: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input.width-30 {
+    max-width: 59ex;
+}
+
+input.width-20 {
+    max-width: 41ex;
+}
+
+input.width-10 {
+    max-width: 23ex;
+}
+
+input.width-5 {
+    max-width: 10.8ex;
+}
+
+input.width-4 {
+    max-width: 9ex;
+}
+
+input.width-3 {
+    max-width: 7.2ex;
+}
+
+input.width-2 {
+    max-width: 5.4ex;
+}
+
 /* Textarea */
 /* Warning text */
 
