@@ -737,7 +737,8 @@ input[type=button].warning:disabled:hover,
 }
 
 /* Checkbox and radio */
-.checkbox, .radio {
+.checkboxes .item,
+.radios .item {
     display: block;
     position: relative;
     padding-left: 2.5em;
@@ -746,15 +747,15 @@ input[type=button].warning:disabled:hover,
 }
 
 @media (min-width: 40.0625em) {
-    .checkbox, .radio {
+    .checkboxes .item, .radios .item {
         float: left;
         margin-right: 1.25em;
         clear: none;
     }
 }
 
-.checkbox input[type=checkbox],
-.radio input[type=radio] {
+.checkboxes .item input[type=checkbox],
+.radios .item input[type=radio] {
     cursor: pointer;
     position: absolute;
     z-index: 1;
@@ -766,29 +767,29 @@ input[type=button].warning:disabled:hover,
     opacity: 0;
 }
 
-.checkbox label,
-.radio label {
+.checkboxes .item label,
+.radios .item label {
     display: inline-block;
     cursor: pointer;
     padding: 0.6em 0.8em;
     touch-action: manipulation;
 }
 
-.checkbox label:before,
-.checkbox label:after,
-.radio label:before,
-.radio label:after {
+.checkboxes .item label:before,
+.checkboxes .item label:after,
+.radios .item label:before,
+.radios .item label:after {
     content: '';
     position: absolute;
 }
 
-.radio label:before,
-.radio label:after {
+.radios .item label:before,
+.radios .item label:after {
     border-radius: 50%;
 }
 
-.checkbox label:before,
-.radio label:before {
+.checkboxes .item label:before,
+.radios .item label:before {
     box-sizing: border-box;
     top: 0;
     left: 0;
@@ -798,14 +799,14 @@ input[type=button].warning:disabled:hover,
     background-color: transparent;
 }
 
-.checkbox label:after,
-.radio label:after {
+.checkboxes .item label:after,
+.radios .item label:after {
     border-style: solid;
     border-color: currentColor;
     opacity: 0;
 }
 
-.radio label:after {
+.radios .item label:after {
     border-width: 0.625em;
     background-color: currentColor;
     width: 0;
@@ -814,7 +815,7 @@ input[type=button].warning:disabled:hover,
     left: 0.625em;
 }
 
-.checkbox label:after {
+.checkboxes .item label:after {
     transform: rotate(-45deg);
     border-width: 0 0 0.3125em 0.3125em;
     width: 1.125em;
@@ -823,26 +824,26 @@ input[type=button].warning:disabled:hover,
     left: 0.5625em;
 }
 
-.checkbox input:focus + label:before,
-.radio input:focus + label:before {
+.checkboxes .item input:focus + label:before,
+.radios .item input:focus + label:before {
     border-width: 4px;
     box-shadow: 0 0 0 3px #fd0
 }
 
-.checkbox input:disabled,
-.radio input:disabled,
-.checkbox input:disabled + label,
-.radio input:disabled + label {
+.checkboxes .item input:disabled,
+.radios .item input:disabled,
+.checkboxes .item input:disabled + label,
+.radios .item input:disabled + label {
     cursor: default;
 }
 
-.checkbox input:disabled + label,
-.radio input:disabled + label {
+.checkboxes .item input:disabled + label,
+.radios .item input:disabled + label {
     opacity: 0.5;
 }
 
-.checkbox input:checked + label:after,
-.radio input:checked + label:after {
+.checkboxes .item input:checked + label:after,
+.radios .item input:checked + label:after {
     opacity: 1;
 }
 
