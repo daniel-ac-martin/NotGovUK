@@ -767,11 +767,17 @@ input[type=button].warning:disabled:hover,
     opacity: 0;
 }
 
+.checkboxes .item .hint,
+.radios .item .hint {
+    padding: 0 0.9375em;
+}
+
 .checkboxes .item label,
 .radios .item label {
     display: inline-block;
     cursor: pointer;
-    padding: 0.6em 0.8em;
+    padding: 0.5em 0.9375em 0.3125em;
+    margin: 0;
     touch-action: manipulation;
 }
 
@@ -873,6 +879,7 @@ legend {
     font-size: 1.1875rem;
     font-weight: bold;
     padding: 0;
+    margin-bottom: 0.9375em;
 }
 
 label, .hint, .message {
@@ -900,6 +907,10 @@ label {
 
 label + .hint {
     margin-bottom: 0.625em;
+}
+
+legend + .hint {
+    margin-top: -0.3125em;
 }
 
 /* File upload */
