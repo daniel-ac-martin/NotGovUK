@@ -140,6 +140,45 @@
                                 </div>
                             </fieldset>
                         </div>
+                        <h2>Date input</h2>
+                        <div class="form-group">
+                            <fieldset class="date-input" role="group" aria-describedby="passport-issued-hint">
+                                <legend>When was your passport issued?</legend>
+                                <span class="hint" id="passport-issued-hint">For example, 12 11 2007</span>
+                                <div class="item">
+                                    <label for="passport-issued-day">Day</label>
+                                    <input id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*" class="width-2" />
+                                </div>
+                                <div class="item">
+                                    <label for="passport-issued-month">Month</label>
+                                    <input id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*" class="width-2" />
+                                </div>
+                                <div class="item">
+                                    <label for="passport-issued-year">Year</label>
+                                    <input id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*" class="width-4" />
+                                </div>
+                            </fieldset>
+                        </div>
+                        <h3>Errors</h3>
+                        <div class="form-group error">
+                            <fieldset class="date-input" role="group" aria-describedby="passport-issued-error-hint">
+                                <legend>When was your passport issued?</legend>
+                                <span class="hint" id="passport-issued-error-hint">For example, 12 11 2007</span>
+                                <span id="passport-issued-error-error" class="message"><span class="invisible">Error:</span> The date your passport was issued must be in the past</span>
+                                <div class="item">
+                                    <label for="passport-issued-error-day">Day</label>
+                                    <input id="passport-issued-error-day" name="passport-issued-error-day" type="number" pattern="[0-9]*" class="width-2" />
+                                </div>
+                                <div class="item">
+                                    <label for="passport-issued-error-month">Month</label>
+                                    <input id="passport-issued-error-month" name="passport-issued-error-month" type="number" pattern="[0-9]*" class="width-2" />
+                                </div>
+                                <div class="item">
+                                    <label for="passport-issued-error-year">Year</label>
+                                    <input id="passport-issued-error-year" name="passport-issued-error-year" type="number" pattern="[0-9]*" class="width-4" />
+                                </div>
+                            </fieldset>
+                        </div>
                         <h2>Phase banner</h2>
                         <div class="phase-banner"><strong>Beta</strong> This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</div>
                         <h2>Radios</h2>
