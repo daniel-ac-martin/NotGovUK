@@ -1,5 +1,4 @@
 import React from 'react';
-import '../style.css';
 import { inMiddle } from './helpers';
 import { BackLink } from '../src';
 
