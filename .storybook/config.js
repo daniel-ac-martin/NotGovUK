@@ -17,7 +17,7 @@ addDecorator(storyFn => (
   </div>
 ));
 
-// dark theme (doesn't seem to work!)
+// dark theme
 addParameters({
   options: {
     theme: themes.dark
