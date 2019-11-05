@@ -1,5 +1,5 @@
 /* Simple reset */
-html, body {
+html, body, #root {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -175,7 +175,7 @@ html, body {
        url("./fonts/Inter-BlackItalic.woff?v=3.11") format("woff");
 }
 
-body {
+body, #root {
     font-family: 'GDS Transport', 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
@@ -183,7 +183,7 @@ body {
     font-size: 0.875rem;
 }
 
-body.internal {
+body.internal, .internal {
     font-family: 'Inter', 'Arial', sans-serif;
     font-size: 14px;
     font-size: 0.875rem;
@@ -194,18 +194,18 @@ main {
     font-size: 1rem;
 }
 
-main.internal {
+.internal main {
     font-size: 15px;
     font-size: 0.9375rem;
 }
 
 @media (min-width: 40.0625em) {
-    body {
+    body, #root {
         font-size: 16px;
         font-size: 1rem;
     }
 
-    body.internal {
+    body.internal, .internal {
         font-size: 15px;
         font-size: 0.9375rem;
     }
@@ -215,7 +215,7 @@ main.internal {
         font-size: 1.1875rem;
     }
 
-    main.internal {
+    .internal main {
         font-size: 18px;
         font-size: 1.125rem;
     }
@@ -247,7 +247,6 @@ main.internal {
 .internal #middle > .inner,
 .internal #bottom > .inner {
     max-width: none;
-    margin: 0 0.625em;
 }
 
 #top > .inner {
@@ -322,7 +321,7 @@ main.internal {
     border-color: #9325b2;
 }
 
-body, #bottom {
+body, #root, #bottom {
     background-color: #f3f2f1;
     color: #0b0c0c;
 }
@@ -633,6 +632,7 @@ input[type=submit],
     line-height: 1.1875;
     width: 100%;
     margin-bottom: 1.375rem;
+    text-align: center;
 }
 
 @media (min-width: 40.0625em) {
@@ -686,7 +686,7 @@ input[type=submit].start,
 }
 
 input[type=button],
-input[type=sumbit].secondary,
+input[type=submit].secondary,
 .secondary.button {
     background-color: #f3f2f1;
     color: #0b0c0c !important;
@@ -694,7 +694,7 @@ input[type=sumbit].secondary,
 }
 
 input[type=button]:hover,
-input[type=sumbit].secondary:hover,
+input[type=submit].secondary:hover,
 .secondary.button:hover {
     background-color: #dbdad9;
 }
