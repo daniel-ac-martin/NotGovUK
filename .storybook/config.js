@@ -1,4 +1,5 @@
-import { configure, load, addDecorator } from '@storybook/react';
+import { configure, load, addDecorator, addParameters } from '@storybook/react';
+import { themes } from '@storybook/theming';
 import React from 'react';
 
 // import CSS
@@ -15,3 +16,10 @@ addDecorator(storyFn => (
     </div>
   </div>
 ));
+
+// dark theme (doesn't seem to work!)
+addParameters({
+  options: {
+    theme: themes.dark
+  }
+});
