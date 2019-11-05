@@ -1,11 +1,13 @@
-import { configure } from '@storybook/react';
+import { configure, load, addDecorator } from '@storybook/react';
+import React from 'react';
 
 // import CSS
 import '../style.scss';
 
+// automatically import all files ending in *.stories.js
+configure(require.context('../stories', true, /\.stories\.(mjs|[jt]sx?)$/), module);
+
 // global decorators
-import React from 'react';
-import { load, addDecorator } from '@storybook/react';
 addDecorator(storyFn => (
   <div id="middle">
     <div class="inner">
@@ -13,6 +15,3 @@ addDecorator(storyFn => (
     </div>
   </div>
 ));
-
-// automatically import all files ending in *.stories.js
-configure(require.context('../stories', true, /\.stories\.(mjs|[jt]sx?)$/), module);
