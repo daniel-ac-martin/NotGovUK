@@ -38,10 +38,10 @@ body, #root {
 }
 
 #top {
-    background-color: #0b0c0c;
-    color: white;
+    background-color: $govuk-black;
+    color: $govuk-white;
     /*
-    border-bottom: 0.625rem solid #1d70b8;
+    border-bottom: 0.625rem solid $govuk-brand-colour;
     */
     font-weight: bold;
 }
@@ -49,7 +49,7 @@ body, #root {
 #top a,
 #top a:visited,
 #top a:hover {
-    color: white;
+    color: $govuk-white;
     text-decoration: none;
 }
 
@@ -62,18 +62,18 @@ body, #root {
 }
 
 #middle {
-    background-color: white;
-    color: #0b0c0c;
+    background-color: $govuk-white;
+    color: $govuk-text-colour;
     flex: 1 0 auto;
 }
 
 #middle > .inner {
-    border-top: 0.625rem solid #1d70b8;
+    border-top: 0.625rem solid $govuk-brand-colour;
 }
 
 .home-office #middle > .inner,
 .hmpo #middle > .inner {
-    border-color: #9325b2;
+    border-color: $home-office-brand-colour;
 }
 
 #middle main {
@@ -82,35 +82,35 @@ body, #root {
 
 #middle aside {
     flex: 0 1 20em;
-    border-top: 0.625rem solid #1d70b8;
+    border-top: 0.625rem solid $govuk-brand-colour;
     margin-left: 2em;
 }
 
 .home-office #middle aside,
 .hmpo #middle aside {
-    border-color: #9325b2;
+    border-color: $home-office-brand-colour;
 }
 
 body, #root, #bottom {
-    background-color: #f3f2f1;
-    color: #0b0c0c;
+    background-color: $govuk-light-grey;
+    color: $govuk-text-colour;
 }
 
 #bottom {
-    border-top: 1px solid #b1b4b6;
+    border-top: 1px solid $govuk-border-colour;
 }
 
 #logo {
     display: inline-block;
     background-image: url('../assets/images/crown.png');
     background-repeat: no-repeat;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $govuk-black;
     flex: 0 0 10.25rem;
     min-height: 2em;
 }
 
 #logo:hover {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid $govuk-white;
     text-decoration: none !important;
 }
 
@@ -203,13 +203,13 @@ body, #root, #bottom {
 
 /* Back link */
 #back-link, a.back {
-    color: #0b0c0c !important;
+    color: $govuk-text-colour !important;
     display: inline-block;
     position: relative;
     margin-top: 1em;
     margin-bottom: 1em;
     padding-left: 1em;
-    border-bottom: 1px solid #0b0c0c;
+    border-bottom: 1px solid $govuk-text-colour;
     text-decoration: none;
 }
 
@@ -254,7 +254,7 @@ a.back:before {
 .breadcrumbs ol li:before {
     display: inline-block;
     content: '>';
-    color: #6f777b;
+    color: $govuk-secondary-text-colour;
     padding-right: 0.5em;
 }
 
@@ -266,7 +266,7 @@ a.back:before {
 
 #breadcrumbs a,
 .breadcrumbs a {
-    color: #0b0c0c !important;
+    color: $govuk-text-colour !important;
 }
 
 /* Button */
@@ -277,7 +277,7 @@ input[type=submit],
     font-size: inherit;
     display: inline-block;
     background-color: #00703c;
-    color: white !important;
+    color: $govuk-white !important;
     padding: 0.5rem 0.625rem 0.44rem;
     border: 2px solid transparent;
     box-shadow: 0 2px 0 #002d18;
@@ -308,18 +308,18 @@ input[type=submit]:hover,
 input[type=button]:focus,
 input[type=submit]:focus,
 .button:focus {
-    border-color: #fd0;
+    border-color: $govuk-focus-colour;
     outline: 3px solid transparent;
-    box-shadow: inset 0 0 0 1px #fd0 !important;
+    box-shadow: inset 0 0 0 1px $govuk-focus-colour !important;
 }
 
 input[type=button]:focus:not(:active):not(:hover),
 input[type=submit]:focus:not(:active):not(:hover),
 .button:focus:not(:active):not(:hover) {
-    border-color: #fd0;
-    color: #0b0c0c !important;
-    background-color: #fd0;
-    box-shadow: 0 2px 0 #0b0c0c !important;
+    border-color: $govuk-focus-colour;
+    color: $govuk-focus-text-colour !important;
+    background-color: $govuk-focus-colour;
+    box-shadow: 0 2px 0 $govuk-focus-text-colour !important;
 }
 
 input[type=button].start,
@@ -343,8 +343,8 @@ input[type=submit].start,
 input[type=button],
 input[type=submit].secondary,
 .secondary.button {
-    background-color: #f3f2f1;
-    color: #0b0c0c !important;
+    background-color: $govuk-light-grey;
+    color: $govuk-text-colour !important;
     box-shadow: 0 2px 0 #929191;
 }
 
@@ -357,8 +357,8 @@ input[type=submit].secondary:hover,
 input[type=button].warning,
 input[type=submit].warning,
 .warning.button {
-    background-color: #d4351c;
-    color: white !important;
+    background-color: $govuk-error-colour;
+    color: $govuk-white !important;
     box-shadow: 0 2px 0 #55150b;
 }
 
@@ -382,13 +382,13 @@ input[type=submit]:disabled:hover,
 
 input[type=button]:disabled:hover,
 .disabled.secondary.button:hover {
-    background-color: #f3f2f1;
+    background-color: $govuk-light-grey;
 }
 
 input[type=submit].warning:disabled:hover,
 input[type=button].warning:disabled:hover,
 .disabled.warning.button:hover {
-    background-color: #d4351c;
+    background-color: $govuk-error-colour;
 }
 
 /* Checkbox and radio */
@@ -493,7 +493,7 @@ input[type=button].warning:disabled:hover,
 .checkboxes .item input:focus + label:before,
 .radios .item input:focus + label:before {
     border-width: 4px;
-    box-shadow: 0 0 0 3px #fd0
+    box-shadow: 0 0 0 3px $govuk-focus-colour
 }
 
 .checkboxes .item input:disabled,
@@ -529,19 +529,19 @@ summary {
     position: relative;
     margin-bottom: 0.3125em;
     padding-left: 1.5625em;
-    color: #1d70b8;
+    color: $govuk-link-colour;
     cursor: pointer;
     text-decoration: underline;
 }
 
 summary:hover {
-    color: #003078;
+    color: $govuk-link-hover-colour;
 }
 
 summary:focus {
-    color: #0b0c0c;
-    background-color: #fd0;
-    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    color: $govuk-focus-text-colour;
+    background-color: $govuk-focus-colour;
+    box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-text-colour;
     text-decoration: none;
 }
 
@@ -571,7 +571,7 @@ details[open] > summary::before {
 
 details > .content {
     padding: 0.9375em 0.9375em 0.9375em 1.25em;
-    border-left: 0.3125em solid #b1b4b6;
+    border-left: 0.3125em solid $govuk-border-colour;
 }
 
 /* Error message */
@@ -590,7 +590,7 @@ fieldset {
 
 .form-group.error {
     padding-left: 0.9375em;
-    border-left: 0.3125em solid #d4351c;
+    border-left: 0.3125em solid $govuk-error-colour;
 }
 
 legend {
@@ -611,7 +611,7 @@ label {
 }
 
 .hint {
-    color: #6f777b;
+    color: $govuk-secondary-text-colour;
 }
 
 .message {
@@ -620,7 +620,7 @@ label {
 }
 
 .error .message {
-    color: #d4351c;
+    color: $govuk-error-colour;
 }
 
 label + .hint {
@@ -638,7 +638,7 @@ legend + .hint {
 #phase-banner, .phase-banner {
     flex: 0 1 100%;
     padding-bottom: 0.625em;
-    border-bottom: 1px solid #b1b4b6;
+    border-bottom: 1px solid $govuk-border-colour;
 }
 
 #phase-banner > strong,
@@ -646,8 +646,8 @@ legend + .hint {
     display: inline-block;
     padding: 0.357em 0.571em 0.286em 0.571em;
     margin-right: 0.5em;
-    background-color: #1d70b8;
-    color: white;
+    background-color: $govuk-brand-colour;
+    color: $govuk-white;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1;
@@ -657,7 +657,7 @@ legend + .hint {
 .home-office .phase-banner > strong,
 .hmpo #phase-banner > strong,
 .hmpo .phase-banner > strong {
-    background-color: #9325b2;
+    background-color: $home-office-brand-colour;
 }
 
 /* Select */
@@ -678,9 +678,9 @@ legend + .hint {
     position: static;
     height: auto;
     width: auto;
-    background-color: #fd0;
-    color: #0b0c0c;
-    outline: 0.1875em solid #fd0;
+    background-color: $govuk-focus-colour;
+    color: $govuk-focus-text-colour;
+    outline: 0.1875em solid $govuk-focus-colour;
     overflow: visible;
 }
 
@@ -695,7 +695,7 @@ input {
     width: 100%;
     height: 2.5em;
     padding: 0.3125em;
-    border: 2px solid #0b0c0c;
+    border: 2px solid $govuk-input-border-colour;
     appearance: none;
     -moz-appearance: none;
     font-size: inherit;
@@ -703,17 +703,17 @@ input {
 }
 
 .error input {
-    border: 4px solid #d4351c;
+    border: 4px solid $govuk-error-colour;
 }
 
 input:focus {
-    outline: 3px solid #fd0;
+    outline: 3px solid $govuk-focus-colour;
     outline-offset: 0;
     box-shadow: inset 0 0 0 2px;
 }
 
 .error input:focus {
-    border-color: #0b0c0c;
+    border-color: $govuk-focus-text-colour;
     box-shadow: none;
 }
 
