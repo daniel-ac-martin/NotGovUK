@@ -1,0 +1,43 @@
+body, #root {
+  font-family: 'GDS Transport', 'Arial', sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+body.internal, .internal {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+main {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.internal main {
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 40.0625em) {
+  body, #root {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+
+  body.internal, .internal {
+    font-size: 15px;
+    font-size: 0.9375rem;
+  }
+
+  main {
+    font-size: 19px;
+    font-size: 1.1875rem;
+  }
+
+  .internal main {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}

@@ -1,0 +1,22 @@
+ol, ul {
+  line-height: 1.25;
+  padding: 0 0 0 1.25em;
+  margin: 0 0 0.9375em 0;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ul.plain {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.plain > li {
+  margin-bottom: 0.3125em;
+}

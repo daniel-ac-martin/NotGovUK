@@ -1,47 +1,6 @@
 body, #root {
-    font-family: 'GDS Transport', 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
-    font-size: 14px;
-    font-size: 0.875rem;
-}
-
-body.internal, .internal {
-    font-family: 'Inter', 'Arial', sans-serif;
-    font-size: 14px;
-    font-size: 0.875rem;
-}
-
-main {
-    font-size: 16px;
-    font-size: 1rem;
-}
-
-.internal main {
-    font-size: 15px;
-    font-size: 0.9375rem;
-}
-
-@media (min-width: 40.0625em) {
-    body, #root {
-        font-size: 16px;
-        font-size: 1rem;
-    }
-
-    body.internal, .internal {
-        font-size: 15px;
-        font-size: 0.9375rem;
-    }
-
-    main {
-        font-size: 19px;
-        font-size: 1.1875rem;
-    }
-
-    .internal main {
-        font-size: 18px;
-        font-size: 1.125rem;
-    }
 }
 
 #top, #middle, #bottom {
@@ -115,18 +74,6 @@ main {
 .home-office #middle > .inner,
 .hmpo #middle > .inner {
     border-color: #9325b2;
-}
-
-#middle a {
-    color: #1d70b8;
-}
-
-#middle a:hover {
-    color: #003078;
-}
-
-#middle a:visited {
-    color: #4c2c92;
 }
 
 #middle main {
@@ -248,90 +195,6 @@ body, #root, #bottom {
     clip-path: inset(50%) !important;
     border: 0 !important;
     white-space: nowrap !important;
-}
-
-/**********************************************************************
- * TYPOGRAPHY                                                         *
- **********************************************************************/
-/* Headings */
-h1 {
-    font-size: 2em;
-    line-height: 1.09375;
-    margin: 0 0 0.9375em 0;
-}
-
-h2 {
-    font-size: 1.5em;
-    line-height: 1.0416;
-    margin: 0 0 0.78125em 0;
-}
-
-h3 {
-    font-size: 1.125em;
-    line-height: 1.11111;
-    margin: 0 0 0.833em 0;
-}
-
-h4 {
-    font-size: 1em;
-    line-height: 1.25;
-    margin: 0 0 0.9375em 0;
-}
-
-/* Captions in headings */
-.caption {
-    display: block;
-    color: #6f777b;
-    font-size: 0.5625em;
-    font-weight: normal;
-    margin-bottom: 0.28em;
-    line-height: 1.11;
-}
-
-/* Paragraphs */
-p {
-    max-width: 46em;
-}
-
-/* Lead paragraph */
-p.lead {
-    font-size: 1.26em;
-}
-
-/* Small paragraph */
-p.small {
-    font-size: 0.875em;
-}
-
-/* Lists */
-ol, ul {
-    line-height: 1.25;
-    padding: 0 0 0 1.25em;
-    margin: 0 0 0.9375em 0;
-}
-
-ol {
-    list-style-type: decimal;
-}
-
-ul {
-    list-style-type: disc;
-}
-
-ul.plain {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul.plain > li {
-    margin-bottom: 0.3125em;
-}
-
-/* Section break */
-hr {
-    border: 0;
-    border-bottom: 1px solid #b1b4b6;
-    margin: 1em 0;
 }
 
 /**********************************************************************
