@@ -1,5 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { text, boolean } from "@storybook/addon-knobs";
 import { Button, StartButton, SubmitButton } from '../src';
 
 export default {
@@ -10,7 +11,29 @@ export default {
   component: Button
 };
 
-export const standard = () => (<Button value="Save as draft" onClick={action('clicked')} />);
+export const button = () => (
+  <Button
+    className={text('className', undefined)}
+    disabled={boolean('disabled', false)}
+    href={text('href', undefined)}
+    id={text('id', undefined)}
+    onClick={action('clicked')}
+    secondary={boolean('secondary', false)}
+    start={boolean('start', false)}
+    submit={boolean('submit', false)}
+    value={text('value', 'Save as draft')}
+    warning={boolean('warning', false)}
+  />
+);
+button.story = {
+  parameters: {
+    docs: {
+      storyDescription: 'A button.'
+    }
+  }
+};
+
+export const standard = () => (<Button value="Save as draft" />);
 standard.story = {
   parameters: {
     docs: {
