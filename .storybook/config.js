@@ -3,7 +3,7 @@ import { themes } from '@storybook/theming';
 import React from 'react';
 
 // import CSS
-import '../style.scss';
+import '../src/index.scss';
 
 // automatically import all files ending in *.stories.js
 configure(require.context('../stories', true, /\.stories\.(mjs|[jt]sx?)$/), module);
