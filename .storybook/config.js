@@ -1,3 +1,4 @@
+import { withA11y } from '@storybook/addon-a11y';
 import { configure, load, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import React from 'react';
@@ -23,3 +24,6 @@ addParameters({
     theme: themes.dark
   }
 });
+
+// accessibility add-on
+addDecorator(withA11y);
