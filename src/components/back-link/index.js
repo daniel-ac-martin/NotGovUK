@@ -1,7 +1,6 @@
 import React from 'react';
+import backLinkRT from './back-link.rt';
 
-const BackLink = props => (
-    <a href="#" class="back">Back</a>
-);
+const BackLink = backLinkRT;
 
 export default BackLink;

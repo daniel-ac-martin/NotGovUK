@@ -1,4 +1,6 @@
 import * as React from 'react';
+import * as anchorRT from './anchor.rt';
+import * as inputRT from './input.rt';
 
 interface IButtonProps {
   /** Extra CSS classes to be applied */
@@ -40,16 +42,14 @@ export const Button: React.SFC<IButtonProps> = props => {
    .filter(e => e)
    .join(' ') || undefined;
   const text = props.value || props.start && 'Start now >';
-
-  if (anchor) {
-    return (
-      <a id={props.id} className={className} href={props.href}>{text}</a>
-    );
-  } else {
-    return (
-      <input id={props.id} className={className} type={type} value={text} disabled={props.disabled} onClick={props.onClick} />
-    );
+  const processedProps = {
+    ...props,
+    text: text,
+    type: type,
+    className: className
   }
+
+  return anchor ? anchorRT(processedProps) : inputRT(processedProps);
 };
 
 Button.defaultProps = {
@@ -65,6 +65,6 @@ Button.defaultProps = {
   warning: false
 };
 
-export const StartButton: React.SFC<IButtonProps> = props => Button({ start: true, ...props });
-export const SubmitButton: React.SFC<IButtonProps> = props => Button({ submit: true, ...props });
+export const StartButton: React.SFC<IButtonProps> = props => Button({ ...Button.defaultProps, ...props, start: true });
+export const SubmitButton: React.SFC<IButtonProps> = props => Button({ ...Button.defaultProps, ...props, submit: true });
 export default Button;
