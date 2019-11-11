@@ -1,10 +1,3 @@
-/* Simple reset */
-html, body, #root {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
 body, #root {
     font-family: 'GDS Transport', 'Arial', sans-serif;
     display: flex;
@@ -243,38 +236,7 @@ body, #root, #bottom {
     display: none;
 }
 
-/* Overrides */
-.width-full,
-.width-three-quarters,
-.width-two-thirds,
-.width-one-half,
-.width-one-third,
-.width-one-quarter {
-    width: 100% !important;
-}
-
-@media (min-width: 40.0625em) {
-    .width-three-quarters {
-        width: 75% !important;
-    }
-
-    .width-two-thirds {
-        width: 66.66% !important;
-    }
-
-    .width-one-half {
-        width: 50% !important;
-    }
-
-    .width-one-third {
-        width: 33.33% !important;
-    }
-
-    .width-one-quarter {
-        width: 25% !important;
-    }
-}
-
+// Other overrides
 .invisible {
     position: absolute !important;
     width: 1px !important;
