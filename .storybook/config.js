@@ -1,5 +1,5 @@
 import { withA11y } from '@storybook/addon-a11y';
-import { withKnobs } from "@storybook/addon-knobs";
+import { boolean, select, withKnobs } from "@storybook/addon-knobs";
 import { configure, load, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import React from 'react';
@@ -14,13 +14,37 @@ configure([
 ], module);
 
 // global decorators
-addDecorator(storyFn => (
-  <div id="middle">
-    <div class="inner">
-      {storyFn()}
+addDecorator(storyFn => {
+  const departmentOptions = {
+    'None': '',
+    'Home Office': 'home-office',
+    'HMPO': 'hmpo'
+  };
+
+  const isInternal = boolean('Internal', false, 'Theme');
+  const department = select('Department', departmentOptions, '', 'Theme');
+
+  const classes = [
+    isInternal && 'internal',
+    department
+  ];
+  const className = classes.join(' ');
+  const style = {
+    height: '100%',
+    display: 'flex',
+    'flex-direction': 'column'
+  };
+
+  return (
+    <div className={className} style={style}>
+      <div id="middle">
+        <div class="inner">
+          {storyFn()}
+        </div>
+      </div>
     </div>
-  </div>
-));
+  );
+});
 
 // dark theme
 addParameters({
