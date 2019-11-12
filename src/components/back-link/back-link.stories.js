@@ -1,8 +1,8 @@
 import React from 'react';
-import { BackLink } from '../src';
+import { BackLink } from '../../';
 
 export default {
-  title: 'Back link'
+  title: 'Components/Back link'
 };
 
 export const text = () => (<BackLink href="" />);

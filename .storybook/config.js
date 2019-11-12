@@ -8,7 +8,10 @@ import React from 'react';
 import '../src/index.scss';
 
 // automatically import all files ending in *.stories.js
-configure(require.context('../stories', true, /\.stories\.(mjs|[jt]sx?)$/), module);
+configure([
+  require.context('../stories', true, /\.stories\.(mjs|[jt]sx?)$/),
+  require.context('../src', true, /\.stories\.(mjs|[jt]sx?)$/)
+], module);
 
 // global decorators
 addDecorator(storyFn => (

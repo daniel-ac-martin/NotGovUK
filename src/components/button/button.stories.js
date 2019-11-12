@@ -1,10 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from "@storybook/addon-knobs";
-import { Button, StartButton, SubmitButton } from '../src';
+import { Button, StartButton, SubmitButton } from '../../';
 
 export default {
-  title: 'Button',
+  title: 'Components/Button',
   parameters: {
     componentSubtitle: 'Buttons for both forms and navigation'
   },

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Breadcrumbs } from '../src';
+import { Breadcrumbs } from '../../';
 
 export default {
-  title: 'Breadcrumbs'
+  title: 'Components/Breadcrumbs'
 };
 
 export const text = () => (<Breadcrumbs />);
