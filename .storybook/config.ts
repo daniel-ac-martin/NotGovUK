@@ -1,16 +1,18 @@
 import { withA11y } from '@storybook/addon-a11y';
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
-import { configure, load, addDecorator, addParameters } from '@storybook/react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
-import React from 'react';
+import * as React from 'react';
+import Decorator from './decorator';
+import requireContext from 'require-context.macro';
 
 // import CSS
-import '../src/index.scss';
+import '../src/lib/index.scss';
 
 // automatically import all files ending in *.stories.js
 configure([
-  require.context('../stories', true, /\.stories\.(mjs|[jt]sx?)$/),
-  require.context('../src', true, /\.stories\.(mjs|[jt]sx?)$/)
+  requireContext('../stories', true, /\.stories\.(mdx|mjs|[jt]sx?)$/),
+  requireContext('../src', true, /\.stories\.(mdx|mjs|[jt]sx?)$/)
 ], module);
 
 // global decorators
@@ -28,22 +30,16 @@ addDecorator(storyFn => {
     isInternal && 'internal',
     department
   ];
-  const className = classes.join(' ');
-  const style = {
-    height: '100%',
-    display: 'flex',
-    'flex-direction': 'column'
+  const props = {
+    className: classes.join(' '),
+    style: {
+      height: '100%',
+      display: 'flex',
+      'flex-direction': 'column'
+    }
   };
 
-  return (
-    <div className={className} style={style}>
-      <div id="middle">
-        <div class="inner">
-          {storyFn()}
-        </div>
-      </div>
-    </div>
-  );
+  return React.createElement(Decorator, props, storyFn());
 });
 
 // dark theme

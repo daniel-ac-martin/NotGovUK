@@ -2,11 +2,14 @@
   "name": "not-govuk",
   "version": "0.1.0",
   "description": "React components implementing the GOV.UK Design System.",
-  "main": "index.js",
+  "main": "src/cra/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "repository": {
     "type": "git",
@@ -21,34 +24,54 @@
     "url": "https://github.com/daniel-ac-martin/NotGovUK/issues"
   },
   "homepage": "https://github.com/daniel-ac-martin/NotGovUK#readme",
-  "dependencies": {},
+  "dependencies": {
+    "webpack": "4.41.0"
+  },
+  "peerDependencies": {
+    "webpack": "4.41.0"
+  },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@storybook/addon-a11y": "^5.2.6",
-    "@storybook/addon-actions": "^5.2.5",
-    "@storybook/addon-docs": "^5.2.5",
-    "@storybook/addon-knobs": "^5.2.6",
-    "@storybook/addon-links": "^5.2.5",
-    "@storybook/addon-storysource": "^5.2.5",
-    "@storybook/addon-viewport": "^5.2.5",
-    "@storybook/addons": "^5.2.5",
-    "@storybook/preset-scss": "^1.0.2",
-    "@storybook/preset-typescript": "^1.1.0",
-    "@storybook/react": "^5.2.5",
-    "@types/node": "^12.12.7",
-    "@types/react": "^16.9.11",
-    "@types/webpack": "^4.39.8",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
+    "@storybook/addon-a11y": "^5.3.0-alpha.45",
+    "@storybook/addon-actions": "^5.3.0-alpha.45",
+    "@storybook/addon-docs": "^5.3.0-alpha.45",
+    "@storybook/addon-knobs": "^5.3.0-alpha.45",
+    "@storybook/addon-links": "^5.3.0-alpha.45",
+    "@storybook/addon-storyshots": "^5.3.0-alpha.45",
+    "@storybook/addon-storysource": "^5.3.0-alpha.45",
+    "@storybook/addon-viewport": "^5.3.0-alpha.45",
+    "@storybook/addons": "^5.3.0-alpha.45",
+    "@storybook/preset-create-react-app": "1.2.0",
+    "@storybook/react": "^5.3.0-alpha.45",
+    "@types/jest": "24.0.23",
+    "@types/node": "12.12.7",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.4",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
-    "react-docgen-typescript-loader": "^3.3.0",
-    "react-is": "^16.11.0",
-    "react-templates": "^0.6.3",
-    "react-templates-loader": "^0.6.5",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.0",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.2"
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0",
+    "react-test-renderer": "^16.12.0",
+    "require-context.macro": "^1.2.2",
+    "typescript": "3.7.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@storybook)/)"
+    ]
   }
 }

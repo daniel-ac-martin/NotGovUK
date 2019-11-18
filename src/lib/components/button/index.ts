@@ -1,6 +1,6 @@
 import * as React from 'react';
-import * as anchorRT from './anchor.rt';
-import * as inputRT from './input.rt';
+import Anchor from './anchor';
+import Input from './input';
 
 interface IButtonProps {
   /** Extra CSS classes to be applied */
@@ -41,7 +41,7 @@ export const Button: React.SFC<IButtonProps> = props => {
   ].concat(propClasses)
    .filter(e => e)
    .join(' ') || undefined;
-  const text = props.value || props.start && 'Start now >';
+  const text = (props.value || props.start) && 'Start now >';
   const processedProps = {
     ...props,
     text: text,
@@ -49,7 +49,7 @@ export const Button: React.SFC<IButtonProps> = props => {
     className: className
   }
 
-  return anchor ? anchorRT(processedProps) : inputRT(processedProps);
+  return anchor ? Anchor(processedProps) : Input(processedProps);
 };
 
 Button.defaultProps = {

@@ -1,9 +1,18 @@
-const path = require('path');
-
-module.exports = async ({ config }) => {
+module.exports = function({ config }) {
   config.module.rules.push({
-    test: /\.rt$/,
-    loader: require.resolve('react-templates-loader') + '?target-version=15.0.0&modules=commonjs'
+    test: /\.stories\.tsx?$/,
+    loaders: [{
+      loader: require.resolve('@storybook/source-loader'),
+      options: { parser: 'typescript' }
+    }],
+    enforce: 'pre'
+  });
+  config.module.rules.push({
+    test: /\.stories\.(mjs|jsx?)$/,
+    loaders: [{
+      loader: require.resolve('@storybook/source-loader')
+    }],
+    enforce: 'pre'
   });
 
   return config;
