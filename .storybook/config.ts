@@ -1,10 +1,12 @@
 import { withA11y } from '@storybook/addon-a11y';
+import { withTests } from '@storybook/addon-jest';
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import * as React from 'react';
 import Decorator from './decorator';
 import requireContext from 'require-context.macro';
+import jestResults from '../.jest-results.json';
 
 // import CSS
 import '../src/lib/index.scss';
@@ -54,3 +56,11 @@ addDecorator(withA11y);
 
 // knobs add-on
 addDecorator(withKnobs);
+
+// jest add-on
+addDecorator(
+  withTests({
+    results: jestResults,
+    filesExt: '(\\/index)?((\\.specs?)|(\\.tests?))?(\\.(mjs|[jt]sx?))?$',
+  })
+);

@@ -8,6 +8,7 @@ export default {
   title: 'Components/Button',
   parameters: {
     componentSubtitle: 'Buttons for both forms and navigation',
+    jest: ['button'],
     notes: readMe
   },
   component: Button
