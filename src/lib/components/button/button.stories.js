@@ -2,11 +2,13 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from "@storybook/addon-knobs";
 import { Button, StartButton, SubmitButton } from '../../';
+import readMe from './README.md';
 
 export default {
   title: 'Components/Button',
   parameters: {
-    componentSubtitle: 'Buttons for both forms and navigation'
+    componentSubtitle: 'Buttons for both forms and navigation',
+    notes: readMe
   },
   component: Button
 };
