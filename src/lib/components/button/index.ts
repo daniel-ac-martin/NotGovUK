@@ -41,7 +41,7 @@ export const Button: React.SFC<IButtonProps> = props => {
   ].concat(propClasses)
    .filter(e => e)
    .join(' ') || undefined;
-  const text = (props.value || props.start) && 'Start now >';
+  const text = props.value || (props.start && 'Start now >');
   const processedProps = {
     ...props,
     text: text,
