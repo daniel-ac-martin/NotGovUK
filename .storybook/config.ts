@@ -35,7 +35,7 @@ addDecorator(storyFn => {
     style: {
       height: '100%',
       display: 'flex',
-      'flex-direction': 'column'
+      flexDirection: 'column'
     }
   };
 
