@@ -6,7 +6,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --json --outputFile=.jest-results.json",
+    "test": "react-scripts test --coverage --json --outputFile=.jest-results.json --watch-all=false",
+    "test:watch": "react-scripts test --coverage --json --outputFile=.jest-results.json",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
