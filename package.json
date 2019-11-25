@@ -49,6 +49,9 @@
     "@types/node": "12.12.7",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.4",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -73,6 +76,7 @@
     ]
   },
   "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "transformIgnorePatterns": [
       "node_modules/(?!(@storybook)/)"
     ]
