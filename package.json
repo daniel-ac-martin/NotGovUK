@@ -16,7 +16,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "storybook:ci": "start-storybook -p 9010 -s public --ci --quiet",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build-storybook:docs": "build-storybook -s public --docs"
   },
   "repository": {
     "type": "git",
