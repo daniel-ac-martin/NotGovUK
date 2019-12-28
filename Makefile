@@ -1,8 +1,10 @@
-.PHONY = all deps test tmux
+.PHONY = all deps docs test tmux
 
 all: deps
 
 deps: node_modules/
+
+docs: storybook-static/
 
 test: deps
 	npm test
@@ -12,3 +14,6 @@ tmux: deps
 
 node_modules/: package.json
 	npm install
+
+storybook-static/:
+	npm run 'build-storybook:docs'
