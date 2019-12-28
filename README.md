@@ -167,10 +167,12 @@ Files in a typical component
    typically be very simple and contain mostly HTML code.
 2. `index.scss`
    The SCSS (CSS) code that pertains to the component.
-3. `index.stories.mdx`
+3. `index.spec.ts`
+   The tests for this component.
+4. `index.stories.mdx`
    The main documentation of the component. This is what people will use to
    understand how to consume the component.
-4. `README.md`
+5. `README.md`
    Very simple documentation to aid people browsing the code via GitHub.
    Typically this will just link to the [GOV.UK Design System] and include a
    screenshot of the component.
