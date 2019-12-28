@@ -145,13 +145,35 @@ System for Developers]" though I am also indebted to [Michael Shilman]'s
 Navigating this repository
 --------------------------
 
-WRITEME!
+- !(./src/lib/)
+  The source code for this library as a whole.
+- !(./src/lib/components/)
+  Contains directories each defining a single component. (The structure of these
+  is explained below.)
+- !(./src)
+  The source code for the demo app. (Based on CRA.)
+- `./coverage`
+  A code coverage report that can be created by running `make test`.
+- `./storybook-static`
+  A static version of the storybook that can be created by running `make docs`.
 
 
 Files in a typical component
 ----------------------------
 
-WRITEME!
+1. `index.ts[x]`
+   The implementation of the component. It may reference other `.tsx` files in
+   order to separate business logic from presentation logic. Otherwise, it will
+   typically be very simple and contain mostly HTML code.
+2. `index.scss`
+   The SCSS (CSS) code that pertains to the component.
+3. `index.stories.mdx`
+   The main documentation of the component. This is what people will use to
+   understand how to consume the component.
+4. `README.md`
+   Very simple documentation to aid people browsing the code via GitHub.
+   Typically this will just link to the [GOV.UK Design System] and include a
+   screenshot of the component.
 
 
 Contributing
