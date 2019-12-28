@@ -1,13 +1,21 @@
 import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
 import { BackLink } from '../../';
+import readMe from './README.md';
 
-<Meta title="Components/Back link" component={BackLink} />
+<Meta
+  title="Components/Back link"
+  component={BackLink}
+  parameters={{
+    jest: ['back-link'],
+    notes: readMe
+  }}
+/>
 
 # Back link
 
 Use the back link component to help users go back to the previous page in a multi-page transaction.
 
-<Preview>
+<Preview withToolbar>
   <Story name="Text">
     <BackLink href="" />
   </Story>
