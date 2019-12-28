@@ -145,12 +145,12 @@ System for Developers]" though I am also indebted to [Michael Shilman]'s
 Navigating this repository
 --------------------------
 
-- !(./src/lib/)
+- [`./src/lib/`](./src/lib/)
   The source code for this library as a whole.
-- !(./src/lib/components/)
+- [`./src/lib/components/`](./src/lib/components/)
   Contains directories each defining a single component. (The structure of these
   is explained below.)
-- !(./src)
+- [`./src/`](./src)
   The source code for the demo app. (Based on CRA.)
 - `./coverage`
   A code coverage report that can be created by running `make test`.
