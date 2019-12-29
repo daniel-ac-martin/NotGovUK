@@ -1,0 +1,112 @@
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-group {
+  margin-bottom: 1.25em;
+}
+
+.form-group.error {
+  padding-left: 0.9375em;
+  border-left: 0.3125em solid $govuk-error-colour;
+}
+
+legend {
+  font-size: 1.1875rem;
+  font-weight: bold;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+
+label, .hint, .message {
+  display: block;
+  line-height: 1.25;
+  margin: 0 0 0.9375em 0;
+}
+
+label {
+  margin: 0 0 0.3125em 0;
+}
+
+.hint {
+  color: $govuk-secondary-text-colour;
+}
+
+.message {
+  clear: both;
+  font-weight: bold;
+}
+
+.error .message {
+  color: $govuk-error-colour;
+}
+
+label + .hint {
+  margin-bottom: 0.625em;
+}
+
+legend + .hint {
+  margin-top: -0.3125em;
+}
+
+input {
+  line-height: 1.25;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.5em;
+  padding: 0.3125em;
+  border: 2px solid $govuk-input-border-colour;
+  appearance: none;
+  -moz-appearance: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.error input {
+  border: 4px solid $govuk-error-colour;
+}
+
+input:focus {
+  outline: 3px solid $govuk-focus-colour;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+.error input:focus {
+  border-color: $govuk-focus-text-colour;
+  box-shadow: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input.width-30 {
+  max-width: 59ex;
+}
+
+input.width-20 {
+  max-width: 41ex;
+}
+
+input.width-10 {
+  max-width: 23ex;
+}
+
+input.width-5 {
+  max-width: 10.8ex;
+}
+
+input.width-4 {
+  max-width: 9ex;
+}
+
+input.width-3 {
+  max-width: 7.2ex;
+}
+
+input.width-2 {
+  max-width: 5.4ex;
+}
