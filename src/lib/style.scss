@@ -329,61 +329,6 @@ body, #root, #bottom {
     margin-right: 1.25em;
 }
 
-/* Details */
-details {
-    margin-bottom: 1.25em;
-}
-
-summary {
-    display: inline-block;
-    position: relative;
-    margin-bottom: 0.3125em;
-    padding-left: 1.5625em;
-    color: $govuk-link-colour;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-summary:hover {
-    color: $govuk-link-hover-colour;
-}
-
-summary:focus {
-    color: $govuk-focus-text-colour;
-    background-color: $govuk-focus-colour;
-    box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-text-colour;
-    text-decoration: none;
-}
-
-summary::before {
-    content: "";
-    position: absolute;
-    top: 0.0625em;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    display: block;
-    width: 0;
-    height: 0;
-    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-    border-style: solid;
-    border-width: 0.4375em 0 0.4375em 0.75775em;
-    border-color: transparent;
-    border-left-color: inherit;
-}
-
-details[open] > summary::before {
-    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
-    border-width: 0.75775em 0.4375em 0 0.4375em;
-    border-color: transparent;
-    border-top-color: inherit;
-}
-
-details > .content {
-    padding: 0.9375em 0.9375em 0.9375em 1.25em;
-    border-left: 0.3125em solid $govuk-border-colour;
-}
-
 /* Error message */
 /* Error summary */
 
