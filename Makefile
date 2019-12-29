@@ -8,6 +8,7 @@ docs: storybook-static/
 
 test: deps
 	npm test
+	npm run test:integration
 
 tmux: deps
 	tmux source-file ./.tmuxrc
