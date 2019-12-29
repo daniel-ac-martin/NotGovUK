@@ -5,6 +5,9 @@ import * as serviceWorker from './serviceWorker';
 import './lib/index.scss';
 
 import {
+  BackLink,
+  Breadcrumbs,
+  Details,
   StartButton
 } from './lib';
 
@@ -76,15 +79,13 @@ const page = (
                     <h1>Components</h1>
                     <form>
                         <h2>Back links</h2>
-                        <a href="#" class="back">Back</a>
+                        <BackLink href="#" />
                         <h2>Breadcrumbs</h2>
-                        <nav class="breadcrumbs">
-                            <ol>
-                                <li><a href="#">Section</a></li>
-                                <li><a href="#">Subsection</a></li>
-                                <li>Subsection</li>
-                            </ol>
-                        </nav>
+                        <Breadcrumbs items={[
+                          { text: 'Section', href: '#' },
+                          { text: 'Subsection', href: '#' },
+                          { text: 'Subsection', href: '#' }
+                        ]} />
                         <h2>Buttons</h2>
                         <input type="submit" value="Save and continue" />
                         <input type="button" value="Save as draft" />
@@ -170,12 +171,10 @@ const page = (
                             </fieldset>
                         </div>
                         <h2>Details</h2>
-                        <details>
-                            <summary>Help with nationality</summary>
-                            <div class="content">
-                                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
-                            </div>
-                        </details>
+                        <Details
+                          summary="Help with nationality"
+                          content="We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+                        />
                         <h2>Phase banner</h2>
                         <div class="phase-banner"><strong>Beta</strong> This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</div>
                         <h2>Radios</h2>
