@@ -22,7 +22,7 @@ export const Breadcrumbs: React.SFC<IBreadcrumbsProps> = props => {
     <nav className="breadcrumbs">
       <ol>
         {previous.map((v, i) => (<li key={i}><a href={v.href} title={v.title}>{v.text}</a></li>))}
-        <li key={previous.length}>{current.text}</li>
+        <li key={previous.length} aria-current="page">{current.text}</li>
       </ol>
     </nav>
   );
