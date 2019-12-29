@@ -17,7 +17,12 @@ The breadcrumbs component helps users to understand where they are within a webs
 
 <Preview withToolbar>
   <Story name="Standard">
-    <Breadcrumbs />
+    <Breadcrumbs items={[
+        { text: 'Section', href: '/section' },
+        { text: 'SubSection', href: '/section/subsection' },
+        { text: 'SubSection', href: '/section/subsection/subsection' },
+      ]}
+    />
   </Story>
 </Preview>
 
