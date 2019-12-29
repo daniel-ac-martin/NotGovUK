@@ -1,4 +1,5 @@
 import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { text } from "@storybook/addon-knobs";
 import { BackLink } from '../../';
 import readMe from './README.md';
 
@@ -16,8 +17,12 @@ import readMe from './README.md';
 Use the back link component to help users go back to the previous page in a multi-page transaction.
 
 <Preview withToolbar>
-  <Story name="Text">
-    <BackLink href="" />
+  <Story name="BackLink">
+    <BackLink
+      href={text('href', '#')}
+      text={text('text', 'Back')}
+      title={text('title', undefined)}
+    />
   </Story>
 </Preview>
 
@@ -42,3 +47,36 @@ Always place back links at the top of a page.
 Make sure the link takes users to the previous page they were on, in the state they last saw it. Where possible, ensure it works even when JavaScript is not available.
 
 If this is not possible, you should hide the back link when JavaScript is not available.
+
+## Stories
+### Standard
+
+A standard back link.
+
+<Preview>
+  <Story name="Standard">
+    <BackLink href="#" />
+  </Story>
+</Preview>
+
+
+### Custom text
+
+A back link with customised text.
+
+<Preview>
+  <Story name="Custom text">
+    <BackLink href="#" text="Yn ôl" />
+  </Story>
+</Preview>
+
+
+### No HREF
+
+A back link which relies on Javascript to go back as no `href` propery has been provided.
+
+<Preview>
+  <Story name="No HREF">
+    <BackLink />
+  </Story>
+</Preview>
