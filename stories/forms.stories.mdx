@@ -4,8 +4,8 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
 # Forms
 
-This page demonstrates the styling on base (and other common) elements. It is
-not intended for direct re-use. Instead please see the components.
+This page demonstrates the styling on base (and other common), form-related elements. It is
+not intended for direct re-use. Instead, please see the components.
 
 
 ## Form groups
@@ -30,6 +30,19 @@ not intended for direct re-use. Instead please see the components.
 </Preview>
 
 
+## Error with message
+
+<Preview>
+  <Story name="Error message">
+    <div class="error">
+      <div class="message">
+        This is an error message.
+      </div>
+    </div>
+  </Story>
+</Preview>
+
+
 ## Fieldsets
 
 <Preview>
@@ -37,6 +50,39 @@ not intended for direct re-use. Instead please see the components.
     <fieldset>
       This is a fieldset.
     </fieldset>
+  </Story>
+</Preview>
+
+
+### With legend
+<Preview>
+  <Story name="Legend">
+    <fieldset>
+      <legend>This is a legend</legend>
+      This is a fieldset with a legend.
+    </fieldset>
+  </Story>
+</Preview>
+
+
+## Labels
+
+<Preview>
+  <Story name="Label">
+    <label>
+      This is a label.
+    </label>
+  </Story>
+</Preview>
+
+
+## Hints
+
+<Preview>
+  <Story name="Hint">
+    <span class="hint">
+      This is a hint.
+    </span>
   </Story>
 </Preview>
 
@@ -62,11 +108,137 @@ not intended for direct re-use. Instead please see the components.
 </Preview>
 
 
+### E-mail
+
+<Preview>
+  <Story name="Input E-mail">
+    <input name="example" type="email" />
+  </Story>
+</Preview>
+
+
+### Password
+
+<Preview>
+  <Story name="Input Password">
+    <input name="example" type="password" />
+  </Story>
+</Preview>
+
+
 ### Number
 
 <Preview>
   <Story name="Input Number">
     <input name="example" type="number" />
+  </Story>
+</Preview>
+
+
+### Colour
+
+<Preview>
+  <Story name="Input Colour">
+    <input name="example" type="color" />
+  </Story>
+</Preview>
+
+
+### Date
+
+<Preview>
+  <Story name="Input Date">
+    <input name="example" type="date" />
+  </Story>
+</Preview>
+
+
+### Datetime local
+
+<Preview>
+  <Story name="Input Datetime local">
+    <input name="example" type="datetime-local" />
+  </Story>
+</Preview>
+
+
+### Time
+
+<Preview>
+  <Story name="Input Time">
+    <input name="example" type="time" />
+  </Story>
+</Preview>
+
+
+### File
+
+<Preview>
+  <Story name="Input File">
+    <input name="example" type="file" />
+  </Story>
+</Preview>
+
+
+### Month
+
+<Preview>
+  <Story name="Input Month">
+    <input name="example" type="month" />
+  </Story>
+</Preview>
+
+
+### Week
+
+<Preview>
+  <Story name="Input Week">
+    <input name="example" type="week" />
+  </Story>
+</Preview>
+
+
+### Range
+
+<Preview>
+  <Story name="Input Range">
+    <input name="example" type="range" />
+  </Story>
+</Preview>
+
+
+### Search
+
+<Preview>
+  <Story name="Input Search">
+    <input name="example" type="search" />
+  </Story>
+</Preview>
+
+
+### Tel
+
+<Preview>
+  <Story name="Input Tel">
+    <input name="example" type="tel" />
+  </Story>
+</Preview>
+
+
+### URL
+
+<Preview>
+  <Story name="Input URL">
+    <input name="example" type="url" />
+  </Story>
+</Preview>
+
+
+### Checkbox
+
+<Preview>
+  <Story name="Input Checkbox">
+    <input name="example" type="checkbox" />
   </Story>
 </Preview>
 
@@ -79,14 +251,6 @@ not intended for direct re-use. Instead please see the components.
   </Story>
 </Preview>
 
-
-### Checkbox
-
-<Preview>
-  <Story name="Input Checkbox">
-    <input name="example" type="checkbox" />
-  </Story>
-</Preview>
 
 ## Select
 
@@ -104,7 +268,7 @@ not intended for direct re-use. Instead please see the components.
 
 <Preview>
   <Story name="Select Multi">
-    <select name="example" multiple>
+    <select name="example" multiple size="3">
       <option>Foo</option>
       <option>Bar</option>
       <option>Baz</option>

@@ -51,7 +51,19 @@ legend + .hint {
   margin-top: -0.3125em;
 }
 
-input,
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
 select,
 textarea {
   line-height: 1.25;
@@ -60,7 +72,6 @@ textarea {
   height: 2.5em;
   padding: 0.3125em;
   border: 2px solid $govuk-input-border-colour;
-  appearance: none;
   font-size: inherit;
   font-family: inherit;
 }
@@ -86,8 +97,69 @@ textarea:focus {
   box-shadow: none;
 }
 
+input[type="color"] {
+  width: 2.5em;
+}
+
 input[type="number"] {
+  appearance: none;
   -moz-appearance: textfield;
+}
+
+input[type="password"],
+input[type="text"] {
+  appearance: none;
+}
+
+input[type="range"] {
+  width: 100%;
+
+}
+
+input[type="range"]:focus {
+  box-shadow: none;
+}
+
+@media (min-width: 40.0625em) {
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="week"],
+  select {
+    width: auto;
+  }
+}
+
+textarea {
+  -webkit-appearance: none;
+  display: block;
+  height: auto;
+  min-height: 2.5em;
+  resize: vertical;
+}
+
+input,
+option,
+select,
+textarea {
+  background-color: $govuk-white;
+  color: $govuk-text-colour;
+}
+
+select[multiple] {
+  height: auto;
+  padding: 0;
+}
+
+select[multiple] > option {
+  padding: 0.3125em;
+}
+
+option:nth-child(even) {
+  background-color: $govuk-light-grey;
+  color: $govuk-text-colour;
 }
 
 input.width-30,
