@@ -35,13 +35,11 @@ const page = (
             <div class="inner">
                 <div id="phase-banner"><strong>Beta</strong> This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</div>
                 <a id="back-link" href="#">Back</a>
-                <nav id="breadcrumbs">
-                    <ol>
-                        <li><a href="#">Section</a></li>
-                        <li><a href="#">Subsection</a></li>
-                        <li>Subsection</li>
-                    </ol>
-                </nav>
+                <Breadcrumbs id="breadcrumbs" items={[
+                  { text: 'Section', href: '#' },
+                  { text: 'Subsection', href: '#' },
+                  { text: 'Subsection', href: '#' }
+                ]} />
                 <main id="content">
                     <h1>This is NOT GovUK!</h1>
                     <p class="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
@@ -171,10 +169,9 @@ const page = (
                             </fieldset>
                         </div>
                         <h2>Details</h2>
-                        <Details
-                          summary="Help with nationality"
-                          content="We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
-                        />
+                        <Details summary="Help with nationality">
+                          We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+                        </Details>
                         <h2>Phase banner</h2>
                         <div class="phase-banner"><strong>Beta</strong> This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</div>
                         <h2>Radios</h2>
