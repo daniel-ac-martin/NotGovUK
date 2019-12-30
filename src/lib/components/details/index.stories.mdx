@@ -18,10 +18,9 @@ Make a page easier to scan by letting users reveal more detailed information onl
 
 <Preview withToolbar>
   <Story name="Details">
-    <Details
-      summary={text('href', 'Help with nationality')}
-      content={text('text', 'We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.')}
-    />
+    <Details summary={text('href', 'Help with nationality')}>
+      {text('text', 'We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.')}
+    </Details>
   </Story>
 </Preview>
 
@@ -52,10 +51,9 @@ The details component is a short link that expands into more detailed help text 
 
 <Preview>
   <Story name="Standard">
-    <Details
-      summary="Help with nationality"
-      content="We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
-    />
+    <Details summary="Help with nationality">
+      We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+    </Details>
   </Story>
 </Preview>
 
