@@ -34,7 +34,7 @@ const page = (
         <div id="middle">
             <div class="inner">
                 <div id="phase-banner"><strong>Beta</strong> This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</div>
-                <a id="back-link" href="#">Back</a>
+                <BackLink id="back-link" href="#" />
                 <Breadcrumbs id="breadcrumbs" items={[
                   { text: 'Section', href: '#' },
                   { text: 'Subsection', href: '#' },
