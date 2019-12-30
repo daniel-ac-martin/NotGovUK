@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Anchor from './anchor';
 import Input from './input';
+import { className } from '../../helpers';
 
 interface IButtonProps {
   /** Extra CSS classes to be applied */
@@ -31,22 +32,19 @@ interface IButtonProps {
 export const Button: React.SFC<IButtonProps> = props => {
   const type = props.submit ? 'submit' : 'button';
   const anchor = props.href !== null;
-  const propClasses = props.className ? props.className.split(' ') : [];
-  const className = [
+  const classes = className(
     anchor ? 'button' : '',
     props.disabled && anchor ? 'disabled' : '',
     props.secondary && (anchor || props.submit) ? 'secondary' : '',
     props.start ? 'start' : '',
-    props.warning ? 'warning' : ''
-  ].concat(propClasses)
-   .filter(e => e)
-   .join(' ') || undefined;
+    props.warning ? 'warning' : '',
+    props.className);
   const text = props.value || (props.start && 'Start now >');
   const processedProps = {
     ...props,
     text: text,
     type: type,
-    className: className
+    className: classes
   }
 
   return anchor ? Anchor(processedProps) : Input(processedProps);
