@@ -4,51 +4,19 @@ fieldset {
   border: 0;
 }
 
-.form-group {
-  margin-bottom: 1.25em;
-}
-
-.form-group.error {
-  padding-left: 0.9375em;
-  border-left: 0.3125em solid $govuk-error-colour;
-}
-
-legend {
-  font-size: 1.1875rem;
-  font-weight: bold;
-  padding: 0;
-  margin-bottom: 0.9375em;
-}
-
-label, .hint, .message {
+label,
+legend,
+.hint,
+.message {
   display: block;
   line-height: 1.25;
   margin: 0 0 0.9375em 0;
+  padding: 0;
 }
 
-label {
+label,
+legend {
   margin: 0 0 0.3125em 0;
-}
-
-.hint {
-  color: $govuk-secondary-text-colour;
-}
-
-.message {
-  clear: both;
-  font-weight: bold;
-}
-
-.error .message {
-  color: $govuk-error-colour;
-}
-
-label + .hint {
-  margin-bottom: 0.625em;
-}
-
-legend + .hint {
-  margin-top: -0.3125em;
 }
 
 input[type="color"],
@@ -113,7 +81,6 @@ input[type="text"] {
 
 input[type="range"] {
   width: 100%;
-
 }
 
 input[type="range"]:focus {
@@ -146,6 +113,17 @@ select,
 textarea {
   background-color: $govuk-white;
   color: $govuk-text-colour;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled] {
+  opacity: 0.5;
+}
+
+option[disabled],
+option:nth-child(even)[disabled] {
+  color: $govuk-mid-grey;
 }
 
 select[multiple] {
