@@ -41,9 +41,9 @@ interface IFormField {
   options?: Array<IOption>,
   /** Initial number of lines of input on a text area or the size of a select */
   rows?: number,
-  /** Whether the browser should spellcheck the input */
-  small?: boolean,
   /** Whether checkboxes and radios should be small (inferred from number of options if not provided) */
+  small?: boolean,
+  /** Whether the browser should spellcheck the input */
   spellCheck?: boolean,
   /** Type of field (inferred if not provided) */
   type?: string,
