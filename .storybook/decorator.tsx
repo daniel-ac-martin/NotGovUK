@@ -4,7 +4,9 @@ const Decorator: React.SFC<any> = props => (
   <div className={props.className} style={props.style}>
     <div id="middle">
       <div className="inner">
-        {props.children}
+        <main id="content">
+          {props.children}
+        </main>
       </div>
     </div>
   </div>
