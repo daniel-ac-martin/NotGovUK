@@ -45,7 +45,7 @@ export const Button: React.SFC<IButtonProps> = props => {
     text: text,
     type: type,
     className: classes
-  }
+  };
 
   return anchor ? Anchor(processedProps) : Input(processedProps);
 };
