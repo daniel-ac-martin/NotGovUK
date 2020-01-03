@@ -27,7 +27,7 @@ interface ICheckboxes {
   /** HTML name */
   name: string,
   /** List of options to select from */
-  options?: Array<IOption>,
+  options: Array<IOption>,
   /** Whether the checkboxes should be small */
   small?: boolean
 };
@@ -61,7 +61,6 @@ Checkboxes.defaultProps = {
   hint: null,
   id: null,
   inline: null,
-  options: null,
   small: null
 };
 
