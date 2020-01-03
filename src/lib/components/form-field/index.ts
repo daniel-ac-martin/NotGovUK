@@ -40,7 +40,7 @@ interface IFormField {
   name: string,
   /** List of options to select from */
   options?: Array<IOption>,
-  /** Initial number of lines of input on a textarea or the size of a select */
+  /** Initial number of lines of input on a textarea or the size of a multi-select */
   rows?: number,
   /** Whether checkboxes and radios should be small (inferred from number of options if not provided) */
   small?: boolean,
