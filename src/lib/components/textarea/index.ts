@@ -2,6 +2,8 @@ import * as React from 'react';
 import FormField from '../form-field';
 
 interface ITextarea {
+  /** Identifier for auto-completion */
+  autoComplete?: string,
   /** Extra CSS classes to be applied */
   className?: string,
   /** Initial value of the field */
@@ -24,6 +26,7 @@ interface ITextarea {
 
 export const Textarea: React.SFC<ITextarea> = props =>
   React.createElement(FormField, {
+    autoComplete: props.autoComplete,
     className: props.className,
     defaultValue: props.defaultValue,
     disabled: props.disabled,
@@ -37,6 +40,7 @@ export const Textarea: React.SFC<ITextarea> = props =>
   });
 
 Textarea.defaultProps = {
+  autoComplete: null,
   className: null,
   defaultValue: null,
   disabled: false,
