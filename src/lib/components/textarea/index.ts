@@ -22,6 +22,8 @@ interface ITextarea {
   name: string,
   /** Initial number of lines of input */
   rows?: number,
+  /** Whether the browser should spellcheck the input */
+  spellCheck?: boolean
 };
 
 export const Textarea: React.SFC<ITextarea> = props =>
@@ -36,6 +38,7 @@ export const Textarea: React.SFC<ITextarea> = props =>
     label: props.label,
     name: props.name,
     rows: props.rows,
+    spellCheck: props.spellCheck,
     type: 'textarea'
   });
 
@@ -47,7 +50,8 @@ Textarea.defaultProps = {
   error: null,
   hint: null,
   id: null,
-  rows: null
+  rows: null,
+  spellCheck: null
 };
 
 export default Textarea;
