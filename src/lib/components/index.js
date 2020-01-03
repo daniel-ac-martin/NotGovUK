@@ -4,3 +4,4 @@ export { default as Button, StartButton, SubmitButton } from './button';
 export { default as Checkboxes } from './checkboxes';
 export { default as Details } from './details';
 export { default as FormField } from './form-field';
+export { default as Radios } from './radios';
