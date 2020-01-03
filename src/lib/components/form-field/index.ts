@@ -9,6 +9,7 @@ import { className } from '../../helpers';
 
 interface IOption {
   disabled?: boolean,
+  hint?: string,
   label: string,
   value: string,
   selected: string
