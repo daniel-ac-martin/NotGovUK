@@ -20,6 +20,7 @@ const Input: React.SFC<any> = props => {
         aria-describedby={`${props.id}-hint`}
         defaultValue={props.defaultValue}
         disabled={props.disabled}
+        style={props.fieldStyle}
         spellCheck={props.spellCheck}
         autoComplete={props.autoComplete}
       />

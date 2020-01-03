@@ -20,6 +20,7 @@ const Select: React.SFC<any> = props => {
         disabled={props.disabled}
         multiple={props.multiple}
         size={props.rows}
+        style={props.fieldStyle}
       >
         {props.options.map((v, i) => (
           <option key={i} value={v.value} selected={v.selected} disabled={v.disabled}>{v.label}</option>

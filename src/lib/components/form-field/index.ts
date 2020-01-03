@@ -48,6 +48,8 @@ interface IFormField {
   spellCheck?: boolean,
   /** Type of field (inferred if not provided) */
   type?: string,
+  /** Width of the field in characters (approximate) (only applies to single input fields) */
+  width?: number
 };
 
 export const FormField: React.SFC<IFormField> = props => {
@@ -69,6 +71,7 @@ export const FormField: React.SFC<IFormField> = props => {
   const processedProps = {
     ...props,
     className: className(props.error && 'error', props.className),
+    fieldStyle: props.width && { maxWidth: (((props.width >= 10) ? 4.76 : 1.76) + 1.81 * props.width) + 'ex' },
     id: props.id || props.name,
     inline: (props.inline === null && (type === 'radios' && props.options && props.options.length <= 2)) || props.inline,
     rows: (props.rows === null && (type === 'textarea' && 5)) || props.rows,
