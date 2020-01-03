@@ -20,7 +20,7 @@ interface ITextarea {
   label: any,
   /** HTML name */
   name: string,
-  /** Initial number of lines of input on a textarea */
+  /** Initial number of lines of input */
   rows?: number,
 };
 
