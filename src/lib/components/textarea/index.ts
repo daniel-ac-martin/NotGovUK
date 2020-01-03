@@ -4,6 +4,8 @@ import FormField from '../form-field';
 interface ITextarea {
   /** Extra CSS classes to be applied */
   className?: string,
+  /** Initial value of the field */
+  defaultValue?: string,
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
@@ -23,6 +25,7 @@ interface ITextarea {
 export const Textarea: React.SFC<ITextarea> = props =>
   React.createElement(FormField, {
     className: props.className,
+    defaultValue: props.defaultValue,
     disabled: props.disabled,
     error: props.error,
     hint: props.hint,
@@ -35,6 +38,7 @@ export const Textarea: React.SFC<ITextarea> = props =>
 
 Textarea.defaultProps = {
   className: null,
+  defaultValue: null,
   disabled: false,
   error: null,
   hint: null,
