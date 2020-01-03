@@ -71,6 +71,7 @@ export const FormField: React.SFC<IFormField> = props => {
     className: className(props.error && 'error', props.className),
     id: props.id || props.name,
     inline: (props.inline === null && (type === 'radios' && props.options && props.options.length <= 2)) || props.inline,
+    rows: (props.rows === null && (type === 'textarea' && 5)) || props.rows,
     small: (props.small === null && (props.options && props.options.length >= 6)) || props.small,
     spellcheck: (props.spellCheck !== null) && (props.spellCheck ? 'true' : 'false'),
     type: type === 'native-date' ? 'date' : type
