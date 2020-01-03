@@ -2,11 +2,11 @@ import * as React from 'react';
 import FormField from '../form-field';
 
 interface IOption {
+  checked?: boolean,
   disabled?: boolean,
   hint?: string,
   label: string,
-  value: string,
-  checked: string
+  value: string
 };
 
 interface ICheckboxes {
@@ -47,8 +47,8 @@ export const Checkboxes: React.SFC<ICheckboxes> = props =>
       disabled: e.disabled,
       hint: e.hint,
       label: e.label,
-      value: e.value,
-      selected: e.checked
+      selected: e.checked,
+      value: e.value
     })),
     small: props.small || false,
     type: 'checkboxes'

@@ -11,8 +11,8 @@ interface IOption {
   disabled?: boolean,
   hint?: string,
   label: string,
-  value: string,
-  selected: string
+  selected?: boolean,
+  value: string
 };
 
 interface IFormField {
