@@ -20,7 +20,7 @@ interface ICheckboxes {
   hint?: string,
   /** HTML id (If not specified then the name will be used) */
   id?: string,
-  /** Whether checkboxes and radios should be displayed on a single line on wide displays (inferred from number of options if not provided)*/
+  /** Whether the checkboxes should be displayed on a single line on wide displays */
   inline?: boolean,
   /** Label */
   label: any,
@@ -28,7 +28,7 @@ interface ICheckboxes {
   name: string,
   /** List of options to select from */
   options?: Array<IOption>,
-  /** Whether checkboxes and radios should be small (inferred from number of options if not provided) */
+  /** Whether the checkboxes should be small */
   small?: boolean
 };
 
