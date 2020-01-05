@@ -11,6 +11,7 @@ import {
   Checkboxes,
   DateInput,
   Details,
+  PhaseBanner,
   Radios,
   StartButton,
   SubmitButton,
@@ -39,7 +40,7 @@ const page = (
         </header>
         <div id="middle">
             <div class="inner">
-                <div id="phase-banner"><strong>Beta</strong> This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</div>
+                <PhaseBanner id="phase-banner" phase="beta">This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</PhaseBanner>
                 <BackLink id="back-link" href="#" />
                 <Breadcrumbs id="breadcrumbs" items={[
                   { text: 'Section', href: '#' },
@@ -136,7 +137,7 @@ const page = (
                           We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
                         </Details>
                         <h2>Phase banner</h2>
-                        <div class="phase-banner"><strong>Beta</strong> This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</div>
+                        <PhaseBanner id="phase-banner" phase="beta">This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</PhaseBanner>
                         <h2>Radios</h2>
                         <Radios
                           name="changed-name"
