@@ -7,11 +7,13 @@ import './lib/index.scss';
 import {
   BackLink,
   Breadcrumbs,
+  Button,
   Checkboxes,
   DateInput,
   Details,
   Radios,
   StartButton,
+  SubmitButton,
   TextInput
 } from './lib';
 
@@ -89,10 +91,10 @@ const page = (
                           { text: 'Subsection', href: '#' }
                         ]} />
                         <h2>Buttons</h2>
-                        <input type="submit" value="Save and continue" />
-                        <input type="button" value="Save as draft" />
-                        <input type="button" class="warning" value="Delete" />
-                        <input type="submit" disabled="disabled" value="Delete" />
+                        <SubmitButton value="Save and continue" />
+                        <Button value="Save as draft" />
+                        <Button value="Delete" warning />
+                        <SubmitButton value="Disabled" disabled />
                         <h2>Checkboxes</h2>
                         <Checkboxes
                           name="waste-type"
