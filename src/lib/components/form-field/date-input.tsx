@@ -12,6 +12,7 @@ const DateInput: React.SFC<any> = props => {
       legend={props.label}
       hint={hint}
       error={props.error}
+      role="group"
     >
       <div className="item">
         <label htmlFor={`${props.id}-day`}>Day</label>

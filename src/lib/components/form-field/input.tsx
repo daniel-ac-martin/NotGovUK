@@ -17,7 +17,7 @@ const Input: React.SFC<any> = props => {
         id={fieldId}
         name={props.name}
         type={props.type}
-        aria-describedby={`${props.id}-hint`}
+        aria-describedby={props.hint && `${props.id}-hint`}
         defaultValue={props.defaultValue}
         disabled={props.disabled}
         style={props.fieldStyle}

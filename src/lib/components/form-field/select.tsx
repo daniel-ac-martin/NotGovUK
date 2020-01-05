@@ -16,7 +16,7 @@ const Select: React.SFC<any> = props => {
       <select
         id={fieldId}
         name={props.name}
-        aria-describedby={`${props.id}-hint`}
+        aria-describedby={props.hint && `${props.id}-hint`}
         disabled={props.disabled}
         multiple={props.multiple}
         size={props.rows}

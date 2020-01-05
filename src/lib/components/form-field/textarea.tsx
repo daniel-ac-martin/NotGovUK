@@ -16,7 +16,7 @@ const Textarea: React.SFC<any> = props => {
       <textarea
         id={fieldId}
         name={props.name}
-        aria-describedby={`${props.id}-hint`}
+        aria-describedby={props.hint && `${props.id}-hint`}
         defaultValue={props.defaultValue}
         disabled={props.disabled}
         style={props.fieldStyle}
