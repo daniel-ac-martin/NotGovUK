@@ -1,10 +1,10 @@
 import { withA11y } from '@storybook/addon-a11y';
 import { withTests } from '@storybook/addon-jest';
-import { boolean, select, withKnobs } from "@storybook/addon-knobs";
+import { withKnobs } from "@storybook/addon-knobs";
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import * as React from 'react';
-import Decorator from './decorator';
+import globalDecorator from './decorator';
 import requireContext from 'require-context.macro';
 import jestResults from '../.jest-results.json';
 
@@ -18,31 +18,7 @@ configure([
 ], module);
 
 // global decorators
-addDecorator(storyFn => {
-  const departmentOptions = {
-    'None': '',
-    'Home Office': 'home-office',
-    'HMPO': 'hmpo'
-  };
-
-  const isInternal = boolean('Internal', false, 'Theme');
-  const department = select('Department', departmentOptions, '', 'Theme');
-
-  const classes = [
-    isInternal && 'internal',
-    department
-  ];
-  const props = {
-    className: classes.join(' '),
-    style: {
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column'
-    }
-  };
-
-  return React.createElement(Decorator, props, storyFn());
-});
+addDecorator(globalDecorator);
 
 // dark theme
 addParameters({
