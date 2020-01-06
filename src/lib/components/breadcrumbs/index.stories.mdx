@@ -1,6 +1,7 @@
 import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
 import { Breadcrumbs } from '../../';
 import readMe from './README.md';
+import { middle } from "../../../../.storybook/decorators";
 
 <Meta
   title="Components/Breadcrumbs"
@@ -9,6 +10,7 @@ import readMe from './README.md';
     jest: ['breadcrumbs'],
     notes: readMe
   }}
+  decorators={[middle]}
 />
 
 # Breadcrumbs

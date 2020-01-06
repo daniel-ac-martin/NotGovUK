@@ -2,6 +2,7 @@ import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
 import { boolean, object, text } from "@storybook/addon-knobs";
 import { Select } from '../../';
 import readMe from './README.md';
+import { main } from "../../../../.storybook/decorators";
 
 <Meta
   title="Components/Select"
@@ -10,6 +11,7 @@ import readMe from './README.md';
     jest: ['select'],
     notes: readMe
   }}
+  decorators={[main]}
 />
 
 # Select

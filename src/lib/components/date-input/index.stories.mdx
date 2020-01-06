@@ -2,6 +2,7 @@ import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
 import { boolean, text } from "@storybook/addon-knobs";
 import { DateInput } from '../../';
 import readMe from './README.md';
+import { main } from "../../../../.storybook/decorators";
 
 <Meta
   title="Components/Date input"
@@ -10,6 +11,7 @@ import readMe from './README.md';
     jest: ['date-input'],
     notes: readMe
   }}
+  decorators={[main]}
 />
 
 # Date input

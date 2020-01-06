@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { text, boolean } from "@storybook/addon-knobs";
 import { Button, StartButton, SubmitButton } from '../../';
 import readMe from './README.md';
+import { main } from "../../../../.storybook/decorators";
 
 <Meta
   title="Components/Button"
@@ -12,6 +13,7 @@ import readMe from './README.md';
     jest: ['button'],
     notes: readMe
   }}
+  decorators={[main]}
 />
 
 # Button

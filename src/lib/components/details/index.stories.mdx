@@ -2,6 +2,7 @@ import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
 import { text } from "@storybook/addon-knobs";
 import { Details } from '../../';
 import readMe from './README.md';
+import { main } from "../../../../.storybook/decorators";
 
 <Meta
   title="Components/Details"
@@ -10,6 +11,7 @@ import readMe from './README.md';
     jest: ['details'],
     notes: readMe
   }}
+  decorators={[main]}
 />
 
 # Details
