@@ -4,7 +4,7 @@ import { withKnobs } from "@storybook/addon-knobs";
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import * as React from 'react';
-import globalDecorator from './decorator';
+import globalDecorator from './decorators';
 import requireContext from 'require-context.macro';
 import jestResults from '../.jest-results.json';
 
