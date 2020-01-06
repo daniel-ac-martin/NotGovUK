@@ -19,9 +19,11 @@ Use the back link component to help users go back to the previous page in a mult
 <Preview withToolbar>
   <Story name="BackLink">
     <BackLink
+      className={text('className')}
       href={text('href', '#')}
+      id={text('id')}
       text={text('text', 'Back')}
-      title={text('title', undefined)}
+      title={text('title')}
     />
   </Story>
 </Preview>
