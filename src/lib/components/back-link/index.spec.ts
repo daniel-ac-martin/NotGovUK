@@ -3,8 +3,8 @@ import BackLink from './';
 describe('BackLink', () => {
   describe('when given a href', () => {
     describe('and a text property', () => {
-      const backlink = h(BackLink, { href: '/back', text: 'Reverse' });
-      const component = shallow(backlink);
+      const backLink = h(BackLink, { href: '/back', text: 'Reverse' });
+      const component = shallow(backLink);
 
       it('is a link', () => expect(component.find('a').length).toEqual(1));
       it('is a link with the text provided', () => expect(component.text()).toEqual('Reverse'));
@@ -12,8 +12,8 @@ describe('BackLink', () => {
     });
 
     describe('but NOT a text property', () => {
-      const backlink = h(BackLink, { href: '/back' });
-      const component = shallow(backlink);
+      const backLink = h(BackLink, { href: '/back' });
+      const component = shallow(backLink);
 
       it('is a link', () => expect(component.find('a').length).toEqual(1));
       it('is a link with the text \'Back\'', () => expect(component.text()).toEqual('Back'));
@@ -22,8 +22,8 @@ describe('BackLink', () => {
   });
 
   describe('when NOT given a href', () => {
-    const backlink = h(BackLink);
-    const component = shallow(backlink);
+    const backLink = h(BackLink);
+    const component = shallow(backLink);
 
     it('is a link', () => expect(component.find('a').length).toEqual(1));
     it('is a link with the text \'Back\'', () => expect(component.text()).toEqual('Back'));
