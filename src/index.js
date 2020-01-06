@@ -11,6 +11,7 @@ import {
   Checkboxes,
   DateInput,
   Details,
+  Footer,
   PhaseBanner,
   Radios,
   SkipLink,
@@ -188,12 +189,7 @@ const page = (
                 </aside>
             </div>
         </div>
-        <footer id="bottom">
-            <div class="inner">
-                <div id="open-government-license">All content is available under the Open Government Licence v3.0, except where otherwise stated</div>
-                <a id="crown-copyright">&copy; Crown copyright</a>
-            </div>
-        </footer>
+        <Footer id="bottom" />
     </>
 );
 
