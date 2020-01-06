@@ -1,0 +1,40 @@
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { text } from "@storybook/addon-knobs";
+import { Page, StartButton } from '../../';
+import readMe from './README.md';
+
+<Meta
+  title="Components/Page"
+  component={Page}
+  parameters={{
+    jest: ['page'],
+    notes: readMe
+  }}
+/>
+
+# Page
+
+Content is sandwiched between the Header and Footer components.
+
+<Preview withToolbar>
+  <Story name="Page">
+    <Page>
+      {text('children', 'My page.')}
+    </Page>
+  </Story>
+</Preview>
+
+<Props of={Page} />
+
+
+## How it works
+
+<Preview>
+  <Story name="Standard">
+    <Page>
+      <h1>This is NOT GovUK!</h1>
+      <p class="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
+      <StartButton href="#" />
+    </Page>
+  </Story>
+</Preview>

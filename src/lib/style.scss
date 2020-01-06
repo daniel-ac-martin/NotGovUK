@@ -1,23 +1,45 @@
-body, #root {
+body,
+#root,
+#story-root,
+#root > #story-root {
     display: flex;
     flex-direction: column;
+    overflow: initial;
+    flex: 1 0 auto;
+    padding: initial;
 }
 
-#top, #middle, #bottom {
+body > div,
+body > footer,
+body > header,
+#root > div,
+#root > footer,
+#root > header,
+#story-root > div,
+#story-root > footer,
+#story-root > header {
     overflow: auto;
     flex: 0 0 auto;
     padding: 0 1em;
 }
 
 @media (min-width: 40.0625em) {
-    #top, #middle, #bottom {
+    body > div,
+    body > footer,
+    body > header,
+    #root > div,
+    #root > footer,
+    #root > header,
+    #story-root > div,
+    #story-root > footer,
+    #story-root > header {
         padding: 0 2em;
     }
 }
 
-#top > .inner,
-#middle > .inner,
-#bottom > .inner {
+body > * > .inner,
+#root > * > .inner,
+#story-root > * > .inner {
     padding: 0.625em 0;
     max-width: 68.75em;
     margin: 0 auto;
@@ -25,9 +47,11 @@ body, #root {
     flex-wrap: wrap;
 }
 
-.internal #top > .inner,
-.internal #middle > .inner,
-.internal #bottom > .inner {
+.internal > * > .inner,
+#root.internal > * > .inner,
+#story-root.internal > * > .inner,
+.internal #root > * > .inner,
+.internal #story-root > * > .inner {
     max-width: none;
 }
 
@@ -61,7 +85,9 @@ body, #root {
     color: #1d8feb;
 }
 
-#middle {
+#middle,
+#root > #middle,
+#story-root > #middle {
     background-color: $govuk-white;
     color: $govuk-text-colour;
     flex: 1 0 auto;
@@ -89,15 +115,6 @@ body, #root {
 .home-office #middle aside,
 .hmpo #middle aside {
     border-color: $home-office-brand-colour;
-}
-
-body, #root, #bottom {
-    background-color: $govuk-light-grey;
-    color: $govuk-text-colour;
-}
-
-#bottom {
-    border-top: 1px solid $govuk-border-colour;
 }
 
 #logo {
@@ -152,12 +169,6 @@ body, #root, #bottom {
 #sign-out {
     flex: 0 0 9.625rem;
     text-align: right;
-}
-
-#bottom > .inner {
-    align-items: flex-end;
-    justify-content: center;
-    min-height: 3em;
 }
 
 #open-government-license {
