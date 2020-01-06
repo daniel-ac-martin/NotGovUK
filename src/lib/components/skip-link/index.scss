@@ -1,0 +1,21 @@
+.skip-link {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  padding: 0.625em 1em;
+  line-height: 1.25;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+}
+
+.skip-link:focus {
+  position: static;
+  height: auto;
+  width: auto;
+  background-color: $govuk-focus-colour;
+  color: $govuk-focus-text-colour;
+  outline: 0.1875em solid $govuk-focus-colour;
+  overflow: visible;
+}
