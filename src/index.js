@@ -13,6 +13,7 @@ import {
   Details,
   PhaseBanner,
   Radios,
+  SkipLink,
   StartButton,
   SubmitButton,
   TextInput
@@ -20,7 +21,7 @@ import {
 
 const page = (
     <>
-        <a id="skip-link" href="#content">Skip to main content</a>
+        <SkipLink id="skip-link" href="#content" />
         <header id="top">
             <div class="inner">
                 <a id="logo" href="/"></a>
