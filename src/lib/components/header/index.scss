@@ -1,16 +1,31 @@
-.page-header > .inner {
+.page-header,
+body > .page-header,
+#root > .page-header,
+#story-root > .page-header {
+  overflow: initial;
+  background-color: $govuk-black;
+  color: $govuk-white;
+  border-bottom: 0.625rem solid $govuk-white;
+  font-weight: bold;
+}
+
+.page-header > .inner,
+body > .page-header > .inner,
+#root > .page-header > .inner,
+#story-root > .page-header > .inner {
   align-items: center;
   justify-content: space-between;
   align-content: space-between;
+  margin-bottom: -0.625rem;
 }
 
-.page-header {
-  background-color: $govuk-black;
-  color: $govuk-white;
-  /*
-    border-bottom: 0.625rem solid $govuk-brand-colour;
- */
-  font-weight: bold;
+.page-header > .inner {
+  border-bottom: 0.625rem solid $govuk-brand-colour;
+}
+
+.home-office .page-header > .inner,
+.hmpo .page-header > .inner {
+  border-color: $home-office-brand-colour;
 }
 
 .page-header a,
