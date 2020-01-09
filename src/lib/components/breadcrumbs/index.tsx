@@ -1,22 +1,22 @@
 import * as React from 'react';
 import { className } from '../../helpers';
 
-interface IItem {
-  /** The location to link to */
+export interface IBreadcrumb {
+  /** Location to link to */
   href: string,
-  /** The text of the item */
+  /** Text of the item */
   text: string,
-  /** The title of the link */
+  /** Title of the link */
   title?: string
 };
 
-interface IBreadcrumbsProps {
+export interface IBreadcrumbsProps {
   /** Extra CSS classes to be applied */
   className?: string,
   /** HTML id */
   id?: string,
-  /** The list of links */
-  items: Array<IItem>
+  /** List of links */
+  items: Array<IBreadcrumb>
 };
 
 export const Breadcrumbs: React.SFC<IBreadcrumbsProps> = props => {
