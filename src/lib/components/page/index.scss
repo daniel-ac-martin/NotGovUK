@@ -1,0 +1,31 @@
+.page-body,
+#root > .page-body,
+#story-root > .page-body {
+  background-color: $govuk-white;
+  color: $govuk-text-colour;
+  flex: 1 0 auto;
+}
+
+.page-body > .inner {
+  border-top: 0.625rem solid $govuk-brand-colour;
+}
+
+.home-office .page-body > .inner,
+.hmpo .page-body > .inner {
+  border-color: $home-office-brand-colour;
+}
+
+.page-body main {
+  flex: 1 1 auto;
+}
+
+.page-body aside {
+  flex: 0 1 20em;
+  border-top: 0.625rem solid $govuk-brand-colour;
+  margin-left: 2em;
+}
+
+.home-office .page-body aside,
+.hmpo .page-body aside {
+  border-color: $home-office-brand-colour;
+}

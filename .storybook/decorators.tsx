@@ -12,7 +12,7 @@ const Root: React.SFC<any> = props => (
 );
 
 const Middle: React.SFC<any> = props => (
-  <div id="middle" style={{
+  <div id="middle" className="page-body" style={{
       margin: '-1em'
   }}>
     <div className="inner">
