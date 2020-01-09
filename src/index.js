@@ -12,6 +12,7 @@ import {
   DateInput,
   Details,
   Footer,
+  Header,
   PhaseBanner,
   Radios,
   SkipLink,
@@ -23,23 +24,19 @@ import {
 const page = (
     <>
         <SkipLink id="skip-link" href="#content" />
-        <header id="top" class="page-header">
-            <div class="inner">
-                <a id="logo" href="/"></a>
-                <div id="nav">
-                    <a id="service-title" href="/">NOT GovUK</a>
-                    <ul>
-                        <li class="active"><a href="/one" title="One">One</a></li>
-                        <li><a href="/two" title="Two">Two</a></li>
-                        <li><a href="/three" title="Three">Three</a></li>
-                        <li><a href="/four" title="Four">Four</a></li>
-                    </ul>
-                    </div>
-                    <div id="sign-out">
-                    <a href="/auth/logout">Sign&nbsp;out</a>
-                </div>
-            </div>
-        </header>
+        <Header
+          id="top"
+          logoHref="/"
+          navigation={[
+            { href: '/one', text: 'One', active: true },
+            { href: '/two', text: 'Two' },
+            { href: '/three', text: 'Three' },
+            { href: '/four', text: 'Four' }
+          ]}
+          signOutHref="/auth/logout"
+          title="Not GovUK"
+          titleHref="/"
+        />
         <div id="middle" class="page-body">
             <div class="inner">
                 <PhaseBanner id="phase-banner" phase="beta">This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</PhaseBanner>
