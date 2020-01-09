@@ -1,5 +1,5 @@
 import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
-import { text } from "@storybook/addon-knobs";
+import { object, text } from "@storybook/addon-knobs";
 import { Page, StartButton } from '../../';
 import readMe from './README.md';
 
@@ -18,7 +18,27 @@ Content is sandwiched between the Header and Footer components.
 
 <Preview withToolbar>
   <Story name="Page">
-    <Page>
+    <Page
+      backHref={text('backHref', '#back')}
+      breadcrumbs={object('breadcrumbs', [
+        { href: '/section', text: 'Section' },
+        { href: '/section/subsection', text: 'SubSection' },
+        { href: '/section/subsection/subsection', text: 'SubSection' }
+      ])}
+      feedbackHref={text('feedbackHref', '#feedback')}
+      logoHref={text('logoHref')}
+      phase={text('phase', 'alpha')}
+      navigation={object('navigation', [
+        { href: '#one', text: 'One', active: true },
+        { href: '#two', text: 'Two' },
+        { href: '#three', text: 'Three' },
+        { href: '#four', text: 'Four' }
+      ])}
+      signOutHref={text('signOutHref')}
+      signOutText={text('signOutText')}
+      title={text('title', 'My service')}
+      titleHref={text('titleHref', '#my-service')}
+    >
       {text('children', 'My page.')}
     </Page>
   </Story>
@@ -31,7 +51,23 @@ Content is sandwiched between the Header and Footer components.
 
 <Preview>
   <Story name="Standard">
-    <Page>
+    <Page
+      breadcrumbs={[
+        { href: '/section', text: 'Section' },
+        { href: '/section/subsection', text: 'SubSection' },
+        { href: '/section/subsection/subsection', text: 'SubSection' }
+      ]}
+      feedbackHref="#feedback"
+      phase="alpha"
+      navigation={[
+        { href: '#one', text: 'One', active: true },
+        { href: '#two', text: 'Two' },
+        { href: '#three', text: 'Three' },
+        { href: '#four', text: 'Four' }
+      ]}
+      title="My service"
+      titleHref="#my-service"
+    >
       <h1>This is NOT GovUK!</h1>
       <p class="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
       <StartButton href="#" />
