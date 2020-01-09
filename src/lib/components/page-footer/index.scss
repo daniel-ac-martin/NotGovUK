@@ -1,0 +1,17 @@
+body,
+#root,
+#story-root,
+.page-footer {
+  background-color: $govuk-light-grey;
+  color: $govuk-text-colour;
+}
+
+.page-footer {
+  border-top: 1px solid $govuk-border-colour;
+}
+
+.page-footer > .inner {
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 3em;
+}

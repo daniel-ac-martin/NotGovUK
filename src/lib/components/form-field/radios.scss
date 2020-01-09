@@ -1,0 +1,13 @@
+.radios .item label:before,
+.radios .item label:after {
+  border-radius: 50%;
+}
+
+.radios .item label:after {
+  border-width: 0.625rem;
+  background-color: currentColor;
+  width: 0;
+  height: 0;
+  top: 0.625rem;
+  left: 0.625rem;
+}

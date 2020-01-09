@@ -1,0 +1,83 @@
+.page-header > .inner {
+  align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.page-header {
+  background-color: $govuk-black;
+  color: $govuk-white;
+  /*
+    border-bottom: 0.625rem solid $govuk-brand-colour;
+ */
+  font-weight: bold;
+}
+
+.page-header a,
+.page-header a:visited,
+.page-header a:hover {
+  color: $govuk-white;
+  text-decoration: none;
+}
+
+.page-header a:hover {
+  text-decoration: underline;
+}
+
+.page-header li.active a {
+  color: #1d8feb;
+}
+
+#logo {
+  display: inline-block;
+  background-image: url('../../../assets/images/crown.png');
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $govuk-black;
+  flex: 0 0 10.25rem;
+  min-height: 2em;
+}
+
+#logo:hover {
+  border-bottom: 1px solid $govuk-white;
+  text-decoration: none !important;
+}
+
+#logo:before {
+  content: 'GOV.UK';
+  margin-left: 2.5rem;
+  font-size: 2em;
+}
+
+.home-office #logo:before {
+  content: 'Home Office';
+  font-size: 1.25em;
+  position: relative;
+  top: 0.375rem;
+}
+
+.hmpo #logo:before {
+  content: 'HMPO';
+}
+
+#service-title {
+  font-size: 1.5em;
+}
+
+#nav {
+  flex: 0 1 auto;
+}
+
+#nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#nav ul li {
+  display: inline;
+  margin-right: 0.7em;
+}
+
+#sign-out {
+  flex: 0 0 9.625rem;
+  text-align: right;
+}

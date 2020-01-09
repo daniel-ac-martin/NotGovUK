@@ -1,0 +1,39 @@
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { text } from "@storybook/addon-knobs";
+import { Footer } from '../../';
+import readMe from './README.md';
+
+<Meta
+  title="Components/Footer"
+  component={Footer}
+  parameters={{
+    jest: ['footer'],
+    notes: readMe
+  }}
+/>
+
+# Footer
+
+<Preview withToolbar>
+  <Story name="Footer">
+    <Footer
+      className={text('className')}
+      id={text('id')}
+    >
+      {text('children', 'My custom footer.')}
+    </Footer>
+  </Story>
+</Preview>
+
+<Props of={Footer} />
+
+
+## How it works
+
+<Preview>
+  <Story name="Standard">
+    <Footer>
+      My custom footer.
+    </Footer>
+  </Story>
+</Preview>

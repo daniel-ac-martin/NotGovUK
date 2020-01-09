@@ -1,0 +1,15 @@
+.nguk-tag {
+  display: inline-block;
+  padding: 0.357em 0.571em 0.286em 0.571em;
+  margin-right: 0.625em;
+  background-color: $govuk-brand-colour;
+  color: $govuk-white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.home-office .nguk-tag,
+.hmpo .nguk-tag {
+  background-color: $home-office-brand-colour;
+}

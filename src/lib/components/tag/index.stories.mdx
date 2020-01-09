@@ -1,0 +1,40 @@
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { text } from "@storybook/addon-knobs";
+import { Tag } from '../../';
+import readMe from './README.md';
+import { main } from "../../../../.storybook/decorators";
+
+<Meta
+  title="Components/Tag"
+  component={Tag}
+  parameters={{
+    jest: ['tag'],
+    notes: readMe
+  }}
+  decorators={[main]}
+/>
+
+# Tag
+
+<Preview withToolbar>
+  <Story name="Tag">
+    <Tag
+      className={text('className')}
+      id={text('id')}
+      text={text('text', 'alpha')}
+    />
+  </Story>
+</Preview>
+
+<Props of={Tag} />
+
+
+## When to use this component
+
+Use the tag component to indicate the status of something, such as an item on a task list or a phase banner.
+
+<Preview>
+  <Story name="Standard">
+    <Tag text="alpha" />
+  </Story>
+</Preview>

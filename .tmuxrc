@@ -1,0 +1,8 @@
+rename-session NotGovUK
+rename-window app
+send "npm start" C-m
+new-window -n storybook
+send "npm run storybook" C-m
+new-window -n shell
+send "npm run test:watch" C-m
+split-window -v

@@ -1,0 +1,152 @@
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { boolean, number, text } from "@storybook/addon-knobs";
+import { Textarea } from '../../';
+import readMe from './README.md';
+import { main } from "../../../../.storybook/decorators";
+
+<Meta
+  title="Components/Textarea"
+  component={Textarea}
+  parameters={{
+    jest: ['textarea'],
+    notes: readMe
+  }}
+  decorators={[main]}
+/>
+
+# Textarea
+
+<Preview withToolbar>
+  <Story name="Textarea">
+    <Textarea
+      autoComplete={text('autoComplete')}
+      className={text('className')}
+      defaultValue={text('defaultValue')}
+      disabled={boolean('disabled', false)}
+      error={text('error')}
+      hint={text('hint', 'Do not include personal or financial information, like your National Insurance number or credit card details.')}
+      id={text('id')}
+      label={text('label', 'Can you provide more detail?')}
+      name={text('name', 'more-detail')}
+      rows={number('rows')}
+      spellCheck={boolean('spellCheck')}
+    />
+  </Story>
+</Preview>
+
+<Props of={Textarea} />
+
+
+## When to use this component
+
+Use the textarea component when you need to let users enter an amount of text that’s longer than a single line.
+
+
+## When not to use this component
+
+Users can find open-ended questions difficult to answer. It might be better to break up one complex question into a series of simple ones, for example where users can select from options using radios.
+
+
+### If you need to ask an open question
+
+Do not use the textarea component if you need to let users enter shorter answers no longer than a single line, such as a phone number or name. In this case, you should use the text input component.
+
+
+## How it works
+
+<Preview>
+  <Story name="Standard">
+    <Textarea
+      hint="Do not include personal or financial information, like your National Insurance number or credit card details."
+      label="Can you provide more detail?"
+      name="more-detail"
+    />
+  </Story>
+</Preview>
+
+
+### Label textareas
+
+You must label textareas. Placeholder text is not a suitable substitute for a label, as it disappears when users click inside the textarea.
+
+Labels must be aligned above the textarea they refer to. They should be short, direct and written in sentence case. Do not use colons at the end of labels.
+
+
+### Use appropriately-sized textareas
+
+Make the height of a textarea proportional to the amount of text you expect users to enter. You can set the height of a textarea by by specifying the `rows` prop.
+
+<Preview>
+  <Story name="Sized">
+    <Textarea
+      hint="Do not include personal or financial information, like your National Insurance number or credit card details."
+      label="Can you provide more detail?"
+      name="more-detail"
+      rows="8"
+    />
+  </Story>
+</Preview>
+
+
+### Do not disable copy and paste
+
+Users will often need to copy and paste information into a textarea, so do not stop them from doing this.
+
+
+### Limiting the number of characters
+
+If there’s a good reason to limit the number of characters users can enter, you can use the character count component.
+
+
+### Error messages
+
+Error messages should be styled like this:
+
+<Preview>
+  <Story name="Errors">
+    <Textarea
+      hint="Do not include personal or financial information, like your National Insurance number or credit card details."
+      label="Can you provide more detail?"
+      name="more-detail"
+      error="Enter more detail"
+    />
+  </Story>
+</Preview>
+
+Make sure errors follow the guidance in error message and have specific error messages for specific error states.
+
+
+#### If the input is empty
+
+Say ‘Enter [whatever it is]’.
+For example, ‘Enter summary’.
+
+
+#### If the input is too long
+
+Say ‘[whatever it is] must be [number] characters or fewer’.
+For example, ‘Summary must be 400 characters or fewer’.
+
+
+#### If the input is too short
+
+Say ‘[whatever it is] must be [number] characters or more’.
+For example, ‘Summary must be 10 characters or more’.
+
+
+#### If the input is too long or too short
+
+Say ‘[whatever it is] must be between [number] and [number] characters’.
+For example, ‘Summary must be between 10 and 400 characters’.
+
+
+#### If the input uses characters that are not allowed and you know what the characters are
+
+Say ‘[whatever it is] must not include [characters]’.
+For example, ‘Summary must not include è and £’.
+
+
+#### If the input uses characters that are not allowed and you do not know what the characters are
+
+Say ‘[whatever it is] must only include [list of allowed characters]’.
+For example, ‘Summary must only include letters a to z, hyphens, spaces and apostrophes.
