@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BackLink, Breadcrumbs, Footer, Header, PhaseBanner } from '../';
+import { BackLink, Breadcrumbs, Footer, Header, PhaseBanner, SkipLink } from '../';
 import { INavigationLink } from '../header';
 import { IBreadcrumb } from '../breadcrumbs';
 import { className } from '../../helpers';
@@ -52,6 +52,7 @@ export const Page: React.SFC<IPage> = props => {
 
   return(
     <>
+      <SkipLink id="skip-link" href="#content" />
       <Header
         id="top"
         logoHref={props.logoHref}
