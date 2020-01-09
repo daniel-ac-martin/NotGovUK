@@ -1,4 +1,5 @@
 import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { object } from "@storybook/addon-knobs";
 import { Breadcrumbs } from '../../';
 import readMe from './README.md';
 import { middle } from "../../../../.storybook/decorators";
@@ -18,12 +19,13 @@ import { middle } from "../../../../.storybook/decorators";
 The breadcrumbs component helps users to understand where they are within a website’s structure and move between levels.
 
 <Preview withToolbar>
-  <Story name="Standard">
-    <Breadcrumbs items={[
+  <Story name="Breadcrumbs">
+    <Breadcrumbs
+      items={object('items', [
         { text: 'Section', href: '/section' },
         { text: 'SubSection', href: '/section/subsection' },
-        { text: 'SubSection', href: '/section/subsection/subsection' },
-      ]}
+        { text: 'SubSection', href: '/section/subsection/subsection' }
+      ])}
     />
   </Story>
 </Preview>
@@ -46,3 +48,15 @@ If you’re using other navigational elements on the page, such as a sidebar, co
 ## How it works
 
 The breadcrumbs component should include the user’s current page, which should be visually different from the other links in the breadcrumb.
+
+<Preview>
+  <Story name="Standard">
+    <Breadcrumbs
+      items={[
+        { text: 'Section', href: '/section' },
+        { text: 'SubSection', href: '/section/subsection' },
+        { text: 'SubSection', href: '/section/subsection/subsection' }
+      ]}
+    />
+  </Story>
+</Preview>
