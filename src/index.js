@@ -23,7 +23,7 @@ import {
 const page = (
     <>
         <SkipLink id="skip-link" href="#content" />
-        <header id="top">
+        <header id="top" class="page-header">
             <div class="inner">
                 <a id="logo" href="/"></a>
                 <div id="nav">
@@ -40,7 +40,7 @@ const page = (
                 </div>
             </div>
         </header>
-        <div id="middle">
+        <div id="middle" class="page-body">
             <div class="inner">
                 <PhaseBanner id="phase-banner" phase="beta">This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</PhaseBanner>
                 <BackLink id="back-link" href="#" />
