@@ -4,6 +4,7 @@ import * as serviceWorker from './serviceWorker';
 
 import './lib/index.scss';
 
+import { BrowserRouter as Router } from 'react-router-dom';
 import {
   BackLink,
   Breadcrumbs,
@@ -182,7 +183,13 @@ const page = (
   </Page>
 );
 
-ReactDOM.render(page, document.getElementById('root'));
+const App = page;
+
+const Root = (
+  <Router>{App}</Router>
+);
+
+ReactDOM.render(Root, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
