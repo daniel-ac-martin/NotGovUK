@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BackLink, Breadcrumbs, Footer, Header, PhaseBanner, SkipLink } from '../';
+import { A, BackLink, Breadcrumbs, Footer, Header, PhaseBanner, SkipLink } from '../';
 import { INavigationLink } from '../header';
 import { IBreadcrumb } from '../breadcrumbs';
 import { className } from '../../helpers';
@@ -44,7 +44,7 @@ export const Page: React.SFC<IPage> = props => {
     <PhaseBanner id="phase-banner" phase={props.phase}>
       {props.phaseBannerContent || (
         <>
-          This is a new service - your {props.feedbackHref ? (<a href="/feedback">feedback</a>) : 'feedback'} will help us to improve it.
+          This is a new service - your {props.feedbackHref ? (<A href="/feedback">feedback</A>) : 'feedback'} will help us to improve it.
         </>
       )}
     </PhaseBanner>

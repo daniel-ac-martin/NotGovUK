@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { A } from '../..';
 import { className } from '../../helpers';
 
 export interface INavigationLink {
@@ -36,13 +37,13 @@ export const Header: React.SFC<IHeader> = props => {
     <ul>
       {props.navigation.map((v, i) => (
         <li key={i} className={v.active ? 'active' : undefined}>
-          <a href={v.href} title={v.title}>{v.text}</a>
+          <A href={v.href} title={v.title}>{v.text}</A>
         </li>
       ))}
     </ul>
   );
   const serviceTitle = (
-    <a id="service-title" href={props.titleHref}>{props.title}</a>
+    <A id="service-title" href={props.titleHref}>{props.title}</A>
   );
   const nav = (
     <div id="nav">
@@ -51,13 +52,13 @@ export const Header: React.SFC<IHeader> = props => {
     </div>
   );
   const signOut = (
-    <a href={props.signOutHref}>{props.signOutText}</a>
+    <A href={props.signOutHref}>{props.signOutText}</A>
   );
 
   return (
     <header id={props.id} className={className('page-header', props.className)}>
       <div className="inner">
-        <a id="logo" href={props.logoHref}></a>
+        <A id="logo" href={props.logoHref}></A>
         {props.title || props.navigation.length ? nav : ''}
         <div id="sign-out">
           {props.signOutHref ? signOut : ''}
