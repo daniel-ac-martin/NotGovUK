@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { A } from '../..';
 import { className } from '../../helpers';
 
 interface IBackLink {
@@ -19,7 +20,7 @@ export const BackLink: React.SFC<IBackLink> = props => {
   const classes = className('back', props.className);
 
   return (
-    <a id={props.id} href={href} className={classes} title={props.title}>{props.text}</a>
+    <A id={props.id} href={href} className={classes} title={props.title}>{props.text}</A>
   );
 };
 

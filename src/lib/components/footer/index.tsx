@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PageFooter } from '../..';
+import { A, PageFooter } from '../..';
 import { className } from '../../helpers';
 
 interface IFooter {
@@ -13,7 +13,7 @@ export const Footer: React.SFC<IFooter> = props => (
   <PageFooter id={props.id} className={props.className}>
     {props.children}
     <div id="open-government-license">All content is available under the Open Government Licence v3.0, except where otherwise stated</div>
-    <a id="crown-copyright">&copy; Crown copyright</a>
+    <A id="crown-copyright" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">&copy; Crown copyright</A>
   </PageFooter>
 );
 

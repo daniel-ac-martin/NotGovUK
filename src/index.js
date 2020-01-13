@@ -4,7 +4,9 @@ import * as serviceWorker from './serviceWorker';
 
 import './lib/index.scss';
 
+import { BrowserRouter as Router } from 'react-router-dom';
 import {
+  A,
   BackLink,
   Breadcrumbs,
   Button,
@@ -61,10 +63,10 @@ const page = (
     <h2><span class="caption">Typography</span> Lists</h2>
     <h3>Plain lists</h3>
     <ul class="plain">
-      <li><a href="#">Benefits calculators</a></li>
-      <li><a href="#">Benefit overpayments</a></li>
-      <li><a href="#">Benefit fraud</a></li>
-      <li><a href="#">More</a></li>
+      <li><A href="#">Benefits calculators</A></li>
+      <li><A href="#">Benefit overpayments</A></li>
+      <li><A href="#">Benefit fraud</A></li>
+      <li><A href="#">More</A></li>
     </ul>
     <h3>Bulletted lists</h3>
     <p>You can buy:</p>
@@ -136,7 +138,7 @@ const page = (
         We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
       </Details>
       <h2>Phase banner</h2>
-      <PhaseBanner id="phase-banner" phase="beta">This is a new service - your <a href="/feedback">feedback</a> will help us to improve it.</PhaseBanner>
+      <PhaseBanner id="phase-banner" phase="beta">This is a new service - your <A href="/feedback">feedback</A> will help us to improve it.</PhaseBanner>
       <h2>Radios</h2>
       <Radios
         name="changed-name"
@@ -182,7 +184,13 @@ const page = (
   </Page>
 );
 
-ReactDOM.render(page, document.getElementById('root'));
+const App = page;
+
+const Root = (
+  <Router>{App}</Router>
+);
+
+ReactDOM.render(Root, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

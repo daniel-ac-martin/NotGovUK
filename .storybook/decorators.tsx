@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
 import { className } from '../src/lib/helpers';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const Root: React.SFC<any> = props => (
   <div id="story-root" className={props.className} style={{
     backgroundColor: 'white',
     padding: '1em'
   }}>
-    {props.children}
+    <Router>
+      {props.children}
+    </Router>
   </div>
 );
 
