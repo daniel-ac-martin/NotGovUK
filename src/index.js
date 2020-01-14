@@ -24,16 +24,16 @@ import {
 
 const one = (
   <>
-    <h1><span class="caption">Caption</span> Typography</h1>
-    <h2><span class="caption">Typography</span> Sub-heading</h2>
-    <h3><span class="caption">Typography</span> Sub-sub-heading</h3>
-    <h4><span class="caption">Typography</span> Sub-sub-sub-heading</h4>
-    <p class="lead">This is a leading paragraph.</p>
+    <h1><span className="caption">Caption</span> Typography</h1>
+    <h2><span className="caption">Typography</span> Sub-heading</h2>
+    <h3><span className="caption">Typography</span> Sub-sub-heading</h3>
+    <h4><span className="caption">Typography</span> Sub-sub-sub-heading</h4>
+    <p className="lead">This is a leading paragraph.</p>
     <p>This is another paragraph</p>
-    <p class="small">This is a small paragraph</p>
-    <h2><span class="caption">Typography</span> Lists</h2>
+    <p className="small">This is a small paragraph</p>
+    <h2><span className="caption">Typography</span> Lists</h2>
     <h3>Plain lists</h3>
-    <ul class="plain">
+    <ul className="plain">
       <li><A href="#">Benefits calculators</A></li>
       <li><A href="#">Benefit overpayments</A></li>
       <li><A href="#">Benefit fraud</A></li>
@@ -184,7 +184,7 @@ const page = (
     titleHref="/"
   >
     <h1>This is NOT GovUK!</h1>
-    <p class="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
+    <p className="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
     <StartButton href="#start" />
     <hr />
     {one}
