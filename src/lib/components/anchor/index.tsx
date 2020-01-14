@@ -19,7 +19,6 @@ interface IAnchor {
 
 export const Anchor: React.SFC<IAnchor> = props => {
   const url = urlParse(props.href, {}, false);
-  console.log(url);
 
   return (props.forceExternal || url.host) ? (
     <a
