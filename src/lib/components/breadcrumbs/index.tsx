@@ -25,7 +25,7 @@ export const Breadcrumbs: React.SFC<IBreadcrumbsProps> = props => {
   const current = props.items.pop();
   const previous = props.items;
 
-  return (
+  return current && (
     <nav id={props.id} className={classes}>
       <ol>
         {previous.map((v, i) => (<li key={i}><A href={v.href} title={v.title}>{v.text}</A></li>))}
