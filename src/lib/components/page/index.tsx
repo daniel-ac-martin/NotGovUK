@@ -71,9 +71,9 @@ export const Page: React.SFC<IPage> = props => {
           <main id="content">
             {props.children}
           </main>
-          {props.sidePanels.map(e => (
-            <aside>
-              {e}
+          {props.sidePanels.map((v, i) => (
+            <aside key={i}>
+              {v}
             </aside>
           ))}
         </div>

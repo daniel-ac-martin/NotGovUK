@@ -68,10 +68,10 @@ export const Site: React.SFC<ISite> = props => {
 
   return (
     <Switch>
-      {props.routes.map(e => (
-        <Route path={e.href}>
+      {props.routes.map((v, i) => (
+        <Route path={v.href} key={i}>
           <SitePage>
-            {e.content}
+            {v.content}
           </SitePage>
         </Route>
       ))}
