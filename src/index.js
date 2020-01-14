@@ -16,43 +16,14 @@ import {
   Page,
   PhaseBanner,
   Radios,
+  Site,
   StartButton,
   SubmitButton,
   TextInput
 } from './lib';
 
-const page = (
-  <Page
-    id="top"
-    backHref="#"
-    breadcrumbs={[
-      { text: 'Section', href: '#' },
-      { text: 'Subsection', href: '#' },
-      { text: 'Subsection', href: '#' }
-    ]}
-    feedbackHref="/feedback"
-    logoHref="/"
-    navigation={[
-      { href: '/one', text: 'One', active: true },
-      { href: '/two', text: 'Two' },
-      { href: '/three', text: 'Three' },
-      { href: '/four', text: 'Four' }
-    ]}
-    phase="beta"
-    sidePanels={[(
-      <>
-        <h2>Sub-section</h2>
-        <p>This is the side bar.</p>
-      </>
-    )]}
-    signOutHref="/auth/logout"
-    title="Not GovUK"
-    titleHref="/"
-  >
-    <h1>This is NOT GovUK!</h1>
-    <p class="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
-    <StartButton href="#start" />
-    <hr />
+const one = (
+  <>
     <h1><span class="caption">Caption</span> Typography</h1>
     <h2><span class="caption">Typography</span> Sub-heading</h2>
     <h3><span class="caption">Typography</span> Sub-sub-heading</h3>
@@ -181,16 +152,103 @@ const page = (
       <TextInput label="One-third width" name="one-third" className="width-one-third" />
       <TextInput label="One-quarter width" name="one-quarter" className="width-one-quarter" />
     </form>
+  </>
+);
+
+const page = (
+  <Page
+    id="top"
+    backHref="#"
+    breadcrumbs={[
+      { text: 'Section', href: '#' },
+      { text: 'Subsection', href: '#' },
+      { text: 'Subsection', href: '#' }
+    ]}
+    feedbackHref="/feedback"
+    logoHref="/"
+    navigation={[
+      { href: '/one', text: 'One', active: true },
+      { href: '/two', text: 'Two' },
+      { href: '/three', text: 'Three' },
+      { href: '/four', text: 'Four' }
+    ]}
+    phase="beta"
+    sidePanels={[(
+        <>
+        <h2>Sub-section</h2>
+        <p>This is the side bar.</p>
+        </>
+    )]}
+    signOutHref="/auth/logout"
+    title="Not GovUK"
+    titleHref="/"
+  >
+    <h1>This is NOT GovUK!</h1>
+    <p class="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
+    <StartButton href="#start" />
+    <hr />
+    {one}
   </Page>
 );
 
-const App = page;
 
-const Root = (
-  <Router>{App}</Router>
+const app = (
+  <Site
+      feedback={{
+        content: (
+          <h1>Feedback</h1>
+        )
+      }}
+      phase="beta"
+      title="My service"
+      routes={[
+        {
+          href: "/one",
+          title: "One",
+          content: one
+        },
+        {
+          href: "/two",
+          title: "Two",
+          content: (
+            <h1>Two</h1>
+          )
+        },
+        {
+          href: "/three",
+          title: "Three",
+          content: (
+            <h1>Three</h1>
+          )
+        },
+        {
+          href: "/four",
+          title: "Four",
+          content: (
+            <h1>Four</h1>
+          )
+        }
+      ]}
+      sidePanels={[(
+        <>
+          <h2>Sub-section</h2>
+          <p>This is the side bar.</p>
+        </>
+      )]}
+      signOutHref="/auth/logout"
+      title="Not GovUK"
+  >
+    <h1>This is NOT GovUK!</h1>
+    <p className="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
+    <StartButton href="/one" />
+  </Site>
 );
 
-ReactDOM.render(Root, document.getElementById('root'));
+const root = (
+  <Router>{app}</Router>
+);
+
+ReactDOM.render(root, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
