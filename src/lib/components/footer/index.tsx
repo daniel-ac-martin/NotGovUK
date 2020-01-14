@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { A, PageFooter } from '../';
-import { className } from '../../helpers';
 
 interface IFooter {
   /** Extra CSS classes to be applied */
