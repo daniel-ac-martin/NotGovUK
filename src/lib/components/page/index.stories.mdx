@@ -30,9 +30,9 @@ Content is sandwiched between the Header and Footer components.
       phase={text('phase', 'alpha')}
       navigation={object('navigation', [
         { href: '#one', text: 'One', active: true },
-        { href: '#two', text: 'Two' },
-        { href: '#three', text: 'Three' },
-        { href: '#four', text: 'Four' }
+        { href: 'two', text: 'Two' },
+        { href: 'three', text: 'Three' },
+        { href: 'four', text: 'Four' }
       ])}
       signOutHref={text('signOutHref')}
       signOutText={text('signOutText')}
@@ -61,16 +61,16 @@ Content is sandwiched between the Header and Footer components.
       phase="alpha"
       navigation={[
         { href: '#one', text: 'One', active: true },
-        { href: '#two', text: 'Two' },
-        { href: '#three', text: 'Three' },
-        { href: '#four', text: 'Four' }
+        { href: 'two', text: 'Two' },
+        { href: 'three', text: 'Three' },
+        { href: 'four', text: 'Four' }
       ]}
       title="My service"
       titleHref="#my-service"
     >
       <h1>This is NOT GovUK!</h1>
       <p className="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
-      <StartButton href="#" />
+      <StartButton href="#start" />
     </Page>
   </Story>
 </Preview>

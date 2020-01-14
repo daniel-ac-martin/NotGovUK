@@ -51,7 +51,7 @@ const page = (
   >
     <h1>This is NOT GovUK!</h1>
     <p class="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
-    <StartButton href="#" />
+    <StartButton href="#start" />
     <hr />
     <h1><span class="caption">Caption</span> Typography</h1>
     <h2><span class="caption">Typography</span> Sub-heading</h2>
