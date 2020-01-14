@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import urlParse from 'url-parse';
 
 interface IAnchor {
   /** Extra CSS classes to be applied */
   className?: string,
+  /** Whether to force the link to be treated as external (useful for internal links that are NOT handled by the application) */
+  forceExternal?: boolean,
   /** Location to link to */
   href: string,
   /** HTML id */
@@ -14,22 +17,39 @@ interface IAnchor {
   title?: string
 };
 
-export const Anchor: React.SFC<IAnchor> = props => (
-  <Link
-    className={props.className}
-    id={props.id}
-    title={props.title}
-    to={props.href}
-  >
-    {props.children}
-  </Link>
-);
+export const Anchor: React.SFC<IAnchor> = props => {
+  const url = urlParse(props.href, {}, false);
+  console.log(url);
+
+  return (props.forceExternal || url.host) ? (
+    <a
+      className={props.className}
+      href={props.href}
+      id={props.id}
+      title={props.title}
+    >
+      {props.children}
+    </a>
+  ) : (
+    <NavLink
+      className={props.className}
+      id={props.id}
+      title={props.title}
+      to={props.href}
+    >
+      {props.children}
+    </NavLink>
+  );
+};
 
 Anchor.defaultProps = {
   className: null,
+  forceExternal: false,
   id: null,
   text: 'Back',
   title: null
 };
+
+Anchor.displayName = 'A';
 
 export default Anchor;
