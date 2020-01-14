@@ -65,7 +65,6 @@ export const Site: React.SFC<ISite> = props => {
       {p.children}
     </Page>
   );
-  console.log(props.routes);
 
   return (
     <Switch>
