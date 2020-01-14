@@ -1,0 +1,88 @@
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { object, text } from "@storybook/addon-knobs";
+import { Site, StartButton } from '../../';
+import readMe from './README.md';
+
+<Meta
+  title="Components/Site"
+  component={Site}
+  parameters={{
+    jest: ['site'],
+    notes: readMe
+  }}
+/>
+
+# Site
+
+A component for defining an entire web site.
+
+<Preview withToolbar>
+  <Story name="Site">
+    <Site
+      logoHref={text('logoHref')}
+      phase={text('phase', 'alpha')}
+      signOutHref={text('signOutHref')}
+      signOutText={text('signOutText')}
+      title={text('title', 'My service')}
+      titleHref={text('titleHref', '#my-service')}
+    >
+      {text('children', 'My site.')}
+    </Site>
+  </Story>
+</Preview>
+
+<Props of={Site} />
+
+
+## How it works
+
+In effect this defines multiple pages and automatically does some basic work to
+wire them together.
+
+<Preview>
+  <Story name="Standard">
+    <Site
+      feedback={{
+        content: (
+          <h1>Feedback</h1>
+        )
+      }}
+      phase="alpha"
+      title="My service"
+      routes={[
+        {
+          href: "/one",
+          title: "One",
+          content: (
+            <h1>One</h1>
+          )
+        },
+        {
+          href: "/two",
+          title: "Two",
+          content: (
+            <h1>Two</h1>
+          )
+        },
+        {
+          href: "/three",
+          title: "Three",
+          content: (
+            <h1>Three</h1>
+          )
+        },
+        {
+          href: "/four",
+          title: "Four",
+          content: (
+            <h1>Four</h1>
+          )
+        }
+      ]}
+    >
+      <h1>This is NOT GovUK!</h1>
+      <p className="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
+      <StartButton href="/one" />
+    </Site>
+  </Story>
+</Preview>
