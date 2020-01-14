@@ -8,7 +8,7 @@ interface IPage {
   /** Location for the Back link */
   backHref?: string,
   /** List of links */
-  breadcrumbs: Array<IBreadcrumb>
+  breadcrumbs?: Array<IBreadcrumb>
   /** HRef for providing feedback on the service */
   feedbackHref?: string,
   /** Content for the footer */
@@ -22,7 +22,7 @@ interface IPage {
   /** Content for the phase-banner */
   phaseBannerContent?: any,
   /** List of side panels */
-  sidePanels: Array<any>,
+  sidePanels?: Array<any>,
   /** HRef for the sign-out link */
   signOutHref?: string,
   /** Text for the sign-out link */
@@ -44,7 +44,7 @@ export const Page: React.SFC<IPage> = props => {
     <PhaseBanner id="phase-banner" phase={props.phase}>
       {props.phaseBannerContent || (
         <>
-          This is a new service - your {props.feedbackHref ? (<A href="/feedback">feedback</A>) : 'feedback'} will help us to improve it.
+          This is a new service - your {props.feedbackHref ? (<A href={props.feedbackHref}>feedback</A>) : 'feedback'} will help us to improve it.
         </>
       )}
     </PhaseBanner>

@@ -8,8 +8,8 @@ describe('Button', () => {
     });
     const component = shallow(button);
 
-    it('is an anchor', () => expect(component.find('a').length).toEqual(1));
-    it('contains the expected text', () => expect(component.text()).toEqual('Go'));
+    it('is an anchor', () => expect(component.find('A').length).toEqual(1));
+    it('contains the expected text', () => expect(component.find('A[children="Go"]').length).toEqual(1));
   });
 
   describe('when not given a href', () => {
