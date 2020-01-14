@@ -25,14 +25,14 @@ export const Breadcrumbs: React.SFC<IBreadcrumbsProps> = props => {
   const current = props.items.pop();
   const previous = props.items;
 
-  return current && (
+  return current ? (
     <nav id={props.id} className={classes}>
       <ol>
         {previous.map((v, i) => (<li key={i}><A href={v.href} title={v.title}>{v.text}</A></li>))}
         <li key={previous.length} aria-current="page">{current.text}</li>
       </ol>
     </nav>
-  );
+  ) : null;
 };
 
 Breadcrumbs.defaultProps = {
