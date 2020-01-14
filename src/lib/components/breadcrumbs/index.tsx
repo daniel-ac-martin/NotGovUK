@@ -22,8 +22,9 @@ export interface IBreadcrumbsProps {
 
 export const Breadcrumbs: React.SFC<IBreadcrumbsProps> = props => {
   const classes = className('breadcrumbs', props.className);
-  const current = props.items.pop();
-  const previous = props.items;
+  const n = props.items.length - 1;
+  const current = props.items[n];
+  const previous = props.items.slice(0, n);
 
   return current ? (
     <nav id={props.id} className={classes}>
