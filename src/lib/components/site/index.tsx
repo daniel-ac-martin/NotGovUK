@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 interface IFeedback {
   /** HRef */
-  href: string,
+  href?: string,
   /** Page content */
   content: any,
 };
