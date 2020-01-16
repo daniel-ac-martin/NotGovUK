@@ -39,7 +39,7 @@ export const Button: React.SFC<IButtonProps> = props => {
     props.start ? 'start' : '',
     props.warning ? 'warning' : '',
     props.className);
-  const text = props.value || (props.start && 'Start now >');
+  const text = props.value || (props.start && 'Start now >') || undefined;
   const processedProps = {
     ...props,
     text: text,
