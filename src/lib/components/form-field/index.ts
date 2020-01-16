@@ -38,6 +38,10 @@ interface IFormField {
   multiple?: boolean,
   /** HTML name */
   name: string,
+  /** onBlur callback (for controlled fields) */
+  onBlur?: (x: string) => any,
+  /** onChange callback (for controlled fields) */
+  onChange?: (x: string) => any,
   /** List of options to select from */
   options?: Array<IOption>,
   /** Initial number of lines of input on a textarea or the size of a multi-select */
@@ -48,6 +52,8 @@ interface IFormField {
   spellCheck?: boolean,
   /** Type of field (inferred if not provided) */
   type?: string,
+  /** Value for controlled fields */
+  value?: string,
   /** Width of the field in characters (approximate) (only applies to single input fields) */
   width?: number
 };
@@ -71,6 +77,7 @@ export const FormField: React.SFC<IFormField> = props => {
   const processedProps = {
     ...props,
     className: className(props.error && 'error', props.className),
+    defaultValue: props.value === null ? props.defaultValue : undefined,
     fieldStyle: props.width && { maxWidth: (((props.width >= 10) ? 4.76 : 1.76) + 1.81 * props.width) + 'ex' },
     id: props.id || props.name,
     inline: (props.inline === null && (type === 'radios' && props.options && props.options.length <= 2)) || props.inline,
@@ -103,10 +110,14 @@ FormField.defaultProps = {
   id: null,
   inline: null,
   multiple: null,
+  onBlur: null,
+  onChange: null,
   options: null,
   rows: null,
   small: null,
   spellCheck: null,
+  value: null,
+  width: null
 };
 
 export default FormField;
