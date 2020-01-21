@@ -1,11 +1,21 @@
 import * as React from 'react';
 
 import {
-  Form
+  Form,
+  useLocation
 } from '../lib';
 
 const initialValues = {
-  name: ''
+  name: '',
+  dob: {
+    day: 12,
+    month: 11,
+    year: 2007
+  },
+  sex: '',
+  nationality: '',
+  vices: [],
+  bio: ''
 };
 
 const validate = values => {
@@ -13,33 +23,108 @@ const validate = values => {
 
   if (!values.name) r.name = 'Provide a name';
 
+  if (!values.dob) r.dob = 'Provide a date of birth';
+  else {
+    if (!values.dob.day) r.dob = 'Provide a day';
+    else if (values.dob.day < 1) r.dob = 'The day must be greater than 0';
+    else if (values.dob.day > 31) r.dob = 'The day must not be greater than 31';
+
+    if (!values.dob.month) r.dob = 'Provide a month';
+    else if (values.dob.month < 1) r.dob = 'The month must be greater than 0';
+    else if (values.dob.month > 12) r.dob = 'The month must not be greater than 12';
+
+    if (!values.dob.year) r.dob = 'Provide a year';
+  }
+
+  if (!values.sex) r.sex = 'Provide your sex';
+
+  if (!values.nationality) r.nationality = 'Provide your nationality';
+  if (values.nationality === 'incorrect') r.nationality = 'Choose an acceptable nationality';
+
+  if (!(values.vices && values.vices.length)) r.vices = 'Everyone has at least one vice!';
+
+  if (!values.bio) r.bio = 'Write something';
   return r;
 };
 
-const onSubmit = (values, actions) => {
-  setTimeout(() => {
-    console.log({ values, actions });
-    alert && alert(JSON.stringify(values, null, 2));
-    actions.setSubmitting(false);
-  }, 400);
-}
+const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
-const page = (<>
-  <h1>Welcome to HOF2!</h1>
-  <Form
-    action="/forms"
-    method="get"
-    initialValues={initialValues}
-    validate={validate}
-    onSubmit={onSubmit}
-  >
-    <Form.Field
-      name="name"
-      label="Name"
-      hint="Write the thing people call you"
-    />
-    <Form.Submit />
-  </Form>
-</>);
+const Page = props => {
+  const location = useLocation();
 
-export default page;
+  return (<>
+    <h1>Welcome to HOF2!</h1>
+    <Form
+      action={location.pathname}
+      method="get"
+      initialValues={initialValues}
+      validate={validate}
+    >
+      <Form.TextInput
+        name="name"
+        label={<h2>What is your name?</h2>}
+        hint="Write the thing people call you"
+      />
+      <Form.DateInput
+        name="dob"
+        label={<h2>What is your date of birth?</h2>}
+      />
+      <Form.Radios
+        name="sex"
+        label={<h2>Sex?</h2>}
+        options={[
+          { value: 'male', label: 'Male' },
+          { value: 'female', label: 'Female' },
+          { value: 'no', label: 'No thanks, we\'re British' }
+        ]}
+      />
+      <Form.Select
+        name="nationality"
+        label={<h2>What is your nationality?</h2>}
+        options={[
+          { value: '', label: '-' },
+          { value: 'correct', label: 'British' },
+          { value: 'incorrect', label: 'French' },
+          { value: 'very-incorrect', label: 'German' },
+          { value: 'russian', label: 'Russian' },
+          { value: 'russian', label: 'Polish' },
+          { value: 'russian', label: 'Ukranian' },
+          { value: 'russian', label: 'Lithuanian' },
+          { value: 'russian', label: 'Latvian' },
+          { value: 'spanish', label: 'Spanish' },
+          { value: 'spanish', label: 'Portuguese' }
+        ]}
+      />
+      <Form.Checkboxes
+        name="vices"
+        label={<h2>Which vices do you have?</h2>}
+        hint="Check all that apply"
+        options={[
+          { value: 'drunk', label: 'Drunk' },
+          { value: 'drug-addict', label: 'Druggy' },
+          { value: 'laziness', label: 'Slob' },
+          { value: 'liar', label: 'Pathological liar' }
+        ]}
+      />
+      <Form.Textarea
+        name="bio"
+        label={<h2>Bio</h2>}
+        hint="Write some stuff about yourself"
+      />
+      <Form.Submit />
+    </Form>
+    <div className="width-one-half" style={{ float: 'left' }}>
+      <h2>Result</h2>
+      <h3>GET</h3>
+      <pre>
+        {prettyPrint(location.query)}
+      </pre>
+      <h3>POST</h3>
+      <pre>
+        {prettyPrint(location.state)}
+      </pre>
+    </div>
+  </>);
+};
+
+export default Page;
