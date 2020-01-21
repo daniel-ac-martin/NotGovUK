@@ -26,10 +26,16 @@ interface ICheckboxes {
   label: any,
   /** HTML name */
   name: string,
+  /** onBlur callback (for controlled fields) */
+  onBlur?: (x: string) => any,
+  /** onChange callback (for controlled fields) */
+  onChange?: (x: string) => any,
   /** List of options to select from */
   options: Array<IOption>,
   /** Whether the checkboxes should be small */
-  small?: boolean
+  small?: boolean,
+  /** Value for controlled fields */
+  value?: string
 };
 
 export const Checkboxes: React.SFC<ICheckboxes> = props =>
@@ -43,6 +49,8 @@ export const Checkboxes: React.SFC<ICheckboxes> = props =>
     label: props.label,
     multiple: true,
     name: props.name,
+    onBlur: props.onBlur,
+    onChange: props.onChange,
     options: props.options.map(e => ({
       disabled: e.disabled,
       hint: e.hint,
@@ -51,7 +59,8 @@ export const Checkboxes: React.SFC<ICheckboxes> = props =>
       value: e.value
     })),
     small: props.small || false,
-    type: 'checkboxes'
+    type: 'checkboxes',
+    value: props.value
   });
 
 Checkboxes.defaultProps = {
@@ -61,7 +70,10 @@ Checkboxes.defaultProps = {
   hint: null,
   id: null,
   inline: null,
-  small: null
+  onBlur: null,
+  onChange: null,
+  small: null,
+  value: null
 };
 
 export default Checkboxes;

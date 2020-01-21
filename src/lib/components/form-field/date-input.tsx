@@ -25,6 +25,9 @@ const DateInput: React.SFC<any> = props => {
           defaultValue={props.defaultValue && props.defaultValue.day}
           disabled={props.disabled}
           autoComplete={props.autoComplete && `${props.autoComplete}-day`}
+          onBlur={props.onBlur}
+          onChange={props.onChange}
+          value={props.value && props.value.day}
         />
       </div>
       <div className="item">
@@ -38,6 +41,9 @@ const DateInput: React.SFC<any> = props => {
           defaultValue={props.defaultValue && props.defaultValue.month}
           disabled={props.disabled}
           autoComplete={props.autoComplete && `${props.autoComplete}-day`}
+          onBlur={props.onBlur}
+          onChange={props.onChange}
+          value={props.value && props.value.month}
         />
       </div>
       <div className="item">
@@ -51,6 +57,9 @@ const DateInput: React.SFC<any> = props => {
           defaultValue={props.defaultValue && props.defaultValue.year}
           disabled={props.disabled}
           autoComplete={props.autoComplete && `${props.autoComplete}-day`}
+          onBlur={props.onBlur}
+          onChange={props.onChange}
+          value={props.value && props.value.year}
         />
       </div>
     </FormGroupWithFieldset>

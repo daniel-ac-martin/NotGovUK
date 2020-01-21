@@ -20,10 +20,16 @@ interface ITextarea {
   label: any,
   /** HTML name */
   name: string,
+  /** onBlur callback (for controlled fields) */
+  onBlur?: (x: string) => any,
+  /** onChange callback (for controlled fields) */
+  onChange?: (x: string) => any,
   /** Initial number of lines of input */
   rows?: number,
   /** Whether the browser should spellcheck the input */
-  spellCheck?: boolean
+  spellCheck?: boolean,
+  /** Value for controlled fields */
+  value?: string
 };
 
 export const Textarea: React.SFC<ITextarea> = props =>
@@ -37,9 +43,12 @@ export const Textarea: React.SFC<ITextarea> = props =>
     id: props.id,
     label: props.label,
     name: props.name,
+    onBlur: props.onBlur,
+    onChange: props.onChange,
     rows: props.rows,
     spellCheck: props.spellCheck,
-    type: 'textarea'
+    type: 'textarea',
+    value: props.value
   });
 
 Textarea.defaultProps = {
@@ -50,8 +59,11 @@ Textarea.defaultProps = {
   error: null,
   hint: null,
   id: null,
+  onBlur: null,
+  onChange: null,
   rows: null,
-  spellCheck: null
+  spellCheck: null,
+  value: null
 };
 
 export default Textarea;

@@ -17,7 +17,13 @@ interface IDateInput {
   /** Label */
   label: any,
   /** HTML name */
-  name: string
+  name: string,
+  /** onBlur callback (for controlled fields) */
+  onBlur?: (x: string) => any,
+  /** onChange callback (for controlled fields) */
+  onChange?: (x: string) => any,
+  /** Value for controlled fields */
+  value?: string
 };
 
 export const DateInput: React.SFC<IDateInput> = props =>
@@ -30,7 +36,10 @@ export const DateInput: React.SFC<IDateInput> = props =>
     id: props.id,
     label: props.label,
     name: props.name,
-    type: 'date'
+    onBlur: props.onBlur,
+    onChange: props.onChange,
+    type: 'date',
+    value: props.value
   });
 
 DateInput.defaultProps = {
@@ -39,7 +48,10 @@ DateInput.defaultProps = {
   disabled: false,
   error: null,
   hint: null,
-  id: null
+  id: null,
+  onBlur: null,
+  onChange: null,
+  value: null
 };
 
 export default DateInput;

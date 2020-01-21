@@ -23,8 +23,14 @@ interface ISelect {
   label: any,
   /** HTML name */
   name: string,
+  /** onBlur callback (for controlled fields) */
+  onBlur?: (x: string) => any,
+  /** onChange callback (for controlled fields) */
+  onChange?: (x: string) => any,
   /** List of options to select from */
-  options: Array<IOption>
+  options: Array<IOption>,
+  /** Value for controlled fields */
+  value?: string
 };
 
 export const Select: React.SFC<ISelect> = props =>
@@ -37,13 +43,16 @@ export const Select: React.SFC<ISelect> = props =>
     label: props.label,
     multiple: false,
     name: props.name,
+    onBlur: props.onBlur,
+    onChange: props.onChange,
     options: props.options.map(e => ({
       disabled: e.disabled,
       label: e.label,
       selected: e.selected,
       value: e.value,
     })),
-    type: 'select'
+    type: 'select',
+    value: props.value
   });
 
 Select.defaultProps = {
@@ -51,7 +60,10 @@ Select.defaultProps = {
   disabled: false,
   error: null,
   hint: null,
-  id: null
+  id: null,
+  onBlur: null,
+  onChange: null,
+  value: null
 };
 
 export default Select;

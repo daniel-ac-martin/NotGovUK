@@ -19,9 +19,15 @@ interface ITextInput {
   /** Label */
   label: any,
   /** HTML name */
-  name: string
+  name: string,
+  /** onBlur callback (for controlled fields) */
+  onBlur?: (x: string) => any,
+  /** onChange callback (for controlled fields) */
+  onChange?: (x: string) => any,
   /** Whether the browser should spellcheck the input */
   spellCheck?: boolean,
+  /** Value for controlled fields */
+  value?: string,
   /** Width of the field in characters (approximate) */
   width?: number
 };
@@ -37,8 +43,11 @@ export const TextInput: React.SFC<ITextInput> = props =>
     id: props.id,
     label: props.label,
     name: props.name,
+    onBlur: props.onBlur,
+    onChange: props.onChange,
     spellCheck: props.spellCheck,
     type: 'text',
+    value: props.value,
     width: props.width
   });
 
@@ -50,7 +59,10 @@ TextInput.defaultProps = {
   error: null,
   hint: null,
   id: null,
+  onBlur: null,
+  onChange: null,
   spellCheck: null,
+  value: null,
   width: null
 };
 

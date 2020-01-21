@@ -21,6 +21,9 @@ const Select: React.SFC<any> = props => {
         multiple={props.multiple}
         size={props.rows}
         style={props.fieldStyle}
+        onBlur={props.onBlur}
+        onChange={props.onChange}
+        value={props.value}
       >
         {props.options.map((v, i) => (
           <option key={i} value={v.value} selected={v.selected} disabled={v.disabled}>{v.label}</option>

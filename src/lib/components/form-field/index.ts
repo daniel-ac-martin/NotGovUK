@@ -53,7 +53,7 @@ interface IFormField {
   /** Type of field (inferred if not provided) */
   type?: string,
   /** Value for controlled fields */
-  value?: string,
+  value?: any,
   /** Width of the field in characters (approximate) (only applies to single input fields) */
   width?: number
 };
@@ -74,6 +74,7 @@ export const FormField: React.SFC<IFormField> = props => {
   }
 
   const type = props.type || inferredType;
+  const selected = (option: IOption) => ({ ...option, selected: props.value.includes(option.value) });
   const processedProps = {
     ...props,
     className: className(props.error && 'error', props.className),
@@ -81,13 +82,15 @@ export const FormField: React.SFC<IFormField> = props => {
     fieldStyle: props.width && { maxWidth: (((props.width >= 10) ? 4.76 : 1.76) + 1.81 * props.width) + 'ex' },
     id: props.id || props.name,
     inline: (props.inline === null && (type === 'radios' && props.options && props.options.length <= 2)) || props.inline,
+    options: props.options && (props.value === null ? props.options : props.options.map(selected)),
     rows: (props.rows === null && (type === 'textarea' && 5)) || props.rows,
     small: (props.small === null && (props.options && props.options.length >= 6)) || props.small,
     spellcheck:
       props.spellCheck !== null ? (props.spellCheck ? 'true' : 'false') :
       type === 'textarea' ? 'true' :
       undefined,
-    type: type === 'native-date' ? 'date' : type
+    type: type === 'native-date' ? 'date' : type,
+    value: props.value === null ? undefined : props.value
   };
 
   return (
