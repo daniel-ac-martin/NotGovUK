@@ -13,7 +13,7 @@ import {
   TextInput
 } from '../lib';
 
-const page = (<>
+const Page = props => (<>
   <h1><span className="caption">Caption</span> Typography</h1>
   <h2><span className="caption">Typography</span> Sub-heading</h2>
   <h3><span className="caption">Typography</span> Sub-sub-heading</h3>
@@ -144,4 +144,4 @@ const page = (<>
   </form>
 </>);
 
-export default page;
+export default Page;

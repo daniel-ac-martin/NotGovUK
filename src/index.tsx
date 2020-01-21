@@ -12,9 +12,9 @@ import {
 } from './lib';
 
 import {
-  forms,
-  index,
-  poc
+  Forms,
+  Index,
+  POC
 } from './pages';
 
 const page = (
@@ -48,11 +48,11 @@ const page = (
     <p className="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
     <StartButton href="#start" />
     <hr />
-    {poc}
+    <POC />
   </Page>
 );
 
-const app = (
+const App = props => (
   <Site
       feedback={{
         content: (
@@ -64,12 +64,12 @@ const app = (
         {
           href: "/poc",
           title: "Original POC",
-          content: poc
+          content: <POC />
         },
         {
           href: "/forms",
           title: "Forms",
-          content: forms
+          content: <Forms />
         },
         {
           href: "/three",
@@ -95,12 +95,12 @@ const app = (
       signOutHref="/auth/logout"
       title="Not GovUK"
   >
-    {index}
+    <Index />
   </Site>
 );
 
 const root = (
-  <Router>{app}</Router>
+  <Router><App /></Router>
 );
 
 ReactDOM.render(root, document.getElementById('root'));
