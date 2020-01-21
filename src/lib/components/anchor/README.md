@@ -11,4 +11,4 @@ Preview
 
 
 [React Router]: https://reacttraining.com/react-router/
-[Preview]: ../../__image_snapshots__/storyshots-itest-ts-image-storyshots-components-back-link-text-1-snap.png
+[Preview]: ../../__image_snapshots__/storyshots-itest-ts-image-storyshots-components-anchor-standard-1-snap.png
