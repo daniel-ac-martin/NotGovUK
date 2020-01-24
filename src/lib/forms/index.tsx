@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Formik } from 'formik';
+import { Formik, useField, useFormikContext } from 'formik';
 import { useHistory } from 'react-router-dom';
 import { urlParse, useLocation } from '../request';
 import {
@@ -12,10 +12,6 @@ import {
   TextInput,
   Textarea
 } from '../';
-
-const defaultCtx: any = {};
-
-const { Consumer, Provider } = React.createContext(defaultCtx);
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
@@ -55,15 +51,7 @@ const Form = props => {
         handleSubmit,
         isSubmitting
       }) => (
-        <Provider value={{
-          values,
-          errors,
-          touched,
-          onChange: handleChange,
-          onBlur: handleBlur,
-          onSubmit: handleSubmit,
-          isSubmitting
-        }}>
+        <React.Fragment>
           <form
             action={location.pathname}
             id={props.id}
@@ -84,41 +72,46 @@ const Form = props => {
               {prettyPrint(errors)}
             </pre>
           </div>
-        </Provider>
+        </React.Fragment>
       )}
     </Formik>
   );
 };
 
-const wireUp = Component => props => (
-  <Consumer>
-    {ctx => {
-      const disabled = ctx.isSubmitting || props.disabled;
-      const error = ctx.errors && ctx.errors[props.name];
-      const touched = ctx.touched && ctx.touched[props.name];
-      const value = ctx.values && ctx.values[props.name];
+const wireUpFormik = Component => props => {
+  const { isSubmitting } = useFormikContext();
+  const disabled = isSubmitting || props.disabled;
 
-      return (
-        <Component
-          {...props}
-          disabled={disabled}
-          error={error && touched && error}
-          onBlur={ctx.onBlur}
-          onChange={ctx.onChange}
-          value={value}
-        />
-      );
-    }}
-  </Consumer>
-);
+  return (
+    <Component
+      {...props}
+      disabled={disabled}
+    />
+  );
+};
+
+const wireUpField = Component => props => {
+  const [field, meta] = useField(props);
+
+  return (
+    <Component
+      {...field}
+      {...props}
+      error={meta.error && meta.touched && meta.error}
+    />
+  );
+};
+
+const wireUp = Component => wireUpFormik(wireUpField(Component));
 
 Form.Checkboxes = wireUp(Checkboxes);
 Form.DateInput = wireUp(DateInput);
 Form.Field = wireUp(FormField);
 Form.Radios = wireUp(Radios);
 Form.Select = wireUp(Select);
-Form.Submit = wireUp(SubmitButton);
 Form.TextInput = wireUp(TextInput);
 Form.Textarea = wireUp(Textarea);
+
+Form.Submit = wireUpFormik(SubmitButton);
 
 export { Form };
