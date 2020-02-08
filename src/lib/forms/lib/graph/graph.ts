@@ -21,7 +21,7 @@ export interface Node {
 }
 
 export class Graph extends Array<Node> {
-  toPath(values: any, next: string) {
+  toPath(values: any, next: string): Path {
     return (
       this
         .traverse(values)

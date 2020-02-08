@@ -54,13 +54,7 @@ export class Completion {
     return r;
   }
 
-  // FIXME: Remove!
-  getNext() {
-    return this.next;
-  }
-
-  // FIXME: Merge into update()
-  updateNext(values, errors) {
+  protected updateNext(values, errors) {
     const reducer = (acc, cur) => (
       acc === undefined
         ? (

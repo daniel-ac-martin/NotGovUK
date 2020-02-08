@@ -33,7 +33,6 @@ export const useForm = () => {
     ...formik,
     completion,
     registry,
-    updateNext: () => completion.updateNext(formik.values, formik.errors),
     update: () => completion.update(formik.values, formik.errors)
   };
 };
