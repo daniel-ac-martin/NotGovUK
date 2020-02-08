@@ -5,6 +5,7 @@ import {
   useLocation
 } from '../lib';
 
+/*
 const initialValues = {
   name: '',
   dob: {
@@ -17,6 +18,7 @@ const initialValues = {
   vices: [],
   bio: ''
 };
+*/
 
 const validate = values => {
   const r:any = {};
@@ -53,65 +55,75 @@ const Page = props => {
   const location = useLocation();
 
   return (<>
-    <h1>Welcome to HOF2!</h1>
     <Form
       action={location.pathname}
       method="get"
-      initialValues={initialValues}
       validate={validate}
     >
-      <Form.TextInput
-        name="name"
-        label={<h2>What is your name?</h2>}
-        hint="Write the thing people call you"
-      />
-      <Form.DateInput
-        name="dob"
-        label={<h2>What is your date of birth?</h2>}
-      />
-      <Form.Radios
-        name="sex"
-        label={<h2>Sex?</h2>}
-        options={[
-          { value: 'male', label: 'Male' },
-          { value: 'female', label: 'Female' },
-          { value: 'no', label: 'No thanks, we\'re British' }
-        ]}
-      />
-      <Form.Select
-        name="nationality"
-        label={<h2>What is your nationality?</h2>}
-        options={[
-          { value: '', label: '-' },
-          { value: 'correct', label: 'British' },
-          { value: 'incorrect', label: 'French' },
-          { value: 'very-incorrect', label: 'German' },
-          { value: 'russian', label: 'Russian' },
-          { value: 'russian', label: 'Polish' },
-          { value: 'russian', label: 'Ukranian' },
-          { value: 'russian', label: 'Lithuanian' },
-          { value: 'russian', label: 'Latvian' },
-          { value: 'spanish', label: 'Spanish' },
-          { value: 'spanish', label: 'Portuguese' }
-        ]}
-      />
-      <Form.Checkboxes
-        name="vices"
-        label={<h2>Which vices do you have?</h2>}
-        hint="Check all that apply"
-        options={[
-          { value: 'drunk', label: 'Drunk' },
-          { value: 'drug-addict', label: 'Druggy' },
-          { value: 'laziness', label: 'Slob' },
-          { value: 'liar', label: 'Pathological liar' }
-        ]}
-      />
-      <Form.Textarea
-        name="bio"
-        label={<h2>Bio</h2>}
-        hint="Write some stuff about yourself"
-      />
-      <Form.Submit />
+      <Form.Page>
+        <h1>Welcome to HOF2!</h1>
+        <Form.TextInput
+          name="name"
+          label={<h2>What is your name?</h2>}
+          hint="Write the thing people call you"
+        />
+        <Form.DateInput
+          name="dob"
+          label={<h2>What is your date of birth?</h2>}
+        />
+        <Form.Radios
+          name="sex"
+          label={<h2>Sex?</h2>}
+          options={[
+            { value: 'male', label: 'Male' },
+            { value: 'female', label: 'Female' },
+            { value: 'no', label: 'No thanks, we\'re British' }
+          ]}
+        />
+        <Form.Submit value="Continue" />
+      </Form.Page>
+      <Form.Page>
+        <Form.Select
+          name="nationality"
+          label={<h1>What is your nationality?</h1>}
+          options={[
+            { value: '', label: '-' },
+            { value: 'correct', label: 'British' },
+            { value: 'incorrect', label: 'French' },
+            { value: 'very-incorrect', label: 'German' },
+            { value: 'russian', label: 'Russian' },
+            { value: 'russian', label: 'Polish' },
+            { value: 'russian', label: 'Ukranian' },
+            { value: 'russian', label: 'Lithuanian' },
+            { value: 'russian', label: 'Latvian' },
+            { value: 'spanish', label: 'Spanish' },
+            { value: 'spanish', label: 'Portuguese' }
+          ]}
+        />
+        <Form.Submit value="Continue" />
+      </Form.Page>
+      <Form.Page>
+        <Form.Checkboxes
+          name="vices"
+          label={<h1>Which vices do you have?</h1>}
+          hint="Check all that apply"
+          options={[
+            { value: 'drunk', label: 'Drunk' },
+            { value: 'drug-addict', label: 'Druggy' },
+            { value: 'laziness', label: 'Slob' },
+            { value: 'liar', label: 'Pathological liar' }
+          ]}
+        />
+        <Form.Submit value="Continue" />
+      </Form.Page>
+      <Form.Page>
+        <Form.Textarea
+          name="bio"
+          label={<h1>Bio</h1>}
+          hint="Write some stuff about yourself"
+        />
+        <Form.Submit value="Submit" />
+      </Form.Page>
     </Form>
     <div className="width-one-half" style={{ float: 'left' }}>
       <h2>Result</h2>

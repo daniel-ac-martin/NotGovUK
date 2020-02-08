@@ -1,5 +1,4 @@
-import { createElement as h } from 'react';
-import { useField } from 'formik';
+import { withField } from './lib';
 import {
   Checkboxes as RawCheckboxes,
   DateInput as RawDateInput,
@@ -9,16 +8,6 @@ import {
   TextInput as RawTextInput,
   Textarea as RawTextarea
 } from '../';
-
-const withField = Component => props => {
-  const [field, meta] = useField(props);
-
-  return h(Component, {
-    ...field,
-    ...props,
-    error: meta.error && meta.touched && meta.error
-  });
-};
 
 export const Checkboxes = withField(RawCheckboxes);
 export const DateInput = withField(RawDateInput);
