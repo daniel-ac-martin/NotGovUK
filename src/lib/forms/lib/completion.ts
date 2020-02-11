@@ -14,23 +14,22 @@ export class Completion {
 
   nextItem: number;
 
-  constructor(graph: Graph, formikInitialValues: object, values: any, errors: any) {
+  constructor(graph: Graph) {
     this.graph = graph;
-    this.formikInitialValues = formikInitialValues;
-    this.initialise();
-    this.update(values, errors);
+    this.path = [];
   }
 
-  initialise(): void {
+  initialise(values: object, errors: object): void {
     this.graph.deepMap_(e => e.depopulate());
     this.fields = this.graph.gatherAllFields();
     console.log('fields:');
     console.log(this.fields);
+    this.update(values, errors);
     this.fields.map(
-      e => this.formikInitialValues[e] = this.formikInitialValues[e] || ''
+      e => values[e] = values[e] || null
     );
-    console.log('formikInitialValues:');
-    console.log(this.formikInitialValues);
+    console.log('initialValues:');
+    console.log(values);
   }
 
   update(values: any, errors: any): void {
@@ -43,10 +42,6 @@ export class Completion {
     this.graph.deepMap_(e => e.populateFromValues(values));
     console.log('graph:');
     console.log(this.graph);
-
-    //this.fields = this.graph.gatherFieldsAlongPath(values);
-    console.log('fields:');
-    console.log(this.fields);
 
     this.updateNext(values, errors);
     console.log(`next: ${this.next}`);
@@ -84,7 +79,7 @@ export class Completion {
     return r;
   }
 
-  protected updateNext(values, errors): void {
+  protected updateNext(values: object, errors: object): void {
     const reducer = (acc, cur) => (
       acc === undefined
         ? (
@@ -98,7 +93,7 @@ export class Completion {
   }
 };
 
-export const CompletionContext = createContext(new Completion(new Graph(), {}, {}, {}));
+export const CompletionContext = createContext(new Completion(new Graph()));
 
 export const useCompletionContext = () => useContext(CompletionContext);
 

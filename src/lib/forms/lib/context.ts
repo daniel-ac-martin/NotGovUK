@@ -8,10 +8,10 @@ export class ContextValue {
   completion: Completion;
   registry: Register;
 
-  constructor(formikInitialValues: object) {
+  constructor() {
     const graph = new Graph();
 
-    this.completion = new Completion(graph, formikInitialValues, {}, {});
+    this.completion = new Completion(graph);
     this.registry = new Register(graph);
   }
 }

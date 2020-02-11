@@ -36,7 +36,7 @@ export const Form: FC<IForm<any>> = props => {
   const initialTouched = submittedValues;
   const initialValues = { ...submittedValues }
 
-  const initialContextValue = new ContextValue(initialValues);
+  const initialContextValue = new ContextValue();
 
   const [contextValue, setContextValue] = useState(initialContextValue);
 
@@ -98,8 +98,7 @@ export const Form: FC<IForm<any>> = props => {
   }
 
   // Convert graph to path using the current form values
-  contextValue.completion.initialise();
-  contextValue.completion.update(submittedValues, initialErrors);
+  contextValue.completion.initialise(initialValues, initialErrors);
 
   // Re-render
   console.log('Re-rendering form along calculated path...');
