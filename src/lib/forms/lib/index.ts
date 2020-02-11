@@ -98,7 +98,7 @@ export const Form: FC<IForm<any>> = props => {
   }
 
   // Convert graph to path using the current form values
-  contextValue.completion.initialise(initialValues, initialErrors);
+  contextValue.completion.initialise();
   contextValue.completion.update(submittedValues, initialErrors);
 
   // Re-render

@@ -1,4 +1,6 @@
-import { Graph, Node, PathItem } from './graph';
+import { Graph } from './graph';
+import { Node } from './node';
+import { PathItem } from './path';
 
 export class PageItem implements PathItem {
   tag: string;
@@ -10,7 +12,7 @@ export class PageItem implements PathItem {
   }
 }
 
-export class PageNode implements Node {
+export class PageNode extends Node {
   readonly tag: string;
   contents: Graph;
 
@@ -18,7 +20,7 @@ export class PageNode implements Node {
   fields?: string[];
 
   constructor(contents: Graph) {
-    this.tag = 'page';
+    super('page');
     this.contents = contents;
     this.active = true;
   }
@@ -33,16 +35,18 @@ export class PageNode implements Node {
   }
 
   populateFromValues(values): void {
-    this.fields = this.contents.gatherFields(values);
+    this.fields = this.contents.gatherFieldsAlongPath(values);
   }
 
   populateFromNext(next): void {
     this.active = this.fields.includes(next);
   }
 
-  deepMap_(f: (Node) => any): void {
-    f(this);
-    this.contents.deepMap_(f);
+  toArray(): Node[] {
+    return [
+      this,
+      ...this.contents.toArray()
+    ];
   }
 
   traverse(values: any): Graph {

@@ -1,24 +1,6 @@
+import { Node, NodeFn } from './node';
+import { Path } from './path';
 import { isFieldNode } from './field';
-
-export interface PathItem {
-  readonly tag: string
-  readonly active: boolean
-}
-
-export class Path extends Array<PathItem> {
-}
-
-type NodeFn = (Node) => any
-
-export interface Node {
-  readonly tag: string
-  toPathItem: () => PathItem
-  depopulate: () => void
-  populateFromValues: (values: any) => void
-  populateFromNext: (next: string) => void
-  deepMap_: (NodeFn) => void
-  traverse: (values: any) => Node[]
-}
 
 export class Graph extends Array<Node> {
   toPath(values: any, next: string): Path {
@@ -29,7 +11,16 @@ export class Graph extends Array<Node> {
     );
   }
 
-  gatherFields(values) {
+  gatherAllFields() {
+    return (
+      this
+        .toArray()
+        .filter(isFieldNode)
+        .map(e => isFieldNode(e) && e.name)
+    );
+  }
+
+  gatherFieldsAlongPath(values) {
     return (
       this
         .traverse(values)
@@ -39,7 +30,11 @@ export class Graph extends Array<Node> {
   }
 
   deepMap_(f: NodeFn): void {
-    this.map(e => e.deepMap_(f));
+    this.toArray().map(f);
+  }
+
+  toArray(): Node[] {
+    return this.flatMap(e => e.toArray());
   }
 
   traverse(values: any): Node[] {

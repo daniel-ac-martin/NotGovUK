@@ -17,13 +17,13 @@ export class Completion {
   constructor(graph: Graph, formikInitialValues: object, values: any, errors: any) {
     this.graph = graph;
     this.formikInitialValues = formikInitialValues;
-    this.initialise(values, errors);
+    this.initialise();
     this.update(values, errors);
   }
 
-  initialise(values: any, errors: any): void {
+  initialise(): void {
     this.graph.deepMap_(e => e.depopulate());
-    this.fields = this.graph.gatherFields(values);
+    this.fields = this.graph.gatherAllFields();
     console.log('fields:');
     console.log(this.fields);
     this.fields.map(
@@ -44,7 +44,7 @@ export class Completion {
     console.log('graph:');
     console.log(this.graph);
 
-    //this.fields = this.graph.gatherFields(values);
+    //this.fields = this.graph.gatherFieldsAlongPath(values);
     console.log('fields:');
     console.log(this.fields);
 
@@ -57,7 +57,7 @@ export class Completion {
 
     const lastPreviouslyActiveField = this.activeFields && this.activeFields[this.activeFields.length - 1];
 
-    this.activeFields = this.graph.gatherFields(values);
+    this.activeFields = this.graph.gatherFieldsAlongPath(values);
     console.log('active fields:');
     console.log(this.activeFields);
 

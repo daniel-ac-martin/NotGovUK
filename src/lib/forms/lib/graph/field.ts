@@ -1,4 +1,6 @@
-import { Graph, Node, PathItem } from './graph';
+import { Graph } from './graph';
+import { Node } from './node';
+import { PathItem } from './path';
 
 export class FieldItem implements PathItem {
   tag: string;
@@ -12,14 +14,14 @@ export class FieldItem implements PathItem {
   }
 }
 
-export class FieldNode implements Node {
+export class FieldNode extends Node {
   readonly tag: string;
   readonly name: string;
 
   hasFocus: boolean;
 
   constructor(name: string) {
-    this.tag = 'field';
+    super('field');
     this.name = name;
     this.hasFocus = false;
   }
@@ -39,8 +41,8 @@ export class FieldNode implements Node {
     this.hasFocus = this.name === next;
   }
 
-  deepMap_(f: (Node) => any): void {
-    f(this);
+  toArray(): Node[] {
+    return [this];
   }
 
   traverse(values: any): Node[] {
