@@ -37,7 +37,8 @@ export const useForm = () => {
       formik.validateForm()
         .then(errors => {
           completion.update(formik.values, errors);
-          completion.unseenFields.map(e => formik.setFieldTouched(e, false, false));
+          completion.getUnseenFields()
+            .map(e => formik.setFieldTouched(e, false, false));
         });
     }
   };

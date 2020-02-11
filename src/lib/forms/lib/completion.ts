@@ -1,31 +1,59 @@
 import { createContext, useContext } from 'react';
 import { Graph, Path, PathItem, isFieldNode } from './graph';
 
+const calculateNext = (fields: string[], values: object, errors: object): string => {
+  const reducer = (acc, cur) => (
+    acc === undefined
+      ? (
+        (values[cur] === undefined || errors[cur] !== undefined)
+          ? cur
+          : undefined
+      )
+      : acc
+  );
+
+  return fields.reduce(reducer, undefined);
+};
+
+interface IFieldStatus {
+  inScope: boolean
+  visible: boolean
+  seen: boolean
+}
+
+interface IFieldStatusMap {
+  [k: string]: IFieldStatus
+}
+
 export class Completion {
   protected graph: Graph;
   protected path: Path;
+  protected fields: IFieldStatusMap;
 
-  next?: string;
-  fields?: string[];
-  activeFields?: string[];
-  unseenFields?: string[];
-
-  formikInitialValues: object;
-
-  nextItem: number;
+  protected nextItem: number;
 
   constructor(graph: Graph) {
     this.graph = graph;
     this.path = [];
+    this.fields = {};
+    this.nextItem = 0;
   }
 
   initialise(values: object, errors: object): void {
     this.graph.deepMap_(e => e.depopulate());
-    this.fields = this.graph.gatherAllFields();
+
+    this.graph.gatherAllFields()
+      .map(e => this.fields[e] = {
+        inScope: false,
+        visible: false,
+        seen: false
+      });
     console.log('fields:');
     console.log(this.fields);
+
     this.update(values, errors);
-    this.fields.map(
+
+    Object.keys(this.fields).map(
       e => values[e] = values[e] || null
     );
     console.log('initialValues:');
@@ -43,26 +71,28 @@ export class Completion {
     console.log('graph:');
     console.log(this.graph);
 
-    this.updateNext(values, errors);
-    console.log(`next: ${this.next}`);
+    const fieldsInScope = this.graph
+      .gatherFieldsAlongPath(values);
+    console.log('fields in scope:');
+    console.log(fieldsInScope);
+    Object.keys(this.fields).map(e => this.fields[e].inScope = false);
+    fieldsInScope.map(e => this.fields[e].inScope = true);
 
-    this.graph.deepMap_(e => e.populateFromNext(this.next));
+    const next = calculateNext(fieldsInScope, values, errors);
+    console.log(`next: ${next}`);
+
+    this.graph.deepMap_(e => e.populateFromNext(next));
     console.log('graph:');
     console.log(this.graph);
 
-    const lastPreviouslyActiveField = this.activeFields && this.activeFields[this.activeFields.length - 1];
+    const visibleFields = this.graph.gatherFieldsAlongPath(values);
+    console.log('visible fields:');
+    console.log(visibleFields);
+    Object.keys(this.fields).map(e => this.fields[e].seen = this.fields[e].seen || this.fields[e].visible);
+    Object.keys(this.fields).map(e => this.fields[e].visible = false);
+    visibleFields.map(e => this.fields[e].visible = true);
 
-    this.activeFields = this.graph.gatherFieldsAlongPath(values);
-    console.log('active fields:');
-    console.log(this.activeFields);
-
-    this.unseenFields = lastPreviouslyActiveField
-      ? this.fields.slice(this.fields.indexOf(lastPreviouslyActiveField) + 1)
-      : this.fields;
-    console.log('unseen fields:');
-    console.log(this.unseenFields);
-
-    this.path = this.graph.toPath(values, this.next);
+    this.path = this.graph.toPath(values, next);
     console.log('path:');
     console.log(this.path);
 
@@ -79,17 +109,12 @@ export class Completion {
     return r;
   }
 
-  protected updateNext(values: object, errors: object): void {
-    const reducer = (acc, cur) => (
-      acc === undefined
-        ? (
-          (values[cur] === undefined || errors[cur] !== undefined)
-            ? cur
-            : undefined
-        )
-        : acc
-    );
-    this.next = this.fields.reduce(reducer, undefined);
+  getUnseenFields(): string[] {
+    const id = v => v;
+
+    return Object.keys(this.fields)
+      .map(e => this.fields[e].seen === false && e)
+      .filter(id);
   }
 };
 
