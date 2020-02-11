@@ -5,10 +5,25 @@ import { urlParse, useLocation } from '../../request';
 import { ContextValue, FormContextProvider } from './context';
 import FormikForm from './formik-form';
 
-export { withField, withSubmit, withControl } from './hocs';
+export { withField, withControl } from './hocs';
 export { Page } from './page';
 
-export const Form: FC<any> = props => {
+enum Method {
+  GET = 'get',
+  POST = 'post'
+}
+
+interface IForm<T> {
+  action: string;
+  /** Extra CSS classes to be applied */
+  className?: string,
+  /** HTML id */
+  id?: string,
+  method: Method;
+  validate: (values: T) => T
+}
+
+export const Form: FC<IForm<any>> = props => {
   const history = useHistory();
   const location = useLocation();
   const submittedValues = (
@@ -17,15 +32,16 @@ export const Form: FC<any> = props => {
       : location.state
   );
 
-  const initialContextValue: any = new ContextValue();
+  const initialErrors = (submittedValues && Object.keys(submittedValues).length && props.validate(submittedValues)) || undefined;
+  const initialTouched = submittedValues;
+  const initialValues = { ...submittedValues }
+
+  const initialContextValue = new ContextValue(initialValues);
 
   const [contextValue, setContextValue] = useState(initialContextValue);
 
-  const initialErrors = (submittedValues && Object.keys(submittedValues).length && props.validate(submittedValues)) || undefined;
-  const initialTouched = submittedValues;
-  const initialValues = submittedValues;
-
   const onSubmit = (values, actions) => {
+    console.log('Submitting...');
     const url = urlParse(props.action);
     const state = (
       props.method === 'post'
@@ -41,6 +57,22 @@ export const Form: FC<any> = props => {
     history.push(url.toString(), state);
   };
 
+  const r = h(FormContextProvider, {
+    children: h(FormikForm, {
+      action: location.pathname,
+      children: props.children,
+      id: props.id,
+      initialErrors: initialErrors,
+      initialTouched: initialTouched,
+      initialValues: initialValues,
+      method: props.method,
+      onSubmit: onSubmit,
+      validate: props.validate
+    }),
+    value: contextValue
+  });
+
+  /*
   const r = h(FormikForm, {
     action: location.pathname,
     children: h(FormContextProvider, {
@@ -55,17 +87,22 @@ export const Form: FC<any> = props => {
     onSubmit: onSubmit,
     validate: props.validate
   });
+  */
 
-  // Render children in order to build the graph
-  contextValue.registry.openRegistration();
-  !contextValue.registry.contents.length && renderToStaticMarkup(r);
-  contextValue.registry.closeRegistration();
+  if (!contextValue.registry.contents.length) {
+    // Render children in order to build the graph
+    console.log('First pass rendering of form to discover graph...');
+    contextValue.registry.openRegistration();
+    renderToStaticMarkup(r);
+    contextValue.registry.closeRegistration();
+  }
 
   // Convert graph to path using the current form values
-  contextValue.completion.update(initialValues, initialErrors);
+  contextValue.completion.initialise(initialValues, initialErrors);
+  contextValue.completion.update(submittedValues, initialErrors);
 
   // Re-render
-  console.log('re-rendering form along calculated path');
+  console.log('Re-rendering form along calculated path...');
   return r;
 };
 

@@ -38,7 +38,7 @@ export class Graph extends Array<Node> {
     );
   }
 
-  deepMap_(f) {
+  deepMap_(f: NodeFn): void {
     this.map(e => e.deepMap_(f));
   }
 

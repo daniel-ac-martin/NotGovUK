@@ -3,17 +3,6 @@ import { useField, useFormikContext } from 'formik';
 import { FieldItem, FieldNode } from './graph';
 import { useForm } from './context';
 
-export const withSubmit = Component => props => {
-  const { update } = useForm();
-
-  const onClick = () => update();
-
-  return h(Component, {
-    ...props,
-    onClick: onClick
-  });
-};
-
 export const withField = Component => props => {
   const [field, meta] = useField(props.name);
   const form = useForm();
@@ -21,7 +10,7 @@ export const withField = Component => props => {
   form.registry.register(node);
 
   const state = form.completion.pop();
-  console.log(`Field, '${props.name}', state:`);
+  console.log(`Rendering Form.Field, '${props.name}', with state:`);
   console.log(state)
   const active = (state && state.active) || true;
 

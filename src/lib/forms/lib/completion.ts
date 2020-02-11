@@ -2,20 +2,38 @@ import { createContext, useContext } from 'react';
 import { Graph, Path, PathItem, isFieldNode } from './graph';
 
 export class Completion {
-  graph: Graph;
-  path: Path;
+  protected graph: Graph;
+  protected path: Path;
 
   next?: string;
   fields?: string[];
+  activeFields?: string[];
+  unseenFields?: string[];
+
+  formikInitialValues: object;
 
   nextItem: number;
 
-  constructor(graph: Graph, values: any, errors: any) {
+  constructor(graph: Graph, formikInitialValues: object, values: any, errors: any) {
     this.graph = graph;
+    this.formikInitialValues = formikInitialValues;
+    this.initialise(values, errors);
     this.update(values, errors);
   }
 
-  update(values: any, errors: any) {
+  initialise(values: any, errors: any): void {
+    this.graph.deepMap_(e => e.depopulate());
+    this.fields = this.graph.gatherFields(values);
+    console.log('fields:');
+    console.log(this.fields);
+    this.fields.map(
+      e => this.formikInitialValues[e] = this.formikInitialValues[e] || ''
+    );
+    console.log('formikInitialValues:');
+    console.log(this.formikInitialValues);
+  }
+
+  update(values: any, errors: any): void {
     console.log('Updating path...');
 
     this.graph.deepMap_(e => e.depopulate());
@@ -26,7 +44,7 @@ export class Completion {
     console.log('graph:');
     console.log(this.graph);
 
-    this.fields = this.graph.gatherFields(values);
+    //this.fields = this.graph.gatherFields(values);
     console.log('fields:');
     console.log(this.fields);
 
@@ -36,6 +54,18 @@ export class Completion {
     this.graph.deepMap_(e => e.populateFromNext(this.next));
     console.log('graph:');
     console.log(this.graph);
+
+    const lastPreviouslyActiveField = this.activeFields && this.activeFields[this.activeFields.length - 1];
+
+    this.activeFields = this.graph.gatherFields(values);
+    console.log('active fields:');
+    console.log(this.activeFields);
+
+    this.unseenFields = lastPreviouslyActiveField
+      ? this.fields.slice(this.fields.indexOf(lastPreviouslyActiveField) + 1)
+      : this.fields;
+    console.log('unseen fields:');
+    console.log(this.unseenFields);
 
     this.path = this.graph.toPath(values, this.next);
     console.log('path:');
@@ -54,7 +84,7 @@ export class Completion {
     return r;
   }
 
-  protected updateNext(values, errors) {
+  protected updateNext(values, errors): void {
     const reducer = (acc, cur) => (
       acc === undefined
         ? (
@@ -68,7 +98,7 @@ export class Completion {
   }
 };
 
-export const CompletionContext = createContext(new Completion(new Graph(), {}, {}));
+export const CompletionContext = createContext(new Completion(new Graph(), {}, {}, {}));
 
 export const useCompletionContext = () => useContext(CompletionContext);
 

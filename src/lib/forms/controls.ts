@@ -1,5 +1,5 @@
 import { withControl } from './lib';
-import { Submit as RawSubmit } from './submit';
+import { SubmitButton as RawSubmit } from '../';
 import {
   Checkboxes as RawCheckboxes,
   DateInput as RawDateInput,

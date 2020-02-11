@@ -1,5 +1,6 @@
 import { createElement as h } from 'react';
 import { Formik } from 'formik';
+import { useForm } from './context';
 import RawForm from './form';
 
 // It would be nice to replace this with the vanilla withFormik but there
@@ -9,10 +10,17 @@ const withFormik = options => Component => props => (
 );
 
 const wireUpForm = Component => props => {
+  const { update } = useForm();
+  const onSubmit = event => {
+    const r = props.handleSubmit(event);
+    update();
+    return r;
+  };
+
   return h(Component, {
     ...props,
     onReset: props.handleReset,
-    onSubmit: props.handleSubmit
+    onSubmit: onSubmit
   });
 };
 

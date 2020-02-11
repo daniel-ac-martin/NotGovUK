@@ -20,6 +20,10 @@ export const Form: React.SFC<any> = props => (
       <pre>
         {prettyPrint(props.values)}
       </pre>
+      <h3>touched</h3>
+      <pre>
+        {prettyPrint(props.touched)}
+      </pre>
       <h3>errors</h3>
       <pre>
         {prettyPrint(props.errors)}

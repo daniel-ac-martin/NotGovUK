@@ -8,10 +8,10 @@ export class ContextValue {
   completion: Completion;
   registry: Register;
 
-  constructor() {
+  constructor(formikInitialValues: object) {
     const graph = new Graph();
 
-    this.completion = new Completion(graph, {}, {});
+    this.completion = new Completion(graph, formikInitialValues, {}, {});
     this.registry = new Register(graph);
   }
 }
@@ -33,6 +33,12 @@ export const useForm = () => {
     ...formik,
     completion,
     registry,
-    update: () => completion.update(formik.values, formik.errors)
+    update: () => {
+      formik.validateForm()
+        .then(errors => {
+          completion.update(formik.values, errors);
+          completion.unseenFields.map(e => formik.setFieldTouched(e, false, false));
+        });
+    }
   };
 };
