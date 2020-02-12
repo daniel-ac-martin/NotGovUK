@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react';
 import { Graph, Path, PathItem, isFieldNode } from './graph';
 
-const calculateNext = (fields: string[], values: object, errors: object): string => {
+const calculateNext = (fields: string[], fieldStatus: object, errors: object): string => {
   const reducer = (acc, cur) => (
     acc === undefined
       ? (
-        (values[cur] === undefined || errors[cur] !== undefined)
+        ((fieldStatus[cur].seen === false && fieldStatus[cur].visible === false) || errors[cur] !== undefined)
           ? cur
           : undefined
       )
@@ -78,7 +78,7 @@ export class Completion {
     Object.keys(this.fields).map(e => this.fields[e].inScope = false);
     fieldsInScope.map(e => this.fields[e].inScope = true);
 
-    const next = calculateNext(fieldsInScope, values, errors);
+    const next = calculateNext(fieldsInScope, this.fields, errors);
     console.log(`next: ${next}`);
 
     this.graph.deepMap_(e => e.populateFromNext(next));

@@ -40,6 +40,23 @@ const validate = values => {
 
   if (!values.sex) r.sex = 'Provide your sex';
 
+  if (values.sex === 'female') {
+    if (!values.father_name) r.father_name = 'Provide a name';
+
+    if (!values.father_dob) r.father_dob = 'Provide a date of birth';
+    else {
+      if (!values.father_dob.day) r.father_dob = 'Provide a day';
+      else if (values.father_dob.day < 1) r.father_dob = 'The day must be greater than 0';
+      else if (values.father_dob.day > 31) r.father_dob = 'The day must not be greater than 31';
+
+      if (!values.father_dob.month) r.father_dob = 'Provide a month';
+      else if (values.father_dob.month < 1) r.father_dob = 'The month must be greater than 0';
+      else if (values.father_dob.month > 12) r.father_dob = 'The month must not be greater than 12';
+
+      if (!values.father_dob.year) r.father_dob = 'Provide a year';
+    }
+  }
+
   if (!values.nationality) r.nationality = 'Provide your nationality';
   if (values.nationality === 'incorrect') r.nationality = 'Choose an acceptable nationality';
 
@@ -82,6 +99,23 @@ const Page = props => {
         />
         <Form.Submit value="Continue" />
       </Form.Page>
+      <Form.Fork
+        condition={v => v.sex === 'female'}
+        left={
+          <Form.Page>
+            <Form.TextInput
+              name="father_name"
+              label={<h2>What is your father's name?</h2>}
+              hint="Write the thing people call your father"
+            />
+            <Form.DateInput
+              name="father_dob"
+              label={<h2>What is your father's date of birth?</h2>}
+            />
+            <Form.Submit value="Continue" />
+          </Form.Page>
+        }
+      />
       <Form.Page>
         <Form.Select
           name="nationality"

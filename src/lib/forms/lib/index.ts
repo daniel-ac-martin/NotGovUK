@@ -7,6 +7,7 @@ import FormikForm from './formik-form';
 
 export { withField, withControl } from './hocs';
 export { Page } from './page';
+export { Fork } from './fork';
 
 enum Method {
   GET = 'get',

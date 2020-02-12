@@ -1,4 +1,4 @@
-import WTForm, { Page } from './lib';
+import WTForm, { Fork, Page } from './lib';
 import {
   Checkboxes,
   DateInput,
@@ -21,6 +21,7 @@ Form.Submit = Submit;
 Form.TextInput = TextInput;
 Form.Textarea = Textarea;
 
+Form.Fork = Fork;
 Form.Page = Page;
 
 export { Form };
