@@ -100,8 +100,8 @@ const Page = props => {
         <Form.Submit value="Continue" />
       </Form.Page>
       <Form.Fork
-        condition={v => v.sex === 'female'}
-        left={
+        if={v => v.sex === 'female'}
+        then={
           <Form.Page>
             <Form.TextInput
               name="father_name"
@@ -111,6 +111,20 @@ const Page = props => {
             <Form.DateInput
               name="father_dob"
               label={<h2>What is your father's date of birth?</h2>}
+            />
+            <Form.Submit value="Continue" />
+          </Form.Page>
+        }
+        else={
+          <Form.Page>
+            <Form.TextInput
+              name="mother_name"
+              label={<h2>What is your mother's name?</h2>}
+              hint="Write the thing people call your mother"
+            />
+            <Form.DateInput
+              name="mother_dob"
+              label={<h2>What is your mother's date of birth?</h2>}
             />
             <Form.Submit value="Continue" />
           </Form.Page>

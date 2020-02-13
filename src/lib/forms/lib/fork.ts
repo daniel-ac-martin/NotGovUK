@@ -8,7 +8,7 @@ export const Fork: FC<any> = props => {
 
   const left = new Graph();
   const right = new Graph();
-  const node: ForkNode =  new ForkNode(props.condition, left, right);
+  const node: ForkNode =  new ForkNode(props.if, left, right);
   form.registry.register(node);
 
   const leftRegister = new Register(left);
@@ -28,11 +28,11 @@ export const Fork: FC<any> = props => {
     return h(Fragment, {
       children: [
         h(Registry, {
-          children: props.left,
+          children: props.then,
           value: leftValue
         }),
         h(Registry, {
-          children: props.right,
+          children: props.else,
           value: rightValue
         })
       ]
@@ -40,8 +40,8 @@ export const Fork: FC<any> = props => {
   } else {
     return (
       active
-        ? props.left || null
-        : props.right || null
+        ? props.then || null
+        : props.else || null
     );
   }
 };
