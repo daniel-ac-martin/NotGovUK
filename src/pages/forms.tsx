@@ -2,69 +2,18 @@ import * as React from 'react';
 
 import {
   Form,
-  useLocation
+  after,
+  maxWords,
+  past,
+  required,
+  useLocation,
+  validator
 } from '../lib';
 
-/*
-const initialValues = {
-  name: '',
-  dob: {
-    day: 12,
-    month: 11,
-    year: 2007
-  },
-  sex: '',
-  nationality: '',
-  vices: [],
-  bio: ''
-};
-*/
-
-const validate = values => {
-  const r:any = {};
-
-  if (!values.name) r.name = 'Provide a name';
-
-  if (!values.dob) r.dob = 'Provide a date of birth';
-  else {
-    if (!values.dob.day) r.dob = 'Provide a day';
-    else if (values.dob.day < 1) r.dob = 'The day must be greater than 0';
-    else if (values.dob.day > 31) r.dob = 'The day must not be greater than 31';
-
-    if (!values.dob.month) r.dob = 'Provide a month';
-    else if (values.dob.month < 1) r.dob = 'The month must be greater than 0';
-    else if (values.dob.month > 12) r.dob = 'The month must not be greater than 12';
-
-    if (!values.dob.year) r.dob = 'Provide a year';
-  }
-
-  if (!values.sex) r.sex = 'Provide your sex';
-
-  if (values.sex === 'female') {
-    if (!values.father_name) r.father_name = 'Provide a name';
-
-    if (!values.father_dob) r.father_dob = 'Provide a date of birth';
-    else {
-      if (!values.father_dob.day) r.father_dob = 'Provide a day';
-      else if (values.father_dob.day < 1) r.father_dob = 'The day must be greater than 0';
-      else if (values.father_dob.day > 31) r.father_dob = 'The day must not be greater than 31';
-
-      if (!values.father_dob.month) r.father_dob = 'Provide a month';
-      else if (values.father_dob.month < 1) r.father_dob = 'The month must be greater than 0';
-      else if (values.father_dob.month > 12) r.father_dob = 'The month must not be greater than 12';
-
-      if (!values.father_dob.year) r.father_dob = 'Provide a year';
-    }
-  }
-
-  if (!values.nationality) r.nationality = 'Provide your nationality';
-  if (values.nationality === 'incorrect') r.nationality = 'Choose an acceptable nationality';
-
-  if (!(values.vices && values.vices.length)) r.vices = 'Everyone has at least one vice!';
-
-  if (!values.bio) r.bio = 'Write something';
-  return r;
-};
+const notFrench = (msg?: string) => (field: object) => (value: string) =>
+  validator(msg, value,
+            value !== 'incorrect',
+            `Choose an acceptable nationality`);
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
@@ -72,21 +21,26 @@ const Page = props => {
   const location = useLocation();
 
   return (<>
-    <Form
-      action={location.pathname}
-      method="get"
-      validate={validate}
-    >
+    <Form action="/three" method="get">
       <Form.Page>
         <h1>Welcome to HOF2!</h1>
         <Form.TextInput
           name="name"
           label={<h2>What is your name?</h2>}
           hint="Write the thing people call you"
+          validators={[
+            required()
+          ]}
         />
         <Form.DateInput
           name="dob"
+          prettyName="date of birth"
           label={<h2>What is your date of birth?</h2>}
+          validators={[
+            required('Provide your date of birth'),
+            past(),
+            after('1900-01-01')()
+          ]}
         />
         <Form.Radios
           name="sex"
@@ -95,6 +49,9 @@ const Page = props => {
             { value: 'male', label: 'Male' },
             { value: 'female', label: 'Female' },
             { value: 'no', label: 'No thanks, we\'re British' }
+          ]}
+          validators={[
+            required('Provide your sex')
           ]}
         />
         <Form.Submit value="Continue" />
@@ -107,10 +64,17 @@ const Page = props => {
               name="father_name"
               label={<h2>What is your father's name?</h2>}
               hint="Write the thing people call your father"
+              validators={[
+                required()
+              ]}
             />
             <Form.DateInput
               name="father_dob"
               label={<h2>What is your father's date of birth?</h2>}
+              validators={[
+                past(),
+                after('1900-01-01')()
+              ]}
             />
             <Form.Submit value="Continue" />
           </Form.Page>
@@ -121,10 +85,17 @@ const Page = props => {
               name="mother_name"
               label={<h2>What is your mother's name?</h2>}
               hint="Write the thing people call your mother"
+              validators={[
+                required()
+              ]}
             />
             <Form.DateInput
               name="mother_dob"
               label={<h2>What is your mother's date of birth?</h2>}
+              validators={[
+                past(),
+                after('1900-01-01')()
+              ]}
             />
             <Form.Submit value="Continue" />
           </Form.Page>
@@ -147,6 +118,10 @@ const Page = props => {
             { value: 'spanish', label: 'Spanish' },
             { value: 'spanish', label: 'Portuguese' }
           ]}
+          validators={[
+            required(),
+            notFrench()
+          ]}
         />
         <Form.Submit value="Continue" />
       </Form.Page>
@@ -161,6 +136,9 @@ const Page = props => {
             { value: 'laziness', label: 'Slob' },
             { value: 'liar', label: 'Pathological liar' }
           ]}
+          validators={[
+            required('Everyone has at least one vice!')
+          ]}
         />
         <Form.Submit value="Continue" />
       </Form.Page>
@@ -169,6 +147,10 @@ const Page = props => {
           name="bio"
           label={<h1>Bio</h1>}
           hint="Write some stuff about yourself"
+          validators={[
+            required('Write something'),
+            maxWords(12)('We didn\'t ask for war and peace!')
+          ]}
         />
         <Form.Submit value="Submit" />
       </Form.Page>

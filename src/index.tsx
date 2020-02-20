@@ -10,7 +10,8 @@ import { Site } from './lib';
 import {
   Forms,
   Index,
-  POC
+  POC,
+  Result
 } from './pages';
 
 const App = props => (
@@ -36,7 +37,7 @@ const App = props => (
           href: "/three",
           title: "Three",
           content: (
-            <h1>Three</h1>
+            <Result />
           )
         },
         {

@@ -1,6 +1,9 @@
-import { Graph } from './graph';
 import { Node } from './node';
 import { PathItem } from './path';
+
+export type FormatFn = (v: any) => string;
+export type PreValidateFn = (v: any) => object;
+export type ValidateFn = (v: any) => string;
 
 export class FieldItem implements PathItem {
   tag: string;
@@ -17,12 +20,18 @@ export class FieldItem implements PathItem {
 export class FieldNode extends Node {
   readonly tag: string;
   readonly name: string;
+  readonly preValidate: PreValidateFn;
+  readonly validate: ValidateFn;
+  readonly format: FormatFn;
 
   hasFocus: boolean;
 
-  constructor(name: string) {
+  constructor(name: string, format: FormatFn, validate: ValidateFn, preValidate: PreValidateFn) {
     super('field');
     this.name = name;
+    this.format = format;
+    this.preValidate = preValidate;
+    this.validate = validate;
     this.hasFocus = false;
   }
 

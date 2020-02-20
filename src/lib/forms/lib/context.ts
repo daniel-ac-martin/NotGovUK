@@ -33,6 +33,9 @@ export const useForm = () => {
     ...formik,
     completion,
     registry,
+    updateScope: () => {
+      completion.updateScope(formik.values);
+    },
     update: () => {
       formik.validateForm()
         .then(errors => {

@@ -10,8 +10,9 @@ const withFormik = options => Component => props => (
 );
 
 const wireUpForm = Component => props => {
-  const { update } = useForm();
+  const { update, updateScope } = useForm();
   const onSubmit = event => {
+    updateScope();
     const r = props.handleSubmit(event);
     update();
     return r;

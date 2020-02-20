@@ -1,5 +1,13 @@
-import * as React from 'react';
+import {ReactNode, SFC, createElement as h} from 'react';
 import FormField from '../form-field';
+
+export interface IDateInputPreValidateError {
+  day?: string
+  month?: string
+  year?: string
+}
+
+type DateInputError = string | IDateInputPreValidateError;
 
 interface IDateInput {
   /** Identifier for auto-completion */
@@ -9,13 +17,13 @@ interface IDateInput {
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
-  error?: string,
+  error?: DateInputError,
   /** Hint */
   hint?: string,
   /** HTML id (If not specified then the name will be used) */
   id?: string,
   /** Label */
-  label: any,
+  label: ReactNode,
   /** HTML name */
   name: string,
   /** onBlur callback (for controlled fields) */
@@ -26,8 +34,23 @@ interface IDateInput {
   value?: string
 };
 
-export const DateInput: React.SFC<IDateInput> = props =>
-  React.createElement(FormField, {
+interface DateInputValue {
+  day: string
+  month: string
+  year: string
+}
+
+interface WithFormat<T> {
+  format?: (v: T) => string
+}
+interface WithDeformat<T> {
+  deformat?: (v: string) => T
+}
+
+type RawField<P, V> = SFC<P> & WithFormat<V> & WithDeformat<V>
+
+export const DateInput: RawField<IDateInput, DateInputValue> = props =>
+  h(FormField, {
     autoComplete: props.autoComplete,
     className: props.className,
     disabled: props.disabled,
@@ -52,6 +75,39 @@ DateInput.defaultProps = {
   onBlur: null,
   onChange: null,
   value: null
+};
+
+DateInput.format = (v: DateInputValue): string => {
+  const pad = (size: number, v: string): string =>
+    String(v).padStart(size, '0');
+
+  const isSet = (v: any): boolean =>
+    !!(v || v === 0);
+
+  if (isSet(v.day) && isSet(v.month) && isSet(v.year)) {
+
+    const dd = pad(2, v.day);
+    const mm = pad(2, v.month);
+    const yyyy = pad(4, v.year);
+
+    return `${yyyy}-${mm}-${dd}`;
+  } else {
+    return undefined;
+  }
+};
+
+DateInput.deformat = (v: string): DateInputValue => {
+  const unpad = (v: any): string => Number(v).toString();
+
+  const arr = v.split('-');
+
+  return (
+    arr.length === 3 ? {
+      day: unpad(arr[2]),
+      month: unpad(arr[1]),
+      year: arr[0]
+    } : undefined
+  );
 };
 
 export default DateInput;

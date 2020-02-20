@@ -13,3 +13,4 @@ export const Index = props => (<>
 export default Index;
 export { default as Forms } from './forms';
 export { default as POC } from './poc';
+export { default as Result } from './result';

@@ -6,6 +6,7 @@ import Radios from './radios';
 import Select from './select';
 import Textarea from './textarea';
 import { className } from '../../helpers';
+import { IDateInputPreValidateError } from '../date-input';
 
 interface IOption {
   disabled?: boolean,
@@ -14,6 +15,8 @@ interface IOption {
   selected?: boolean,
   value: string
 };
+
+type FormFieldError = string | IDateInputPreValidateError;
 
 interface IFormField {
   /** Identifier for auto-completion */
@@ -25,7 +28,7 @@ interface IFormField {
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
-  error?: string,
+  error?: FormFieldError,
   /** Hint */
   hint?: string,
   /** HTML id (If not specified then the name will be used) */

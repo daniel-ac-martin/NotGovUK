@@ -1,6 +1,6 @@
 import { Node, NodeFn } from './node';
 import { Path } from './path';
-import { isFieldNode } from './field';
+import { FieldNode, isFieldNode } from './field';
 
 export class Graph extends Array<Node> {
   toPath(values: any, next: string): Path {
@@ -11,12 +11,11 @@ export class Graph extends Array<Node> {
     );
   }
 
-  gatherAllFields() {
+  gatherAllFieldNodes(): FieldNode[] {
     return (
       this
         .toArray()
         .filter(isFieldNode)
-        .map(e => isFieldNode(e) && e.name)
     );
   }
 

@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
-import { Graph, Path, PathItem, isFieldNode } from './graph';
+import { Graph, Path, PathItem, FormatFn, PreValidateFn, ValidateFn } from './graph';
+import { id } from './helpers';
 
 const calculateNext = (fields: string[], fieldStatus: object, errors: object): string => {
   const reducer = (acc, cur) => (
@@ -19,6 +20,9 @@ interface IFieldStatus {
   inScope: boolean
   visible: boolean
   seen: boolean
+  preValidate?: PreValidateFn
+  validate?: ValidateFn
+  format?: FormatFn
 }
 
 interface IFieldStatusMap {
@@ -29,6 +33,7 @@ export class Completion {
   protected graph: Graph;
   protected path: Path;
   protected fields: IFieldStatusMap;
+  protected fieldsInScope: string[];
 
   protected nextItem: number;
 
@@ -36,22 +41,26 @@ export class Completion {
     this.graph = graph;
     this.path = [];
     this.fields = {};
+    this.fieldsInScope = [];
     this.nextItem = 0;
   }
 
-  initialise(values: object, errors: object): void {
+  initialise(values: object): void {
     this.graph.deepMap_(e => e.depopulate());
 
-    this.graph.gatherAllFields()
-      .map(e => this.fields[e] = {
+    this.graph.gatherAllFieldNodes()
+      .map(e => this.fields[e.name] = {
         inScope: false,
         visible: false,
-        seen: false
+        seen: false,
+        preValidate: e.preValidate,
+        validate: e.validate,
+        format: e.format
       });
     console.log('fields:');
     console.log(this.fields);
 
-    this.update(values, errors);
+    this.updateScope(values);
 
     Object.keys(this.fields).map(
       e => values[e] = values[e] || null
@@ -60,7 +69,7 @@ export class Completion {
     console.log(values);
   }
 
-  update(values: any, errors: any): void {
+  updateScope(values: any): void {
     console.log('Updating path...');
 
     this.graph.deepMap_(e => e.depopulate());
@@ -71,14 +80,16 @@ export class Completion {
     console.log('graph:');
     console.log(this.graph);
 
-    const fieldsInScope = this.graph
+    this.fieldsInScope = this.graph
       .gatherFieldsAlongPath(values);
     console.log('fields in scope:');
-    console.log(fieldsInScope);
+    console.log(this.fieldsInScope);
     Object.keys(this.fields).map(e => this.fields[e].inScope = false);
-    fieldsInScope.map(e => this.fields[e].inScope = true);
+    this.fieldsInScope.map(e => this.fields[e].inScope = true);
+  }
 
-    const next = calculateNext(fieldsInScope, this.fields, errors);
+  update(values: any, errors: any): void {
+    const next = calculateNext(this.fieldsInScope, this.fields, errors);
     console.log(`next: ${next}`);
 
     this.graph.deepMap_(e => e.populateFromNext(next));
@@ -99,6 +110,50 @@ export class Completion {
     this.nextItem = 0;
   }
 
+  formatFields(values: object): object {
+    const r = {};
+
+    Object.keys(this.fields)
+      .map(e => {
+        const field = this.fields[e];
+        const value = values[e];
+        const format = (value !== null && field.format) || id;
+
+        r[e] = (
+          field.inScope
+            ? format(value)
+            : undefined
+        );
+
+        return true;
+      });
+
+    return r;
+  }
+
+  validateFields(values: object, formattedValues: object): object {
+    const r = {};
+
+    Object.keys(this.fields)
+      .map(e => {
+        const field = this.fields[e];
+        const preValidate = field.preValidate;
+        const validate = field.validate;
+
+        const error =
+          (preValidate && preValidate(values[e])) ||
+          (validate && validate(formattedValues[e]));
+
+        if (field.inScope && error) {
+          r[e] = error;
+        }
+
+        return true;
+      });
+
+    return r;
+  }
+
   pop(): PathItem {
     const r = this.path && this.path[this.nextItem++];
 
@@ -110,8 +165,6 @@ export class Completion {
   }
 
   getUnseenFields(): string[] {
-    const id = v => v;
-
     return Object.keys(this.fields)
       .map(e => this.fields[e].seen === false && e)
       .filter(id);

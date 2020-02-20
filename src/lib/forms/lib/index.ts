@@ -8,6 +8,31 @@ import FormikForm from './formik-form';
 export { withField, withControl } from './hocs';
 export { Page } from './page';
 export { Fork } from './fork';
+export {
+  after,
+  alpha,
+  alphanumeric,
+  before,
+  date,
+  email,
+  exactLength,
+  future,
+  integer,
+  maximum,
+  maxLength,
+  maxWords,
+  minimum,
+  minLength,
+  minWords,
+  mobileNumber,
+  numeric,
+  past,
+  postalCode,
+  range,
+  required,
+  url,
+  validator
+} from './validators';
 
 enum Method {
   GET = 'get',
@@ -33,29 +58,48 @@ export const Form: FC<IForm<any>> = props => {
       : location.state
   );
 
-  const initialErrors = (submittedValues && Object.keys(submittedValues).length && props.validate(submittedValues)) || undefined;
-  const initialTouched = submittedValues;
-  const initialValues = { ...submittedValues }
+  const initialErrors = {};
+  const initialTouched = { ...submittedValues };
+  const initialValues = { ...submittedValues };
 
   const initialContextValue = new ContextValue();
 
   const [contextValue, setContextValue] = useState(initialContextValue);
 
-  const onSubmit = (values, actions) => {
+  const validate = (values: any) => {
+    const formattedValues = contextValue.completion.formatFields(values);
+    console.log(formattedValues);
+
+    const r = {
+      ...contextValue.completion.validateFields(values, formattedValues),
+      ...(props.validate ? props.validate(formattedValues) : {}),
+    };
+
+    console.log(r);
+
+    return r;
+  };
+
+  const submit = (values: any) => {
     console.log('Submitting...');
+    const formattedValues = contextValue.completion.formatFields(values);
     const url = urlParse(props.action);
     const state = (
       props.method === 'post'
-        ? values
+        ? formattedValues
         : undefined
     );
 
     if (props.method === 'get') {
-      url.query = {...url.query, ...values};
+      url.query = {...url.query, ...formattedValues};
     }
 
-    actions.setSubmitting(false);
     history.push(url.toString(), state);
+  };
+
+  const onSubmit = (values: any, actions) => {
+    actions.setSubmitting(false);
+    submit(values);
   };
 
   const r = h(FormContextProvider, {
@@ -68,7 +112,7 @@ export const Form: FC<IForm<any>> = props => {
       initialValues: initialValues,
       method: props.method,
       onSubmit: onSubmit,
-      validate: props.validate
+      validate: validate
     }),
     value: contextValue
   });
@@ -86,7 +130,7 @@ export const Form: FC<IForm<any>> = props => {
     initialValues: initialValues,
     method: props.method,
     onSubmit: onSubmit,
-    validate: props.validate
+    validate: validate
   });
   */
 
@@ -99,7 +143,15 @@ export const Form: FC<IForm<any>> = props => {
   }
 
   // Convert graph to path using the current form values
-  contextValue.completion.initialise(initialValues, initialErrors);
+  contextValue.completion.initialise(initialValues);
+  Object.assign(initialErrors, validate(initialValues));
+  contextValue.completion.update(initialValues, initialErrors);
+
+  // Has the form been completed?
+  if ( (Object.keys(submittedValues).length > 0) &&
+       (Object.keys(initialErrors).length === 0) ) {
+    submit(submittedValues);
+  }
 
   // Re-render
   console.log('Re-rendering form along calculated path...');

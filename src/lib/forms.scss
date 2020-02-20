@@ -44,9 +44,9 @@ textarea {
   font-family: inherit;
 }
 
-.error input,
-.error select,
-.error textarea {
+.error input:not(.innocent),
+.error select:not(.innocent),
+.error textarea:not(.innocent) {
   border: 4px solid $govuk-error-colour;
 }
 
@@ -58,9 +58,9 @@ textarea:focus {
   box-shadow: inset 0 0 0 2px;
 }
 
-.error input:focus,
-.error select:focus,
-.error textarea:focus {
+.error input:not(.innocent):focus,
+.error select:not(.innocent):focus,
+.error textarea:not(.innocent):focus {
   border-color: $govuk-focus-text-colour;
   box-shadow: none;
 }
