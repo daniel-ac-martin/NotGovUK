@@ -40,7 +40,7 @@ const DateInput: React.SFC<any> = props => {
           className="width-2"
           defaultValue={props.defaultValue && props.defaultValue.month}
           disabled={props.disabled}
-          autoComplete={props.autoComplete && `${props.autoComplete}-day`}
+          autoComplete={props.autoComplete && `${props.autoComplete}-month`}
           onBlur={props.onBlur}
           onChange={props.onChange}
           value={props.value && props.value.month}
@@ -56,7 +56,7 @@ const DateInput: React.SFC<any> = props => {
           className="width-4"
           defaultValue={props.defaultValue && props.defaultValue.year}
           disabled={props.disabled}
-          autoComplete={props.autoComplete && `${props.autoComplete}-day`}
+          autoComplete={props.autoComplete && `${props.autoComplete}-year`}
           onBlur={props.onBlur}
           onChange={props.onChange}
           value={props.value && props.value.year}
