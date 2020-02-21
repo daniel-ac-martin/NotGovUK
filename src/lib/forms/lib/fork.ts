@@ -17,8 +17,8 @@ export const Fork: FC<any> = props => {
   const [rightValue, setRightValue] = useState(rightRegister);
 
   const state = form.completion.pop();
-  console.log('Rendering Form.Fork with state:');
-  console.log(state);
+  console.debug('Form.Fork: Rendering with state:');
+  console.debug(state);
   const active = state && state.active;
 
   if (active === undefined) {

@@ -11,8 +11,8 @@ export const Page: FC<any> = props => {
   form.registry.register(node);
 
   const state = form.completion.pop();
-  console.log('Rendering Form.Page with state:');
-  console.log(state);
+  console.debug('Form.Page: Rendering with state:');
+  console.debug(state);
   const active = (
     (state && !state.active)
       ? false

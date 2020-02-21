@@ -68,20 +68,17 @@ export const Form: FC<IForm<any>> = props => {
 
   const validate = (values: any) => {
     const formattedValues = contextValue.completion.formatFields(values);
-    console.log(formattedValues);
 
     const r = {
       ...contextValue.completion.validateFields(values, formattedValues),
       ...(props.validate ? props.validate(formattedValues) : {}),
     };
 
-    console.log(r);
-
     return r;
   };
 
   const submit = (values: any) => {
-    console.log('Submitting...');
+    console.debug('Form: Submitting...');
     const formattedValues = contextValue.completion.formatFields(values);
     const url = urlParse(props.action);
     const state = (
@@ -136,7 +133,7 @@ export const Form: FC<IForm<any>> = props => {
 
   if (!contextValue.registry.contents.length) {
     // Render children in order to build the graph
-    console.log('First pass rendering of form to discover graph...');
+    console.debug('Form: First pass rendering of form to discover graph...');
     contextValue.registry.openRegistration();
     renderToStaticMarkup(r);
     contextValue.registry.closeRegistration();
@@ -154,7 +151,7 @@ export const Form: FC<IForm<any>> = props => {
   }
 
   // Re-render
-  console.log('Re-rendering form along calculated path...');
+  console.debug('Form: Re-rendering form along calculated path...');
   return r;
 };
 

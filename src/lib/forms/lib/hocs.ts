@@ -59,8 +59,8 @@ export const withField = (Component: RawField, implicitValidators?: ReadyValidat
   form.registry.register(node);
 
   const state = form.completion.pop();
-  console.log(`Rendering Form.Field, '${props.name}', with state:`);
-  console.log(state)
+  console.debug(`Form.Field: Rendering '${props.name}', with state:`);
+  console.debug(state)
 
   return h(Component, {
     ...field,
