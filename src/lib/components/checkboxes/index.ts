@@ -1,8 +1,7 @@
 import * as React from 'react';
-import FormField from '../form-field';
+import FormField, { SelectValue } from '../form-field';
 
 interface IOption {
-  checked?: boolean,
   disabled?: boolean,
   hint?: string,
   label: string,
@@ -12,6 +11,8 @@ interface IOption {
 interface ICheckboxes {
   /** Extra CSS classes to be applied */
   className?: string,
+  /** Initial value of the field */
+  defaultValue?: SelectValue,
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
@@ -35,12 +36,13 @@ interface ICheckboxes {
   /** Whether the checkboxes should be small */
   small?: boolean,
   /** Value for controlled fields */
-  value?: string
+  value?: SelectValue
 };
 
 export const Checkboxes: React.SFC<ICheckboxes> = props =>
   React.createElement(FormField, {
     className: props.className,
+    defaultValue: props.defaultValue,
     disabled: props.disabled,
     error: props.error,
     hint: props.hint,
@@ -55,7 +57,6 @@ export const Checkboxes: React.SFC<ICheckboxes> = props =>
       disabled: e.disabled,
       hint: e.hint,
       label: e.label,
-      selected: e.checked,
       value: e.value
     })),
     small: props.small || false,
@@ -65,6 +66,7 @@ export const Checkboxes: React.SFC<ICheckboxes> = props =>
 
 Checkboxes.defaultProps = {
   className: null,
+  defaultValue: undefined,
   disabled: false,
   error: null,
   hint: null,
@@ -73,7 +75,7 @@ Checkboxes.defaultProps = {
   onBlur: null,
   onChange: null,
   small: null,
-  value: null
+  value: undefined
 };
 
 export default Checkboxes;

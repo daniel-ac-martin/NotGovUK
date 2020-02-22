@@ -10,6 +10,18 @@ const DateInput: React.SFC<any> = props => {
     month: props.error && props.error instanceof Object && !props.error.month,
     year: props.error && props.error instanceof Object && !props.error.year
   };
+  const value = (
+    props.value === undefined
+    ? {
+      day: undefined,
+      month: undefined,
+      year: undefined
+    } : {
+      day: props.value.day || '',
+      month: props.value.month || '',
+      year: props.value.year || ''
+    }
+  );
 
   return(
     <FormGroupWithFieldset
@@ -34,7 +46,7 @@ const DateInput: React.SFC<any> = props => {
           autoComplete={props.autoComplete && `${props.autoComplete}-day`}
           onBlur={props.onBlur}
           onChange={props.onChange}
-          value={props.value && props.value.day}
+          value={value.day}
         />
       </div>
       <div className="item">
@@ -50,7 +62,7 @@ const DateInput: React.SFC<any> = props => {
           autoComplete={props.autoComplete && `${props.autoComplete}-month`}
           onBlur={props.onBlur}
           onChange={props.onChange}
-          value={props.value && props.value.month}
+          value={value.month}
         />
       </div>
       <div className="item">
@@ -66,7 +78,7 @@ const DateInput: React.SFC<any> = props => {
           autoComplete={props.autoComplete && `${props.autoComplete}-year`}
           onBlur={props.onBlur}
           onChange={props.onChange}
-          value={props.value && props.value.year}
+          value={value.year}
         />
       </div>
     </FormGroupWithFieldset>

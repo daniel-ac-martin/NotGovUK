@@ -1,6 +1,12 @@
 import {ReactNode, SFC, createElement as h} from 'react';
 import FormField from '../form-field';
 
+export interface IDateInputValue {
+  day: string
+  month: string
+  year: string
+}
+
 export interface IDateInputPreValidateError {
   day?: string
   month?: string
@@ -14,6 +20,8 @@ interface IDateInput {
   autoComplete?: string,
   /** Extra CSS classes to be applied */
   className?: string,
+  /** Initial value of the field */
+  defaultValue?: IDateInputValue,
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
@@ -31,14 +39,8 @@ interface IDateInput {
   /** onChange callback (for controlled fields) */
   onChange?: (x: string) => any,
   /** Value for controlled fields */
-  value?: string
+  value?: IDateInputValue
 };
-
-interface DateInputValue {
-  day: string
-  month: string
-  year: string
-}
 
 interface WithFormat<T> {
   format?: (v: T) => string
@@ -49,10 +51,11 @@ interface WithDeformat<T> {
 
 type RawField<P, V> = SFC<P> & WithFormat<V> & WithDeformat<V>
 
-export const DateInput: RawField<IDateInput, DateInputValue> = props =>
+export const DateInput: RawField<IDateInput, IDateInputValue> = props =>
   h(FormField, {
     autoComplete: props.autoComplete,
     className: props.className,
+    defaultValue: props.defaultValue,
     disabled: props.disabled,
     error: props.error,
     hint: props.hint,
@@ -68,16 +71,17 @@ export const DateInput: RawField<IDateInput, DateInputValue> = props =>
 DateInput.defaultProps = {
   autoComplete: null,
   className: null,
+  defaultValue: undefined,
   disabled: false,
   error: null,
   hint: null,
   id: null,
   onBlur: null,
   onChange: null,
-  value: null
+  value: undefined
 };
 
-DateInput.format = (v: DateInputValue): string => {
+DateInput.format = (v: IDateInputValue): string => {
   const pad = (size: number, v: string): string =>
     String(v).padStart(size, '0');
 
@@ -96,7 +100,7 @@ DateInput.format = (v: DateInputValue): string => {
   }
 };
 
-DateInput.deformat = (v: string): DateInputValue => {
+DateInput.deformat = (v: string): IDateInputValue => {
   const unpad = (v: any): string => Number(v).toString();
 
   const arr = v.split('-');

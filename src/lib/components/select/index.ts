@@ -1,5 +1,5 @@
 import * as React from 'react';
-import FormField from '../form-field';
+import FormField, { SelectValue } from '../form-field';
 
 interface IOption {
   disabled?: boolean,
@@ -11,6 +11,8 @@ interface IOption {
 interface ISelect {
   /** Extra CSS classes to be applied */
   className?: string,
+  /** Initial value of the field */
+  defaultValue?: SelectValue,
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
@@ -30,12 +32,13 @@ interface ISelect {
   /** List of options to select from */
   options: Array<IOption>,
   /** Value for controlled fields */
-  value?: string
+  value?: SelectValue
 };
 
 export const Select: React.SFC<ISelect> = props =>
   React.createElement(FormField, {
     className: props.className,
+    defaultValue: props.defaultValue,
     disabled: props.disabled,
     error: props.error,
     hint: props.hint,
@@ -57,13 +60,14 @@ export const Select: React.SFC<ISelect> = props =>
 
 Select.defaultProps = {
   className: null,
+  defaultValue: undefined,
   disabled: false,
   error: null,
   hint: null,
   id: null,
   onBlur: null,
   onChange: null,
-  value: null
+  value: undefined
 };
 
 export default Select;

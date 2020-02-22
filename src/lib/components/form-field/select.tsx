@@ -17,6 +17,7 @@ const Select: React.SFC<any> = props => {
         id={fieldId}
         name={props.name}
         aria-describedby={props.hint && `${props.id}-hint`}
+        defaultValue={props.defaultValue}
         disabled={props.disabled}
         multiple={props.multiple}
         size={props.rows}
@@ -26,7 +27,7 @@ const Select: React.SFC<any> = props => {
         value={props.value}
       >
         {props.options.map((v, i) => (
-          <option key={i} value={v.value} selected={v.selected} disabled={v.disabled}>{v.label}</option>
+          <option key={i} value={v.value} disabled={v.disabled}>{v.label}</option>
         ))}
       </select>
     </FormGroupWithLabel>

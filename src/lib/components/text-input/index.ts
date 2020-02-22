@@ -54,7 +54,7 @@ export const TextInput: React.SFC<ITextInput> = props =>
 TextInput.defaultProps = {
   autoComplete: null,
   className: null,
-  defaultValue: null,
+  defaultValue: undefined,
   disabled: false,
   error: null,
   hint: null,
@@ -62,7 +62,7 @@ TextInput.defaultProps = {
   onBlur: null,
   onChange: null,
   spellCheck: null,
-  value: null,
+  value: undefined,
   width: null
 };
 

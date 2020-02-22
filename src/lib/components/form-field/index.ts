@@ -6,7 +6,7 @@ import Radios from './radios';
 import Select from './select';
 import Textarea from './textarea';
 import { className } from '../../helpers';
-import { IDateInputPreValidateError } from '../date-input';
+import { IDateInputValue, IDateInputPreValidateError } from '../date-input';
 
 interface IOption {
   disabled?: boolean,
@@ -16,6 +16,8 @@ interface IOption {
   value: string
 };
 
+export type SelectValue = string | string[];
+type Value = SelectValue | IDateInputValue;
 type FormFieldError = string | IDateInputPreValidateError;
 
 interface IFormField {
@@ -24,7 +26,7 @@ interface IFormField {
   /** Extra CSS classes to be applied */
   className?: string,
   /** Initial value of the field */
-  defaultValue?: string,
+  defaultValue?: Value,
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
@@ -56,10 +58,12 @@ interface IFormField {
   /** Type of field (inferred if not provided) */
   type?: string,
   /** Value for controlled fields */
-  value?: any,
+  value?: Value,
   /** Width of the field in characters (approximate) (only applies to single input fields) */
   width?: number
 };
+
+export const isArray = <T>(v: any): v is Array<T> => v instanceof Array;
 
 export const FormField: React.SFC<IFormField> = props => {
   let inferredType;
@@ -77,15 +81,25 @@ export const FormField: React.SFC<IFormField> = props => {
   }
 
   const type = props.type || inferredType;
-  const selected = (option: IOption) => ({ ...option, selected: props.value.includes(option.value) });
+  const selected = (option: IOption) => (
+    isArray(props.defaultValue)
+      ? {
+        ...option,
+        selected: props.defaultValue.includes(option.value)
+      } : option
+  );
   const processedProps = {
     ...props,
     className: className(props.error && 'error', props.className),
-    defaultValue: props.value === null ? props.defaultValue : undefined,
+    defaultValue: props.value === undefined ? props.defaultValue : undefined,
     fieldStyle: props.width && { maxWidth: (((props.width >= 10) ? 4.76 : 1.76) + 1.81 * props.width) + 'ex' },
     id: props.id || props.name,
     inline: (props.inline === null && (type === 'radios' && props.options && props.options.length <= 2)) || props.inline,
-    options: props.options && (props.value === null ? props.options : props.options.map(selected)),
+    options: (
+      props.options && props.value === undefined
+        ? props.options.map(selected)
+        : props.options
+    ),
     rows: (props.rows === null && (type === 'textarea' && 5)) || props.rows,
     small: (props.small === null && (props.options && props.options.length >= 6)) || props.small,
     spellcheck:
@@ -93,7 +107,7 @@ export const FormField: React.SFC<IFormField> = props => {
       type === 'textarea' ? 'true' :
       undefined,
     type: type === 'native-date' ? 'date' : type,
-    value: props.value === null ? undefined : props.value
+    value: props.value
   };
 
   return (
@@ -109,7 +123,7 @@ export const FormField: React.SFC<IFormField> = props => {
 FormField.defaultProps = {
   autoComplete: null,
   className: null,
-  defaultValue: null,
+  defaultValue: undefined,
   disabled: false,
   error: null,
   hint: null,
@@ -122,7 +136,7 @@ FormField.defaultProps = {
   rows: null,
   small: null,
   spellCheck: null,
-  value: null,
+  value: undefined,
   width: null
 };
 

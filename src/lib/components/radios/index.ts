@@ -2,7 +2,6 @@ import * as React from 'react';
 import FormField from '../form-field';
 
 interface IOption {
-  checked?: boolean,
   disabled?: boolean,
   hint?: string,
   label: string,
@@ -12,6 +11,8 @@ interface IOption {
 interface IRadios {
   /** Extra CSS classes to be applied */
   className?: string,
+  /** Initial value of the field */
+  defaultValue?: string,
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
@@ -41,6 +42,7 @@ interface IRadios {
 export const Radios: React.SFC<IRadios> = props =>
   React.createElement(FormField, {
     className: props.className,
+    defaultValue: props.defaultValue,
     disabled: props.disabled,
     error: props.error,
     hint: props.hint,
@@ -55,7 +57,6 @@ export const Radios: React.SFC<IRadios> = props =>
       disabled: e.disabled,
       hint: e.hint,
       label: e.label,
-      selected: e.checked,
       value: e.value
     })),
     small: props.small || false,
@@ -65,6 +66,7 @@ export const Radios: React.SFC<IRadios> = props =>
 
 Radios.defaultProps = {
   className: null,
+  defaultValue: undefined,
   disabled: false,
   error: null,
   hint: null,
@@ -73,7 +75,7 @@ Radios.defaultProps = {
   onBlur: null,
   onChange: null,
   small: null,
-  value: null
+  value: undefined
 };
 
 export default Radios;

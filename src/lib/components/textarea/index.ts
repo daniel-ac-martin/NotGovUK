@@ -54,7 +54,7 @@ export const Textarea: React.SFC<ITextarea> = props =>
 Textarea.defaultProps = {
   autoComplete: null,
   className: null,
-  defaultValue: null,
+  defaultValue: undefined,
   disabled: false,
   error: null,
   hint: null,
@@ -63,7 +63,7 @@ Textarea.defaultProps = {
   onChange: null,
   rows: null,
   spellCheck: null,
-  value: null
+  value: undefined
 };
 
 export default Textarea;
