@@ -2,7 +2,6 @@ import * as React from 'react';
 import FormField from '../form-field';
 
 interface IOption {
-  checked?: boolean,
   disabled?: boolean,
   hint?: string,
   label: string,
@@ -12,6 +11,8 @@ interface IOption {
 interface IRadios {
   /** Extra CSS classes to be applied */
   className?: string,
+  /** Initial value of the field */
+  defaultValue?: string,
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
@@ -26,15 +27,22 @@ interface IRadios {
   label: any,
   /** HTML name */
   name: string,
+  /** onBlur callback (for controlled fields) */
+  onBlur?: (x: string) => any,
+  /** onChange callback (for controlled fields) */
+  onChange?: (x: string) => any,
   /** List of options to select from */
   options: Array<IOption>,
   /** Whether the radios should be small */
-  small?: boolean
+  small?: boolean,
+  /** Value for controlled fields */
+  value?: string
 };
 
 export const Radios: React.SFC<IRadios> = props =>
   React.createElement(FormField, {
     className: props.className,
+    defaultValue: props.defaultValue,
     disabled: props.disabled,
     error: props.error,
     hint: props.hint,
@@ -43,25 +51,31 @@ export const Radios: React.SFC<IRadios> = props =>
     label: props.label,
     multiple: false,
     name: props.name,
+    onBlur: props.onBlur,
+    onChange: props.onChange,
     options: props.options.map(e => ({
       disabled: e.disabled,
       hint: e.hint,
       label: e.label,
-      selected: e.checked,
       value: e.value
     })),
     small: props.small || false,
-    type: 'radios'
+    type: 'radios',
+    value: props.value
   });
 
 Radios.defaultProps = {
   className: null,
+  defaultValue: undefined,
   disabled: false,
   error: null,
   hint: null,
   id: null,
   inline: null,
-  small: null
+  onBlur: null,
+  onChange: null,
+  small: null,
+  value: undefined
 };
 
 export default Radios;

@@ -17,9 +17,18 @@ const Radios: React.SFC<any> = props => (
       const id = `${props.id}-radio-${i}`;
       return (
         <div className="item" key={i}>
-            <input id={id} name={props.name} type="radio" value={v.value} checked={v.selected} disabled={props.disabled || v.disabled} />
-            <label htmlFor={id}>{v.label}</label>
-            {v.hint && <Hint id={`${id}-hint`}>{v.hint}</Hint>}
+          <input
+            id={id}
+            name={props.name}
+            type="radio"
+            value={v.value}
+            checked={v.selected}
+            disabled={props.disabled || v.disabled}
+            onBlur={props.onBlur}
+            onChange={props.onChange}
+          />
+          <label htmlFor={id}>{v.label}</label>
+          {v.hint && <Hint id={`${id}-hint`}>{v.hint}</Hint>}
         </div>
       );
     })}

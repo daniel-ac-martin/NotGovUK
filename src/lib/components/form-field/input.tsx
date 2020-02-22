@@ -23,6 +23,9 @@ const Input: React.SFC<any> = props => {
         style={props.fieldStyle}
         spellCheck={props.spellCheck}
         autoComplete={props.autoComplete}
+        onBlur={props.onBlur}
+        onChange={props.onChange}
+        value={props.value}
       />
     </FormGroupWithLabel>
   );

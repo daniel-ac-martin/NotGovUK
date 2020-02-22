@@ -5,54 +5,16 @@ import * as serviceWorker from './serviceWorker';
 import './lib/index.scss';
 
 import { BrowserRouter as Router } from 'react-router-dom';
-import {
-  Page,
-  Site,
-  StartButton
-} from './lib';
+import { Site } from './lib';
 
 import {
-  forms,
-  index,
-  poc
+  Forms,
+  Index,
+  POC,
+  Result
 } from './pages';
 
-const page = (
-  <Page
-    backHref="#"
-    breadcrumbs={[
-      { text: 'Section', href: '#' },
-      { text: 'Subsection', href: '#' },
-      { text: 'Subsection', href: '#' }
-    ]}
-    feedbackHref="/feedback"
-    logoHref="/"
-    navigation={[
-      { href: '/one', text: 'One', active: true },
-      { href: '/two', text: 'Two' },
-      { href: '/three', text: 'Three' },
-      { href: '/four', text: 'Four' }
-    ]}
-    phase="beta"
-    sidePanels={[(
-        <>
-        <h2>Sub-section</h2>
-        <p>This is the side bar.</p>
-        </>
-    )]}
-    signOutHref="/auth/logout"
-    title="Not GovUK"
-    titleHref="/"
-  >
-    <h1>This is NOT GovUK!</h1>
-    <p className="lead">Whilst this site might <em>look</em> like GovUK it is in fact <strong>NOT</strong> GovUK.</p>
-    <StartButton href="#start" />
-    <hr />
-    {poc}
-  </Page>
-);
-
-const app = (
+const App = props => (
   <Site
       feedback={{
         content: (
@@ -64,18 +26,18 @@ const app = (
         {
           href: "/poc",
           title: "Original POC",
-          content: poc
+          content: <POC />
         },
         {
           href: "/forms",
           title: "Forms",
-          content: forms
+          content: <Forms />
         },
         {
           href: "/three",
           title: "Three",
           content: (
-            <h1>Three</h1>
+            <Result />
           )
         },
         {
@@ -95,12 +57,12 @@ const app = (
       signOutHref="/auth/logout"
       title="Not GovUK"
   >
-    {index}
+    <Index />
   </Site>
 );
 
 const root = (
-  <Router>{app}</Router>
+  <Router><App /></Router>
 );
 
 ReactDOM.render(root, document.getElementById('root'));

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { A } from '../..';
+import { A } from '../';
 import { className } from '../../helpers';
 
 export interface IBreadcrumb {

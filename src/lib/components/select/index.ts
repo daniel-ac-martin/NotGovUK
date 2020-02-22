@@ -1,5 +1,5 @@
 import * as React from 'react';
-import FormField from '../form-field';
+import FormField, { SelectValue } from '../form-field';
 
 interface IOption {
   disabled?: boolean,
@@ -11,6 +11,8 @@ interface IOption {
 interface ISelect {
   /** Extra CSS classes to be applied */
   className?: string,
+  /** Initial value of the field */
+  defaultValue?: SelectValue,
   /** Whether the field should be disabled */
   disabled?: boolean,
   /** Error message */
@@ -23,13 +25,20 @@ interface ISelect {
   label: any,
   /** HTML name */
   name: string,
+  /** onBlur callback (for controlled fields) */
+  onBlur?: (x: string) => any,
+  /** onChange callback (for controlled fields) */
+  onChange?: (x: string) => any,
   /** List of options to select from */
-  options: Array<IOption>
+  options: Array<IOption>,
+  /** Value for controlled fields */
+  value?: SelectValue
 };
 
 export const Select: React.SFC<ISelect> = props =>
   React.createElement(FormField, {
     className: props.className,
+    defaultValue: props.defaultValue,
     disabled: props.disabled,
     error: props.error,
     hint: props.hint,
@@ -37,21 +46,28 @@ export const Select: React.SFC<ISelect> = props =>
     label: props.label,
     multiple: false,
     name: props.name,
+    onBlur: props.onBlur,
+    onChange: props.onChange,
     options: props.options.map(e => ({
       disabled: e.disabled,
       label: e.label,
       selected: e.selected,
       value: e.value,
     })),
-    type: 'select'
+    type: 'select',
+    value: props.value
   });
 
 Select.defaultProps = {
   className: null,
+  defaultValue: undefined,
   disabled: false,
   error: null,
   hint: null,
-  id: null
+  id: null,
+  onBlur: null,
+  onChange: null,
+  value: undefined
 };
 
 export default Select;

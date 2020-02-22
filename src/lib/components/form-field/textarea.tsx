@@ -23,6 +23,9 @@ const Textarea: React.SFC<any> = props => {
         spellCheck={props.spellCheck}
         autoComplete={props.autoComplete}
         rows={props.rows}
+        onBlur={props.onBlur}
+        onChange={props.onChange}
+        value={props.value}
       />
     </FormGroupWithLabel>
   );
