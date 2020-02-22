@@ -38,8 +38,8 @@ const DateInput: React.SFC<any> = props => {
         <input
           id={`${props.id}-day`}
           name={`${props.name}[day]`}
-          type="number"
-          pattern="[-9]*"
+          type="text"
+          pattern="[0-9]*"
           className={className("width-2", innocent.day && 'innocent')}
           defaultValue={props.defaultValue && props.defaultValue.day}
           disabled={props.disabled}
@@ -54,7 +54,7 @@ const DateInput: React.SFC<any> = props => {
         <input
           id={`${props.id}-month`}
           name={`${props.name}[month]`}
-          type="number"
+          type="text"
           pattern="[0-9]*"
           className={className("width-2", innocent.month && 'innocent')}
           defaultValue={props.defaultValue && props.defaultValue.month}
@@ -70,7 +70,7 @@ const DateInput: React.SFC<any> = props => {
         <input
           id={`${props.id}-year`}
           name={`${props.name}[year]`}
-          type="number"
+          type="text"
           pattern="[0-9]*"
           className={className("width-4", innocent.year && 'innocent')}
           defaultValue={props.defaultValue && props.defaultValue.year}

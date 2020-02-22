@@ -115,7 +115,7 @@ export const alpha = (locale?: string) => (msg?: string) => readyValidator(
   (field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isAlpha(value, locale),
-              `PrettyName(field) must only contain letters`),
+              `${PrettyName(field)} must only contain letters`),
   20
 );
 
@@ -123,7 +123,7 @@ export const alphanumeric = (locale?: string) => (msg?: string) => readyValidato
   (field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isAlphanumeric(value, locale),
-              `PrettyName(field) must only contain letters and/or numbers`),
+              `${PrettyName(field)} must only contain letters and/or numbers`),
   30
 );
 
@@ -131,7 +131,7 @@ export const numeric = (msg?: string) => readyValidator(
   (field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isNumeric(value),
-              `PrettyName(field) must only contain numbers`),
+              `${PrettyName(field)} must only contain numbers`),
   20
 );
 
@@ -139,7 +139,7 @@ export const integer = (msg?: string) => readyValidator(
   (field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isInt(value),
-              `PrettyName(field) must be a number`),
+              `${PrettyName(field)} must be a number`),
   10
 );
 
@@ -147,7 +147,7 @@ export const maximum = (max: number) => (msg?: string) => readyValidator(
   (field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isInt(value, { max: max }),
-              `PrettyName(field) must be no greater than ${max}`),
+              `${PrettyName(field)} must be no greater than ${max}`),
   10
 );
 
@@ -155,7 +155,7 @@ export const minimum = (min: number) => (msg?: string) => readyValidator(
   (field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isInt(value, { min: min }),
-              `PrettyName(field) must be no less than ${min}`),
+              `${PrettyName(field)} must be no less than ${min}`),
   10
 );
 
@@ -163,7 +163,7 @@ export const range = (min: number, max: number) => (msg?: string) => readyValida
   (field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isInt(value, { min: min, max: max }),
-              `PrettyName(field) must be between ${min} and ${max}`),
+              `${PrettyName(field)} must be between ${min} and ${max}`),
   10
 );
 
