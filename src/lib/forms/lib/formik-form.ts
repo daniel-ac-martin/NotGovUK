@@ -38,4 +38,5 @@ const withFormikForm = Component => props => {
 };
 
 export const FormikForm = withFormikForm(RawForm);
+
 export default FormikForm;

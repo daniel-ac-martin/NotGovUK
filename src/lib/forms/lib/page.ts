@@ -1,4 +1,4 @@
-import { FC, createElement as h, useState } from 'react';
+import { FC, createElement as h } from 'react';
 import { useForm } from './context';
 import { Register, Registry } from './registry';
 import { Graph, PageNode } from './graph';
@@ -6,27 +6,32 @@ import { Graph, PageNode } from './graph';
 export const Page: FC<any> = props => {
   const form = useForm();
 
-  const contents = new Graph();
-  const node: PageNode =  new PageNode(contents);
-  form.registry.register(node);
-
   const state = form.completion.pop();
   console.debug('Form.Page: Rendering with state:');
   console.debug(state);
-  const active = (
-    (state && !state.active)
-      ? false
-      : true
-  );
+  const active = state && state.active;
 
-  const register = new Register(contents);
-  const [value, setValue] = useState(register);
-  register.openRegistration();
+  if (active === undefined) {
+    // First pass rendering i.e. registration phase
+    const contents = new Graph();
+    const node: PageNode = new PageNode(contents);
+    form.registry.register(node);
 
-  return h(Registry, {
-    children: active ? props.children : undefined,
-    value: value
-  });
+    const register = new Register(contents);
+    register.openRegistration();
+
+    return h(Registry, {
+      children: props.children,
+      value: register
+    });
+  } else {
+    // Second pass rendering
+    return (
+      active
+        ? props.children || null
+        : null
+    );
+  }
 };
 
 export default Page;

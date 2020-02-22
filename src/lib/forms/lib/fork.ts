@@ -1,4 +1,4 @@
-import { FC, Fragment, createElement as h, useState } from 'react';
+import { FC, Fragment, createElement as h } from 'react';
 import { useForm } from './context';
 import { Register, Registry } from './registry';
 import { Graph, ForkNode } from './graph';
@@ -6,22 +6,21 @@ import { Graph, ForkNode } from './graph';
 export const Fork: FC<any> = props => {
   const form = useForm();
 
-  const left = new Graph();
-  const right = new Graph();
-  const node: ForkNode =  new ForkNode(props.if, left, right);
-  form.registry.register(node);
-
-  const leftRegister = new Register(left);
-  const rightRegister = new Register(right);
-  const [leftValue, setLeftValue] = useState(leftRegister);
-  const [rightValue, setRightValue] = useState(rightRegister);
-
   const state = form.completion.pop();
   console.debug('Form.Fork: Rendering with state:');
   console.debug(state);
   const active = state && state.active;
 
   if (active === undefined) {
+    // First pass rendering i.e. registration phase
+    const left = new Graph();
+    const right = new Graph();
+    const node: ForkNode =  new ForkNode(props.if, left, right);
+    form.registry.register(node);
+
+    const leftRegister = new Register(left);
+    const rightRegister = new Register(right);
+
     leftRegister.openRegistration();
     rightRegister.openRegistration();
 
@@ -29,15 +28,16 @@ export const Fork: FC<any> = props => {
       children: [
         h(Registry, {
           children: props.then,
-          value: leftValue
+          value: leftRegister
         }),
         h(Registry, {
           children: props.else,
-          value: rightValue
+          value: rightRegister
         })
       ]
     });
   } else {
+    // Second pass rendering
     return (
       active
         ? props.then || null

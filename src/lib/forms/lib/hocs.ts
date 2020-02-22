@@ -1,5 +1,6 @@
 import { ComponentType, createElement as h } from 'react';
-import { useField, useFormikContext } from 'formik';
+import { useField } from 'formik';
+import { useFormikContext } from 'formik';
 import { FieldNode, FormatFn } from './graph';
 import { useForm } from './context';
 import { id } from './helpers';

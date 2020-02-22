@@ -2,8 +2,10 @@ import { FC, createElement as h, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { urlParse, useLocation } from '../../request';
-import { ContextValue, FormContextProvider } from './context';
 import FormikForm from './formik-form';
+import { Graph } from './graph';
+import { Completion, CompletionContext } from './completion';
+import { Register, Registry } from './registry';
 
 export { withField, withControl } from './hocs';
 export { Page } from './page';
@@ -62,15 +64,11 @@ export const Form: FC<IForm<any>> = props => {
   const initialTouched = { ...submittedValues };
   const initialValues = { ...submittedValues };
 
-  const initialContextValue = new ContextValue();
-
-  const [contextValue, setContextValue] = useState(initialContextValue);
-
   const validate = (values: any) => {
-    const formattedValues = contextValue.completion.formatFields(values);
+    const formattedValues = completion.formatFields(values);
 
     const r = {
-      ...contextValue.completion.validateFields(values, formattedValues),
+      ...completion.validateFields(values, formattedValues),
       ...(props.validate ? props.validate(formattedValues) : {}),
     };
 
@@ -79,7 +77,7 @@ export const Form: FC<IForm<any>> = props => {
 
   const submit = (values: any) => {
     console.debug('Form: Submitting...');
-    const formattedValues = contextValue.completion.formatFields(values);
+    const formattedValues = completion.formatFields(values);
     const url = urlParse(props.action);
     const state = (
       props.method === 'post'
@@ -99,28 +97,9 @@ export const Form: FC<IForm<any>> = props => {
     submit(values);
   };
 
-  const r = h(FormContextProvider, {
-    children: h(FormikForm, {
-      action: location.pathname,
-      children: props.children,
-      id: props.id,
-      initialErrors: initialErrors,
-      initialTouched: initialTouched,
-      initialValues: initialValues,
-      method: props.method,
-      onSubmit: onSubmit,
-      validate: validate
-    }),
-    value: contextValue
-  });
-
-  /*
-  const r = h(FormikForm, {
+  const formikForm = h(FormikForm, {
     action: location.pathname,
-    children: h(FormContextProvider, {
-      children: props.children,
-      value: contextValue
-    }),
+    children: props.children,
     id: props.id,
     initialErrors: initialErrors,
     initialTouched: initialTouched,
@@ -128,21 +107,27 @@ export const Form: FC<IForm<any>> = props => {
     method: props.method,
     onSubmit: onSubmit,
     validate: validate
-  });
-  */
+  })
 
-  if (!contextValue.registry.contents.length) {
-    // Render children in order to build the graph
-    console.debug('Form: First pass rendering of form to discover graph...');
-    contextValue.registry.openRegistration();
-    renderToStaticMarkup(r);
-    contextValue.registry.closeRegistration();
-  }
+  const graph = new Graph();
+  const register = new Register(graph);
+
+  // Render children in order to build the graph
+  console.debug('Form: First pass rendering of form to discover graph...');
+  register.openRegistration();
+  renderToStaticMarkup(h(Registry, {
+    children: formikForm,
+    value: register
+  }));
+  register.closeRegistration();
 
   // Convert graph to path using the current form values
-  contextValue.completion.initialise(initialValues);
+  const initialCompletion = new Completion(graph);
+  const [completion] = useState(initialCompletion);
+
+  completion.initialise(initialValues);
   Object.assign(initialErrors, validate(initialValues));
-  contextValue.completion.update(initialValues, initialErrors);
+  completion.update(initialValues, initialErrors);
 
   // Has the form been completed?
   if ( (Object.keys(submittedValues).length > 0) &&
@@ -152,7 +137,10 @@ export const Form: FC<IForm<any>> = props => {
 
   // Re-render
   console.debug('Form: Re-rendering form along calculated path...');
-  return r;
+  return h(CompletionContext.Provider, {
+    children: formikForm,
+    value: completion
+  });
 };
 
 export default Form;

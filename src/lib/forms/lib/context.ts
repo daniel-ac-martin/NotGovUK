@@ -1,28 +1,6 @@
-import { createElement as h } from 'react';
 import { useFormikContext } from 'formik';
-import { Graph } from './graph';
-import { Completion, CompletionContext, useCompletionContext } from './completion';
-import { Register, Registry, useRegistrationContext } from './registry';
-
-export class ContextValue {
-  completion: Completion;
-  registry: Register;
-
-  constructor() {
-    const graph = new Graph();
-
-    this.completion = new Completion(graph);
-    this.registry = new Register(graph);
-  }
-}
-
-export const FormContextProvider = props => h(Registry, {
-  value: props.value.registry,
-  children: h(CompletionContext.Provider, {
-    value: props.value.completion,
-    children: props.children
-  })
-});
+import { useCompletionContext } from './completion';
+import { useRegistrationContext } from './registry';
 
 export const useForm = () => {
   const completion = useCompletionContext();
