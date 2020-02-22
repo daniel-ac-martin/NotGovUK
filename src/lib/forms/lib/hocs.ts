@@ -66,7 +66,8 @@ export const withField = (Component: RawField, implicitValidators?: ReadyValidat
   return h(Component, {
     ...field,
     ...props,
-    error: meta.error && meta.touched && meta.error
+    error: meta.error && meta.touched && meta.error,
+    value: field.value === null ? '' : field.value
   });
 };
 
