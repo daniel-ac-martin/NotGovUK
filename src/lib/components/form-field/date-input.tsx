@@ -10,6 +10,11 @@ const DateInput: React.SFC<any> = props => {
     month: props.error && props.error instanceof Object && !props.error.month,
     year: props.error && props.error instanceof Object && !props.error.year
   };
+  const partValue = v => (
+    v == null
+      ? ''
+      : v
+  );
   const value = (
     props.value === undefined
     ? {
@@ -17,9 +22,9 @@ const DateInput: React.SFC<any> = props => {
       month: undefined,
       year: undefined
     } : {
-      day: props.value.day || '',
-      month: props.value.month || '',
-      year: props.value.year || ''
+      day: partValue(props.value.day),
+      month: partValue(props.value.month),
+      year: partValue(props.value.year)
     }
   );
 
