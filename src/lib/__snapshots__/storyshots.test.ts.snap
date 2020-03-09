@@ -11,29 +11,32 @@ exports[`Storyshots Components/ButtonOLD Button 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
-      >
-        <input
-          disabled={false}
-          id={null}
-          onClick={[Function]}
-          type="button"
-          value="Save as draft"
-        />
-      </main>
-    </div>
+      <input
+        className="govuk-button"
+        disabled={false}
+        id={null}
+        onClick={[Function]}
+        type="button"
+        value="Save as draft"
+      />
+    </main>
   </div>
 </div>
 `;
@@ -49,29 +52,32 @@ exports[`Storyshots Components/ButtonOLD Disabled 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
-      >
-        <input
-          disabled={true}
-          id={null}
-          onClick={[Function]}
-          type="button"
-          value="Delete"
-        />
-      </main>
-    </div>
+      <input
+        className="govuk-button govuk-button--disabled"
+        disabled={true}
+        id={null}
+        onClick={[Function]}
+        type="button"
+        value="Delete"
+      />
+    </main>
   </div>
 </div>
 `;
@@ -87,29 +93,32 @@ exports[`Storyshots Components/ButtonOLD Disabled Submit 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
-      >
-        <input
-          disabled={true}
-          id={null}
-          onClick={null}
-          type="submit"
-          value="Delete"
-        />
-      </main>
-    </div>
+      <input
+        className="govuk-button govuk-button--disabled"
+        disabled={true}
+        id={null}
+        onClick={null}
+        type="submit"
+        value="Delete"
+      />
+    </main>
   </div>
 </div>
 `;
@@ -125,30 +134,32 @@ exports[`Storyshots Components/ButtonOLD Disabled Warning 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
-      >
-        <input
-          className="warning"
-          disabled={true}
-          id={null}
-          onClick={null}
-          type="submit"
-          value="Delete"
-        />
-      </main>
-    </div>
+      <input
+        className="govuk-button govuk-button--disabled govuk-button--warning"
+        disabled={true}
+        id={null}
+        onClick={null}
+        type="submit"
+        value="Delete"
+      />
+    </main>
   </div>
 </div>
 `;
@@ -164,33 +175,39 @@ exports[`Storyshots Components/ButtonOLD Link 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
+      <a
+        aria-current="page"
+        className="govuk-button active"
+        data-module="govuk-button"
+        draggable={false}
+        forceExternal={false}
+        href="/"
+        id={null}
+        onClick={[Function]}
+        role="button"
+        style={Object {}}
+        title={null}
       >
-        <a
-          aria-current="page"
-          className="button active"
-          href="/"
-          id={null}
-          onClick={[Function]}
-          style={Object {}}
-          title={null}
-        >
-          Continue
-        </a>
-      </main>
-    </div>
+        Continue
+      </a>
+    </main>
   </div>
 </div>
 `;
@@ -206,30 +223,32 @@ exports[`Storyshots Components/ButtonOLD Secondary 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
-      >
-        <input
-          className="secondary"
-          disabled={false}
-          id={null}
-          onClick={null}
-          type="submit"
-          value="Save as draft"
-        />
-      </main>
-    </div>
+      <input
+        className="govuk-button govuk-button--secondary"
+        disabled={false}
+        id={null}
+        onClick={null}
+        type="submit"
+        value="Save as draft"
+      />
+    </main>
   </div>
 </div>
 `;
@@ -245,29 +264,32 @@ exports[`Storyshots Components/ButtonOLD Standard 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
-      >
-        <input
-          disabled={false}
-          id={null}
-          onClick={null}
-          type="button"
-          value="Save as draft"
-        />
-      </main>
-    </div>
+      <input
+        className="govuk-button"
+        disabled={false}
+        id={null}
+        onClick={null}
+        type="button"
+        value="Save as draft"
+      />
+    </main>
   </div>
 </div>
 `;
@@ -283,33 +305,53 @@ exports[`Storyshots Components/ButtonOLD Start 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
+      <a
+        aria-current="page"
+        className="govuk-button--start govuk-button active"
+        data-module="govuk-button"
+        draggable={false}
+        forceExternal={false}
+        href="/"
+        id={null}
+        onClick={[Function]}
+        role="button"
+        style={Object {}}
+        title={null}
       >
-        <a
-          aria-current="page"
-          className="button start active"
-          href="/"
-          id={null}
-          onClick={[Function]}
-          style={Object {}}
-          title={null}
+        Start now
+        <svg
+          className="govuk-button__start-icon"
+          focusable="false"
+          height="19"
+          role="presentation"
+          viewBox="0 0 33 40"
+          width="17.5"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          Start now &gt;
-        </a>
-      </main>
-    </div>
+          <path
+            d="M0 0h13l20 20-20 20H0l20-20z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </main>
   </div>
 </div>
 `;
@@ -325,29 +367,32 @@ exports[`Storyshots Components/ButtonOLD Submit 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
-      >
-        <input
-          disabled={false}
-          id={null}
-          onClick={null}
-          type="submit"
-          value="Save and continue"
-        />
-      </main>
-    </div>
+      <input
+        className="govuk-button"
+        disabled={false}
+        id={null}
+        onClick={null}
+        type="submit"
+        value="Save and continue"
+      />
+    </main>
   </div>
 </div>
 `;
@@ -363,30 +408,32 @@ exports[`Storyshots Components/ButtonOLD Warning 1`] = `
   }
 >
   <div
-    className="page-body"
-    id="middle"
+    className="nguk-page__body"
     style={
       Object {
-        "margin": "-1em",
+        "margin": 0,
+        "padding": 0,
       }
     }
   >
-    <div
-      className="inner"
+    <main
+      className="govuk-main-wrapper"
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
     >
-      <main
-        id="content"
-      >
-        <input
-          className="warning"
-          disabled={false}
-          id={null}
-          onClick={null}
-          type="submit"
-          value="Delete"
-        />
-      </main>
-    </div>
+      <input
+        className="govuk-button govuk-button--warning"
+        disabled={false}
+        id={null}
+        onClick={null}
+        type="submit"
+        value="Delete"
+      />
+    </main>
   </div>
 </div>
 `;
