@@ -11,7 +11,7 @@ interface ITag {
 };
 
 export const Tag: React.SFC<ITag> = props => (
-  <strong id={props.id} className={className('nguk-tag', props.className)}>{props.text}</strong>
+  <strong id={props.id} className={className('govuk-tag', props.className)}>{props.text}</strong>
 );
 
 Tag.defaultProps = {

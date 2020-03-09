@@ -1,15 +1,15 @@
-.nguk-tag {
-  display: inline-block;
-  padding: 0.357em 0.571em 0.286em 0.571em;
-  margin-right: 0.625em;
-  background-color: $govuk-brand-colour;
-  color: $govuk-white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1;
+@each $i, $v in $govuk-colours-organisations {
+  .nguk-page--#{$i} .govuk-tag,
+  .#{$i} .govuk-tag {
+    background-color: map_get($v, "colour-websafe");
+  }
 }
 
-.home-office .nguk-tag,
-.hmpo .nguk-tag {
-  background-color: $home-office-brand-colour;
+.nguk-page--hm-passport-office .govuk-tag,
+.nguk-page--hmpo .govuk-tag,
+.hm-passport-office .govuk-tag,
+.hmpo .govuk-tag {
+  $home-office: map-get($govuk-colours-organisations, "home-office");
+
+  background-color: map_get($home-office, "colour-websafe");
 }
