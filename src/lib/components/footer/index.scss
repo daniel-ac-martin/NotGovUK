@@ -1,22 +1,3 @@
-#open-government-license {
-  background-image: url('../../../assets/images/ogl.svg');
-  background-repeat: no-repeat;
-  padding-left: 3.3em;
-  flex: 1 1 auto;
-}
-
-#crown-copyright {
-  display: inline-block;
-  background-image: url('../../../assets/images/govuk-crest.svg');
-  background-position: 50% 0;
-  background-size: 125px 102px;
-  background-repeat: no-repeat;
-  padding-top: 112px;
-  text-align: center;
-  flex: 0 1 auto;
-}
-
-.internal #open-government-license,
-.internal #crown-copyright {
-  display: none;
+.govuk-footer__copyright-logo {
+  background-image: url('../../../assets/images/govuk-crest.png');
 }

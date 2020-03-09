@@ -1,5 +1,5 @@
 import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
-import { text } from "@storybook/addon-knobs";
+import { boolean, text } from "@storybook/addon-knobs";
 import { Footer } from '../../';
 import readMe from './README.md';
 
@@ -19,6 +19,7 @@ import readMe from './README.md';
     <Footer
       className={text('className')}
       id={text('id')}
+      wide={boolean('wide')}
     >
       {text('children', 'My custom footer.')}
     </Footer>
@@ -32,8 +33,21 @@ import readMe from './README.md';
 
 <Preview>
   <Story name="Standard">
-    <Footer>
-      My custom footer.
-    </Footer>
+    <Footer />
+  </Story>
+</Preview>
+
+
+### Wide
+
+EXPERIMENTAL
+
+A `wide` flag can be provided for when you do NOT wish to restrict the width on wide screens.
+
+<Preview>
+  <Story name="Wide">
+    <Footer
+      wide
+    />
   </Story>
 </Preview>
