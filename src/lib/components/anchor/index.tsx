@@ -11,8 +11,6 @@ interface IAnchor {
   href: string,
   /** HTML id */
   id?: string,
-  /** Text of the item */
-  text?: string,
   /** Title of the link */
   title?: string
 };
@@ -45,7 +43,6 @@ Anchor.defaultProps = {
   className: null,
   forceExternal: false,
   id: null,
-  text: 'Back',
   title: null
 };
 
