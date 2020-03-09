@@ -48,7 +48,7 @@ export const Anchor: React.SFC<IAnchor> = props => {
 };
 
 Anchor.defaultProps = {
-  className: null,
+  className: 'govuk-link',
   forceExternal: false,
   id: null,
   title: null
