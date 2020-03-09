@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 import { A } from '../';
 import { className } from '../../helpers';
 
@@ -16,11 +17,28 @@ interface IBackLink {
 };
 
 export const BackLink: React.SFC<IBackLink> = props => {
-  const href = props.href || 'javascript: history.back()';
+  const history = useHistory();
   const classes = className('govuk-back-link', props.className);
 
-  return (
-    <A id={props.id} href={href} className={classes} title={props.title}>{props.text}</A>
+  return props.href ? (
+    <A
+      className={classes}
+      href={props.href}
+      id={props.id}
+      title={props.title}
+    >
+      {props.text}
+    </A>
+  ) : (
+    <a
+      className={classes}
+      href="#"
+      id={props.id}
+      onClick={history.goBack}
+      title={props.title}
+    >
+      {props.text}
+    </a>
   );
 };
 

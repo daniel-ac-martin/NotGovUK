@@ -1,10 +1,11 @@
+import { h, mount } from '../../../test-helpers';
 import BackLink from './';
 
 describe('BackLink', () => {
   describe('when given a href', () => {
     describe('and a text property', () => {
       const backLink = h(BackLink, { href: '/back', text: 'Reverse' });
-      const component = shallow(backLink);
+      const component = mount(backLink);
 
       it('is a link', () => expect(component.find('A').length).toEqual(1));
       it('is a link with the text provided', () =>expect(component.find('A[children="Reverse"]').length).toEqual(1));
@@ -13,7 +14,7 @@ describe('BackLink', () => {
 
     describe('but NOT a text property', () => {
       const backLink = h(BackLink, { href: '/back' });
-      const component = shallow(backLink);
+      const component = mount(backLink);
 
       it('is a link', () => expect(component.find('A').length).toEqual(1));
       it('is a link with the text \'Back\'', () => expect(component.find('A[children="Back"]').length).toEqual(1));
@@ -22,15 +23,15 @@ describe('BackLink', () => {
   });
 
   describe('when NOT given a href', () => {
-    const backLink = h(BackLink);
-    const component = shallow(backLink);
+    const backLink = h(BackLink, { id: 'back' });
+    const component = mount(backLink);
 
-    it('is a link', () => expect(component.find('A').length).toEqual(1));
-    it('is a link with the text \'Back\'', () => expect(component.find('A[children="Back"]').length).toEqual(1));
+    it('is a link', () => expect(component.find('a').length).toEqual(1));
+    it('is a link with the text \'Back\'', () => expect(component.find('a[children="Back"]').length).toEqual(1));
 
     describe.skip('when clicked', () => {
       component
-        .find('A.back')
+        .find('a#back')
         .simulate('click');
 
       it('takes a step back in the history', () => expect(false).toEqual(true));
