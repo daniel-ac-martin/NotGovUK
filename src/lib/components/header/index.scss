@@ -1,99 +1,80 @@
-.page-header,
-body > .page-header,
-#root > .page-header,
-#story-root > .page-header {
-  overflow: initial;
-  background-color: $govuk-black;
-  color: $govuk-white;
-  border-bottom: 0.625rem solid $govuk-white;
-  font-weight: bold;
+// Reset some things from base style
+.govuk-header__navigation {
+  color: initial;
+  font-size: initial;
+  font-weight: initial;
+  line-height: initial;
 }
 
-.page-header > .inner,
-body > .page-header > .inner,
-#root > .page-header > .inner,
-#story-root > .page-header > .inner {
-  align-items: center;
-  justify-content: space-between;
-  align-content: space-between;
-  margin-bottom: -0.625rem;
+.govuk-header__navigation-item {
+  margin-bottom: initial;
 }
 
-.page-header > .inner {
-  border-bottom: 0.625rem solid $govuk-brand-colour;
+.govuk-header__menu-button {
+  box-sizing: initial;
+  width: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  text-align: initial;
+  vertical-align: initial;
+  cursor: initial;
+  -webkit-appearance: initial;
 }
 
-.home-office .page-header > .inner,
-.hmpo .page-header > .inner {
-  border-color: $home-office-brand-colour;
+// Links set to active by the router
+.govuk-header__navigation-item a.active {
+  $govuk-header-link-active: #1d8feb;
+
+  &:link,
+  &:hover,
+  &:visited {
+    color: $govuk-header-link-active;
+  }
+
+  &:focus {
+    color: $govuk-focus-text-colour;
+  }
 }
 
-.page-header a,
-.page-header a:visited,
-.page-header a:hover {
-  color: $govuk-white;
-  text-decoration: none;
+// Department colours
+@each $i, $v in $govuk-colours-organisations {
+  .govuk-header__container--#{$i},
+  .#{$i} .govuk-header__container {
+    border-color: map_get($v, "colour-websafe");
+
+    .govuk-header__navigation-item--active a,
+    .govuk-header__navigation-item a.active {
+      &:link,
+      &:hover,
+      &:visited {
+        color: map_get($v, "colour");
+      }
+
+      &:focus {
+        color: $govuk-focus-text-colour;
+      }
+    }
+  }
 }
 
-.page-header a:hover {
-  text-decoration: underline;
-}
+.govuk-header__container--hm-passport-office,
+.hm-passport-office .govuk-header__container,
+.govuk-header__container--hmpo,
+.hmpo .govuk-header__container {
+  $home-office: map-get($govuk-colours-organisations, "home-office");
 
-.page-header li.active a,
-.page-header li a.active {
-  color: #1d8feb;
-}
+  border-color: map_get($home-office, "colour-websafe");
 
-#logo {
-  display: inline-block;
-  background-image: url('../../../assets/images/crown.png');
-  background-repeat: no-repeat;
-  border-bottom: 1px solid $govuk-black;
-  flex: 0 0 10.25rem;
-  min-height: 2em;
-}
+  .govuk-header__navigation-item--active a,
+  .govuk-header__navigation-item a.active {
+    &:link,
+    &:hover,
+    &:visited {
+      color: map_get($home-office, "colour");
+    }
 
-#logo:hover {
-  border-bottom: 1px solid $govuk-white;
-  text-decoration: none !important;
-}
-
-#logo:before {
-  content: 'GOV.UK';
-  margin-left: 2.5rem;
-  font-size: 2em;
-}
-
-.home-office #logo:before {
-  content: 'Home Office';
-  font-size: 1.25em;
-  position: relative;
-  top: 0.375rem;
-}
-
-.hmpo #logo:before {
-  content: 'HMPO';
-}
-
-#service-title {
-  font-size: 1.5em;
-}
-
-#nav {
-  flex: 0 1 auto;
-}
-
-#nav ul {
-  margin: 0;
-  padding: 0;
-}
-
-#nav ul li {
-  display: inline;
-  margin-right: 0.7em;
-}
-
-#sign-out {
-  flex: 0 0 9.625rem;
-  text-align: right;
+    &:focus {
+      color: $govuk-focus-text-colour;
+    }
+  }
 }

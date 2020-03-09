@@ -1,5 +1,5 @@
 import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
-import { object, text } from "@storybook/addon-knobs";
+import { boolean, object, text } from "@storybook/addon-knobs";
 import { Header } from '../../';
 import readMe from './README.md';
 
@@ -20,6 +20,7 @@ The GOV.UK header shows users that they are on GOV.UK and which service they are
   <Story name="Header">
     <Header
       className={text('className')}
+      department={text('department')}
       id={text('id')}
       logoHref={text('logoHref')}
       navigation={object([
@@ -30,8 +31,9 @@ The GOV.UK header shows users that they are on GOV.UK and which service they are
       ])}
       signOutHref={text('signOutHref')}
       signOutText={text('signOutText')}
-      title={text('title', 'My service')}
+      title={text('title')}
       titleHref={text('titleHref', '#my-service')}
+      wide={boolean('wide')}
     />
   </Story>
 </Preview>
@@ -72,8 +74,8 @@ Use the header with a service name if your service is more than 5 pages long - t
 <Preview>
   <Story name="Title">
     <Header
-      title="My service"
-      titleHref="#my-service"
+      title="Service name"
+      titleHref="#"
     />
   </Story>
 </Preview>
@@ -87,13 +89,13 @@ Use the header with navigation if you need to include basic navigation, contact 
   <Story name="Navigation">
     <Header
       navigation={[
-        { href: '#one', text: 'One', active: true },
-        { href: '#two', text: 'Two' },
-        { href: '#three', text: 'Three' },
-        { href: '#four', text: 'Four' }
+        { href: '#1', text: 'Navigation item 1', active: true },
+        { href: '#2', text: 'Navigation item 2' },
+        { href: '#3', text: 'Navigation item 3' },
+        { href: '#4', text: 'Navigation item 4' }
       ]}
-      title="My service"
-      titleHref="#my-service"
+      title="Service name"
+      titleHref="#"
     />
   </Story>
 </Preview>
@@ -103,12 +105,168 @@ Use the header with navigation if you need to include basic navigation, contact 
 
 EXPERIMENTAL
 
+A sign-out link can be provided and added to the end of the list of navigation links.
+
 <Preview>
   <Story name="Sign out">
     <Header
       signOutHref="#sign-out"
       title="My service"
       titleHref="#my-service"
+    />
+  </Story>
+</Preview>
+
+
+### Wide
+
+EXPERIMENTAL
+
+A `wide` flag can be provided for when you do NOT wish to restrict the width on wide screens.
+
+<Preview>
+  <Story name="Wide">
+    <Header
+      wide
+    />
+  </Story>
+</Preview>
+
+
+### Department colours
+
+EXPERIMENTAL
+
+If you are building an internal application you can supply the name of your department in order to use their colours.
+
+
+#### DCLG
+
+<Preview>
+  <Story name="DCLG">
+    <Header
+      department="department-for-communities-and-local-government"
+    />
+  </Story>
+</Preview>
+
+
+#### DCMS
+
+<Preview>
+  <Story name="DCMS">
+    <Header
+      department="department-for-culture-media-sport"
+    />
+  </Story>
+</Preview>
+
+
+#### DEFRA
+
+<Preview>
+  <Story name="DEFRA">
+    <Header
+      department="department-for-environment-food-rural-affairs"
+    />
+  </Story>
+</Preview>
+
+
+#### DWP
+
+<Preview>
+  <Story name="DWP">
+    <Header
+      department="department-for-work-pensions"
+    />
+  </Story>
+</Preview>
+
+
+#### FCO
+
+<Preview>
+  <Story name="FCO">
+    <Header
+      department="foreign-commonwealth-office"
+    />
+  </Story>
+</Preview>
+
+
+#### Home Office
+
+<Preview>
+  <Story name="Home Office">
+    <Header
+      department="home-office"
+    />
+  </Story>
+</Preview>
+
+
+#### HMRC
+
+<Preview>
+  <Story name="HMRC">
+    <Header
+      department="hm-revenue-customs"
+    />
+  </Story>
+</Preview>
+
+
+#### HM Treasury
+
+<Preview>
+  <Story name="HM treasury">
+    <Header
+      department="hm-treasury"
+    />
+  </Story>
+</Preview>
+
+
+#### MoJ
+
+<Preview>
+  <Story name="MoJ">
+    <Header
+      department="ministry-of-justice"
+    />
+  </Story>
+</Preview>
+
+
+#### Office of the leader of the House of lords
+
+<Preview>
+  <Story name="Office of the leader of the House of lords">
+    <Header
+      department="office-of-the-leader-of-the-house-of-lords"
+    />
+  </Story>
+</Preview>
+
+
+#### Scotland office
+
+<Preview>
+  <Story name="Scotland office">
+    <Header
+      department="scotland-office"
+    />
+  </Story>
+</Preview>
+
+
+#### Wales office
+
+<Preview>
+  <Story name="Wales office">
+    <Header
+      department="wales-office"
     />
   </Story>
 </Preview>
