@@ -1,22 +1,62 @@
-.page-body,
-#root > .page-body,
-#story-root > .page-body {
-  background-color: $govuk-white;
-  color: $govuk-text-colour;
+.nguk-page {
+  @extend .nguk-site;
+  display: flex;
+  flex-direction: column;
+  overflow: initial;
   flex: 1 0 auto;
+  padding: initial;
 }
 
-.page-body main {
-  flex: 1 1 auto;
+.nguk-page--not-govuk {
+  @extend .nguk-site--not-govuk;
 }
 
-.page-body aside {
-  flex: 0 1 20em;
-  border-top: 0.625rem solid $govuk-brand-colour;
-  margin-left: 2em;
+@import './body.scss';
+
+// Wide
+.govuk-width-container--wide,
+.wide .govuk-width-container {
+  max-width: none;
+  margin-left: $govuk-gutter-half;
+  margin-right: $govuk-gutter-half;
+
+  @include govuk-media-query($from: tablet) {
+    margin-left: $govuk-gutter;
+    margin-right: $govuk-gutter;
+  }
 }
 
-.home-office .page-body aside,
-.hmpo .page-body aside {
-  border-color: $home-office-brand-colour;
+aside {
+  padding-top: govuk-spacing(2);
+  border-top: 2px solid $govuk-brand-colour;
+
+  h1 {
+    @extend .govuk-heading-l;
+  }
+
+  h2 {
+    @extend .govuk-heading-m;
+  }
+
+  h3 {
+    @extend .govuk-heading-s;
+  }
+
+  h4 {
+    @extend .govuk-heading-s;
+  }
+}
+
+// Department colours
+@each $i, $v in $govuk-colours-organisations {
+  .#{$i} aside {
+    border-color: map_get($v, "colour-websafe");
+  }
+}
+
+.hm-passport-office aside,
+.hmpo aside {
+  $home-office: map-get($govuk-colours-organisations, "home-office");
+
+  border-color: map_get($home-office, "colour-websafe");
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import FormGroupWithLabel from './form-group-with-label';
+import { bem } from '../../helpers';
 
 const Input: React.SFC<any> = props => {
   const fieldId = `${props.id}-input`;
@@ -15,6 +16,7 @@ const Input: React.SFC<any> = props => {
     >
       <input
         id={fieldId}
+        className={bem('govuk-input', props.error && 'error')}
         name={props.name}
         type={props.type}
         aria-describedby={props.hint && `${props.id}-hint`}

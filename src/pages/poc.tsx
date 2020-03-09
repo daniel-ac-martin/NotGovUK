@@ -42,7 +42,7 @@ const Page = props => (<>
     <li>Payment.</li>
     <li>Confirmation.</li>
   </ol>
-  <hr />
+  <hr className="visible" />
   <h1>Components</h1>
   <form>
     <h2>Back links</h2>

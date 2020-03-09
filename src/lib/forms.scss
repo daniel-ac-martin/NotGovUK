@@ -1,22 +1,17 @@
 fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
+  @extend .govuk-fieldset;
 }
 
-label,
-legend,
-.hint,
-.message {
-  display: block;
-  line-height: 1.25;
-  margin: 0 0 0.9375em 0;
-  padding: 0;
+label {
+  @extend .govuk-label;
 }
 
-label,
 legend {
-  margin: 0 0 0.3125em 0;
+  @extend .govuk-fieldset__legend;
+}
+
+.hint {
+  @extend .govuk-hint;
 }
 
 input[type="color"],
@@ -31,38 +26,28 @@ input[type="tel"],
 input[type="text"],
 input[type="time"],
 input[type="url"],
-input[type="week"],
-select,
+input[type="week"] {
+  @extend .govuk-input;
+
+  &.govuk-input--error {
+    @extend .govuk-input--error;
+  }
+}
+
+select {
+  @extend .govuk-select;
+
+  &.govuk-select--error {
+    @extend .govuk-select--error;
+  }
+}
+
 textarea {
-  line-height: 1.25;
-  box-sizing: border-box;
-  width: 100%;
-  height: 2.5em;
-  padding: 0.3125em;
-  border: 2px solid $govuk-input-border-colour;
-  font-size: inherit;
-  font-family: inherit;
-}
+  @extend .govuk-textarea;
 
-.error input:not(.innocent),
-.error select:not(.innocent),
-.error textarea:not(.innocent) {
-  border: 4px solid $govuk-error-colour;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid $govuk-focus-colour;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 2px;
-}
-
-.error input:not(.innocent):focus,
-.error select:not(.innocent):focus,
-.error textarea:not(.innocent):focus {
-  border-color: $govuk-focus-text-colour;
-  box-shadow: none;
+  &.govuk-textarea--error {
+    @extend .govuk-textarea--error;
+  }
 }
 
 input[type="color"] {
@@ -81,13 +66,15 @@ input[type="text"] {
 
 input[type="range"] {
   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 input[type="range"]:focus {
   box-shadow: none;
 }
 
-@media (min-width: 40.0625em) {
+@include govuk-media-query($from: 'tablet') {
   input[type="date"],
   input[type="datetime-local"],
   input[type="month"],
@@ -99,31 +86,17 @@ input[type="range"]:focus {
   }
 }
 
-textarea {
-  -webkit-appearance: none;
-  display: block;
-  height: auto;
-  min-height: 2.5em;
-  resize: vertical;
-}
-
 input,
 option,
 select,
 textarea {
-  background-color: $govuk-white;
+  background-color: govuk-colour('white');
   color: $govuk-text-colour;
-}
-
-input[disabled],
-select[disabled],
-textarea[disabled] {
-  opacity: 0.5;
 }
 
 option[disabled],
 option:nth-child(even)[disabled] {
-  color: $govuk-mid-grey;
+  color: govuk-colour('mid-grey');
 }
 
 select[multiple] {
@@ -136,48 +109,49 @@ select[multiple] > option {
 }
 
 option:nth-child(even) {
-  background-color: $govuk-light-grey;
+  background-color: govuk-colour('light-grey');
   color: $govuk-text-colour;
 }
 
+// FIXME: Do we still need these? - Use a react prop instead?
 input.width-30,
 select.width-30,
 textarea.width-30 {
-  max-width: 59ex;
+  @extend .govuk-input--width-30;
 }
 
 input.width-20,
 select.width-20,
 textarea.width-20 {
-  max-width: 41ex;
+  @extend .govuk-input--width-20;
 }
 
 input.width-10,
 select.width-10,
 textarea.width-10 {
-  max-width: 23ex;
+  @extend .govuk-input--width-10;
 }
 
 input.width-5,
 select.width-5,
 textarea.width-5 {
-  max-width: 10.8ex;
+  @extend .govuk-input--width-5;
 }
 
 input.width-4,
 select.width-4,
 textarea.width-4 {
-  max-width: 9ex;
+  @extend .govuk-input--width-4;
 }
 
 input.width-3,
 select.width-3,
 textarea.width-3 {
-  max-width: 7.2ex;
+  @extend .govuk-input--width-3;
 }
 
 input.width-2,
 select.width-2,
 textarea.width-2 {
-  max-width: 5.4ex;
+  @extend .govuk-input--width-2;
 }

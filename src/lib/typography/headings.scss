@@ -1,32 +1,23 @@
 h1 {
-  font-size: 2em;
-  line-height: 1.09375;
-  margin: 0 0 0.9375em 0;
+  @extend .govuk-heading-xl;
 }
 
 h2 {
-  font-size: 1.5em;
-  line-height: 1.0416;
-  margin: 0 0 0.78125em 0;
+  @extend .govuk-heading-l;
 }
 
 h3 {
-  font-size: 1.125em;
-  line-height: 1.11111;
-  margin: 0 0 0.833em 0;
+  @extend .govuk-heading-m;
 }
 
 h4 {
-  font-size: 1em;
-  line-height: 1.25;
-  margin: 0 0 0.9375em 0;
+  @extend .govuk-heading-s;
 }
 
+// FIXME: Remove?
+.govuk-caption,
 .caption {
-  display: block;
-  color: $govuk-secondary-text-colour;
+  @extend .govuk-caption-xl;
   font-size: 0.5625em;
-  font-weight: normal;
   margin-bottom: 0.28em;
-  line-height: 1.11;
 }

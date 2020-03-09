@@ -13,7 +13,7 @@ interface ISkipLink {
 };
 
 export const SkipLink: React.SFC<ISkipLink> = props => (
-  <a id={props.id} href={props.href} className={className('skip-link', props.className)}>{props.text}</a>
+  <a id={props.id} href={props.href} className={className('govuk-skip-link', props.className)}>{props.children || props.text}</a>
 );
 
 SkipLink.defaultProps = {

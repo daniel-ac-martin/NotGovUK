@@ -6,8 +6,8 @@ describe('Header', () => {
     const component = shallow(header);
 
     it('is a header', () => expect(component.find('header').length).toEqual(1));
-    it('with a logo link', () => expect(component.find('A#logo').length).toEqual(1));
-    it('that links to GovUK', () => expect(component.find('A#logo[href="https://www.gov.uk/"]').length).toEqual(1));
+    it('with a logo link', () => expect(component.find('.govuk-header__logo > A').length).toEqual(1));
+    it('that links to GovUK', () => expect(component.find('.govuk-header__logo > A[href="https://www.gov.uk/"]').length).toEqual(1));
   });
 
   describe('when given a logoHref', () => {
@@ -15,8 +15,8 @@ describe('Header', () => {
     const component = shallow(header);
 
     it('is a header', () => expect(component.find('header').length).toEqual(1));
-    it('with a logo link', () => expect(component.find('A#logo').length).toEqual(1));
-    it('that links to the location provided', () => expect(component.find('A#logo[href="/logo/"]').length).toEqual(1));
+    it('with a logo link', () => expect(component.find('.govuk-header__logo > A').length).toEqual(1));
+    it('that links to the location provided', () => expect(component.find('.govuk-header__logo > A[href="/logo/"]').length).toEqual(1));
   });
 
   describe('when given a title and titleHref', () => {
@@ -27,9 +27,9 @@ describe('Header', () => {
     const component = shallow(header);
 
     it('is a header', () => expect(component.find('header').length).toEqual(1));
-    it('contains a service title link', () => expect(component.find('A#service-title').length).toEqual(1));
-    it('that links to the HRef', () => expect(component.find('A#service-title[href="/my-service/"]').length).toEqual(1));
-    it('with the text provided', () => expect(component.find('A#service-title[children="My service"]').length).toEqual(1));
+    it('contains a service title link', () => expect(component.find('A.govuk-header__link--service-name').length).toEqual(1));
+    it('that links to the HRef', () => expect(component.find('A.govuk-header__link--service-name[href="/my-service/"]').length).toEqual(1));
+    it('with the text provided', () => expect(component.find('A.govuk-header__link--service-name[children="My service"]').length).toEqual(1));
   });
 
   describe('when given a list of navigation links', () => {

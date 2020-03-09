@@ -7,6 +7,6 @@ describe('Details', () => {
 
     it('includes a summary', () => expect(component.find('summary').length).toEqual(1));
     it('includes a summary with the text provided', () => expect(component.find('summary').text()).toEqual('Summary'));
-    it('includes the children provided', () => expect(component.find('.content').text()).toEqual('Content'));
+    it('includes the children provided', () => expect(component.find('.govuk-details__text').text()).toEqual('Content'));
   });
 });

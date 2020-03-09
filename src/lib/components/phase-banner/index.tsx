@@ -12,9 +12,13 @@ interface IPhaseBanner {
 };
 
 export const PhaseBanner: React.SFC<IPhaseBanner> = props => (
-  <div id={props.id} className={className('phase-banner', props.className)}>
-    <Tag text={props.phase} />
-    {props.children}
+  <div id={props.id} className={className('govuk-phase-banner', props.className)}>
+    <p className="govuk-phase-banner__content">
+      <Tag className="govuk-phase-banner__content__tag" text={props.phase} />
+      <span className="govuk-phase-banner__text">
+        {props.children}
+      </span>
+    </p>
   </div>
 );
 

@@ -2,9 +2,11 @@ import * as React from 'react';
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
 import { className } from '../src/lib/helpers';
 import { BrowserRouter as Router } from 'react-router-dom';
+import RawMiddle from '../src/lib/components/page/body';
+import Main from '../src/lib/components/page/main';
 
 const Root: React.SFC<any> = props => (
-  <div id="story-root" className={props.className} style={{
+  <div id="story-root" {...props} style={{
     backgroundColor: 'white',
     padding: '1em'
   }}>
@@ -15,24 +17,20 @@ const Root: React.SFC<any> = props => (
 );
 
 const Middle: React.SFC<any> = props => (
-  <div id="middle" className="page-body" style={{
-      margin: '-1em'
+  <RawMiddle {...props} style={{
+    margin: 0,
+    padding: 0
   }}>
-    <div className="inner">
-      {props.children}
-    </div>
-  </div>
-);
-
-const Main: React.SFC<any> = props => (
-  <main id="content">
     {props.children}
-  </main>
+  </RawMiddle>
 );
 
 const MainInMiddle: React.SFC<any> = props => (
-  <Middle>
-    <Main>
+  <Middle {...props}>
+    <Main style={{
+      margin: 0,
+      padding: 0
+    }}>
       {props.children}
     </Main>
   </Middle>
@@ -42,14 +40,15 @@ const decorator = storyFn => {
   const departmentOptions = {
     'None': '',
     'Home Office': 'home-office',
-    'HMPO': 'hmpo'
+    'HMPO': 'hm-passport-office',
+    'HMRC': 'hm-revenue-customs'
   };
 
   const isInternal = boolean('Internal', false, 'Theme');
   const department = select('Department', departmentOptions, '', 'Theme');
 
   const props = {
-    className: className(isInternal ? 'internal' : '', department),
+    className: className(isInternal ? 'not-govuk' : '', department),
   };
 
   return React.createElement(Root, props, storyFn());

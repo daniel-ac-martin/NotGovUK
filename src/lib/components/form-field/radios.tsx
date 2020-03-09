@@ -1,37 +1,41 @@
 import * as React from 'react';
 import CheckboxesAndRadios from './checkboxes-and-radios';
 import Hint from './hint';
-import { className } from '../../helpers';
+import Label from './label';
+import { bem, className } from '../../helpers';
 
 const Radios: React.SFC<any> = props => (
   <CheckboxesAndRadios
     id={props.id}
-    className={className('radios', props.className)}
+    className={props.className}
     label={props.label}
     hint={props.hint}
     error={props.error}
     inline={props.inline}
     small={props.small}
   >
-    {props.options.map((v, i) => {
-      const id = `${props.id}-radio-${i}`;
-      return (
-        <div className="item" key={i}>
-          <input
-            id={id}
-            name={props.name}
-            type="radio"
-            value={v.value}
-            checked={v.selected}
-            disabled={props.disabled || v.disabled}
-            onBlur={props.onBlur}
-            onChange={props.onChange}
-          />
-          <label htmlFor={id}>{v.label}</label>
-          {v.hint && <Hint id={`${id}-hint`}>{v.hint}</Hint>}
-        </div>
-      );
-    })}
+    <div className={bem('govuk-radios', props.small && 'small', props.inline && 'inline')}>
+      {props.options.map((v, i) => {
+        const id = `${props.id}-radio-${i}`;
+        return (
+          <div className="govuk-radios__item" key={i}>
+            <input
+              id={id}
+              className="govuk-radios__input"
+              name={props.name}
+              type="radio"
+              value={v.value}
+              checked={v.selected}
+              disabled={props.disabled || v.disabled}
+              onBlur={props.onBlur}
+              onChange={props.onChange}
+            />
+            <Label htmlFor={id} className="govuk-radios__label">{v.label}</Label>
+            {v.hint && <Hint id={`${id}-hint`} className="govuk-radios__hint">{v.hint}</Hint>}
+          </div>
+        );
+      })}
+    </div>
   </CheckboxesAndRadios>
 );
 

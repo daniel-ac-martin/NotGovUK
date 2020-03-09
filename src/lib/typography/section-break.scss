@@ -1,5 +1,19 @@
 hr {
-  border: 0;
-  border-bottom: 1px solid $govuk-border-colour;
-  margin: 1em 0;
+  @extend .govuk-section-break;
+
+  &.xl {
+    @extend .govuk-section-break--xl;
+  }
+
+  &.l {
+    @extend .govuk-section-break--l;
+  }
+
+  &.m {
+    @extend .govuk-section-break--m;
+  }
+
+  &.visible {
+    @extend .govuk-section-break--visible;
+  }
 }
