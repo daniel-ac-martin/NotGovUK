@@ -6,7 +6,6 @@ const CheckboxesAndRadios: React.SFC<any> = props => (
   <FormGroupWithFieldset
     id={props.id}
     className={props.className}
-    fieldsetClassName={className(props.small && 'small', props.inline && 'inline', 'checkboxes-and-radios')}
     legend={props.label}
     hint={props.hint}
     error={props.error}

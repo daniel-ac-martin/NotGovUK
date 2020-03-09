@@ -90,7 +90,7 @@ export const FormField: React.SFC<IFormField> = props => {
   );
   const processedProps = {
     ...props,
-    className: className(props.error && 'error', props.className),
+    className: className(props.error && 'govuk-form-group--error', props.className),
     defaultValue: props.value === undefined ? props.defaultValue : undefined,
     fieldStyle: props.width && { maxWidth: (((props.width >= 10) ? 4.76 : 1.76) + 1.81 * props.width) + 'ex' },
     id: props.id || props.name,

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import FormGroupWithLabel from './form-group-with-label';
+import { bem } from '../../helpers';
 
 const Textarea: React.SFC<any> = props => {
   const fieldId = `${props.id}-textarea`;
@@ -15,6 +16,7 @@ const Textarea: React.SFC<any> = props => {
     >
       <textarea
         id={fieldId}
+        className={bem('govuk-textarea', props.error && 'error')}
         name={props.name}
         aria-describedby={props.hint && `${props.id}-hint`}
         defaultValue={props.defaultValue}
