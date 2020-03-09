@@ -1,32 +1,3 @@
-.breadcrumbs {
-  flex: 0 1 100%;
-  line-height: 1.25;
-  margin: 1em 0 0.625em 0;
-}
-
-.breadcrumbs ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.breadcrumbs ol li {
-  display: inline-block;
-  margin-right: 0.3em;
-}
-
-.breadcrumbs ol li:before {
-  display: inline-block;
-  content: '>';
-  color: $govuk-secondary-text-colour;
-  padding-right: 0.5em;
-}
-
-.breadcrumbs ol li:first-child:before {
-  content: '';
-  padding-right: 0;
-}
-
-.breadcrumbs a {
-  color: $govuk-text-colour !important;
+ol.govuk-breadcrumbs__list {
+  @extend .govuk-breadcrumbs
 }
