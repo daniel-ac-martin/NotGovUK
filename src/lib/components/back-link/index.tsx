@@ -9,7 +9,7 @@ interface IBackLink {
   href?: string,
   /** HTML id */
   id?: string,
-  /** The text of the item */
+  /** The text of the link */
   text?: string,
   /** The title of the link */
   title?: string
