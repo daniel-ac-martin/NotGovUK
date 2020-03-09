@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Start from './start';
 import Anchor from './anchor';
 import Input from './input';
 import { className } from '../../helpers';
@@ -33,13 +34,12 @@ export const Button: React.SFC<IButtonProps> = props => {
   const type = props.submit ? 'submit' : 'button';
   const anchor = props.href !== null;
   const classes = className(
-    anchor ? 'button' : '',
-    props.disabled && anchor ? 'disabled' : '',
-    props.secondary && (anchor || props.submit) ? 'secondary' : '',
-    props.start ? 'start' : '',
-    props.warning ? 'warning' : '',
+    'govuk-button',
+    props.disabled ? 'govuk-button--disabled' : '',
+    props.secondary ? 'govuk-button--secondary' : '',
+    props.warning ? 'govuk-button--warning' : '',
     props.className);
-  const text = props.value || (props.start && 'Start now >') || undefined;
+  const text = props.value || (props.start && 'Start now') || undefined;
   const processedProps = {
     ...props,
     text: text,
@@ -47,7 +47,15 @@ export const Button: React.SFC<IButtonProps> = props => {
     className: classes
   };
 
-  return anchor ? Anchor(processedProps) : Input(processedProps);
+  return (
+    props.start
+      ? Start(processedProps)
+      : (
+        anchor
+          ? Anchor(processedProps)
+          : Input(processedProps)
+      )
+  );
 };
 
 Button.defaultProps = {
