@@ -1,31 +1,25 @@
 // Width override classes
-.width-full,
-.width-three-quarters,
-.width-two-thirds,
-.width-one-half,
-.width-one-third,
-.width-one-quarter {
-  width: 100% !important;
+
+.width-full {
+  @extend .govuk-\!-width-full;
 }
 
-@media (min-width: 40.0625em) {
-  .width-three-quarters {
-    width: 75% !important;
-  }
+.width-three-quarters {
+  @extend .govuk-\!-width-three-quarters;
+}
 
-  .width-two-thirds {
-    width: 66.66% !important;
-  }
+.width-two-thirds {
+  @extend .govuk-\!-width-two-thirds;
+}
 
-  .width-one-half {
-    width: 50% !important;
-  }
+.width-one-half {
+  @extend .govuk-\!-width-one-half;
+}
 
-  .width-one-third {
-    width: 33.33% !important;
-  }
+.width-one-third {
+  @extend .govuk-\!-width-one-third;
+}
 
-  .width-one-quarter {
-    width: 25% !important;
-  }
+.width-one-quarter {
+  @extend .govuk-\!-width-one-quarter;
 }

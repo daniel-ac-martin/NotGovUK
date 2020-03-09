@@ -4,10 +4,10 @@ p {
 
 // Lead paragraph
 p.lead {
-  font-size: 1.26em;
+  @extend .govuk-body-lead;
 }
 
 // Small paragraph
 p.small {
-  font-size: 0.875em;
+  @extend .govuk-body-s;
 }
