@@ -17,7 +17,7 @@ interface IBackLink {
 
 export const BackLink: React.SFC<IBackLink> = props => {
   const href = props.href || 'javascript: history.back()';
-  const classes = className('back', props.className);
+  const classes = className('govuk-back-link', props.className);
 
   return (
     <A id={props.id} href={href} className={classes} title={props.title}>{props.text}</A>
