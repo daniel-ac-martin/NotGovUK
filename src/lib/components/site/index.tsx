@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Page } from '../';
 import { Route, Switch } from 'react-router-dom';
+import { bem, className } from '../../helpers';
 
 interface IFeedback {
   /** HRef */
@@ -19,12 +20,20 @@ interface IRoutes {
 };
 
 interface ISite {
+  /** Extra CSS classes to be applied */
+  className?: string,
+  /** The department whose colours to use */
+  department?: string,
   /** Feedback form */
   feedback?: IFeedback,
   /** Content for the footer */
   footerContent?: any,
+  /** Whether to use elements reserved for *.service.gov.uk */
+  govUk?: boolean,
   /** HRef for the Crown logo link */
   logoHref?: string,
+  /** HTML id */
+  id?: string,
   /** The phase the service is in */
   phase?: string
   /** Content for the phase-banner */
@@ -40,13 +49,16 @@ interface ISite {
   /** Service title */
   title?: string,
   /** Location linked to by the service title */
-  titleHref?: string
+  titleHref?: string,
+  /** Whether to remove limits on width */
+  wide?: boolean
 };
 
 export const Site: React.SFC<ISite> = props => {
   const feedbackHref = props.feedback && (props.feedback.href || '/feedback');
   const SitePage: React.SFC<any> = p => (
     <Page
+      department={props.department}
       feedbackHref={feedbackHref}
       footerContent={props.footerContent}
       logoHref={props.logoHref}
@@ -61,39 +73,46 @@ export const Site: React.SFC<ISite> = props => {
       signOutText={props.signOutText}
       title={props.title}
       titleHref={props.titleHref}
+      wide={props.wide}
     >
       {p.children}
     </Page>
   );
 
   return (
-    <Switch>
-      {props.routes.map((v, i) => (
-        <Route path={v.href} key={i}>
+    <div className={className(bem('nguk-site', props.govUk ? undefined: 'not-govuk'), props.className)}>
+      <Switch>
+        {props.routes.map((v, i) => (
+          <Route path={v.href} key={i}>
+            <SitePage>
+              {v.content}
+            </SitePage>
+          </Route>
+        ))}
+        {props.feedback && (
+          <Route path={feedbackHref}>
+            <SitePage>
+              {props.feedback.content}
+            </SitePage>
+          </Route>
+        )}
+        <Route path="/">
           <SitePage>
-            {v.content}
+            {props.children}
           </SitePage>
         </Route>
-      ))}
-      {props.feedback && (
-        <Route path={feedbackHref}>
-          <SitePage>
-            {props.feedback.content}
-          </SitePage>
-        </Route>
-      )}
-      <Route path="/">
-        <SitePage>
-          {props.children}
-        </SitePage>
-      </Route>
-    </Switch>
+      </Switch>
+    </div>
   );
 };
 
 Site.defaultProps = {
+  className: null,
+  department: null,
   footerContent: null,
+  govUk: true,
   logoHref: 'https://www.gov.uk/',
+  id: null,
   phase: null,
   phaseBannerContent: null,
   routes: [],
@@ -101,7 +120,8 @@ Site.defaultProps = {
   signOutHref: null,
   signOutText: 'Sign out',
   title: null,
-  titleHref: '/'
+  titleHref: '/',
+  wide: false
 };
 
 export default Site;
