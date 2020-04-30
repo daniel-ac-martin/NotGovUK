@@ -1,0 +1,47 @@
+{
+  "name": "@not-govuk/react-restify",
+  "version": "0.1.0",
+  "description": "A customised Restify server for isomorphic React applications.",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "pnpm run build",
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "restify"
+  ],
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "ISC",
+  "dependencies": {
+    "@not-govuk/server-renderer": "workspace:^0.1.0",
+    "bunyan": "^1.8.12",
+    "etag": "^1.8.1",
+    "restify": "^8.5.1",
+    "restify-bunyan-logger": "^2.0.7",
+    "restify-errors": "^8.0.2"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.6",
+    "@types/connect": "^3.4.33",
+    "@types/express-serve-static-core": "^4.17.5",
+    "@types/restify": "^8.4.2",
+    "@types/webpack": "^4.41.12",
+    "@types/webpack-dev-middleware": "^3.7.0",
+    "@types/webpack-hot-middleware": "^2.25.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.43.0",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
