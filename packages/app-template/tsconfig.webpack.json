@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "outDir": "dist/webpack-ts",
+    "rootDir": "."
+  },
+  "include": [
+    "src/client",
+    "src/common"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "*/node_modules/*"
+  ],
+  "references": [
+    {
+      "path": "../client-renderer/tsconfig.build.json"
+    },
+    {
+      "path": "../components/tsconfig.build.json"
+    }
+  ]
+}

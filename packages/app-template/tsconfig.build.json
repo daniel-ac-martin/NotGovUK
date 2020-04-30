@@ -1,0 +1,27 @@
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "."
+  },
+  "include": [
+    "index.ts",
+    "config.ts",
+    "package.json",
+    "src/common",
+    "src/server",
+    "webpack.config.js"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "references": [
+    {
+      "path": "../components/tsconfig.build.json"
+    },
+    {
+      "path": "../react-restify/tsconfig.build.json"
+    }
+  ]
+}
