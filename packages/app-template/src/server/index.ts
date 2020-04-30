@@ -1,5 +1,6 @@
-import config from '../../config';
+import serverless from 'serverless-http';
 import { Router, errors } from '@not-govuk/react-restify';
+import config, { Mode } from '../../config';
 import httpd from './lib/httpd';
 
 const api = new Router();
@@ -34,6 +35,31 @@ api.post('/echo/:one/:two', echo);
 
 httpd.serveAPI('/api/', api);
 
-httpd.listen(config.httpd.port, config.httpd.host, () => {
-  httpd.log.info('%s listening at %s', httpd.name, httpd.url);
-});
+// ---
+
+let handler;
+
+switch (config.mode) {
+  case Mode.Server:
+    // Run as a classical server
+    httpd.listen(config.httpd.port, config.httpd.host, () => {
+      httpd.log.info('%s listening at %s', httpd.name, httpd.url);
+    });
+    break;
+  case Mode.Serverless:
+    // Run under the Serverless framework
+    httpd.handler = httpd._onRequest; // Make Restify compatible
+    handler = serverless(httpd);
+    break;
+  case Mode.StaticGenerator:
+    // Generate a static site
+    throw new Error('WRITEME!');
+    break;
+  default:
+    throw new Error('Invalid mode');
+    break;
+}
+
+export {
+  handler
+};
