@@ -1,28 +1,38 @@
 import config from '../../config';
+import { Router, errors } from '@not-govuk/react-restify';
 import httpd from './lib/httpd';
 
-httpd.get('/api/foo', (req, res, next) => {
-  res.send({ foo: 'bar' });
-  next();
+const api = new Router();
+
+httpd.get('/403', (req, res, next) => {
+  next(new errors.ForbiddenError('No access for you!'));
 });
 
-function respond(req, res, next) {
-  res.send('hello ' + req.params.name);
+api.get('/403', (req, res, next) => {
+  next(new errors.ForbiddenError('No access to this API for you!'));
+});
+
+httpd.get('/404', (req, res, next) => {
+  next(new errors.ResourceNotFoundError(`${req.path()} does not exist`));
+});
+
+api.get('/404', (req, res, next) => {
+  next(new errors.ResourceNotFoundError(`${req.path()} does not exist`));
+});
+
+const echo = (req, res, next) => {
+  res.send({
+    params: req.params,
+    query: req.query,
+    body: req.body
+  });
   next();
-}
+};
 
-httpd.get('/hello/:name', respond);
-httpd.head('/hello/:name', respond);
+api.get('/echo/:one/:two', echo);
+api.post('/echo/:one/:two', echo);
 
-function respondHTML(req, res, next) {
-  //res.render('div', {}, 'hello ' + req.params.name);
-  res.contentType = 'text/html';
-  res.send(true);
-  next();
-}
-
-httpd.get('/html/:name', respondHTML);
-httpd.head('/html/:name', respondHTML);
+httpd.serveAPI('/api/', api);
 
 httpd.listen(config.httpd.port, config.httpd.host, () => {
   httpd.log.info('%s listening at %s', httpd.name, httpd.url);

@@ -7,7 +7,7 @@ import webpackConfig from '../../../webpack.config.js';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const httpd = restify.createServer({
+export const httpd = restify.createServer({
   name: config.name,
   app: {
     Component: App,
@@ -92,54 +92,5 @@ traverseDirectory(pagesDir)
         .then(mod => httpd.get(route, pageMiddleware(mod.default)));
     });
   });
-
-const ResourceNotFoundError = errors.ResourceNotFoundError;
-
-const api404Middleware = (req, res, next) => {
-  next(new ResourceNotFoundError(`${req.path()} does not exist`));
-};
-
-const ui404Middleware = (req, res, next) => {
-  res.contentType = 'text/html';
-  console.log(res.acceptable);
-  //res.render(404, 'div', {}, `${req.path()} does not exist`);
-  next(new ResourceNotFoundError(`${req.path()} does not exist`));
-};
-
-//httpd.get('/api/*', api404Middleware);
-//httpd.post('/api/*', api404Middleware);
-
-//httpd.get('*', ui404Middleware);
-//httpd.post('*', ui404Middleware);
-
-//httpd.get('*', api404Middleware);
-//httpd.use((err, req, res, next) => {
-  //console.log('here');
-  //next();
-//});
-
-const api = new Router();
-
-httpd.get('/403', (req, res, next) => {
-  next(new errors.ForbiddenError('No access for you!'));
-});
-
-api.get('/403', (req, res, next) => {
-  next(new errors.ForbiddenError('No access to this API for you!'));
-});
-
-const echo = (req, res, next) => {
-  res.send({
-    params: req.params,
-    query: req.query,
-    body: req.body
-  });
-  next();
-};
-
-api.get('/echo/:one/:two', echo);
-api.post('/echo/:one/:two', echo);
-
-httpd.serveAPI('/api/', api);
 
 export default httpd;
