@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Page } from '../';
 import { Route, Switch } from 'react-router-dom';
 import { bem, className } from '../../helpers';
+import { RouteComponentProps } from 'react-router';
 
 interface IFeedback {
   /** HRef */
@@ -14,7 +15,9 @@ interface IRoutes {
   /** HRef */
   href: string,
   /** Page content */
-  content: any,
+  content?: any,
+  /** Page component */
+  Component: React.ComponentType<RouteComponentProps>,
   /** Page title */
   title: string,
 };
@@ -54,6 +57,26 @@ interface ISite {
   wide?: boolean
 };
 
+interface PageErrorProps {
+  internal?: boolean
+  title: string
+  message: string
+};
+
+const PageError: React.SFC<PageErrorProps> = p => (
+  <>
+  { p.internal ? (
+    <>
+    <h1>Something went wrong...</h1>
+    <h2>{p.title}</h2>
+    </>
+  ) : (
+    <h1 className="govuk-heading-l">{p.title}</h1>
+  )}
+  <p>{p.message}</p>
+  </>
+);
+
 export const Site: React.SFC<ISite> = props => {
   const feedbackHref = props.feedback && (props.feedback.href || '/feedback');
   const SitePage: React.SFC<any> = p => (
@@ -78,29 +101,32 @@ export const Site: React.SFC<ISite> = props => {
       {p.children}
     </Page>
   );
+  const withPage = <T extends unknown>(Component: React.ComponentType<T>) => (props: T) => (
+    <SitePage>
+      <Component {...props} />
+    </SitePage>
+  );
+  const NotFoundErrorPage: React.SFC<RouteComponentProps> = withPage(({ location }) => (
+    <PageError
+      title="Page not found"
+      message={`${location.pathname} does not exist.`}
+    />
+  ));
 
   return (
     <div className={className(bem('nguk-site', props.govUk ? undefined: 'not-govuk'), props.className)}>
       <Switch>
         {props.routes.map((v, i) => (
-          <Route path={v.href} key={i}>
-            <SitePage>
-              {v.content}
-            </SitePage>
-          </Route>
+          <Route exact path={v.href} key={i} component={withPage(v.Component)} />
         ))}
         {props.feedback && (
-          <Route path={feedbackHref}>
+          <Route exact path={feedbackHref}>
             <SitePage>
               {props.feedback.content}
             </SitePage>
           </Route>
         )}
-        <Route path="/">
-          <SitePage>
-            {props.children}
-          </SitePage>
-        </Route>
+        <Route component={NotFoundErrorPage} />
       </Switch>
     </div>
   );
