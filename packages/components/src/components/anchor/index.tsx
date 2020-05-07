@@ -41,6 +41,7 @@ export const Anchor: React.SFC<IAnchor> = props => {
     <NavLink
       {...processedProps}
       className={props.className}
+      exact
       id={props.id}
       title={props.title}
       to={props.href}
