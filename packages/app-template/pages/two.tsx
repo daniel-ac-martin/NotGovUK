@@ -1,5 +1,6 @@
 import React from 'react';
 
-const Home = () => <h1>Twox</h1>;
+const Page = () => <h1>Two</h1>;
 
-export default Home;
+export default Page;
+export const title = 'Two';
