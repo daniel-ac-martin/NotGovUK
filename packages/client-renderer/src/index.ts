@@ -1,11 +1,13 @@
-import { ComponentType, createElement as h } from 'react';
-import { hydrate as originalHydrate } from 'react-dom';
+import { ComponentType, Suspense, createElement as h } from 'react';
+import { hydrate as originalHydrate, render as originalRender } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-export const hydrate = <A extends object>(App: ComponentType<A>) => {
+export const hydrateOrRender = <A extends object>(App: ComponentType<A>) => {
   const createApp = (App: ComponentType<A>, props: A) => (
     h(BrowserRouter, {},
-      h(App, props)
+      h(Suspense, { fallback: h('div', {}, 'Loading...') },
+        h(App, props)
+       )
      )
   );
 
@@ -14,11 +16,32 @@ export const hydrate = <A extends object>(App: ComponentType<A>) => {
   };
 
   const windowWithProps: IWindowWithProps = window;
+  const root = document.getElementById('root');
 
-  return originalHydrate(
-    createApp(App, windowWithProps.hydrationProps),
-    document.getElementById('root')
-  );
+  let r;
+
+  try {
+    r = originalHydrate(
+      createApp(App, windowWithProps.hydrationProps),
+      root
+    );
+    console.info('Hydration complete.');
+  } catch (e) {
+    console.log(e);
+    console.warn('Hydration failed. Attempting to re-render...');
+    try {
+      r = originalRender(
+        createApp(App, windowWithProps.hydrationProps),
+        root
+      );
+      console.info('Render complete.');
+    } catch (e) {
+      console.log(e);
+      console.warn('Render failed. Falling back to SSR...');
+    }
+  }
+
+  return r;
 };
 
-export default hydrate;
+export default hydrateOrRender;
