@@ -88,7 +88,7 @@ export const Page: React.SFC<IPage> = props => {
                 {props.children}
               </div>
               <div className="govuk-grid-column-one-third">
-                {props.sidePanels.map((v, i) => (
+                {props.sidePanels && props.sidePanels.map((v, i) => (
                   <aside key={i}>
                     {v}
                   </aside>
