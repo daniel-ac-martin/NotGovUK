@@ -3,17 +3,17 @@ import { StaticRouter } from 'react-router';
 
 export interface ITemplateProps {
   app: object
-  baseTitle: string
-  charSet: string
-  title: string
   assetsDir: string
-  stylesheets: string[]
+  baseTitle: string
   bundle?: string
+  charSet: string
+  pageTitle: string
   rootId: string
+  stylesheets: string[]
 };
 
 export const Template: React.FC<ITemplateProps> = props => {
-  const title = `${props.title} - ${props.baseTitle}`;
+  const title = `${props.pageTitle} - ${props.baseTitle}`;
   const charSet = props.charSet || 'UTF-8';
 
   return (
@@ -35,7 +35,7 @@ export const Template: React.FC<ITemplateProps> = props => {
         <div id={props.rootId}>
           {props.children}
         </div>
-        {props.bundle && (
+        {props.bundle && !props.err && (
            <script src={`${props.assetsDir}/${props.bundle}`}></script>
         )}
       </body>
