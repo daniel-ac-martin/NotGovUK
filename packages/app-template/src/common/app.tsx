@@ -3,16 +3,21 @@ import { Site } from '@not-govuk/components';
 
 if (process.env.WEBPACK) require('./app.scss');
 
-export interface IAppProps {
-  title: string
-};
+export const App: React.FC<any> = (props) => {
+  const routes = props
+    .pages
+    .map(e => ({
+      Component: e.Component || React.lazy(() => import('../../pages/' + e.src)),
+      href: e.href,
+      title: e.title
+    }));
 
-export const App: React.FC<IAppProps> = (props: IAppProps) => (
-  <Site
-    title={props.title}
-  >
-    Hello world!2
-  </Site>
-);
+  return (
+    <Site
+      {...props}
+      routes={routes}
+    />
+  )
+};
 
 export default App;
