@@ -1,6 +1,7 @@
 import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
+import { AppProps, PageLoader, PageProps, withPages } from '@not-govuk/client-renderer';
 
 const statusToTitle = {
   400: 'Bad request',
@@ -11,7 +12,7 @@ const statusToTitle = {
   405: 'Method not allowed',
   406: 'Not acceptable',
   407: 'Proxy authentication required',
-  408: 'Request Timeout',
+  408: 'Request timeout',
   409: 'Conflict',
   410: 'Gone',
   418: 'I am a teapot',
@@ -23,9 +24,14 @@ const statusToTitle = {
   505: 'HTTP version not supported',
 };
 
-export const reactRenderer = <A extends object, B extends object>(App: ComponentType<A>, appProps: A, Template: ComponentType<B>, templateProps: B) => {
+export type TemplateProps = any & {
+  app: object
+  rootID: string
+};
+
+export const reactRenderer = <A extends AppProps, B extends PageProps, C extends TemplateProps>(App: ComponentType<A>, pageLoader: PageLoader, appProps: B, Template: ComponentType<C>, templateProps: C) => {
   const formatHTML = (req, res, body) => {
-    const createApp = (App: ComponentType<A>, props: A) => (
+    const createApp = (App: ComponentType<B>, props: B) => (
       h(StaticRouter, {
         location: req.url,
         context: {
@@ -62,7 +68,7 @@ export const reactRenderer = <A extends object, B extends object>(App: Component
     const html = renderToString(
       h(Template, {
         ...fullTemplateProps,
-        children: createApp(App, fullAppProps)
+        children: createApp(withPages(App, pageLoader), fullAppProps)
       })
     )
 
@@ -94,3 +100,4 @@ export const reactRenderer = <A extends object, B extends object>(App: Component
 };
 
 export default reactRenderer;
+export type { AppProps, PageLoader, PageProps } from '@not-govuk/client-renderer';

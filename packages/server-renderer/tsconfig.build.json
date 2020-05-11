@@ -1,1 +1,21 @@
-../../package-skel/tsconfig.build.json
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "."
+  },
+  "include": [
+    "index.ts",
+    "config.ts",
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "references": [
+    {
+      "path": "../client-renderer/tsconfig.build.json"
+    }
+  ]
+}
