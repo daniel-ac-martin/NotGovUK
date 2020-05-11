@@ -7,7 +7,6 @@
   "include": [
     "index.ts",
     "config.ts",
-    "package.json",
     "src/common",
     "src/server",
     "webpack.config.js"
@@ -21,7 +20,7 @@
       "path": "../components/tsconfig.build.json"
     },
     {
-      "path": "../react-restify/tsconfig.build.json"
+      "path": "../engine/tsconfig.build.json"
     }
   ]
 }
