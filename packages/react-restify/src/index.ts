@@ -1,7 +1,7 @@
 import originalRestify, { plugins, ServerOptions as IServerOptions } from 'restify';
 import restifyBunyanLogger from 'restify-bunyan-logger';
 import { ComponentType as ReactComponent } from 'react';
-import { reactRenderer } from '@not-govuk/server-renderer';
+import { PageLoader, reactRenderer } from '@not-govuk/server-renderer';
 import { liveness } from './middleware/health-check';
 import { htmlByDefault } from './middleware/html-by-default';
 import { preventClickjacking } from './middleware/prevent-clickjacking';
@@ -22,6 +22,7 @@ export type IOptions<A extends object, B extends object> = IServerOptions & {
     Component: ReactComponent<A>,
     props: A
   }
+  pageLoader: PageLoader
   template: {
     Component: ReactComponent<B>,
     props: B
@@ -36,7 +37,7 @@ export const createServer = <A extends object, B extends object>(options: IOptio
 
   const name = options.name || 'restify';
   const log = logger(Object.assign({ name }, options.logger));
-  const react = reactRenderer(options.app.Component, options.app.props, options.template.Component, options.template.props);
+  const react = reactRenderer(options.app.Component, options.pageLoader, options.app.props, options.template.Component, options.template.props);
   const formatBinary = restify.formatters['application/octet-stream; q=0.2'];
   const formatText = restify.formatters['text/plain; q=0.3'];
   const formatHTML = react.formatHTML;
