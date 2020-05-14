@@ -1,12 +1,19 @@
 import { ComponentType, Suspense, createElement as h } from 'react';
 import { hydrate as originalHydrate, render as originalRender } from 'react-dom';
+import { RouteComponentProps, withRouter } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import { AppProps, PageLoader, PageProps, withPages } from './with-pages';
+import { PageWrapProps, PageLoader, PageProps, withPages, ErrorPageProps, convertProps } from './with-pages';
 
-export const hydrateOrRender = <A extends AppProps, B extends PageProps>(App: ComponentType<A>, pageLoader: PageLoader) => {
+export const hydrateOrRender = <A extends PageWrapProps, B extends PageProps>(PageWrap: ComponentType<A>, ErrorPage: ComponentType<ErrorPageProps>, LoadingPage: ComponentType<RouteComponentProps>, pageLoader: PageLoader) => {
+  const Loading = props => (
+    h(PageWrap, convertProps(props, pageLoader),
+      h(withRouter(LoadingPage))
+     )
+  );
+
   const createApp = (App: ComponentType<B>, props: B) => (
     h(BrowserRouter, {},
-      h(Suspense, { fallback: h('div', {}, 'Loading...') },
+      h(Suspense, { fallback: h(Loading, props) },
         h(App, props)
        )
      )
@@ -17,7 +24,7 @@ export const hydrateOrRender = <A extends AppProps, B extends PageProps>(App: Co
   };
 
   const windowWithProps: IWindowWithProps = window;
-  const app = createApp(withPages(App, pageLoader), windowWithProps.hydrationProps);
+  const app = createApp(withPages(PageWrap, ErrorPage, pageLoader), windowWithProps.hydrationProps);
   const root = document.getElementById('root');
 
   let r;

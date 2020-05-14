@@ -1,7 +1,7 @@
 import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import { AppProps, PageLoader, PageProps, withPages } from '@not-govuk/client-renderer';
+import { ErrorPageProps, PageWrapProps, PageLoader, PageProps, withPages } from '@not-govuk/client-renderer';
 
 const statusToTitle = {
   400: 'Bad request',
@@ -29,7 +29,7 @@ export type TemplateProps = any & {
   rootID: string
 };
 
-export const reactRenderer = <A extends AppProps, B extends PageProps, C extends TemplateProps>(App: ComponentType<A>, pageLoader: PageLoader, appProps: B, Template: ComponentType<C>, templateProps: C) => {
+export const reactRenderer = <A extends PageWrapProps, B extends PageProps, C extends TemplateProps>(PageWrap: ComponentType<A>, ErrorPage: ComponentType<ErrorPageProps>, pageLoader: PageLoader, pageWrapProps: B, Template: ComponentType<C>, templateProps: C) => {
   const formatHTML = (req, res, body) => {
     const createApp = (App: ComponentType<B>, props: B) => (
       h(StaticRouter, {
@@ -54,21 +54,21 @@ export const reactRenderer = <A extends AppProps, B extends PageProps, C extends
       err,
       pageTitle: (err && err.title) || body.toString()
     };
-    const fullAppProps = {
-      ...appProps,
+    const appProps = {
+      ...pageWrapProps,
       ...reqProps
     };
     const fullTemplateProps = {
       ...templateProps,
       ...reqProps,
-      app: fullAppProps,
+      app: appProps,
       rootId: 'root'
     };
 
     const html = renderToString(
       h(Template, {
         ...fullTemplateProps,
-        children: createApp(withPages(App, pageLoader), fullAppProps)
+        children: createApp(withPages(PageWrap, ErrorPage, pageLoader), appProps)
       })
     )
 
@@ -100,4 +100,4 @@ export const reactRenderer = <A extends AppProps, B extends PageProps, C extends
 };
 
 export default reactRenderer;
-export type { AppProps, PageLoader, PageProps } from '@not-govuk/client-renderer';
+export type { ErrorPageProps, PageWrapProps, PageLoader, PageProps } from '@not-govuk/client-renderer';

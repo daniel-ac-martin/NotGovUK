@@ -1,5 +1,5 @@
-import { ComponentType, createElement as h, lazy } from 'react';
-import { RouteComponentProps } from 'react-router';
+import { ComponentType, SFC, createElement as h, lazy } from 'react';
+import { Route, RouteComponentProps, Switch, withRouter } from 'react-router';
 
 type PageModule = {
   default: ComponentType<RouteComponentProps>
@@ -12,28 +12,32 @@ export type PageLoader = (
   dir: string
 };
 
-type RouteMeta = {
+export type RouteInfo = {
   href: string
   title: string
 };
 
-export type Page = RouteMeta & {
+export type Page = RouteInfo & {
   src: string
 };
 
-export type Route = RouteMeta & {
-  Component: ComponentType<RouteComponentProps>
-};
-
-export type AppProps = any & {
-  routes: Route[]
+export type PageWrapProps = any & {
+  routes: RouteInfo[]
 };
 
 export type PageProps = any & {
   pages: Page[]
 };
 
-export const withPages = <A extends AppProps, B extends PageProps>(Component: ComponentType<A>, pageLoader: PageLoader): ComponentType<B> => (props: B) => {
+type ErrorPageInfo = {
+  internal: boolean
+  title: string
+  message: string
+};
+
+export type ErrorPageProps = ErrorPageInfo & RouteComponentProps;
+
+export const convertProps = <A extends PageProps, B extends PageWrapProps>(props: A, pageLoader: PageLoader): B => {
   const routes = props
     .pages
     .map(e => ({
@@ -41,14 +45,77 @@ export const withPages = <A extends AppProps, B extends PageProps>(Component: Co
       href: e.href,
       title: e.title
     }));
-  const appProps: A = {
+  const pageWrapProps = {
     ...(props as any),
-    routes
+    routes: routes
+      .map(e => ({
+        href: e.href,
+        title: e.title
+      }))
   };
 
-  delete appProps.pages;
+  delete pageWrapProps.pages;
+  delete pageWrapProps.err;
 
-  return h(Component, appProps);
+  return pageWrapProps;
+};
+
+export const withPages = <A extends PageWrapProps, B extends PageProps>(Component: ComponentType<A>, ErrorPage: ComponentType<ErrorPageProps>, pageLoader: PageLoader): ComponentType<B> => (props: B) => {
+  const routes = props
+    .pages
+    .map(e => ({
+      Component: e.Component || lazy(() => pageLoader(e.src)),
+      href: e.href,
+      title: e.title
+    }));
+  const pageWrapProps = convertProps(props, pageLoader);
+
+  const withPageWrap = (Page: ComponentType<RouteComponentProps>) => (props: RouteComponentProps) => h(
+    Component,
+    pageWrapProps,
+    h(Page, props)
+  );
+  const NotFoundErrorPage: SFC<RouteComponentProps> = (props: RouteComponentProps) => h(
+    ErrorPage,
+    {
+      ...props,
+      internal: false,
+      title: 'Page not found',
+      message: `${props.location.pathname} does not exist.`
+    }
+  );
+  const ServerErrorPage: ComponentType<ErrorPageInfo> = withRouter(ErrorPage);
+
+  return (
+    props.err
+      ? h(
+        ServerErrorPage,
+        {
+          internal: String(props.err.statusCode).startsWith('5'),
+          title: props.err.title,
+          message: props.err.message
+        }
+      )
+    : h(
+    Switch,
+    {},
+    [
+      ...routes.map((v, i) => h(
+        Route,
+        {
+          component: withPageWrap(v.Component),
+          exact: true,
+          key: i,
+          path: v.href
+        }
+      )),
+      h(Route, {
+        component: withPageWrap(NotFoundErrorPage),
+        key: 'catch-all'
+      })
+    ]
+    )
+  );
 };
 
 export default withPages;

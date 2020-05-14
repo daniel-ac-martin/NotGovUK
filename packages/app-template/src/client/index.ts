@@ -1,5 +1,7 @@
 import { hydrateOrRender } from '@not-govuk/client-renderer';
-import { App } from '../common/app';
+import { PageWrap } from '../common/page-wrap';
+import { ErrorPage } from '../common/error-page';
+import { LoadingPage } from '../common/loading-page';
 import { pageLoader } from '../common/page-loader';
 
-hydrateOrRender(App, pageLoader);
+hydrateOrRender(PageWrap, ErrorPage, LoadingPage, pageLoader);

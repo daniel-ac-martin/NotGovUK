@@ -21,11 +21,20 @@
   },
   "dependencies": {
     "@not-govuk/react-restify": "workspace:^0.1.0",
+    "@not-govuk/server-renderer": "workspace:^0.1.0",
+    "etag": "^1.8.1",
     "serverless-http": "^2.3.2"
   },
   "devDependencies": {
     "@not-govuk/client-renderer": "workspace:^0.1.0",
+    "@types/connect": "^3.4.33",
+    "@types/express-serve-static-core": "^4.17.5",
     "@types/node": "^13.13.4",
+    "@types/webpack": "^4.41.12",
+    "@types/webpack-dev-middleware": "^3.7.0",
+    "@types/webpack-hot-middleware": "^2.25.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "typescript": "^3.8.3"
   }
 }

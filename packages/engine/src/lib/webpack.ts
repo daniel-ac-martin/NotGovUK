@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import { ResourceNotFoundError } from 'restify-errors';
+import { errors } from '@not-govuk/react-restify';
 import etag from 'etag';
 import { Response } from 'express-serve-static-core';
 import { NextHandleFunction } from 'connect';
@@ -32,7 +32,7 @@ export const webpackMiddleware = webpackConfig => {
         },
       };
       const nextStub = () => {
-        next(new ResourceNotFoundError(`${req.path()} does not exist`));
+        next(new errors.ResourceNotFoundError(`${req.path()} does not exist`));
       };
 
       return dev(req, restifyTransport as Response, nextStub);

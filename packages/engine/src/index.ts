@@ -1,8 +1,9 @@
 import serverless from 'serverless-http';
 import { ComponentType } from 'react';
 import restify, { Router, errors } from '@not-govuk/react-restify';
-import { AppProps, PageLoader, PageProps } from '@not-govuk/client-renderer';
+import { ErrorPageProps, PageLoader, PageProps, PageWrapProps, reactRenderer } from '@not-govuk/server-renderer';
 import { gatherPages, pageRoutes } from './lib/pages';
+import webpackMiddleware from './lib/webpack';
 
 export type TemplateProps = any & {
   assetsDir: string
@@ -26,11 +27,11 @@ export enum NodeEnv {
   Production = 'production'
 };
 
-export type EngineConfig<A extends PageProps, B extends AppProps, C extends TemplateProps> = {
-  App: ComponentType<A>
+export type EngineConfig<A extends PageProps, B extends PageWrapProps, C extends TemplateProps> = {
+  ErrorPage: ComponentType<ErrorPageProps>
+  PageWrap: ComponentType<A>
   Template: ComponentType<C>
   apis?: Api[]
-  appProps: B
   env: NodeEnv
   httpd: {
     host: string
@@ -39,35 +40,64 @@ export type EngineConfig<A extends PageProps, B extends AppProps, C extends Temp
   mode: Mode
   name: string
   pageLoader: PageLoader
+  pageWrapProps: B
   templateProps: C
   webpackConfig: any
 };
 
-export const engine = async <A extends PageProps, B extends AppProps, C extends TemplateProps>(config: EngineConfig<A, B, C>) => {
+export const engine = async <A extends PageProps, B extends PageWrapProps, C extends TemplateProps>(config: EngineConfig<A, B, C>) => {
   const pages = await gatherPages(config.pageLoader);
+  const react = reactRenderer(
+    config.PageWrap,
+    config.ErrorPage,
+    config.pageLoader,
+    {
+      ...config.pageWrapProps,
+      pages
+    },
+    config.Template,
+    {
+      ...config.templateProps,
+      assetsDir: '/public',
+      bundle: 'bundle.js',
+      stylesheets: ['style.css']
+    });
+  const formatHTML = react.formatHTML;
 
   // Set up Restify instance
   const httpd = restify.createServer({
     name: config.name,
-    app: {
-      Component: config.App,
-      props: {
-        ...config.appProps,
-        pages
-      }
+    formatters: {
+      'application/xhtml+xml; q=0.2': formatHTML,
+      'text/html; q=0.2': formatHTML
     },
-    pageLoader: config.pageLoader,
-    template: {
-      Component: config.Template,
-      props: {
-        ...config.templateProps,
-        assetsDir: '/public',
-        bundle: 'bundle.js',
-        stylesheets: ['style.css']
-      }
-    },
-    webpackConfig: config.webpackConfig
   });
+
+  httpd.use(react.renderer);
+
+  /*
+    httpd.get('/public/*', restify.plugins.serveStatic({
+    directory: './public',
+    appendRequestPath: false
+    }));
+  */
+  const webpack = (
+    process.env['NODE_ENV'] === 'development' && config.webpackConfig
+      ? webpackMiddleware(config.webpackConfig)
+      : undefined
+  );
+  const servePublicFiles = (
+    webpack
+      ? webpack.serveFiles
+      : restify.plugins.serveStaticFiles('./public')
+  );
+
+  httpd.head('/public/*', servePublicFiles);
+  httpd.get('/public/*', servePublicFiles);
+
+  if (webpack) {
+    httpd.get(webpack.hotPath, webpack.hot);
+  }
 
   // Serve the pages as HTML
   httpd.serve('/', pageRoutes(pages))
