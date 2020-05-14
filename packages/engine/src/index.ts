@@ -112,7 +112,6 @@ export const engine = async <A extends PageProps, B extends PageWrapProps, C ext
   switch (config.mode) {
     case Mode.Serverless:
       // Run under the Serverless framework
-      httpd.handler = httpd._onRequest; // Make Restify compatible with serverless-http
       r = serverless(httpd);
       break;
     case Mode.StaticGenerator:
