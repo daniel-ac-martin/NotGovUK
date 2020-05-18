@@ -1,5 +1,5 @@
 import { ComponentType, createElement as h } from 'react';
-import { renderToString } from 'react-dom/server';
+import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, compose } from '@not-govuk/app-composer';
 
 const statusToTitle = {
@@ -24,7 +24,8 @@ const statusToTitle = {
 };
 
 export type TemplateProps = {
-  app: ApplicationPropsSSR
+  appProps: ApplicationPropsSSR
+  appRender: string
   assetsDir: string
   bundle: string
   charSet: string
@@ -54,6 +55,12 @@ const contentTypeToCharSet = (contentType: string): string => {
 
 export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, Template: Template, options: RendererOptions) => {
   const formatHTML = (req, res, body) => {
+    const routerProps = {
+      location: req.url,
+      context: {
+        statusCode: res.statusCode
+      }
+    };
     const err = (
       body instanceof Error
         ? {
@@ -63,7 +70,6 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
         }
         : undefined
     );
-
     const reqProps = {
       err,
       pageTitle: (err && err.title) || body.toString()
@@ -72,32 +78,26 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       pages: options.pages,
       ...reqProps
     };
+    const appRender = renderToString(h(
+      compose({
+        AppWrap,
+        ErrorPage,
+        PageWrap,
+        routerProps
+      }),
+      appProps
+    ));
     const fullTemplateProps = {
-      app: appProps,
+      appProps,
+      appRender,
       assetsDir: options.assetsDir,
       charSet: contentTypeToCharSet(res.header('Content-Type')),
       bundle: options.bundle,
       rootId: options.rootId,
       stylesheets: options.stylesheets
     };
-    const routerProps = {
-      location: req.url,
-      context: {
-        statusCode: res.statusCode
-      }
-    };
 
-    const html = renderToString(h(
-      Template, fullTemplateProps,
-      h(
-        compose({
-          AppWrap,
-          ErrorPage,
-          PageWrap,
-          routerProps
-        }),
-        appProps)
-    ));
+    const html = renderToStaticMarkup(h(Template, fullTemplateProps));
 
     res.setHeader('Content-Length', Buffer.byteLength(html));
 
