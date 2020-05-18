@@ -1,6 +1,6 @@
 import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
-import { Application, ApplicationPropsSSR, ErrorPage, Page, PageInfoSSR, compose } from '@not-govuk/app-composer';
+import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, compose } from '@not-govuk/app-composer';
 
 const statusToTitle = {
   400: 'Bad request',
@@ -52,7 +52,7 @@ const contentTypeToCharSet = (contentType: string): string => {
   );
 };
 
-export const reactRenderer = (AppWrap: Application, PageWrap: Page, ErrorPage: ErrorPage, Template: Template, options: RendererOptions) => {
+export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, Template: Template, options: RendererOptions) => {
   const formatHTML = (req, res, body) => {
     const err = (
       body instanceof Error
