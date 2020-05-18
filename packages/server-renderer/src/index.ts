@@ -1,5 +1,6 @@
 import { ComponentType, createElement as h } from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
+import { html as beautifyHtml } from 'js-beautify';
 import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, compose } from '@not-govuk/app-composer';
 
 const statusToTitle = {
@@ -97,7 +98,14 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       stylesheets: options.stylesheets
     };
 
-    const html = renderToStaticMarkup(h(Template, fullTemplateProps));
+    const html = beautifyHtml(
+      renderToStaticMarkup(
+        h(Template, fullTemplateProps)
+      ),
+      {
+        "indent_with_tabs": true
+      }
+    );
 
     res.setHeader('Content-Length', Buffer.byteLength(html));
 
