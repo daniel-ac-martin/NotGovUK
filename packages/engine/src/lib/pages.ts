@@ -1,7 +1,5 @@
-import { ComponentType, createElement as h } from 'react';
-import { RouteComponentProps } from 'react-router';
 import { Router } from '@not-govuk/react-restify';
-import { Page, PageLoader } from '@not-govuk/client-renderer';
+import { Page, PageInfoSSR, PageLoader } from '@not-govuk/app-composer';
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -72,7 +70,7 @@ const traverseDirectory = (dir: string): Promise<string[]> => {
     )
 };
 
-export const gatherPages = (pageLoader: PageLoader): Promise<Page[]> => (
+export const gatherPages = (pageLoader: PageLoader): Promise<PageInfoSSR[]> => (
   traverseDirectory(pageLoader.dir)
     .then(pages => (
       Promise.all(pages.map(e => (
@@ -92,7 +90,7 @@ const pageMiddleware = (title: string) => (req, res, next) => {
   next();
 };
 
-export const pageRoutes = (pages: Page[]) => {
+export const pageRoutes = (pages: PageInfoSSR[]) => {
   const router = new Router();
 
   pages.forEach(e => router.get(href2Path(e.href), pageMiddleware(e.title)));

@@ -1,7 +1,8 @@
 import serverless from 'serverless-http';
 import { ComponentType } from 'react';
 import restify, { Router, errors } from '@not-govuk/react-restify';
-import { ErrorPageProps, PageLoader, PageProps, PageWrapProps, reactRenderer } from '@not-govuk/server-renderer';
+import { PageLoader } from '@not-govuk/app-composer';
+import { Application, ErrorPage, Page, Template, reactRenderer } from '@not-govuk/server-renderer';
 import { gatherPages, pageRoutes } from './lib/pages';
 import webpackMiddleware from './lib/webpack';
 
@@ -27,10 +28,11 @@ export enum NodeEnv {
   Production = 'production'
 };
 
-export type EngineConfig<A extends PageProps, B extends PageWrapProps, C extends TemplateProps> = {
-  ErrorPage: ComponentType<ErrorPageProps>
-  PageWrap: ComponentType<A>
-  Template: ComponentType<C>
+export type EngineConfig = {
+  AppWrap: Application
+  ErrorPage: ErrorPage
+  PageWrap: Page
+  Template: Template
   apis?: Api[]
   env: NodeEnv
   httpd: {
@@ -40,26 +42,21 @@ export type EngineConfig<A extends PageProps, B extends PageWrapProps, C extends
   mode: Mode
   name: string
   pageLoader: PageLoader
-  pageWrapProps: B
-  templateProps: C
   webpackConfig: any
 };
 
-export const engine = async <A extends PageProps, B extends PageWrapProps, C extends TemplateProps>(config: EngineConfig<A, B, C>) => {
+export const engine = async (config: EngineConfig) => {
   const pages = await gatherPages(config.pageLoader);
   const react = reactRenderer(
+    config.AppWrap,
     config.PageWrap,
     config.ErrorPage,
-    config.pageLoader,
-    {
-      ...config.pageWrapProps,
-      pages
-    },
     config.Template,
     {
-      ...config.templateProps,
       assetsDir: '/public',
       bundle: 'bundle.js',
+      pages,
+      rootId: 'root',
       stylesheets: ['style.css']
     });
   const formatHTML = react.formatHTML;
