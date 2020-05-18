@@ -1,7 +1,7 @@
 import React from 'react';
-import { ErrorPageProps } from '@not-govuk/client-renderer';
+import { ErrorPage as TErrorPage } from '@not-govuk/app-composer';
 
-export const ErrorPage: React.ComponentType<ErrorPageProps> = ({ internal, title, message}) => (
+export const ErrorPage: TErrorPage = ({ internal, title, message }) => (
   internal
   ? (
     <>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router';
+import { Page as TPage } from '@not-govuk/app-composer';
 
-export const LoadingPage: React.ComponentType<RouteComponentProps> = () => (
+export const LoadingPage: TPage = () => (
   <h1>Loading...</h1>
 );
 

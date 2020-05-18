@@ -1,19 +1,8 @@
-import * as React from 'react';
-import { StaticRouter } from 'react-router';
+import React from 'react';
+import { Template as TTemplate } from '@not-govuk/server-renderer';
 
-export interface ITemplateProps {
-  app: object
-  assetsDir: string
-  baseTitle: string
-  bundle?: string
-  charSet: string
-  pageTitle: string
-  rootId: string
-  stylesheets: string[]
-};
-
-export const Template: React.FC<ITemplateProps> = props => {
-  const title = `${props.pageTitle} - ${props.baseTitle}`;
+export const Template: TTemplate = props => {
+  const title = `${props.app.pageTitle} - NotGovUK`;
   const charSet = props.charSet || 'UTF-8';
 
   return (
@@ -29,13 +18,13 @@ export const Template: React.FC<ITemplateProps> = props => {
             <link key={v} href={`${props.assetsDir}/${v}`} rel="stylesheet" />
           )
         )}
-        {props && <script dangerouslySetInnerHTML={{__html: `window.hydrationProps = ${JSON.stringify(props.app).replace(/</g, '\\u003c')};`}} />}
+        {props && <script dangerouslySetInnerHTML={{__html: `window.hydrationId = '${props.rootId}'; window.hydrationProps = ${JSON.stringify(props.app).replace(/</g, '\\u003c')};`}} />}
       </head>
       <body>
         <div id={props.rootId}>
           {props.children}
         </div>
-        {props.bundle && !props.err && (
+        {props.bundle && !props.app.err && (
            <script src={`${props.assetsDir}/${props.bundle}`}></script>
         )}
       </body>

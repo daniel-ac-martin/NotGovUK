@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import { Page } from '@not-govuk/app-composer';
 
 import {
   Form,
@@ -17,11 +18,11 @@ const notFrench = (msg?: string) => (field: object) => (value: string) =>
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
-const Page = props => {
+const Page: Page = props => {
   const location = useLocation();
 
   return (<>
-    <Form action="/three" method="get">
+    <Form action="/result" method="get">
       <Form.Page>
         <h1>Welcome to HOF2!</h1>
         <Form.TextInput

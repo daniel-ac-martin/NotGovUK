@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import { Page } from '@not-govuk/app-composer';
 
 import {
   useLocation
@@ -6,7 +7,7 @@ import {
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
-const Page = props => {
+const Page: Page = props => {
   const location = useLocation();
   const data = {
     name: '',
