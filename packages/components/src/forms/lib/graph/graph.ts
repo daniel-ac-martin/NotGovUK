@@ -3,6 +3,12 @@ import { Path } from './path';
 import { FieldNode, isFieldNode } from './field';
 
 export class Graph extends Array<Node> {
+  constructor(...args) {
+    super(...args);
+
+    Object.setPrototypeOf(this, Graph.prototype);
+  }
+
   toPath(values: any, next: string): Path {
     return (
       this
