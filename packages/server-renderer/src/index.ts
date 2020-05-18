@@ -111,6 +111,7 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       code = 200;
     }
 
+    this.charSet('UTF-8');
     this.contentType = 'text/html';
     this.send(code, body || true, headers);
   };
