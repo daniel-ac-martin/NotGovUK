@@ -87,7 +87,7 @@ export const engine = async (config: EngineConfig) => {
   const servePublicFiles = (
     webpack
       ? webpack.serveFiles
-      : restify.plugins.serveStaticFiles('./public')
+      : restify.plugins.serveStaticFiles('./dist/public')
   );
 
   httpd.head('/public/*', servePublicFiles);
