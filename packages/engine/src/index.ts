@@ -42,6 +42,7 @@ export type EngineConfig = {
   mode: Mode
   name: string
   pageLoader: PageLoader
+  ssrOnly: boolean
   webpackConfig: any
 };
 
@@ -54,7 +55,7 @@ export const engine = async (config: EngineConfig) => {
     config.Template,
     {
       assetsDir: '/public',
-      bundle: 'bundle.js',
+      bundle: config.ssrOnly ? '' : 'bundle.js',
       pages,
       rootId: 'root',
       stylesheets: ['style.css']
@@ -79,7 +80,7 @@ export const engine = async (config: EngineConfig) => {
     }));
   */
   const webpack = (
-    process.env['NODE_ENV'] === 'development' && config.webpackConfig
+    process.env['NODE_ENV'] === 'development' && config.webpackConfig && !config.ssrOnly
       ? webpackMiddleware(config.webpackConfig)
       : undefined
   );

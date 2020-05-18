@@ -8,6 +8,7 @@ const config = {
   },
   mode: (process.env.MODE || 'server') as Mode,
   name: 'my-app',
+  ssrOnly: !!(process.env.SSR_ONLY && process.env.SSR_ONLY.match(/(yes|true)/i))
 };
 
 export default config;

@@ -20,6 +20,7 @@ const app = engine({
   mode: config.mode,
   name: config.name,
   pageLoader,
+  ssrOnly: config.ssrOnly,
   webpackConfig
 });
 
