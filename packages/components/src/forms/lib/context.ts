@@ -2,7 +2,7 @@ import { useFormikContext } from 'formik';
 import { useCompletionContext } from './completion';
 import { useRegistrationContext } from './registry';
 
-export const useForm = () => {
+export const useForm = (): any => {
   const completion = useCompletionContext();
   const formik = useFormikContext();
   const registry = useRegistrationContext();

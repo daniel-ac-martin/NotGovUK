@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { FormikProps } from 'formik';
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
-export const Form: React.SFC<any> = props => (
+export type FormProps = JSX.IntrinsicElements["form"] & FormikProps<any>;
+
+export const Form: React.FC<FormProps> = props => (
   <React.Fragment>
     <form
       action={props.action}

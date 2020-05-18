@@ -10,11 +10,11 @@ import {
   Textarea as RawTextarea
 } from './fields';
 
-export const Checkboxes = withControl(RawCheckboxes);
-export const DateInput = withControl(RawDateInput);
-export const Field = withControl(RawField);
-export const Radios = withControl(RawRadios);
-export const Select = withControl(RawSelect);
-export const Submit = withControl(RawSubmit);
-export const TextInput = withControl(RawTextInput);
-export const Textarea = withControl(RawTextarea);
+export const Checkboxes: typeof RawCheckboxes = withControl(RawCheckboxes);
+export const DateInput: typeof RawDateInput = withControl(RawDateInput);
+export const Field: typeof RawField = withControl(RawField);
+export const Radios: typeof RawRadios = withControl(RawRadios);
+export const Select: typeof RawSelect = withControl(RawSelect);
+export const Submit: typeof RawSubmit = withControl(RawSubmit);
+export const TextInput: typeof RawTextInput = withControl(RawTextInput);
+export const Textarea: typeof RawTextarea = withControl(RawTextarea);

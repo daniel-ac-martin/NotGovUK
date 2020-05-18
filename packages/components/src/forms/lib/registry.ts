@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { Context, Provider, createContext, useContext } from 'react';
 import { Graph, Node, isFieldNode } from './graph';
 
 export class Register {
@@ -36,9 +36,12 @@ export class Register {
   }
 };
 
-const RegistrationContext = createContext(new Register());
+const RegistrationContext: Context<Register> = createContext(new Register());
 
-export const Registry = RegistrationContext.Provider;
-export const useRegistrationContext = () => useContext(RegistrationContext);
+export const Registry: Provider<Register> = RegistrationContext.Provider;
+
+export const useRegistrationContext = (): Register => (
+  useContext(RegistrationContext)
+);
 
 export default Registry;

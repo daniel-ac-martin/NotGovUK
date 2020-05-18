@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { Context, createContext, useContext } from 'react';
 import { Graph, Path, PathItem, FormatFn, PreValidateFn, ValidateFn } from './graph';
 import { id } from './helpers';
 
@@ -171,8 +171,10 @@ export class Completion {
   }
 };
 
-export const CompletionContext = createContext(new Completion(new Graph()));
+export const CompletionContext: Context<Completion> = createContext(new Completion(new Graph()));
 
-export const useCompletionContext = () => useContext(CompletionContext);
+export const useCompletionContext = (): Completion => (
+  useContext(CompletionContext)
+);
 
 export default CompletionContext;
