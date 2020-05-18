@@ -11,16 +11,16 @@
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "ISC",
-  "devDependencies": {
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.7",
-    "@types/react-router": "^5.1.7",
-    "@types/react-router-dom": "^5.1.5",
-    "typescript": "^3.8.3"
+  "dependencies": {
+    "@not-govuk/app-composer": "workspace:^0.1.0"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2"
+    "react": "^16.9.35",
+    "react-dom": "^16.9.8"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^3.8.3"
   }
 }
