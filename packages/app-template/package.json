@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -b tsconfig.build.json && webpack",
     "clean": "rm -rf dist",
-    "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register src/server/index.ts | bunyan"
+    "dev": "NODE_ENV=development ts-node -r tsconfig-paths/register src/server/index.ts | bunyan",
+    "dev:ssr": "NODE_ENV=development SSR_ONLY=true ts-node-dev -r tsconfig-paths/register src/server/index.ts | bunyan"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "ISC",
@@ -33,6 +34,7 @@
     "@types/react-router": "^5.1.7",
     "@types/react-router-dom": "^5.1.5",
     "bunyan": "^1.8.12",
+    "ts-node": "^8.10.1",
     "ts-node-dev": "^1.0.0-pre.44",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.8.3",
