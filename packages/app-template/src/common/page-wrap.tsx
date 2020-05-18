@@ -5,10 +5,17 @@ import { Page } from '@not-govuk/components';
 if (process.env.WEBPACK) require('./app.scss');
 
 export const PageWrap: TPage = ({ routes, children }) => {
-  const navigation = routes.map(e => ({
-    href: e.href,
-    text: e.title
-  }));
+  const compare = (a, b) => (
+    a.href > b.href
+    ? 1
+    : -1
+  );
+  const navigation = routes
+    .map(e => ({
+      href: e.href,
+      text: e.title
+    }))
+    .sort(compare);
 
   return (
     <Page
