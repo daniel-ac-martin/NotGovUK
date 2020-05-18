@@ -122,8 +122,9 @@ export const Form: FC<IForm<any>> = props => {
   register.closeRegistration();
 
   // Convert graph to path using the current form values
-  const initialCompletion = new Completion(graph);
-  const [completion] = useState(initialCompletion);
+  //const initialCompletion = new Completion(graph);
+  //const [completion] = useState(initialCompletion);
+  const completion = new Completion(graph); // FIXME: Is this okay? There seems to be a bug when using useState as above.
 
   completion.initialise(initialValues);
   Object.assign(initialErrors, validate(initialValues));
