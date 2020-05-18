@@ -1,7 +1,6 @@
 import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom';
-import { ErrorPageProps, PageWrapProps, PageLoader, PageProps, withPages } from '@not-govuk/client-renderer';
+import { Application, ApplicationPropsSSR, ErrorPage, Page, PageInfoSSR, compose } from '@not-govuk/app-composer';
 
 const statusToTitle = {
   400: 'Bad request',
@@ -24,22 +23,37 @@ const statusToTitle = {
   505: 'HTTP version not supported',
 };
 
-export type TemplateProps = any & {
-  app: object
-  rootID: string
+export type TemplateProps = {
+  app: ApplicationPropsSSR
+  assetsDir: string
+  bundle: string
+  charSet: string
+  rootId: string
+  stylesheets: string[]
 };
 
-export const reactRenderer = <A extends PageWrapProps, B extends PageProps, C extends TemplateProps>(PageWrap: ComponentType<A>, ErrorPage: ComponentType<ErrorPageProps>, pageLoader: PageLoader, pageWrapProps: B, Template: ComponentType<C>, templateProps: C) => {
-  const formatHTML = (req, res, body) => {
-    const createApp = (App: ComponentType<B>, props: B) => (
-      h(StaticRouter, {
-        location: req.url,
-        context: {
-          statusCode: res.statusCode
-        },
-      }, h(App, props))
-    );
+export type Template = ComponentType<TemplateProps>;
 
+export type RendererOptions = {
+  assetsDir: string
+  bundle: string
+  pages: PageInfoSSR[]
+  rootId: string
+  stylesheets: string[]
+};
+
+const contentTypeToCharSet = (contentType: string): string => {
+  const matches = contentType.match(/charset=([^;]*)/);
+
+  return (
+    matches && matches[1]
+      ? matches[1]
+      : undefined
+  );
+};
+
+export const reactRenderer = (AppWrap: Application, PageWrap: Page, ErrorPage: ErrorPage, Template: Template, options: RendererOptions) => {
+  const formatHTML = (req, res, body) => {
     const err = (
       body instanceof Error
         ? {
@@ -55,22 +69,35 @@ export const reactRenderer = <A extends PageWrapProps, B extends PageProps, C ex
       pageTitle: (err && err.title) || body.toString()
     };
     const appProps = {
-      ...pageWrapProps,
+      pages: options.pages,
       ...reqProps
     };
     const fullTemplateProps = {
-      ...templateProps,
-      ...reqProps,
       app: appProps,
-      rootId: 'root'
+      assetsDir: options.assetsDir,
+      charSet: contentTypeToCharSet(res.header('Content-Type')),
+      bundle: options.bundle,
+      rootId: options.rootId,
+      stylesheets: options.stylesheets
+    };
+    const routerProps = {
+      location: req.url,
+      context: {
+        statusCode: res.statusCode
+      }
     };
 
-    const html = renderToString(
-      h(Template, {
-        ...fullTemplateProps,
-        children: createApp(withPages(PageWrap, ErrorPage, pageLoader), appProps)
-      })
-    )
+    const html = renderToString(h(
+      Template, fullTemplateProps,
+      h(
+        compose({
+          AppWrap,
+          ErrorPage,
+          PageWrap,
+          routerProps
+        }),
+        appProps)
+    ));
 
     res.setHeader('Content-Length', Buffer.byteLength(html));
 
@@ -100,4 +127,4 @@ export const reactRenderer = <A extends PageWrapProps, B extends PageProps, C ex
 };
 
 export default reactRenderer;
-export type { ErrorPageProps, PageWrapProps, PageLoader, PageProps } from '@not-govuk/client-renderer';
+export type { Application, ErrorPage, Page } from '@not-govuk/app-composer';
