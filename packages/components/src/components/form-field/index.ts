@@ -8,7 +8,7 @@ import Textarea from './textarea';
 import { className } from '../../helpers';
 import { IDateInputValue, IDateInputPreValidateError } from '../date-input';
 
-interface IOption {
+export interface IOption {
   disabled?: boolean,
   hint?: string,
   label: string,
@@ -20,7 +20,7 @@ export type SelectValue = string | string[];
 type Value = SelectValue | IDateInputValue;
 type FormFieldError = string | IDateInputPreValidateError;
 
-interface IFormField {
+export interface IFormField {
   /** Identifier for auto-completion */
   autoComplete?: string,
   /** Extra CSS classes to be applied */
@@ -44,9 +44,9 @@ interface IFormField {
   /** HTML name */
   name: string,
   /** onBlur callback (for controlled fields) */
-  onBlur?: (x: string) => any,
+  onBlur?: (e: React.FocusEvent<any>) => void,
   /** onChange callback (for controlled fields) */
-  onChange?: (x: string) => any,
+  onChange?: (e: React.ChangeEvent<any>) => void,
   /** List of options to select from */
   options?: Array<IOption>,
   /** Initial number of lines of input on a textarea or the size of a multi-select */

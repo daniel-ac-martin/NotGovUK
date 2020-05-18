@@ -4,7 +4,7 @@ import Anchor from './anchor';
 import Input from './input';
 import { className } from '../../helpers';
 
-interface IButtonProps {
+export interface IButtonProps {
   /** Extra CSS classes to be applied */
   className?: string,
   /** Whether the button should be disabled */

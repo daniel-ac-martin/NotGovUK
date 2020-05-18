@@ -15,7 +15,7 @@ export interface IDateInputPreValidateError {
 
 type DateInputError = string | IDateInputPreValidateError;
 
-interface IDateInput {
+export interface IDateInput {
   /** Identifier for auto-completion */
   autoComplete?: string,
   /** Extra CSS classes to be applied */
@@ -35,9 +35,9 @@ interface IDateInput {
   /** HTML name */
   name: string,
   /** onBlur callback (for controlled fields) */
-  onBlur?: (x: string) => any,
+  onBlur?: (e: React.FocusEvent<any>) => void,
   /** onChange callback (for controlled fields) */
-  onChange?: (x: string) => any,
+  onChange?: (e: React.ChangeEvent<any>) => void,
   /** Value for controlled fields */
   value?: IDateInputValue
 };
@@ -49,7 +49,7 @@ interface WithDeformat<T> {
   deformat?: (v: string) => T
 }
 
-type RawField<P, V> = SFC<P> & WithFormat<V> & WithDeformat<V>
+export type RawField<P, V> = SFC<P> & WithFormat<V> & WithDeformat<V>
 
 export const DateInput: RawField<IDateInput, IDateInputValue> = props =>
   h(FormField, {

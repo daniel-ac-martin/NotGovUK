@@ -1,14 +1,14 @@
 import * as React from 'react';
 import FormField from '../form-field';
 
-interface IOption {
+export interface IOption {
   disabled?: boolean,
   hint?: string,
   label: string,
   value: string
 };
 
-interface IRadios {
+export interface IRadios {
   /** Extra CSS classes to be applied */
   className?: string,
   /** Initial value of the field */
@@ -28,9 +28,9 @@ interface IRadios {
   /** HTML name */
   name: string,
   /** onBlur callback (for controlled fields) */
-  onBlur?: (x: string) => any,
+  onBlur?: (e: React.FocusEvent<any>) => void,
   /** onChange callback (for controlled fields) */
-  onChange?: (x: string) => any,
+  onChange?: (e: React.ChangeEvent<any>) => void,
   /** List of options to select from */
   options: Array<IOption>,
   /** Whether the radios should be small */

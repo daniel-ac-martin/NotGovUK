@@ -1,7 +1,7 @@
 import * as React from 'react';
 import FormField from '../form-field';
 
-interface ITextarea {
+export interface ITextarea {
   /** Identifier for auto-completion */
   autoComplete?: string,
   /** Extra CSS classes to be applied */
@@ -21,9 +21,9 @@ interface ITextarea {
   /** HTML name */
   name: string,
   /** onBlur callback (for controlled fields) */
-  onBlur?: (x: string) => any,
+  onBlur?: (e: React.FocusEvent<any>) => void,
   /** onChange callback (for controlled fields) */
-  onChange?: (x: string) => any,
+  onChange?: (e: React.ChangeEvent<any>) => void,
   /** Initial number of lines of input */
   rows?: number,
   /** Whether the browser should spellcheck the input */
