@@ -2,10 +2,13 @@
   "name": "@not-govuk/app-template",
   "version": "0.1.0",
   "description": "A starting point for writing a new NotGovUK application.",
-  "main": "dist/src/server/index.js",
+  "main": "dist/server/index.js",
   "scripts": {
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -b tsconfig.build.json && webpack",
+    "build": "npm run build:assets && npm run build:server",
+    "build:assets": "webpack",
+    "build:server": "webpack --config webpack.config.server.js",
     "clean": "rm -rf dist",
     "dev": "NODE_ENV=development ts-node -r tsconfig-paths/register src/server/index.ts | bunyan",
     "dev:ssr": "NODE_ENV=development SSR_ONLY=true ts-node-dev -r tsconfig-paths/register src/server/index.ts | bunyan"
