@@ -15,15 +15,17 @@ export const Template: TTemplate = props => {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         {props.stylesheets && props.stylesheets.map(
           v => (
-            <link key={v} href={`${props.assetsDir}/${v}`} rel="stylesheet" />
+            <link key={v} href={`${props.assetsPath}/${v}`} rel="stylesheet" />
           )
         )}
         {props && <script dangerouslySetInnerHTML={{__html: `window.hydrationId = '${props.rootId}'; window.hydrationProps = ${JSON.stringify(props.appProps).replace(/</g, '\\u003c')};`}} />}
       </head>
       <body>
         <div id={props.rootId} dangerouslySetInnerHTML={{__html: props.appRender as string}} />
-        {props.bundle && !props.appProps.err && (
-           <script src={`${props.assetsDir}/${props.bundle}`}></script>
+        {!props.appProps.err && props.scripts && props.scripts.map(
+           v => (
+             <script key={v} src={`${props.assetsPath}/${v}`}></script>
+           )
         )}
       </body>
     </html>

@@ -58,11 +58,11 @@ export const engine = async (config: EngineConfig) => {
     config.ErrorPage,
     config.Template,
     {
-      assetsDir: '/public',
-      bundle: config.ssrOnly ? '' : 'bundle.js',
+      assetsPath: publicPath,
+      entrypoints,
       pages,
       rootId: 'root',
-      stylesheets: ['style.css']
+      ssrOnly: config.ssrOnly
     });
   const formatHTML = react.formatHTML;
 

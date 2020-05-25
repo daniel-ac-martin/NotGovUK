@@ -27,21 +27,21 @@ const statusToTitle = {
 export type TemplateProps = {
   appProps: ApplicationPropsSSR
   appRender: string
-  assetsDir: string
-  bundle: string
+  assetsPath: string
   charSet: string
   rootId: string
+  scripts: string[]
   stylesheets: string[]
 };
 
 export type Template = ComponentType<TemplateProps>;
 
 export type RendererOptions = {
-  assetsDir: string
-  bundle: string
+  assetsPath: string
+  entrypoints: object
   pages: PageInfoSSR[]
-  rootId: string
-  stylesheets: string[]
+  rootId: string,
+  ssrOnly: boolean
 };
 
 const contentTypeToCharSet = (contentType: string): string => {
@@ -88,14 +88,26 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       }),
       appProps
     ));
+    const assetsByChunkName = res?.locals?.webpack?.devMiddleware.stats.toJson().assetsByChunkName || // v4 dev-middleware
+      res?.locals?.webpackStats?.toJson().assetsByChunkName || // v3 dev-middleware
+      options.entrypoints; // pre-built assets
+    const assets: string[] = (
+      Object.values(assetsByChunkName)
+        .flat()
+        .map(v => String(v))
+    );
     const fullTemplateProps = {
       appProps,
       appRender,
-      assetsDir: options.assetsDir,
+      assetsPath: options.assetsPath,
       charSet: contentTypeToCharSet(res.header('Content-Type')),
-      bundle: options.bundle,
       rootId: options.rootId,
-      stylesheets: options.stylesheets
+      scripts: (
+        options.ssrOnly
+          ? undefined
+          : assets.filter(v => v.endsWith('.js'))
+      ),
+      stylesheets: assets.filter(v => v.endsWith('.css'))
     };
 
     const html = beautifyHtml(
