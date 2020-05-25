@@ -14,6 +14,8 @@ export const webpackMiddleware = webpackConfig => {
 
   return {
     serveFiles: (req, res, next) => {
+      res.locals = res.locals || {};
+
       const restifyTransport = {
         setHeader(key, val) {
           res.setHeader(key, val);
@@ -30,12 +32,10 @@ export const webpackMiddleware = webpackConfig => {
         end() {
           return;
         },
-      };
-      const nextStub = () => {
-        next(new errors.ResourceNotFoundError(`${req.path()} does not exist`));
+        locals: res.locals
       };
 
-      return dev(req, restifyTransport as Response, nextStub);
+      return dev(req, restifyTransport as Response, next);
     },
     hot,
     hotPath: '/__webpack_hmr'

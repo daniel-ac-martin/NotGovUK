@@ -79,24 +79,12 @@ export const engine = async (config: EngineConfig) => {
 
   // Serve static assets built by webpack
   const publicPaths = publicPath + '*';
-  /*
-    httpd.get('/public/*', restify.plugins.serveStatic({
-    directory: './public',
-    appendRequestPath: false
-    }));
-  */
-  const webpack = (
-    process.env['NODE_ENV'] === 'development' && config.webpackConfig && !config.ssrOnly
-      ? webpackMiddleware(config.webpackConfig)
-      : undefined
-  );
-  const servePublicFiles = (
-    webpack
-      ? webpack.serveFiles
-      : restify.plugins.serveStaticFiles('./dist/public')
-  );
+  const servePublicFiles = restify.plugins.serveStaticFiles(localAssetsPath);
 
-  if (webpack) {
+  if (process.env['NODE_ENV'] === 'development' && config.webpackConfig && !config.ssrOnly) {
+    const webpack = webpackMiddleware(config.webpackConfig);
+    httpd.pre(webpack.serveFiles);
+    // Endpoint for HMR websocket
     httpd.get(webpack.hotPath, webpack.hot);
   }
 
