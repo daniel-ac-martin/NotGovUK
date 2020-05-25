@@ -47,7 +47,11 @@ export type EngineConfig = {
 };
 
 export const engine = async (config: EngineConfig) => {
+  const publicPath = config.webpackConfig.output.publicPath;
+  const localAssetsPath = config.webpackConfig.output.path;
+  const entrypoints = await import(localAssetsPath + '/entrypoints.json');
   const pages = await gatherPages(config.pageLoader);
+
   const react = reactRenderer(
     config.AppWrap,
     config.PageWrap,
@@ -73,6 +77,8 @@ export const engine = async (config: EngineConfig) => {
 
   httpd.use(react.renderer);
 
+  // Serve static assets built by webpack
+  const publicPaths = publicPath + '*';
   /*
     httpd.get('/public/*', restify.plugins.serveStatic({
     directory: './public',
@@ -90,12 +96,12 @@ export const engine = async (config: EngineConfig) => {
       : restify.plugins.serveStaticFiles('./dist/public')
   );
 
-  httpd.head('/public/*', servePublicFiles);
-  httpd.get('/public/*', servePublicFiles);
-
   if (webpack) {
     httpd.get(webpack.hotPath, webpack.hot);
   }
+
+  httpd.head(publicPaths, servePublicFiles);
+  httpd.get(publicPaths, servePublicFiles);
 
   // Serve the pages as HTML
   httpd.serve('/', pageRoutes(pages))
