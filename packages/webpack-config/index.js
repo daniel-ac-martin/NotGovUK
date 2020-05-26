@@ -192,6 +192,7 @@ module.exports = function (options) {
         generate: (seed, files, entrypoints) => entrypoints
       }),
       new webpack.DefinePlugin({
+        'global.GENTLY': false,
         'process.env.WEBPACK': JSON.stringify(true)
       }),
       new MiniCssExtractPlugin({
