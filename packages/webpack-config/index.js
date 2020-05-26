@@ -71,7 +71,7 @@ module.exports = function (options) {
       serverMode
         ? [
           nodeExternals({
-            whitelist: [/\.(?!(?:js|json)$).{1,5}$/i]
+            whitelist: [/\.(?!(?:[cm]?js|json)$).{1,5}$/i, /^@not-govuk[\\/](?!(?:.+[\\/]node_modules[\\/]))/]
           }),
           webpackConfExternal,
           entrypointsExternal
@@ -93,7 +93,7 @@ module.exports = function (options) {
       splitChunks: {
         cacheGroups: {
           monorepo: {
-            test: /[\\/]node_modules[\\/]@NotGovUK[\\/]/,
+            test: /[\\/]node_modules[\\/]@not-govuk[\\/]/,
             name: 'monorepo',
             chunks: 'all',
             priority: 1
