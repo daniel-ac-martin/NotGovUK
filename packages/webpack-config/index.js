@@ -105,7 +105,9 @@ module.exports = function (options) {
             priority: 0
           }
         },
-        chunks: 'all'
+        chunks: 'all',
+        maxInitialRequests: Infinity,
+        minSize: 0
       }
     },
     module: {
