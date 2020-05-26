@@ -43,7 +43,7 @@ module.exports = function (options) {
 
   const devMode = !options.production;
   const serverMode = options.server;
-  const hashInName = !(devMode || serverMode);
+  const hashInName = !devMode;
   const emitFile = !serverMode;
   const jsDir = serverMode ? '' : 'js/';
 
