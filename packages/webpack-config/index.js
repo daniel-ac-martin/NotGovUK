@@ -48,7 +48,7 @@ module.exports = function (options) {
   const jsDir = serverMode ? '' : 'js/';
 
   return {
-    mode: 'development',
+    mode: devMode ? 'development' : 'production',
     context: path.resolve(options.baseDir),
     entry: (
       serverMode
