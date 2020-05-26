@@ -2,11 +2,11 @@
   "name": "@not-govuk/components",
   "version": "0.1.0",
   "description": "React components implementing the GOV.UK Design System.",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "sass": "src/index.scss",
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
-    "clean": "rm -rf dist/"
+    "clean": "rm -rf dist tsconfig.build.tsbuildinfo"
   },
   "repository": {
     "type": "git",

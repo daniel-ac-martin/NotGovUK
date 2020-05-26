@@ -2,12 +2,12 @@
   "name": "@not-govuk/react-restify",
   "version": "0.1.0",
   "description": "A customised Restify server for isomorphic React applications.",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "pnpm run build",
     "build": "tsc -b tsconfig.build.json",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist tsconfig.build.tsbuildinfo"
   },
   "keywords": [
     "restify"

@@ -2,12 +2,12 @@
   "name": "@not-govuk/client-renderer",
   "version": "0.1.0",
   "description": "A client-side renderer of React applications served via the server-renderer.",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "pnpm run build",
     "build": "tsc -b tsconfig.build.json",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist tsconfig.build.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "ISC",

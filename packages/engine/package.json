@@ -2,11 +2,11 @@
   "name": "@not-govuk/engine",
   "version": "0.1.0",
   "description": "An engine for running NotGovUK applications.",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -b tsconfig.build.json",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist tsconfig.build.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "ISC",

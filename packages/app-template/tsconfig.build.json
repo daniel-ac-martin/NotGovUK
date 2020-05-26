@@ -2,14 +2,11 @@
   "extends": "../../tsconfig.build.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "."
+    "rootDir": "src"
   },
   "include": [
-    "index.ts",
-    "config.ts",
     "src/common",
-    "src/server",
-    "webpack.config.js"
+    "src/server"
   ],
   "exclude": [
     "dist",
