@@ -192,9 +192,7 @@ module.exports = function (options) {
         generate: (seed, files, entrypoints) => entrypoints
       }),
       new webpack.DefinePlugin({
-        'process.env': {
-          WEBPACK: JSON.stringify(true)
-        }
+        'process.env.WEBPACK': JSON.stringify(true)
       }),
       new MiniCssExtractPlugin({
         filename: hashInName ? 'css/[name].[contenthash:8].css': 'css/[name].css',
