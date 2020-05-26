@@ -2,15 +2,9 @@ import serverless from 'serverless-http';
 import { ComponentType } from 'react';
 import restify, { Router, errors } from '@not-govuk/react-restify';
 import { PageLoader } from '@not-govuk/app-composer';
-import { Application, ErrorPage, Page, Template, reactRenderer } from '@not-govuk/server-renderer';
+import { ApplicationProps, ErrorPageProps, PageProps, TemplateProps, reactRenderer } from '@not-govuk/server-renderer';
 import { gatherPages, pageRoutes } from './lib/pages';
 import webpackMiddleware from './lib/webpack';
-
-export type TemplateProps = any & {
-  assetsDir: string
-  bundle: string
-  stylesheets: string[]
-};
 
 export type Api = {
   path: string
@@ -29,10 +23,10 @@ export enum NodeEnv {
 };
 
 export type EngineConfig = {
-  AppWrap: Application
-  ErrorPage: ErrorPage
-  PageWrap: Page
-  Template: Template
+  AppWrap: ComponentType<ApplicationProps>
+  ErrorPage: ComponentType<ErrorPageProps>
+  PageWrap: ComponentType<PageProps>
+  Template: ComponentType<TemplateProps>
   apis?: Api[]
   env: NodeEnv
   httpd: {

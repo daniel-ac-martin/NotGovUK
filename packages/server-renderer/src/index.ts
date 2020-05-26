@@ -148,4 +148,4 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
 };
 
 export default reactRenderer;
-export type { Application, ErrorPage, Page } from '@not-govuk/app-composer';
+export type { Application, ApplicationProps, ErrorPage, ErrorPageProps, Page, PageProps } from '@not-govuk/app-composer';
