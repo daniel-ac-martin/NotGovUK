@@ -26,6 +26,13 @@ const webpackConfExternal = (context, request, callback) => {
   return callback();
 };
 
+const entrypointsExternal = (context, request, callback) => {
+  if (/entrypoints(\.json)?$/i.test(request)){
+    return callback(null, 'commonjs ' + request);
+  }
+  return callback();
+};
+
 module.exports = function (options) {
   options = options || {};
   options = Object.assign({}, defaultOptions, options);
@@ -66,7 +73,8 @@ module.exports = function (options) {
           nodeExternals({
             whitelist: [/\.(?!(?:js|json)$).{1,5}$/i]
           }),
-          webpackConfExternal
+          webpackConfExternal,
+          entrypointsExternal
         ] : undefined
     ),
     output: {

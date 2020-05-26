@@ -28,6 +28,7 @@ export type EngineConfig = {
   PageWrap: ComponentType<PageProps>
   Template: ComponentType<TemplateProps>
   apis?: Api[]
+  entrypoints: object
   env: NodeEnv
   httpd: {
     host: string
@@ -43,7 +44,6 @@ export type EngineConfig = {
 export const engine = async (config: EngineConfig) => {
   const publicPath = config.webpackConfig.output.publicPath;
   const localAssetsPath = config.webpackConfig.output.path;
-  const entrypoints = await import(localAssetsPath + '/entrypoints.json');
   const pages = await gatherPages(config.pageLoader);
 
   const react = reactRenderer(
@@ -53,7 +53,7 @@ export const engine = async (config: EngineConfig) => {
     config.Template,
     {
       assetsPath: publicPath,
-      entrypoints,
+      entrypoints: config.entrypoints,
       pages,
       rootId: 'root',
       ssrOnly: config.ssrOnly

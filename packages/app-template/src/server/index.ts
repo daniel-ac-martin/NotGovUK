@@ -6,13 +6,15 @@ import ErrorPage from '../common/error-page';
 import PageWrap from '../common/page-wrap';
 import pageLoader from '../common/page-loader';
 
-import webpackConfig from '../../webpack.config';
+const webpackConfig = require('../../webpack.config');
+const entrypoints = require('../../dist/public/entrypoints.json');
 
 const app = engine({
   AppWrap,
   ErrorPage,
   PageWrap,
   Template,
+  entrypoints,
   env: config.env,
   httpd: {
     host: config.httpd.host,
