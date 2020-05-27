@@ -7,7 +7,7 @@ const config = {
     port: Number(process.env.LISTEN_PORT) || 8080
   },
   mode: (process.env.MODE || 'server') as Mode,
-  name: 'my-app',
+  name: process.env.npm_package_name || 'my-app',
   ssrOnly: !!(process.env.SSR_ONLY && process.env.SSR_ONLY.match(/(yes|true)/i))
 };
 
