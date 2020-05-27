@@ -10,8 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc -b tsconfig.build.json",
-    "clean": "rm -rf dist tsconfig.build.tsbuildinfo"
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "keywords": [
     "restify"
