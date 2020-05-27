@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "sass": "src/index.scss",
   "scripts": {
+    "prepublishOnly": "npm run clean && npm run build",
     "build": "tsc -b tsconfig.build.json",
     "clean": "rm -rf dist tsconfig.build.tsbuildinfo"
   },
