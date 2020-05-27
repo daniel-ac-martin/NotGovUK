@@ -2,7 +2,11 @@
   "name": "@not-govuk/react-restify",
   "version": "0.1.0",
   "description": "A customised Restify server for isomorphic React applications.",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run clean && npm run build",
