@@ -6,7 +6,7 @@ const webpackConfig = generateConfig({
   outDir: './dist/server',
   production: process.env.NODE_ENV !== 'development',
   server: true,
-  tsConfig: 'tsconfig.build.json'
+  tsConfig: 'tsconfig.json'
 });
 
 module.exports = webpackConfig;
