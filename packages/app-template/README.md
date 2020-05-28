@@ -38,7 +38,7 @@ Notable files and directories
 - `src/client/`: Source code that is only run on the client.
 - `src/client/index.ts`: The entry-point for the client-side bundle.
 - `src/common/`: Source code that is run on both the client and the server.
-- `src/common/page-wrap.tsx`: The React component that wraps the pages and accepts a `routes` array via its props taht can be used for building in navigation.
+- `src/common/page-wrap.tsx`: The React component that wraps the pages and accepts a `routes` array via its props that can be used for building in navigation.
 - `src/common/page-loader.ts`: Boiler-plate for dynamically importing the pages. You shouldn't need to modify this unless you change the location of the pages.
 - `src/common/pages/`: Directory containing the pages available on your website.
 - `src/common/pages/index.tsx`: The 'home page' for your website.
