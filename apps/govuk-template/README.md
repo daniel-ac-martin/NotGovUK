@@ -1,5 +1,11 @@
+Not Govuk - Govuk Template
+===
+
+A starting point for writing a new NotGovUK application.
+
+
 Welcome to your new isomorphic React application
-================================================
+------------------------------------------------
 
 To get started simply run `npm install` followed by:
 

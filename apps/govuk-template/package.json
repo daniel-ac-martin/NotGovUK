@@ -1,7 +1,8 @@
 {
-  "name": "@not-govuk/app-template",
+  "name": "@not-govuk/govuk-template",
   "version": "0.1.0",
   "description": "A starting point for writing a new NotGovUK application.",
+  "private": true,
   "main": "dist/server/index.js",
   "scripts": {
     "start": "node .",
@@ -22,9 +23,7 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "webpack": "^4.43.0",
-    "webpack-dev-middleware": "^3.7.2",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack": "^4.43.0"
   },
   "devDependencies": {
     "@not-govuk/app-composer": "workspace:^0.1.0",
@@ -38,10 +37,8 @@
     "@types/react-router-dom": "^5.1.5",
     "bunyan": "^1.8.12",
     "node-hot-loader": "^1.19.0",
-    "ts-node": "^8.10.1",
-    "ts-node-dev": "^1.0.0-pre.44",
-    "tsconfig-paths": "^3.9.0",
-    "typescript": "^3.8.3",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }
