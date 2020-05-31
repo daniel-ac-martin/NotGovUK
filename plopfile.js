@@ -64,4 +64,53 @@ module.exports = plop => {
       }
     ]
   });
+
+  plop.setGenerator('lib', {
+    description: 'Library',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Name:'
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'Description:'
+      }
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'lib/{{{name}}}/package.json',
+        templateFile: 'skel/lib/package.json.hbs'
+      },
+      {
+        type: 'add',
+        path: 'lib/{{{name}}}/README.md',
+        templateFile: 'skel/lib/README.md.hbs'
+      },
+      {
+        type: 'symlink',
+        path: 'lib/{{{name}}}/.gitignore',
+        target: 'skel/lib/.gitignore'
+      },
+      {
+        type: 'symlink',
+        path: 'lib/{{{name}}}/.npmignore',
+        target: 'skel/lib/.npmignore'
+      },
+      {
+        type: 'symlink',
+        path: 'lib/{{{name}}}/tsconfig.json',
+        target: 'skel/lib/tsconfig.json'
+      },
+      {
+        type: 'addMany',
+        destination: 'lib/{{{name}}}/src/',
+        base: 'skel/lib/src/',
+        templateFiles: 'skel/lib/src/**.hbs'
+      }
+    ]
+  });
 };

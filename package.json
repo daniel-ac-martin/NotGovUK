@@ -5,6 +5,7 @@
   "scripts": {
     "create": "plop",
     "create:app": "plop app",
+    "create:lib": "plop lib",
     "build": "pnpm recursive run build",
     "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
     "start": "pnpm recursive run start --filter @not-govuk/components",

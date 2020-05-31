@@ -1,0 +1,21 @@
+{
+  "name": "@{{{pkg 'name'}}}/{{{name}}}",
+  "version": "{{{pkg 'version'}}}",
+  "description": "{{{description}}}",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "{{{pkg 'author'}}}",
+  "license": "{{{pkg 'license'}}}",
+  "devDependencies": {
+    "typescript": "^3.9.2"
+  }
+}
