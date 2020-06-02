@@ -1,6 +1,6 @@
 import serverless from 'serverless-http';
 import { ComponentType } from 'react';
-import restify, { Router, errors } from '@not-govuk/react-restify';
+import restify, { Router, errors } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, TemplateProps, reactRenderer } from '@not-govuk/server-renderer';
 import { gatherPages, pageRoutes } from './lib/pages';
@@ -124,4 +124,4 @@ export const engine = async (config: EngineConfig) => {
 };
 
 export default engine;
-export { Router, errors } from '@not-govuk/react-restify';
+export { Router, errors } from '@not-govuk/restify';

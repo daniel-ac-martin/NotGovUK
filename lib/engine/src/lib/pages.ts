@@ -1,4 +1,4 @@
-import { Router } from '@not-govuk/react-restify';
+import { Router } from '@not-govuk/restify';
 import { Page, PageInfoSSR, PageLoader } from '@not-govuk/app-composer';
 import { promises as fs } from 'fs';
 import path from 'path';

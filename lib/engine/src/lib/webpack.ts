@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import { errors } from '@not-govuk/react-restify';
+import { errors } from '@not-govuk/restify';
 import etag from 'etag';
 import { Response } from 'express-serve-static-core';
 import { NextHandleFunction } from 'connect';
