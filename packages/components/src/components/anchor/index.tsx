@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import { urlParse } from '../../request/';
+import { urlParse } from '@not-govuk/route-utils';
 
 interface IAnchor {
   /** Extra CSS classes to be applied */
