@@ -1,9 +1,6 @@
 import React from 'react';
 import { Page } from '@not-govuk/app-composer';
-
-import {
-  useLocation
-} from '@not-govuk/components';
+import { useLocation } from '@not-govuk/route-utils';
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 

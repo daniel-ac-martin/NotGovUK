@@ -1,5 +1,6 @@
 import React from 'react';
 import { Page } from '@not-govuk/app-composer';
+import { useLocation } from '@not-govuk/route-utils';
 
 import {
   Form,
@@ -7,7 +8,6 @@ import {
   maxWords,
   past,
   required,
-  useLocation,
   validator
 } from '@not-govuk/components';
 
