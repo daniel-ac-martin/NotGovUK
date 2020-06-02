@@ -97,11 +97,6 @@ module.exports = plop => {
       },
       {
         type: 'symlink',
-        path: 'lib/{{{name}}}/.npmignore',
-        target: 'skel/lib/.npmignore'
-      },
-      {
-        type: 'symlink',
         path: 'lib/{{{name}}}/tsconfig.json',
         target: 'skel/lib/tsconfig.json'
       },
