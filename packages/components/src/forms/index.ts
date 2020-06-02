@@ -5,7 +5,7 @@ import WTForm, {
   alphanumeric as localAlphanumeric,
   mobileNumber as localMobileNumber,
   postalCode as localPostalCode
-} from './lib';
+} from '@not-govuk/forms';
 import {
   Checkboxes,
   DateInput,
@@ -37,7 +37,7 @@ export {
   required,
   url,
   validator
-} from './lib';
+} from '@not-govuk/forms';
 
 const Form: any = WTForm;
 

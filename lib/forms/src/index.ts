@@ -1,7 +1,7 @@
 import { FC, createElement as h, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { urlParse, useLocation } from '../../request';
+import { urlParse, useLocation } from '@not-govuk/route-utils';
 import FormikForm from './formik-form';
 import { Graph } from './graph';
 import { Completion, CompletionContext } from './completion';

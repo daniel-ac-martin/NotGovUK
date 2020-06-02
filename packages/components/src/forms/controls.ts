@@ -1,4 +1,4 @@
-import { withControl } from './lib';
+import { withControl } from '@not-govuk/forms';
 import { SubmitButton as RawSubmit } from '../';
 import {
   Checkboxes as RawCheckboxes,

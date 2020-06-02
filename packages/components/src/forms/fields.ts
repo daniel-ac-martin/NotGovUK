@@ -1,4 +1,4 @@
-import { date, integer, minimum, range, withField } from './lib';
+import { date, integer, minimum, range, withField } from '@not-govuk/forms';
 import {
   Checkboxes as RawCheckboxes,
   DateInput as RawDateInput,
