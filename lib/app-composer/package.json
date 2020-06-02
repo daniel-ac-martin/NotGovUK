@@ -7,6 +7,9 @@
     "main": "dist/index.js",
     "typings": "dist/index.d.ts"
   },
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run clean && npm run build",
@@ -15,15 +18,15 @@
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^16.9.35",
+    "react-router": "^5.1.7",
+    "react-router-dom": "^5.1.5"
+  },
   "devDependencies": {
     "@types/react": "^16.9.35",
     "@types/react-router": "^5.1.7",
     "@types/react-router-dom": "^5.1.5",
     "typescript": "^3.9.2"
-  },
-  "peerDependencies": {
-    "react": "^16.9.35",
-    "react-router": "^5.1.7",
-    "react-router-dom": "^5.1.5"
   }
 }
