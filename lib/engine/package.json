@@ -7,6 +7,9 @@
     "main": "dist/index.js",
     "typings": "dist/index.d.ts"
   },
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run clean && npm run build",
@@ -34,6 +37,6 @@
     "@types/webpack": "^4.41.12",
     "@types/webpack-dev-middleware": "^3.7.0",
     "@types/webpack-hot-middleware": "^2.25.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.2"
   }
 }
