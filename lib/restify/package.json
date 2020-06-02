@@ -1,7 +1,7 @@
 {
-  "name": "@not-govuk/react-restify",
+  "name": "@not-govuk/restify",
   "version": "0.1.0",
-  "description": "A customised Restify server for isomorphic React applications.",
+  "description": "A customised Restify server for running websites.",
   "main": "src/index.ts",
   "publishConfig": {
     "main": "dist/index.js",
@@ -13,9 +13,6 @@
     "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
-  "keywords": [
-    "restify"
-  ],
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "ISC",
   "dependencies": {
@@ -27,9 +24,12 @@
   "devDependencies": {
     "@types/bunyan": "^1.8.6",
     "@types/restify": "^8.4.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.2"
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "restify"
   ]
 }
