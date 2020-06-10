@@ -18,8 +18,8 @@ What does "support for internal applications" mean?
 ---------------------------------------------------
 
 The GDS styling is only suitable for public facing applications that
-are to be served under `service.gov.uk`. This is because it use the
-propriatary font, 'New Transport' which is only licensed to this
+are to be served under `service.gov.uk`. This is because it uses the
+proprietary font, 'New Transport' which is only licensed to this
 sub-domain. In addition, GDS have requested that their crown logo also
 only be used in this context.
 
@@ -42,8 +42,8 @@ unsuitable for less linear workflows that one might find in case-working
 systems or dashboards.
 
 NotGovUK solves these problems by allowing consumers to provide an
-`internal` class on their `body` tag which will change the font expand
-the layout to use more of the screen.
+`internal` class on their `body` tag which will change the font and
+expand the layout to use more of the screen.
 
 
 Why React?
@@ -59,12 +59,12 @@ considerable advantages to React over Nunjucks.
 React is primarily a client-side technology whereas Nunjucks is for the
 server-side. Rendering components on the client allows us to provide UI
 interactions without loading a new page from the server. This is much
-quicker and so have the potential to drastically improve the overall
+quicker and so has the potential to drastically improve the overall
 user experience.
 
 Historically, we have shyed away from client-side applications for
 accessibility reasons and the difficultly of supporting older browsers.
-However, React allows us to create, so called, 'isomorphic'
+However, React allows us to create, so called, '_[isomorphic]_'
 applications. That is, applications that render on both the server-side
 and the client-side. This allows us to do progressive enhancement and
 provide client-side rendering to modern clients whilst still providing
@@ -89,7 +89,7 @@ Working on this repository
 ### Prerequisites
 
 The following sections will assume that you are on a UNIX-derived
-operating system (e.g. Linux, Mac etc.) and have the following software
+operating system (e.g. Linux, Mac, etc.) and have the following software
 installed on your system:
 
 - Node.js
@@ -200,6 +200,7 @@ problems or have any questions, please do [get in touch].
 [Storybook]: https://storybook.js.org/
 [MDX]: https://mdxjs.com/
 [Nunjucks]: https://mozilla.github.io/nunjucks/
+[isomorphic]: https://en.wikipedia.org/wiki/Isomorphic_JavaScript
 [Makefile]: ./Makefile
 [.tmuxrc]: ./.tmuxrc
 [Design System for Developers]: https://www.learnstorybook.com/design-systems-for-developers/
