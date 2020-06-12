@@ -80,7 +80,15 @@ make it easier to resource projects in the long run.
 Why Typescript?
 ---------------
 
-WRITEME!
+Most projects that involve React will make use of the extended JavaScript
+notation [JSX], as it allows the HTML for component templates to be written
+alongside the associated JavaScript logic. However, this requires an extra
+build step to translate the JSX code into plain old JavaScript, so it can be
+run as normal by the browser. If such a step is already a requirement, we can
+just as easily translate any language, not just JSX. By using [TypeScript] we
+can keep all the good stuff from JavaScript, _and_ gain the extra support of
+strongly/statically typed code, which can help expose potential problems
+earlier in the development lifecycle (i.e. at the transpilation phase).
 
 
 Working on this repository
@@ -201,6 +209,7 @@ problems or have any questions, please do [get in touch].
 [MDX]: https://mdxjs.com/
 [Nunjucks]: https://mozilla.github.io/nunjucks/
 [isomorphic]: https://en.wikipedia.org/wiki/Isomorphic_JavaScript
+[JSX]: https://reactjs.org/docs/introducing-jsx.html
 [Makefile]: ./Makefile
 [.tmuxrc]: ./.tmuxrc
 [Design System for Developers]: https://www.learnstorybook.com/design-systems-for-developers/
