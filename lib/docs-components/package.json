@@ -1,0 +1,40 @@
+{
+  "name": "@not-govuk/docs-components",
+  "version": "0.1.0",
+  "description": "React components for use in documentation.",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  },
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "ISC",
+  "keywords": [
+    "react-components"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.35"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "typescript": "^3.9.2"
+  },
+  "dependencies": {
+    "@not-govuk/component-helpers": "workspace:^0.1.0",
+    "@not-govuk/route-utils": "workspace:^0.1.0",
+    "highlight.js": "^10.1.1",
+    "js-beautify": "^1.11.0"
+  }
+}

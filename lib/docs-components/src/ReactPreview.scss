@@ -1,0 +1,61 @@
+.penultimate-react-preview {
+  background-color: White;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: Silver;
+  margin: 1em 0;
+
+  &__stories {
+    border-width: 0 0 1px 0;
+    border-style: inherit;
+    border-color: inherit;
+    padding: 1.5em;
+  }
+
+  &__tabs {
+    background-color: inherit;
+    border-width: 0;
+    border-style: inherit;
+    border-color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__tab-item {
+    display: inline-block;
+    margin: 0;
+    padding: 1em;
+
+    &--current {
+      background-color: inherit;
+      border-width: 0 1px 0 1px;
+      border-style: inherit;
+      border-color: inherit;
+      margin: 0 -1px 0 -1px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__code {
+    border-width: 1px 0 0 0;
+    border-style: inherit;
+    border-color: inherit;
+    margin-top: -1px;
+    padding: 1em;
+
+    pre {
+      background-color: WhiteSmoke;
+      color: Black;
+      margin: 0;
+
+      code {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  }
+}
