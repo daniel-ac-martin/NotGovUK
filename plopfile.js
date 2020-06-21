@@ -13,7 +13,7 @@ module.exports = plop => {
       {
         type: 'input',
         name: 'name',
-        message: 'Name:'
+        message: 'Name (e.g. "my-app"):'
       },
       {
         type: 'input',
@@ -71,7 +71,7 @@ module.exports = plop => {
       {
         type: 'input',
         name: 'name',
-        message: 'Name:'
+        message: 'Name (e.g. "my-library"):'
       },
       {
         type: 'input',
