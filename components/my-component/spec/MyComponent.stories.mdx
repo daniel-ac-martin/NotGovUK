@@ -1,0 +1,37 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { MyComponent } from '../src/MyComponent';
+import readMe from '../README.md';
+
+<Meta
+  title="Components/My component"
+  component={MyComponent}
+  parameters={{
+    jest: ['my-component'],
+    notes: readMe
+  }}
+/>
+
+# My component
+
+WRITE DESCRIPTION HERE.
+
+<Preview withToolbar>
+  <Story name="MyComponent">
+    <MyComponent heading="Example #1">
+      Hello
+    </MyComponent>
+  </Story>
+</Preview>
+
+<Props of={MyComponent} />
+
+## Stories
+### Standard
+
+A standard My component.
+
+<Preview>
+  <Story name="Standard">
+    <MyComponent />
+  </Story>
+</Preview>
