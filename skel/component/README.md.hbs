@@ -1,0 +1,54 @@
+{{{titleCase (pkg 'name')}}} - {{{titleCase name}}}
+===
+
+{{{description}}}
+
+
+Using this package
+------------------
+
+First install the package into your project:
+
+```shell
+npm install -S @{{{pkg 'name'}}}/{{{dashCase name}}}
+```
+
+Then use it in your code as follows:
+
+```js
+import React, { createElement as h } from 'react';
+import {{{properCase name}}} from '@{{{pkg 'name'}}}/{{{dashCase name}}}';
+
+export const MyComponent = props => (
+  <{{{properCase name}}}
+    // WRITEME
+  />
+);
+
+export default MyComponent;
+```
+
+
+Working on this package
+-----------------------
+
+Before working on this package you must install its dependencies using
+the following command:
+
+```shell
+pnpm install
+```
+
+
+### Building
+
+```shell
+npm run build
+```
+
+
+### Clean-up
+
+```shell
+npm run clean
+```

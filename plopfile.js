@@ -108,4 +108,57 @@ module.exports = plop => {
       }
     ]
   });
+
+  plop.setGenerator('component', {
+    description: 'Component',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Name (e.g. "My component"):'
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'Description:'
+      }
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'components/{{{dashCase name}}}/package.json',
+        templateFile: 'skel/component/package.json.hbs'
+      },
+      {
+        type: 'add',
+        path: 'components/{{{dashCase name}}}/README.md',
+        templateFile: 'skel/component/README.md.hbs'
+      },
+      {
+        type: 'symlink',
+        path: 'components/{{{dashCase name}}}/.gitignore',
+        target: 'skel/component/.gitignore'
+      },
+      {
+        type: 'symlink',
+        path: 'components/{{{dashCase name}}}/tsconfig.json',
+        target: 'skel/component/tsconfig.json'
+      },
+      {
+        type: 'add',
+        path: 'components/{{{dashCase name}}}/assets/{{{properCase name}}}.scss',
+        templateFile: 'skel/component/assets/Component.scss.hbs'
+      },
+      {
+        type: 'add',
+        path: 'components/{{{dashCase name}}}/spec/{{{properCase name}}}.stories.mdx',
+        templateFile: 'skel/component/spec/Component.stories.mdx.hbs'
+      },
+      {
+        type: 'add',
+        path: 'components/{{{dashCase name}}}/src/{{{properCase name}}}.tsx',
+        templateFile: 'skel/component/src/Component.tsx.hbs'
+      }
+    ]
+  });
 };

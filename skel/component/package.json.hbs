@@ -1,0 +1,37 @@
+{
+  "name": "@{{{pkg 'name'}}}/{{{dashCase name}}}",
+  "version": "{{{pkg 'version'}}}",
+  "description": "{{{description}}}",
+  "main": "src/{{{properCase name}}}.ts",
+  "sass": "assets/{{{properCase name}}}.scss",
+  "publishConfig": {
+    "main": "dist/{{{properCase name}}}.js",
+    "typings": "dist/{{{properCase name}}}.d.ts"
+  },
+  "files": [
+    "/assets",
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "{{{pkg 'author'}}}",
+  "license": "{{{pkg 'license'}}}",
+  "keywords": [
+    "react-components"
+  ],
+  "dependencies": {
+    "@not-govuk/component-helpers": "workspace:^0.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.35"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "@mdx-js/react": "^1.6.5",
+    "typescript": "^3.9.2"
+  }
+}
