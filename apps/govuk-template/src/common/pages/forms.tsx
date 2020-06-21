@@ -1,5 +1,5 @@
-import React from 'react';
-import { Page } from '@not-govuk/app-composer';
+import { FC, createElement as h } from 'react';
+import { PageProps } from '@not-govuk/app-composer';
 import { useLocation } from '@not-govuk/route-utils';
 
 import {
@@ -18,7 +18,7 @@ const notFrench = (msg?: string) => (field: object) => (value: string) =>
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
-const Page: Page = props => {
+const Page: FC<PageProps> = props => {
   const location = useLocation();
 
   return (<>

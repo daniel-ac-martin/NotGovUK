@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { className } from '../../helpers';
 
-const Body: React.SFC<any> = props => (
+const Body: FC<any> = props => (
   <div {...props} className={className('nguk-page__body', props.className)}>
     {props.children}
   </div>

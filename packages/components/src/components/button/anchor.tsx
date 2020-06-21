@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { A } from '../';
 
-const Anchor: React.SFC<any> = props => (
+const Anchor: FC<any> = props => (
   <A
     className={props.className}
     data-module="govuk-button"

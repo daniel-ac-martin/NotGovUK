@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { Tag } from '../';
 import { className } from '../../helpers';
 
@@ -11,7 +11,7 @@ interface IPhaseBanner {
   phase: string
 };
 
-export const PhaseBanner: React.SFC<IPhaseBanner> = props => (
+export const PhaseBanner: FC<IPhaseBanner> = props => (
   <div id={props.id} className={className('govuk-phase-banner', props.className)}>
     <p className="govuk-phase-banner__content">
       <Tag className="govuk-phase-banner__content__tag" text={props.phase} />

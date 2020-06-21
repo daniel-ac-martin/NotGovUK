@@ -1,7 +1,7 @@
-import React from 'react';
-import { Page as TPage } from '@not-govuk/app-composer';
+import { FC, createElement as h } from 'react';
+import { PageProps } from '@not-govuk/app-composer';
 
-export const LoadingPage: TPage = () => (
+export const LoadingPage: FC<PageProps> = () => (
   <h1>Loading...</h1>
 );
 

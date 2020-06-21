@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { useHistory } from 'react-router-dom';
 import { A } from '../';
 import { className } from '../../helpers';
@@ -16,7 +16,7 @@ interface IBackLink {
   title?: string
 };
 
-export const BackLink: React.SFC<IBackLink> = props => {
+export const BackLink: FC<IBackLink> = props => {
   const history = useHistory();
   const classes = className('govuk-back-link', props.className);
 

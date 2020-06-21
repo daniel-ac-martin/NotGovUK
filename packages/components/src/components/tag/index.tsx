@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { className } from '../../helpers';
 
 interface ITag {
@@ -10,7 +10,7 @@ interface ITag {
   text: string
 };
 
-export const Tag: React.SFC<ITag> = props => (
+export const Tag: FC<ITag> = props => (
   <strong id={props.id} className={className('govuk-tag', props.className)}>{props.text}</strong>
 );
 

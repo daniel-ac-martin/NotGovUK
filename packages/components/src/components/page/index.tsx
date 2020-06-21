@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, Fragment, createElement as h } from 'react';
 import { A, BackLink, Breadcrumbs, Footer, Header, PhaseBanner, SkipLink } from '../';
 import Body from './body';
 import Main from './main';
@@ -45,7 +45,7 @@ interface IPage {
   wide?: boolean
 };
 
-export const Page: React.SFC<IPage> = props => {
+export const Page: FC<IPage> = props => {
   const backLink = (
     <BackLink href={props.backHref} />
   );
@@ -55,9 +55,9 @@ export const Page: React.SFC<IPage> = props => {
   const phaseBanner = (
     <PhaseBanner id="phase-banner" phase={props.phase}>
       {props.phaseBannerContent || (
-        <>
+        <Fragment>
           This is a new service - your {props.feedbackHref ? (<A href={props.feedbackHref}>feedback</A>) : 'feedback'} will help us to improve it.
-        </>
+        </Fragment>
       )}
     </PhaseBanner>
   );

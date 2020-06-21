@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import FormGroupWithLabel from './form-group-with-label';
 import { bem } from '../../helpers';
 
-const Select: React.SFC<any> = props => {
+const Select: FC<any> = props => {
   const fieldId = `${props.id}-select`;
 
   return (

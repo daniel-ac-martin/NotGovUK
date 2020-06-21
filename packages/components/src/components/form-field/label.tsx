@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { className } from '../../helpers';
 
-const Label: React.SFC<any> = props => (
+const Label: FC<any> = props => (
   <label htmlFor={props.htmlFor} className={className('govuk-label', props.className)}>{props.children}</label>
 );
 

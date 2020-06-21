@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { bem, className } from '../../helpers';
 
 interface IPageFooter {
@@ -10,7 +10,7 @@ interface IPageFooter {
   wide?: boolean
 };
 
-export const PageFooter: React.SFC<IPageFooter> = props => (
+export const PageFooter: FC<IPageFooter> = props => (
   <footer id={props.id} className={className('govuk-footer', props.className)} role="contentinfo">
     <div className={bem('govuk-width-container', props.wide ? 'wide' : undefined)}>
       {props.children}

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Page } from '@not-govuk/app-composer';
+import { FC, createElement as h } from 'react';
+import { PageProps } from '@not-govuk/app-composer';
 
-const Page: Page = () => <h1>Two</h1>;
+const Page: FC<PageProps> = () => <h1>Two</h1>;
 
 export default Page;
 export const title = 'Two';

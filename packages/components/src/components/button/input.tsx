@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 
-const Input: React.SFC<any> = props => (
+const Input: FC<any> = props => (
   <input id={props.id} className={props.className} type={props.type} value={props.text} disabled={props.disabled} onClick={props.onClick} />
 );
 

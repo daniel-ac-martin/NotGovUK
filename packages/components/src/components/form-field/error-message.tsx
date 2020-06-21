@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 
-const ErrorMessage: React.SFC<any> = props => (
+const ErrorMessage: FC<any> = props => (
   <span id={props.id} className="govuk-error-message"><span className="invisible">Error:</span> {props.children}</span>
 );
 

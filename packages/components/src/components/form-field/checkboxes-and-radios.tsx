@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import FormGroupWithFieldset from './form-group-with-fieldset';
 import { className } from '../../helpers';
 
-const CheckboxesAndRadios: React.SFC<any> = props => (
+const CheckboxesAndRadios: FC<any> = props => (
   <FormGroupWithFieldset
     id={props.id}
     className={props.className}

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Page as TPage } from '@not-govuk/app-composer';
+import { FC, createElement as h } from 'react';
+import { PageProps } from '@not-govuk/app-composer';
 import { NavLink } from 'react-router-dom';
 
-export const PageWrap: TPage = ({ routes, children }) => {
+export const PageWrap: FC<PageProps> = ({ routes, children }) => {
   const compare = (a, b) => (
     a.href > b.href
     ? 1

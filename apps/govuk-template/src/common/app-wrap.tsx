@@ -1,7 +1,7 @@
-import { Fragment, createElement as h } from 'react';
-import { Application as TApplication } from '@not-govuk/app-composer';
+import { FC, Fragment, createElement as h } from 'react';
+import { ApplicationProps } from '@not-govuk/app-composer';
 
-export const AppWrap: TApplication = ({ children }) => h(
+export const AppWrap: FC<ApplicationProps> = ({ children }) => h(
   Fragment, {},
   children
 );

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { className } from '../../helpers';
 
 interface ISkipLink {
@@ -12,7 +12,7 @@ interface ISkipLink {
   text?: string
 };
 
-export const SkipLink: React.SFC<ISkipLink> = props => (
+export const SkipLink: FC<ISkipLink> = props => (
   <a id={props.id} href={props.href} className={className('govuk-skip-link', props.className)}>{props.children || props.text}</a>
 );
 

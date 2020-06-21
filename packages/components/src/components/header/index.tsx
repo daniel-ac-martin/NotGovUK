@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { A } from '../..';
 import { bem, className } from '../../helpers';
 
@@ -40,7 +40,7 @@ export interface IHeader {
   wide?: boolean
 };
 
-export const Header: React.SFC<IHeader> = props => {
+export const Header: FC<IHeader> = props => {
   const navigation = !props.signOutHref ? props.navigation : [...props.navigation, {
     href: props.signOutHref,
     text: props.signOutText

@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { className } from '../../helpers';
 
-const Main: React.SFC<any> = props => (
+const Main: FC<any> = props => (
   <main {...props} className={className('govuk-main-wrapper', props.className)}>
     {props.children}
   </main>

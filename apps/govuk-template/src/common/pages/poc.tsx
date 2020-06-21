@@ -1,5 +1,5 @@
-import React from 'react';
-import { Page } from '@not-govuk/app-composer';
+import { FC, createElement as h } from 'react';
+import { PageProps } from '@not-govuk/app-composer';
 
 import {
   A,
@@ -15,7 +15,7 @@ import {
   TextInput
 } from '@not-govuk/components';
 
-const Page: Page = props => (<>
+const Page: FC<PageProps> = props => (<>
   <h1><span className="caption">Caption</span> Typography</h1>
   <h2><span className="caption">Typography</span> Sub-heading</h2>
   <h3><span className="caption">Typography</span> Sub-sub-heading</h3>

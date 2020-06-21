@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import FormGroupWithFieldset from './form-group-with-fieldset';
 import Label from './label';
 import { bem, className } from '../../helpers';
 
-const DateInput: React.SFC<any> = props => {
+const DateInput: FC<any> = props => {
   const hint: string = props.hint || 'For example, 12 11 2007';
   const error: string = props.error && (props.error.day || props.error.month || props.error.year || props.error);
   const invalid = {

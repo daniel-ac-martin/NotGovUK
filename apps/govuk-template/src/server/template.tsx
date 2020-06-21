@@ -1,7 +1,7 @@
-import React from 'react';
-import { Template as TTemplate } from '@not-govuk/server-renderer';
+import { FC, createElement as h } from 'react';
+import { TemplateProps } from '@not-govuk/server-renderer';
 
-export const Template: TTemplate = props => {
+export const Template: FC<TemplateProps> = props => {
   const title = `${props.appProps.pageTitle} - NotGovUK`;
   const charSet = props.charSet || 'UTF-8';
 

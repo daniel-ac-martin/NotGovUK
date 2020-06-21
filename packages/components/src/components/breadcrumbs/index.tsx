@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { A } from '../';
 import { className } from '../../helpers';
 
@@ -20,7 +20,7 @@ export interface IBreadcrumbsProps {
   items: Array<IBreadcrumb>
 };
 
-export const Breadcrumbs: React.SFC<IBreadcrumbsProps> = props => {
+export const Breadcrumbs: FC<IBreadcrumbsProps> = props => {
   const classes = className('govuk-breadcrumbs', props.className);
   const n = props.items.length - 1;
   const current = props.items[n];

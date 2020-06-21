@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { NavLink } from 'react-router-dom';
 import { urlParse } from '@not-govuk/route-utils';
 
@@ -21,7 +21,7 @@ interface IAnchor {
   title?: string
 };
 
-export const Anchor: React.SFC<IAnchor> = props => {
+export const Anchor: FC<IAnchor> = props => {
   const url = urlParse(props.href);
   const processedProps = {...props};
 

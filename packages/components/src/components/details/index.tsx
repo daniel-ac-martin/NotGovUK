@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { className } from '../../helpers';
 
 interface IDetails {
@@ -10,7 +10,7 @@ interface IDetails {
   summary: string
 };
 
-export const Details: React.SFC<IDetails> = props => (
+export const Details: FC<IDetails> = props => (
   <details id={props.id} className={className('govuk-details', props.className)}>
     <summary className="govuk-details__summary">{props.summary}</summary>
     <div className="govuk-details__text">

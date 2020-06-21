@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, Fragment, createElement as h } from 'react';
 import { Page } from '../';
 import { Route, Switch } from 'react-router-dom';
 import { bem, className } from '../../helpers';
@@ -63,23 +63,23 @@ interface PageErrorProps {
   message: string
 };
 
-const PageError: React.SFC<PageErrorProps> = p => (
-  <>
+const PageError: FC<PageErrorProps> = p => (
+  <Fragment>
   { p.internal ? (
-    <>
+    <Fragment>
     <h1>Something went wrong...</h1>
     <h2>{p.title}</h2>
-    </>
+    </Fragment>
   ) : (
     <h1 className="govuk-heading-l">{p.title}</h1>
   )}
   <p>{p.message}</p>
-  </>
+  </Fragment>
 );
 
-export const Site: React.SFC<ISite> = props => {
+export const Site: FC<ISite> = props => {
   const feedbackHref = props.feedback && (props.feedback.href || '/feedback');
-  const SitePage: React.SFC<any> = p => (
+  const SitePage: FC<any> = p => (
     <Page
       department={props.department}
       feedbackHref={feedbackHref}
@@ -106,7 +106,7 @@ export const Site: React.SFC<ISite> = props => {
       <Component {...props} />
     </SitePage>
   );
-  const NotFoundErrorPage: React.SFC<RouteComponentProps> = withPage(({ location }) => (
+  const NotFoundErrorPage: FC<RouteComponentProps> = withPage(({ location }) => (
     <PageError
       title="Page not found"
       message={`${location.pathname} does not exist.`}

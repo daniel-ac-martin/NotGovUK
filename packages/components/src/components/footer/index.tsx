@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import { A, PageFooter } from '../';
 
 interface IFooter {
@@ -10,7 +10,7 @@ interface IFooter {
   wide?: boolean
 };
 
-export const Footer: React.SFC<IFooter> = props => (
+export const Footer: FC<IFooter> = props => (
   <PageFooter id={props.id} className={props.className} wide={props.wide}>
     {props.children}
     <div className="govuk-footer__meta">

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import FormGroup from './form-group';
 import Hint from './hint';
 import Label from './label';
 import ErrorMessage from './error-message';
 
-const FormGroupWithLabel: React.SFC<any> = props => (
+const FormGroupWithLabel: FC<any> = props => (
   <FormGroup id={props.id} className={props.className}>
     <Label htmlFor={props.fieldId}>{props.label}</Label>
     {props.hint && <Hint id={`${props.id}-hint`}>{props.hint}</Hint>}

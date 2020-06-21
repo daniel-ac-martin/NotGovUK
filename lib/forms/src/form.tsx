@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { FC, Fragment, createElement as h } from 'react';
 import { FormikProps } from 'formik';
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
 export type FormProps = JSX.IntrinsicElements["form"] & FormikProps<any>;
 
-export const Form: React.FC<FormProps> = props => (
-  <React.Fragment>
+export const Form: FC<FormProps> = props => (
+  <Fragment>
     <form
       action={props.action}
       id={props.id}
@@ -32,7 +32,7 @@ export const Form: React.FC<FormProps> = props => (
         {prettyPrint(props.errors)}
       </pre>
     </div>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default Form;

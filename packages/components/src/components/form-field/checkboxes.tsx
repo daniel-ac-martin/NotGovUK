@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { FC, createElement as h } from 'react';
 import CheckboxesAndRadios from './checkboxes-and-radios';
 import Hint from './hint';
 import Label from './label';
 import { bem, className } from '../../helpers';
 
-const Checkboxes: React.SFC<any> = props => (
+const Checkboxes: FC<any> = props => (
   <CheckboxesAndRadios
     id={props.id}
     className={props.className}
