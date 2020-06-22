@@ -102,7 +102,7 @@ export const compose: Compose = options => props => {
           ? lazy(() => options.pageLoader(e.src))
           : e.Component
       ),
-      href: e.href,
+      href: decodeURI(e.href),
       title: e.title
     }));
   const pageProps = { routes };

@@ -23,6 +23,9 @@ const src2Href = (page: string): string => (
     page
       .replace(pageExtensionPattern, '')
       .replace(/index$/, '')
+      .split(path.sep)
+      .map(encodeURI)
+      .join('/')
   )
 );
 
