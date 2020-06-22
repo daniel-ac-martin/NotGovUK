@@ -115,7 +115,7 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
         h(Template, fullTemplateProps)
       ),
       {
-        "indent_with_tabs": true
+        'indent_with_tabs': true
       }
     );
 
