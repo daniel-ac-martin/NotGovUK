@@ -1,12 +1,26 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { {{{properCase name}}} } from '../src/{{{properCase name}}}';
 import readMe from '../README.md';
 export const title = '{{{name}}}';
+
+<Meta
+  title="{{{name}}}"
+  component={ {{{properCase name}}} }
+  parameters={ {
+    jest: ['{{{dashCase name}}}'],
+    notes: readMe
+  } }
+/>
 
 # {{{name}}}
 
 WRITE DESCRIPTION HERE.
 
-<{{{properCase name}}} />
+<Preview withToolbar>
+  <Story name="{{{properCase name}}}">
+    <{{{properCase name}}} />
+  </Story>
+</Preview>
 
 
 ## Stories
@@ -14,4 +28,8 @@ WRITE DESCRIPTION HERE.
 
 A standard {{{name}}}.
 
-<{{{properCase name}}} />
+<Preview>
+  <Story name="Standard">
+    <{{{properCase name}}} />
+  </Story>
+</Preview>
