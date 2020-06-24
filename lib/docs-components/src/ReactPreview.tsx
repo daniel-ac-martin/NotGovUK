@@ -18,7 +18,7 @@ const beautify = (src: string): string => beautifyHtml(src, {
   'indent_size': 2
 });
 
-export type ReactPreviewProps = StandardProps & {
+export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
   /** 'id' attribute to place on the base HTML element */
   id: string
   /** The React.js source-code of the children. */
