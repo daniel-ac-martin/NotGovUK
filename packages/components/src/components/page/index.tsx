@@ -31,8 +31,6 @@ interface IPage {
   phase?: string
   /** Content for the phase-banner */
   phaseBannerContent?: any,
-  /** List of side panels */
-  sidePanels?: Array<any>,
   /** HRef for the sign-out link */
   signOutHref?: string,
   /** Text for the sign-out link */
@@ -83,18 +81,7 @@ export const Page: FC<IPage> = props => {
           props.backHref ? backLink : ''
           }
           <Main id="main-content" role="main">
-            <div className="govuk-grid-row">
-              <div className="govuk-grid-column-two-thirds">
-                {props.children}
-              </div>
-              <div className="govuk-grid-column-one-third">
-                {props.sidePanels && props.sidePanels.map((v, i) => (
-                  <aside key={i}>
-                    {v}
-                  </aside>
-                ))}
-              </div>
-            </div>
+            {props.children}
           </Main>
         </div>
       </Body>
