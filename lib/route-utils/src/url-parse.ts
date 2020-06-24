@@ -9,5 +9,3 @@ export const urlParse = s => {
 
   return r;
 };
-
-export default urlParse;
