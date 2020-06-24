@@ -43,8 +43,6 @@ interface ISite {
   phaseBannerContent?: any,
   /** Routes */
   routes?: Array<IRoutes>,
-  /** List of side panels */
-  sidePanels?: Array<any>,
   /** HRef for the sign-out link */
   signOutHref?: string,
   /** Text for the sign-out link */
@@ -91,7 +89,6 @@ export const Site: FC<ISite> = props => {
       }))}
       phase={props.phase}
       phaseBannerContent={props.phaseBannerContent}
-      sidePanels={props.sidePanels}
       signOutHref={props.signOutHref}
       signOutText={props.signOutText}
       title={props.title}
@@ -142,7 +139,6 @@ Site.defaultProps = {
   phase: null,
   phaseBannerContent: null,
   routes: [],
-  sidePanels: [],
   signOutHref: null,
   signOutText: 'Sign out',
   title: null,
