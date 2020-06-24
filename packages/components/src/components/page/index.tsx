@@ -103,7 +103,6 @@ Page.defaultProps = {
   phase: null,
   phaseBannerContent: null,
   navigation: [],
-  sidePanels: [],
   signOutHref: null,
   signOutText: 'Sign out',
   title: null,
