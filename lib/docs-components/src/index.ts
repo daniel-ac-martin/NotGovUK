@@ -1,23 +1,14 @@
-import { ComponentProps, ComponentType, Context, FC, ReactElement, createContext, createElement as h, useContext } from 'react';
+import { ComponentProps, ComponentType, FC, ReactElement, createElement as h } from 'react';
 import { id } from '@not-govuk/component-helpers';
 import { ReactPreview } from './ReactPreview';
 import { inStorybook } from './common';
+import { useDocs } from './context';
 
 import {
   Meta as _Meta,
   Preview as _Preview,
   Story as _Story
 } from '@storybook/addon-docs/blocks';
-
-export type DocsContextValue = {
-  storySource: object
-  decorators?: any[]
-  title?: string
-};
-
-const defaultValue: DocsContextValue = {};
-export const DocsContext = createContext(defaultValue);
-export const useDocs = () => useContext(DocsContext);
 
 export type MetaProps = ComponentProps<typeof _Meta> & {
 };
@@ -77,3 +68,4 @@ export const Story: FC<StoryProps> = (props) => {
 };
 
 export * from './Props';
+export * from './context';
