@@ -6,7 +6,7 @@ import hljs from 'highlight.js/lib/core';
 import hljsXml from 'highlight.js/lib/languages/xml';
 import hljsJavascript from 'highlight.js/lib/languages/javascript';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { useLocation } from '@not-govuk/route-utils';
+import { queryString, useLocation } from '@not-govuk/route-utils';
 
 import './ReactPreview.scss';
 import 'highlight.js/styles/github.css';
@@ -41,8 +41,8 @@ export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, clas
     react: showState === getVar.react
   };
   const toggle = {
-    html: showing.html ? '?' : `?${show}=${getVar.html}`,
-    react: showing.react ? '?' : `?${show}=${getVar.react}`
+    html: queryString({ ...location.query, [show]: showing.html ? undefined : getVar.html }),
+    react: queryString({ ...location.query, [show]: showing.react ? undefined : getVar.react })
   };
 
   return (
