@@ -67,5 +67,6 @@ export const Story: FC<StoryProps> = (props) => {
   );
 };
 
+export * from './DocsPage';
 export * from './Props';
 export * from './context';
