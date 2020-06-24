@@ -1,6 +1,7 @@
 import { ComponentType, Fragment, Suspense, createElement as h, lazy } from 'react';
-import { Route, RouteComponentProps, StaticRouter, StaticRouterProps, Switch, withRouter } from 'react-router';
+import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
 import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
+import { Route, RouteComponentProps, withRouter } from '@not-govuk/route-utils';
 
 export type RouteInfo = {
   href: string
