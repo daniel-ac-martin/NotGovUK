@@ -11,7 +11,7 @@ export interface RouteComponentProps<
     location: Location<S>;
   }
 
-const withEnhancements = (Component: ComponentType<RouteComponentProps>): FC<_RouteComponentProps> => (
+const withEnhancements = <T>(Component: ComponentType<T & Partial<RouteComponentProps>>): FC<T & _RouteComponentProps> => (
   ({ location, ...props }) => h(Component, {
     ...props,
     location: enhanceLocation(location)
@@ -20,9 +20,9 @@ const withEnhancements = (Component: ComponentType<RouteComponentProps>): FC<_Ro
 
 export const Route: FC<RouteProps> = ({ children, component, render, ...props }) => h(_Route, {
   ...props,
-  children: children && withEnhancements(children),
+  children: children,
   component: component && withEnhancements(component),
-  render: render && withEnhancements(render)
+  render: render
 });
 
 export const withRouter = (Component: ComponentType<RouteComponentProps>): FC<any> => _withRouter(withEnhancements(Component));
