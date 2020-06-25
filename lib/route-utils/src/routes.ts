@@ -25,4 +25,4 @@ export const Route: FC<RouteProps> = ({ children, component, render, ...props })
   render: render
 });
 
-export const withRouter = (Component: ComponentType<RouteComponentProps | any>): FC<any> => _withRouter(withEnhancements(Component));
+export const withRouter = (Component: ComponentType<RouteComponentProps | any>): ComponentType<any> => _withRouter(withEnhancements(Component));
