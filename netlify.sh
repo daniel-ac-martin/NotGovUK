@@ -12,6 +12,9 @@ cd ..
 # Install npm dependencies
 ./tools/node_modules/.bin/pnpm i
 
+# Clean-up tools
+rm -rf tools
+
 # Build docs website
 cd ./apps/govuk-docs/
 npm run build
