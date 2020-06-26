@@ -15,6 +15,9 @@
   publish = "apps/govuk-docs/dist/public/"
   environment = { MODE = "serverless", NPM_FLAGS="--prefix=/" }
 
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+
 # Production context: all deploys from the Production branch set in your site's
 # deploy contexts will inherit these settings.
 [context.production]
