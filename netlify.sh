@@ -22,8 +22,8 @@ du -h dist/
 cd ../../
 
 # Dirty hack (fake vue package)
-mkdir -p lib/webpack-config/node_modules/vue
-echo '{ "name": "vue", "version": "2.6.10" }' > lib/webpack-config/node_modules/vue/package.json
+mkdir -p node_modules/vue
+echo '{ "name": "vue", "version": "2.6.10" }' > node_modules/vue/package.json
 
 # Prepare node_modules/ for caching
 mv node_modules/.ignored/* node_modules/ || true
