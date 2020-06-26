@@ -13,7 +13,7 @@ npm install pnpm --no-progress --no-audit --no-fund --no-save --no-package-lock
 ls -l node_modules
 
 # Install npm dependencies
-./node_modules/.bin/pnpm i
+./node_modules/.bin/pnpm i --shamefully-hoist
 ls -l node_modules
 
 # Build docs website
