@@ -18,7 +18,7 @@ ls -l node_modules
 
 # Build docs website
 cd ./apps/govuk-docs/
-npm run build
+#npm run build
 cd ../../
 
 # Prepare node_modules/ for caching
