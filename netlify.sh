@@ -3,13 +3,9 @@
 set -euxo pipefail
 
 # Debug
-echo "${PWD}:"
 ls
-echo "${PWD}/node_modules:"
 ls node_modules
-echo "${PWD}/govuk-docs:"
 ls apps/govuk-docs
-echo "${PWD}/govuk-docs/node_modules:"
 ls apps/govuk-docs/node_modules
 
 # Install pnpm
