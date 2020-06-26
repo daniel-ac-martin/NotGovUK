@@ -12,6 +12,10 @@ mkdir -p tools
 mv node_modules/ tools/node_modules
 [ -f tools/node_modules/.pnpm-cache ] && mv tools/node_modules/.pnpm-cache node_modules || true
 
+# Debug
+ls -l
+cat package.json
+
 # Install npm dependencies
 ./tools/node_modules/.bin/pnpm i
 
