@@ -297,7 +297,7 @@ importers:
       '@babel/preset-env': 7.10.2_@babel+core@7.10.2
       '@babel/preset-react': 7.10.1_@babel+core@7.10.2
       '@mdx-js/loader': 1.6.5
-      '@storybook/addon-docs': 6.0.0-beta.36_e73da74ee6f450d61e92d8b7b1945966
+      '@storybook/addon-docs': 6.0.0-beta.36_e93f87ff4417e761f12bceb46bcce525
       babel-loader: 8.1.0_@babel+core@7.10.2
       clean-webpack-plugin: 3.0.0
       css-loader: 3.5.3
@@ -309,7 +309,6 @@ importers:
       sass-loader: 8.0.2_node-sass@4.14.1
       style-loader: 1.2.1
       ts-loader: 7.0.3
-      vue: 2.6.11
       webpack-manifest-plugin: 2.2.0
       webpack-node-externals: 1.7.2
     specifiers:
@@ -329,7 +328,6 @@ importers:
       sass-loader: ^8.0.2
       style-loader: ^1.2.1
       ts-loader: ^7.0.3
-      vue: ^2.6.10
       webpack-manifest-plugin: ^2.2.0
       webpack-node-externals: ^1.7.2
   packages/components:
@@ -5143,19 +5141,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-6It2EVfGskxZCQhuykrfnALg7oVeiI6KclWSmGDqB0AiInVrTGB9Jp9i4/Ad21u9Jde/voVQz6eFX/eSg/UsPA==
-  /@egoist/vue-to-react/1.1.0_react@16.13.1:
-    dependencies:
-      react: 16.13.1
-    dev: true
+  /@egoist/vue-to-react/1.1.0:
+    dev: false
     peerDependencies:
       react: ^16.8.6
       vue: ^2.6.10
     resolution:
       integrity: sha512-MwfwXHDh6ptZGLEtNLPXp2Wghteav7mzpT2Mcwl3NZWKF814i5hhHnNkVrcQQEuxUroSWQqzxLkMKSb+nhPang==
-  /@egoist/vue-to-react/1.1.0_vue@2.6.11:
+  /@egoist/vue-to-react/1.1.0_react@16.13.1:
     dependencies:
-      vue: 2.6.11
-    dev: false
+      react: 16.13.1
+    dev: true
     peerDependencies:
       react: ^16.8.6
       vue: ^2.6.10
@@ -5968,14 +5964,14 @@ packages:
         optional: true
     resolution:
       integrity: sha512-G3Yy6TlASLr4NYNh7rmWPdNlhABW8PQQlTmWMuvEC0hR8llaHGkOGNwRxppm4bf+AIn7HMC4+66qLcQwTbFVzg==
-  /@storybook/addon-docs/6.0.0-beta.36_e73da74ee6f450d61e92d8b7b1945966:
+  /@storybook/addon-docs/6.0.0-beta.36_e93f87ff4417e761f12bceb46bcce525:
     dependencies:
       '@babel/core': 7.10.2
       '@babel/generator': 7.10.3
       '@babel/parser': 7.10.3
       '@babel/plugin-transform-react-jsx': 7.10.3_@babel+core@7.10.2
       '@babel/preset-env': 7.10.3_@babel+core@7.10.2
-      '@egoist/vue-to-react': 1.1.0_vue@2.6.11
+      '@egoist/vue-to-react': 1.1.0
       '@jest/transform': 26.1.0
       '@mdx-js/loader': 1.6.6
       '@mdx-js/mdx': 1.6.6
@@ -6010,7 +6006,6 @@ packages:
       remark-slug: 6.0.0
       ts-dedent: 1.1.1
       util-deprecate: 1.0.2
-      vue: 2.6.11
       vue-docgen-api: 4.25.0
       vue-docgen-loader: 1.5.0_vue-docgen-api@4.25.0
     dev: false
@@ -22897,10 +22892,6 @@ packages:
       he: 1.2.0
     resolution:
       integrity: sha512-KIq15bvQDrcCjpGjrAhx4mUlyyHfdmTaoNfeoATHLAiWB+MU3cx4lOzMwrnUh9cCxy0Lt1T11hAFY6TQgroUAA==
-  /vue/2.6.11:
-    dev: false
-    resolution:
-      integrity: sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
   /w3c-hr-time/1.0.2:
     dependencies:
       browser-process-hrtime: 1.0.0
