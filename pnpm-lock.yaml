@@ -298,20 +298,21 @@ importers:
       '@babel/preset-env': 7.10.2_@babel+core@7.10.2
       '@babel/preset-react': 7.10.1_@babel+core@7.10.2
       '@mdx-js/loader': 1.6.5
-      '@storybook/addon-docs': 6.0.0-beta.37_e93f87ff4417e761f12bceb46bcce525
       babel-loader: 8.1.0_@babel+core@7.10.2
       clean-webpack-plugin: 3.0.0
       css-loader: 3.5.3
       file-loader: 6.0.0
       mini-css-extract-plugin: 0.9.0
       node-sass: 4.14.1
-      react-docgen-typescript-loader: 3.7.2
       resolve-url-loader: 3.1.1
       sass-loader: 8.0.2_node-sass@4.14.1
       style-loader: 1.2.1
       ts-loader: 7.0.3
       webpack-manifest-plugin: 2.2.0
       webpack-node-externals: 1.7.2
+    optionalDependencies:
+      '@storybook/addon-docs': 6.0.0-beta.37_e93f87ff4417e761f12bceb46bcce525
+      react-docgen-typescript-loader: 3.7.2
     specifiers:
       '@babel/core': ^7.10.2
       '@babel/preset-env': ^7.10.2
@@ -629,6 +630,7 @@ packages:
       '@babel/helper-replace-supers': 7.10.1
       '@babel/helper-split-export-declaration': 7.10.1
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0
     resolution:
@@ -933,6 +935,7 @@ packages:
       '@babel/helper-remap-async-to-generator': 7.10.3
       '@babel/plugin-syntax-async-generators': 7.8.4_@babel+core@7.10.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -994,6 +997,7 @@ packages:
       '@babel/helper-plugin-utils': 7.10.3
       '@babel/plugin-syntax-decorators': 7.10.1_@babel+core@7.10.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -1042,6 +1046,7 @@ packages:
       '@babel/helper-plugin-utils': 7.10.3
       '@babel/plugin-syntax-export-default-from': 7.10.1_@babel+core@7.10.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -1161,6 +1166,7 @@ packages:
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.10.2
       '@babel/plugin-transform-parameters': 7.10.1_@babel+core@7.10.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -1241,6 +1247,7 @@ packages:
       '@babel/helper-plugin-utils': 7.10.3
       '@babel/plugin-syntax-optional-chaining': 7.8.3_@babel+core@7.10.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -1384,6 +1391,7 @@ packages:
       '@babel/core': 7.10.2
       '@babel/helper-plugin-utils': 7.10.3
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -1427,6 +1435,7 @@ packages:
       '@babel/core': 7.10.2
       '@babel/helper-plugin-utils': 7.10.3
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -1670,6 +1679,7 @@ packages:
       '@babel/core': 7.10.2
       '@babel/helper-plugin-utils': 7.10.3
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -1839,6 +1849,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.10.1
       globals: 11.12.0
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -1881,6 +1892,7 @@ packages:
       '@babel/core': 7.10.2
       '@babel/helper-plugin-utils': 7.10.3
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -2219,6 +2231,7 @@ packages:
       '@babel/helper-plugin-utils': 7.10.3
       babel-plugin-dynamic-import-node: 2.3.3
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -2277,6 +2290,7 @@ packages:
       '@babel/core': 7.10.2
       '@babel/helper-create-regexp-features-plugin': 7.10.1_@babel+core@7.10.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0
     resolution:
@@ -2537,6 +2551,7 @@ packages:
       '@babel/helper-plugin-utils': 7.10.3
       '@babel/plugin-syntax-jsx': 7.10.1_@babel+core@7.10.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -2582,6 +2597,7 @@ packages:
       '@babel/core': 7.10.2
       regenerator-transform: 0.14.4
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -2727,6 +2743,7 @@ packages:
       '@babel/helper-annotate-as-pure': 7.10.1
       '@babel/helper-plugin-utils': 7.10.3
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -2784,6 +2801,7 @@ packages:
       '@babel/helper-plugin-utils': 7.10.3
       '@babel/plugin-syntax-typescript': 7.10.1_@babel+core@7.10.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -3065,6 +3083,7 @@ packages:
       levenary: 1.1.1
       semver: 5.7.1
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -3233,6 +3252,7 @@ packages:
       '@babel/helper-plugin-utils': 7.10.3
       '@babel/plugin-transform-typescript': 7.10.3_@babel+core@7.10.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -3366,6 +3386,7 @@ packages:
       integrity: sha512-v9kIhKwjeZThiWrLmj0y17CWoyddASLj9O2yvbZkbvw/N3rWOYy9zkV66ursAoVr0mV15bL8g0c4QZUE6cdDoQ==
   /@egoist/vue-to-react/1.1.0:
     dev: false
+    optional: true
     peerDependencies:
       react: ^16.8.6
       vue: ^2.6.10
@@ -3398,6 +3419,7 @@ packages:
       '@emotion/sheet': 0.9.4
       '@emotion/utils': 0.11.3
     dev: false
+    optional: true
     peerDependencies:
       react: '>=16.3.0'
     resolution:
@@ -3460,6 +3482,7 @@ packages:
       '@emotion/serialize': 0.11.16
       '@emotion/utils': 0.11.3
     dev: false
+    optional: true
     peerDependencies:
       '@emotion/core': ^10.0.28
       react: '>=16.3.0'
@@ -3485,6 +3508,7 @@ packages:
       '@emotion/styled-base': 10.0.31_@emotion+core@10.0.28
       babel-plugin-emotion: 10.0.33
     dev: false
+    optional: true
     peerDependencies:
       '@emotion/core': ^10.0.27
       react: '>=16.3.0'
@@ -3602,6 +3626,7 @@ packages:
       '@mdx-js/react': 1.6.6
       loader-utils: 2.0.0
     dev: false
+    optional: true
     peerDependencies:
       react: '*'
     resolution:
@@ -3671,6 +3696,7 @@ packages:
       integrity: sha512-y1Yu9baw3KokFrs7g5RxHpJNSU4e1zk/5bAJX94yVATglG5HyAL0lYMySU8YzebXNE+fJJMCx9CuiQHy2ezoew==
   /@mdx-js/react/1.6.6:
     dev: false
+    optional: true
     peerDependencies:
       react: ^16.9.0
     resolution:
@@ -3753,6 +3779,7 @@ packages:
       prop-types: 15.7.2
       react-lifecycles-compat: 3.0.4
     dev: false
+    optional: true
     peerDependencies:
       react: 15.x || 16.x || 16.4.0-alpha.0911da3
       react-dom: 15.x || 16.x || 16.4.0-alpha.0911da3
@@ -3780,6 +3807,7 @@ packages:
       react: 16.13.1
       react-lifecycles-compat: 3.0.4
     dev: false
+    optional: true
     peerDependencies:
       react: 15.x || 16.x || 16.4.0-alpha.0911da3
       react-dom: 15.x || 16.x || 16.4.0-alpha.0911da3
@@ -3891,6 +3919,7 @@ packages:
       vue-docgen-api: 4.25.0
       vue-docgen-loader: 1.5.0_vue-docgen-api@4.25.0
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
       babel-loader: ^8.0.0
@@ -3918,6 +3947,7 @@ packages:
       global: 4.4.0
       regenerator-runtime: 0.13.5
     dev: false
+    optional: true
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -3965,6 +3995,7 @@ packages:
       ts-dedent: 1.1.1
       util-deprecate: 1.0.2
     dev: false
+    optional: true
     peerDependencies:
       react-dom: '*'
     resolution:
@@ -4035,6 +4066,7 @@ packages:
       ts-dedent: 1.1.1
       util-deprecate: 1.0.2
     dev: false
+    optional: true
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -4205,6 +4237,7 @@ packages:
       webpack-hot-middleware: 2.25.0
       webpack-virtual-modules: 0.2.2
     dev: false
+    optional: true
     peerDependencies:
       '@babel/core': '*'
       react: '*'
@@ -4349,6 +4382,7 @@ packages:
       memoizerific: 1.11.3
       qs: 6.9.4
     dev: false
+    optional: true
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -4380,6 +4414,7 @@ packages:
       qs: 6.9.4
       react: 16.13.1
     dev: false
+    optional: true
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -4407,6 +4442,7 @@ packages:
       prettier: 2.0.5
       regenerator-runtime: 0.13.5
     dev: false
+    optional: true
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -4446,6 +4482,7 @@ packages:
       resolve-from: 5.0.0
       ts-dedent: 1.1.1
     dev: false
+    optional: true
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -4489,6 +4526,7 @@ packages:
       resolve-from: 5.0.0
       ts-dedent: 1.1.1
     dev: false
+    optional: true
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -5076,6 +5114,7 @@ packages:
     dev: false
     engines:
       node: '>= 6.9.0 || >= 8.9.0'
+    optional: true
     peerDependencies:
       webpack: ^3.0.0 || ^4.0.0
     resolution:
@@ -5287,6 +5326,7 @@ packages:
     dev: false
     engines:
       node: '>=4'
+    optional: true
     resolution:
       integrity: sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=
   /ansi-regex/4.1.0:
@@ -5654,6 +5694,7 @@ packages:
     dev: false
     engines:
       node: '>= 6.9'
+    optional: true
     peerDependencies:
       '@babel/core': ^7.0.0
       webpack: '>=2'
@@ -6912,6 +6953,7 @@ packages:
       prop-types: 15.7.2
       warning: 4.0.3
     dev: false
+    optional: true
     peerDependencies:
       prop-types: ^15.0.0
       react: ^0.14.0 || ^15.0.0 || ^16.0.0
@@ -7529,6 +7571,7 @@ packages:
       '@emotion/weak-memoize': 0.2.5
       hoist-non-react-statics: 3.3.2
     dev: false
+    optional: true
     peerDependencies:
       '@emotion/core': ^10.0.27
       react: '>=16.3.0'
@@ -10285,6 +10328,7 @@ packages:
   /log-symbols/2.2.0:
     dependencies:
       chalk: 2.4.2
+    dev: true
     engines:
       node: '>=4'
     resolution:
@@ -10302,6 +10346,7 @@ packages:
     dev: false
     engines:
       node: '>= 6'
+    optional: true
     resolution:
       integrity: sha512-V/73qkPuJmx4BcBF19xPBr+0ZRVBhc4POxvZTZdMeXpJ4NItXSJ/MSwuFT0kQJlCbXvdlZoQQ/418bS1y9Jh6A==
   /longest/1.0.1:
@@ -12360,12 +12405,14 @@ packages:
       loader-utils: 1.4.0
       react-docgen-typescript: 1.16.6
     dev: false
+    optional: true
     peerDependencies:
       typescript: '*'
     resolution:
       integrity: sha512-fNzUayyUGzSyoOl7E89VaPKJk9dpvdSgyXg81cUkwy0u+NBvkzQG3FC5WBIlXda0k/iaxS+PWi+OC+tUiGxzPA==
   /react-docgen-typescript/1.16.6:
     dev: false
+    optional: true
     peerDependencies:
       typescript: '>= 3.x'
     resolution:
@@ -12393,6 +12440,7 @@ packages:
       '@base2/pretty-print-object': 1.0.0
       is-plain-object: 3.0.0
     dev: false
+    optional: true
     peerDependencies:
       react: ^0.14.8 || ^15.0.1 || ^16.0.0
       react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0
@@ -13894,6 +13942,7 @@ packages:
     dev: false
     engines:
       node: '>=4'
+    optional: true
     resolution:
       integrity: sha1-qEeQIusaw2iocTibY1JixQXuNo8=
   /strip-ansi/5.2.0:
@@ -14840,6 +14889,7 @@ packages:
     dev: false
     engines:
       node: '>= 8.16'
+    optional: true
     peerDependencies:
       vue-docgen-api: '>=3'
       webpack: '>=4'
@@ -14950,6 +15000,7 @@ packages:
     dev: false
     engines:
       node: '>=6'
+    optional: true
     resolution:
       integrity: sha512-U9AnICnu50HXtiqiDxuli5gLB5PGBo7VvcHx36jRZHwK4vzOYLbImqT4lwWwoMHdQWwEKw736fCHEekokTEKHA==
   /webpack-log/2.0.0:
