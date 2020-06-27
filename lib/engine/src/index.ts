@@ -1,10 +1,10 @@
 import serverless from 'serverless-http';
 import { ComponentType } from 'react';
+import { Configuration as WebpackConfig } from 'webpack';
 import restify, { Router, errors } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, TemplateProps, reactRenderer } from '@not-govuk/server-renderer';
 import { gatherPages, pageRoutes } from './lib/pages';
-import webpackMiddleware from './lib/webpack';
 
 export type Api = {
   path: string
@@ -22,13 +22,27 @@ export enum NodeEnv {
   Production = 'production'
 };
 
+type PreBuiltAssets = {
+  entrypoints: object
+  localPath: string
+  publicPath: string
+}
+
+export type Assets = PreBuiltAssets | WebpackConfig;
+
+const isPreBuiltAssets = (v: Assets): v is PreBuiltAssets => !!(
+  'entrypoints' in v && 'localPath' in v && 'publicPath' in v
+);
+
+const isWebpackConfig = (v: Assets): v is WebpackConfig => !isPreBuiltAssets(v);
+
 export type EngineConfig = {
   AppWrap: ComponentType<ApplicationProps>
   ErrorPage: ComponentType<ErrorPageProps>
   PageWrap: ComponentType<PageProps>
   Template: ComponentType<TemplateProps>
+  assets: Assets
   apis?: Api[]
-  entrypoints: object
   env: NodeEnv
   httpd: {
     host: string
@@ -38,12 +52,13 @@ export type EngineConfig = {
   name: string
   pageLoader: PageLoader
   ssrOnly: boolean
-  webpackConfig: any
 };
 
 export const engine = async (config: EngineConfig) => {
-  const publicPath = config.webpackConfig.output.publicPath;
-  const localAssetsPath = config.webpackConfig.output.path;
+  const webpackConfig = config.env === NodeEnv.Development && isWebpackConfig(config.assets) ? config.assets as WebpackConfig : undefined;
+  const preBuiltAssets = isPreBuiltAssets(config.assets) ? config.assets as PreBuiltAssets : undefined;
+  const publicPath = preBuiltAssets?.publicPath || webpackConfig.output.publicPath;
+  const localAssetsPath = preBuiltAssets?.localPath || webpackConfig.output.path;
   const pages = await gatherPages(config.pageLoader);
 
   const react = reactRenderer(
@@ -53,7 +68,7 @@ export const engine = async (config: EngineConfig) => {
     config.Template,
     {
       assetsPath: publicPath,
-      entrypoints: config.entrypoints,
+      entrypoints: preBuiltAssets?.entrypoints,
       pages,
       rootId: 'root',
       ssrOnly: config.ssrOnly
@@ -75,8 +90,10 @@ export const engine = async (config: EngineConfig) => {
   const publicPaths = publicPath + '*';
   const servePublicFiles = restify.plugins.serveStaticFiles(localAssetsPath);
 
-  if (process.env['NODE_ENV'] === 'development' && config.webpackConfig && !config.ssrOnly) {
-    const webpack = webpackMiddleware(config.webpackConfig);
+  if (webpackConfig && !config.ssrOnly) {
+    const { default: webpackMiddleware } = await import('./lib/webpack');
+    const webpack = webpackMiddleware(webpackConfig);
+
     httpd.pre(webpack.serveFiles);
     // Endpoint for HMR websocket
     httpd.get(webpack.hotPath, webpack.hot);
