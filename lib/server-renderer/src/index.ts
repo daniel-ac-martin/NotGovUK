@@ -38,7 +38,7 @@ export type Template = ComponentType<TemplateProps>;
 
 export type RendererOptions = {
   assetsPath: string
-  entrypoints: object
+  entrypoints?: object
   pages: PageInfoSSR[]
   rootId: string,
   ssrOnly: boolean
