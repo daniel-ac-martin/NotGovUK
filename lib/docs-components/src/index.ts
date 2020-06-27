@@ -33,14 +33,12 @@ export type PreviewProps = ComponentProps<typeof _Preview> & {
 const DocsPreview: FC<PreviewProps> = ({ children }) => {
   const { storySource } = useDocs() as any;
   const childArray = Array.isArray(children) ? children : [children];
-  console.log(children);
   const stories = childArray
     .map((e: ReactElement) => e.props && e.props.name)
     .filter(id);
   const source = stories
     .map(e => storySource[e])
     .join('\n');
-  console.log(source);
 
   return h(ReactPreview, {
     id: `${stories[0]}-example`,

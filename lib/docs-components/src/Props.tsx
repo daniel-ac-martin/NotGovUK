@@ -17,7 +17,6 @@ export type PropsProps = {
 
 export const Props: FC<PropsProps> = (props) => {
   const argTypes = extractArgTypes(props.of);
-  console.log(argTypes);
   const data: PropsTableRow[] = Object.keys(argTypes)
     .map(i => {
       const v = argTypes[i];
