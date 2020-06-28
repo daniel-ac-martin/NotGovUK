@@ -33,7 +33,7 @@ npm run build
 ../../node_modules/.bin/sls package
 echo "module.exports = require('./dist/server/index.js')" >> govuk-docs.js
 zip -rv .serverless/govuk-docs.zip govuk-docs.js
-rm index.js
+rm govuk-docs.js
 
 # Arrange static assets
 mkdir public
