@@ -16,9 +16,6 @@ mv .descoped/packages/components/ packages/components
 
 # Install dependencies
 ./node_modules/.bin/pnpm i --shamefully-hoist
-ls -l node_modules
-ls -l node_modules/@storybook
-ls -l node_modules/.pnpm/@storybook
 
 # Restore de-scoped packages
 mv apps/* .descoped/apps/
@@ -41,7 +38,6 @@ mv dist/public/entrypoints.json public/
 mv dist/public/ public/public
 mv public/ dist/public
 rm -rf dist/servers/css/
-du -h dist/
 cd ../../
 
 # Prepare node_modules/ for caching
