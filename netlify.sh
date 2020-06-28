@@ -3,7 +3,7 @@
 set -euxo pipefail
 
 # Install pnpm
-npm install pnpm --no-progress --no-audit --no-fund --no-save --no-package-lock
+npm install pnpm serverless --no-progress --no-audit --no-fund --no-save --no-package-lock
 
 # De-scope unnecessary packages
 mkdir -p .descoped
@@ -30,6 +30,10 @@ mv .descoped/* ./
 # Build docs website
 cd ./apps/govuk-docs/
 npm run build
+../../node_modules/.bin/sls package
+echo "module.exports = require('./dist/server/index.js')" >> govuk-docs.js
+zip -rv .serverless/govuk-docs.zip govuk-docs.js
+rm index.js
 
 # Arrange static assets
 mkdir public
