@@ -36,7 +36,7 @@ const app = engine({
 
 export const handler = (
   config.mode === Mode.Serverless
-    ? app
+    ? async (...args) => (await app)(...args)
     : undefined
 );
 
