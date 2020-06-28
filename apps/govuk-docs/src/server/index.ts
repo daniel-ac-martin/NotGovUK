@@ -40,13 +40,4 @@ export const handler = (
     : undefined
 );
 
-export const test = 'TEST';
-
-console.log('SERVER');
-console.log('mode:');
-console.log(config.mode);
-handler.then(v => console.log(v));
-console.log('handler:');
-console.log(handler);
-
 export default app;
