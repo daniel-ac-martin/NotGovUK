@@ -5,24 +5,8 @@ set -euxo pipefail
 # Install pnpm
 npm install pnpm serverless --no-progress --no-audit --no-fund --no-save --no-package-lock
 
-# De-scope unnecessary packages
-mkdir -p .descoped
-mv apps/ .descoped/apps
-mv packages/ .descoped/packages
-mkdir -p apps
-mkdir -p packages
-mv .descoped/apps/govuk-docs/ apps/govuk-docs
-mv .descoped/packages/components/ packages/components
-
 # Install dependencies
 ./node_modules/.bin/pnpm i --shamefully-hoist
-
-# Restore de-scoped packages
-mv apps/* .descoped/apps/
-mv packages/* .descoped/packages/
-rmdir apps
-rmdir packages
-mv .descoped/* ./
 
 # Build docs website
 cd ./apps/govuk-docs/
