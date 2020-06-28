@@ -31,7 +31,7 @@ mv .descoped/* ./
 cd ./apps/govuk-docs/
 npm run build
 ../../node_modules/.bin/sls package
-echo "process.env['MODE'] = 'serverless'; module.exports = require('./dist/server/index.js');" >> govuk-docs.js
+echo "process.env['MODE'] = 'serverless'; const stuff = require('./dist/server/index.js'); console.log(process.env); console.log('---'); console.log(stuff); console.log('---'); module.exports = stuff;" > govuk-docs.js
 zip -rv .serverless/govuk-docs.zip govuk-docs.js
 rm govuk-docs.js
 
