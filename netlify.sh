@@ -36,6 +36,7 @@ mkdir public
 mv dist/public/entrypoints.json public/
 mv dist/public/ public/public
 mv public/ dist/public
+rm -rf dist/servers/css/
 du -h dist/
 cd ../../
 
