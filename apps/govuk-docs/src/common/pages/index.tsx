@@ -1,11 +1,10 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
 
+import ReadMe from '../../../../../README.md';
+
 const Page: FC<PageProps> = props => (
-  <Fragment>
-    <h1>Home</h1>
-    <p>This is the home page.</p>
-  </Fragment>
+  <ReadMe />
 );
 
 export default Page;
