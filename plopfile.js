@@ -33,6 +33,11 @@ module.exports = plop => {
         templateFile: 'skel/app/README.md.hbs'
       },
       {
+        type: 'add',
+        path: 'apps/{{{name}}}/serverless.yml',
+        templateFile: 'skel/app/serverless.yml.hbs'
+      },
+      {
         type: 'symlink',
         path: 'apps/{{{name}}}/.dockerignore',
         target: 'skel/app/.dockerignore'
