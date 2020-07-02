@@ -1,5 +1,6 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { StaticRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { html as beautifyHtml } from 'js-beautify';
 import hljs from 'highlight.js/lib/core';
@@ -28,7 +29,7 @@ export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
 export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, classModifiers, className, id, source, ...attrs }) => {
   const location = useLocation();
   const classes = classBuilder('penultimate-react-preview', classBlock, classModifiers, className);
-  const html = hljs.highlight('xml', beautify(renderToStaticMarkup(h(Fragment, {}, children)))).value;
+  const html = hljs.highlight('xml', beautify(renderToStaticMarkup(h(StaticRouter, {}, children)))).value;
   const react = hljs.highlight('xml', beautify(source)).value;
   const show = `show-${id}`;
   const showState = location.query[show];
