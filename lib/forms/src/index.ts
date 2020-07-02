@@ -1,6 +1,7 @@
 import { FC, createElement as h, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { StaticRouter } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { urlParse, useLocation } from '@not-govuk/route-utils';
 import FormikForm from './formik-form';
 import { Graph } from './graph';
@@ -115,10 +116,14 @@ export const Form: FC<IForm<any>> = props => {
   // Render children in order to build the graph
   console.debug('Form: First pass rendering of form to discover graph...');
   register.openRegistration();
-  renderToStaticMarkup(h(Registry, {
-    children: formikForm,
-    value: register
-  }));
+  renderToStaticMarkup(
+    h(StaticRouter, {},
+      h(Registry, {
+        children: formikForm,
+        value: register
+      })
+     )
+  );
   register.closeRegistration();
 
   // Convert graph to path using the current form values
