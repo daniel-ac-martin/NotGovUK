@@ -13,7 +13,7 @@
     "/dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "prepublishOnly": "npm run clean && npm run build",
     "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
@@ -31,8 +31,11 @@
   },
   "devDependencies": {
     "@mdx-js/react": "^1.6.5",
+    "@not-govuk/component-test-helpers": "workspace:^0.1.0",
     "@not-govuk/docs-components": "workspace:^0.1.0",
     "@types/react": "^16.9.35",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
     "typescript": "^3.9.2"
   }
 }

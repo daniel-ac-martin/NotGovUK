@@ -131,6 +131,11 @@ module.exports = plop => {
     actions: [
       {
         type: 'add',
+        path: 'components/{{{dashCase name}}}/jest.config.js',
+        templateFile: 'skel/component/jest.config.js.hbs'
+      },
+      {
+        type: 'add',
         path: 'components/{{{dashCase name}}}/package.json',
         templateFile: 'skel/component/package.json.hbs'
       },
@@ -158,6 +163,11 @@ module.exports = plop => {
         type: 'add',
         path: 'components/{{{dashCase name}}}/spec/{{{properCase name}}}.stories.mdx',
         templateFile: 'skel/component/spec/Component.stories.mdx.hbs'
+      },
+      {
+        type: 'add',
+        path: 'components/{{{dashCase name}}}/spec/{{{properCase name}}}.ts',
+        templateFile: 'skel/component/spec/Component.ts.hbs'
       },
       {
         type: 'add',

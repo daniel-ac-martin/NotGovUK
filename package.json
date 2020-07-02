@@ -11,7 +11,7 @@
     "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
     "start": "pnpm recursive run start --filter @not-govuk/components",
     "storybook": "pnpm recursive run storybook --filter @not-govuk/components",
-    "test": "pnpm recursive test"
+    "test": "jest --collectCoverage"
   },
   "repository": {
     "type": "git",
@@ -29,12 +29,16 @@
   "devDependencies": {
     "@mdx-js/react": "^1.6.5",
     "@storybook/addon-docs": "^6.0.0-beta.36",
+    "@types/jest": "^26.0.3",
     "fs-extra": "^9.0.0",
+    "jest": "^26.1.0",
     "plop": "^2.7.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.2",
     "webpack": "^4.43.0",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0"
