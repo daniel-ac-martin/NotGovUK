@@ -4,7 +4,7 @@ export type StandardProps = {
   /** Block name override in BEM style classes applied to all elements */
   classBlock?: string
   /** BEM style modifiers to apply to the base HTML element */
-  classModifiers?: string[]
+  classModifiers?: string | string[]
   /** Extra classes to apply to the base HTML element */
   className?: string
 };
@@ -24,12 +24,23 @@ const concatClasses = (...classes: ArrayTreeNode<string>[]) => (
     .join(' ') || undefined
 );
 
-export const classBuilder = (blockDefault: string, blockOverride?: string, blockModifiers?: string[], extra?: string) => {
-  const block = blockOverride || blockDefault;
+const toArray = <T>(v?: T | T[]): T[] => (
+  Array.isArray(v)
+    ? v
+    : v && [v]
+);
 
-  return (element?: string, elementModifiers?: string[]) => (
+export const classBuilder = (blockDefault: string, blockOverride?: string, blockModifiers?: string | string[], extra?: string) => {
+  const block = blockOverride || blockDefault;
+  const bModifiers = toArray(blockModifiers);
+
+  return (element?: string, elementModifiers?: string | string[]) => {
+    const eModifiers = toArray(elementModifiers);
+
+    return (
     element
-      ? concatClasses(`${block}__${element}`, elementModifiers?.filter(id).map(modifier => `${block}__${element}--${modifier}`))
-      : concatClasses(`${block}`, blockModifiers?.filter(id).map(modifier => `${block}--${modifier}`), extra)
-  );
+      ? concatClasses(`${block}__${element}`, eModifiers?.filter(id).map(modifier => `${block}__${element}--${modifier}`))
+      : concatClasses(`${block}`, bModifiers?.filter(id).map(modifier => `${block}--${modifier}`), extra)
+    );
+  };
 };
