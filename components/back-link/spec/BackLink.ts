@@ -1,5 +1,6 @@
-import { h, mount } from '../../test-helpers';
-import BackLink from './';
+import { createElement as h } from 'react';
+import { mount } from '@not-govuk/component-test-helpers';
+import BackLink from '../src/BackLink';
 
 describe('BackLink', () => {
   describe('when given a href', () => {

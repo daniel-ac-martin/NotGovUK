@@ -1,17 +1,14 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks';
-import { text } from '@storybook/addon-knobs';
-import { BackLink } from '../../';
-import readMe from './README.md';
-import { middle } from '@not-govuk/storybook';
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { BackLink } from '../src/BackLink';
+import readMe from '../README.md';
 
 <Meta
-  title="Components/Back link"
+  title="Back link"
   component={BackLink}
   parameters={{
     jest: ['back-link'],
     notes: readMe
   }}
-  decorators={[middle]}
 />
 
 # Back link
@@ -21,11 +18,8 @@ Use the back link component to help users go back to the previous page in a mult
 <Preview withToolbar>
   <Story name="BackLink">
     <BackLink
-      className={text('className')}
-      href={text('href', '#')}
-      id={text('id')}
-      text={text('text', 'Back')}
-      title={text('title')}
+      href="#"
+      text="Back"
     />
   </Story>
 </Preview>
