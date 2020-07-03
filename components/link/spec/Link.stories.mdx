@@ -1,0 +1,62 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { A } from '../src/Link';
+import readMe from '../README.md';
+export const title = 'Link';
+
+<Meta
+  title="Link"
+  component={ A }
+  parameters={ {
+    jest: ['link'],
+    notes: readMe
+  } }
+/>
+
+# Link
+
+A drop in replacement for the standard HTML `<a>` tag, with GovUK styling, that
+supports fast, client-side navigation.
+
+<Preview withToolbar>
+  <Story name="Link">
+    <A href="#">Text</A>
+  </Story>
+</Preview>
+
+<Props of={A} />
+
+
+## When to use this component
+
+Use this component wherever you would normally use a normal HTML `<a>` tag.
+
+
+## How it works
+
+It wraps the `Link` component from [React Router] and so allows the router to
+handle the links without a page reload when possible.
+
+
+## Stories
+### Standard
+
+A standard Link.
+
+<Preview>
+  <Story name="Standard">
+    <A href="#">Text</A>
+  </Story>
+</Preview>
+
+### Title
+
+A link with a title. (Hover over the link to see.)
+
+<Preview>
+  <Story name="With title">
+    <A href="#" title="Hello">Link with title</A>
+  </Story>
+</Preview>
+
+
+[React Router]: https://reacttraining.com/react-router/
