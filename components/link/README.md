@@ -38,6 +38,13 @@ pnpm install
 ```
 
 
+### Testing
+
+```shell
+npm test
+```
+
+
 ### Building
 
 ```shell
