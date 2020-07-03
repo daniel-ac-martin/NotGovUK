@@ -1,0 +1,106 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Table } from '../src/Table';
+import readMe from '../README.md';
+export const title = 'Table';
+
+<Meta
+  title="Table"
+  component={ Table }
+  parameters={ {
+    jest: ['table'],
+    notes: readMe
+  } }
+/>
+
+# Table
+
+Use the table component to make information easier to compare and scan for users.
+
+<Preview withToolbar>
+  <Story name="Table">
+    <Table
+      caption="Dates and amounts"
+      keys={['date', 'amount']}
+      headings={{
+        amount: 'Amount',
+        date: 'Date'
+      }}
+      data={[
+        {
+          amount: '£109.80 per week',
+          date: 'First 6 weeks'
+        },
+        {
+          amount: '£109.80 per week',
+          date: 'Next 33 weeks'
+        },
+        {
+          amount: '£4,282.20',
+          date: 'Total estimated pay'
+        },
+      ]}
+    />
+  </Story>
+</Preview>
+
+<Props of={ Table } />
+
+
+## When to use this component
+
+Use the table component to let users compare information in rows and columns.
+
+
+## When not to use this component
+
+Never use the table component to layout content on a page. Instead, use the [grid system].
+
+
+## How it works
+### Table captions
+
+Use the `<caption>` element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.
+
+
+## Stories
+### Standard
+
+A standard Table.
+
+<Preview>
+  <Story name="Standard">
+    <Table
+      keys={['date', 'amount']}
+      headings={{
+        amount: 'Amount',
+        date: 'Date'
+      }}
+      data={[
+        {
+          amount: '£109.80 per week',
+          date: 'First 6 weeks'
+        },
+        {
+          amount: '£109.80 per week',
+          date: 'Next 33 weeks'
+        },
+        {
+          amount: '£4,282.20',
+          date: 'Total estimated pay'
+        },
+      ]}
+    />
+  </Story>
+</Preview>
+
+
+### Numbers in a table
+
+IMPLEMENT ME.
+
+
+### Custom column widths
+
+IMPLEMENT ME.
+
+[grid system]: https://design-system.service.gov.uk/styles/layout#grid-system

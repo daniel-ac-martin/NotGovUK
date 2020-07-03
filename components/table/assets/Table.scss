@@ -1,0 +1,30 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/table/_index";
+
+table {
+  @extend .govuk-table;
+
+  caption {
+    @extend .govuk-table__caption;
+  }
+
+  thead {
+    @extend .govuk-table__head !optional;
+  }
+
+  tbody {
+    @extend .govuk-table__body !optional;
+  }
+
+  tr {
+    @extend .govuk-table__row !optional;
+  }
+
+  th {
+    @extend .govuk-table__header;
+  }
+
+  td {
+    @extend .govuk-table__cell;
+  }
+}
