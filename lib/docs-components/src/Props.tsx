@@ -1,8 +1,8 @@
 import { ComponentType, FC, createElement as h } from 'react';
 import { Props as _Props } from '@storybook/addon-docs/blocks';
 import { extractArgTypes } from '@storybook/addon-docs/dist/frameworks/react/extractArgTypes';
+import { SimpleTable } from '@not-govuk/simple-table';
 import { inStorybook } from './common';
-import { Table } from './Table';
 
 type PropsTableRow = {
   default: string
@@ -38,7 +38,7 @@ export const Props: FC<PropsProps> = (props) => {
         [
           h('summary', {}, 'Props'),
           h(
-            Table, {
+            SimpleTable, {
               data,
               headings: {
                 default: 'Default',

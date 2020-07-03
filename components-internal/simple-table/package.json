@@ -1,17 +1,19 @@
 {
-  "name": "@not-govuk/docs-components",
+  "name": "@not-govuk/simple-table",
   "version": "0.1.0",
-  "description": "React components for use in documentation.",
-  "main": "src/index.ts",
+  "description": "A simple table for displaying data.",
+  "main": "src/SimpleTable.tsx",
+  "sass": "assets/SimpleTable.scss",
   "publishConfig": {
-    "main": "dist/index.js",
-    "typings": "dist/index.d.ts"
+    "main": "dist/SimpleTable.js",
+    "typings": "dist/SimpleTable.d.ts"
   },
   "files": [
+    "/assets",
     "/dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "prepublishOnly": "npm run clean && npm run build",
     "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
@@ -21,18 +23,18 @@
   "keywords": [
     "react-components"
   ],
+  "dependencies": {
+    "@not-govuk/component-helpers": "workspace:^0.1.0"
+  },
   "peerDependencies": {
     "react": "^16.9.35"
   },
   "devDependencies": {
+    "@mdx-js/react": "^1.6.5",
+    "@not-govuk/component-test-helpers": "workspace:^0.1.0",
     "@types/react": "^16.9.35",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
     "typescript": "^3.9.2"
-  },
-  "dependencies": {
-    "@not-govuk/component-helpers": "workspace:^0.1.0",
-    "@not-govuk/route-utils": "workspace:^0.1.0",
-    "@not-govuk/simple-table": "workspace:^0.1.0",
-    "highlight.js": "^10.1.1",
-    "js-beautify": "^1.11.0"
   }
 }

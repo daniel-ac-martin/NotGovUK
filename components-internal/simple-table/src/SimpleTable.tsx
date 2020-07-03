@@ -1,15 +1,17 @@
 import { FC, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
-export type TableProps<T> = StandardProps & {
+import '../assets/SimpleTable.scss';
+
+export type SimpleTableProps<T> = StandardProps & {
   caption?: string
   data: T[]
   headings: T
   keys: (keyof T)[]
 };
 
-export const Table: FC<TableProps<any>> = ({ caption, classBlock, classModifiers, className, data, headings, keys, ...attrs }) => {
-  const classes = classBuilder('penultimate-table', classBlock, classModifiers, className);
+export const SimpleTable: FC<SimpleTableProps<any>> = ({ caption, classBlock, classModifiers, className, data, headings, keys, ...attrs }) => {
+  const classes = classBuilder('penultimate-simple-table', classBlock, classModifiers, className);
   return (
     <table {...attrs} className={classes()}>
       {caption && (<caption className={classes('caption')}>{caption}</caption>)}
@@ -34,3 +36,5 @@ export const Table: FC<TableProps<any>> = ({ caption, classBlock, classModifiers
     </table>
   );
 };
+
+export default SimpleTable;

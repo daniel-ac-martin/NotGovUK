@@ -1,0 +1,85 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { SimpleTable } from '../src/SimpleTable';
+import readMe from '../README.md';
+export const title = 'SimpleTable';
+
+<Meta
+  title="SimpleTable"
+  component={ SimpleTable }
+  parameters={ {
+    jest: ['simple-table'],
+    notes: readMe
+  } }
+/>
+
+# SimpleTable
+
+A simple table for displaying data.
+
+<Preview withToolbar>
+  <Story name="SimpleTable">
+    <SimpleTable
+      keys={['name', 'qty', 'cost']}
+      headings={{
+        cost: 'Price',
+        qty: 'Quantity',
+        name: 'Name'
+      }}
+      data={[
+        {
+          cost: '£7.99',
+          qty: '4',
+          name: 'Blu-ray disk'
+        },
+        {
+          cost: '£0.85',
+          qty: '10',
+          name: 'Pencil'
+        },
+        {
+          cost: '£21.45',
+          qty: '1',
+          name: 'Text book'
+        },
+      ]}
+    />
+  </Story>
+</Preview>
+
+<Props of={SimpleTable} />
+
+
+## Stories
+### Standard
+
+A standard SimpleTable.
+
+<Preview>
+  <Story name="Standard">
+    <SimpleTable
+      keys={['name', 'qty', 'cost']}
+      headings={{
+        cost: 'Price',
+        qty: 'Quantity',
+        name: 'Name'
+      }}
+      data={[
+        {
+          cost: '£7.99',
+          qty: '4',
+          name: 'Blu-ray disk'
+        },
+        {
+          cost: '£0.85',
+          qty: '10',
+          name: 'Pencil'
+        },
+        {
+          cost: '£21.45',
+          qty: '1',
+          name: 'Text book'
+        },
+      ]}
+    />
+  </Story>
+</Preview>
