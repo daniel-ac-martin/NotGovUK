@@ -1,0 +1,263 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { Form, after, past, required } from '../src/Form';
+import readMe from '../README.md';
+export const title = 'Form';
+
+<Meta
+  title="Form"
+  component={ Form }
+  parameters={ {
+    jest: ['form'],
+    notes: readMe
+  } }
+/>
+
+# Form
+
+<p><Tag text="Unofficial" /> <Tag text="Experimental" /></p>
+
+A component to collect information from the user.
+
+<Preview withToolbar>
+  <Story name="Form">
+    <Form action="/result" method="get">
+      <Form.TextInput
+        name="fullName"
+        label={<h2>What is your name?</h2>}
+        hint="Write your firstname followed by your surname"
+        validators={[
+          required()
+        ]}
+      />
+      <Form.Radios
+        name="sex"
+        label={<h2>Sex?</h2>}
+        options={[
+          { value: 'male', label: 'Male' },
+          { value: 'female', label: 'Female' },
+          { value: 'no', label: 'No thanks, we\'re British' }
+        ]}
+        validators={[
+          required('Provide your sex')
+        ]}
+      />
+      <Form.DateInput
+        name="dob"
+        prettyName="date of birth"
+        label={<h2>What is your date of birth?</h2>}
+        validators={[
+          required('Provide your date of birth'),
+          past(),
+          after('1900-01-01')()
+        ]}
+      />
+      <Form.Radios
+        name="married"
+        label={<h2>Are you married?</h2>}
+        options={[
+          { value: 'Y', label: 'Yes' },
+          { value: 'N', label: 'No' }
+        ]}
+        validators={[
+          required('Provide your marital status')
+        ]}
+      />
+      <Form.Submit value="Submit" />
+    </Form>
+  </Story>
+</Preview>
+
+<Props of={Form} />
+
+
+## Stories
+### Standard
+
+A standard Form.
+
+<Preview>
+  <Story name="Standard">
+    <Form action="/result" method="get">
+      <Form.TextInput
+        name="fullName"
+        label={<h2>What is your name?</h2>}
+        hint="Write your firstname followed by your surname"
+        validators={[
+          required()
+        ]}
+      />
+      <Form.Radios
+        name="sex"
+        label={<h2>Sex?</h2>}
+        options={[
+          { value: 'male', label: 'Male' },
+          { value: 'female', label: 'Female' },
+          { value: 'no', label: 'No thanks, we\'re British' }
+        ]}
+        validators={[
+          required('Provide your sex')
+        ]}
+      />
+      <Form.DateInput
+        name="dob"
+        prettyName="date of birth"
+        label={<h2>What is your date of birth?</h2>}
+        validators={[
+          required('Provide your date of birth'),
+          past(),
+          after('1900-01-01')()
+        ]}
+      />
+      <Form.Radios
+        name="married"
+        label={<h2>Are you married?</h2>}
+        options={[
+          { value: 'Y', label: 'Yes' },
+          { value: 'N', label: 'No' }
+        ]}
+        validators={[
+          required('Provide your marital status')
+        ]}
+      />
+      <Form.Submit value="Submit" />
+    </Form>
+  </Story>
+</Preview>
+
+
+### Steps
+
+Break up your form into steps, using `Form.Page`, to make it less overwhelming for the user.
+
+<Preview>
+  <Story name="Steps">
+    <Form action="/result" method="get">
+      <Form.Page>
+        <Form.TextInput
+          name="fullName"
+          label={<h2>What is your name?</h2>}
+          hint="Write your firstname followed by your surname"
+          validators={[
+            required()
+          ]}
+        />
+        <Form.Submit value="Continue" />
+      </Form.Page>
+      <Form.Page>
+        <Form.Radios
+          name="sex"
+          label={<h2>Sex?</h2>}
+          options={[
+            { value: 'male', label: 'Male' },
+            { value: 'female', label: 'Female' },
+            { value: 'no', label: 'No thanks, we\'re British' }
+          ]}
+          validators={[
+            required('Provide your sex')
+          ]}
+        />
+        <Form.Submit value="Continue" />
+      </Form.Page>
+      <Form.Page>
+        <Form.DateInput
+          name="dob"
+          prettyName="date of birth"
+          label={<h2>What is your date of birth?</h2>}
+          validators={[
+            required('Provide your date of birth'),
+            past(),
+            after('1900-01-01')()
+          ]}
+        />
+        <Form.Submit value="Continue" />
+      </Form.Page>
+      <Form.Page>
+        <Form.Radios
+          name="married"
+          label={<h2>Are you married?</h2>}
+          options={[
+            { value: 'Y', label: 'Yes' },
+            { value: 'N', label: 'No' }
+          ]}
+          validators={[
+            required('Provide your marital status')
+          ]}
+        />
+        <Form.Submit value="Submit" />
+      </Form.Page>
+    </Form>
+  </Story>
+</Preview>
+
+
+### Forks
+
+Split your form's journey based on user input, using `Form.Fork`, to avoid requesting information you don't need.
+
+<Preview>
+  <Story name="Forks">
+    <Form action="/result" method="get">
+      <Form.Page>
+        <Form.TextInput
+          name="fullName"
+          label={<h2>What is your name?</h2>}
+          hint="Write your firstname followed by your surname"
+          validators={[
+            required()
+          ]}
+        />
+        <Form.Submit value="Continue" />
+      </Form.Page>
+      <Form.Page>
+        <Form.Radios
+          name="sex"
+          label={<h2>Sex?</h2>}
+          options={[
+            { value: 'male', label: 'Male' },
+            { value: 'female', label: 'Female' },
+            { value: 'no', label: 'No thanks, we\'re British' }
+          ]}
+          validators={[
+            required('Provide your sex')
+          ]}
+        />
+        <Form.Submit value="Continue" />
+      </Form.Page>
+      <Form.Fork
+        if={v => v.sex === 'male'}
+        then={
+          <Form.Page>
+            <Form.DateInput
+              name="dob"
+              prettyName="date of birth"
+              label={<h2>What is your date of birth?</h2>}
+              validators={[
+                required('Provide your date of birth'),
+                past(),
+                after('1900-01-01')()
+              ]}
+            />
+            <Form.Submit value="Submit" />
+          </Form.Page>
+        }
+        else={
+          <Form.Page>
+            <Form.Radios
+              name="married"
+              label={<h2>Are you married?</h2>}
+              options={[
+                { value: 'Y', label: 'Yes' },
+                { value: 'N', label: 'No' }
+              ]}
+              validators={[
+                required('Provide your marital status')
+              ]}
+            />
+            <Form.Submit value="Submit" />
+          </Form.Page>
+        }
+      />
+    </Form>
+  </Story>
+</Preview>
