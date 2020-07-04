@@ -254,38 +254,6 @@ importers:
       jest: ^26.1.0
       ts-jest: ^26.1.1
       typescript: ^3.9.2
-  components/my-component:
-    dependencies:
-      '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
-      '@not-govuk/tag': 'link:../tag'
-    devDependencies:
-      '@mdx-js/react': 1.6.5
-      '@not-govuk/docs-components': 'link:../../lib/docs-components'
-      '@types/react': 16.9.35
-      typescript: 3.9.3
-    specifiers:
-      '@mdx-js/react': ^1.6.5
-      '@not-govuk/component-helpers': 'workspace:^0.1.0'
-      '@not-govuk/docs-components': 'workspace:^0.1.0'
-      '@not-govuk/tag': 'workspace:^0.1.0'
-      '@types/react': ^16.9.35
-      typescript: ^3.9.2
-  components/other-component:
-    dependencies:
-      '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
-      '@not-govuk/tag': 'link:../tag'
-    devDependencies:
-      '@mdx-js/react': 1.6.5
-      '@not-govuk/docs-components': 'link:../../lib/docs-components'
-      '@types/react': 16.9.38
-      typescript: 3.9.3
-    specifiers:
-      '@mdx-js/react': ^1.6.5
-      '@not-govuk/component-helpers': 'workspace:^0.1.0'
-      '@not-govuk/docs-components': 'workspace:^0.1.0'
-      '@not-govuk/tag': 'workspace:^0.1.0'
-      '@types/react': ^16.9.35
-      typescript: ^3.9.2
   components/table:
     dependencies:
       '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
@@ -3946,6 +3914,7 @@ packages:
     resolution:
       integrity: sha512-Q1j/RtjNbRZRC/ciaOqQLplsJ9lb0jJhDSvkusmzCsCX+NZH7YTUvccWf7l6zKW1CAiofJfqZdZtXkeJUDZiMw==
   /@mdx-js/react/1.6.5:
+    dev: false
     peerDependencies:
       react: ^16.9.0
     resolution:
@@ -5070,13 +5039,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-q0n0SsWcGc8nDqH2GJfWQWUOmZSJhXV64CjVN5SvcNti3TdEaA3AH0D8DwNmMdzjMAC/78tB8nAZIlV8yTz+zQ==
-  /@types/react/16.9.38:
-    dependencies:
-      '@types/prop-types': 15.7.3
-      csstype: 2.6.10
-    dev: true
-    resolution:
-      integrity: sha512-pHAeZbjjNRa/hxyNuLrvbxhhnKyKNiLC6I5fRF2Zr/t/S6zS41MiyzH4+c+1I9vVfvuRt1VS2Lodjr4ZWnxrdA==
   /@types/react/16.9.41:
     dependencies:
       '@types/prop-types': 15.7.3
