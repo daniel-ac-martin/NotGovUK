@@ -20,7 +20,7 @@ export const Props: FC<PropsProps> = (props) => {
   const data: PropsTableRow[] = Object.keys(argTypes)
     .map(i => {
       const v = argTypes[i];
-      const reqText = v.required ? 'Required. ' : ''
+      const reqText = v.required ? 'REQUIRED. ' : ''
 
       return ({
         default: v.defaultValue === null ? '-' : v.defaultValue,
