@@ -1,7 +1,9 @@
-import { FC, createElement as h, useState } from 'react';
+import { FC, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { useHistory } from 'react-router-dom';
+import { FormikHelpers } from 'formik';
+import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { urlParse, useLocation } from '@not-govuk/route-utils';
 import FormikForm from './formik-form';
 import { Graph } from './graph';
@@ -42,21 +44,19 @@ enum Method {
   POST = 'post'
 }
 
-interface IForm<T> {
-  action: string;
-  /** Extra CSS classes to be applied */
-  className?: string,
-  /** HTML id */
-  id?: string,
-  method: Method;
-  validate: (values: T) => T
-}
+export type FormProps<T> = StandardProps & {
+  action: string
+  debug?: boolean
+  method: Method
+  validate?: (values: T) => T
+};
 
-export const Form: FC<IForm<any>> = props => {
+export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock, classModifiers, className, method, validate: _validate, ...attrs }) => {
+  const classes = classBuilder('penultimate-form', classBlock, classModifiers, className);
   const history = useHistory();
   const location = useLocation();
   const submittedValues = (
-    props.method === 'get'
+    method === 'get'
       ? location.query
       : location.state
   );
@@ -70,7 +70,7 @@ export const Form: FC<IForm<any>> = props => {
 
     const r = {
       ...completion.validateFields(values, formattedValues),
-      ...(props.validate ? props.validate(formattedValues) : {}),
+      ...(_validate ? _validate(formattedValues) : {}),
     };
 
     return r;
@@ -79,35 +79,36 @@ export const Form: FC<IForm<any>> = props => {
   const submit = (values: any) => {
     console.debug('Form: Submitting...');
     const formattedValues = completion.formatFields(values);
-    const url = urlParse(props.action);
+    const url = urlParse(_action);
     const state = (
-      props.method === 'post'
+      method === 'post'
         ? formattedValues
         : undefined
     );
 
-    if (props.method === 'get') {
+    if (method === 'get') {
       url.query = {...url.query, ...formattedValues};
     }
 
     history.push(url.toString(), state);
   };
 
-  const onSubmit = (values: any, actions) => {
+  const onSubmit = (values: any, actions: FormikHelpers<any>) => {
     actions.setSubmitting(false);
     submit(values);
   };
 
   const formikForm = h(FormikForm, {
+    ...attrs,
     action: location.pathname,
-    children: props.children,
-    id: props.id,
-    initialErrors: initialErrors,
-    initialTouched: initialTouched,
-    initialValues: initialValues,
-    method: props.method,
-    onSubmit: onSubmit,
-    validate: validate
+    className: classes(),
+    children,
+    initialErrors,
+    initialTouched,
+    initialValues,
+    method,
+    onSubmit,
+    validate
   })
 
   const graph = new Graph();

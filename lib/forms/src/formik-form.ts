@@ -37,6 +37,6 @@ const withFormikForm = <A, Values>(Component: ComponentType<A>): FC<A & FormikCo
   return h(withFormik(formikConfig)(wireUpForm(Component)), props as any);
 };
 
-export const FormikForm: ComponentType<FormikConfig<any> & Pick<FormProps, "action" | "id" | "method">> = withFormikForm(RawForm);
+export const FormikForm: ComponentType<FormikConfig<any> & Pick<FormProps, "action" | "className" | "debug" | "id" | "method">> = withFormikForm(RawForm);
 
 export default FormikForm;
