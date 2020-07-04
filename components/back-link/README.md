@@ -25,11 +25,11 @@ Then use it in your code as follows:
 import React, { createElement as h } from 'react';
 import BackLink from '@not-govuk/back-link';
 
-export const BackLink = props => (
+export const MyComponent = props => (
   <BackLink />
 );
 
-export default BackLink;
+export default MyComponent;
 ```
 
 
