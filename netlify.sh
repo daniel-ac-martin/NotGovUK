@@ -15,8 +15,7 @@ npm run build
 # Package functions
 ../../node_modules/.bin/sls package
 echo "process.env['MODE'] = 'serverless'; module.exports = require('./dist/server/index.js');" > govuk-docs.js
-zip -rv .serverless/govuk-docs.zip govuk-docs.js
-rm govuk-docs.js
+zip -mv .serverless/govuk-docs.zip govuk-docs.js
 
 # Arrange static assets
 mkdir public
