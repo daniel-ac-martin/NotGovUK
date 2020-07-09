@@ -2,6 +2,19 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "ES2020",
-    "target": "ES2020"
-  }
+    "target": "ES2020",
+    "types": [
+      "node",
+      "webpack-env"
+    ]
+  },
+  "include": [
+    "*/*/src/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "*/*/dist",
+    "*/*/node_modules"
+  ]
 }
