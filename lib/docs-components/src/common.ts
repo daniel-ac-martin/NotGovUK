@@ -1,1 +1,1 @@
-export const inStorybook = false;
+export const inStorybook = !(!!process.env['PENULTIMATE']);
