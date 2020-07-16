@@ -21,18 +21,19 @@
   "keywords": [
     "react-components"
   ],
-  "peerDependencies": {
-    "react": "^16.9.35"
-  },
-  "devDependencies": {
-    "@types/react": "^16.9.35",
-    "typescript": "^3.9.2"
-  },
   "dependencies": {
     "@not-govuk/component-helpers": "workspace:^0.1.0",
     "@not-govuk/route-utils": "workspace:^0.1.0",
     "@not-govuk/simple-table": "workspace:^0.1.0",
     "highlight.js": "^10.1.1",
     "js-beautify": "^1.11.0"
+  },
+  "peerDependencies": {
+    "@storybook/addon-docs": "^6.0.0-rc.3",
+    "react": "^16.9.35"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "typescript": "^3.9.2"
   }
 }
