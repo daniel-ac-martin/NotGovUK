@@ -3,7 +3,7 @@ import { A } from '../';
 
 const Anchor: FC<any> = props => (
   <A
-    className={props.className}
+    classBlock={props.className}
     data-module="govuk-button"
     draggable={false}
     href={props.href}
