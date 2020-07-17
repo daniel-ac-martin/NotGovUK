@@ -21,7 +21,7 @@ addParameters({
 addDecorator(globalDecorator);
 
 // accessibility add-on
-addDecorator(withA11y);
+addDecorator(withA11y as any);
 
 // knobs add-on
 addDecorator(withKnobs);
