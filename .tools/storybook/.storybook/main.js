@@ -9,7 +9,7 @@ module.exports = {
     '../../../components/table/spec/*.stories.mdx',
     '../../../components/tag/spec/*.stories.mdx',
     '../../../styles/*.stories.mdx',
-    // '../../../packages/components/src/components/**/*.stories.mdx',
+    '../../../packages/components/src/components/**/*.stories.mdx'
   ],
   addons: [
     {
