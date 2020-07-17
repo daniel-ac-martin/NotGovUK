@@ -2,7 +2,6 @@ import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
 import { boolean, number, text } from "@storybook/addon-knobs";
 import { Textarea } from '../../';
 import readMe from './README.md';
-import { main } from "../../../../.storybook/decorators";
 
 <Meta
   title="Components/Textarea"
@@ -11,7 +10,6 @@ import { main } from "../../../../.storybook/decorators";
     jest: ['textarea'],
     notes: readMe
   }}
-  decorators={[main]}
 />
 
 # Textarea

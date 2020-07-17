@@ -2,7 +2,6 @@ import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
 import { boolean, number, text } from "@storybook/addon-knobs";
 import { TextInput } from '../../';
 import readMe from './README.md';
-import { main } from "../../../../.storybook/decorators";
 
 <Meta
   title="Components/Text input"
@@ -11,7 +10,6 @@ import { main } from "../../../../.storybook/decorators";
     jest: ['text-input'],
     notes: readMe
   }}
-  decorators={[main]}
 />
 
 # Text input
