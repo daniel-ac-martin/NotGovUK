@@ -1,0 +1,38 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { {{{properCase name}}} } from '../src/{{{properCase name}}}';
+import readMe from '../README.md';
+export const title = '{{{name}}}';
+
+<Meta
+  title="{{{name}}}"
+  component={ {{{properCase name}}} }
+  parameters={ {
+    jest: ['{{{properCase name}}}'],
+    notes: readMe
+  } }
+/>
+
+# {{{name}}}
+
+{{{description}}}
+WRITE MORE DESCRIPTION HERE.
+
+<Preview withToolbar>
+  <Story name="{{{properCase name}}}">
+    <{{{properCase name}}} />
+  </Story>
+</Preview>
+
+<Props of={ {{{properCase name}}} } />
+
+
+## Stories
+### Standard
+
+A standard {{{name}}}.
+
+<Preview>
+  <Story name="Standard">
+    <{{{properCase name}}} />
+  </Story>
+</Preview>

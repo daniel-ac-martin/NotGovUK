@@ -1,0 +1,215 @@
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { boolean, number, object, text } from "@storybook/addon-knobs";
+import { FormField } from '../../';
+import readMe from './README.md';
+
+<Meta
+  title="Form field"
+  component={FormField}
+  parameters={{
+    jest: ['form-field'],
+    notes: readMe
+  }}
+/>
+
+# Form field
+
+<Preview withToolbar>
+  <Story name="FormField">
+    <FormField
+      autoComplete={text('autoComplete')}
+      className={text('className')}
+      defaultValue={text('defaultValue')}
+      disabled={boolean('disabled', false)}
+      error={text('error')}
+      hint={text('hint', 'The name you’ll use on promotional material.')}
+      id={text('id')}
+      inline={boolean('inline')}
+      label={text('label', 'Event name')}
+      name={text('name', 'event-name')}
+      multiple={boolean('multiple')}
+      options={object('options')}
+      rows={number('rows')}
+      small={boolean('small')}
+      spellCheck={boolean('spellCheck')}
+      type={text('type')}
+      width={number('width')}
+    />
+  </Story>
+</Preview>
+
+<Props of={FormField} />
+
+
+## Standard
+
+By default a simple text input will be rendered.
+
+<Preview>
+  <Story name="Standard">
+    <FormField
+      label="Event name"
+      name="event-name"
+    />
+  </Story>
+</Preview>
+
+
+### Hint
+
+<Preview>
+  <Story name="Standard with hint">
+    <FormField
+      hint="The name you’ll use on promotional material."
+      label="Event name"
+      name="event-name"
+    />
+  </Story>
+</Preview>
+
+
+### Error
+
+<Preview>
+  <Story name="Standard with error">
+    <FormField
+      error="Enter an event name "
+      hint="The name you’ll use on promotional material."
+      label="Event name"
+      name="event-name"
+    />
+  </Story>
+</Preview>
+
+
+## Number
+
+<Preview>
+  <Story name="Numbers">
+    <FormField
+      label="Age"
+      name="age"
+      type="number"
+    />
+  </Story>
+</Preview>
+
+
+## Native Date
+
+<Preview>
+  <Story name="Native date">
+    <FormField
+      label="Event date"
+      name="event-date"
+      type="native-date"
+    />
+  </Story>
+</Preview>
+
+
+## Date
+
+<Preview>
+  <Story name="Date">
+    <FormField
+      label="Event date"
+      name="event-date"
+      type="date"
+    />
+  </Story>
+</Preview>
+
+
+## Textarea
+
+<Preview>
+  <Story name="Textarea">
+    <FormField
+      label="Event description"
+      name="event-description"
+      rows="5"
+    />
+  </Story>
+</Preview>
+
+
+## Select
+
+<Preview>
+  <Story name="Select">
+    <FormField
+      label="Type of event"
+      name="event-type"
+      options={[
+        { value: '', label: '-' },
+        { value: 'concert', label: 'Concert' },
+        { value: 'conference', label: 'Conference' },
+        { value: 'christening', label: 'Christening' },
+        { value: 'funeral', label: 'Funeral' },
+        { value: 'party', label: 'Party' },
+        { value: 'reception', label: 'Reception' },
+        { value: 'wedding', label: 'Wedding' },
+      ]}
+    />
+  </Story>
+</Preview>
+
+
+### Multi-select
+
+<Preview>
+  <Story name="Multi-select">
+    <FormField
+      label="Type of event"
+      name="event-type"
+      options={[
+        { value: '', label: '-' },
+        { value: 'concert', label: 'Concert' },
+        { value: 'conference', label: 'Conference' },
+        { value: 'christening', label: 'Christening' },
+        { value: 'funeral', label: 'Funeral' },
+        { value: 'party', label: 'Party' },
+        { value: 'reception', label: 'Reception' },
+        { value: 'wedding', label: 'Wedding' },
+      ]}
+      multiple
+      rows="6"
+    />
+  </Story>
+</Preview>
+
+
+## Radios
+
+<Preview>
+  <Story name="Radios">
+    <FormField
+      label="Type of event"
+      name="event-type"
+      options={[
+        { value: 'christening', label: 'Christening' },
+        { value: 'funeral', label: 'Funeral' },
+        { value: 'wedding', label: 'Wedding' },
+      ]}
+    />
+  </Story>
+</Preview>
+
+
+## Checkboxes
+
+<Preview>
+  <Story name="Checkboxes">
+    <FormField
+      label="Type of event"
+      name="event-type"
+      options={[
+        { value: 'christening', label: 'Christening' },
+        { value: 'funeral', label: 'Funeral' },
+        { value: 'wedding', label: 'Wedding' },
+      ]}
+      multiple
+    />
+  </Story>
+</Preview>

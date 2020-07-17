@@ -1,0 +1,10 @@
+// Aim: Configure govuk-frontend prior to importing.
+
+@import "@not-govuk/sass-base";
+
+// GOV.UK is our base style and we won't be including any competing frameworks
+// so let's apply global styles to greatly enhance convenience to users when
+// they build sites and compose components.
+$govuk-global-styles: true; // FIXME: Disable this once no longer required.
+
+@import "govuk-frontend/govuk/all";

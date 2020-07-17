@@ -1,0 +1,41 @@
+{
+  "name": "@not-govuk/forms",
+  "version": "0.1.0",
+  "description": "An intuitive isometric forms framework for React.",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  },
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "ISC",
+  "keywords": [
+    "react-components"
+  ],
+  "dependencies": {
+    "@not-govuk/component-helpers": "workspace:^0.1.0",
+    "@not-govuk/route-utils": "workspace:^0.1.0",
+    "formik": "^2.1.4",
+    "validator": "^13.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.35",
+    "react-dom": "^16.9.8",
+    "react-router-dom": "^5.1.5"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
+    "typescript": "^3.9.2"
+  }
+}

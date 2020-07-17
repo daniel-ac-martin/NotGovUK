@@ -1,0 +1,35 @@
+{
+  "name": "@not-govuk/restify",
+  "version": "0.1.0",
+  "description": "A customised Restify server for running websites.",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  },
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "restify": "^8.5.1",
+    "restify-bunyan-logger": "^2.0.7",
+    "restify-errors": "^8.0.2"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.6",
+    "@types/restify": "^8.4.2",
+    "typescript": "^3.9.2"
+  },
+  "keywords": [
+    "restify"
+  ]
+}

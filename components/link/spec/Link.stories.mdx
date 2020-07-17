@@ -1,0 +1,117 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { A } from '../src/Link';
+import readMe from '../README.md';
+export const title = 'Link';
+
+<Meta
+  title="Link"
+  component={ A }
+  parameters={ {
+    jest: ['Link'],
+    notes: readMe
+  } }
+/>
+
+# Link
+
+<p><Tag text="Pseudo-component" /></p>
+
+A drop in replacement for the standard HTML `<a>` tag, with GovUK styling, that
+supports fast, client-side navigation.
+
+Links are blue and underlined by default. If your link is at the end of a
+sentence or paragraph, make sure that the linked text does not include the full
+stop.
+
+<Preview withToolbar>
+  <Story name="Link">
+    <A href="#">Text</A>
+  </Story>
+</Preview>
+
+<Props of={A} />
+
+
+## When to use this component
+
+Use this component wherever you would normally use a normal HTML `<a>` tag.
+
+
+## How it works
+
+It wraps the `Link` component from [React Router] and so allows the router to
+handle the links without a page reload when possible.
+
+
+## Stories
+### Standard
+
+A standard Link.
+
+<Preview>
+  <Story name="Standard">
+    <A href="#">Text</A>
+  </Story>
+</Preview>
+
+
+### No visited state
+
+Use the `no-visited-state` modifier class where it is not helpful to distinguish
+between visited and unvisited states, for example when linking to pages with
+frequently-changing content such as the dashboard for an admin interface.
+
+<Preview>
+  <Story name="No visited state">
+    <A href="#" classModifiers="no-visited-state">Text</A>
+  </Story>
+</Preview>
+
+
+### Opening links in a new tab
+
+Avoid opening links in a new tab or window. It can be disorienting - and [can
+cause accessibility problems for people who aren’t able to visually perceive
+that the new tab has opened].
+
+If you need a link to open in a new tab - for example, to stop the user losing
+information they’ve entered into a form - then include the words ‘opens in new
+tab’ as part of the link. There’s no need to say ‘tab or window’, since opening
+in a new tab is the default behaviour for most browsers.
+
+Include `rel="noreferrer noopener"` along with `target="_blank"` to reduce the
+risk of [reverse tabnabbing]. The following example shows how to do this in HTML.
+
+<Preview>
+  <Story name="Open in new tab">
+    <A href="#" rel="noreferrer noopener" target="_blank">Text</A>
+  </Story>
+</Preview>
+
+
+## Other information
+### External links
+
+If it’s an external link to a non-government website, make that clear in the
+link text. For example, ‘read advice on writing link text from [name of
+organisation]’. There’s no need to say explicitly that you’re linking to an
+external site. [Do not use an external link icon].
+
+
+### Links without underlines
+
+Only remove underlines from links if:
+- the number or placement of links makes them difficult to scan or interact with
+  the element they’re part of, and
+- it’s clear to the user from the context that they’re links, even without the
+  underline
+
+For example, navigation links in a header won’t necessarily need underlines.
+Users will understand that they’re links because of their position on the page.
+
+
+[React Router]: https://reacttraining.com/react-router/
+[can cause accessibility problems for people who aren’t able to visually perceive that the new tab has opened]: https://www.w3.org/TR/WCAG20-TECHS/G200.html
+[reverse tabnabbing]: https://owasp.org/www-community/attacks/Reverse_Tabnabbing
+[Do not use an external link icon]: https://designnotes.blog.gov.uk/2016/11/28/removing-the-external-link-icon-from-gov-uk/

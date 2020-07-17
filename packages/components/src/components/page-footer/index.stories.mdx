@@ -1,0 +1,70 @@
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { boolean, text } from "@storybook/addon-knobs";
+import { PageFooter } from '../../';
+import readMe from './README.md';
+
+<Meta
+  title="PageFooter"
+  component={PageFooter}
+  parameters={{
+    jest: ['page-footer'],
+    notes: readMe
+  }}
+/>
+
+# PageFooter
+
+A very simple footer that can be used by internal applications but also extended
+by the GovUK-style Footer component.
+
+<Preview withToolbar>
+  <Story name="PageFooter">
+    <PageFooter
+      className={text('className')}
+      id={text('id')}
+      wide={boolean('wide')}
+    >
+      {text('children', 'My custom footer.')}
+    </PageFooter>
+  </Story>
+</Preview>
+
+<Props of={PageFooter} />
+
+
+## When to use this component
+
+This component is suitable for use in internal applications and for extending when creating custom footers.
+
+
+## When not to use this component
+
+Do not use the PageFooter component when you want the standard GovUK-style footer as there is a dedicated component for that.
+
+
+## How it works
+
+<Preview>
+  <Story name="Standard">
+    <PageFooter>
+      My custom footer.
+    </PageFooter>
+  </Story>
+</Preview>
+
+
+### Wide
+
+EXPERIMENTAL
+
+A `wide` flag can be provided for when you do NOT wish to restrict the width on wide screens.
+
+<Preview>
+  <Story name="Wide">
+    <PageFooter
+      wide
+    >
+      My custom footer.
+    </PageFooter>
+  </Story>
+</Preview>

@@ -1,0 +1,44 @@
+{
+  "name": "@not-govuk/back-link",
+  "version": "0.1.0",
+  "description": "A component to help users navigate back one page.",
+  "main": "src/BackLink.tsx",
+  "sass": "assets/BackLink.scss",
+  "publishConfig": {
+    "main": "dist/BackLink.js",
+    "typings": "dist/BackLink.d.ts"
+  },
+  "files": [
+    "/assets",
+    "/dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "ISC",
+  "keywords": [
+    "react-components"
+  ],
+  "dependencies": {
+    "@not-govuk/component-helpers": "workspace:^0.1.0",
+    "@not-govuk/link": "workspace:^0.1.0",
+    "@not-govuk/sass-base": "workspace:^0.1.0",
+    "govuk-frontend": "^3.7.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.35"
+  },
+  "devDependencies": {
+    "@mdx-js/react": "^1.6.5",
+    "@not-govuk/component-test-helpers": "workspace:^0.1.0",
+    "@not-govuk/docs-components": "workspace:^0.1.0",
+    "@types/react": "^16.9.35",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.2"
+  }
+}

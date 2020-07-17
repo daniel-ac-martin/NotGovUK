@@ -1,0 +1,53 @@
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
+import { text } from "@storybook/addon-knobs";
+import { SkipLink } from '../../';
+import readMe from './README.md';
+
+<Meta
+  title="Skip link"
+  component={SkipLink}
+  parameters={{
+    jest: ['skip-link'],
+    notes: readMe
+  }}
+/>
+
+# Skip link
+
+Use the skip link component to help keyboard-only users skip to the main content on a page.
+
+<Preview withToolbar>
+  <Story name="SkipLink">
+    <SkipLink
+      className={text('className')}
+      href={text('href', '#content')}
+      id={text('id')}
+      text={text('text')}
+    />
+  </Story>
+</Preview>
+
+(To view the skip link component tab to this example, or click inside this example and press tab.)
+
+<Props of={SkipLink} />
+
+## When to use this component
+
+All GOV.UK pages must include a skip link in the header.
+
+
+## How it works
+
+Some people use the tab key on their keyboard to navigate through the links and form elements on a web page.
+
+Including the skip link component gives users the option to bypass the top-level navigation links and jump to the main content on a page.
+
+The skip link component is visually hidden until a keyboard press activates it.
+
+<Preview>
+  <Story name="Standard">
+    <SkipLink href={text('href', '#content')} />
+  </Story>
+</Preview>
+
+(To view the skip link component tab to this example, or click inside this example and press tab.)

@@ -1,0 +1,81 @@
+{
+  "name": "@not-govuk/components",
+  "version": "0.1.0",
+  "description": "React components implementing the GOV.UK Design System.",
+  "main": "src/index.ts",
+  "sass": "src/index.scss",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-ac-martin/NotGovUK.git"
+  },
+  "keywords": [
+    "react-components"
+  ],
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel-ac-martin/NotGovUK/issues"
+  },
+  "homepage": "https://github.com/daniel-ac-martin/NotGovUK#readme",
+  "dependencies": {
+    "@not-govuk/back-link": "workspace:^0.1.0",
+    "@not-govuk/forms": "workspace:^0.1.0",
+    "@not-govuk/link": "workspace:^0.1.0",
+    "@not-govuk/route-utils": "workspace:^0.1.0",
+    "@not-govuk/sass-base": "workspace:^0.1.0",
+    "@not-govuk/tag": "workspace:^0.1.0",
+    "formik": "^2.1.2",
+    "qs": "^6.9.1",
+    "url-parse": "^1.4.7",
+    "validator": "^12.2.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.35",
+    "react-dom": "^16.9.8",
+    "react-router": "^5.1.7",
+    "react-router-dom": "^5.1.5"
+  },
+  "devDependencies": {
+    "@storybook/addon-knobs": "^6.0.0-rc.3",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.4",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router": "^5.1.7",
+    "@types/react-router-dom": "^5.1.5",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
+    "govuk-frontend": "^3.7.0",
+    "typescript": "^3.7.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@storybook)/)"
+    ]
+  }
+}

@@ -1,8 +1,8 @@
 rename-session NotGovUK
 rename-window app
-send "npm start" C-m
+send "pnpm start" C-m
 new-window -n storybook
-send "npm run storybook" C-m
+send "pnpm run storybook" C-m
 new-window -n shell
-send "npm run test:watch" C-m
+send "cd packages/components; pnpm run test:watch" C-m
 split-window -v

@@ -1,23 +1,17 @@
 {
   "name": "not-govuk",
   "version": "0.1.0",
-  "description": "React components implementing the GOV.UK Design System.",
-  "main": "src/cra/index.js",
+  "description": "A framework for quickly building digital services for government.",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --coverage --json --outputFile=.jest-results.json --watch-all=false",
-    "test:watch": "react-scripts test --coverage --json --outputFile=.jest-results.json",
-    "test:integration": "npm run build-storybook && npm run test:integration:files --",
-    "test:integration:server": "STORYBOOK_URL='http://localhost:9010' start-server-and-test storybook:ci http-get://localhost:9010 test:integration:now",
-    "test:integration:live": "STORYBOOK_URL='http://localhost:9009' npm run test:integration:now --",
-    "test:integration:files": "STORYBOOK_DIR='./storybook-static' npm run test:integration:now --",
-    "test:integration:now": "jest -c integration.jest.config.js",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "storybook:ci": "start-storybook -p 9010 -s public --ci --quiet",
-    "build-storybook": "build-storybook -s public",
-    "build-storybook:docs": "build-storybook -s public --docs"
+    "create": "plop",
+    "create:app": "plop app",
+    "create:component": "plop component",
+    "create:lib": "plop lib",
+    "build": "pnpm recursive run build",
+    "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
+    "start": "pnpm recursive run start --filter @not-govuk/storybook",
+    "storybook": "pnpm recursive run storybook --filter @not-govuk/storybook",
+    "test": "jest --coverage --json --outputFile=.jest-results.json"
   },
   "repository": {
     "type": "git",
@@ -32,72 +26,22 @@
     "url": "https://github.com/daniel-ac-martin/NotGovUK/issues"
   },
   "homepage": "https://github.com/daniel-ac-martin/NotGovUK#readme",
-  "dependencies": {
-    "formik": "^2.1.2",
-    "govuk-frontend": "^3.5.0",
-    "qs": "^6.9.1",
-    "react-router-dom": "^5.1.2",
-    "url-parse": "^1.4.7",
-    "validator": "^12.2.0",
-    "webpack": "4.41.0"
-  },
-  "peerDependencies": {
-    "webpack": "4.41.0"
-  },
   "devDependencies": {
-    "@storybook/addon-a11y": "^5.3.0-beta.6",
-    "@storybook/addon-actions": "^5.3.0-beta.6",
-    "@storybook/addon-docs": "^5.3.0-beta.6",
-    "@storybook/addon-jest": "^5.3.0-beta.6",
-    "@storybook/addon-knobs": "^5.3.0-beta.6",
-    "@storybook/addon-links": "^5.3.0-beta.6",
-    "@storybook/addon-notes": "^5.3.0-beta.6",
-    "@storybook/addon-storyshots": "^5.3.0-beta.6",
-    "@storybook/addon-storyshots-puppeteer": "^5.3.0-beta.6",
-    "@storybook/addon-storysource": "^5.3.0-beta.6",
-    "@storybook/addon-viewport": "^5.3.0-beta.6",
-    "@storybook/addons": "^5.3.0-beta.6",
-    "@storybook/preset-create-react-app": "^1.3.1",
-    "@storybook/react": "^5.3.0-beta.6",
-    "@types/jest": "24.0.23",
-    "@types/node": "12.12.7",
-    "@types/react": "16.9.11",
-    "@types/react-dom": "16.9.4",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.15.1",
-    "enzyme-to-json": "^3.4.3",
-    "jest-puppeteer": "^4.3.0",
-    "node-sass": "^4.13.0",
-    "puppeteer": "^2.0.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0",
-    "react-test-renderer": "^16.12.0",
-    "require-context.macro": "^1.2.2",
-    "start-server-and-test": "^1.10.6",
-    "typescript": "3.7.2"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(@storybook)/)"
-    ]
+    "@mdx-js/react": "^1.6.5",
+    "@not-govuk/docs-components": "workspace:^0.1.0",
+    "@storybook/addon-docs": "^6.0.0-rc.3",
+    "@types/jest": "^26.0.3",
+    "fs-extra": "^9.0.0",
+    "jest": "^26.1.0",
+    "plop": "^2.7.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.2",
+    "webpack": "^4.43.0",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }
