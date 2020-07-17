@@ -1,7 +1,6 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
-import { main } from "../.storybook/decorators";
+import { Meta, Story, Preview } from "@not-govuk/docs-components";
 
-<Meta title="Styles/Typography" decorators={[main]} />
+<Meta title="Typography" />
 
 # Font
 
@@ -35,19 +34,19 @@ Sometimes you may need to make it clear that a heading is part of a larger secti
 <Preview>
   <Story name="Headings with captions">
     <h1>
-      <span class="caption">govuk-caption-xl</span>
+      <span className="caption">govuk-caption-xl</span>
       govuk-heading-xl
     </h1>
     <h2>
-      <span class="caption">govuk-caption-l</span>
+      <span className="caption">govuk-caption-l</span>
       govuk-heading-l
     </h2>
     <h3>
-      <span class="caption">govuk-caption-m</span>
+      <span className="caption">govuk-caption-m</span>
       govuk-heading-m
     </h3>
     <h4>
-      <span class="caption">govuk-caption-s</span>
+      <span className="caption">govuk-caption-s</span>
       govuk-heading-s
     </h4>
   </Story>
@@ -73,7 +72,7 @@ A lead paragraph is an introductory paragraph that you can use at the top of a p
 
 <Preview>
   <Story name="Lead paragraphs">
-    <p class="lead">govuk-body-l</p>
+    <p className="lead">govuk-body-l</p>
   </Story>
 </Preview>
 
@@ -93,7 +92,7 @@ Use lists to make blocks of text easier to read, and to break information into m
 
 <Preview>
   <Story name="Lists">
-    <ul class="plain">
+    <ul className="plain">
       <li>
         <a href="#">Benefits calculators</a>
       </li>
