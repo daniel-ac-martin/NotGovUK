@@ -11,6 +11,9 @@ const config = {
   setupFilesAfterEnv: [
     path.resolve(__dirname, '.jest', 'setup', 'enzyme.js')
   ],
+  transform: {
+    '^.+\\.mdx?$': '@storybook/addon-docs/jest-transform-mdx'
+  },
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': path.resolve(__dirname, '.jest', 'mocks', 'file.js'),
     '\\.(css|scss|sass|less)$': path.resolve(__dirname, '.jest', 'mocks', 'style.js')

@@ -5,7 +5,7 @@ const baseConfig = require('./jest.config.base');
 const config = {
   ...baseConfig,
   projects: [
-    '<rootDir>/{apps,components,lib}/*/jest.config.js'
+    '<rootDir>/{.init,apps,components,lib}/*/jest.config.js'
   ],
   coverageDirectory: '<rootDir>/coverage/',
   collectCoverageFrom: [

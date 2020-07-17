@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run build-storybook && STORYBOOK_DIR='./storybook-static' jest",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "clean-storybook": "rm -rf storybook-static"
@@ -23,10 +23,14 @@
     "@storybook/addon-jest": "^6.0.0-rc.3",
     "@storybook/addon-knobs": "^6.0.0-rc.3",
     "@storybook/addon-links": "^6.0.0-rc.3",
+    "@storybook/addon-storyshots": "^6.0.0-rc.3",
+    "@storybook/addon-storyshots-puppeteer": "^6.0.0-rc.3",
     "@storybook/addon-storysource": "^6.0.0-rc.3",
     "@storybook/addon-viewport": "^6.0.0-rc.3",
     "@storybook/addons": "^6.0.0-rc.3",
     "@storybook/react": "^6.0.0-rc.3",
-    "@storybook/theming": "^6.0.0-rc.3"
+    "@storybook/theming": "^6.0.0-rc.3",
+    "jest": "^26.1.0",
+    "puppeteer": "^5.2.0"
   }
 }
