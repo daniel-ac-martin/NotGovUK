@@ -21,7 +21,7 @@ import {
 import '../assets/Form.scss';
 
 export type FormProps = ComponentProps<typeof WTForm>;
-type Form = ComponentType<FormProps> & {
+type TForm = ComponentType<FormProps> & {
   Checkboxes: ComponentType<any>
   DateInput: ComponentType<any>
   Field: ComponentType<any>
@@ -39,7 +39,7 @@ export const FormComponent: FC<FormProps> = ({ classBlock, ...props }) => h(WTFo
   classBlock: classBlock || 'not-govuk-form'
 });
 
-export const Form: Form = Object.assign(
+export const Form: TForm = Object.assign(
   FormComponent,
   {
     Checkboxes,

@@ -39,10 +39,7 @@ export {
   validator
 } from './validators';
 
-enum Method {
-  GET = 'get',
-  POST = 'post'
-}
+type Method = 'get' | 'post';
 
 export type FormProps<T> = StandardProps & {
   action: string
