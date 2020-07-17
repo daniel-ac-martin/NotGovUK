@@ -11,8 +11,8 @@
     "build:assets": "webpack",
     "build:server": "webpack --config webpack.config.server.js",
     "clean": "rm -rf dist",
-    "dev": "NODE_ENV=development node-hot --config webpack.config.server.js | bunyan",
-    "dev:ssr": "SSR_ONLY=true node-hot --config webpack.config.server.js | bunyan"
+    "dev": "NODE_ENV=development node-hot --config webpack.config.server.js --fork | bunyan",
+    "dev:ssr": "SSR_ONLY=true node-hot --config webpack.config.server.js --fork --autoRestart | bunyan"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "ISC",
