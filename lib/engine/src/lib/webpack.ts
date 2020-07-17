@@ -9,8 +9,18 @@ import { NextHandleFunction } from 'connect';
 // Note: Inspired by https://github.com/cpeddecord/restify-webpack-middleware
 export const webpackMiddleware = webpackConfig => {
   const compiler = webpack(webpackConfig);
-  const dev: NextHandleFunction = webpackDevMiddleware(compiler, { publicPath: webpackConfig.output.publicPath, serverSideRender: true })
   const hot: NextHandleFunction = webpackHotMiddleware(compiler, {})
+  const dev: NextHandleFunction = webpackDevMiddleware(compiler, {
+    publicPath: webpackConfig.output.publicPath,
+    serverSideRender: true,
+    logLevel: 'warn',
+    // clientLogLevel: 'warning',
+    // noInfo: true,
+    watchOptions: {
+      aggregateTimeout: 2000,
+      ignored: /node_modules/,
+    }
+  })
 
   return {
     serveFiles: (req, res, next) => {
