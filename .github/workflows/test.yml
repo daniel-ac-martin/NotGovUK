@@ -12,6 +12,8 @@ jobs:
 
       - name: Check out repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v2-beta
@@ -38,6 +40,20 @@ jobs:
 
       - name: Run unit tests
         run: npm test
+
+      - name: Build Storybook
+        run: |
+          cd .tools/storybook
+          npm run build-storybook
+
+      - name: Push Storybook to Chromatic
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: .tools/storybook/storybook-static
+          autoAcceptChanges: master
+          exitZeroOnChanges: true
 
       - name: Build applications (WRITEME!)
         run: echo 'UNIMPLEMENTED'
