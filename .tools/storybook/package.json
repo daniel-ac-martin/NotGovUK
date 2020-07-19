@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
-    "clean-storybook": "rm -rf storybook-static"
+    "clean-storybook": "rm -rf storybook-static",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "keywords": [],
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
@@ -27,6 +28,7 @@
     "@storybook/addon-viewport": "^6.0.0-rc.3",
     "@storybook/addons": "^6.0.0-rc.3",
     "@storybook/react": "^6.0.0-rc.3",
-    "@storybook/theming": "^6.0.0-rc.3"
+    "@storybook/theming": "^6.0.0-rc.3",
+    "chromatic": "^5.0.0"
   }
 }
