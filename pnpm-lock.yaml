@@ -380,7 +380,8 @@ importers:
       '@not-govuk/route-utils': 'link:../route-utils'
       '@not-govuk/simple-table': 'link:../../components-internal/simple-table'
       highlight.js: 10.1.1
-      js-beautify: 1.11.0
+      prettier: 2.0.5
+      prismjs: 1.20.0
     devDependencies:
       '@types/react': 16.9.43
       typescript: 3.9.7
@@ -390,7 +391,8 @@ importers:
       '@not-govuk/simple-table': 'workspace:^0.1.0'
       '@types/react': ^16.9.35
       highlight.js: ^10.1.1
-      js-beautify: ^1.11.0
+      prettier: ^2.0.5
+      prismjs: ^1.20.0
       typescript: ^3.9.2
   lib/engine:
     dependencies:
@@ -6326,7 +6328,6 @@ packages:
       good-listener: 1.2.2
       select: 1.1.2
       tiny-emitter: 2.1.0
-    dev: true
     optional: true
     resolution:
       integrity: sha512-g5zbiixBRk/wyKakSwCKd7vQXDjFnAMGHoEyBogG/bw9kTD9GvdAvaoRR1ALcEzt3pVKxZR0pViekPMIS0QyGg==
@@ -7102,7 +7103,6 @@ packages:
     resolution:
       integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
   /delegate/3.2.0:
-    dev: true
     optional: true
     resolution:
       integrity: sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==
@@ -8737,7 +8737,6 @@ packages:
   /good-listener/1.2.2:
     dependencies:
       delegate: 3.2.0
-    dev: true
     optional: true
     resolution:
       integrity: sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=
@@ -12884,7 +12883,6 @@ packages:
     resolution:
       integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
   /prettier/2.0.5:
-    dev: true
     engines:
       node: '>=10.13.0'
     hasBin: true
@@ -12931,7 +12929,6 @@ packages:
     resolution:
       integrity: sha512-PrEDJAFdUGbOP6xK/UsfkC5ghJsPJviKgnQOoxaDbBjwc8op68Quupwt1DeAFoG8GImPhiKXAvvsH7wDSLsu1Q==
   /prismjs/1.20.0:
-    dev: true
     optionalDependencies:
       clipboard: 2.0.6
     resolution:
@@ -14484,7 +14481,6 @@ packages:
     resolution:
       integrity: sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=
   /select/1.1.2:
-    dev: true
     optional: true
     resolution:
       integrity: sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
@@ -15444,7 +15440,6 @@ packages:
     resolution:
       integrity: sha512-60aV6sgJ5YEbzUdn9c8kYGIqOubPoUdqQCul3SBAsRCZ40s6Y5cMcrW4dt3/k/EsbLVJNl9n6Vz3fTc+k2GeKQ==
   /tiny-emitter/2.1.0:
-    dev: true
     optional: true
     resolution:
       integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
