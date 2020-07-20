@@ -7,6 +7,11 @@ support for writing internal applications in addition to public ones.
 The components are written in [Typescript] and documented in
 [Storybook]'s [MDX] format.
 
+> **Warning:** This is a work in progress and should only be used in
+> production by brave souls.
+
+(See [our documentation site] and [our Storybook].)
+
 
 Consuming these components
 --------------------------
@@ -207,6 +212,8 @@ problems or have any questions, please do [get in touch].
 [Typescript]: https://www.typescriptlang.org/
 [Storybook]: https://storybook.js.org/
 [MDX]: https://mdxjs.com/
+[our documentation site]: https://not-govuk.netlify.app
+[our Storybook]: https://master--5f1488148c817700223adb9a.chromatic.com
 [Nunjucks]: https://mozilla.github.io/nunjucks/
 [isomorphic]: https://en.wikipedia.org/wiki/Isomorphic_JavaScript
 [JSX]: https://reactjs.org/docs/introducing-jsx.html
