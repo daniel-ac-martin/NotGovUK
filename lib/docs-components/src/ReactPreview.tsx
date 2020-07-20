@@ -2,22 +2,42 @@ import { FC, Fragment, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { Link } from 'react-router-dom';
-import { html as beautifyHtml } from 'js-beautify';
 import hljs from 'highlight.js/lib/core';
 import hljsXml from 'highlight.js/lib/languages/xml';
 import hljsJavascript from 'highlight.js/lib/languages/javascript';
+import { format } from 'prettier/standalone';
+import parserHtml from 'prettier/parser-html';
+import parserBabel from 'prettier/parser-babel';
+import prism from 'prismjs';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { queryString, useLocation } from '@not-govuk/route-utils';
 
 import './ReactPreview.scss';
 import 'highlight.js/styles/github.css';
+import 'prismjs/themes/prism.css';
 
-hljs.registerLanguage('xml', hljsXml);
-hljs.registerLanguage('jsx', hljsJavascript);
+const commonFormatOptions = {
+  printWidth: Math.round(68 * (4 / 5)),
+  tabWidth: 2
+};
 
-const beautify = (src: string): string => beautifyHtml(src, {
-  'indent_size': 2
+const formatHtml = (src: string): string => format(src, {
+  ...commonFormatOptions,
+  parser: 'html',
+  plugins: [ parserHtml ],
+  htmlWhitespaceSensitivity: 'ignore'
 });
+const formatJsx = (src: string): string => format(src, {
+  ...commonFormatOptions,
+  parser: 'babel',
+  plugins: [ parserBabel ],
+  arrowParens: 'avoid'
+}).replace(/;(\n)?$/, '$1');
+
+hljs.registerLanguage('html', hljsXml);
+
+const highlightHtml = (src: string): string => hljs.highlight('html', formatHtml(src)).value;
+const highlightJsx = (src: string): string => prism.highlight(src, prism.languages.javascript, 'javascript');
 
 export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
   /** 'id' attribute to place on the base HTML element */
@@ -29,8 +49,8 @@ export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
 export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, classModifiers, className, id, source, ...attrs }) => {
   const location = useLocation();
   const classes = classBuilder('penultimate-react-preview', classBlock, classModifiers, className);
-  const html = hljs.highlight('xml', beautify(renderToStaticMarkup(h(StaticRouter, {}, children)))).value;
-  const react = hljs.highlight('xml', beautify(source)).value;
+  const html = highlightHtml(formatHtml(renderToStaticMarkup(h(StaticRouter, {}, children))));
+  const react = highlightJsx(formatJsx(source));
   const show = `show-${id}`;
   const showState = location.query[show];
   const getVar = {
