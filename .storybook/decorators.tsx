@@ -1,9 +1,9 @@
 import { FC, createElement as h } from 'react';
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
-import { className } from '../../../packages/components/src/helpers';
+import { className } from '../packages/components/src/helpers';
 import { BrowserRouter as Router } from 'react-router-dom';
-import RawMiddle from '../../../packages/components/src/components/page/body';
-import Main from '../../../packages/components/src/components/page/main';
+import RawMiddle from '../packages/components/src/components/page/body';
+import Main from '../packages/components/src/components/page/main';
 
 const Root: FC<any> = props => (
   <div id="story-root" {...props} style={{

@@ -5,10 +5,10 @@ import { withTests } from '@storybook/addon-jest';
 import { withKnobs } from "@storybook/addon-knobs";
 import { addDecorator, addParameters } from '@storybook/react';
 import globalDecorator from './decorators';
-import jestResults from '../../../.jest-results.json';
+import jestResults from '../.jest-results.json';
 
 // FIXME: Temporary hack to get CSS
-import '../../../packages/components/src/index.scss';
+import '../packages/components/src/index.scss';
 
 addParameters({
   docs: {
