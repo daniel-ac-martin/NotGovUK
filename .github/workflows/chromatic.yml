@@ -37,7 +37,7 @@ jobs:
 
       - name: Build Storybook
         run: |
-          npm run build-storybook
+          npm run build:storybook
 
       - name: Push Storybook to Chromatic
         uses: chromaui/action@v1
