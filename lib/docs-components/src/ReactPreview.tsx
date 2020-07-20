@@ -8,9 +8,11 @@ import hljsJavascript from 'highlight.js/lib/languages/javascript';
 import { format } from 'prettier/standalone';
 import parserHtml from 'prettier/parser-html';
 import parserBabel from 'prettier/parser-babel';
-import prism from 'prismjs';
+import Prism from 'prismjs';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { queryString, useLocation } from '@not-govuk/route-utils';
+
+import 'prismjs/components/prism-jsx.min';
 
 import './ReactPreview.scss';
 import 'highlight.js/styles/github.css';
@@ -37,7 +39,7 @@ const formatJsx = (src: string): string => format(src, {
 hljs.registerLanguage('html', hljsXml);
 
 const highlightHtml = (src: string): string => hljs.highlight('html', formatHtml(src)).value;
-const highlightJsx = (src: string): string => prism.highlight(src, prism.languages.javascript, 'javascript');
+const highlightJsx = (src: string): string => Prism.highlight(src, Prism.languages.jsx, 'jsx');
 
 export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
   /** 'id' attribute to place on the base HTML element */
