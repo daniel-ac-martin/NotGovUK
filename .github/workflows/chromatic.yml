@@ -35,15 +35,11 @@ jobs:
           version: 5.4.0
           run_install: true
 
-      - name: Build Storybook
-        run: |
-          npm run build:storybook
-
       - name: Push Storybook to Chromatic
         uses: chromaui/action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: storybook-static
+          buildScriptName: 'build:storybook'
           autoAcceptChanges: master
           exitZeroOnChanges: true
