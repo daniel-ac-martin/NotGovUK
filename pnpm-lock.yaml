@@ -379,7 +379,6 @@ importers:
       '@not-govuk/component-helpers': 'link:../component-helpers'
       '@not-govuk/route-utils': 'link:../route-utils'
       '@not-govuk/simple-table': 'link:../../components-internal/simple-table'
-      highlight.js: 10.1.1
       prettier: 2.0.5
       prismjs: 1.20.0
       prismjs-github: 1.0.0
@@ -391,7 +390,6 @@ importers:
       '@not-govuk/route-utils': 'workspace:^0.1.0'
       '@not-govuk/simple-table': 'workspace:^0.1.0'
       '@types/react': ^16.9.35
-      highlight.js: ^10.1.1
       prettier: ^2.0.5
       prismjs: ^1.20.0
       prismjs-github: ^1.0.0
@@ -560,7 +558,7 @@ importers:
       url-parse: 1.4.7
       validator: 12.2.0
     devDependencies:
-      '@storybook/addon-knobs': 6.0.0-rc.11
+      '@storybook/addon-knobs': 6.0.0-rc.11_@types+react@16.9.43
       '@types/jest': 25.2.3
       '@types/node': 13.13.14
       '@types/react': 16.9.43
@@ -3236,13 +3234,13 @@ packages:
       react-dom: '*'
     resolution:
       integrity: sha512-Z0CjcEFkw8EuZggVAUxOXY+GLhjafRNYN0St5/btRcJHPFQLVo6DjfvLHbknThUlvgCEJ80Juj4sFLTZvN59jw==
-  /@storybook/addon-knobs/6.0.0-rc.11:
+  /@storybook/addon-knobs/6.0.0-rc.11_@types+react@16.9.43:
     dependencies:
       '@storybook/addons': 6.0.0-rc.11
       '@storybook/api': 6.0.0-rc.11
       '@storybook/channels': 6.0.0-rc.11
       '@storybook/client-api': 6.0.0-rc.11
-      '@storybook/components': 6.0.0-rc.11
+      '@storybook/components': 6.0.0-rc.11_@types+react@16.9.43
       '@storybook/core-events': 6.0.0-rc.11
       '@storybook/theming': 6.0.0-rc.11
       '@types/react-color': 3.0.4
@@ -3260,6 +3258,7 @@ packages:
       regenerator-runtime: 0.13.5
     dev: true
     peerDependencies:
+      '@types/react': '*'
       react: '*'
       react-dom: '*'
     resolution:
@@ -3290,6 +3289,7 @@ packages:
       regenerator-runtime: 0.13.5
     dev: true
     peerDependencies:
+      '@types/react': '*'
       react: '*'
       react-dom: '*'
     resolution:
@@ -3555,6 +3555,37 @@ packages:
       react-textarea-autosize: 8.2.0_react@16.13.1
       ts-dedent: 1.1.1
     dev: true
+    peerDependencies:
+      '@types/react': '*'
+    resolution:
+      integrity: sha512-x8faRf5o05Hy6oPe819CTMoknvssrtayoVkcB85IOkOrobAA0paX8YMp4aNlBXYeGi0PqGauV4s2ylS/KmUQug==
+  /@storybook/components/6.0.0-rc.11_@types+react@16.9.43:
+    dependencies:
+      '@storybook/client-logger': 6.0.0-rc.11
+      '@storybook/csf': 0.0.1
+      '@storybook/theming': 6.0.0-rc.11_react-dom@16.13.1+react@16.13.1
+      '@types/overlayscrollbars': 1.12.0
+      '@types/react-color': 3.0.4
+      '@types/react-syntax-highlighter': 11.0.4
+      core-js: 3.6.5
+      fast-deep-equal: 3.1.3
+      global: 4.4.0
+      lodash: 4.17.19
+      markdown-to-jsx: 6.11.4_react@16.13.1
+      memoizerific: 1.11.3
+      overlayscrollbars: 1.12.0
+      polished: 3.6.5
+      popper.js: 1.16.1
+      react: 16.13.1
+      react-color: 2.18.1_react@16.13.1
+      react-dom: 16.13.1_react@16.13.1
+      react-popper-tooltip: 2.11.1_react-dom@16.13.1+react@16.13.1
+      react-syntax-highlighter: 12.2.1_react@16.13.1
+      react-textarea-autosize: 8.2.0_0634d22a207923c507b47a52e9f0d46d
+      ts-dedent: 1.1.1
+    dev: true
+    peerDependencies:
+      '@types/react': '*'
     resolution:
       integrity: sha512-x8faRf5o05Hy6oPe819CTMoknvssrtayoVkcB85IOkOrobAA0paX8YMp4aNlBXYeGi0PqGauV4s2ylS/KmUQug==
   /@storybook/core-events/6.0.0-rc.11:
@@ -8961,10 +8992,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-lTWXMZfBRLCWE81l0xfvGZY70C0=
-  /highlight.js/10.1.1:
-    dev: false
-    resolution:
-      integrity: sha512-b4L09127uVa+9vkMgPpdUQP78ickGbHEQTWeBrQFTJZ4/n2aihWOGS0ZoUqAwjVmfjhq/C76HRzkqwZhK4sBbg==
   /highlight.js/9.15.10:
     dev: true
     resolution:
@@ -13667,6 +13694,18 @@ packages:
       react: ^16.13.1
     resolution:
       integrity: sha512-Sn2VRyOK2YJJldOqoh8Tn/lWQ+ZiKhyZTPtaO0Q6yNj+QDbmRkVFap6pZPy3YQk8DScRDfyqm/KxKYP9gCMRiQ==
+  /react-textarea-autosize/8.2.0_0634d22a207923c507b47a52e9f0d46d:
+    dependencies:
+      '@babel/runtime': 7.10.5
+      react: 16.13.1
+      use-composed-ref: 1.0.0_react@16.13.1
+      use-latest: 1.1.0_0634d22a207923c507b47a52e9f0d46d
+    dev: true
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8.0
+    resolution:
+      integrity: sha512-grajUlVbkx6VdtSxCgzloUIphIZF5bKr21OYMceWPKkniy7H0mRAT/AXPrRtObAe+zUePnNlBwUc4ivVjUGIjw==
   /react-textarea-autosize/8.2.0_react@16.13.1:
     dependencies:
       '@babel/runtime': 7.10.5
@@ -13675,6 +13714,7 @@ packages:
       use-latest: 1.1.0_react@16.13.1
     dev: true
     peerDependencies:
+      '@types/react': '*'
       react: ^16.8.0
     resolution:
       integrity: sha512-grajUlVbkx6VdtSxCgzloUIphIZF5bKr21OYMceWPKkniy7H0mRAT/AXPrRtObAe+zUePnNlBwUc4ivVjUGIjw==
@@ -15984,6 +16024,19 @@ packages:
       react: ^16.8.0
     resolution:
       integrity: sha512-RVqY3NFNjZa0xrmK3bIMWNmQ01QjKPDc7DeWR3xa/N8aliVppuutOE5bZzPkQfvL+5NRWMMp0DJ99Trd974FIw==
+  /use-isomorphic-layout-effect/1.0.0_0634d22a207923c507b47a52e9f0d46d:
+    dependencies:
+      '@types/react': 16.9.43
+      react: 16.13.1
+    dev: true
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    resolution:
+      integrity: sha512-JMwJ7Vd86NwAt1jH7q+OIozZSIxA4ND0fx6AsOe2q1H8ooBUp5aN6DvVCqZiIaYU6JaMRJGyR0FO7EBCIsb/Rg==
   /use-isomorphic-layout-effect/1.0.0_react@16.13.1:
     dependencies:
       react: 16.13.1
@@ -15996,6 +16049,20 @@ packages:
         optional: true
     resolution:
       integrity: sha512-JMwJ7Vd86NwAt1jH7q+OIozZSIxA4ND0fx6AsOe2q1H8ooBUp5aN6DvVCqZiIaYU6JaMRJGyR0FO7EBCIsb/Rg==
+  /use-latest/1.1.0_0634d22a207923c507b47a52e9f0d46d:
+    dependencies:
+      '@types/react': 16.9.43
+      react: 16.13.1
+      use-isomorphic-layout-effect: 1.0.0_0634d22a207923c507b47a52e9f0d46d
+    dev: true
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    resolution:
+      integrity: sha512-gF04d0ZMV3AMB8Q7HtfkAWe+oq1tFXP6dZKwBHQF5nVXtGsh2oAYeeqma5ZzxtlpOcW8Ro/tLcfmEodjDeqtuw==
   /use-latest/1.1.0_react@16.13.1:
     dependencies:
       react: 16.13.1

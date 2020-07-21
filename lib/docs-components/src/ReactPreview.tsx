@@ -2,9 +2,6 @@ import { FC, Fragment, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { Link } from 'react-router-dom';
-import hljs from 'highlight.js/lib/core';
-import hljsXml from 'highlight.js/lib/languages/xml';
-import hljsJavascript from 'highlight.js/lib/languages/javascript';
 import { format } from 'prettier/standalone';
 import parserHtml from 'prettier/parser-html';
 import parserBabel from 'prettier/parser-babel';
@@ -15,7 +12,6 @@ import { queryString, useLocation } from '@not-govuk/route-utils';
 import 'prismjs/components/prism-jsx.min';
 
 import './ReactPreview.scss';
-import 'highlight.js/styles/github.css';
 import 'prismjs-github/scheme.css';
 
 const commonFormatOptions = {
@@ -36,9 +32,7 @@ const formatJsx = (src: string): string => format(src, {
   arrowParens: 'avoid'
 }).replace(/;(\n)?$/, '$1');
 
-hljs.registerLanguage('html', hljsXml);
-
-const highlightHtml = (src: string): string => hljs.highlight('html', formatHtml(src)).value;
+const highlightHtml = (src: string): string => Prism.highlight(src, Prism.languages.html, 'html');
 const highlightJsx = (src: string): string => Prism.highlight(src, Prism.languages.jsx, 'jsx');
 
 export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
@@ -51,7 +45,8 @@ export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
 export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, classModifiers, className, id, source, ...attrs }) => {
   const location = useLocation();
   const classes = classBuilder('penultimate-react-preview', classBlock, classModifiers, className);
-  const html = highlightHtml(formatHtml(renderToStaticMarkup(h(StaticRouter, {}, children))));
+  const staticMarkup = renderToStaticMarkup(h(StaticRouter, {}, children));
+  const html = highlightHtml(formatHtml(staticMarkup));
   const react = highlightJsx(formatJsx(source));
   const show = `show-${id}`;
   const showState = location.query[show];
