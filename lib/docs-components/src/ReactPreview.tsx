@@ -25,12 +25,20 @@ const formatHtml = (src: string): string => format(src, {
   plugins: [ parserHtml ],
   htmlWhitespaceSensitivity: 'ignore'
 });
-const formatJsx = (src: string): string => format(src, {
+const formatJsxUnsafe = (src: string): string => format(src, {
   ...commonFormatOptions,
   parser: 'babel',
   plugins: [ parserBabel ],
   arrowParens: 'avoid'
 }).replace(/;(\n)?$/, '$1');
+
+const formatJsx = (src: string): string => {
+  try {
+    return formatJsxUnsafe(src);
+  } catch (err) {
+    return formatJsxUnsafe('<>' + src + '</>');
+  }
+};
 
 const highlightHtml = (src: string): string => Prism.highlight(src, Prism.languages.html, 'html');
 const highlightJsx = (src: string): string => Prism.highlight(src, Prism.languages.jsx, 'jsx');
