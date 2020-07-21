@@ -1,4 +1,4 @@
-import { ComponentProps, ComponentType, FC, ReactElement, createElement as h } from 'react';
+import { ComponentProps, ComponentType, FC, Fragment, ReactElement, createElement as h } from 'react';
 import { id } from '@not-govuk/component-helpers';
 import { ReactPreview } from './ReactPreview';
 import { inStorybook } from './common';
@@ -55,15 +55,11 @@ export const Preview: FC<PreviewProps> = (props) => (
 export type StoryProps = ComponentProps<typeof _Story> & {
 };
 
-export const Story: FC<StoryProps> = (props) => {
-  const { children } = props;
-
-  return (
-    inStorybook
-      ? h(_Story, props)
-      : (children as ReactElement || null)
-  );
-};
+export const Story: FC<StoryProps> = ({ children, ...props }) => (
+  inStorybook
+    ? h(_Story, props)
+    : h(Fragment, {}, children)
+);
 
 export * from './DocsPage';
 export * from './Props';
