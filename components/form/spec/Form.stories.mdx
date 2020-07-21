@@ -25,6 +25,7 @@ A component to collect information from the user.
       <Form.Page>
         <Form.TextInput
           name="fullName"
+          prettyName="name"
           label={<h2>What is your name?</h2>}
           hint="Write your firstname followed by your surname"
           validators={[
@@ -99,6 +100,7 @@ A standard Form.
     <Form action="/result" method="get">
       <Form.TextInput
         name="fullName"
+        prettyName="name"
         label={<h2>What is your name?</h2>}
         hint="Write your firstname followed by your surname"
         validators={[
@@ -154,6 +156,7 @@ Break up your form into steps, using `Form.Page`, to make it less overwhelming f
       <Form.Page>
         <Form.TextInput
           name="fullName"
+          prettyName="name"
           label={<h2>What is your name?</h2>}
           hint="Write your firstname followed by your surname"
           validators={[
@@ -221,6 +224,7 @@ The example below will send the user down a different path depending on their se
       <Form.Page>
         <Form.TextInput
           name="fullName"
+          prettyName="name"
           label={<h2>What is your name?</h2>}
           hint="Write your firstname followed by your surname"
           validators={[
