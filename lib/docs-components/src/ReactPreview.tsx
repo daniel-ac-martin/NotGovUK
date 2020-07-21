@@ -16,7 +16,7 @@ import 'prismjs/components/prism-jsx.min';
 
 import './ReactPreview.scss';
 import 'highlight.js/styles/github.css';
-import 'prismjs/themes/prism.css';
+import 'prismjs-github/scheme.css';
 
 const commonFormatOptions = {
   printWidth: Math.round(68 * (4 / 5)),
