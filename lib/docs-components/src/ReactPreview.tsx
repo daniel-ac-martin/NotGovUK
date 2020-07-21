@@ -16,10 +16,10 @@ import 'prismjs/components/prism-jsx.min';
 
 import './ReactPreview.scss';
 import 'highlight.js/styles/github.css';
-import 'prismjs/themes/prism.css';
+import 'prismjs-github/scheme.css';
 
 const commonFormatOptions = {
-  printWidth: Math.round(68 * (4 / 5)),
+  printWidth: Math.round(60 * (9 / 10)),
   tabWidth: 2
 };
 
@@ -80,14 +80,14 @@ export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, clas
       { showing.html ? (
         <div className={classes('code')}>
           <pre>
-            <code dangerouslySetInnerHTML={{__html: html}} />
+            <code className="language-html" dangerouslySetInnerHTML={{__html: html}} />
           </pre>
         </div>
       ) : null}
       { showing.react && source ? (
         <div className={classes('code')}>
           <pre>
-            <code dangerouslySetInnerHTML={{__html: react}} />
+            <code className="language-jsx" dangerouslySetInnerHTML={{__html: react}} />
           </pre>
         </div>
       ) : null}

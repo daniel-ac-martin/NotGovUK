@@ -55,6 +55,19 @@
       code {
         display: block;
         overflow-x: auto;
+
+        &[class*="language-"] {
+          color: inherit;
+          font-size: 14px;
+          font-size: 0.875rem;
+          line-height: 1.25;
+          tab-size: 2;
+
+          @media (min-width: 40.0625em) {
+            font-size: 16px;
+            font-size: 1rem;
+          }
+        }
       }
     }
   }
