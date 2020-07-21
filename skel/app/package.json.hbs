@@ -10,7 +10,8 @@
     "build": "npm run build:assets && npm run build:server",
     "build:assets": "webpack",
     "build:server": "webpack --config webpack.config.server.js",
-    "clean": "rm -rf dist",
+    "package:serverless": "sls package",
+    "clean": "rm -rf .serverless dist",
     "dev": "NODE_ENV=development node-hot --config webpack.config.server.js --fork | bunyan",
     "dev:ssr": "SSR_ONLY=true node-hot --config webpack.config.server.js --fork --autoRestart | bunyan"
   },
@@ -33,6 +34,7 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "serverless": "^1.75.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
