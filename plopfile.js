@@ -1,11 +1,7 @@
 'use strict';
 
-const plopActionSymlink = require('./.plop/actions/symlink');
-const plopActionCopy = require('./.plop/actions/copy');
-
 module.exports = plop => {
-  plop.setActionType('symlink', plopActionSymlink);
-  plop.setActionType('copy', plopActionCopy);
+  plop.load('@not-govuk/plop-pack');
 
   plop.setGenerator('app', {
     description: 'Application',
