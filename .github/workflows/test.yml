@@ -40,8 +40,11 @@ jobs:
       - name: Run unit tests
         run: npm test
 
-      - name: Build applications (WRITEME!)
-        run: echo 'UNIMPLEMENTED'
+      - name: Build everything
+        run: npm run all:build
 
       - name: Test applications (WRITEME!)
         run: echo 'UNIMPLEMENTED'
+
+      - name: Clean-up
+        run: npm run all:clean
