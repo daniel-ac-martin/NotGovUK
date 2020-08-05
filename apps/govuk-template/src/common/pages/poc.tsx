@@ -1,4 +1,4 @@
-import { FC, createElement as h } from 'react';
+import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
 
 import {
@@ -15,7 +15,7 @@ import {
   TextInput
 } from '@not-govuk/components';
 
-const Page: FC<PageProps> = props => (<>
+const Page: FC<PageProps> = props => (<Fragment>
   <h1><span className="caption">Caption</span> Typography</h1>
   <h2><span className="caption">Typography</span> Sub-heading</h2>
   <h3><span className="caption">Typography</span> Sub-sub-heading</h3>
@@ -144,7 +144,7 @@ const Page: FC<PageProps> = props => (<>
     <TextInput label="One-third width" name="one-third" className="width-one-third" />
     <TextInput label="One-quarter width" name="one-quarter" className="width-one-quarter" />
   </form>
-</>);
+</Fragment>);
 
 export default Page;
 export const title = 'POC';
