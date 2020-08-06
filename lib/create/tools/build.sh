@@ -1,5 +1,7 @@
 #! /bin/env bash
 
+set -euo pipefail
+
 root_dir='../..'
 workflows_dir='.github/workflows'
 
