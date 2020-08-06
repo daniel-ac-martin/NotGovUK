@@ -1,6 +1,6 @@
 {
   "name": "not-govuk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A framework for quickly building digital services for government.",
   "bin": "lib/create/bin/create.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "create:lib": "plop lib",
     "all:build": "pnpm recursive run build",
     "all:clean": "pnpm recursive run clean",
+    "all:version": "pnpm recursive exec -- npm version --no-git-tag-version",
     "build": "npm run build:storybook",
     "clean": "npm run clean:storybook",
     "distclean": "pnpm recursive exec -- rm -rf node_modules && rm -rf node_modules",
