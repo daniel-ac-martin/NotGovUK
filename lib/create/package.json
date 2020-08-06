@@ -4,6 +4,11 @@
   "description": "A project and prototype initialiser.",
   "main": "bin/create.js",
   "bin": "bin/create.js",
+  "files": [
+    "/bin",
+    "/plopfile.js",
+    "/skel"
+  ],
   "scripts": {
     "prepublishOnly": "npm run clean && npm run build",
     "build": "bash tools/build.sh",
