@@ -5,8 +5,8 @@ set -euo pipefail
 root_dir='../..'
 workflows_dir='.github/workflows'
 
-cp -av "${root_dir}/${workflows_dir}/chromatic.yml" 'skel/${workflows_dir}/'
-cp -av "${root_dir}/${workflows_dir}/test.yml" 'skel/${workflows_dir}/'
+cp -av "${root_dir}/${workflows_dir}/chromatic.yml" "skel/${workflows_dir}/"
+cp -av "${root_dir}/${workflows_dir}/test.yml" "skel/${workflows_dir}/"
 cp -av "${root_dir}/.storybook/" 'skel/'
 
 source_docs="${root_dir}/apps/govuk-docs"
