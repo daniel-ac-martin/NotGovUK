@@ -14,4 +14,5 @@ target_docs='skel/apps/docs'
 
 mkdir -p "${target_docs}/src/common/pages/"
 cp -av "${source_docs}/src/common/pages/"{components,index}.tsx "${target_docs}/src/common/pages/"
+cp -av "${source_docs}/src/mdx.d.ts" "${target_docs}/src/"
 cp -av "${source_docs}/webpack.config"*.js "${target_docs}"
