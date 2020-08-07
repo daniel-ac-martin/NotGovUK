@@ -11,7 +11,7 @@ import { queryString, useLocation } from '@not-govuk/route-utils';
 
 import 'prismjs/components/prism-jsx.min';
 
-import './ReactPreview.scss';
+import '../assets/ReactPreview.scss';
 import 'prismjs-github/scheme.css';
 
 const commonFormatOptions = {
