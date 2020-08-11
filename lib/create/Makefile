@@ -56,6 +56,7 @@ $(dist_dir)/skel.tar: $(skel_deps)
 
 $(docs_target_dir)/package.json: $(plopfile) $(docs_source_dir)
 	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'docs' 'Documentation website.'
+	rm '$(docs_target_dir)/webpack.config'*.js '$(docs_target_dir)/src/common/pages/'*
 
 $(docs_target_dir)/%: $(docs_source_dir)/% $(docs_target_dir)/package.json
 	mkdir -p '$(@D)'
