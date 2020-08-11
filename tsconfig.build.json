@@ -1,1 +1,10 @@
-lib/create/skel/tsconfig.build.json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "module": "ES2020",
+    "sourceMap": false,
+    "target": "ES2019"
+  }
+}
