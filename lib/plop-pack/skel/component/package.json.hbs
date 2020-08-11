@@ -24,15 +24,15 @@
     "react-components"
   ],
   "dependencies": {
-    "@not-govuk/component-helpers": "workspace:^0.1.0"
+    "@not-govuk/component-helpers": "{{#if (eq (pkg 'name')'not-govuk')}}workspace:{{/if}}^0.1.0"
   },
   "peerDependencies": {
     "react": "^16.9.35"
   },
   "devDependencies": {
     "@mdx-js/react": "^1.6.5",
-    "@not-govuk/component-test-helpers": "workspace:^0.1.0",
-    "@not-govuk/docs-components": "workspace:^0.1.0",
+    "@not-govuk/component-test-helpers": "{{#if (eq (pkg 'name')'not-govuk')}}workspace:{{/if}}^0.1.0",
+    "@not-govuk/docs-components": "{{#if (eq (pkg 'name')'not-govuk')}}workspace:{{/if}}^0.1.0",
     "@types/react": "^16.9.35",
     "jest": "^26.1.0",
     "ts-jest": "^26.1.1",
