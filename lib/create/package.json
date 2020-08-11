@@ -2,17 +2,17 @@
   "name": "@not-govuk/create",
   "version": "0.1.5",
   "description": "A project and prototype initialiser.",
-  "main": "bin/create",
+  "main": "plopfile.js",
   "bin": "bin/create",
   "files": [
     "/bin",
-    "/plopfile.js",
-    "/skel"
+    "/dist",
+    "/plopfile.js"
   ],
   "scripts": {
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "bash tools/build.sh",
-    "clean": "bash tools/clean.sh"
+    "build": "make",
+    "clean": "make clean"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "MIT",
