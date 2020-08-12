@@ -49,14 +49,23 @@ $(dist_dir)/package.base.json: $(source_dir)/package.json
 	jq '{ scripts: .scripts, devDependencies: .devDependencies }' '$(<)' > '$(@)'
 	$(patch_package) '$(@)'
 
+$(build_dir)/package.app.json: $(plopfile) $(docs_source_dir)
+	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'docs' 'Documentation website.'
+	rm '$(docs_target_dir)/webpack.config'*.js '$(docs_target_dir)/src/common/pages/'*
+	mv '$(docs_target_dir)/package.json' '$(@)'
+
+$(build_dir)/package.docs.json: $(docs_source_dir)/package.json
+	mkdir -p '$(@D)'
+	jq '{ devDependencies: .devDependencies }' '$(<)' > '$(@)'
+	$(patch_package) '$(@)'
+
 $(dist_dir)/skel.tar: $(skel_deps)
 	mkdir -p '$(@D)'
 	sed -i 's/$(docs_app)/docs/g' 'build/skel/.github/workflows/deploy-docs.yml'
 	cd 'build/' && tar -cf '../$(@)' 'skel/'
 
-$(docs_target_dir)/package.json: $(plopfile) $(docs_source_dir)
-	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'docs' 'Documentation website.'
-	rm '$(docs_target_dir)/webpack.config'*.js '$(docs_target_dir)/src/common/pages/'*
+$(docs_target_dir)/package.json: $(build_dir)/package.app.json $(build_dir)/package.docs.json
+	jq -s '.[0] * .[1]' $(^) > '$(@)'
 
 $(docs_target_dir)/%: $(docs_source_dir)/% $(docs_target_dir)/package.json
 	mkdir -p '$(@D)'
