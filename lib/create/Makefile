@@ -18,7 +18,6 @@ sources := $(wildcard \
 	$(source_dir)/plopfile.js \
 	$(source_dir)/pnpm-lock.yaml \
 	$(source_dir)/pnpm-workspace.yaml \
-	$(source_dir)/skel/*/*/*/*/* \
 	$(source_dir)/tsconfig*.json \
 )
 docs_app = govuk-docs
