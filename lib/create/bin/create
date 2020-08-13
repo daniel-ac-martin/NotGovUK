@@ -1,16 +1,9 @@
 #! /usr/bin/env node
 'use strict';
 
-const { execFileSync } = require('child_process');
 const { resolve } = require('path');
+const { runPlop } = require('@not-govuk/plop-pack-internal');
 
-const plop = resolve(__dirname, '..', 'node_modules', '.bin', 'plop');
-const file = resolve(__dirname, '..', 'plopfile.js');
-const args = process.argv.slice(2);
+const plopfile = resolve(__dirname, '..', 'plopfile.js');
 
-// Simply run PlopJS with our config
-try {
-  execFileSync(plop, [ '--plopfile', `${file}`, ...args ], { stdio: 'inherit' });
-} catch (err) {
-  process.exit(err.status || 1);
-}
+runPlop(plopfile);
