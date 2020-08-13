@@ -1,5 +1,5 @@
 {
-  "name": "@not-govuk/create-internal",
+  "name": "@not-govuk/create",
   "version": "0.1.11",
   "description": "A project and prototype initialiser.",
   "main": "plopfile.js",
@@ -7,8 +7,7 @@
   "files": [
     "/bin",
     "/dist",
-    "/plopfile.js",
-    "/skel"
+    "/plopfile.js"
   ],
   "scripts": {
     "prepublishOnly": "npm run clean && npm run build",
@@ -21,8 +20,9 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "@not-govuk/plop-pack-internal": "workspace:^0.1.0",
-    "shelljs": "^0.8.4"
+    "@not-govuk/create-internal": "workspace:^0.1.0",
+    "@not-govuk/plop-pack": "workspace:^0.1.0",
+    "@not-govuk/plop-pack-internal": "workspace:^0.1.0"
   },
   "devDependencies": {
     "plop": "^2.7.4"

@@ -8,6 +8,11 @@
     "main": "dist/index.js",
     "typings": "dist/index.d.ts"
   },
+  "files": [
+    "assets/",
+    "dist/",
+    "src/"
+  ],
   "scripts": {
     "prepublishOnly": "npm run clean && npm run build",
     "build": "tsc",

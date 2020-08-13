@@ -1,5 +1,5 @@
 {
-  "name": "@not-govuk/plop-pack-internal",
+  "name": "@not-govuk/plop-pack",
   "version": "0.1.11",
   "description": "Plop pack with misc tools.",
   "main": "src/index.js",
@@ -18,12 +18,6 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "fs-extra": "^9.0.1",
-    "lodash": "^4.17.19",
-    "minimist": "^1.2.5",
-    "node-plop": "^0.26.2",
-    "plop": "^2.7.4",
-    "resolve": "^1.17.0",
-    "shelljs": "^0.8.4"
+    "@not-govuk/plop-pack-internal": "workspace:^0.1.11"
   }
 }

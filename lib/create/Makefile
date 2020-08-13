@@ -1,5 +1,6 @@
 cp = cp -P --preserve=all
 patch_package = sed -Ei 's/"@(not-govuk)\/([^"]+)": "workspace:(.+)"/"@\1\/\2": "\3"/'
+strip_package = jq '{ scripts: .scripts, devDependencies: .devDependencies }'
 build_dir = ./build
 dist_dir = ./dist
 source_dir = ../..
@@ -14,10 +15,8 @@ sources := $(wildcard \
 	$(source_dir)/components/README.md \
 	$(source_dir)/jest.config*.js \
 	$(source_dir)/lib/README.md \
-	$(source_dir)/plopfile.js \
 	$(source_dir)/pnpm-lock.yaml \
 	$(source_dir)/pnpm-workspace.yaml \
-	$(source_dir)/skel/*/*/*/*/* \
 	$(source_dir)/tsconfig*.json \
 )
 docs_app = govuk-docs
@@ -32,6 +31,7 @@ docs_sources := $(wildcard \
 skel_deps = \
 	$(patsubst $(source_dir)/%,$(target_dir)/%,$(sources)) \
 	$(patsubst $(docs_source_dir)/%,$(docs_target_dir)/%,$(docs_sources)) \
+	$(target_dir)/plopfile.js \
 	$(docs_target_dir)/package.json
 plopfile = $(target_dir)/plopfile.js
 
@@ -46,7 +46,7 @@ clean:
 
 $(dist_dir)/package.base.json: $(source_dir)/package.json
 	mkdir -p '$(@D)'
-	jq '{ scripts: .scripts, devDependencies: .devDependencies }' '$(<)' > '$(@)'
+	$(strip_package) '$(<)' > '$(@)'
 	$(patch_package) '$(@)'
 
 $(build_dir)/package.app.json: $(plopfile) $(docs_source_dir)
@@ -70,6 +70,10 @@ $(docs_target_dir)/package.json: $(build_dir)/package.app.json $(build_dir)/pack
 $(docs_target_dir)/%: $(docs_source_dir)/% $(docs_target_dir)/package.json
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
+
+$(target_dir)/plopfile.js: $(source_dir)/plopfile.js
+	mkdir -p '$(@D)'
+	sed 's/plop-pack/plop-pack-internal/' '$(<)' > '$(@)'
 
 $(target_dir)/%: $(source_dir)/%
 	mkdir -p '$(@D)'
