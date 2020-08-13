@@ -1,5 +1,6 @@
 cp = cp -P --preserve=all
 patch_package = sed -Ei 's/"@(not-govuk)\/([^"]+)": "workspace:(.+)"/"@\1\/\2": "\3"/'
+strip_package = jq '{ scripts: .scripts, devDependencies: .devDependencies }'
 build_dir = ./build
 dist_dir = ./dist
 source_dir = ../..
@@ -46,7 +47,7 @@ clean:
 
 $(dist_dir)/package.base.json: $(source_dir)/package.json
 	mkdir -p '$(@D)'
-	jq '{ scripts: .scripts, devDependencies: .devDependencies }' '$(<)' > '$(@)'
+	$(strip_package) '$(<)' > '$(@)'
 	$(patch_package) '$(@)'
 
 $(build_dir)/package.app.json: $(plopfile) $(docs_source_dir)
