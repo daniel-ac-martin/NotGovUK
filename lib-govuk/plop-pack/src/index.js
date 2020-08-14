@@ -1,13 +1,14 @@
 'use strict';
 
 const { extendGenerator, relativePath } = require('@not-govuk/plop-pack-internal');
+const plopPackInternal = require.resolve('@not-govuk/plop-pack-internal');
 
 const rel = relativePath(__dirname, '..', 'skel');
 
 const plopFunction = plop => {
   const parent = '@not-govuk/plop-pack-internal';
 
-  plop.load('@not-govuk/plop-pack-internal', undefined, { actionTypes: true, generators: false, helpers: true, partials: false });
+  plop.load(plopPackInternal, undefined, { actionTypes: true, generators: false, helpers: true, partials: false });
 
   plop.setGenerator(
     'app',
