@@ -1,11 +1,11 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
 
-import ReadMe from '../../../../../README.md';
+import Markdown from '../../../../../docs/about.md';
 
 const Page: FC<PageProps> = props => (
-  <ReadMe />
+  <Markdown />
 );
 
 export default Page;
-export const title = 'Home';
+export const title = 'About NotGovUK';
