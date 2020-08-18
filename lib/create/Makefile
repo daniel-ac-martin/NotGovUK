@@ -13,6 +13,10 @@ sources := $(wildcard \
 	$(source_dir)/.storybook/* \
 	$(source_dir)/apps/README.md \
 	$(source_dir)/components/README.md \
+	$(source_dir)/docs/about.md \
+	$(source_dir)/docs/contributing.md \
+	$(source_dir)/docs/get-started.md \
+	$(source_dir)/docs/working-on-your-project.md \
 	$(source_dir)/jest.config*.js \
 	$(source_dir)/lib/README.md \
 	$(source_dir)/pnpm-lock.yaml \
@@ -24,7 +28,11 @@ docs_source_dir = $(source_dir)/apps/$(docs_app)
 docs_target_dir = $(target_dir)/apps/docs
 docs_sources := $(wildcard \
 	$(docs_source_dir)/src/mdx.d.ts \
+	$(docs_source_dir)/src/common/page-wrap.tsx \
 	$(docs_source_dir)/src/common/pages/components.tsx \
+	$(docs_source_dir)/src/common/pages/contributing.tsx \
+	$(docs_source_dir)/src/common/pages/get-started.tsx \
+	$(docs_source_dir)/src/common/pages/working-on-your-project.tsx \
 	$(docs_source_dir)/src/common/pages/index.tsx \
 	$(docs_source_dir)/webpack.config*.js \
 )
@@ -51,7 +59,7 @@ $(dist_dir)/package.base.json: $(source_dir)/package.json
 
 $(build_dir)/package.app.json: $(plopfile) $(docs_source_dir)
 	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'docs' 'Documentation website.'
-	rm '$(docs_target_dir)/webpack.config'*.js '$(docs_target_dir)/src/common/pages/'*
+	rm '$(docs_target_dir)/webpack.config'*.js '$(docs_target_dir)/src/common/pages/'* '$(docs_target_dir)/src/common/page-wrap.tsx'
 	mv '$(docs_target_dir)/package.json' '$(@)'
 
 $(build_dir)/package.docs.json: $(docs_source_dir)/package.json
