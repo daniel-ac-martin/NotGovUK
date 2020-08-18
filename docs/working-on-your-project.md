@@ -1,11 +1,7 @@
-{{{fullName}}}
-===
+Working on your project
+=======================
 
-{{{description}}}
-
-
-Welcome to your new project
----------------------------
+(Ensure you have first [set up your project].)
 
 Your project is a monorepo managed via [pnpm]. You can build multiple
 packages from this one repository. Packages come in the following
@@ -89,6 +85,7 @@ possible to quickly set up Continuous Deployment (CD) for your
 documentation to [Netlify].
 
 
+[set up your project]: ./get-started
 [pnpm]: https://pnpm.js.org/
 [Applications]: https://not-govuk.netlify.app/
 [Libraries]: https://not-govuk.netlify.app/
