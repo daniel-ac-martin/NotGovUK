@@ -4,18 +4,13 @@ import { Page } from '@not-govuk/components';
 
 import './app.scss';
 
-export const PageWrap: FC<PageProps> = ({ routes, children }) => {
-  const compare = (a, b) => (
-    a.href > b.href
-    ? 1
-    : -1
-  );
-  const navigation = routes
-    .map(e => ({
-      href: e.href,
-      text: e.title
-    }))
-    .sort(compare);
+export const PageWrap: FC<PageProps> = ({ children }) => {
+  const navigation = [
+    { href: '/get-started', text: 'Get started' },
+    { href: '/styles', text: 'Styles' },
+    { href: '/components', text: 'Components' },
+    { href: '/contributing', text: 'Contributing' }
+  ];
 
   return (
     <Page
