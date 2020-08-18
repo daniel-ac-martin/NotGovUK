@@ -53,6 +53,10 @@ $(plopfile): $(source_dir)/plopfile.js
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
 
+$(docs_target_dir)/src/common/page-wrap.tsx: $(source_dir)/apps/govuk-docs/src/common/page-wrap.tsx
+	mkdir -p '$(@D)'
+	$(cp) '$(<)' '$(@D)'
+
 $(docs_target_dir)/%: $(dist_dir)/package.app.json
 	mkdir -p '$(@D)'
 	$(cp) '$(docs_source_dir)/$(*)' '$(@D)'
