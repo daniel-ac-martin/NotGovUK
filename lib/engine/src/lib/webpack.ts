@@ -9,7 +9,12 @@ import { NextHandleFunction } from 'connect';
 // Note: Inspired by https://github.com/cpeddecord/restify-webpack-middleware
 export const webpackMiddleware = webpackConfig => {
   const compiler = webpack(webpackConfig);
-  const dev: NextHandleFunction = webpackDevMiddleware(compiler, { publicPath: webpackConfig.output.publicPath, serverSideRender: true })
+  const devOptions = {
+    stats: webpackConfig.stats,
+    publicPath: webpackConfig.output.publicPath,
+    serverSideRender: true
+  };
+  const dev: NextHandleFunction = webpackDevMiddleware(compiler, devOptions)
   const hot: NextHandleFunction = webpackHotMiddleware(compiler, {})
 
   return {

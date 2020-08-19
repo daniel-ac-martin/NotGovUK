@@ -558,7 +558,7 @@ importers:
       sass: 1.26.10
       sass-loader: 8.0.2_fibers@5.0.0+sass@1.26.10
       webpack-manifest-plugin: 2.2.0
-      webpack-node-externals: 1.7.2
+      webpack-node-externals: 2.5.1
     optionalDependencies:
       react-docgen-typescript-loader: 3.7.2
     specifiers:
@@ -582,7 +582,7 @@ importers:
       sass: ^1.26.10
       sass-loader: ^8.0.2
       webpack-manifest-plugin: ^2.2.0
-      webpack-node-externals: ^1.7.2
+      webpack-node-externals: ^2.5.1
   packages/components:
     dependencies:
       '@not-govuk/back-link': 'link:../../components/back-link'
@@ -2991,8 +2991,6 @@ packages:
       '@mdx-js/react': 1.6.11
       loader-utils: 2.0.0
     dev: false
-    peerDependencies:
-      react: '*'
     resolution:
       integrity: sha512-yTauPE6EEoUnZ27U5ZklPhygilcAmrHlWWyUm9TShtObGYKzdedPSB9yFdGa6/0UzPdDSZLywcR83paIJvnXAg==
   /@mdx-js/loader/1.6.11_react@16.13.1:
@@ -15631,7 +15629,6 @@ packages:
     optional: true
     peerDependencies:
       typescript: '*'
-      webpack: '*'
     resolution:
       integrity: sha512-fNzUayyUGzSyoOl7E89VaPKJk9dpvdSgyXg81cUkwy0u+NBvkzQG3FC5WBIlXda0k/iaxS+PWi+OC+tUiGxzPA==
   /react-docgen-typescript-loader/3.7.2_typescript@3.9.7+webpack@4.43.0:
@@ -19165,10 +19162,10 @@ packages:
       webpack: 2 || 3 || 4
     resolution:
       integrity: sha512-9S6YyKKKh/Oz/eryM1RyLVDVmy3NSPV0JXMRhZ18fJsq+AwGxUY34X54VNwkzYcEmEkDwNxuEOboCZEebJXBAQ==
-  /webpack-node-externals/1.7.2:
+  /webpack-node-externals/2.5.1:
     dev: false
     resolution:
-      integrity: sha512-ajerHZ+BJKeCLviLUUmnyd5B4RavLF76uv3cs6KNuO8W+HuQaEs0y0L7o40NQxdPy5w0pcv8Ew7yPUAQG0UdCg==
+      integrity: sha512-RWxKGibUU5kuJT6JDYmXGa3QsZskqIaiBvZ2wBxHlJzWVJPOyBMnroXf23uxEHnj1rYS8jNdyUfrNAXJ2bANNw==
   /webpack-sources/1.4.3:
     dependencies:
       source-list-map: 2.0.1
