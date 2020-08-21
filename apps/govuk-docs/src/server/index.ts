@@ -7,32 +7,36 @@ import ErrorPage from '../common/error-page';
 import PageWrap from '../common/page-wrap';
 import pageLoader from '../common/page-loader';
 
-const assets = (
-  config.env === NodeEnv.Development
-    ? require('../../webpack.config')
-    : {
-      localPath: resolve(__dirname, '..', '..', 'dist', 'public'),
-      publicPath: '/public/',
-      entrypoints: require('../../dist/public/entrypoints.json')
-    }
-);
+const main = () => {
+  const assets = (
+    config.env === NodeEnv.Development && !config.ssrOnly
+      ? require('../../webpack.config')
+      : {
+        localPath: resolve(__dirname, '..', '..', 'dist', 'public'),
+        publicPath: '/public/',
+        entrypoints: require('../../dist/public/entrypoints.json')
+      }
+  );
 
-const app = engine({
-  AppWrap,
-  ErrorPage,
-  PageWrap,
-  Template,
-  assets,
-  env: config.env,
-  httpd: {
-    host: config.httpd.host,
-    port: config.httpd.port
-  },
-  mode: config.mode,
-  name: config.name,
-  pageLoader,
-  ssrOnly: config.ssrOnly
-});
+  return engine({
+    AppWrap,
+    ErrorPage,
+    PageWrap,
+    Template,
+    assets,
+    env: config.env,
+    httpd: {
+      host: config.httpd.host,
+      port: config.httpd.port
+    },
+    mode: config.mode,
+    name: config.name,
+    pageLoader,
+    ssrOnly: config.ssrOnly
+  });
+};
+
+let app = main();
 
 export const handler = (
   config.mode === Mode.Serverless
@@ -41,3 +45,26 @@ export const handler = (
 );
 
 export default app;
+
+if (module.hot) {
+  const restart = () => {
+    console.log('Restarting...');
+    app.then(
+      v => v.close(
+        () => app = main()
+      )
+    );
+  };
+
+  module.hot.accept([
+    '@not-govuk/engine',
+    './config',
+    '../../dist/public/entrypoints.json',
+    '../../webpack.config',
+    './template',
+    '../common/app-wrap',
+    '../common/error-page',
+    '../common/page-loader',
+    '../common/page-wrap'
+  ], restart);
+}
