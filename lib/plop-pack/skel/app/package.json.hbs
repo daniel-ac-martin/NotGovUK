@@ -13,7 +13,7 @@
     "package:serverless": "sls package",
     "clean": "rm -rf .serverless dist",
     "dev": "NODE_ENV=development node-hot --config webpack.config.server.js --fork | bunyan",
-    "dev:ssr": "SSR_ONLY=true node-hot --config webpack.config.server.js --fork --autoRestart | bunyan"
+    "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --config webpack.config.server.js --fork | bunyan"
   },
   "author": "{{{pkg 'author'}}}",
   "license": "{{{pkg 'license'}}}",

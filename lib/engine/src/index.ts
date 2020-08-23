@@ -1,5 +1,6 @@
-import serverless from 'serverless-http';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 import { ComponentType } from 'react';
+import serverless from 'serverless-http';
 import { Configuration as WebpackConfig } from 'webpack';
 import restify, { Router, errors } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
@@ -36,13 +37,8 @@ const isPreBuiltAssets = (v: Assets): v is PreBuiltAssets => !!(
 
 const isWebpackConfig = (v: Assets): v is WebpackConfig => !isPreBuiltAssets(v);
 
-export type EngineConfig = {
-  AppWrap: ComponentType<ApplicationProps>
-  ErrorPage: ComponentType<ErrorPageProps>
-  PageWrap: ComponentType<PageProps>
-  Template: ComponentType<TemplateProps>
+export type EngineStage1Options = {
   assets: Assets
-  apis?: Api[]
   env: NodeEnv
   httpd: {
     host: string
@@ -50,94 +46,143 @@ export type EngineConfig = {
   }
   mode: Mode
   name: string
-  pageLoader: PageLoader
   ssrOnly: boolean
 };
 
-export const engine = async (config: EngineConfig) => {
-  const webpackConfig = config.env === NodeEnv.Development && isWebpackConfig(config.assets) ? config.assets as WebpackConfig : undefined;
-  const preBuiltAssets = isPreBuiltAssets(config.assets) ? config.assets as PreBuiltAssets : undefined;
+export type EngineStage2Options = {
+  AppWrap: ComponentType<ApplicationProps>
+  ErrorPage: ComponentType<ErrorPageProps>
+  PageWrap: ComponentType<PageProps>
+  Template: ComponentType<TemplateProps>
+  apis?: Api[]
+  pageLoader: PageLoader
+};
+
+export const engine = async (options1: EngineStage1Options) => {
+  const webpackConfig = options1.env === NodeEnv.Development && isWebpackConfig(options1.assets) ? options1.assets as WebpackConfig : undefined;
+  const preBuiltAssets = isPreBuiltAssets(options1.assets) ? options1.assets as PreBuiltAssets : undefined;
   const publicPath = preBuiltAssets?.publicPath || webpackConfig.output.publicPath;
   const localAssetsPath = preBuiltAssets?.localPath || webpackConfig.output.path;
-  const pages = await gatherPages(config.pageLoader);
+  const { default: webpackMiddleware } = (
+    (webpackConfig && !options1.ssrOnly)
+      ? await import('./lib/webpack')
+      : { default: undefined }
+  );
+  const webpack = webpackMiddleware && webpackMiddleware(webpackConfig);
+  const port = (
+    webpack
+      ? options1.httpd.port + 1
+      : options1.httpd.port
+  );
 
-  const react = reactRenderer(
-    config.AppWrap,
-    config.PageWrap,
-    config.ErrorPage,
-    config.Template,
-    {
-      assetsPath: publicPath,
-      entrypoints: preBuiltAssets?.entrypoints,
-      pages,
-      rootId: 'root',
-      ssrOnly: config.ssrOnly
+  if (webpack) {
+    // Set up extra Restify instance for proxy
+    const httpd = restify.createServer({
+      name: `${options1.name}-asset-proxy`
     });
-  const formatHTML = react.formatHTML;
+    const proxyMiddleware = createProxyMiddleware({
+      target: `http://localhost:${port}`,
+      changeOrigin: true
+    });
+    const close = httpd.close.bind(httpd);
 
-  // Set up Restify instance
-  const httpd = restify.createServer({
-    name: config.name,
-    formatters: {
-      'application/xhtml+xml; q=0.2': formatHTML,
-      'text/html; q=0.2': formatHTML
-    },
-  });
-
-  httpd.use(react.renderer);
-
-  // Serve static assets built by webpack
-  const publicPaths = publicPath + '*';
-  const servePublicFiles = restify.plugins.serveStaticFiles(localAssetsPath);
-
-  if (webpackConfig && !config.ssrOnly) {
-    const { default: webpackMiddleware } = await import('./lib/webpack');
-    const webpack = webpackMiddleware(webpackConfig);
-
+    // Serve assets built by webpack
     httpd.pre(webpack.serveFiles);
     // Endpoint for HMR websocket
     httpd.get(webpack.hotPath, webpack.hot);
+    // Proxy everything else
+    httpd.get('/*', proxyMiddleware);
+    httpd.post('/*', proxyMiddleware);
+
+    // Patch close to handle the hot middleware
+    httpd.close = function (cb) {
+      webpack.hot.close();
+      return close(cb);
+    };
+
+    httpd.listen(options1.httpd.port, options1.httpd.host, () => {
+      httpd.log.info('%s listening at %s', httpd.name, httpd.url);
+    });
   }
 
-  httpd.head(publicPaths, servePublicFiles);
-  httpd.get(publicPaths, servePublicFiles);
+  return async (options2: EngineStage2Options) => {
+    const pages = await gatherPages(options2.pageLoader);
 
-  // Serve the pages as HTML
-  httpd.serve('/', pageRoutes(pages))
-
-  // Serve the APIs as a normal Restify server would
-  config.apis && config.apis.forEach(e => (
-    httpd.serveAPI(e.path, e.router)
-  ));
-
-  let r;
-
-  switch (config.mode) {
-    case Mode.Serverless:
-      // Run under the Serverless framework
-      r = serverless(httpd);
-      break;
-    case Mode.StaticGenerator:
-    case Mode.Server:
-      // Run as a classical server
-      r = httpd.listen(config.httpd.port, config.httpd.host, () => {
-        httpd.log.info('%s listening at %s', httpd.name, httpd.url);
+    const react = reactRenderer(
+      options2.AppWrap,
+      options2.PageWrap,
+      options2.ErrorPage,
+      options2.Template,
+      {
+        assetsPath: publicPath,
+        entrypoints: preBuiltAssets?.entrypoints,
+        pages,
+        rootId: 'root',
+        ssrOnly: options1.ssrOnly
       });
+    const formatHTML = react.formatHTML;
 
-      if (config.mode === Mode.StaticGenerator) {
-        r = false;
-        // Generate a static site
-        throw new Error('WRITEME!');
-        httpd.close();
-        r = true;
-      }
-      break;
-    default:
-      throw new Error('Invalid mode');
-      break;
-  }
+    // Set up Restify instance
+    const httpd = restify.createServer({
+      name: options1.name,
+      formatters: {
+        'application/xhtml+xml; q=0.2': formatHTML,
+        'text/html; q=0.2': formatHTML
+      },
+    });
 
-  return r;
+    httpd.use(react.renderer);
+
+    // Serve static assets built by webpack
+    const publicPaths = publicPath + '*';
+    const servePublicFiles = restify.plugins.serveStaticFiles(localAssetsPath);
+
+    if (webpack) {
+      // Serve assets built by webpack
+      httpd.pre(webpack.serveFiles);
+    }
+
+    httpd.head(publicPaths, servePublicFiles);
+    httpd.get(publicPaths, servePublicFiles);
+
+    // Serve the pages as HTML
+    httpd.serve('/', pageRoutes(pages))
+
+    // Serve the APIs as a normal Restify server would
+    options2.apis && options2.apis.forEach(e => (
+      httpd.serveAPI(e.path, e.router)
+    ));
+
+    let r;
+
+    switch (options1.mode) {
+      case Mode.Serverless:
+        // Run under the Serverless framework
+        r = serverless(httpd);
+        break;
+      case Mode.StaticGenerator:
+      case Mode.Server:
+        // Run as a classical server
+        r = httpd;
+        httpd.listen(port, options1.httpd.host, () => {
+          httpd.log.info('%s listening at %s', httpd.name, httpd.url);
+        });
+
+        if (options1.mode === Mode.StaticGenerator) {
+          r = false;
+          // Generate a static site
+          throw new Error('WRITEME!');
+          httpd.close();
+          r = true;
+        }
+        break;
+      default:
+        throw new Error('Invalid mode');
+        break;
+    }
+
+    return r;
+  };
 };
 
 export default engine;
