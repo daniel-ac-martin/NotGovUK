@@ -1,5 +1,6 @@
 import _restify, { plugins, ServerOptions as _ServerOptions } from 'restify';
 import restifyBunyanLogger from 'restify-bunyan-logger';
+import stoppable from 'stoppable';
 import { liveness } from './middleware/health-check';
 import { htmlByDefault } from './middleware/html-by-default';
 import { preventClickjacking } from './middleware/prevent-clickjacking';
@@ -9,6 +10,7 @@ import { installServeAPI } from './lib/serve-api';
 
 export type ServerOptions = _ServerOptions & {
   bodyParser?: plugins.BodyParserOptions
+  grace?: number
   liveness?: string
   logger?: ILoggerOptions
   queryParser?: plugins.QueryParserOptions
@@ -24,6 +26,7 @@ export const createServer = (options: ServerOptions ) => {
 
   const name = options.name || 'restify';
   const log = options.log || logger({ name, ...options.logger});
+  const grace = options.grace || 25000;
   const formatBinary = restify.formatters['application/octet-stream; q=0.2'];
   const formatText = restify.formatters['text/plain; q=0.3'];
   const acceptable = [
@@ -64,6 +67,7 @@ export const createServer = (options: ServerOptions ) => {
   httpd.log = log;
 
   installServeAPI(httpd);
+  stoppable(httpd, grace);
 
   httpd.pre(restify.plugins.pre.sanitizePath());
   httpd.pre(htmlByDefault(httpd));
