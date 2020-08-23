@@ -6,6 +6,8 @@ import etag from 'etag';
 import { Response } from 'express-serve-static-core';
 import { NextHandleFunction } from 'connect';
 
+type HotHandleFunction = NextHandleFunction & webpackHotMiddleware.EventStream;
+
 // Note: Inspired by https://github.com/cpeddecord/restify-webpack-middleware
 export const webpackMiddleware = webpackConfig => {
   const compiler = webpack(webpackConfig);
@@ -15,7 +17,7 @@ export const webpackMiddleware = webpackConfig => {
     serverSideRender: true
   };
   const dev: NextHandleFunction = webpackDevMiddleware(compiler, devOptions)
-  const hot: NextHandleFunction = webpackHotMiddleware(compiler, {})
+  const hot: HotHandleFunction = webpackHotMiddleware(compiler, {})
 
   return {
     serveFiles: (req, res, next) => {
