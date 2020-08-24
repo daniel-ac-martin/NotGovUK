@@ -8,8 +8,8 @@ do this but does not provide Server-Side Rendering (SSR). You will also
 need to ensure that you provide an instance of [react-router].
 
 As such, we suggest that you use our specially designed tech stack for
-this purpose. You can start a brand new project using the following
-steps.
+this purpose. You can start a brand new project or prototype using the
+following steps.
 
 
 ### 1. Set up your repository
@@ -35,8 +35,20 @@ npm init @not-govuk
 
 ### 3. Answer the interactive prompts
 
-Our project generator / initialiser will ask you some questions about
-your new project.
+Our generator / initialiser will ask you some questions about your new
+project.
+
+The most important choice is whether to start a new project or
+a prototype:
+- **Prototype**
+  A simple stand-alone application. Use this if you just want to play
+  around with the components or you want to build a prototype prior to
+  starting a full project.
+  (If you already have a project, you might prefer to run
+  `npm run create:app` instead.)
+- **Project**
+  A monorepo designed to handle an entire project including multiple
+  applications, and reusable libraries and components.
 
 
 ### 4. Commit and push your new project

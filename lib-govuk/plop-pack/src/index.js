@@ -6,7 +6,7 @@ const plopPackInternal = require.resolve('@not-govuk/plop-pack-internal');
 const rel = relativePath(__dirname, '..', 'skel');
 
 const plopFunction = plop => {
-  const parent = plopPackInternal;
+  const parent = require.resolve('@not-govuk/plop-pack-internal');
 
   plop.load(plopPackInternal, undefined, { actionTypes: true, generators: false, helpers: true, partials: false });
 

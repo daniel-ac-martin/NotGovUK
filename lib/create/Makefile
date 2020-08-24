@@ -47,6 +47,7 @@ plopfile = $(target_dir)/plopfile.js
 
 all: \
 	$(dist_dir)/skel.tar \
+	$(dist_dir)/skel-prototype.tar \
 	$(dist_dir)/package.base.json
 
 clean:
@@ -57,8 +58,16 @@ $(dist_dir)/package.base.json: $(source_dir)/package.json
 	$(strip_package) '$(<)' > '$(@)'
 	$(patch_package) '$(@)'
 
-$(build_dir)/package.app.json: $(plopfile) $(docs_source_dir)
+$(build_dir)/skel-prototype/package.json: $(plopfile)
 	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'docs' 'Documentation website.'
+	$(cp) -r '$(target_dir)/apps/docs/' '$(@D)'
+	rm '$(@D)/README.md' '$(@D)/tsconfig.json'
+
+$(build_dir)/skel-prototype/tsconfig.json: $(source_dir)/tsconfig.json $(build_dir)/skel-prototype/package.json
+	mkdir -p '$(@D)'
+	$(cp) -r '$(<)' '$(@D)'
+
+$(build_dir)/package.app.json: $(build_dir)/skel-prototype/package.json $(docs_source_dir)
 	rm '$(docs_target_dir)/webpack.config'*.js '$(docs_target_dir)/src/common/pages/'* '$(docs_target_dir)/src/common/page-wrap.tsx'
 	mv '$(docs_target_dir)/package.json' '$(@)'
 
@@ -71,6 +80,10 @@ $(dist_dir)/skel.tar: $(skel_deps)
 	mkdir -p '$(@D)'
 	sed -i 's/$(docs_app)/docs/g' 'build/skel/.github/workflows/deploy-docs.yml'
 	cd 'build/' && tar -cf '../$(@)' 'skel/'
+
+$(dist_dir)/skel-prototype.tar: $(build_dir)/skel-prototype/package.json $(build_dir)/skel-prototype/tsconfig.json
+	mkdir -p '$(@D)'
+	cd 'build/' && tar -cf '../$(@)' 'skel-prototype/'
 
 $(docs_target_dir)/package.json: $(build_dir)/package.app.json $(build_dir)/package.docs.json
 	jq -s '.[0] * .[1]' $(^) > '$(@)'
