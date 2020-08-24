@@ -20,12 +20,20 @@ docs_targets = \
 skel_deps = \
 	$(patsubst $(source_dir)/%,$(target_dir)/%,$(sources)) \
 	$(docs_targets)
+proto_target_dir = $(build_dir)/skel-prototype
+skel_proto_deps = \
+	$(proto_target_dir)/src/common/app.scss \
+	$(proto_target_dir)/src/common/loading-page.tsx \
+	$(proto_target_dir)/src/common/page-wrap.tsx \
+	$(proto_target_dir)/src/common/error-page.tsx \
+	$(proto_target_dir)/src/server/template.tsx
 plopfile = $(build_dir)/plopfile.js
 
 .PHONY: all clean debug
 
 all: \
 	$(dist_dir)/skel.tar \
+	$(dist_dir)/skel-prototype.tar \
 	$(dist_dir)/package.base.json \
 	$(dist_dir)/package.app.json
 
@@ -49,6 +57,10 @@ $(dist_dir)/skel.tar: $(skel_deps)
 	mkdir -p '$(@D)'
 	cd 'build/' && tar -cf '../$(@)' 'skel/'
 
+$(dist_dir)/skel-prototype.tar: $(skel_proto_deps)
+	mkdir -p '$(@D)'
+	cd 'build/' && tar -cf '../$(@)' 'skel-prototype/'
+
 $(plopfile): $(source_dir)/plopfile.js
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
@@ -58,6 +70,10 @@ $(docs_target_dir)/src/common/page-wrap.tsx: $(source_dir)/apps/govuk-docs/src/c
 	$(cp) '$(<)' '$(@D)'
 
 $(docs_target_dir)/%: $(dist_dir)/package.app.json
+	mkdir -p '$(@D)'
+	$(cp) '$(docs_source_dir)/$(*)' '$(@D)'
+
+$(proto_target_dir)/%: $(dist_dir)/package.app.json
 	mkdir -p '$(@D)'
 	$(cp) '$(docs_source_dir)/$(*)' '$(@D)'
 
