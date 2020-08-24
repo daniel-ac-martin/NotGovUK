@@ -34,7 +34,7 @@ docs_sources := $(wildcard \
 	$(docs_source_dir)/src/common/pages/get-started.tsx \
 	$(docs_source_dir)/src/common/pages/working-on-your-project.tsx \
 	$(docs_source_dir)/src/common/pages/index.tsx \
-	$(docs_source_dir)/webpack.config*.js \
+	$(docs_source_dir)/webpack.config.js \
 )
 skel_deps = \
 	$(patsubst $(source_dir)/%,$(target_dir)/%,$(sources)) \
@@ -68,7 +68,7 @@ $(build_dir)/skel-prototype/tsconfig.json: $(source_dir)/tsconfig.json $(build_d
 	$(cp) -r '$(<)' '$(@D)'
 
 $(build_dir)/package.app.json: $(build_dir)/skel-prototype/package.json $(docs_source_dir)
-	rm '$(docs_target_dir)/webpack.config'*.js '$(docs_target_dir)/src/common/pages/'* '$(docs_target_dir)/src/common/page-wrap.tsx'
+	rm '$(docs_target_dir)/webpack.config.js' '$(docs_target_dir)/src/common/pages/'* '$(docs_target_dir)/src/common/page-wrap.tsx'
 	mv '$(docs_target_dir)/package.json' '$(@)'
 
 $(build_dir)/package.docs.json: $(docs_source_dir)/package.json

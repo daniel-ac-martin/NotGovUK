@@ -7,13 +7,11 @@
   "scripts": {
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:assets && npm run build:server",
-    "build:assets": "webpack",
-    "build:server": "webpack --config webpack.config.server.js",
+    "build": "webpack",
     "package:serverless": "sls package",
     "clean": "rm -rf .serverless dist",
-    "dev": "NODE_ENV=development node-hot --config webpack.config.server.js --fork | bunyan",
-    "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --config webpack.config.server.js --fork | bunyan"
+    "dev": "NODE_ENV=development node-hot --fork | bunyan",
+    "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --fork | bunyan"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "MIT",
@@ -38,6 +36,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "serverless": "^1.75.1",
+    "typescript": "^3.9.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",

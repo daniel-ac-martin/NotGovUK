@@ -59,8 +59,20 @@ export type EngineStage2Options = {
 };
 
 export const engine = async (options1: EngineStage1Options) => {
-  const webpackConfig = options1.env === NodeEnv.Development && isWebpackConfig(options1.assets) ? options1.assets as WebpackConfig : undefined;
-  const preBuiltAssets = isPreBuiltAssets(options1.assets) ? options1.assets as PreBuiltAssets : undefined;
+  const webpackConfig: WebpackConfig = (
+    options1.env === NodeEnv.Development && isWebpackConfig(options1.assets)
+      ? (
+        Array.isArray(options1.assets)
+          ? options1.assets.filter(e => e.target !== 'node')[0]
+          : options1.assets
+      )
+      : undefined
+  );
+  const preBuiltAssets: PreBuiltAssets = (
+    isPreBuiltAssets(options1.assets)
+      ? options1.assets
+      : undefined
+  );
   const publicPath = preBuiltAssets?.publicPath || webpackConfig.output.publicPath;
   const localAssetsPath = preBuiltAssets?.localPath || webpackConfig.output.path;
   const { default: webpackMiddleware } = (
