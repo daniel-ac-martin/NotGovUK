@@ -33,7 +33,7 @@ module.exports = plop => {
         },
         {
           type: 'message',
-          content: 'Done. (You may want to commit this with `git add . && commit -m \'Initial commit\'`.)'
+          content: 'Done. (You may want to commit this with `git add . && git commit -m \'Initial commit\'`.)'
         }
       ]
     }, -1, 1)
@@ -56,7 +56,7 @@ module.exports = plop => {
         },
         {
           type: 'message',
-          content: 'Done. (You may want to commit this with `git add . && commit -m \'Initial commit\'`.)'
+          content: 'Done. (You may want to commit this with `git add . && git commit -m \'Initial commit\'`.)'
         }
       ]
     }, -1, 1)
