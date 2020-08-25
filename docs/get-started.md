@@ -57,7 +57,8 @@ Run the following commands to push up the first version of your new
 project to your remote code repository:
 
 ```shell
-git commit -am 'Initial commit'
+git add .
+git commit -m 'Initial commit'
 git push -u origin master
 ```
 
