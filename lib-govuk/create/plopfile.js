@@ -33,7 +33,7 @@ module.exports = plop => {
         },
         {
           type: 'message',
-          content: 'Done. (You may want to commit this with `git add . && git commit -m \'Initial commit\'`.)'
+          content: 'Done. (You can install dependencies with `pnpm i` and you may then want to commit with `git add . && git commit -m \'Initial commit\'`. Also, look at your new README file.)'
         }
       ]
     }, -1, 1)
@@ -56,7 +56,7 @@ module.exports = plop => {
         },
         {
           type: 'message',
-          content: 'Done. (You may want to commit this with `git add . && git commit -m \'Initial commit\'`.)'
+          content: 'Done. (You may want to commit this with `git add . && git commit -m \'Initial commit\'`. Also, look at your new README file.)'
         }
       ]
     }, -1, 1)
