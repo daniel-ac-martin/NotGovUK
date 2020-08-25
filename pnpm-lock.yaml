@@ -19,6 +19,7 @@ importers:
       '@storybook/theming': 6.0.0-rc.11_react-dom@16.13.1+react@16.13.1
       '@types/jest': 26.0.5
       chromatic: 5.0.0
+      enzyme-to-json: 3.5.0
       jest: 26.1.0
       plop: 2.7.3
       react: 16.13.1
@@ -49,6 +50,7 @@ importers:
       '@storybook/theming': ^6.0.0-rc.11
       '@types/jest': ^26.0.3
       chromatic: ^5.0.0
+      enzyme-to-json: ^3.5.0
       jest: ^26.1.0
       plop: ^2.7.3
       react: ^16.13.1
@@ -3615,7 +3617,6 @@ packages:
       regenerator-runtime: 0.13.5
     dev: true
     peerDependencies:
-      '@types/react': '*'
       react: '*'
       react-dom: '*'
     resolution:
@@ -3881,8 +3882,6 @@ packages:
       react-textarea-autosize: 8.2.0_react@16.13.1
       ts-dedent: 1.1.1
     dev: true
-    peerDependencies:
-      '@types/react': '*'
     resolution:
       integrity: sha512-x8faRf5o05Hy6oPe819CTMoknvssrtayoVkcB85IOkOrobAA0paX8YMp4aNlBXYeGi0PqGauV4s2ylS/KmUQug==
   /@storybook/components/6.0.0-rc.11_@types+react@16.9.43:
@@ -8740,6 +8739,17 @@ packages:
       object-is: 1.1.2
     resolution:
       integrity: sha512-hGA3i1so8OrYOZSM9whlkNmVHOicJpsjgTzC+wn2JMJXhq1oO4kA4bJ5MsfzSIcC71aLDKzJ6gZpIxrqt3QTAQ==
+  /enzyme-to-json/3.5.0:
+    dependencies:
+      lodash: 4.17.20
+      react-is: 16.13.1
+    dev: true
+    engines:
+      node: '>=6.0.0'
+    peerDependencies:
+      enzyme: ^3.4.0
+    resolution:
+      integrity: sha512-clusXRsiaQhG7+wtyc4t7MU8N3zCOgf4eY9+CeSenYzKlFST4lxerfOvnWd4SNaToKhkuba+w6m242YpQOS7eA==
   /enzyme-to-json/3.5.0_enzyme@3.11.0:
     dependencies:
       enzyme: 3.11.0
@@ -13137,7 +13147,6 @@ packages:
     resolution:
       integrity: sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
   /lodash/4.17.20:
-    dev: false
     resolution:
       integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
   /log-symbols/1.0.2:
@@ -15992,7 +16001,6 @@ packages:
       use-latest: 1.1.0_react@16.13.1
     dev: true
     peerDependencies:
-      '@types/react': '*'
       react: ^16.8.0
     resolution:
       integrity: sha512-grajUlVbkx6VdtSxCgzloUIphIZF5bKr21OYMceWPKkniy7H0mRAT/AXPrRtObAe+zUePnNlBwUc4ivVjUGIjw==
