@@ -12,6 +12,7 @@ sources := $(wildcard \
 	$(source_dir)/.npm/* \
 	$(source_dir)/.storybook/* \
 	$(source_dir)/apps/README.md \
+	$(source_dir)/babel.config.js \
 	$(source_dir)/components/README.md \
 	$(source_dir)/docs/about.md \
 	$(source_dir)/docs/contributing.md \
