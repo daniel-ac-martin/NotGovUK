@@ -56,7 +56,7 @@ export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock
     method === 'get'
       ? location.query
       : location.state
-  );
+  ) || {};
 
   const initialErrors = {};
   const initialTouched = { ...submittedValues };

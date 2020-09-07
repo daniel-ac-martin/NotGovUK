@@ -77,18 +77,18 @@ export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, clas
         {children}
       </div>
       <ul role="tablist" className={classes('tabs')}>
-        <li role="presentation" className={classes('tab-item', [showing.html && 'current'])}><Link to={toggle.html}>HTML</Link></li>
-        { source ? (<li role="presentation" className={classes('tab-item', [showing.react && 'current'])}><Link to={toggle.react}>React</Link></li>) : null}
+        <li role="presentation" className={classes('tab-item', [showing.html && 'current'])}><Link to={toggle.html} role="tab">HTML</Link></li>
+        { source ? (<li role="presentation" className={classes('tab-item', [showing.react && 'current'])}><Link to={toggle.react} role="tab">React</Link></li>) : null}
       </ul>
       { showing.html ? (
-        <div className={classes('code')}>
+        <div className={classes('code')} role="tabpanel">
           <pre>
             <code className="language-html" dangerouslySetInnerHTML={{__html: html}} />
           </pre>
         </div>
       ) : null}
       { showing.react && source ? (
-        <div className={classes('code')}>
+        <div className={classes('code')} role="tabpanel">
           <pre>
             <code className="language-jsx" dangerouslySetInnerHTML={{__html: react}} />
           </pre>
