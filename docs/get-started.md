@@ -50,7 +50,7 @@ a prototype:
   A monorepo designed to handle an entire project including multiple
   applications, and reusable libraries and components.
 
-If you create a new project you should pull down dependencies at this
+If you create a new **project** you should pull down dependencies at this
 point in order to update your lock-file (though you will first need to
 [install pnpm]):
 
