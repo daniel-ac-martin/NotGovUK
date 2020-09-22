@@ -154,9 +154,6 @@ mandatory prior to merging:
 - 'UI Tests' & 'UI Review' (which protect you against visual regressions)
 
 
--- Daniel Martin, August 2020.
-
-
 [Webpack]: https://webpack.js.org/
 [Sass]: https://sass-lang.com/
 [Create React App]: https://create-react-app.dev/

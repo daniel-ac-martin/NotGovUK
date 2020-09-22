@@ -117,9 +117,6 @@ Why GitHub Actions?
 WRITEME.
 
 
--- Daniel Martin (with contributions from [Robin Knipe]) (last updated August 2020).
-
-
 [GOV.UK Design System]: https://design-system.service.gov.uk/
 [React]: https://reactjs.org/
 [Nunjucks]: https://mozilla.github.io/nunjucks/
