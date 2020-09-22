@@ -51,7 +51,8 @@ a prototype:
   applications, and reusable libraries and components.
 
 If you create a new project you should pull down dependencies at this
-point in order to update your lock-file:
+point in order to update your lock-file (though you will first need to
+[install pnpm]):
 
 ```shell
 pnpm install
@@ -162,6 +163,7 @@ mandatory prior to merging:
 [react-router]: https://reactrouter.com/
 [GitHub]: https://github.com/
 [GitHub Actions]: https://github.com/features/actions
+[install pnpm]: https://pnpm.js.org/en/installation
 [Working on your project]: ./working-on-your-project
 [Chromatic]: https://www.chromatic.com/
 [log in to Chromatic]: https://www.chromatic.com/start
