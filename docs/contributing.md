@@ -89,9 +89,6 @@ npm run create:component
 See also: [Working on your project]
 
 
--- Daniel Martin, December 2019 (updated August 2020).
-
-
 [Pull requests]: https://github.com/daniel-ac-martin/NotGovUK/pulls
 [open an issue]: https://github.com/daniel-ac-martin/NotGovUK/issues/new
 [pull request]: https://github.com/daniel-ac-martin/NotGovUK/pulls
