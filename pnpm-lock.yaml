@@ -388,6 +388,28 @@ importers:
       jest: ^26.1.0
       ts-jest: ^26.1.1
       typescript: ^3.9.2
+  components/warning-text:
+    dependencies:
+      '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
+      '@not-govuk/sass-base': 'link:../../lib-govuk/sass-base'
+      govuk-frontend: 3.9.1
+    devDependencies:
+      '@mdx-js/react': 1.6.11
+      '@not-govuk/component-test-helpers': 'link:../../lib/component-test-helpers'
+      '@types/react': 16.9.46
+      jest: 26.1.0
+      ts-jest: 26.1.3_jest@26.1.0+typescript@3.9.7
+      typescript: 3.9.7
+    specifiers:
+      '@mdx-js/react': ^1.6.5
+      '@not-govuk/component-helpers': 'workspace:^0.1.0'
+      '@not-govuk/component-test-helpers': 'workspace:^0.1.0'
+      '@not-govuk/sass-base': 'workspace:^0.1.26'
+      '@types/react': ^16.9.35
+      govuk-frontend: ^3.7.0
+      jest: ^26.1.0
+      ts-jest: ^26.1.1
+      typescript: ^3.9.2
   lib-govuk/create:
     dependencies:
       '@not-govuk/create-internal': 'link:../../lib/create'
@@ -814,6 +836,7 @@ importers:
       '@not-govuk/route-utils': 'link:../../lib/route-utils'
       '@not-govuk/sass-base': 'link:../../lib-govuk/sass-base'
       '@not-govuk/tag': 'link:../../components/tag'
+      '@not-govuk/warning-text': 'link:../../components/warning-text'
       formik: 2.1.5
       qs: 6.9.4
       url-parse: 1.4.7
@@ -840,6 +863,7 @@ importers:
       '@not-govuk/route-utils': 'workspace:^0.1.0'
       '@not-govuk/sass-base': 'workspace:^0.1.0'
       '@not-govuk/tag': 'workspace:^0.1.0'
+      '@not-govuk/warning-text': 'workspace:^0.1.26'
       '@storybook/addon-knobs': ^6.0.0-rc.11
       '@types/jest': ^25.2.1
       '@types/node': ^13.13.4
