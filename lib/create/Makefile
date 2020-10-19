@@ -64,9 +64,9 @@ $(build_dir)/skel-prototype/package.json: $(plopfile)
 	$(cp) -r '$(target_dir)/apps/docs/' '$(@D)'
 	rm '$(@D)/README.md' '$(@D)/tsconfig.json'
 
-$(build_dir)/skel-prototype/tsconfig.json: $(source_dir)/tsconfig.json $(build_dir)/skel-prototype/package.json
+$(build_dir)/skel-prototype/tsconfig.json: $(source_dir)/tsconfig.json $(source_dir)/tsconfig.webpack.json $(build_dir)/skel-prototype/package.json
 	mkdir -p '$(@D)'
-	$(cp) -r '$(<)' '$(@D)'
+	jq -s '.[0].compilerOptions * .[1].compilerOptions | { compilerOptions: . }' '$(<)' '$(word 2,$^)' > '$(@)'
 
 $(build_dir)/package.app.json: $(build_dir)/skel-prototype/package.json $(docs_source_dir)
 	rm '$(docs_target_dir)/webpack.config.js' '$(docs_target_dir)/src/common/pages/'* '$(docs_target_dir)/src/common/page-wrap.tsx'
