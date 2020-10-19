@@ -8,6 +8,7 @@ export { default as DateInput } from './date-input';
 export { default as Details } from './details';
 export { default as FormField } from './form-field';
 export { default as PageFooter } from './page-footer';
+export { default as Panel } from '@not-govuk/panel';
 export { default as PhaseBanner } from './phase-banner';
 export { default as Radios } from './radios';
 export { default as Select } from './select';
