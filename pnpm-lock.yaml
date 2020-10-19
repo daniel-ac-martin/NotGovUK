@@ -25,7 +25,7 @@ importers:
       '@types/jest': 26.0.5
       babel-jest: 26.3.0_@babel+core@7.11.4
       babel-plugin-transform-class-properties: 6.24.1
-      chromatic: 5.0.0
+      chromatic: 5.0.0_@babel+core@7.11.4
       enzyme: 3.11.0
       enzyme-adapter-react-16: 1.15.3_df2dc313d8031f8c2dbd009d86ca7fc7
       enzyme-to-json: 3.5.0_enzyme@3.11.0
@@ -293,6 +293,28 @@ importers:
       '@not-govuk/component-test-helpers': 'workspace:^0.1.0'
       '@not-govuk/sass-base': 'workspace:^0.1.0'
       '@not-govuk/tag': 'workspace:^0.1.0'
+      '@types/react': ^16.9.35
+      govuk-frontend: ^3.7.0
+      jest: ^26.1.0
+      ts-jest: ^26.1.1
+      typescript: ^3.9.2
+  components/panel:
+    dependencies:
+      '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
+      '@not-govuk/sass-base': 'link:../../lib-govuk/sass-base'
+      govuk-frontend: 3.9.1
+    devDependencies:
+      '@mdx-js/react': 1.6.11
+      '@not-govuk/component-test-helpers': 'link:../../lib/component-test-helpers'
+      '@types/react': 16.9.46
+      jest: 26.1.0
+      ts-jest: 26.1.3_jest@26.1.0+typescript@3.9.7
+      typescript: 3.9.7
+    specifiers:
+      '@mdx-js/react': ^1.6.5
+      '@not-govuk/component-helpers': 'workspace:^0.1.0'
+      '@not-govuk/component-test-helpers': 'workspace:^0.1.0'
+      '@not-govuk/sass-base': 'workspace:^0.1.26'
       '@types/react': ^16.9.35
       govuk-frontend: ^3.7.0
       jest: ^26.1.0
@@ -765,6 +787,7 @@ importers:
       '@not-govuk/back-link': 'link:../../components/back-link'
       '@not-govuk/forms': 'link:../../lib/forms'
       '@not-govuk/link': 'link:../../components/link'
+      '@not-govuk/panel': 'link:../../components/panel'
       '@not-govuk/route-utils': 'link:../../lib/route-utils'
       '@not-govuk/sass-base': 'link:../../lib-govuk/sass-base'
       '@not-govuk/tag': 'link:../../components/tag'
@@ -789,6 +812,7 @@ importers:
       '@not-govuk/back-link': 'workspace:^0.1.0'
       '@not-govuk/forms': 'workspace:^0.1.0'
       '@not-govuk/link': 'workspace:^0.1.0'
+      '@not-govuk/panel': 'workspace:^0.1.26'
       '@not-govuk/route-utils': 'workspace:^0.1.0'
       '@not-govuk/sass-base': 'workspace:^0.1.0'
       '@not-govuk/tag': 'workspace:^0.1.0'
@@ -1583,14 +1607,6 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-lY6kdGpWHvjoe2vk4WrAapEuBR69EMxZl+RoGRhrFGNYVK8mOPAW8VfbT/ZgrFbXlDNiiaxQnAtgVCZ6jv30EA==
-  /@babel/plugin-syntax-jsx/7.10.4:
-    dependencies:
-      '@babel/helper-plugin-utils': 7.10.4
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-KCg9mio9jwiARCB7WAcQ7Y1q+qicILjoK8LP/VkPkEKaf5dkaZZK1EcTe91a3JJlZ3qy6L5s9X52boEYi8DM9g==
   /@babel/plugin-syntax-jsx/7.10.4_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -2225,14 +2241,6 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-cYmQBW1pXrqBte1raMkAulXmi7rjg3VI6ZLg9QIic8Hq7BtYXaWuZSxsr2siOMI6SWwpxjWfnwhTUrd7JlAV7g==
-  /@babel/plugin-transform-react-display-name/7.10.4:
-    dependencies:
-      '@babel/helper-plugin-utils': 7.10.4
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-Zd4X54Mu9SBfPGnEcaGcOrVAYOtjT2on8QZkLKEq1S/tHexG39d9XXGZv19VfRrDjPJzFmPfTAqOQS1pfFOujw==
   /@babel/plugin-transform-react-display-name/7.10.4_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -2251,16 +2259,6 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-Zd4X54Mu9SBfPGnEcaGcOrVAYOtjT2on8QZkLKEq1S/tHexG39d9XXGZv19VfRrDjPJzFmPfTAqOQS1pfFOujw==
-  /@babel/plugin-transform-react-jsx-development/7.10.4:
-    dependencies:
-      '@babel/helper-builder-react-jsx-experimental': 7.10.5
-      '@babel/helper-plugin-utils': 7.10.4
-      '@babel/plugin-syntax-jsx': 7.10.4
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-RM3ZAd1sU1iQ7rI2dhrZRZGv0aqzNQMbkIUCS1txYpi9wHQ2ZHNjo5TwX+UD6pvFW4AbWqLVYvKy5qJSAyRGjQ==
   /@babel/plugin-transform-react-jsx-development/7.10.4_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -2283,15 +2281,6 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-RM3ZAd1sU1iQ7rI2dhrZRZGv0aqzNQMbkIUCS1txYpi9wHQ2ZHNjo5TwX+UD6pvFW4AbWqLVYvKy5qJSAyRGjQ==
-  /@babel/plugin-transform-react-jsx-self/7.10.4:
-    dependencies:
-      '@babel/helper-plugin-utils': 7.10.4
-      '@babel/plugin-syntax-jsx': 7.10.4
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-yOvxY2pDiVJi0axdTWHSMi5T0DILN+H+SaeJeACHKjQLezEzhLx9nEF9xgpBLPtkZsks9cnb5P9iBEi21En3gg==
   /@babel/plugin-transform-react-jsx-self/7.10.4_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -2312,15 +2301,6 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-yOvxY2pDiVJi0axdTWHSMi5T0DILN+H+SaeJeACHKjQLezEzhLx9nEF9xgpBLPtkZsks9cnb5P9iBEi21En3gg==
-  /@babel/plugin-transform-react-jsx-source/7.10.5:
-    dependencies:
-      '@babel/helper-plugin-utils': 7.10.4
-      '@babel/plugin-syntax-jsx': 7.10.4
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-wTeqHVkN1lfPLubRiZH3o73f4rfon42HpgxUSs86Nc+8QIcm/B9s8NNVXu/gwGcOyd7yDib9ikxoDLxJP0UiDA==
   /@babel/plugin-transform-react-jsx-source/7.10.5_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -2341,17 +2321,6 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-wTeqHVkN1lfPLubRiZH3o73f4rfon42HpgxUSs86Nc+8QIcm/B9s8NNVXu/gwGcOyd7yDib9ikxoDLxJP0UiDA==
-  /@babel/plugin-transform-react-jsx/7.10.4:
-    dependencies:
-      '@babel/helper-builder-react-jsx': 7.10.4
-      '@babel/helper-builder-react-jsx-experimental': 7.10.5
-      '@babel/helper-plugin-utils': 7.10.4
-      '@babel/plugin-syntax-jsx': 7.10.4
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-L+MfRhWjX0eI7Js093MM6MacKU4M6dnCRa/QPDwYMxjljzSCzzlzKzj9Pk4P3OtrPcxr2N3znR419nr3Xw+65A==
   /@babel/plugin-transform-react-jsx/7.10.4_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -2376,15 +2345,6 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-L+MfRhWjX0eI7Js093MM6MacKU4M6dnCRa/QPDwYMxjljzSCzzlzKzj9Pk4P3OtrPcxr2N3znR419nr3Xw+65A==
-  /@babel/plugin-transform-react-pure-annotations/7.10.4:
-    dependencies:
-      '@babel/helper-annotate-as-pure': 7.10.4
-      '@babel/helper-plugin-utils': 7.10.4
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-+njZkqcOuS8RaPakrnR9KvxjoG1ASJWpoIv/doyWngId88JoFlPlISenGXjrVacZUIALGUr6eodRs1vmPnF23A==
   /@babel/plugin-transform-react-pure-annotations/7.10.4_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -2780,20 +2740,6 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-Ra3JXOHBq2xd56xSF7lMKXdjBn3T772Y1Wet3yWnkDly9zHvJki029tAFzvAAK5cf4YV3yoxuP61crYRol6SVg==
-  /@babel/preset-react/7.10.4:
-    dependencies:
-      '@babel/helper-plugin-utils': 7.10.4
-      '@babel/plugin-transform-react-display-name': 7.10.4
-      '@babel/plugin-transform-react-jsx': 7.10.4
-      '@babel/plugin-transform-react-jsx-development': 7.10.4
-      '@babel/plugin-transform-react-jsx-self': 7.10.4
-      '@babel/plugin-transform-react-jsx-source': 7.10.5
-      '@babel/plugin-transform-react-pure-annotations': 7.10.4
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-BrHp4TgOIy4M19JAfO1LhycVXOPWdDbTRep7eVyatf174Hff+6Uk53sDyajqZPu8W1qXRBiYOfIamek6jA7YVw==
   /@babel/preset-react/7.10.4_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -3534,6 +3480,8 @@ packages:
       '@mdx-js/react': 1.6.11
       loader-utils: 2.0.0
     dev: false
+    peerDependencies:
+      react: '*'
     resolution:
       integrity: sha512-yTauPE6EEoUnZ27U5ZklPhygilcAmrHlWWyUm9TShtObGYKzdedPSB9yFdGa6/0UzPdDSZLywcR83paIJvnXAg==
   /@mdx-js/loader/1.6.11_react@16.13.1:
@@ -7579,9 +7527,9 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
-  /chromatic/5.0.0:
+  /chromatic/5.0.0_@babel+core@7.11.4:
     dependencies:
-      '@babel/preset-react': 7.10.4
+      '@babel/preset-react': 7.10.4_@babel+core@7.11.4
       '@babel/runtime': 7.10.5
       '@chromaui/localtunnel': 2.0.1
       async-retry: 1.3.1
@@ -7622,6 +7570,8 @@ packages:
       yarn-or-npm: 3.0.1
     dev: true
     hasBin: true
+    peerDependencies:
+      '@babel/core': '*'
     resolution:
       integrity: sha512-jreBi7r6BFcJ5o30O9LQpZI/9ofNWAOZ6R8yX0U2EzxLGXA3yC8aiwkS73EDVUPwZC5qUvWm5pqzvD0FCIAHiw==
   /chrome-trace-event/1.0.2:
@@ -11015,6 +10965,12 @@ packages:
       node: '>= 4.2.0'
     resolution:
       integrity: sha512-G3bqoKGGF8YQ18UJH9tTARrwB8i7iPwN1xc8RXwWyx91q0p/Xl10uNywZLkzGWcJDzEz1vwmBTTL3SLDU/KxNg==
+  /govuk-frontend/3.9.1:
+    dev: false
+    engines:
+      node: '>= 4.2.0'
+    resolution:
+      integrity: sha512-ouOoDUj0QwDA4uCHIBkGCFMpORuTRcSuDscOrz7V1PBcOecntLglxJAZAuNm+j2sPo7anoScHU0ZSeE2QIoeAg==
   /graceful-fs/4.2.4:
     resolution:
       integrity: sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
@@ -18881,7 +18837,7 @@ packages:
       buffer-from: 1.1.1
       fast-json-stable-stringify: 2.1.0
       jest: 26.1.0
-      jest-util: 26.1.0
+      jest-util: 26.3.0
       json5: 2.1.3
       lodash.memoize: 4.1.2
       make-error: 1.3.6
