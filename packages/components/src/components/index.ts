@@ -17,6 +17,7 @@ export { default as SkipLink } from './skip-link';
 export { default as Tag } from '@not-govuk/tag';
 export { default as TextInput } from './text-input';
 export { default as Textarea } from './textarea';
+export { default as WarningText } from '@not-govuk/warning-text';
 
 export { default as Footer } from './footer';
 export { default as Header } from './header';
