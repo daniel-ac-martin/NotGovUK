@@ -1,0 +1,63 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { WarningText } from '../src/WarningText';
+import readMe from '../README.md';
+export const title = 'Warning text';
+
+<Meta
+  title="Warning text"
+  component={ WarningText }
+  parameters={ {
+    jest: ['WarningText'],
+    notes: readMe
+  } }
+/>
+
+# Warning text
+
+A component to warn the user of something important.
+
+<Preview withToolbar>
+  <Story name="WarningText">
+    <WarningText>
+      You can be fined up to £5,000 if you do not register.
+    </WarningText>
+  </Story>
+</Preview>
+
+<Props of={ WarningText } />
+
+
+## When to use this component
+
+Use the warning text component when you need to warn users about something important, such as legal consequences of an action, or lack of action, that they might take.
+
+
+## How it works
+
+You might need to rewrite the hidden, assistive, text (‘Warning’ in the example) to make it appropriate for your context.
+
+## Stories
+### Standard
+
+A standard Warning text.
+
+<Preview>
+  <Story name="Standard">
+    <WarningText hiddenText="Warning">
+      You can be fined up to £5,000 if you do not register.
+    </WarningText>
+  </Story>
+</Preview>
+
+
+### Custom assistive text
+
+Warning text with custom hidden text for users of screen-readers.
+
+<Preview>
+  <Story name="CustomAssistive">
+    <WarningText assistiveText="Caution">
+      Floors may be slippery when wet.
+    </WarningText>
+  </Story>
+</Preview>
