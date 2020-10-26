@@ -1,12 +1,12 @@
 {
-  "name": "@not-govuk/back-link",
+  "name": "@not-govuk/footer",
   "version": "0.1.27",
-  "description": "A component to help users navigate back one page.",
-  "main": "src/BackLink.tsx",
-  "sass": "assets/BackLink.scss",
+  "description": "A page footer providing copyright, licensing and other information about your service and department.",
+  "main": "src/Footer.tsx",
+  "sass": "assets/Footer.scss",
   "publishConfig": {
-    "main": "dist/BackLink.js",
-    "typings": "dist/BackLink.d.ts"
+    "main": "dist/Footer.js",
+    "typings": "dist/Footer.d.ts"
   },
   "files": [
     "/assets",
@@ -25,8 +25,8 @@
   ],
   "dependencies": {
     "@not-govuk/component-helpers": "workspace:^0.1.0",
-    "@not-govuk/link": "workspace:^0.1.0",
-    "@not-govuk/sass-base": "workspace:^0.1.0",
+    "@not-govuk/link": "workspace:^0.1.27",
+    "@not-govuk/sass-base": "workspace:^0.1.27",
     "govuk-frontend": "^3.9.1"
   },
   "peerDependencies": {

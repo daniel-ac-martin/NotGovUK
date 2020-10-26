@@ -1,0 +1,283 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { A } from '@not-govuk/link';
+import { Footer } from '../src/Footer';
+import readMe from '../README.md';
+export const title = 'Footer';
+
+<Meta
+  title="Footer"
+  component={ Footer }
+  parameters={ {
+    jest: ['Footer'],
+    notes: readMe
+  } }
+/>
+
+# Footer
+
+The footer provides copyright, licensing and other information about your service and department.
+
+<Preview withToolbar>
+  <Story name="Footer">
+    <Footer govUK />
+  </Story>
+</Preview>
+
+<Props of={ Footer } />
+
+
+## When to use this component
+
+Use the footer at the bottom of every page of your service.
+
+
+## How it works
+
+You can add links to:
+
+- your department’s page on GOV.UK
+- other language options
+- terms and conditions
+- privacy policy
+
+
+## Stories
+### Standard
+
+A standard Footer.
+
+<Preview>
+  <Story name="Standard">
+    <Footer />
+  </Story>
+</Preview>
+
+
+### GOV.UK footer
+
+The default footer for public facing websites on GOV.UK.
+
+<Preview>
+  <Story name="GOV.UK">
+    <Footer govUK />
+  </Story>
+</Preview>
+
+### Footer with secondary navigation
+
+<Preview>
+  <Story name="Navigation">
+    <Footer govUK
+      navigation={[
+        {
+          title: "Two column list",
+          columns: 2,
+          items: [
+            {
+              href: "#1",
+              text: "Navigation item 1"
+            },
+            {
+              href: "#2",
+              text: "Navigation item 2"
+            },
+            {
+              href: "#3",
+              text: "Navigation item 3"
+            },
+            {
+              href: "#4",
+              text: "Navigation item 4"
+            },
+            {
+              href: "#5",
+              text: "Navigation item 5"
+            },
+            {
+              href: "#6",
+              text: "Navigation item 6"
+            }
+          ]
+        },
+        {
+          title: "Single column list",
+          items: [
+            {
+              href: "#1",
+              text: "Navigation item 1"
+            },
+            {
+              href: "#2",
+              text: "Navigation item 2"
+            },
+            {
+              href: "#3",
+              text: "Navigation item 3"
+            }
+          ]
+        }
+      ]}
+    />
+  </Story>
+</Preview>
+
+
+### Footer with links to meta information
+
+You can also include links to meta information about a site, like cookies and contact details in the footer, like this:
+
+<Preview>
+  <Story name="Meta links">
+    <Footer govUK
+      meta={[
+        {
+          href: "#1",
+          text: "Item 1"
+        },
+        {
+          href: "#2",
+          text: "Item 2"
+        },
+        {
+          href: "#3",
+          text: "Item 3"
+        }
+      ]}
+    />
+  </Story>
+</Preview>
+
+
+### Footer with secondary navigation and links to meta information
+
+<Preview>
+  <Story name="Nav and meta">
+    <Footer govUK
+      navigation={[
+        {
+          title: "Services and information",
+          columns: 2,
+          items: [
+            {
+              href: "#",
+              text: "Benefits"
+            },
+            {
+              href: "#",
+              text: "Births, deaths, marriages and care"
+            },
+            {
+              href: "#",
+              text: "Business and self-employed"
+            },
+            {
+              href: "#",
+              text: "Childcare and parenting"
+            },
+            {
+              href: "#",
+              text: "Citizenship and living in the UK"
+            },
+            {
+              href: "#",
+              text: "Crime, justice and the law"
+            },
+            {
+              href: "#",
+              text: "Disabled people"
+            },
+            {
+              href: "#",
+              text: "Driving and transport"
+            },
+            {
+              href: "#",
+              text: "Education and learning"
+            },
+            {
+              href: "#",
+              text: "Employing people"
+            },
+            {
+              href: "#",
+              text: "Environment and countryside"
+            },
+            {
+              href: "#",
+              text: "Housing and local services"
+            },
+            {
+              href: "#",
+              text: "Money and tax"
+            },
+            {
+              href: "#",
+              text: "Passports, travel and living abroad"
+            },
+            {
+              href: "#",
+              text: "Visas and immigration"
+            },
+            {
+              href: "#",
+              text: "Working, jobs and pensions"
+            }
+          ]
+        },
+        {
+          title: "Departments and policy",
+          items: [
+            {
+              href: "#",
+              text: "How government works"
+            },
+            {
+              href: "#",
+              text: "Departments"
+            },
+            {
+              href: "#",
+              text: "Worldwide"
+            },
+            {
+              href: "#",
+              text: "Policies"
+            },
+            {
+              href: "#",
+              text: "Publications"
+            },
+            {
+              href: "#",
+              text: "Announcements"
+            }
+          ]
+        }
+      ]}
+      meta={[
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "#",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "#",
+          text: "Rhestr o Wasanaethau Cymraeg"
+        }
+      ]}
+    >
+      Built by the <A href="#">Government Digital Service</A>
+    </Footer>
+  </Story>
+</Preview>

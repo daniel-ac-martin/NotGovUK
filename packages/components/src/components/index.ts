@@ -19,7 +19,7 @@ export { default as TextInput } from './text-input';
 export { default as Textarea } from './textarea';
 export { default as WarningText } from '@not-govuk/warning-text';
 
-export { default as Footer } from './footer';
+export { default as Footer } from '@not-govuk/footer';
 export { default as Header } from './header';
 
 export { default as Page } from './page';
