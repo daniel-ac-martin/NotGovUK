@@ -1,6 +1,7 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
+import { WidthContainer } from '@not-govuk/width-container';
 
 import '../assets/Footer.scss';
 
@@ -21,6 +22,8 @@ type NavMenu = {
 export type FooterProps = StandardProps & {
   /** Whether to add the standard Gov.UK content */
   govUK?: boolean
+  /** Maximum width of the contents in px units (-1 for full width) */
+  maxContentsWidth?: number
   /** Links to meta information */
   meta?: Link[]
   /** Title for meta links (visually hidden) */
@@ -35,6 +38,7 @@ export const Footer: FC<FooterProps> = ({
   classModifiers,
   className,
   govUK = false,
+  maxContentsWidth,
   meta,
   metaTitle = 'Support links',
   navigation,
@@ -45,7 +49,7 @@ export const Footer: FC<FooterProps> = ({
 
   return (
     <footer {...attrs} className={classes()} role="contentinfo">
-      <div className="govuk-width-container">
+      <WidthContainer maxWidth={maxContentsWidth}>
         { !navigation ? null : (
           <Fragment>
             <div className={classes('navigation')}>
@@ -109,7 +113,7 @@ export const Footer: FC<FooterProps> = ({
               ) }
             </div>
         ) }
-      </div>
+      </WidthContainer>
     </footer>
   );
 };
