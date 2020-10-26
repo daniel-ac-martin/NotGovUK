@@ -34,13 +34,13 @@ export const classBuilder = (blockDefault: string, blockOverride?: string, block
   const block = blockOverride || blockDefault;
   const bModifiers = toArray(blockModifiers);
 
-  return (element?: string, elementModifiers?: string | string[]) => {
+  return (element?: string, elementModifiers?: string | string[], extra2?: string) => {
     const eModifiers = toArray(elementModifiers);
 
     return (
-    element
-      ? concatClasses(`${block}__${element}`, eModifiers?.filter(id).map(modifier => `${block}__${element}--${modifier}`))
-      : concatClasses(`${block}`, bModifiers?.filter(id).map(modifier => `${block}--${modifier}`), extra)
+      element
+        ? concatClasses(`${block}__${element}`, eModifiers?.filter(id).map(modifier => `${block}__${element}--${modifier}`), extra2)
+        : concatClasses(`${block}`, bModifiers?.filter(id).map(modifier => `${block}--${modifier}`), extra)
     );
   };
 };
