@@ -1,12 +1,12 @@
 {
-  "name": "@not-govuk/footer",
+  "name": "@not-govuk/width-container",
   "version": "0.1.27",
-  "description": "A page footer providing copyright, licensing and other information about your service and department.",
-  "main": "src/Footer.tsx",
-  "sass": "assets/Footer.scss",
+  "description": "A simple container to limit the width of its contents.",
+  "main": "src/WidthContainer.tsx",
+  "sass": "assets/WidthContainer.scss",
   "publishConfig": {
-    "main": "dist/Footer.js",
-    "typings": "dist/Footer.d.ts"
+    "main": "dist/WidthContainer.js",
+    "typings": "dist/WidthContainer.d.ts"
   },
   "files": [
     "/assets",
@@ -25,9 +25,7 @@
   ],
   "dependencies": {
     "@not-govuk/component-helpers": "workspace:^0.1.0",
-    "@not-govuk/link": "workspace:^0.1.27",
     "@not-govuk/sass-base": "workspace:^0.1.27",
-    "@not-govuk/width-container": "workspace:^0.1.27",
     "govuk-frontend": "^3.9.1"
   },
   "peerDependencies": {
@@ -37,6 +35,8 @@
   "devDependencies": {
     "@mdx-js/react": "^1.6.5",
     "@not-govuk/component-test-helpers": "workspace:^0.1.0",
+    "@not-govuk/panel": "workspace:^0.1.27",
+    "@not-govuk/tag": "workspace:^0.1.27",
     "@types/react": "^16.9.35",
     "jest": "^26.1.0",
     "ts-jest": "^26.1.1",
