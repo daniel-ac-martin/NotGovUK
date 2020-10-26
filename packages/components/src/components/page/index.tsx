@@ -85,7 +85,7 @@ export const Page: FC<IPage> = props => {
           </Main>
         </div>
       </Body>
-      <Footer>{props.footerContent}</Footer>
+      <Footer govUK>{props.footerContent}</Footer>
     </div>
   );
 };
