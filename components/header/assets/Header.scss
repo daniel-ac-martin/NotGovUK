@@ -1,0 +1,84 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/header/_index";
+
+.govuk-header {
+  &__container {
+    // Department colours
+    @each $i, $v in $govuk-colours-organisations {
+      &--#{$i} {
+        border-color: map_get($v, "colour-websafe") !important;
+
+        .govuk-header__navigation-item--active a,
+        .govuk-header__navigation-item a.active {
+          &:link,
+          &:hover,
+          &:visited {
+            color: map_get($v, "colour") !important;
+          }
+
+          &:focus {
+            color: $govuk-focus-text-colour !important;
+          }
+        }
+      }
+    }
+  }
+
+  &__logotype-coat {
+    @extend .govuk-header__logotype-crown;
+  }
+
+  &__logotype-coat-fallback-image {
+    @extend .govuk-header__logotype-crown-fallback-image;
+  }
+
+  &__link {
+    &--small {
+      @include govuk-font(24);
+
+      &.govuk-header__link--homepage {
+        @extend .govuk-header__link--small;
+      }
+    }
+  }
+
+  // Reset some things from base style
+  &__navigation {
+    color: initial;
+    font-size: initial;
+    font-weight: initial;
+    line-height: initial;
+  }
+
+  // Reset some things from base style
+  &__menu-button {
+    box-sizing: initial;
+    width: initial;
+    border-radius: initial;
+    box-shadow: initial;
+    text-align: initial;
+    vertical-align: initial;
+    cursor: initial;
+    -webkit-appearance: initial;
+  }
+
+  &__navigation-item {
+    // Reset some things from base style
+    margin-bottom: initial;
+
+    // Links set to active by the router
+    .active {
+      $govuk-header-link-active: #1d8feb;
+
+      &:link,
+      &:hover,
+      &:visited {
+        color: $govuk-header-link-active;
+      }
+
+      &:focus {
+        color: $govuk-focus-text-colour;
+      }
+    }
+  }
+}
