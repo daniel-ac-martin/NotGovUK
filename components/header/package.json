@@ -1,12 +1,12 @@
 {
-  "name": "@not-govuk/panel",
+  "name": "@not-govuk/header",
   "version": "0.1.27",
-  "description": "A visible container used on confirmation or results pages to highlight important content.",
-  "main": "src/Panel.tsx",
-  "sass": "assets/Panel.scss",
+  "description": "A component that shows users whether they are on GOV.UK and which service they are using.",
+  "main": "src/Header.tsx",
+  "sass": "assets/Header.scss",
   "publishConfig": {
-    "main": "dist/Panel.js",
-    "typings": "dist/Panel.d.ts"
+    "main": "dist/Header.js",
+    "typings": "dist/Header.d.ts"
   },
   "files": [
     "/assets",
@@ -25,7 +25,9 @@
   ],
   "dependencies": {
     "@not-govuk/component-helpers": "workspace:^0.1.0",
-    "@not-govuk/sass-base": "workspace:^0.1.26",
+    "@not-govuk/link": "workspace:^0.1.27",
+    "@not-govuk/sass-base": "workspace:^0.1.27",
+    "@not-govuk/width-container": "workspace:^0.1.27",
     "govuk-frontend": "^3.9.1"
   },
   "peerDependencies": {

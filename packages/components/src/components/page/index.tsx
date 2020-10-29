@@ -1,8 +1,8 @@
 import { FC, Fragment, createElement as h } from 'react';
+import { NavigationLink } from '@not-govuk/header';
 import { A, BackLink, Breadcrumbs, Footer, Header, PhaseBanner, SkipLink } from '../';
 import Body from './body';
 import Main from './main';
-import { INavigationLink } from '../header';
 import { IBreadcrumb } from '../breadcrumbs';
 import { bem, className } from '../../helpers';
 
@@ -26,7 +26,7 @@ interface IPage {
   /** HRef for the Crown logo link */
   logoHref?: string,
   /** Navigation links */
-  navigation?: Array<INavigationLink>,
+  navigation?: Array<NavigationLink>,
   /** The phase the service is in */
   phase?: string
   /** Content for the phase-banner */
@@ -59,19 +59,20 @@ export const Page: FC<IPage> = props => {
       )}
     </PhaseBanner>
   );
+  const govUK = !props.department
 
   return(
     <div className={className(bem('nguk-page', props.govUk ? undefined: 'not-govuk', props.department), props.className)}>
       <SkipLink id="skip-link" href="#main-content" />
-      <Header
+      <Header govUK={govUK}
         department={props.department}
-        logoHref={props.logoHref}
+        organisationHref={props.logoHref}
         navigation={props.navigation}
         signOutHref={props.signOutHref}
         signOutText={props.signOutText}
-        title={props.title}
-        titleHref={props.titleHref}
-        wide={props.wide}
+        serviceName={props.title}
+        serviceHref={props.titleHref}
+        maxContentsWidth={props.wide ? -1 : undefined}
       />
       <Body>
         <div className={bem('govuk-width-container', props.wide ? 'wide' : undefined)}>
@@ -85,7 +86,7 @@ export const Page: FC<IPage> = props => {
           </Main>
         </div>
       </Body>
-      <Footer govUK>{props.footerContent}</Footer>
+      <Footer govUK={govUK}>{props.footerContent}</Footer>
     </div>
   );
 };
