@@ -8,6 +8,7 @@ describe('Footer', () => {
 
     it('renders', () => undefined);
   });
+
   describe('when given all valid props', () => {
     const props = {
       govUK: true,
