@@ -1,3 +1,4 @@
+import { GraphQLSchema } from 'graphql';
 import { ComponentType, createElement as h } from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import { html as beautifyHtml } from 'js-beautify';
@@ -41,7 +42,7 @@ export type RendererOptions = {
   assetsPath: string
   entrypoints?: object
   graphQL?: {
-    schema: object
+    schema: GraphQLSchema
   }
   pages: PageInfoSSR[]
   rootId: string,

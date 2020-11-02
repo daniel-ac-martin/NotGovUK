@@ -1,4 +1,5 @@
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
+import { GraphQLSchema } from 'graphql';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { ComponentType } from 'react';
 import serverless from 'serverless-http';
@@ -57,7 +58,7 @@ export type EngineStage2Options = {
   Template: ComponentType<TemplateProps>
   apis?: Api[]
   graphQL?: {
-    schema: object
+    schema: GraphQLSchema
   }
   pageLoader: PageLoader
 };

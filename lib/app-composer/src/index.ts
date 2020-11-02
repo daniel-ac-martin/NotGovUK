@@ -1,3 +1,4 @@
+import { GraphQLSchema } from 'graphql';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, Fragment, Suspense, createElement as h, lazy } from 'react';
@@ -79,7 +80,7 @@ type ComposeOptionsCommon = {
 
 type ComposeOptionsSSR = ComposeOptionsCommon & {
   graphQL?: {
-    schema: object
+    schema: GraphQLSchema
   }
   routerProps: StaticRouterProps
 };
