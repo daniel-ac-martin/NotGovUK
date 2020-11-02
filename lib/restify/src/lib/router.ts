@@ -20,6 +20,22 @@ interface Route {
   opts: string | RegExp | RouteOptions
 };
 
+const removeTrailingSlash = (s: string): string => (
+  s.endsWith('/')
+    ? s.slice(0, -1)
+    : s
+);
+
+const addPreceedingSlash = (s: string): string => (
+  s.startsWith('/')
+    ? s
+    : '/' + s
+);
+
+const sanitisePath = (s: string): string => (
+  addPreceedingSlash(removeTrailingSlash(s))
+);
+
 export class Router {
   private routes: Route[] = [];
 
@@ -60,20 +76,19 @@ export class Router {
   }
 
   public apply(httpd: RestifyServer, path: string): void {
-    path = (
-      path.endsWith('/')
-        ? path.slice(0, -1)
-        : path
-    );
+    path = removeTrailingSlash(path);
 
     this.routes.forEach(v => {
       const opts = (
         typeof v.opts === 'string'
-          ? path + v.opts
+          ? sanitisePath(path + v.opts)
           : (
             v.opts instanceof RegExp
               ? new RegExp(path + v.opts.source)
-              : Object.assign({}, v.opts, { path: path + v.opts.path })
+              : {
+                ...v.opts,
+                path: sanitisePath(path + v.opts.path)
+              }
           )
       );
 
