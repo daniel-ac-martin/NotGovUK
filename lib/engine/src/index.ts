@@ -1,3 +1,5 @@
+import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
+import { GraphQLSchema } from 'graphql';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { ComponentType } from 'react';
 import serverless from 'serverless-http';
@@ -55,6 +57,9 @@ export type EngineStage2Options = {
   PageWrap: ComponentType<PageProps>
   Template: ComponentType<TemplateProps>
   apis?: Api[]
+  graphQL?: {
+    schema: GraphQLSchema
+  }
   pageLoader: PageLoader
 };
 
@@ -90,6 +95,7 @@ export const engine = async (options1: EngineStage1Options) => {
   if (webpack) {
     // Set up extra Restify instance for proxy
     const httpd = restify.createServer({
+      bodyParser: false,
       name: `${options1.name}-asset-proxy`
     });
     const proxyMiddleware = createProxyMiddleware({
@@ -128,6 +134,9 @@ export const engine = async (options1: EngineStage1Options) => {
       {
         assetsPath: publicPath,
         entrypoints: preBuiltAssets?.entrypoints,
+        graphQL: options2.graphQL && {
+          schema: options2.graphQL.schema
+        },
         pages,
         rootId: 'root',
         ssrOnly: options1.ssrOnly
@@ -164,6 +173,22 @@ export const engine = async (options1: EngineStage1Options) => {
     options2.apis && options2.apis.forEach(e => (
       httpd.serveAPI(e.path, e.router)
     ));
+
+    // Serve GraphQL
+    if (options2.graphQL) {
+      const endpoint = '/graphql';
+      const graphQLOptions = {
+        schema: options2.graphQL.schema
+      };
+      const graphQL = new Router();
+      const handler = graphqlRestify(graphQLOptions);
+
+      graphQL.post('/', handler);
+      graphQL.get('/', handler);
+
+      httpd.serveAPI(endpoint, graphQL)
+      httpd.get('/graphiql', graphiqlRestify({ endpointURL: endpoint }));
+    }
 
     let r;
 

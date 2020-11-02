@@ -9,7 +9,7 @@ import { ILoggerOptions, logger } from './lib/logger';
 import { installServeAPI } from './lib/serve-api';
 
 export type ServerOptions = _ServerOptions & {
-  bodyParser?: plugins.BodyParserOptions
+  bodyParser?: plugins.BodyParserOptions | false
   grace?: number
   liveness?: string
   logger?: ILoggerOptions
@@ -73,7 +73,7 @@ export const createServer = (options: ServerOptions ) => {
   httpd.pre(htmlByDefault(httpd));
 
   httpd.use(restify.plugins.acceptParser(httpd.acceptable.filter(v => acceptable.includes(v))));
-  httpd.use(restify.plugins.bodyParser(Object.assign({ mapParams: false }, options.bodyParser)));
+  (options.bodyParser !== false) && httpd.use(restify.plugins.bodyParser(Object.assign({ mapParams: false }, options.bodyParser)));
   httpd.use(restify.plugins.queryParser(Object.assign({ mapParams: false }, options.queryParser)));
   httpd.use(restify.plugins.requestLogger(options.requestLogger));
   httpd.use(restify.plugins.fullResponse());

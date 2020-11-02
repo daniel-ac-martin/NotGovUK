@@ -89,8 +89,7 @@ export const gatherPages = (pageLoader: PageLoader): Promise<PageInfoSSR[]> => (
 );
 
 const pageMiddleware = (title: string) => (req, res, next) => {
-  res.renderApp(200, title);
-  next();
+  res.renderApp(200, title).finally(next);
 };
 
 export const pageRoutes = (pages: PageInfoSSR[]) => {

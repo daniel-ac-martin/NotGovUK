@@ -7,6 +7,37 @@ import ErrorPage from '../common/error-page';
 import PageWrap from '../common/page-wrap';
 import pageLoader from '../common/page-loader';
 
+import { makeExecutableSchema } from '@graphql-tools/schema';
+
+// Some fake data
+const books = [
+  {
+    title: "Harry Potter and the Sorcerer's stone",
+    author: 'J.K. Rowling',
+  },
+  {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+  },
+];
+
+// The GraphQL schema in string form
+const typeDefs = `
+type Query { books: [Book] }
+type Book { title: String, author: String }
+`;
+
+// The resolvers
+const resolvers = {
+  Query: { books: () => books },
+};
+
+// Put together a schema
+const graphQLSchema = makeExecutableSchema({
+  typeDefs,
+  resolvers,
+});
+
 const setup = () => {
   const assets = (
     config.env === NodeEnv.Development && !config.ssrOnly
@@ -39,6 +70,9 @@ const startApp = () => stage1.then(
     ErrorPage,
     PageWrap,
     Template,
+    graphQL: {
+      schema: graphQLSchema
+    },
     pageLoader
   })
 );

@@ -1,3 +1,6 @@
+import { GraphQLSchema } from 'graphql';
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
+import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, Fragment, Suspense, createElement as h, lazy } from 'react';
 import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
 import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
@@ -38,7 +41,9 @@ export type ApplicationPropsSSR = ApplicationPropsCommon & {
 export type ApplicationProps = ApplicationPropsCSR | ApplicationPropsSSR;
 
 type ApplicationCSR = ComponentType<ApplicationPropsCSR>;
-type ApplicationSSR = ComponentType<ApplicationPropsSSR>;
+type ApplicationSSR = ComponentType<ApplicationPropsSSR> & {
+  extractDataCache: () => object
+};
 export type Application = ComponentType<ApplicationProps>;
 
 export type PageProps = RouteComponentProps & {
@@ -70,14 +75,21 @@ type ComposeOptionsCommon = {
   AppWrap: Application
   ErrorPage: ErrorPage
   PageWrap: Page
+  data: object
 };
 
 type ComposeOptionsSSR = ComposeOptionsCommon & {
+  graphQL?: {
+    schema: GraphQLSchema
+  }
   routerProps: StaticRouterProps
 };
 
 type ComposeOptionsCSR = ComposeOptionsCommon & {
   LoadingPage: Page
+  graphQL?: {
+    endpoint: string,
+  }
   pageLoader: PageLoader
   routerProps: BrowserRouterProps
 };
@@ -89,86 +101,123 @@ type Compose = {
   (options: ComposeOptionsSSR): ApplicationSSR;
 };
 
-export const compose: Compose = options => props => {
+type DataProviderProps = {
+  client?: ApolloClient<any>
+};
+
+export const compose: Compose = options => {
   const Router = (
     "context" in options.routerProps
       ? StaticRouter
       : BrowserRouter
-  );
-  const routes = props
-    .pages
-    .map(e => ({
-      Component: (
-        "pageLoader" in options
-          ? lazy(() => options.pageLoader(e.src))
-          : e.Component
-      ),
-      href: decodeURI(e.href),
-      title: e.title
-    }));
-  const pageProps = { routes };
-  const withPageWrap = Component => props => (
-    h(
-      options.PageWrap, pageProps,
-      h(Component, props)
-    )
   );
   const SuspenseOrFragment = (
     "LoadingPage" in options
       ? Suspense
       : Fragment
   );
-  const suspenseProps = (
-    "LoadingPage" in options
-      ? { fallback: h(withRouter(withPageWrap(options.LoadingPage))) }
+  const client = (
+    options.graphQL
+      ? (
+        new ApolloClient({
+          cache: new InMemoryCache().restore(options.data),
+          link: (
+            options.graphQL.schema
+              ? new SchemaLink({ schema: options.graphQL.schema })
+              : createHttpLink(options.graphQL.endpoint)
+          )
+        })
+      )
       : undefined
   );
-  const PageError = withPageWrap(options.ErrorPage);
-
-  const switchOrError = (
-    props.err
-      ? h(
-        withRouter(PageError),
-        {
-          internal: String(props.err.statusCode).startsWith('5'),
-          title: props.err.title,
-          message: props.err.message
-        })
-      : h(
-        Switch, {},
-        [
-          ...routes.map((v, i) => h(
-            Route,
-            {
-              component: withPageWrap(v.Component),
-              exact: true,
-              key: i,
-              path: v.href
-            }
-          )),
-          h(Route, {
-            component: props => h(
-              PageError,
-              {
-                ...props,
-                internal: false,
-                title: 'Page not found',
-                message: `${props.location.pathname} does not exist.`
-              }
-            ),
-            key: 'catch-all'
-          })
-        ]
-      )
+  const DataProvider: ComponentType<DataProviderProps> = ({ children, client = undefined }) => (
+    client
+      ? h(ApolloProvider, {
+        client,
+        children
+      })
+      : h(Fragment, {}, children)
   );
+  const extractDataCache = () => client && client.extract();
 
-  return h(
-    options.AppWrap, props,
-    h(Router, options.routerProps,
+  const App =  props => {
+    const routes = props
+      .pages
+      .map(e => ({
+        Component: (
+          "pageLoader" in options
+            ? lazy(() => options.pageLoader(e.src))
+            : e.Component
+        ),
+        href: decodeURI(e.href),
+        title: e.title
+      }));
+    const pageProps = { routes };
+    const withPageWrap = Component => props => (
+      h(
+        options.PageWrap, pageProps,
+        h(Component, props)
+      )
+    );
+    const suspenseProps = (
+      "LoadingPage" in options
+        ? { fallback: h(withRouter(withPageWrap(options.LoadingPage))) }
+        : undefined
+    );
+    const PageError = withPageWrap(options.ErrorPage);
+
+    const switchOrError = (
+      props.err
+        ? h(
+          withRouter(PageError),
+          {
+            internal: String(props.err.statusCode).startsWith('5'),
+            title: props.err.title,
+            message: props.err.message
+          })
+        : h(
+          Switch, {},
+          [
+              ...routes.map((v, i) => h(
+                Route,
+                {
+                  component: withPageWrap(v.Component),
+                  exact: true,
+                  key: i,
+                  path: v.href
+                }
+              )),
+              h(Route, {
+                component: props => h(
+                  PageError,
+                  {
+                    ...props,
+                    internal: false,
+                    title: 'Page not found',
+                    message: `${props.location.pathname} does not exist.`
+                  }
+                ),
+                key: 'catch-all'
+              })
+          ]
+        )
+    );
+
+    const router = h(
+      Router, options.routerProps,
       h(
         SuspenseOrFragment, suspenseProps,
         switchOrError
       )
-     )
-  );
+    );
+
+    return h(
+      options.AppWrap, props,
+      h(DataProvider, { client }, router)
+    );
+  };
+
+  return Object.assign(App, { extractDataCache });
 };
+
+export { renderToStringWithData } from '@apollo/client/react/ssr';

@@ -1,7 +1,8 @@
+import { GraphQLSchema } from 'graphql';
 import { ComponentType, createElement as h } from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import { html as beautifyHtml } from 'js-beautify';
-import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, compose } from '@not-govuk/app-composer';
+import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, compose, renderToStringWithData } from '@not-govuk/app-composer';
 
 const statusToTitle = {
   400: 'Bad request',
@@ -29,6 +30,7 @@ export type TemplateProps = {
   appRender: string
   assetsPath: string
   charSet: string
+  data: object
   rootId: string
   scripts: string[]
   stylesheets: string[]
@@ -39,6 +41,9 @@ export type Template = ComponentType<TemplateProps>;
 export type RendererOptions = {
   assetsPath: string
   entrypoints?: object
+  graphQL?: {
+    schema: GraphQLSchema
+  }
   pages: PageInfoSSR[]
   rootId: string,
   ssrOnly: boolean
@@ -55,7 +60,8 @@ const contentTypeToCharSet = (contentType: string): string => {
 };
 
 export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, Template: Template, options: RendererOptions) => {
-  const formatHTML = (req, res, body) => {
+  const createApp = (req, res, body, charSet) => {
+    const data = {}
     const routerProps = {
       location: req.url,
       context: {
@@ -79,65 +85,100 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       pages: options.pages,
       ...reqProps
     };
-    const appRender = renderToString(h(
-      compose({
+    const App = compose({
         AppWrap,
         ErrorPage,
         PageWrap,
-        routerProps
-      }),
-      appProps
-    ));
-    const assetsByChunkName = res?.locals?.webpack?.devMiddleware.stats.toJson().assetsByChunkName || // v4 dev-middleware
-      res?.locals?.webpackStats?.toJson().assetsByChunkName || // v3 dev-middleware
-      options.entrypoints; // pre-built assets
-    const assets: string[] = (
-      Object.values(assetsByChunkName)
-        .flat()
-        .map(v => String(v))
-    );
-    const fullTemplateProps = {
-      appProps,
-      appRender,
-      assetsPath: options.assetsPath,
-      charSet: contentTypeToCharSet(res.header('Content-Type')),
-      rootId: options.rootId,
-      scripts: (
-        options.ssrOnly
-          ? undefined
-          : assets.filter(v => v.endsWith('.js'))
-      ),
-      stylesheets: assets.filter(v => v.endsWith('.css'))
+        graphQL: options.graphQL && {
+          schema: options.graphQL.schema
+        },
+        routerProps,
+        data
+    });
+    const app = h(App, appProps)
+
+    const render = (): Promise<string> => renderToStringWithData(app);
+
+    const renderToHtml = (appRender?: string): string => {
+      appRender = appRender || renderToString(app);
+
+      const assetsByChunkName = res?.locals?.webpack?.devMiddleware.stats.toJson().assetsByChunkName || // v4 dev-middleware
+        res?.locals?.webpackStats?.toJson().assetsByChunkName || // v3 dev-middleware
+        options.entrypoints; // pre-built assets
+      const assets: string[] = (
+        Object.values(assetsByChunkName)
+          .flat()
+          .map(v => String(v))
+      );
+      const fullTemplateProps = {
+        appProps,
+        appRender,
+        assetsPath: options.assetsPath,
+        charSet: charSet,
+        data: App.extractDataCache(),
+        rootId: options.rootId,
+        scripts: (
+          options.ssrOnly
+            ? undefined
+            : assets.filter(v => v.endsWith('.js'))
+        ),
+        stylesheets: assets.filter(v => v.endsWith('.css'))
+      };
+
+      return beautifyHtml(
+        renderToStaticMarkup(h(Template, fullTemplateProps)),
+        {
+          'indent_with_tabs': true
+        }
+      );
     };
 
-    const html = beautifyHtml(
-      renderToStaticMarkup(
-        h(Template, fullTemplateProps)
-      ),
-      {
-        'indent_with_tabs': true
-      }
-    );
-
-    res.setHeader('Content-Length', Buffer.byteLength(html));
-
-    return html;
+    return {
+      render,
+      renderToHtml
+    };
   };
 
-  const renderApp = function(code, body, headers) {
+  const formatHTML = (req, res, body) => {
+    if (!res.html) {
+      const app = createApp(req, res, body, contentTypeToCharSet(res.header('Content-Type')));
+      res.html = app.renderToHtml();
+    }
+
+    res.setHeader('Content-Length', Buffer.byteLength(res.html));
+
+    return res.html;
+  };
+
+  const renderApp = req => function(code, body, headers): Promise<void> {
+    const res = this;
+    const charSet = 'UTF-8';
+
     if (typeof code !== 'number') {
       headers = body;
       body = code;
       code = 200;
     }
 
-    this.charSet('UTF-8');
-    this.contentType = 'text/html';
-    this.send(code, body || true, headers);
+    res.statusCode = code;
+    res.charSet(charSet);
+    res.contentType = 'text/html';
+
+    const app = createApp(req, res, body, charSet);
+    const promise = (
+      options.graphQL
+        ? app.render()
+        : Promise.resolve('')
+    );
+
+    return promise.then(renderedApp => {
+      res.html = app.renderToHtml(renderedApp)
+      res.send(code, body || true, headers);
+    });
   };
 
   const renderer = (req, res, next) => {
-    res.renderApp = renderApp;
+    res.renderApp = renderApp(req);
     next();
   }
 
