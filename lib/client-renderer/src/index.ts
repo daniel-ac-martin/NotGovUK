@@ -4,6 +4,7 @@ import { ApplicationProps, ApplicationPropsCSR, ErrorPageProps, PageProps, PageL
 
 export const hydrateOrRender = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, LoadingPage: ComponentType<PageProps>, pageLoader: PageLoader): void => {
   interface IWindowWithHydration extends Window {
+    hydrationData?: object
     hydrationId?: string
     hydrationProps?: ApplicationPropsCSR
   };
@@ -16,6 +17,10 @@ export const hydrateOrRender = (AppWrap: ComponentType<ApplicationProps>, PageWr
       ErrorPage,
       LoadingPage,
       PageWrap,
+      data: windowWithProps.hydrationData,
+      graphQL: {
+        endpoint: '/graphql'
+      },
       pageLoader,
       routerProps
     }),
