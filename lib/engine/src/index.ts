@@ -90,6 +90,7 @@ export const engine = async (options1: EngineStage1Options) => {
   if (webpack) {
     // Set up extra Restify instance for proxy
     const httpd = restify.createServer({
+      bodyParser: false,
       name: `${options1.name}-asset-proxy`
     });
     const proxyMiddleware = createProxyMiddleware({
