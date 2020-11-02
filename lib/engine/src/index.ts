@@ -175,7 +175,7 @@ export const engine = async (options1: EngineStage1Options) => {
     ));
 
     // Serve GraphQL
-    if (options2.graphQL) {
+    if (options2.graphQL && !options1.ssrOnly) {
       const endpoint = '/graphql';
       const graphQLOptions = {
         schema: options2.graphQL.schema
