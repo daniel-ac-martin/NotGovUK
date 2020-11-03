@@ -175,7 +175,7 @@ export const engine = async (options1: EngineStage1Options) => {
     ));
 
     // Serve GraphQL
-    if (options2.graphQL) {
+    if (options2.graphQL && !options1.ssrOnly) {
       const endpoint = '/graphql';
       const graphQLOptions = {
         schema: options2.graphQL.schema
@@ -187,7 +187,10 @@ export const engine = async (options1: EngineStage1Options) => {
       graphQL.get('/', handler);
 
       httpd.serveAPI(endpoint, graphQL)
-      httpd.get('/graphiql', graphiqlRestify({ endpointURL: endpoint }));
+
+      if (options1.env === NodeEnv.Development) {
+        httpd.get('/graphiql', graphiqlRestify({ endpointURL: endpoint }));
+      }
     }
 
     let r;
