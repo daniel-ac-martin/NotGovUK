@@ -1,6 +1,7 @@
 import { GraphQLSchema } from 'graphql';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
+import { AuthProvider } from 'oidc-react';
 import { ComponentType, Fragment, Suspense, createElement as h, lazy } from 'react';
 import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
 import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
@@ -78,7 +79,18 @@ type ComposeOptionsCommon = {
   data: object
 };
 
+export type OIDCConfig = {
+  authority: string
+  clientId: string
+  redirectUri: string
+};
+
+export type OIDCConfigSSR = OIDCConfig & {
+  clientSecret?: string
+};
+
 type ComposeOptionsSSR = ComposeOptionsCommon & {
+  oidc?: OIDCConfigSSR
   graphQL?: {
     schema: GraphQLSchema
   }
@@ -90,6 +102,7 @@ type ComposeOptionsCSR = ComposeOptionsCommon & {
   graphQL?: {
     endpoint: string,
   }
+  oidc?: OIDCConfig
   pageLoader: PageLoader
   routerProps: BrowserRouterProps
 };
@@ -110,6 +123,19 @@ export const compose: Compose = options => {
     "context" in options.routerProps
       ? StaticRouter
       : BrowserRouter
+  );
+  const OIDCProvider: ComponentType<{}> = ({ children }) => (
+    options.oidc
+      ? h(
+        AuthProvider,
+        {
+          authority: options.oidc.authority,
+          clientId: options.oidc.clientID,
+          clientSecret: options.oidc.clientSecret,
+          redirectUri: options.oidc.redirectUri
+        },
+        children)
+      : h(Fragment, {}, children)
   );
   const SuspenseOrFragment = (
     "LoadingPage" in options
@@ -205,10 +231,10 @@ export const compose: Compose = options => {
 
     const router = h(
       Router, options.routerProps,
-      h(
+      h(OIDCProvider, {}, h(
         SuspenseOrFragment, suspenseProps,
         switchOrError
-      )
+      ))
     );
 
     return h(

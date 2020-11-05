@@ -2,7 +2,7 @@ import { GraphQLSchema } from 'graphql';
 import { ComponentType, createElement as h } from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import { html as beautifyHtml } from 'js-beautify';
-import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, compose, renderToStringWithData } from '@not-govuk/app-composer';
+import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, OIDCConfigSSR, PageProps, PageInfoSSR, compose, renderToStringWithData } from '@not-govuk/app-composer';
 
 const statusToTitle = {
   400: 'Bad request',
@@ -44,6 +44,7 @@ export type RendererOptions = {
   graphQL?: {
     schema: GraphQLSchema
   }
+  oidc?: OIDCConfigSSR
   pages: PageInfoSSR[]
   rootId: string,
   ssrOnly: boolean
@@ -86,14 +87,15 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       ...reqProps
     };
     const App = compose({
-        AppWrap,
-        ErrorPage,
-        PageWrap,
-        graphQL: options.graphQL && {
-          schema: options.graphQL.schema
-        },
-        routerProps,
-        data
+      AppWrap,
+      ErrorPage,
+      PageWrap,
+      graphQL: options.graphQL && {
+        schema: options.graphQL.schema
+      },
+      oidc: options.oidc,
+      routerProps,
+      data
     });
     const app = h(App, appProps)
 

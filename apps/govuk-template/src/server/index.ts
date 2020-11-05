@@ -73,6 +73,7 @@ const startApp = () => stage1.then(
     graphQL: {
       schema: graphQLSchema
     },
+    oidc: config.oidc.authority && config.oidc,
     pageLoader
   })
 );

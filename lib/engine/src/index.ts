@@ -5,7 +5,7 @@ import { ComponentType } from 'react';
 import serverless from 'serverless-http';
 import { Configuration as WebpackConfig } from 'webpack';
 import restify, { Router, errors } from '@not-govuk/restify';
-import { PageLoader } from '@not-govuk/app-composer';
+import { OIDCConfig, PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, TemplateProps, reactRenderer } from '@not-govuk/server-renderer';
 import { gatherPages, pageRoutes } from './lib/pages';
 
@@ -60,6 +60,7 @@ export type EngineStage2Options = {
   graphQL?: {
     schema: GraphQLSchema
   }
+  oidc?: OIDCConfig
   pageLoader: PageLoader
 };
 
@@ -137,6 +138,7 @@ export const engine = async (options1: EngineStage1Options) => {
         graphQL: options2.graphQL && {
           schema: options2.graphQL.schema
         },
+        oidc: options2.oidc,
         pages,
         rootId: 'root',
         ssrOnly: options1.ssrOnly

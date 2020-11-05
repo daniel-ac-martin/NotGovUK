@@ -9,6 +9,10 @@ const serverConfig = {
     port: Number(process.env.LISTEN_PORT) || 8080
   },
   mode: (process.env.MODE || 'server') as Mode,
+  oidc: {
+    ...commonConfig.oidc,
+    clientSecret: process.env.CLIENT_SECRET
+  },
   ssrOnly: !!(process.env.SSR_ONLY && process.env.SSR_ONLY.match(/(yes|true)/i))
 };
 
