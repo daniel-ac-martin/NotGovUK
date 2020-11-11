@@ -14,7 +14,7 @@ export const Template: FC<TemplateProps> = props => {
             <link key={v} href={`${props.assetsPath}${v}`} rel="stylesheet" />
           )
         )}
-        {props && <script dangerouslySetInnerHTML={{__html: `window.hydrationId = '${props.rootId}'; window.hydrationProps = ${JSON.stringify(props.appProps).replace(/</g, '\\u003c')}; window.hydrationData = ${JSON.stringify(props.data)?.replace(/</g, '\\u003c')};`}} />}
+        {props && <script dangerouslySetInnerHTML={{__html: `window.hydrationId = '${props.rootId}'; window.hydrationProps = ${JSON.stringify(props.appProps)?.replace(/</g, '\\u003c')}; window.hydrationData = ${JSON.stringify(props.data)?.replace(/</g, '\\u003c')}; window.hydrationUser = ${JSON.stringify(props.user)?.replace(/</g, '\\u003c')};`}} />}
       </head>
       <body>
         <div id={props.rootId} dangerouslySetInnerHTML={{__html: props.appRender as string}} />

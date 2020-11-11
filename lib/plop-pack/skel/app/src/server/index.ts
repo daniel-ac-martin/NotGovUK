@@ -1,11 +1,12 @@
 import { resolve } from 'path';
-import engine, { Mode, NodeEnv } from '@not-govuk/engine';
+import engine, { AuthMethod, Mode, NodeEnv } from '@not-govuk/engine';
 import config from './config';
 import Template from './template';
 import AppWrap from '../common/app-wrap';
 import ErrorPage from '../common/error-page';
 import PageWrap from '../common/page-wrap';
 import pageLoader from '../common/page-loader';
+import graphQLSchema from './graphql';
 
 const setup = () => {
   const assets = (
@@ -39,6 +40,15 @@ const startApp = () => stage1.then(
     ErrorPage,
     PageWrap,
     Template,
+    auth: config.auth && (
+      ( config.auth.method === AuthMethod.None && { method: AuthMethod.None } )
+        || ( config.auth.method === AuthMethod.Dummy && { method: AuthMethod.Dummy, ...config.auth.dummy } )
+        || ( config.auth.method === AuthMethod.Headers && { method: AuthMethod.Headers, ...config.auth.headers } )
+        || ( config.auth.method === AuthMethod.OIDC && { method: AuthMethod.OIDC, ...config.auth.oidc } )
+    ),
+    graphQL: {
+      schema: graphQLSchema
+    },
     pageLoader
   })
 );
@@ -75,8 +85,19 @@ if (module.hot) {
               v.log.info(`${v.name} is no longer listening`)
 
               if (state.needSetup) {
-                state.needSetup = false;
-                stage1 = setup();
+                stage1.then(
+                  ({ proxy }) => {
+                    state.needSetup = false;
+
+                    proxy.log.info(`${proxy.name} is going down...`);
+                    proxy.stop(
+                      () => {
+                        proxy.log.info(`${proxy.name} is no longer listening`)
+                        stage1 = setup();
+                      }
+                    );
+                  }
+                );
               }
 
               app = startApp();
@@ -94,6 +115,7 @@ if (module.hot) {
   module.hot.accept([
     '@not-govuk/engine',
     './config',
+    './graphql',
     '../../dist/public/entrypoints.json',
     '../../webpack.config'
   ], restart);
