@@ -152,7 +152,7 @@ export const compose: Compose = options => {
   );
   const extractDataCache = () => client && client.extract();
 
-  const App =  props => {
+  const App = props => {
     const routes = props
       .pages
       .map(e => ({
