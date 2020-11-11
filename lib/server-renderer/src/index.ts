@@ -86,14 +86,15 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       ...reqProps
     };
     const App = compose({
-        AppWrap,
-        ErrorPage,
-        PageWrap,
-        graphQL: options.graphQL && {
-          schema: options.graphQL.schema
-        },
-        routerProps,
-        data
+      AppWrap,
+      ErrorPage,
+      PageWrap,
+      graphQL: options.graphQL && {
+        schema: options.graphQL.schema
+      },
+      routerProps,
+      data,
+      user
     });
     const app = h(App, appProps)
 
