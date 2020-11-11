@@ -135,7 +135,10 @@ export const compose: Compose = options => {
           cache: new InMemoryCache().restore(options.data),
           link: (
             options.graphQL.schema
-              ? new SchemaLink({ schema: options.graphQL.schema })
+              ? new SchemaLink({
+                schema: options.graphQL.schema,
+                context: { auth: options.user }
+              })
               : createHttpLink(options.graphQL.endpoint)
           )
         })

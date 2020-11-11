@@ -188,9 +188,10 @@ export const engine = async (options1: EngineStage1Options) => {
     // Serve GraphQL
     if (options2.graphQL && !options1.ssrOnly) {
       const endpoint = '/graphql';
-      const graphQLOptions = {
-        schema: options2.graphQL.schema
-      };
+      const graphQLOptions = (req) => ({
+        schema: options2.graphQL.schema,
+        context: { auth: req.auth }
+      });
       const graphQL = new Router();
       const handler = graphqlRestify(graphQLOptions);
 
