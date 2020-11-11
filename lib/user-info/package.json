@@ -1,0 +1,36 @@
+{
+  "name": "@not-govuk/user-info",
+  "version": "0.1.27",
+  "description": "A React context for providing information on the user.",
+  "main": "src/UserInfo.ts",
+  "publishConfig": {
+    "main": "dist/UserInfo.js",
+    "typings": "dist/UserInfo.d.ts"
+  },
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "MIT",
+  "keywords": [
+    "react-components"
+  ],
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "react": "^16.9.35"
+  },
+  "devDependencies": {
+    "@not-govuk/component-test-helpers": "workspace:^0.1.0",
+    "@types/react": "^16.9.35",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.2"
+  }
+}
