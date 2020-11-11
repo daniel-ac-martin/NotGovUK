@@ -7,6 +7,7 @@ import { Configuration as WebpackConfig } from 'webpack';
 import restify, { Router, errors } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, TemplateProps, reactRenderer } from '@not-govuk/server-renderer';
+import { AuthOptions, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
 
 export type Api = {
@@ -57,6 +58,7 @@ export type EngineStage2Options = {
   PageWrap: ComponentType<PageProps>
   Template: ComponentType<TemplateProps>
   apis?: Api[]
+  auth?: AuthOptions
   graphQL?: {
     schema: GraphQLSchema
   }
@@ -92,6 +94,8 @@ export const engine = async (options1: EngineStage1Options) => {
       : options1.httpd.port
   );
 
+  let proxy;
+
   if (webpack) {
     // Set up extra Restify instance for proxy
     const httpd = restify.createServer({
@@ -121,9 +125,11 @@ export const engine = async (options1: EngineStage1Options) => {
     httpd.listen(options1.httpd.port, options1.httpd.host, () => {
       httpd.log.info('%s listening at %s', httpd.name, httpd.url);
     });
+
+    proxy = httpd;
   }
 
-  return async (options2: EngineStage2Options) => {
+  const stage2 = async (options2: EngineStage2Options) => {
     const pages = await gatherPages(options2.pageLoader);
 
     const react = reactRenderer(
@@ -154,6 +160,11 @@ export const engine = async (options1: EngineStage1Options) => {
 
     httpd.use(react.renderer);
 
+    // Gather auth information
+    if (options2.auth) {
+      httpd.use(auth(options2.auth).middleware);
+    }
+
     // Serve static assets built by webpack
     const publicPaths = publicPath + '*';
     const servePublicFiles = restify.plugins.serveStaticFiles(localAssetsPath);
@@ -177,9 +188,10 @@ export const engine = async (options1: EngineStage1Options) => {
     // Serve GraphQL
     if (options2.graphQL && !options1.ssrOnly) {
       const endpoint = '/graphql';
-      const graphQLOptions = {
-        schema: options2.graphQL.schema
-      };
+      const graphQLOptions = (req) => ({
+        schema: options2.graphQL.schema,
+        context: { auth: req.auth }
+      });
       const graphQL = new Router();
       const handler = graphqlRestify(graphQLOptions);
 
@@ -223,7 +235,10 @@ export const engine = async (options1: EngineStage1Options) => {
 
     return r;
   };
+
+  return Object.assign(stage2, { proxy } );
 };
 
 export default engine;
+export { AuthMethod } from './lib/auth';
 export { Router, errors } from '@not-govuk/restify';

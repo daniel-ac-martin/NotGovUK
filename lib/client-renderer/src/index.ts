@@ -1,10 +1,11 @@
 import { ComponentType, createElement as h } from 'react';
 import { hydrate as originalHydrate, render as originalRender } from 'react-dom';
-import { ApplicationProps, ApplicationPropsCSR, ErrorPageProps, PageProps, PageLoader, compose } from '@not-govuk/app-composer';
+import { ApplicationProps, ApplicationPropsCSR, ErrorPageProps, PageProps, PageLoader, UserInfo, compose } from '@not-govuk/app-composer';
 
 export const hydrateOrRender = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, LoadingPage: ComponentType<PageProps>, pageLoader: PageLoader): void => {
   interface IWindowWithHydration extends Window {
     hydrationData?: object
+    hydrationUser?: UserInfo
     hydrationId?: string
     hydrationProps?: ApplicationPropsCSR
   };
@@ -22,7 +23,8 @@ export const hydrateOrRender = (AppWrap: ComponentType<ApplicationProps>, PageWr
         endpoint: '/graphql'
       },
       pageLoader,
-      routerProps
+      routerProps,
+      user: windowWithProps.hydrationUser
     }),
     windowWithProps.hydrationProps
   );

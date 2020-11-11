@@ -2,7 +2,7 @@ import { GraphQLSchema } from 'graphql';
 import { ComponentType, createElement as h } from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import { html as beautifyHtml } from 'js-beautify';
-import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, compose, renderToStringWithData } from '@not-govuk/app-composer';
+import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
 
 const statusToTitle = {
   400: 'Bad request',
@@ -34,6 +34,7 @@ export type TemplateProps = {
   rootId: string
   scripts: string[]
   stylesheets: string[]
+  user: UserInfo
 };
 
 export type Template = ComponentType<TemplateProps>;
@@ -62,6 +63,7 @@ const contentTypeToCharSet = (contentType: string): string => {
 export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, Template: Template, options: RendererOptions) => {
   const createApp = (req, res, body, charSet) => {
     const data = {}
+    const user = req.auth;
     const routerProps = {
       location: req.url,
       context: {
@@ -86,14 +88,15 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       ...reqProps
     };
     const App = compose({
-        AppWrap,
-        ErrorPage,
-        PageWrap,
-        graphQL: options.graphQL && {
-          schema: options.graphQL.schema
-        },
-        routerProps,
-        data
+      AppWrap,
+      ErrorPage,
+      PageWrap,
+      graphQL: options.graphQL && {
+        schema: options.graphQL.schema
+      },
+      routerProps,
+      data,
+      user
     });
     const app = h(App, appProps)
 
@@ -122,7 +125,8 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
             ? undefined
             : assets.filter(v => v.endsWith('.js'))
         ),
-        stylesheets: assets.filter(v => v.endsWith('.css'))
+        stylesheets: assets.filter(v => v.endsWith('.css')),
+        user
       };
 
       return beautifyHtml(
