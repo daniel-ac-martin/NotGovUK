@@ -7,6 +7,7 @@ import { Configuration as WebpackConfig } from 'webpack';
 import restify, { Router, errors } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, TemplateProps, reactRenderer } from '@not-govuk/server-renderer';
+import { AuthOptions, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
 
 export type Api = {
@@ -57,6 +58,7 @@ export type EngineStage2Options = {
   PageWrap: ComponentType<PageProps>
   Template: ComponentType<TemplateProps>
   apis?: Api[]
+  auth?: AuthOptions
   graphQL?: {
     schema: GraphQLSchema
   }
@@ -158,6 +160,11 @@ export const engine = async (options1: EngineStage1Options) => {
 
     httpd.use(react.renderer);
 
+    // Gather auth information
+    if (options2.auth) {
+      httpd.use(auth(options2.auth).middleware);
+    }
+
     // Serve static assets built by webpack
     const publicPaths = publicPath + '*';
     const servePublicFiles = restify.plugins.serveStaticFiles(localAssetsPath);
@@ -232,4 +239,5 @@ export const engine = async (options1: EngineStage1Options) => {
 };
 
 export default engine;
+export { AuthMethod } from './lib/auth';
 export { Router, errors } from '@not-govuk/restify';

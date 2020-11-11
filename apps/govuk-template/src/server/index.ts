@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import engine, { Mode, NodeEnv } from '@not-govuk/engine';
+import engine, { AuthMethod, Mode, NodeEnv } from '@not-govuk/engine';
 import config from './config';
 import Template from './template';
 import AppWrap from '../common/app-wrap';
@@ -40,6 +40,12 @@ const startApp = () => stage1.then(
     ErrorPage,
     PageWrap,
     Template,
+    auth: config.auth && (
+      ( config.auth.method === AuthMethod.None && { method: AuthMethod.None } )
+        || ( config.auth.method === AuthMethod.Dummy && { method: AuthMethod.Dummy, ...config.auth.dummy } )
+        || ( config.auth.method === AuthMethod.Headers && { method: AuthMethod.Headers, ...config.auth.headers } )
+        || ( config.auth.method === AuthMethod.OIDC && { method: AuthMethod.OIDC, ...config.auth.oidc } )
+    ),
     graphQL: {
       schema: graphQLSchema
     },
