@@ -79,8 +79,19 @@ if (module.hot) {
               v.log.info(`${v.name} is no longer listening`)
 
               if (state.needSetup) {
-                state.needSetup = false;
-                stage1 = setup();
+                stage1.then(
+                  ({ proxy }) => {
+                    state.needSetup = false;
+
+                    proxy.log.info(`${proxy.name} is going down...`);
+                    proxy.stop(
+                      () => {
+                        proxy.log.info(`${proxy.name} is no longer listening`)
+                        stage1 = setup();
+                      }
+                    );
+                  }
+                );
               }
 
               app = startApp();

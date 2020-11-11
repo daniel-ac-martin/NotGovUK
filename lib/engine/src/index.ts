@@ -92,6 +92,8 @@ export const engine = async (options1: EngineStage1Options) => {
       : options1.httpd.port
   );
 
+  let proxy;
+
   if (webpack) {
     // Set up extra Restify instance for proxy
     const httpd = restify.createServer({
@@ -121,9 +123,11 @@ export const engine = async (options1: EngineStage1Options) => {
     httpd.listen(options1.httpd.port, options1.httpd.host, () => {
       httpd.log.info('%s listening at %s', httpd.name, httpd.url);
     });
+
+    proxy = httpd;
   }
 
-  return async (options2: EngineStage2Options) => {
+  const stage2 = async (options2: EngineStage2Options) => {
     const pages = await gatherPages(options2.pageLoader);
 
     const react = reactRenderer(
@@ -223,6 +227,8 @@ export const engine = async (options1: EngineStage1Options) => {
 
     return r;
   };
+
+  return Object.assign(stage2, { proxy } );
 };
 
 export default engine;
