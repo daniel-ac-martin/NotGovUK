@@ -19,7 +19,7 @@
     "distclean": "pnpm recursive exec -- rm -rf node_modules && rm -rf node_modules",
     "start": "echo 'Error: This is the root of the monorepo, you should run `cd apps/YOUR_APP && npm start` or run `npm run storybook` to start Storybook.' && false",
     "storybook": "start-storybook -p 9009",
-    "build:storybook": "build-storybook",
+    "build:storybook": "build-storybook && touch storybook-static/index.html",
     "clean:storybook": "rm -rf storybook-static",
     "chromatic": "chromatic --exit-zero-on-changes",
     "test": "jest --coverage --json --outputFile=.jest-results.json"
