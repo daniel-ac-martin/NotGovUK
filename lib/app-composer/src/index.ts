@@ -5,6 +5,7 @@ import { ComponentType, Fragment, Suspense, createElement as h, lazy } from 'rea
 import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
 import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
 import { Route, RouteComponentProps, withRouter } from '@not-govuk/route-utils';
+import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
 
 export type RouteInfo = {
   href: string
@@ -76,6 +77,7 @@ type ComposeOptionsCommon = {
   ErrorPage: ErrorPage
   PageWrap: Page
   data: object
+  user?: UserInfo
 };
 
 type ComposeOptionsSSR = ComposeOptionsCommon & {
@@ -110,6 +112,16 @@ export const compose: Compose = options => {
     "context" in options.routerProps
       ? StaticRouter
       : BrowserRouter
+  );
+  const UserInfoProvider: ComponentType<{}> = ({ children }) => (
+    options.user
+      ? h(
+        UserInfoContext.Provider,
+        {
+          value: options.user
+        },
+        children)
+      : h(Fragment, {}, children)
   );
   const SuspenseOrFragment = (
     "LoadingPage" in options
@@ -205,10 +217,10 @@ export const compose: Compose = options => {
 
     const router = h(
       Router, options.routerProps,
-      h(
+      h(UserInfoProvider, {}, h(
         SuspenseOrFragment, suspenseProps,
         switchOrError
-      )
+      ))
     );
 
     return h(
@@ -221,3 +233,4 @@ export const compose: Compose = options => {
 };
 
 export { renderToStringWithData } from '@apollo/client/react/ssr';
+export type { UserInfo };
