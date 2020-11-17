@@ -98,7 +98,8 @@ export const Header: FC<HeaderProps> = ({
   const orgText = organisationText || ( govUK ? 'GOV.UK' : departmentText(department) );
   const navLinks = !signOutHref ? navigation : [...navigation, {
     href: signOutHref,
-    text: signOutText
+    text: signOutText,
+    forceExternal: true
   }];
 
   return (
