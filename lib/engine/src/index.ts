@@ -179,7 +179,9 @@ export const engine = async (options1: EngineStage1Options) => {
 
     // Gather auth information
     if (options2.auth) {
-      httpd.use(auth(options2.auth).middleware);
+      const { apply: applyAuth } = await auth(options2.auth);
+
+      applyAuth(httpd);
     }
 
     // Serve static assets built by webpack
