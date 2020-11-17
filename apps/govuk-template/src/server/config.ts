@@ -7,7 +7,8 @@ const devMode = env === NodeEnv.Development;
 const serverConfig = {
   ...commonConfig,
   auth: {
-    method: devMode ? AuthMethod.Dummy : AuthMethod.OIDC,
+    method: process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.OIDC ),
+    sessionsSecret: process.env.SESSIONS_SECRET || 'changeme',
     dummy: {
       username: 'TestUser',
       groups: [],
@@ -19,8 +20,8 @@ const serverConfig = {
       rolesHeader: process.env.AUTH_HEADER_ROLES || 'x-auth-roles'
     },
     oidc: {
-      authority: process.env.OIDC_AUTHORITY,
-      clientId: process.env.OIDC_CLIENT_ID,
+      issuer: process.env.OIDC_ISSUER || 'https://sso-dev.notprod.homeoffice.gov.uk/auth/realms/lev/',
+      clientId: process.env.OIDC_CLIENT_ID || 'local-dev',
       clientSecret: process.env.OIDC_CLIENT_SECRET,
       redirectUri: process.env.OIDC_REDIRECT_URI || 'http://localhost:8080'
     }
