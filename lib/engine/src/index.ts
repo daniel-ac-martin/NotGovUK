@@ -7,7 +7,7 @@ import { Configuration as WebpackConfig } from 'webpack';
 import restify, { Router, errors } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, TemplateProps, reactRenderer } from '@not-govuk/server-renderer';
-import { AuthOptions, auth } from './lib/auth';
+import { AuthMethod, AuthOptions, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
 
 export type Api = {
@@ -130,6 +130,21 @@ export const engine = async (options1: EngineStage1Options) => {
   }
 
   const stage2 = async (options2: EngineStage2Options) => {
+    const signInOut = options2.auth && !([
+      AuthMethod.None,
+      AuthMethod.Dummy,
+      AuthMethod.Headers
+    ].includes(options2.auth.method))
+    const signInHRef = (
+      signInOut
+        ? '/auth/sign-in'
+        : undefined
+    );
+    const signOutHRef = (
+      signInOut
+        ? '/auth/sign-out'
+        : undefined
+    );
     const pages = await gatherPages(options2.pageLoader);
 
     const react = reactRenderer(
@@ -145,6 +160,8 @@ export const engine = async (options1: EngineStage1Options) => {
         },
         pages,
         rootId: 'root',
+        signInHRef,
+        signOutHRef,
         ssrOnly: options1.ssrOnly
       });
     const formatHTML = react.formatHTML;
@@ -240,5 +257,5 @@ export const engine = async (options1: EngineStage1Options) => {
 };
 
 export default engine;
-export { AuthMethod } from './lib/auth';
+export { AuthMethod };
 export { Router, errors } from '@not-govuk/restify';
