@@ -23,6 +23,8 @@ export type PageInfoSSR = PageInfo & {
 type ApplicationPropsCommon = {
   err?: ServerError
   pageTitle: string
+  signInHRef?: string
+  signOutHRef?: string
 };
 
 export type ApplicationPropsCSR = ApplicationPropsCommon & {
@@ -49,6 +51,8 @@ export type Application = ComponentType<ApplicationProps>;
 
 export type PageProps = RouteComponentProps & {
   routes: RouteInfo[]
+  signInHRef?: string
+  signOutHRef?: string
 };
 
 export type Page = ComponentType<PageProps>;
@@ -167,7 +171,11 @@ export const compose: Compose = options => {
         href: decodeURI(e.href),
         title: e.title
       }));
-    const pageProps = { routes };
+    const pageProps = {
+      routes,
+      signInHRef: props.signInHRef,
+      signOutHRef: props.signOutHRef
+    };
     const withPageWrap = Component => props => (
       h(
         options.PageWrap, pageProps,
