@@ -91,7 +91,7 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
     );
     const reqProps = {
       err,
-      pageTitle: (err && err.title) || body.toString()
+      pageTitle: (err && err.title) || body?.toString()
     };
     const appProps = {
       pages: options.pages,
