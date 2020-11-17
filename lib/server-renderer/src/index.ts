@@ -46,7 +46,9 @@ export type RendererOptions = {
     schema: GraphQLSchema
   }
   pages: PageInfoSSR[]
-  rootId: string,
+  rootId: string
+  signInHRef?: string
+  signOutHRef?: string
   ssrOnly: boolean
 };
 
@@ -85,6 +87,8 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
     };
     const appProps = {
       pages: options.pages,
+      signInHRef: options.signInHRef,
+      signOutHRef: options.signOutHRef,
       ...reqProps
     };
     const App = compose({
