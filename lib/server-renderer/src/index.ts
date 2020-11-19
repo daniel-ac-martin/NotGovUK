@@ -46,7 +46,9 @@ export type RendererOptions = {
     schema: GraphQLSchema
   }
   pages: PageInfoSSR[]
-  rootId: string,
+  rootId: string
+  signInHRef?: string
+  signOutHRef?: string
   ssrOnly: boolean
 };
 
@@ -63,7 +65,15 @@ const contentTypeToCharSet = (contentType: string): string => {
 export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, Template: Template, options: RendererOptions) => {
   const createApp = (req, res, body, charSet) => {
     const data = {}
-    const user = req.auth;
+    const user: UserInfo = {
+      displayName: req.auth?.displayName,
+      emails: req.auth?.emails,
+      groups: req.auth?.groups,
+      name: req.auth?.name,
+      photos: req.auth?.photos,
+      roles: req.auth?.roles,
+      username: req.auth?.username
+    };
     const routerProps = {
       location: req.url,
       context: {
@@ -81,10 +91,12 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
     );
     const reqProps = {
       err,
-      pageTitle: (err && err.title) || body.toString()
+      pageTitle: (err && err.title) || body?.toString()
     };
     const appProps = {
       pages: options.pages,
+      signInHRef: options.signInHRef,
+      signOutHRef: options.signOutHRef,
       ...reqProps
     };
     const App = compose({

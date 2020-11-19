@@ -1,21 +1,24 @@
 import { Context, createContext, useContext } from 'react';
 
 export type UserInfo = {
-  username: string
+  displayName?: string
+  emails?: Array<{ value: string, type?: string }>
   groups: string[]
+  name?: {
+    familyName?: string
+    givenName?: string
+    middleName?: string
+  },
+  photos?: Array<{ value: string }>
   roles: string[]
+  username: string
 };
 
-export type UserInfoProps = UserInfo & {
-};
+type Maybe<T> = T | void;
 
-export const UserInfoContext: Context<UserInfo> = createContext({
-  username: 'DummyUser',
-  groups: ['DummyGroup'],
-  roles: ['DummyRole']
-});
+export const UserInfoContext: Context<Maybe<UserInfo>> = createContext(undefined);
 
-export const useUserInfo = (): UserInfo => (
+export const useUserInfo = (): Maybe<UserInfo> => (
   useContext(UserInfoContext)
 );
 
