@@ -29,6 +29,7 @@ const config = {
   ],
   globals: {
     'ts-jest': {
+      isolatedModules: true,
       tsConfig: path.resolve(__dirname, 'tsconfig.nodejs.json')
     }
   }
