@@ -11,7 +11,7 @@ module.exports = {
       name: '@not-govuk/storybook-preset',
       options: {
         baseDir: __dirname,
-        tsConfig: '../tsconfig.json'
+        tsConfig: '../tsconfig.webpack.json'
       }
     },
     '@storybook/addon-a11y/register',
