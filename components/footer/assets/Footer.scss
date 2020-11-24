@@ -3,7 +3,7 @@
 
 .govuk-footer {
   &__copyright-logo {
-    background-image: url('../node_modules/govuk-frontend/govuk/assets/images/govuk-crest.png') !important; // TODO: !important is required due to SCSS being included twice.
+    background-image: url('~govuk-frontend/govuk/assets/images/govuk-crest.png') !important; // TODO: !important is required due to SCSS being included twice.
   }
 
   .govuk-link, a {
