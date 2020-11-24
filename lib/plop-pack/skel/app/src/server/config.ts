@@ -7,11 +7,12 @@ const devMode = env === NodeEnv.Development;
 const serverConfig = {
   ...commonConfig,
   auth: {
-    method: devMode ? AuthMethod.Dummy : AuthMethod.OIDC,
+    method: process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.OIDC ),
+    sessionsSecret: process.env.SESSIONS_SECRET || 'changeme',
     dummy: {
       username: 'TestUser',
       groups: [],
-      roles: []
+      roles: ['books.author', 'books.title']
     },
     headers: {
       usernameHeader: process.env.AUTH_HEADER_USERNAME || 'x-auth-username',
@@ -19,13 +20,13 @@ const serverConfig = {
       rolesHeader: process.env.AUTH_HEADER_ROLES || 'x-auth-roles'
     },
     oidc: {
-      authority: process.env.OIDC_AUTHORITY,
-      clientId: process.env.OIDC_CLIENT_ID,
+      issuer: process.env.OIDC_ISSUER || 'https://sso-dev.notprod.homeoffice.gov.uk/auth/realms/lev/',
+      clientId: process.env.OIDC_CLIENT_ID || 'local-dev',
       clientSecret: process.env.OIDC_CLIENT_SECRET,
       redirectUri: process.env.OIDC_REDIRECT_URI || 'http://localhost:8080'
     }
   },
-  env: process.env.NODE_ENV as NodeEnv,
+  env,
   httpd: {
     host: process.env.LISTEN_HOST || '0.0.0.0',
     port: Number(process.env.LISTEN_PORT) || 8080
