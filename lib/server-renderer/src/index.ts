@@ -108,7 +108,7 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       },
       routerProps,
       data,
-      user
+      user: { ...user, accessToken: req.auth?.accessToken }
     });
     const app = h(App, appProps)
 

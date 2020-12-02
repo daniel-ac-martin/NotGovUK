@@ -81,7 +81,6 @@ type ComposeOptionsCommon = {
   ErrorPage: ErrorPage
   PageWrap: Page
   data: object
-  user?: UserInfo
 };
 
 type ComposeOptionsSSR = ComposeOptionsCommon & {
@@ -89,6 +88,9 @@ type ComposeOptionsSSR = ComposeOptionsCommon & {
     schema: GraphQLSchema
   }
   routerProps: StaticRouterProps
+  user?: UserInfo & {
+    accessToken?: string
+  }
 };
 
 type ComposeOptionsCSR = ComposeOptionsCommon & {
@@ -98,6 +100,7 @@ type ComposeOptionsCSR = ComposeOptionsCommon & {
   }
   pageLoader: PageLoader
   routerProps: BrowserRouterProps
+  user?: UserInfo
 };
 
 export type ComposeOptions = ComposeOptionsCSR | ComposeOptionsSSR;
