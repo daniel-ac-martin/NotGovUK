@@ -91,8 +91,8 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
         ...(data.realm_access?.roles || []),
         ...(Object.entries(data.resource_access || {}).reduce(resourceToRoles, []))
       ].filter(id),
-      accessToken: tokenset.access_token,
-      refreshToken: tokenset.refresh_token
+      accessToken: tokenset.access_token//,
+      //refreshToken: tokenset.refresh_token // removed until we can handle it
     };
 
     done(null, user);
