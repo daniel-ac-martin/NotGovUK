@@ -40,7 +40,7 @@ experience on clients that can support it.
 Notable files and directories
 -----------------------------
 
-- `dest/`: Directory containing compiled versions of source code and assets.
+- `dist/`: Directory containing compiled versions of source code and assets.
 - `src/client/`: Source code that is only run on the client.
 - `src/client/index.ts`: The entry-point for the client-side bundle.
 - `src/common/`: Source code that is run on both the client and the server.
