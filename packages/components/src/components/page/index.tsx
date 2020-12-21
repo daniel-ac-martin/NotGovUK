@@ -1,16 +1,16 @@
 import { FC, Fragment, createElement as h } from 'react';
+import { Breadcrumb } from '@not-govuk/breadcrumbs';
 import { NavigationLink } from '@not-govuk/header';
 import { A, BackLink, Breadcrumbs, Footer, Header, PhaseBanner, SkipLink } from '../';
 import Body from './body';
 import Main from './main';
-import { IBreadcrumb } from '../breadcrumbs';
 import { bem, className } from '../../helpers';
 
 interface IPage {
   /** Location for the Back link */
   backHref?: string,
   /** List of links */
-  breadcrumbs?: Array<IBreadcrumb>
+  breadcrumbs?: Breadcrumb[]
   /** Extra CSS classes to be applied */
   className?: string,
   /** The department whose colours to use */
