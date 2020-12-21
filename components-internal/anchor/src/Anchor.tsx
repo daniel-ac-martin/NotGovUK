@@ -36,16 +36,16 @@ const includes = (haystack: object, needle: object): boolean => {
   return subIncludes(haystack, needle);
 };
 
+export const isActive = (query: object) => (match: Match<object>, location: Location): boolean => (
+  match && includes(
+    urlParse(location.search).query,
+    query
+  )
+);
+
 export const Anchor: FC<AnchorProps> = ({ children, classBlock, classModifiers, className, forceExternal = false, href, ...attrs }) => {
   const classes = classBuilder('penultimate-anchor', classBlock, classModifiers, className);
   const url = urlParse(href);
-
-  const isActive = (match: Match<object>, location: Location): boolean => (
-    match && includes(
-      urlParse(location.search).query,
-      url.query
-    )
-  );
 
   return (forceExternal || url.host) ? (
     <a
@@ -60,7 +60,7 @@ export const Anchor: FC<AnchorProps> = ({ children, classBlock, classModifiers, 
       {...attrs}
       className={classes()}
       to={href}
-      isActive={isActive}
+      isActive={isActive(url.query)}
       exact
     >
       {children}
