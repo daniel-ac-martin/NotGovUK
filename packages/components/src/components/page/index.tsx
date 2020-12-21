@@ -63,7 +63,7 @@ export const Page: FC<IPage> = props => {
 
   return(
     <div className={className(bem('nguk-page', props.govUk ? undefined: 'not-govuk', props.department), props.className)}>
-      <SkipLink id="skip-link" href="#main-content" />
+      <SkipLink id="skip-link" for="main-content">Skip to main content</SkipLink>
       <Header govUK={govUK}
         department={props.department}
         organisationHref={props.logoHref}
