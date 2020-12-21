@@ -1,7 +1,7 @@
 export { default as Anchor, default as A, default as Link } from '@not-govuk/link';
 
 export { default as BackLink } from '@not-govuk/back-link';
-export { default as Breadcrumbs } from './breadcrumbs';
+export { default as Breadcrumbs } from '@not-govuk/breadcrumbs';
 export { default as Button, StartButton, SubmitButton } from './button';
 export { default as Checkboxes } from './checkboxes';
 export { default as DateInput } from './date-input';

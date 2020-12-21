@@ -1,0 +1,16 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/breadcrumbs/_index";
+
+.govuk-breadcrumbs {
+  &__list {
+    @extend .govuk-breadcrumbs;
+
+    &__item {
+      @extend .govuk-breadcrumbs__list-item;
+    }
+
+    &__link {
+      @extend .govuk-breadcrumbs__link;
+    }
+  }
+}

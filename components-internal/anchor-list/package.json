@@ -1,0 +1,43 @@
+{
+  "name": "@not-govuk/anchor-list",
+  "version": "0.1.31",
+  "description": "A list of anchors.",
+  "main": "src/AnchorList.tsx",
+  "sass": "assets/AnchorList.scss",
+  "publishConfig": {
+    "main": "dist/AnchorList.js",
+    "typings": "dist/AnchorList.d.ts"
+  },
+  "files": [
+    "/assets",
+    "/dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "MIT",
+  "keywords": [
+    "react-components"
+  ],
+  "dependencies": {
+    "@not-govuk/anchor": "workspace:^0.1.31",
+    "@not-govuk/component-helpers": "workspace:^0.1.0",
+    "@not-govuk/route-utils": "workspace:^0.1.31"
+  },
+  "peerDependencies": {
+    "@not-govuk/docs-components": "^0.1.0",
+    "react": "^16.9.35"
+  },
+  "devDependencies": {
+    "@mdx-js/react": "^1.6.5",
+    "@not-govuk/component-test-helpers": "workspace:^0.1.0",
+    "@types/react": "^16.9.35",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.2"
+  }
+}

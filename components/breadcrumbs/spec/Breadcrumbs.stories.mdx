@@ -1,15 +1,15 @@
-import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
-import { object } from "@storybook/addon-knobs";
-import { Breadcrumbs } from '../../';
-import readMe from './README.md';
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Breadcrumbs } from '../src/Breadcrumbs';
+import readMe from '../README.md';
+export const title = 'Breadcrumbs';
 
 <Meta
   title="Breadcrumbs"
-  component={Breadcrumbs}
-  parameters={{
-    jest: ['breadcrumbs'],
+  component={ Breadcrumbs }
+  parameters={ {
+    jest: ['Breadcrumbs'],
     notes: readMe
-  }}
+  } }
 />
 
 # Breadcrumbs
@@ -19,16 +19,16 @@ The breadcrumbs component helps users to understand where they are within a webs
 <Preview withToolbar>
   <Story name="Breadcrumbs">
     <Breadcrumbs
-      items={object('items', [
+      items={[
         { text: 'Home', href: '#' },
         { text: 'Passports, travel and living abroad', href: '#' },
         { text: 'Travel abroad', href: '#' }
-      ])}
+      ]}
     />
   </Story>
 </Preview>
 
-<Props of={Breadcrumbs} />
+<Props of={ Breadcrumbs } />
 
 
 ## When to use this component
@@ -46,6 +46,12 @@ If you’re using other navigational elements on the page, such as a sidebar, co
 ## How it works
 
 The breadcrumbs component should include the user’s current page, which should be visually different from the other links in the breadcrumb.
+
+
+## Stories
+### Standard
+
+A standard Breadcrumbs.
 
 <Preview>
   <Story name="Standard">

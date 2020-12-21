@@ -76,16 +76,17 @@ export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock
   const submit = (values: any) => {
     console.debug('Form: Submitting...');
     const formattedValues = completion.formatFields(values);
-    const url = urlParse(_action);
+    const actionUrl = urlParse(_action);
+    const url = (
+      method === 'get'
+        ? actionUrl.set('query', {...actionUrl.query, ...formattedValues})
+        : actionUrl
+    );
     const state = (
       method === 'post'
         ? formattedValues
         : undefined
     );
-
-    if (method === 'get') {
-      url.query = {...url.query, ...formattedValues};
-    }
 
     history.push(url.toString(), state);
   };

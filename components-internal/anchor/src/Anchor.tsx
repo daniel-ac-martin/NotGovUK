@@ -1,5 +1,5 @@
 import { Location } from 'history';
-import { FC, createElement as h } from 'react';
+import { AnchorHTMLAttributes, FC, createElement as h } from 'react';
 import { match as Match } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
@@ -7,19 +7,9 @@ import { urlParse } from '@not-govuk/route-utils';
 
 import '../assets/Anchor.scss';
 
-export type AnchorProps = StandardProps & {
-  /** Whether the link should be draggable */
-  draggable?: boolean,
+export type AnchorProps = StandardProps & AnchorHTMLAttributes<HTMLAnchorElement> & {
   /** Whether to force the link to be treated as external (useful for internal links that are NOT handled by the application) */
-  forceExternal?: boolean,
-  /** Location to link to */
-  href: string,
-  /** Relation of the link */
-  rel?: string,
-  /** Role of the link */
-  role?: string,
-  /** Title of the link */
-  title?: string
+  forceExternal?: boolean
 };
 
 const includes = (haystack: object, needle: object): boolean => {
@@ -46,16 +36,16 @@ const includes = (haystack: object, needle: object): boolean => {
   return subIncludes(haystack, needle);
 };
 
+export const isActive = (query: object) => (match: Match<object>, location: Location): boolean => (
+  match && includes(
+    urlParse(location.search).query,
+    query
+  )
+);
+
 export const Anchor: FC<AnchorProps> = ({ children, classBlock, classModifiers, className, forceExternal = false, href, ...attrs }) => {
   const classes = classBuilder('penultimate-anchor', classBlock, classModifiers, className);
   const url = urlParse(href);
-
-  const isActive = (match: Match<object>, location: Location): boolean => (
-    match && includes(
-      urlParse(location.search).query,
-      url.query
-    )
-  );
 
   return (forceExternal || url.host) ? (
     <a
@@ -70,7 +60,7 @@ export const Anchor: FC<AnchorProps> = ({ children, classBlock, classModifiers, 
       {...attrs}
       className={classes()}
       to={href}
-      isActive={isActive}
+      isActive={isActive(url.query)}
       exact
     >
       {children}
