@@ -452,6 +452,30 @@ importers:
       jest: ^26.1.0
       ts-jest: ^26.1.1
       typescript: ^3.9.2
+  components/phase-banner:
+    dependencies:
+      '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
+      '@not-govuk/sass-base': 'link:../../lib-govuk/sass-base'
+      '@not-govuk/tag': 'link:../tag'
+      govuk-frontend: 3.9.1
+    devDependencies:
+      '@mdx-js/react': 1.6.22
+      '@not-govuk/component-test-helpers': 'link:../../lib/component-test-helpers'
+      '@types/react': 16.14.2
+      jest: 26.6.3
+      ts-jest: 26.4.4_jest@26.6.3+typescript@3.9.7
+      typescript: 3.9.7
+    specifiers:
+      '@mdx-js/react': ^1.6.5
+      '@not-govuk/component-helpers': 'workspace:^0.1.0'
+      '@not-govuk/component-test-helpers': 'workspace:^0.1.0'
+      '@not-govuk/sass-base': 'workspace:^0.1.31'
+      '@not-govuk/tag': 'workspace:^0.1.31'
+      '@types/react': ^16.9.35
+      govuk-frontend: ^3.9.1
+      jest: ^26.1.0
+      ts-jest: ^26.1.1
+      typescript: ^3.9.2
   components/skip-link:
     dependencies:
       '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
@@ -882,6 +906,7 @@ importers:
       '@not-govuk/inset-text': 'link:../../components/inset-text'
       '@not-govuk/link': 'link:../../components/link'
       '@not-govuk/panel': 'link:../../components/panel'
+      '@not-govuk/phase-banner': 'link:../../components/phase-banner'
       '@not-govuk/route-utils': 'link:../../lib/route-utils'
       '@not-govuk/sass-base': 'link:../../lib-govuk/sass-base'
       '@not-govuk/skip-link': 'link:../../components/skip-link'
@@ -913,6 +938,7 @@ importers:
       '@not-govuk/inset-text': 'workspace:^0.1.26'
       '@not-govuk/link': 'workspace:^0.1.0'
       '@not-govuk/panel': 'workspace:^0.1.26'
+      '@not-govuk/phase-banner': 'workspace:^0.1.31'
       '@not-govuk/route-utils': 'workspace:^0.1.0'
       '@not-govuk/sass-base': 'workspace:^0.1.0'
       '@not-govuk/skip-link': 'workspace:^0.1.31'
@@ -5582,7 +5608,7 @@ packages:
       source-map: 0.6.1
       string-length: 4.0.1
       terminal-link: 2.1.1
-      v8-to-istanbul: 7.0.0
+      v8-to-istanbul: 7.1.0
     dev: true
     engines:
       node: '>= 10.14.2'
@@ -23426,7 +23452,7 @@ packages:
       node: '>=10.10.0'
     resolution:
       integrity: sha512-PzM1WlqquhBvsV+Gco6WSFeg1AGdD53ccMRkFeyHRE/KRZaVacPOmQYP3EeVgDBtKD2BJ8kgynBQ5OtKiHCH+w==
-  /v8-to-istanbul/7.0.0:
+  /v8-to-istanbul/7.1.0:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.3
       convert-source-map: 1.7.0
@@ -23435,7 +23461,7 @@ packages:
     engines:
       node: '>=10.10.0'
     resolution:
-      integrity: sha512-fLL2rFuQpMtm9r8hrAV2apXX/WqHJ6+IC4/eQVdMDGBUgH/YMV4Gv3duk3kjmyg6uiQWBAA9nJwue4iJUOkHeA==
+      integrity: sha512-uXUVqNUCLa0AH1vuVxzi+MI4RfxEOKt9pBgKwHbgH7st8Kv2P1m+jvWNnektzBh5QShF3ODgKmUFCf38LnVz1g==
   /v8flags/2.1.1:
     dependencies:
       user-home: 1.1.1
