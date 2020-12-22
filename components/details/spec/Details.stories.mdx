@@ -1,15 +1,15 @@
-import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
-import { text } from "@storybook/addon-knobs";
-import { Details } from '../../';
-import readMe from './README.md';
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Details } from '../src/Details';
+import readMe from '../README.md';
+export const title = 'Details';
 
 <Meta
   title="Details"
-  component={Details}
-  parameters={{
-    jest: ['details'],
+  component={ Details }
+  parameters={ {
+    jest: ['Details'],
     notes: readMe
-  }}
+  } }
 />
 
 # Details
@@ -18,13 +18,14 @@ Make a page easier to scan by letting users reveal more detailed information onl
 
 <Preview withToolbar>
   <Story name="Details">
-    <Details summary={text('href', 'Help with nationality')}>
-      {text('text', 'We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.')}
+    <Details summary="Help with nationality">
+      We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
     </Details>
   </Story>
 </Preview>
 
-<Props of={Details} />
+<Props of={ Details } />
+
 
 ## When to use this component
 

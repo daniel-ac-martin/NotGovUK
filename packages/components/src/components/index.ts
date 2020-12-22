@@ -5,7 +5,7 @@ export { default as Breadcrumbs } from '@not-govuk/breadcrumbs';
 export { default as Button, StartButton, SubmitButton } from './button';
 export { default as Checkboxes } from './checkboxes';
 export { default as DateInput } from './date-input';
-export { default as Details } from './details';
+export { default as Details } from '@not-govuk/details';
 export { default as FormField } from './form-field';
 export { default as InsetText } from '@not-govuk/inset-text';
 export { default as Panel } from '@not-govuk/panel';
