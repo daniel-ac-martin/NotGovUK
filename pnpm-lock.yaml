@@ -306,6 +306,28 @@ importers:
       jest: ^26.1.0
       ts-jest: ^26.1.1
       typescript: ^3.9.2
+  components/details:
+    dependencies:
+      '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
+      '@not-govuk/sass-base': 'link:../../lib-govuk/sass-base'
+      govuk-frontend: 3.9.1
+    devDependencies:
+      '@mdx-js/react': 1.6.22
+      '@not-govuk/component-test-helpers': 'link:../../lib/component-test-helpers'
+      '@types/react': 16.14.2
+      jest: 26.6.3
+      ts-jest: 26.4.4_jest@26.6.3+typescript@3.9.7
+      typescript: 3.9.7
+    specifiers:
+      '@mdx-js/react': ^1.6.5
+      '@not-govuk/component-helpers': 'workspace:^0.1.0'
+      '@not-govuk/component-test-helpers': 'workspace:^0.1.0'
+      '@not-govuk/sass-base': 'workspace:^0.1.31'
+      '@types/react': ^16.9.35
+      govuk-frontend: ^3.9.1
+      jest: ^26.1.0
+      ts-jest: ^26.1.1
+      typescript: ^3.9.2
   components/footer:
     dependencies:
       '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
@@ -900,6 +922,7 @@ importers:
     dependencies:
       '@not-govuk/back-link': 'link:../../components/back-link'
       '@not-govuk/breadcrumbs': 'link:../../components/breadcrumbs'
+      '@not-govuk/details': 'link:../../components/details'
       '@not-govuk/footer': 'link:../../components/footer'
       '@not-govuk/forms': 'link:../../lib/forms'
       '@not-govuk/header': 'link:../../components/header'
@@ -932,6 +955,7 @@ importers:
     specifiers:
       '@not-govuk/back-link': 'workspace:^0.1.0'
       '@not-govuk/breadcrumbs': 'workspace:^0.1.31'
+      '@not-govuk/details': 'workspace:^0.1.31'
       '@not-govuk/footer': 'workspace:^0.1.27'
       '@not-govuk/forms': 'workspace:^0.1.0'
       '@not-govuk/header': 'workspace:^0.1.27'
