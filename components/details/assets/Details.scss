@@ -1,3 +1,6 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/details/_index";
+
 details {
   @extend .govuk-details;
 
@@ -9,4 +12,3 @@ details {
 summary {
   @extend .govuk-details__summary;
 }
-
