@@ -51,7 +51,7 @@ The breadcrumbs component should include the user’s current page, which should
 ## Stories
 ### Standard
 
-A standard Breadcrumbs.
+Standard Breadcrumbs.
 
 <Preview>
   <Story name="Standard">
@@ -60,6 +60,26 @@ A standard Breadcrumbs.
         { text: 'Home', href: '#' },
         { text: 'Passports, travel and living abroad', href: '#' },
         { text: 'Travel abroad', href: '#' }
+      ]}
+    />
+  </Story>
+</Preview>
+
+
+### Collapsing breadcrumbs on mobile devices
+
+If you have long breadcrumbs you can configure the component to only show the first and last items on mobile devices.
+
+<Preview>
+  <Story name="Collapsing">
+    <Breadcrumbs
+      classModifiers="collapse-on-mobile"
+      items={[
+        { text: "Home", href: "#" },
+        { text: "Environment", href: "#" },
+        { text: "Rural and countryside", href: '#' },
+        { text: "Rural development and land management", href: '#' },
+        { text: "Economic growth in rural areas", href: '#' }
       ]}
     />
   </Story>
