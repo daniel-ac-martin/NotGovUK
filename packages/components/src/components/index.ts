@@ -9,7 +9,7 @@ export { default as Details } from './details';
 export { default as FormField } from './form-field';
 export { default as InsetText } from '@not-govuk/inset-text';
 export { default as Panel } from '@not-govuk/panel';
-export { default as PhaseBanner } from './phase-banner';
+export { default as PhaseBanner } from '@not-govuk/phase-banner';
 export { default as Radios } from './radios';
 export { default as Select } from './select';
 export { default as SkipLink } from '@not-govuk/skip-link';

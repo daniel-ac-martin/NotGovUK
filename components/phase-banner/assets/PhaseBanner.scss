@@ -1,0 +1,8 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/phase-banner/_index";
+
+.govuk-phase-banner {
+  &__tag {
+    @extend .govuk-phase-banner__content__tag;
+  }
+}
