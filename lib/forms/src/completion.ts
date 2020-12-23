@@ -45,14 +45,14 @@ export class Completion {
     this.nextItem = 0;
   }
 
-  initialise(values: object): void {
+  initialise(values: object, touched: object): void {
     this.graph.deepMap_(e => e.depopulate());
 
     this.graph.gatherAllFieldNodes()
       .map(e => this.fields[e.name] = {
         inScope: false,
         visible: false,
-        seen: false,
+        seen: !!touched[e.name],
         preValidate: e.preValidate,
         validate: e.validate,
         format: e.format

@@ -59,7 +59,7 @@ export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock
   ) || {};
 
   const initialErrors = {};
-  const initialTouched = { ...submittedValues };
+  const initialTouched = Object.keys(submittedValues).reduce((acc, cur) => ({ ...acc, [cur]: true }), {});
   const initialValues = { ...submittedValues };
 
   const validate = (values: any) => {
@@ -130,7 +130,7 @@ export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock
   //const [completion] = useState(initialCompletion);
   const completion = new Completion(graph); // FIXME: Is this okay? There seems to be a bug when using useState as above.
 
-  completion.initialise(initialValues);
+  completion.initialise(initialValues, initialTouched);
   Object.assign(initialErrors, validate(initialValues));
   completion.update(initialValues, initialErrors);
 
