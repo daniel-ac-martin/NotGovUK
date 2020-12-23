@@ -1,13 +1,57 @@
-import { FC, Fragment, createElement as h } from 'react';
+import { FC, Fragment, HTMLProps, createElement as h } from 'react';
 import { FormikProps } from 'formik';
 
-const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
+const prettyPrint = (obj: object) => JSON.stringify(obj, undefined, 2);
 
-export type FormProps = JSX.IntrinsicElements["form"] & FormikProps<any> & {
+export type FormProps = HTMLProps<HTMLFormElement> & FormikProps<any> & {
   debug?: boolean
 };
 
-export const Form: FC<FormProps> = ({children, debug = false, errors, touched, values, ...attrs}) => (
+export const Form: FC<FormProps> = ({
+  children,
+  debug = false,
+  dirty,
+  enableReinitialize,
+  errors,
+  getFieldHelpers,
+  getFieldMeta,
+  getFieldProps,
+  handleBlur,
+  handleChange,
+  handleReset,
+  handleSubmit,
+  initialErrors,
+  initialStatus,
+  initialTouched,
+  initialValues,
+  isInitialValid,
+  isSubmitting,
+  isValid,
+  isValidating,
+  registerField,
+  resetForm,
+  setErrors,
+  setStatus,
+  setSubmitting,
+  setTouched,
+  setValues,
+  setFieldError,
+  setFieldTouched,
+  setFieldValue,
+  setFormikState,
+  status,
+  submitCount,
+  submitForm,
+  touched,
+  unregisterField,
+  validateField,
+  validateForm,
+  validateOnBlur,
+  validateOnChange,
+  validateOnMount,
+  values,
+  ...attrs
+}) => (
   <Fragment>
     <form {...attrs} >
       {children}
