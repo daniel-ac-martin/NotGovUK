@@ -60,55 +60,55 @@ export class Completion {
         validate: e.validate,
         format: e.format
       });
-    console.debug('Completion.initialise: fields:');
-    console.debug(this.fields);
+    //console.debug('Completion.initialise: fields:');
+    //console.debug(this.fields);
 
     this.updateScope(values);
 
     Object.keys(this.fields).map(
       e => values[e] = values[e] || null
     );
-    console.debug('Completion.initialise: initialValues:');
-    console.debug(values);
+    //console.debug('Completion.initialise: initialValues:');
+    //console.debug(values);
   }
 
   updateScope(values: any): void {
-    console.debug('Completion.updateScope: Updating path...');
+    //console.debug('Completion.updateScope: Updating path...');
 
     this.graph.deepMap_(e => e.depopulate());
-    console.debug('Completion.updateScope: graph:');
-    console.debug(this.graph);
+    //console.debug('Completion.updateScope: graph:');
+    //console.debug(this.graph);
 
     this.graph.deepMap_(e => e.populateFromValues(values));
-    console.debug('Completion.updateScope: graph:');
-    console.debug(this.graph);
+    //console.debug('Completion.updateScope: graph:');
+    //console.debug(this.graph);
 
     this.fieldsInScope = this.graph
       .gatherFieldsAlongPath(values);
-    console.debug('Completion.updateScope: fields in scope:');
-    console.debug(this.fieldsInScope);
+    //console.debug('Completion.updateScope: fields in scope:');
+    //console.debug(this.fieldsInScope);
     Object.keys(this.fields).map(e => this.fields[e].inScope = false);
     this.fieldsInScope.map(e => this.fields[e].inScope = true);
   }
 
   update(values: any, errors: any): void {
     const next = calculateNext(this.fieldsInScope, this.fields, errors);
-    console.debug(`Completion.update: next: ${next}`);
+    //console.debug(`Completion.update: next: ${next}`);
 
     this.graph.deepMap_(e => e.populateFromNext(next));
-    console.debug('Completion.update: graph:');
-    console.debug(this.graph);
+    //console.debug('Completion.update: graph:');
+    //console.debug(this.graph);
 
     const visibleFields = this.graph.gatherFieldsAlongPath(values);
-    console.debug('Completion.update: visible fields:');
-    console.debug(visibleFields);
+    //console.debug('Completion.update: visible fields:');
+    //console.debug(visibleFields);
     Object.keys(this.fields).map(e => this.fields[e].seen = this.fields[e].seen || this.fields[e].visible);
     Object.keys(this.fields).map(e => this.fields[e].visible = false);
     visibleFields.map(e => this.fields[e].visible = true);
 
     this.path = this.graph.toPath(values, next);
-    console.debug('Completion.update: path:');
-    console.debug(this.path);
+    //console.debug('Completion.update: path:');
+    //console.debug(this.path);
 
     this.nextItem = 0;
   }

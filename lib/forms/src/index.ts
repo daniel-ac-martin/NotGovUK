@@ -94,7 +94,7 @@ export const Form: FC<FormProps<any>> = ({
   };
 
   const submit = (values: any) => {
-    console.debug('Form: Submitting...');
+    //console.debug('Form: Submitting...');
     const formattedValues = completion.formatFields(values);
     const actionUrl = urlParse(_action);
     const url = (
@@ -133,7 +133,7 @@ export const Form: FC<FormProps<any>> = ({
   const register = new Register(graph);
 
   // Render children in order to build the graph
-  console.debug('Form: First pass rendering of form to discover graph...');
+  //console.debug('Form: First pass rendering of form to discover graph...');
   register.openRegistration();
   renderToStaticMarkup(
     h(StaticRouter, {},
@@ -161,7 +161,7 @@ export const Form: FC<FormProps<any>> = ({
   }
 
   // Re-render
-  console.debug('Form: Re-rendering form along calculated path...');
+  //console.debug('Form: Re-rendering form along calculated path...');
   return h(CompletionContext.Provider, {
     children: formikForm,
     value: completion
