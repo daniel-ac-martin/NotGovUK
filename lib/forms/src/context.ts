@@ -10,6 +10,7 @@ export const useForm = (): any => {
   return {
     ...formik,
     completion,
+    dataKey: completion.dataKey,
     registry,
     updateScope: () => {
       completion.updateScope(formik.values);

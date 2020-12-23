@@ -43,19 +43,37 @@ type Method = 'get' | 'post';
 
 export type FormProps<T> = StandardProps & {
   action: string
+  dataKey?: string
   debug?: boolean
   method: Method
+  name?: string
   validate?: (values: T) => T
 };
 
-export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock, classModifiers, className, method, validate: _validate, ...attrs }) => {
+export const Form: FC<FormProps<any>> = ({
+  action: _action,
+  children,
+  classBlock,
+  classModifiers,
+  className,
+  dataKey: _dataKey,
+  method,
+  validate: _validate,
+  ...attrs
+}) => {
   const classes = classBuilder('penultimate-form', classBlock, classModifiers, className);
   const history = useHistory();
   const location = useLocation();
-  const submittedValues = (
+  const dataStore = (
     method === 'get'
       ? location.query
       : location.state
+  );
+  const dataKey = _dataKey || attrs.name || attrs.id;
+  const submittedValues = (
+    dataKey
+      ? dataStore[dataKey]
+      : dataStore
   ) || {};
 
   const initialErrors = {};
@@ -128,7 +146,7 @@ export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock
   // Convert graph to path using the current form values
   //const initialCompletion = new Completion(graph);
   //const [completion] = useState(initialCompletion);
-  const completion = new Completion(graph); // FIXME: Is this okay? There seems to be a bug when using useState as above.
+  const completion = new Completion(graph, dataKey); // FIXME: Is this okay? There seems to be a bug when using useState as above.
 
   completion.initialise(initialValues, initialTouched);
   Object.assign(initialErrors, validate(initialValues));
