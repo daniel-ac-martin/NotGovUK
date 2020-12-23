@@ -70,12 +70,17 @@ export const withField = <A, B>(Component: RawField<A, B>, implicitValidators?: 
   form.registry.register(node);
 
   const state = form.completion.pop();
-  console.debug(`Form.Field: Rendering '${props.name}', with state:`);
-  console.debug(state)
+  //console.debug(`Form.Field: Rendering '${props.name}', with state:`);
+  //console.debug(state)
 
   return h(Component, {
     ...field,
     ...props,
+    name: (
+      form.dataKey
+        ? `${form.dataKey}[${props.name}]`
+        : props.name
+    ),
     error: meta.error && meta.touched && meta.error,
     value: field.value === null ? '' : field.value
   });

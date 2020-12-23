@@ -43,24 +43,44 @@ type Method = 'get' | 'post';
 
 export type FormProps<T> = StandardProps & {
   action: string
+  dataKey?: string
   debug?: boolean
+  initialValues?: T
   method: Method
+  name?: string
   validate?: (values: T) => T
 };
 
-export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock, classModifiers, className, method, validate: _validate, ...attrs }) => {
+export const Form: FC<FormProps<any>> = ({
+  action: _action,
+  children,
+  classBlock,
+  classModifiers,
+  className,
+  dataKey: _dataKey,
+  initialValues: _initialValues,
+  method,
+  validate: _validate,
+  ...attrs
+}) => {
   const classes = classBuilder('penultimate-form', classBlock, classModifiers, className);
   const history = useHistory();
   const location = useLocation();
-  const submittedValues = (
+  const dataStore = (
     method === 'get'
       ? location.query
       : location.state
+  );
+  const dataKey = _dataKey || attrs.name || attrs.id;
+  const submittedValues = (
+    dataKey
+      ? dataStore[dataKey]
+      : dataStore
   ) || {};
 
   const initialErrors = {};
-  const initialTouched = { ...submittedValues };
-  const initialValues = { ...submittedValues };
+  const initialTouched = Object.keys(submittedValues).reduce((acc, cur) => ({ ...acc, [cur]: true }), {});
+  const initialValues = { ..._initialValues, ...submittedValues };
 
   const validate = (values: any) => {
     const formattedValues = completion.formatFields(values);
@@ -74,7 +94,7 @@ export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock
   };
 
   const submit = (values: any) => {
-    console.debug('Form: Submitting...');
+    //console.debug('Form: Submitting...');
     const formattedValues = completion.formatFields(values);
     const actionUrl = urlParse(_action);
     const url = (
@@ -113,7 +133,7 @@ export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock
   const register = new Register(graph);
 
   // Render children in order to build the graph
-  console.debug('Form: First pass rendering of form to discover graph...');
+  //console.debug('Form: First pass rendering of form to discover graph...');
   register.openRegistration();
   renderToStaticMarkup(
     h(StaticRouter, {},
@@ -128,9 +148,9 @@ export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock
   // Convert graph to path using the current form values
   //const initialCompletion = new Completion(graph);
   //const [completion] = useState(initialCompletion);
-  const completion = new Completion(graph); // FIXME: Is this okay? There seems to be a bug when using useState as above.
+  const completion = new Completion(graph, dataKey); // FIXME: Is this okay? There seems to be a bug when using useState as above.
 
-  completion.initialise(initialValues);
+  completion.initialise(initialValues, initialTouched);
   Object.assign(initialErrors, validate(initialValues));
   completion.update(initialValues, initialErrors);
 
@@ -141,7 +161,7 @@ export const Form: FC<FormProps<any>> = ({ action: _action, children, classBlock
   }
 
   // Re-render
-  console.debug('Form: Re-rendering form along calculated path...');
+  //console.debug('Form: Re-rendering form along calculated path...');
   return h(CompletionContext.Provider, {
     children: formikForm,
     value: completion

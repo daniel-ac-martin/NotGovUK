@@ -26,9 +26,9 @@ export class Register {
   register(node: Node) {
     if (this.isOpen) {
       if (isFieldNode(node)) {
-        console.debug(`Register: Registering field, '${node.name}'`);
+        //console.debug(`Register: Registering field, '${node.name}'`);
       } else {
-        console.debug(`Register: Registering ${node.tag}`);
+        //console.debug(`Register: Registering ${node.tag}`);
       }
 
       this.contents.push(node);

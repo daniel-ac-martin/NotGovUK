@@ -7,8 +7,8 @@ export const Page: FC<any> = props => {
   const form = useForm();
 
   const state = form.completion.pop();
-  console.debug('Form.Page: Rendering with state:');
-  console.debug(state);
+  //console.debug('Form.Page: Rendering with state:');
+  //console.debug(state);
   const active = state && state.active;
 
   if (active === undefined) {
