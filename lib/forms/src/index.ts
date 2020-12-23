@@ -45,6 +45,7 @@ export type FormProps<T> = StandardProps & {
   action: string
   dataKey?: string
   debug?: boolean
+  initialValues?: T
   method: Method
   name?: string
   validate?: (values: T) => T
@@ -57,6 +58,7 @@ export const Form: FC<FormProps<any>> = ({
   classModifiers,
   className,
   dataKey: _dataKey,
+  initialValues: _initialValues,
   method,
   validate: _validate,
   ...attrs
@@ -78,7 +80,7 @@ export const Form: FC<FormProps<any>> = ({
 
   const initialErrors = {};
   const initialTouched = Object.keys(submittedValues).reduce((acc, cur) => ({ ...acc, [cur]: true }), {});
-  const initialValues = { ...submittedValues };
+  const initialValues = { ..._initialValues, ...submittedValues };
 
   const validate = (values: any) => {
     const formattedValues = completion.formatFields(values);
