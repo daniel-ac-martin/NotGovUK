@@ -44,11 +44,9 @@ type Method = 'get' | 'post';
 
 export type FormProps<T> = StandardProps & {
   action: string
-  dataKey?: string
   debug?: boolean
   initialValues?: T
   method: Method
-  name?: string
   validate?: (values: T) => T
 };
 
@@ -58,7 +56,6 @@ export const Form: FC<FormProps<any>> = ({
   classBlock,
   classModifiers,
   className,
-  dataKey: _dataKey,
   initialValues: _initialValues,
   method,
   validate: _validate,
@@ -67,16 +64,10 @@ export const Form: FC<FormProps<any>> = ({
   const classes = classBuilder('penultimate-form', classBlock, classModifiers, className);
   const history = useHistory();
   const location = useLocation();
-  const dataStore = (
+  const submittedValues = (
     method === 'get'
       ? location.query
       : location.state
-  );
-  const dataKey = _dataKey || attrs.name || attrs.id;
-  const submittedValues = (
-    dataKey
-      ? dataStore[dataKey]
-      : dataStore
   ) || {};
 
   const initialErrors = {};
@@ -157,7 +148,7 @@ export const Form: FC<FormProps<any>> = ({
   // Convert graph to path using the current form values
   //const initialCompletion = new Completion(graph);
   //const [completion] = useState(initialCompletion);
-  const completion = new Completion(graph, dataKey); // FIXME: Is this okay? There seems to be a bug when using useState as above.
+  const completion = new Completion(graph); // FIXME: Is this okay? There seems to be a bug when using useState as above.
 
   completion.initialise(initialValues, initialTouched);
   Object.assign(initialErrors, validate(initialValues));

@@ -30,8 +30,6 @@ interface IFieldStatusMap {
 }
 
 export class Completion {
-  public readonly dataKey?: string;
-
   protected graph: Graph;
   protected path: Path;
   protected fields: IFieldStatusMap;
@@ -39,8 +37,7 @@ export class Completion {
 
   protected nextItem: number;
 
-  constructor(graph: Graph, dataKey?: string) {
-    this.dataKey = dataKey;
+  constructor(graph: Graph) {
     this.graph = graph;
     this.path = [];
     this.fields = {};
