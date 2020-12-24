@@ -2,6 +2,7 @@ import { FC, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { useHistory } from 'react-router-dom';
+import deepEqual from 'fast-deep-equal/es6';
 import { FormikHelpers } from 'formik';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { urlParse, useLocation } from '@not-govuk/route-utils';
@@ -108,7 +109,15 @@ export const Form: FC<FormProps<any>> = ({
         : undefined
     );
 
-    history.push(url.toString(), state);
+    // Check that we have not already arrived
+    // (Otherwise we end up in a loop.)
+    if (
+      ( location.pathname !== actionUrl.pathname && actionUrl.pathname !== '' ) ||
+        !deepEqual(location.query, actionUrl.query) ||
+        !deepEqual(location.state, state)
+    ) {
+      history.push(url.toString(), state);
+    }
   };
 
   const onSubmit = (values: any, actions: FormikHelpers<any>) => {
