@@ -1,0 +1,46 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { Aside } from '../src/Aside';
+import readMe from '../README.md';
+export const title = 'Aside';
+
+<Meta
+  title="Aside"
+  component={ Aside }
+  parameters={ {
+    jest: ['Aside'],
+    notes: readMe
+  } }
+/>
+
+# Aside
+
+<p><Tag text="Unofficial" /></p>
+
+A component for displaying indirectly related content.
+
+<Preview withToolbar>
+  <Story name="Aside">
+    <Aside>
+      <h2>Did you know?</h2>
+      <p>You can put indirectly related content in an Aside component.</p>
+    </Aside>
+  </Story>
+</Preview>
+
+<Props of={ Aside } />
+
+
+## Stories
+### Standard
+
+A standard Aside.
+
+<Preview>
+  <Story name="Standard">
+    <Aside>
+      <h2>Did you know?</h2>
+      <p>You can put indirectly related content in an Aside component.</p>
+    </Aside>
+  </Story>
+</Preview>

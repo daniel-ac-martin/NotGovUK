@@ -1,12 +1,12 @@
 {
-  "name": "@not-govuk/link",
+  "name": "@not-govuk/aside",
   "version": "0.1.33",
-  "description": "A drop-in replacement for the 'a' element with GovUK styling.",
-  "main": "src/Link.tsx",
-  "sass": "assets/Link.scss",
+  "description": "A component for displaying indirectly related content.",
+  "main": "src/Aside.tsx",
+  "sass": "assets/Aside.scss",
   "publishConfig": {
-    "main": "dist/Link.js",
-    "typings": "dist/Link.d.ts"
+    "main": "dist/Aside.js",
+    "typings": "dist/Aside.d.ts"
   },
   "files": [
     "/assets",
@@ -24,9 +24,8 @@
     "react-components"
   ],
   "dependencies": {
-    "@not-govuk/anchor": "workspace:^0.1.0",
     "@not-govuk/component-helpers": "workspace:^0.1.0",
-    "@not-govuk/sass-base": "workspace:^0.1.0",
+    "@not-govuk/sass-base": "workspace:^0.1.33",
     "govuk-frontend": "^3.9.1"
   },
   "peerDependencies": {
@@ -36,8 +35,8 @@
   "devDependencies": {
     "@mdx-js/react": "^1.6.5",
     "@not-govuk/component-test-helpers": "workspace:^0.1.0",
-    "@not-govuk/tag": "workspace:^0.1.0",
-    "@types/react": "^16.9.55",
+    "@not-govuk/tag": "workspace:^0.1.33",
+    "@types/react": "^16.9.35",
     "jest": "^26.1.0",
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.2"

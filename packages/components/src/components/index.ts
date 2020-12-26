@@ -1,5 +1,6 @@
 export { default as Anchor, default as A, default as Link } from '@not-govuk/link';
 
+export { default as Aside } from '@not-govuk/aside';
 export { default as BackLink } from '@not-govuk/back-link';
 export { default as Breadcrumbs } from '@not-govuk/breadcrumbs';
 export { default as Button, StartButton, SubmitButton } from './button';
@@ -21,6 +22,6 @@ export { default as WarningText } from '@not-govuk/warning-text';
 export { default as Footer } from '@not-govuk/footer';
 export { default as Header } from '@not-govuk/header';
 
-export { default as Page } from './page';
+export * from '@not-govuk/page';
 
 export { default as Site } from './site';

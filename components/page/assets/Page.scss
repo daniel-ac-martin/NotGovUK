@@ -1,0 +1,45 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/core/_template";
+@import "govuk-frontend/govuk/objects/_main-wrapper";
+
+.not-govuk-page {
+  @extend .govuk-template__body;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  font-family: sans-serif;
+  overflow: initial;
+  padding: initial;
+
+  &--govuk {
+    font-family: 'GDS Transport', 'Arial', sans-serif;
+  }
+
+  &--not-govuk {
+    font-family: 'Inter', 'Arial', sans-serif;
+  }
+
+  &__body {
+    // Keep the footer at the bottom
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  &__main {
+    @extend .govuk-main-wrapper;
+  }
+}
+
+html {
+  @extend .govuk-template;
+}
+
+html, body, #root, #story-root {
+  @extend .govuk-template__body;
+  background-color: govuk-colour("white");
+  height: 100%;
+
+  > .not-govuk-page {
+    height: 100%;
+  }
+}

@@ -1,6 +1,6 @@
 import { FC, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
-import { Page } from '@not-govuk/components';
+import { GovUKPage } from '@not-govuk/components';
 
 import './app.scss';
 
@@ -18,14 +18,14 @@ export const PageWrap: FC<PageProps> = ({ routes, children }) => {
     .sort(compare);
 
   return (
-    <Page
+    <GovUKPage
       feedbackHref="/feedback"
       navigation={navigation}
       phase="alpha"
-      title="NotGovUK"
+      serviceName="NotGovUK"
     >
       {children}
-    </Page>
+    </GovUKPage>
   );
 };
 

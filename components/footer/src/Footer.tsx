@@ -10,7 +10,7 @@ type Link = LinkProps & {
   text: string
 };
 
-type NavMenu = {
+export type NavMenu = {
   /** Number of columns to display the links in */
   columns?: number
   /** List of links to choose from */
