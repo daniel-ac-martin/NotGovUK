@@ -29,6 +29,7 @@ export const PageWrap: FC<PageProps> = ({ children }) => {
       organisationText="!GOV.UK"
       phase="alpha"
       serviceName="NotGovUK"
+      maxContentsWidth={1100}
     >
       {children}
     </NotGovUKPage>
