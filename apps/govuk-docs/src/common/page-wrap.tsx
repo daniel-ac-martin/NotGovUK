@@ -15,6 +15,12 @@ export const PageWrap: FC<PageProps> = ({ children }) => {
   return (
     <NotGovUKPage
       feedbackHref="https://github.com/daniel-ac-martin/NotGovUK/issues/new"
+      footerContent={(
+        <Fragment>
+          Copyright (C) 2019, 2020, 2021 Crown Copyright<br />
+          Copyright (C) 2019, 2020, 2021 <A href="https://github.com/daniel-ac-martin">Daniel A.C. Martin</A>
+      </Fragment>
+      )}
       navigation={navigation}
       phase="alpha"
       serviceName="NotGovUK"
