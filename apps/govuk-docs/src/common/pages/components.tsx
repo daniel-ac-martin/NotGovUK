@@ -19,7 +19,7 @@ const Page: FC<PageProps> = ({ location }) => {
 
   return (
     <div className="govuk-grid-row">
-      <div className="govuk-grid-column-one-third">
+      <div className="govuk-grid-column-one-quarter">
         <aside>
           <h2>Components</h2>
           <ul className="plain">
@@ -29,7 +29,7 @@ const Page: FC<PageProps> = ({ location }) => {
           </ul>
         </aside>
       </div>
-      <div className="govuk-grid-column-two-thirds">
+      <div className="govuk-grid-column-three-quarters">
         {
           stories ? (
             <Fragment>
