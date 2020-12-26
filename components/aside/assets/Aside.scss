@@ -1,0 +1,41 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/core/_typography";
+
+.not-govuk-aside,
+aside {
+  padding-top: govuk-spacing(2);
+  border-top: 2px solid $govuk-brand-colour;
+
+  h1 {
+    @extend .govuk-heading-l;
+  }
+
+  h2 {
+    @extend .govuk-heading-m;
+  }
+
+  h3 {
+    @extend .govuk-heading-s;
+  }
+
+  h4 {
+    @extend .govuk-heading-s;
+  }
+}
+
+// Department colours
+@each $i, $v in $govuk-colours-organisations {
+  .not-govuk-page--#{$i} .not-govuk-aside,
+  .not-govuk-page--#{$i} aside {
+    border-color: map_get($v, "colour-websafe");
+  }
+}
+
+.not-govuk-page--hm-passport-office .not-govuk-aside,
+.not-govuk-page--hm-passport-office aside,
+.not-govuk-page--hmpo .not-govuk-aside,
+.not-govuk-page--hmpo aside {
+  $home-office: map-get($govuk-colours-organisations, "home-office");
+
+  border-color: map_get($home-office, "colour-websafe");
+}
