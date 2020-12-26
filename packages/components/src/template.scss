@@ -1,7 +1,0 @@
-html, body, #root, #story-root {
-  @extend .nguk-site;
-
-  &.internal, &.not-govuk {
-    @extend .nguk-site--not-govuk;
-  }
-}

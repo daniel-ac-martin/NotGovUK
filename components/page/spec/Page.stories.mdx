@@ -1,0 +1,764 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { Aside } from '@not-govuk/aside';
+import { GovUKPage, NotGovUKPage, Page } from '../src';
+import readMe from '../README.md';
+export const title = 'Page';
+
+<Meta
+  title="Page"
+  component={ Page }
+  parameters={ {
+    jest: ['Page'],
+    notes: readMe
+  } }
+/>
+
+# Page
+
+<p><Tag text="Unofficial" /></p>
+
+A fully branded page with content sandwiched between and header and footer.
+
+<Preview withToolbar>
+  <Story name="Page">
+    <GovUKPage
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Cookies" },
+        { href: "#", text: "Privacy policy" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </GovUKPage>
+  </Story>
+</Preview>
+
+<Props of={ Page } />
+
+
+## Stories
+### Standard
+
+A standard Page.
+
+<Preview>
+  <Story name="Standard">
+    <NotGovUKPage
+      maxContentsWidth="690"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+### GOV.UK
+
+A page suitable for being hosted on GOV.UK.
+
+<Preview>
+  <Story name="GovUK">
+    <GovUKPage
+      maxContentsWidth="690"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </GovUKPage>
+  </Story>
+</Preview>
+
+### Full width
+
+A page that does _NOT_ restrict the width on wide screens.
+
+<Preview>
+  <Story name="Full width">
+    <NotGovUKPage
+      maxContentsWidth={-1}
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+### Department colours
+
+If you are building an internal application you can supply the name of
+your department in order to use their colours.
+
+
+#### DCLG
+
+<Preview>
+  <Story name="DCLG">
+    <NotGovUKPage
+      department="department-for-communities-and-local-government"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### DCMS
+
+<Preview>
+  <Story name="DCMS">
+    <NotGovUKPage
+      department="department-for-culture-media-sport"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### DEFRA
+
+<Preview>
+  <Story name="DEFRA">
+    <NotGovUKPage
+      department="department-for-environment-food-rural-affairs"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### DWP
+
+<Preview>
+  <Story name="DWP">
+    <NotGovUKPage
+      department="department-for-work-pensions"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### FCO
+
+<Preview>
+  <Story name="FCO">
+    <NotGovUKPage
+      department="foreign-commonwealth-office"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      organisationText="Foreign Office"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### Home Office
+
+<Preview>
+  <Story name="Home Office">
+    <NotGovUKPage
+      department="home-office"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### HMRC
+
+<Preview>
+  <Story name="HMRC">
+    <NotGovUKPage
+      department="hm-revenue-customs"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### HM Treasury
+
+<Preview>
+  <Story name="HM treasury">
+    <NotGovUKPage
+      department="hm-treasury"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### MoJ
+
+<Preview>
+  <Story name="MoJ">
+    <NotGovUKPage
+      department="ministry-of-justice"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### Office of the leader of the House of lords
+
+<Preview>
+  <Story name="Office of the leader of the House of lords">
+    <NotGovUKPage
+      department="office-of-the-leader-of-the-house-of-lords"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      organisationText="House of Lords"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### Scotland office
+
+<Preview>
+  <Story name="Scotland office">
+    <NotGovUKPage
+      department="scotland-office"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### Wales office
+
+<Preview>
+  <Story name="Wales office">
+    <NotGovUKPage
+      department="wales-office"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+### All the trimmings
+
+A page with lots of customisation.
+
+<Preview>
+  <Story name="Custom">
+    <NotGovUKPage
+      breadcrumbs={[
+        { href: '', text: 'Home' },
+        { href: '', text: 'Passports, travel and living abroad' },
+        { href: '', text: 'Travel abroad' },
+      ]}
+      department="home-office"
+      feedbackHref="#feedback"
+      footerContent={<p>Built by the <a href="https://www.gov.uk">Government Digital Service</a>.</p>}
+      footerNavigation={[
+        {
+          title: "Services and information",
+          columns: 2,
+          items: [
+            {
+              href: "#",
+              text: "Benefits"
+            },
+            {
+              href: "#",
+              text: "Births, deaths, marriages and care"
+            },
+            {
+              href: "#",
+              text: "Business and self-employed"
+            },
+            {
+              href: "#",
+              text: "Childcare and parenting"
+            },
+            {
+              href: "#",
+              text: "Citizenship and living in the UK"
+            },
+            {
+              href: "#",
+              text: "Crime, justice and the law"
+            },
+            {
+              href: "#",
+              text: "Disabled people"
+            },
+            {
+              href: "#",
+              text: "Driving and transport"
+            },
+            {
+              href: "#",
+              text: "Education and learning"
+            },
+            {
+              href: "#",
+              text: "Employing people"
+            },
+            {
+              href: "#",
+              text: "Environment and countryside"
+            },
+            {
+              href: "#",
+              text: "Housing and local services"
+            },
+            {
+              href: "#",
+              text: "Money and tax"
+            },
+            {
+              href: "#",
+              text: "Passports, travel and living abroad"
+            },
+            {
+              href: "#",
+              text: "Visas and immigration"
+            },
+            {
+              href: "#",
+              text: "Working, jobs and pensions"
+            }
+          ]
+        },
+        {
+          title: "Departments and policy",
+          items: [
+            {
+              href: "#",
+              text: "How government works"
+            },
+            {
+              href: "#",
+              text: "Departments"
+            },
+            {
+              href: "#",
+              text: "Worldwide"
+            },
+            {
+              href: "#",
+              text: "Policies"
+            },
+            {
+              href: "#",
+              text: "Publications"
+            },
+            {
+              href: "#",
+              text: "Announcements"
+            }
+          ]
+        }
+      ]}
+      meta={[
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "#",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "#",
+          text: "Rhestr o Wasanaethau Cymraeg"
+        }
+      ]}
+      navigation={[
+        { href: '#one', text: 'One', active: true },
+        { href: 'two', text: 'Two' },
+        { href: 'three', text: 'Three' },
+        { href: 'four', text: 'Four' }
+      ]}
+      organisationHref="#"
+      phase="alpha"
+      serviceName="Service name"
+      serviceHref="#"
+      maxContentsWidth="690"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span class="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>

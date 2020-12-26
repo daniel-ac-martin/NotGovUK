@@ -1,5 +1,5 @@
 import { FC, Fragment, createElement as h } from 'react';
-import { Page } from '../';
+import { GovUKPage, NotGovUKPage } from '../';
 import { Route, Switch } from 'react-router-dom';
 import { bem, className } from '../../helpers';
 import { RouteComponentProps } from 'react-router';
@@ -77,12 +77,13 @@ const PageError: FC<PageErrorProps> = p => (
 
 export const Site: FC<ISite> = props => {
   const feedbackHref = props.feedback && (props.feedback.href || '/feedback');
+  const Page = props.govUk ? GovUKPage : NotGovUKPage;
   const SitePage: FC<any> = p => (
     <Page
       department={props.department}
       feedbackHref={feedbackHref}
       footerContent={props.footerContent}
-      logoHref={props.logoHref}
+      organisationHref={props.logoHref}
       navigation={props.routes.map(e => ({
         href: e.href,
         text: e.title
@@ -91,9 +92,9 @@ export const Site: FC<ISite> = props => {
       phaseBannerContent={props.phaseBannerContent}
       signOutHref={props.signOutHref}
       signOutText={props.signOutText}
-      title={props.title}
-      titleHref={props.titleHref}
-      wide={props.wide}
+      serviceName={props.title}
+      serviceHref={props.titleHref}
+      maxContentsWidth={props.wide ? -1 : undefined}
     >
       {p.children}
     </Page>
