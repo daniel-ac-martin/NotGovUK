@@ -106,7 +106,7 @@ export const Header: FC<HeaderProps> = ({
     <header {...attrs} className={classes()} role="banner" data-module="govuk-header">
       <WidthContainer maxWidth={maxContentsWidth} className={classes('container', department)}>
         <div className={classes('logo')}>
-          <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 6) ? 'small' : undefined ]}>
+          <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
             <span className={classes('logotype')}>
               {
                 govUK
