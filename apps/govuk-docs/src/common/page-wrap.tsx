@@ -14,7 +14,7 @@ export const PageWrap: FC<PageProps> = ({ children }) => {
 
   return (
     <NotGovUKPage
-      feedbackHref="/feedback"
+      feedbackHref="https://github.com/daniel-ac-martin/NotGovUK/issues/new"
       navigation={navigation}
       phase="alpha"
       serviceName="NotGovUK"
