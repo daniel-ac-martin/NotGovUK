@@ -22,6 +22,10 @@ export const PageWrap: FC<PageProps> = ({ children }) => {
       </Fragment>
       )}
       navigation={navigation}
+      meta={[
+        { href: "https://github.com/daniel-ac-martin/NotGovUK", text: "GitHub" },
+        { href: "https://github.com/daniel-ac-martin/NotGovUK/issues/new", text: "Contact" },
+      ]}
       phase="alpha"
       serviceName="NotGovUK"
     >
