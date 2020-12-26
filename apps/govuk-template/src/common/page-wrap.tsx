@@ -1,6 +1,6 @@
 import { FC, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
-import { Page } from '@not-govuk/components';
+import { GovUKPage } from '@not-govuk/components';
 import { useUserInfo } from '@not-govuk/user-info';
 
 import './app.scss';
@@ -31,16 +31,16 @@ export const PageWrap: FC<PageProps> = ({ routes, signInHRef, signOutHRef, child
   );
 
   return (
-    <Page
+    <GovUKPage
       feedbackHref="/feedback"
       navigation={navigation}
       phase="alpha"
-      title="NotGovUK"
+      serviceName="NotGovUK"
       signOutHref={sign.href}
       signOutText={sign.text}
     >
       {children}
-    </Page>
+    </GovUKPage>
   );
 };
 

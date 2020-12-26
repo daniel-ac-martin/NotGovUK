@@ -1,6 +1,6 @@
-import { FC, createElement as h } from 'react';
+import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
-import { Page } from '@not-govuk/components';
+import { A, NotGovUKPage } from '@not-govuk/components';
 
 import './app.scss';
 
@@ -13,14 +13,14 @@ export const PageWrap: FC<PageProps> = ({ children }) => {
   ];
 
   return (
-    <Page
+    <NotGovUKPage
       feedbackHref="/feedback"
       navigation={navigation}
       phase="alpha"
-      title="NotGovUK"
+      serviceName="NotGovUK"
     >
       {children}
-    </Page>
+    </NotGovUKPage>
   );
 };
 
