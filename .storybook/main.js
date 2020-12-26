@@ -2,7 +2,26 @@
 
 module.exports = {
   stories: [
-    '../components/*/spec/*.stories.@(js|mdx)',
+    '../components/aside/spec/*.stories.@(js|mdx)',
+    '../components/back-link/spec/*.stories.@(js|mdx)',
+    '../components/breadcrumbs/spec/*.stories.@(js|mdx)',
+    '../components/details/spec/*.stories.@(js|mdx)',
+    '../components/footer/spec/*.stories.@(js|mdx)',
+    '../components/form/spec/*.stories.@(js|mdx)',
+    '../components/header/spec/*.stories.@(js|mdx)',
+    '../components/inset-text/spec/*.stories.@(js|mdx)',
+    '../components/link/spec/*.stories.@(js|mdx)',
+    '../components/page/spec/*.stories.@(js|mdx)',
+    '../components/panel/spec/*.stories.@(js|mdx)',
+    '../components/phase-banner/spec/*.stories.@(js|mdx)',
+    '../components/skip-link/spec/*.stories.@(js|mdx)',
+    '../components/table/spec/*.stories.@(js|mdx)',
+    '../components/tag/spec/*.stories.@(js|mdx)',
+    '../components/warning-text/spec/*.stories.@(js|mdx)',
+    '../components/width-container/spec/*.stories.@(js|mdx)',
+    '../components-internal/anchor/spec/*.stories.@(js|mdx)',
+    '../components-internal/anchor-list/spec/*.stories.@(js|mdx)',
+    '../components-internal/simple-table/spec/*.stories.@(js|mdx)',
     '../styles/*.stories.mdx',
     '../packages/components/src/components/**/*.stories.mdx'
   ],

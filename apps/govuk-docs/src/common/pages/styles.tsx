@@ -10,7 +10,7 @@ const createSubpageStore = r => (
     .map(r)
     .reduce(reduceToLookup, {})
 );
-const subpages = createSubpageStore(require.context('../../../../../styles/', true, /^\.\/[^\/]+\.stories\.mdx$/));
+const subpages = createSubpageStore(require.context('../../../../../styles/', false, /^\.\/[^\/]+\.stories\.mdx$/));
 
 const Page: FC<PageProps> = ({ location }) => {
   const nameParam = 'name';
