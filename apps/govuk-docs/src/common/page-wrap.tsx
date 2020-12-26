@@ -26,6 +26,7 @@ export const PageWrap: FC<PageProps> = ({ children }) => {
         { href: "https://github.com/daniel-ac-martin/NotGovUK", text: "GitHub" },
         { href: "https://github.com/daniel-ac-martin/NotGovUK/issues/new", text: "Contact" },
       ]}
+      organisationText="!GOV.UK"
       phase="alpha"
       serviceName="NotGovUK"
     >
