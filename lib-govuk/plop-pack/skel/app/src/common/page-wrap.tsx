@@ -23,6 +23,7 @@ export const PageWrap: FC<PageProps> = ({ routes, children }) => {
       navigation={navigation}
       phase="alpha"
       serviceName="NotGovUK"
+      title="NotGovUK"
     >
       {children}
     </GovUKPage>
