@@ -1,7 +1,7 @@
 NotGovUK - Page
 ===============
 
-A fully branded page with content sandwiched between and header and footer.
+A fully branded page with content sandwiched between the header and footer.
 
 
 Using this package
