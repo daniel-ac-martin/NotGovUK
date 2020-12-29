@@ -2,7 +2,23 @@ import { ComponentType, createElement as h } from 'react';
 import { hydrate as originalHydrate, render as originalRender } from 'react-dom';
 import { ApplicationProps, ErrorPageProps, Hydration, PageProps, PageLoader, compose } from '@not-govuk/app-composer';
 
-export const hydrateOrRender = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, LoadingPage: ComponentType<PageProps>, pageLoader: PageLoader): void => {
+export type HydrateOrRenderOptions = {
+  AppWrap: ComponentType<ApplicationProps>
+  ErrorPage: ComponentType<ErrorPageProps>
+  LoadingPage: ComponentType<PageProps>
+  PageWrap: ComponentType<PageProps>
+  pageLoader: PageLoader
+};
+
+export type HydrateOrRender = (options: HydrateOrRenderOptions) => void;
+
+export const hydrateOrRender: HydrateOrRender = ({
+  AppWrap,
+  ErrorPage,
+  LoadingPage,
+  PageWrap,
+  pageLoader
+}) => {
   interface IWindowWithHydration extends Window {
     hydration?: Hydration
   };
