@@ -1,4 +1,5 @@
 import { FC, Fragment, createElement as h } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { useLocation } from '@not-govuk/route-utils';
 
@@ -23,6 +24,9 @@ const Page: FC<PageProps> = props => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>Forms - NotGovUK</title>
+      </Helmet>
       <Form action="/result" method="get">
         <Form.Page>
           <h1>Welcome to HOF2!</h1>
