@@ -146,22 +146,21 @@ export const engine = async (options1: EngineStage1Options) => {
     );
     const pages = await gatherPages(options2.pageLoader);
 
-    const react = reactRenderer(
-      options2.AppWrap,
-      options2.PageWrap,
-      options2.ErrorPage,
-      {
-        assetsPath: publicPath,
-        entrypoints: preBuiltAssets?.entrypoints,
-        graphQL: options2.graphQL && {
-          schema: options2.graphQL.schema
-        },
-        pages,
-        rootId: 'root',
-        signInHRef,
-        signOutHRef,
-        ssrOnly: options1.ssrOnly
-      });
+    const react = reactRenderer({
+      AppWrap: options2.AppWrap,
+      ErrorPage: options2.ErrorPage,
+      PageWrap: options2.PageWrap,
+      assetsPath: publicPath,
+      entrypoints: preBuiltAssets?.entrypoints,
+      graphQL: options2.graphQL && {
+        schema: options2.graphQL.schema
+      },
+      pages,
+      rootId: 'root',
+      signInHRef,
+      signOutHRef,
+      ssrOnly: options1.ssrOnly
+    });
     const formatHTML = react.formatHTML;
 
     // Set up Restify instance
