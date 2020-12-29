@@ -78,3 +78,4 @@ export const auth = async (options: AuthOptions = noAuth): Promise<AuthTools> =>
 
 export default auth;
 export { AuthMethod };
+export type { Request, UserProfile } from './common';

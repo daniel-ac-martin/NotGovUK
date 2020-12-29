@@ -7,7 +7,7 @@ import { Configuration as WebpackConfig } from 'webpack';
 import restify, { Router } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
-import { AuthMethod, AuthOptions, auth } from './lib/auth';
+import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
 
 export type Api = {
@@ -204,7 +204,7 @@ export const engine = async (options1: EngineStage1Options) => {
     // Serve GraphQL
     if (options2.graphQL && !options1.ssrOnly) {
       const endpoint = '/graphql';
-      const graphQLOptions = (req) => ({
+      const graphQLOptions = (req: Request) => ({
         schema: options2.graphQL.schema,
         context: { auth: req.auth }
       });
