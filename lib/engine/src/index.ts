@@ -4,7 +4,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import { ComponentType } from 'react';
 import serverless from 'serverless-http';
 import { Configuration as WebpackConfig } from 'webpack';
-import restify, { Router, errors } from '@not-govuk/restify';
+import restify, { Router } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
 import { AuthMethod, AuthOptions, auth } from './lib/auth';
