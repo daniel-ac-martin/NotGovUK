@@ -6,7 +6,7 @@ import serverless from 'serverless-http';
 import { Configuration as WebpackConfig } from 'webpack';
 import restify, { Router, errors } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
-import { ApplicationProps, ErrorPageProps, PageProps, TemplateProps, reactRenderer } from '@not-govuk/server-renderer';
+import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
 import { AuthMethod, AuthOptions, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
 
@@ -56,7 +56,6 @@ export type EngineStage2Options = {
   AppWrap: ComponentType<ApplicationProps>
   ErrorPage: ComponentType<ErrorPageProps>
   PageWrap: ComponentType<PageProps>
-  Template: ComponentType<TemplateProps>
   apis?: Api[]
   auth?: AuthOptions
   graphQL?: {
@@ -151,7 +150,6 @@ export const engine = async (options1: EngineStage1Options) => {
       options2.AppWrap,
       options2.PageWrap,
       options2.ErrorPage,
-      options2.Template,
       {
         assetsPath: publicPath,
         entrypoints: preBuiltAssets?.entrypoints,

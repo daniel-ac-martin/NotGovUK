@@ -1,8 +1,9 @@
 import { GraphQLSchema } from 'graphql';
 import { ComponentType, createElement as h } from 'react';
-import { renderToStaticMarkup, renderToString } from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import { html as beautifyHtml } from 'js-beautify';
-import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
+import { ApplicationProps, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
+import { htmlEnvelope } from './html-envelope';
 
 const statusToTitle = {
   400: 'Bad request',
@@ -24,20 +25,6 @@ const statusToTitle = {
   504: 'Gateway timeout',
   505: 'HTTP version not supported',
 };
-
-export type TemplateProps = {
-  appProps: ApplicationPropsSSR
-  appRender: string
-  assetsPath: string
-  charSet: string
-  data: object
-  rootId: string
-  scripts: string[]
-  stylesheets: string[]
-  user: UserInfo
-};
-
-export type Template = ComponentType<TemplateProps>;
 
 export type RendererOptions = {
   assetsPath: string
@@ -62,7 +49,7 @@ const contentTypeToCharSet = (contentType: string): string => {
   );
 };
 
-export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, Template: Template, options: RendererOptions) => {
+export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, options: RendererOptions) => {
   const createApp = (req, res, body, charSet) => {
     const data = {}
     const user: UserInfo = {
@@ -125,24 +112,30 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
           .flat()
           .map(v => String(v))
       );
-      const fullTemplateProps = {
-        appProps,
-        appRender,
+      const env = htmlEnvelope({
         assetsPath: options.assetsPath,
         charSet: charSet,
-        data: App.extractDataCache(),
+        helmet: App.helmetContext.helmet,
+        hydrationData: (
+          options.ssrOnly
+            ? undefined
+            : {
+              props: appProps,
+              cache: App.extractDataCache(),
+              user
+            }
+        ),
         rootId: options.rootId,
         scripts: (
           options.ssrOnly
             ? undefined
             : assets.filter(v => v.endsWith('.js'))
         ),
-        stylesheets: assets.filter(v => v.endsWith('.css')),
-        user
-      };
+        stylesheets: assets.filter(v => v.endsWith('.css'))
+      });
+      const html = env.head + appRender + env.foot;
 
-      return beautifyHtml(
-        renderToStaticMarkup(h(Template, fullTemplateProps)),
+      return beautifyHtml(html,
         {
           'indent_with_tabs': true
         }

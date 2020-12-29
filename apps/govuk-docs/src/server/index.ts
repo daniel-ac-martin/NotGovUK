@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 import engine, { Mode, NodeEnv } from '@not-govuk/engine';
 import config from './config';
-import Template from './template';
 import AppWrap from '../common/app-wrap';
 import ErrorPage from '../common/error-page';
 import PageWrap from '../common/page-wrap';
@@ -38,7 +37,6 @@ const startApp = () => stage1.then(
     AppWrap,
     ErrorPage,
     PageWrap,
-    Template,
     pageLoader
   })
 );
@@ -99,7 +97,6 @@ if (module.hot) {
   ], restart);
 
   module.hot.accept([
-    './template',
     '../common/app-wrap',
     '../common/error-page',
     '../common/page-loader',
