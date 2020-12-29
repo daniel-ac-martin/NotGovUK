@@ -7,6 +7,8 @@ import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
 import { Route, RouteComponentProps, withRouter } from '@not-govuk/route-utils';
 import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
 
+type DataCache = object;
+
 export type RouteInfo = {
   href: string
   title: string
@@ -80,7 +82,7 @@ type ComposeOptionsCommon = {
   AppWrap: Application
   ErrorPage: ErrorPage
   PageWrap: Page
-  data: object
+  data?: DataCache
 };
 
 type ComposeOptionsSSR = ComposeOptionsCommon & {
@@ -139,7 +141,7 @@ export const compose: Compose = options => {
     options.graphQL
       ? (
         new ApolloClient({
-          cache: new InMemoryCache().restore(options.data),
+          cache: options.data && new InMemoryCache().restore(options.data),
           link: (
             options.graphQL.schema
               ? new SchemaLink({
