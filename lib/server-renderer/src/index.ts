@@ -10,7 +10,7 @@ type Request = _Request & {
   auth?: any
 };
 
-type RenderApp = (code: any, body: any, headers: any) => Promise<void>;
+type RenderApp = (code?: any, body?: any, headers?: any) => Promise<void>;
 
 type Response = _Response & {
   html?: string
