@@ -12,7 +12,7 @@ type Request = _Request & {
 
 type RenderApp = (code?: any, body?: any, headers?: any) => Promise<void>;
 
-type Response = _Response & {
+export type Response = _Response & {
   html?: string
   locals?: any
   renderApp?: RenderApp
