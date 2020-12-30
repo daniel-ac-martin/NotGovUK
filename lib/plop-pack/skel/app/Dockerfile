@@ -12,7 +12,6 @@ ENV NODE_ENV production
 ENV MODE server
 
 COPY package.json /app/
-COPY src/ /app/src/
 COPY dist/ /app/dist/
 
 USER 31337
