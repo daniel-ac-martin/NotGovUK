@@ -38,6 +38,7 @@ export const PageWrap: FC<PageProps> = ({ routes, signInHRef, signOutHRef, child
       serviceName="NotGovUK"
       signOutHref={sign.href}
       signOutText={sign.text}
+      title="NotGovUK"
     >
       {children}
     </GovUKPage>

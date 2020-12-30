@@ -1,4 +1,4 @@
-import { Next, Request, Response, Server } from 'restify';
+import { Next, Request as _Request, Response, Server } from 'restify';
 
 export enum AuthMethod {
   None = 'none',
@@ -23,15 +23,15 @@ export type UserProfile = {
   roles?: string[]
 };
 
-type RequestPlus = Request & {
+export type Request = _Request & {
   auth?: UserProfile,
   logout?: () => void
 };
 
 export type Apply = (httpd: Server) => Server;
-export type Middleware = (req: RequestPlus, res: Response, next: Next) => void;
+export type Middleware = (req: Request, res: Response, next: Next) => void;
 
-type UserExtractor = (req: Request) => UserProfile;
+type UserExtractor = (req: _Request) => UserProfile;
 
 export type AuthBag = {
   apply?: Apply

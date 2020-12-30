@@ -1,5 +1,4 @@
 import { FC, Fragment, createElement as h } from 'react';
-import moment from 'moment';
 import { PageProps } from '@not-govuk/app-composer';
 import { A } from '@not-govuk/components';
 
@@ -19,7 +18,7 @@ const Page: FC<PageProps> = ({ location }) => {
   const isFemale = data.sex === 'female';
   const isMarried = data.married === 'Y';
   const isUnmarried = data.married === 'N';
-  const isOver18 = data.dob && moment().diff(data.dob, 'years') >= 18;
+  const isOver18 = data.dob && ( ( (new Date() as any) - (new Date(data.dob) as any) ) / (365.25 * 24 * 60 * 60 * 1000) ) >= 18;
 
   const title = (
     isMale

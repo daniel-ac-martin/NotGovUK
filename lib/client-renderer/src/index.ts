@@ -1,13 +1,26 @@
 import { ComponentType, createElement as h } from 'react';
 import { hydrate as originalHydrate, render as originalRender } from 'react-dom';
-import { ApplicationProps, ApplicationPropsCSR, ErrorPageProps, PageProps, PageLoader, UserInfo, compose } from '@not-govuk/app-composer';
+import { ApplicationProps, ErrorPageProps, Hydration, PageProps, PageLoader, compose } from '@not-govuk/app-composer';
 
-export const hydrateOrRender = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, LoadingPage: ComponentType<PageProps>, pageLoader: PageLoader): void => {
+export type HydrateOrRenderOptions = {
+  AppWrap: ComponentType<ApplicationProps>
+  ErrorPage: ComponentType<ErrorPageProps>
+  LoadingPage: ComponentType<PageProps>
+  PageWrap: ComponentType<PageProps>
+  pageLoader: PageLoader
+};
+
+export type HydrateOrRender = (options: HydrateOrRenderOptions) => void;
+
+export const hydrateOrRender: HydrateOrRender = ({
+  AppWrap,
+  ErrorPage,
+  LoadingPage,
+  PageWrap,
+  pageLoader
+}) => {
   interface IWindowWithHydration extends Window {
-    hydrationData?: object
-    hydrationUser?: UserInfo
-    hydrationId?: string
-    hydrationProps?: ApplicationPropsCSR
+    hydration?: Hydration
   };
 
   const routerProps = {};
@@ -18,17 +31,17 @@ export const hydrateOrRender = (AppWrap: ComponentType<ApplicationProps>, PageWr
       ErrorPage,
       LoadingPage,
       PageWrap,
-      data: windowWithProps.hydrationData,
+      data: windowWithProps.hydration.data.cache,
       graphQL: {
         endpoint: '/graphql'
       },
       pageLoader,
       routerProps,
-      user: windowWithProps.hydrationUser
+      user: windowWithProps.hydration.data.user
     }),
-    windowWithProps.hydrationProps
+    windowWithProps.hydration.data.props
   );
-  const root = document.getElementById(windowWithProps.hydrationId);
+  const root = document.getElementById(windowWithProps.hydration.id);
 
   try {
     originalHydrate(app, root);

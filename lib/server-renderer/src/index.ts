@@ -1,8 +1,24 @@
 import { GraphQLSchema } from 'graphql';
 import { ComponentType, createElement as h } from 'react';
-import { renderToStaticMarkup, renderToString } from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
+import { Next, Request as _Request, Response as _Response } from 'restify';
 import { html as beautifyHtml } from 'js-beautify';
-import { ApplicationProps, ApplicationPropsSSR, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
+import { ApplicationProps, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
+import { htmlEnvelope } from './html-envelope';
+
+type Request = _Request & {
+  auth?: any
+};
+
+type RenderApp = (code?: any, body?: any, headers?: any) => Promise<void>;
+
+export type Response = _Response & {
+  html?: string
+  locals?: any
+  renderApp?: RenderApp
+};
+
+type Body = string | Error;
 
 const statusToTitle = {
   400: 'Bad request',
@@ -25,21 +41,10 @@ const statusToTitle = {
   505: 'HTTP version not supported',
 };
 
-export type TemplateProps = {
-  appProps: ApplicationPropsSSR
-  appRender: string
-  assetsPath: string
-  charSet: string
-  data: object
-  rootId: string
-  scripts: string[]
-  stylesheets: string[]
-  user: UserInfo
-};
-
-export type Template = ComponentType<TemplateProps>;
-
 export type RendererOptions = {
+  AppWrap: ComponentType<ApplicationProps>
+  ErrorPage: ComponentType<ErrorPageProps>
+  PageWrap: ComponentType<PageProps>
   assetsPath: string
   entrypoints?: object
   graphQL?: {
@@ -52,6 +57,16 @@ export type RendererOptions = {
   ssrOnly: boolean
 };
 
+type Format = (req: Request, res: Response, body?: Body) => string;
+type Renderer = (req: Request, res: Response, next: Next) => void;
+
+export type RestifyRenderer = {
+  formatHTML: Format
+  renderer: Renderer
+};
+
+export type ReactRenderer = (options: RendererOptions) => RestifyRenderer;
+
 const contentTypeToCharSet = (contentType: string): string => {
   const matches = contentType.match(/charset=([^;]*)/);
 
@@ -62,8 +77,20 @@ const contentTypeToCharSet = (contentType: string): string => {
   );
 };
 
-export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap: ComponentType<PageProps>, ErrorPage: ComponentType<ErrorPageProps>, Template: Template, options: RendererOptions) => {
-  const createApp = (req, res, body, charSet) => {
+export const reactRenderer: ReactRenderer = ({
+  AppWrap,
+  ErrorPage,
+  PageWrap,
+  assetsPath,
+  entrypoints,
+  graphQL,
+  pages,
+  rootId,
+  signInHRef,
+  signOutHRef,
+  ssrOnly
+}) => {
+  const createApp = (req: Request, res: Response, body?: Body, charSet?: string) => {
     const data = {}
     const user: UserInfo = {
       displayName: req.auth?.displayName,
@@ -94,17 +121,17 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
       pageTitle: (err && err.title) || body?.toString()
     };
     const appProps = {
-      pages: options.pages,
-      signInHRef: options.signInHRef,
-      signOutHRef: options.signOutHRef,
+      pages,
+      signInHRef,
+      signOutHRef,
       ...reqProps
     };
     const App = compose({
       AppWrap,
       ErrorPage,
       PageWrap,
-      graphQL: options.graphQL && {
-        schema: options.graphQL.schema
+      graphQL: graphQL && {
+        schema: graphQL.schema
       },
       routerProps,
       data,
@@ -119,30 +146,36 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
 
       const assetsByChunkName = res?.locals?.webpack?.devMiddleware.stats.toJson().assetsByChunkName || // v4 dev-middleware
         res?.locals?.webpackStats?.toJson().assetsByChunkName || // v3 dev-middleware
-        options.entrypoints; // pre-built assets
+        entrypoints; // pre-built assets
       const assets: string[] = (
         Object.values(assetsByChunkName)
           .flat()
           .map(v => String(v))
       );
-      const fullTemplateProps = {
-        appProps,
-        appRender,
-        assetsPath: options.assetsPath,
-        charSet: charSet,
-        data: App.extractDataCache(),
-        rootId: options.rootId,
+      const env = htmlEnvelope({
+        assetsPath,
+        charSet,
+        helmet: App.helmetContext.helmet,
+        hydrationData: (
+          ssrOnly
+            ? undefined
+            : {
+              props: appProps,
+              cache: App.extractDataCache(),
+              user
+            }
+        ),
+        rootId,
         scripts: (
-          options.ssrOnly
+          ssrOnly
             ? undefined
             : assets.filter(v => v.endsWith('.js'))
         ),
-        stylesheets: assets.filter(v => v.endsWith('.css')),
-        user
-      };
+        stylesheets: assets.filter(v => v.endsWith('.css'))
+      });
+      const html = env.head + appRender + env.foot;
 
-      return beautifyHtml(
-        renderToStaticMarkup(h(Template, fullTemplateProps)),
+      return beautifyHtml(html,
         {
           'indent_with_tabs': true
         }
@@ -155,7 +188,7 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
     };
   };
 
-  const formatHTML = (req, res, body) => {
+  const formatHTML = (req: Request, res: Response, body?: Body) => {
     if (!res.html) {
       const app = createApp(req, res, body, contentTypeToCharSet(res.header('Content-Type')));
       res.html = app.renderToHtml();
@@ -166,7 +199,7 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
     return res.html;
   };
 
-  const renderApp = req => function(code, body, headers): Promise<void> {
+  const renderApp = (req: Request): RenderApp => function(code, body, headers) {
     const res = this;
     const charSet = 'UTF-8';
 
@@ -182,7 +215,7 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
 
     const app = createApp(req, res, body, charSet);
     const promise = (
-      options.graphQL
+      graphQL
         ? app.render()
         : Promise.resolve('')
     );
@@ -193,7 +226,7 @@ export const reactRenderer = (AppWrap: ComponentType<ApplicationProps>, PageWrap
     });
   };
 
-  const renderer = (req, res, next) => {
+  const renderer = (req: Request, res: Response, next: Next) => {
     res.renderApp = renderApp(req);
     next();
   }

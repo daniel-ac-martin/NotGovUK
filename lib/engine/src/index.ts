@@ -4,10 +4,10 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import { ComponentType } from 'react';
 import serverless from 'serverless-http';
 import { Configuration as WebpackConfig } from 'webpack';
-import restify, { Router, errors } from '@not-govuk/restify';
+import restify, { Router } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
-import { ApplicationProps, ErrorPageProps, PageProps, TemplateProps, reactRenderer } from '@not-govuk/server-renderer';
-import { AuthMethod, AuthOptions, auth } from './lib/auth';
+import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
+import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
 
 export type Api = {
@@ -56,7 +56,6 @@ export type EngineStage2Options = {
   AppWrap: ComponentType<ApplicationProps>
   ErrorPage: ComponentType<ErrorPageProps>
   PageWrap: ComponentType<PageProps>
-  Template: ComponentType<TemplateProps>
   apis?: Api[]
   auth?: AuthOptions
   graphQL?: {
@@ -147,23 +146,21 @@ export const engine = async (options1: EngineStage1Options) => {
     );
     const pages = await gatherPages(options2.pageLoader);
 
-    const react = reactRenderer(
-      options2.AppWrap,
-      options2.PageWrap,
-      options2.ErrorPage,
-      options2.Template,
-      {
-        assetsPath: publicPath,
-        entrypoints: preBuiltAssets?.entrypoints,
-        graphQL: options2.graphQL && {
-          schema: options2.graphQL.schema
-        },
-        pages,
-        rootId: 'root',
-        signInHRef,
-        signOutHRef,
-        ssrOnly: options1.ssrOnly
-      });
+    const react = reactRenderer({
+      AppWrap: options2.AppWrap,
+      ErrorPage: options2.ErrorPage,
+      PageWrap: options2.PageWrap,
+      assetsPath: publicPath,
+      entrypoints: preBuiltAssets?.entrypoints,
+      graphQL: options2.graphQL && {
+        schema: options2.graphQL.schema
+      },
+      pages,
+      rootId: 'root',
+      signInHRef,
+      signOutHRef,
+      ssrOnly: options1.ssrOnly
+    });
     const formatHTML = react.formatHTML;
 
     // Set up Restify instance
@@ -207,7 +204,7 @@ export const engine = async (options1: EngineStage1Options) => {
     // Serve GraphQL
     if (options2.graphQL && !options1.ssrOnly) {
       const endpoint = '/graphql';
-      const graphQLOptions = (req) => ({
+      const graphQLOptions = (req: Request) => ({
         schema: options2.graphQL.schema,
         context: { auth: req.auth }
       });

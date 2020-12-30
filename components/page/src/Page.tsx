@@ -1,4 +1,5 @@
 import { FC, Fragment, HTMLProps, ReactNode, createElement as h } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { BackLink } from '@not-govuk/back-link';
 import { Breadcrumb, Breadcrumbs } from '@not-govuk/breadcrumbs';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
@@ -30,6 +31,8 @@ export type PageProps = (
     footerNavigation?: NavMenu[]
     /** Content for the phase-banner */
     phaseBannerContent?: ReactNode
+    /** Title of the HTML page (can be overridden via Helmet  */
+    title?: string
   }
 );
 
@@ -54,9 +57,10 @@ export const Page: FC<PageProps> = ({
   phase,
   phaseBannerContent,
   serviceHref,
-  serviceName,
+  serviceName: _serviceName,
   signOutHref,
   signOutText,
+  title: _title,
   ...attrs
 }) => {
   const classModifiers = (
@@ -65,6 +69,8 @@ export const Page: FC<PageProps> = ({
     : [_classModifiers]
   );
   const classes = classBuilder('not-govuk-page', classBlock, [ ...classModifiers, department ], className);
+  const serviceName = _serviceName || _title;
+  const title = _title || _serviceName || 'NotGovUK';
   const headerProps = {
     department,
     govUK,
@@ -88,6 +94,11 @@ export const Page: FC<PageProps> = ({
 
   return (
     <div {...attrs} className={classes()}>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      </Helmet>
       <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
       <Header {...headerProps} className={classes('header')} />
       <div className={classes('body')}>

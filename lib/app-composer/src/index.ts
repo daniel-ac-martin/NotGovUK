@@ -2,10 +2,24 @@ import { GraphQLSchema } from 'graphql';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, Fragment, Suspense, createElement as h, lazy } from 'react';
+import { HelmetProvider, FilledContext } from 'react-helmet-async';
 import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
 import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
 import { Route, RouteComponentProps, withRouter } from '@not-govuk/route-utils';
 import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
+
+type DataCache = object;
+
+export type HydrationData = {
+  props: ApplicationPropsCSR
+  cache?: DataCache
+  user?: UserInfo
+};
+
+export type Hydration = {
+  id: string
+  data: HydrationData
+};
 
 export type RouteInfo = {
   href: string
@@ -46,6 +60,7 @@ export type ApplicationProps = ApplicationPropsCSR | ApplicationPropsSSR;
 type ApplicationCSR = ComponentType<ApplicationPropsCSR>;
 type ApplicationSSR = ComponentType<ApplicationPropsSSR> & {
   extractDataCache: () => object
+  helmetContext: FilledContext
 };
 export type Application = ComponentType<ApplicationProps>;
 
@@ -65,22 +80,18 @@ export type ErrorPageProps = PageProps & {
 
 export type ErrorPage = ComponentType<ErrorPageProps>;
 
-type PageModule = {
+export type PageModule = {
   default: Page
   title?: string
 };
 
-export type PageLoader = (
-  (string) => Promise<PageModule>
-) & {
-  dir: string
-};
+export type PageLoader = __WebpackModuleApi.RequireContext;
 
 type ComposeOptionsCommon = {
   AppWrap: Application
   ErrorPage: ErrorPage
   PageWrap: Page
-  data: object
+  data?: DataCache
 };
 
 type ComposeOptionsSSR = ComposeOptionsCommon & {
@@ -139,7 +150,11 @@ export const compose: Compose = options => {
     options.graphQL
       ? (
         new ApolloClient({
-          cache: new InMemoryCache().restore(options.data),
+          cache: (
+            options.data
+              ? new InMemoryCache().restore(options.data)
+              : new InMemoryCache()
+          ),
           link: (
             options.graphQL.schema
               ? new SchemaLink({
@@ -161,6 +176,7 @@ export const compose: Compose = options => {
       : h(Fragment, {}, children)
   );
   const extractDataCache = () => client && client.extract();
+  const helmetContext = {};
 
   const App = props => {
     const routes = props
@@ -239,11 +255,17 @@ export const compose: Compose = options => {
 
     return h(
       options.AppWrap, props,
-      h(DataProvider, { client }, router)
+      h(
+        HelmetProvider, { context: helmetContext },
+        h(DataProvider, { client }, router)
+      )
     );
   };
 
-  return Object.assign(App, { extractDataCache });
+  return Object.assign(App, {
+    extractDataCache,
+    helmetContext: helmetContext as FilledContext
+  });
 };
 
 export { renderToStringWithData } from '@apollo/client/react/ssr';
