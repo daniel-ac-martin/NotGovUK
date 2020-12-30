@@ -42,15 +42,16 @@ const href2Path = (s: string): string => (
 export const gatherPages = (pageLoader: PageLoader): Promise<PageInfoSSR[]> => Promise.all(
   pageLoader
     .keys()
-    .map(e => (
-      pageLoader(e)
-        .then((mod: PageModule) => ({
-          Component: mod.default,
-          href: src2Href(e),
-          src: e,
-          title: mod.title
-        }) )
-    ) )
+    .map(async e => {
+      const mod: PageModule = await pageLoader(e);
+
+      return {
+        Component: mod.default,
+        href: src2Href(e),
+        src: e,
+        title: mod.title
+      };
+    } )
 );
 
 const pageMiddleware = (title: string) => (req: Request, res: Response, next: Next) => {
