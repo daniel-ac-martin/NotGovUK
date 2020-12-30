@@ -150,7 +150,11 @@ export const compose: Compose = options => {
     options.graphQL
       ? (
         new ApolloClient({
-          cache: options.data && new InMemoryCache().restore(options.data),
+          cache: (
+            options.data
+              ? new InMemoryCache().restore(options.data)
+              : new InMemoryCache()
+          ),
           link: (
             options.graphQL.schema
               ? new SchemaLink({
