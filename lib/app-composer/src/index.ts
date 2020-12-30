@@ -181,15 +181,24 @@ export const compose: Compose = options => {
   const App = props => {
     const routes = props
       .pages
-      .map(e => ({
-        Component: (
-          "pageLoader" in options
-            ? lazy(() => options.pageLoader(e.src))
-            : e.Component
-        ),
-        href: decodeURI(e.href),
-        title: e.title
-      }));
+      .map(e => {
+        const loaded = (
+          'pageLoader' in options
+            ? options.pageLoader(e.src)
+            : undefined
+        );
+        const Component = e.Component || (
+          loaded instanceof Promise
+            ? lazy(() => loaded)
+            : loaded.default
+        );
+
+        return {
+          Component,
+          href: decodeURI(e.href),
+          title: e.title
+        };
+      });
     const pageProps = {
       routes,
       signInHRef: props.signInHRef,
