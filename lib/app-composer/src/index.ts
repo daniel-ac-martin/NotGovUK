@@ -80,16 +80,12 @@ export type ErrorPageProps = PageProps & {
 
 export type ErrorPage = ComponentType<ErrorPageProps>;
 
-type PageModule = {
+export type PageModule = {
   default: Page
   title?: string
 };
 
-export type PageLoader = (
-  (string) => Promise<PageModule>
-) & {
-  dir: string
-};
+export type PageLoader = __WebpackModuleApi.RequireContext;
 
 type ComposeOptionsCommon = {
   AppWrap: Application
