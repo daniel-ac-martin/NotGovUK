@@ -1,9 +1,9 @@
 import { ReactNode, createElement as h } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router';
-import { mount as originalMount, shallow as originalShallow } from 'enzyme';
+import { mount as _mount } from 'enzyme';
 
-export const mount = (c: ReactNode, r?: object) => originalMount(
+export const mount = (c: ReactNode, r?: object): ReturnType<typeof _mount> => _mount(
   h(HelmetProvider, {},
     h(MemoryRouter, r || {
       initialEntries: ['/previous', '/current', '/next'],
@@ -12,4 +12,4 @@ export const mount = (c: ReactNode, r?: object) => originalMount(
   )
 );
 
-export const shallow = originalShallow;
+export { shallow } from 'enzyme';
