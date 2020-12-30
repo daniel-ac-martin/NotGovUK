@@ -1,5 +1,6 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { HelmetProvider } from 'react-helmet-async';
 import { StaticRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { format } from 'prettier/standalone';
@@ -53,7 +54,13 @@ export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
 export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, classModifiers, className, id, source, ...attrs }) => {
   const location = useLocation();
   const classes = classBuilder('penultimate-react-preview', classBlock, classModifiers, className);
-  const staticMarkup = renderToStaticMarkup(h(StaticRouter, {}, children));
+  const staticMarkup = renderToStaticMarkup(
+    h(HelmetProvider, {},
+      h(StaticRouter, {},
+        children
+      )
+    )
+  );
   const html = highlightHtml(formatHtml(staticMarkup));
   const react = highlightJsx(formatJsx(source));
   const show = `show-${id}`;
