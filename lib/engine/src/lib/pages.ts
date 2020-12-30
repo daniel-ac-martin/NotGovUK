@@ -1,18 +1,20 @@
+import { Request, Next } from 'restify';
 import { Router } from '@not-govuk/restify';
 import { Page, PageInfoSSR, PageLoader } from '@not-govuk/app-composer';
 import { promises as fs } from 'fs';
+import { Response } from '@not-govuk/server-renderer';
 import path from 'path';
 
 const pagesDir = './pages';
 const pageExtensionPattern = /\.[jt]sx?$/i
 
-const removeTrailingSlash = s => (
+const removeTrailingSlash = (s: string): string => (
   s.endsWith('/')
     ? s.slice(0, -1)
     : s
 );
 
-const addPreceedingSlash = s => (
+const addPreceedingSlash = (s: string): string => (
   s.startsWith('/')
     ? s
     : '/' + s
@@ -29,7 +31,7 @@ const src2Href = (page: string): string => (
   )
 );
 
-const href2Path = s => (
+const href2Path = (s: string): string => (
   addPreceedingSlash(removeTrailingSlash(s))
 );
 
@@ -88,7 +90,7 @@ export const gatherPages = (pageLoader: PageLoader): Promise<PageInfoSSR[]> => (
     ))
 );
 
-const pageMiddleware = (title: string) => (req, res, next) => {
+const pageMiddleware = (title: string) => (req: Request, res: Response, next: Next) => {
   res.renderApp(200, title).finally(next);
 };
 
