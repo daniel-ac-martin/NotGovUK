@@ -36,7 +36,8 @@ html {
 
 html, body, #root, #story-root {
   @extend .govuk-template__body;
-  background-color: govuk-colour("white");
+  background-color: govuk-colour('white');
+  color: govuk-colour('black');
   height: 100%;
 
   > .not-govuk-page {
