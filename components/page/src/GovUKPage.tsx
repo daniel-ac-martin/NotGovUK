@@ -14,10 +14,10 @@ const ogImage = require('govuk-frontend/govuk/assets/images/govuk-opengraph-imag
 
 export type GovUKPageProps = Omit<PageProps, 'govUK'>;
 
-export const GovUKPage: FC<GovUKPageProps> = ({ children, ...props }) => (
+export const GovUKPage: FC<GovUKPageProps> = ({ children, classModifiers, ...props }) => (
   <Page
     {...props}
-    classModifiers="govuk"
+    classModifiers={[ ...(Array.isArray(classModifiers) ? classModifiers : [classModifiers]), 'govuk' ]}
     govUK={true}
   >
     <Helmet>
