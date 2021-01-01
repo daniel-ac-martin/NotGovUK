@@ -19,6 +19,11 @@
     font-family: 'Inter', 'Arial', sans-serif;
   }
 
+  &--dark {
+    background-color: $not-govuk-dark-mode-background-colour;
+    color: $not-govuk-dark-mode-text-colour;
+  }
+
   &__body {
     // Keep the footer at the bottom
     flex: 1 1 auto;
@@ -36,7 +41,8 @@ html {
 
 html, body, #root, #story-root {
   @extend .govuk-template__body;
-  background-color: govuk-colour("white");
+  background-color: govuk-colour('white');
+  color: govuk-colour('black');
   height: 100%;
 
   > .not-govuk-page {

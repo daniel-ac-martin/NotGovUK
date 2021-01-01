@@ -1,4 +1,5 @@
 import { FC, createElement as h } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { boolean, select } from "@storybook/addon-knobs";
 import { className } from '@not-govuk/components/src/helpers';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -8,9 +9,11 @@ const Root: FC<any> = props => (
     backgroundColor: 'white',
     padding: '1em'
   }}>
-    <Router>
-      {props.children}
-    </Router>
+    <HelmetProvider>
+      <Router>
+        {props.children}
+      </Router>
+    </HelmetProvider>
   </div>
 );
 

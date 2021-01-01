@@ -143,6 +143,49 @@ A page that does _NOT_ restrict the width on wide screens.
 </Preview>
 
 
+### Dark mode
+
+<p><Tag text="Experimental" /></p>
+
+A page suitable for dashboards. This is achieved by providing the `dark` classModifier.
+
+<Preview>
+  <Story name="Dark mode">
+    <NotGovUKPage
+      classModifiers="dark"
+      department="home-office"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      organisationText="HMPO"
+      phase="alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span className="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
 ### Department colours
 
 If you are building an internal application you can supply the name of

@@ -6,3 +6,7 @@
     @extend .govuk-phase-banner__content__tag;
   }
 }
+
+.not-govuk-page--dark .govuk-phase-banner {
+  border-color: $not-govuk-dark-mode-text-colour;
+}

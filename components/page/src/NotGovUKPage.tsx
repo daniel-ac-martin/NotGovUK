@@ -6,10 +6,10 @@ import '../assets/NotGovUKPage.scss';
 
 export type NotGovUKPageProps = Omit<PageProps, 'govUK'>;
 
-export const NotGovUKPage: FC<NotGovUKPageProps> = ({ children, ...props }) => (
+export const NotGovUKPage: FC<NotGovUKPageProps> = ({ children, classModifiers, ...props }) => (
   <Page
     {...props}
-    classModifiers="not-govuk"
+    classModifiers={[ ...(Array.isArray(classModifiers) ? classModifiers : [classModifiers]), 'not-govuk' ]}
     govUK={false}
   >
     <Helmet>
