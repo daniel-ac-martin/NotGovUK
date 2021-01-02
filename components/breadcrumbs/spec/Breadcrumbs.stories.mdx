@@ -1,12 +1,13 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { Breadcrumbs } from '../src/Breadcrumbs';
 import readMe from '../README.md';
-export const title = 'Breadcrumbs';
 
 <Meta
   title="Breadcrumbs"
   component={ Breadcrumbs }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component to help users to understand where they are within a website\'s structure and move between levels.',
     jest: ['Breadcrumbs'],
     notes: readMe
   } }

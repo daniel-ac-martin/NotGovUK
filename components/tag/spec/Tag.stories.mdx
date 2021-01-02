@@ -1,12 +1,13 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { Tag } from '../src/Tag';
 import readMe from '../README.md';
-export const title = 'Tag';
 
 <Meta
   title="Tag"
   component={ Tag }
   parameters={ {
+    chromatic: { viewports: [320, 320] },
+    description: 'A component to display the status of something.',
     jest: ['Tag'],
     notes: readMe
   } }

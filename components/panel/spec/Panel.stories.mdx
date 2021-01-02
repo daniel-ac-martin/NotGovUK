@@ -1,12 +1,14 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { Panel } from '../src/Panel';
 import readMe from '../README.md';
-export const title = 'Panel';
 
 <Meta
   title="Panel"
   component={ Panel }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A visible container used on confirmation or results pages to highlight important content.',
+    image: 'https://snapshots.chromatic.com/snapshots/5f1488148c817700223adb9a-5ff08dbae29b2700217b53b3/capture.png',
     jest: ['Panel'],
     notes: readMe
   } }

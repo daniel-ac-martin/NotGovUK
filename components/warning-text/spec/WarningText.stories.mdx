@@ -1,12 +1,13 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { WarningText } from '../src/WarningText';
 import readMe from '../README.md';
-export const title = 'Warning text';
 
 <Meta
   title="Warning text"
   component={ WarningText }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component to warn the user of something important.',
     jest: ['WarningText'],
     notes: readMe
   } }

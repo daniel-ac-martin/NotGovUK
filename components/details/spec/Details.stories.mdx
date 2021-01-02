@@ -1,12 +1,13 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { Details } from '../src/Details';
 import readMe from '../README.md';
-export const title = 'Details';
 
 <Meta
   title="Details"
   component={ Details }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component to make a page easier to scan by letting users reveal more detailed information only if they need it.',
     jest: ['Details'],
     notes: readMe
   } }

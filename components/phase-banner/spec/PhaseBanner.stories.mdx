@@ -1,12 +1,13 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { PhaseBanner } from '../src/PhaseBanner';
 import readMe from '../README.md';
-export const title = 'Phase banner';
 
 <Meta
   title="Phase banner"
   component={ PhaseBanner }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component to show users your service is still being worked on.',
     jest: ['PhaseBanner'],
     notes: readMe
   } }

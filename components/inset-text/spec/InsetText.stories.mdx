@@ -1,12 +1,13 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { InsetText } from '../src/InsetText';
 import readMe from '../README.md';
-export const title = 'Inset text';
 
 <Meta
   title="Inset text"
   component={ InsetText }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A block of text that is inset.',
     jest: ['InsetText'],
     notes: readMe
   } }

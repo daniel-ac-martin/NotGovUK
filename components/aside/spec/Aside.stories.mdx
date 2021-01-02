@@ -2,12 +2,14 @@ import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { Tag } from '@not-govuk/tag';
 import { Aside } from '../src/Aside';
 import readMe from '../README.md';
-export const title = 'Aside';
 
 <Meta
   title="Aside"
   component={ Aside }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component for displaying indirectly related content.',
+    image: 'https://snapshots.chromatic.com/snapshots/5f1488148c817700223adb9a-5ff08dbae29b2700217b5333/capture.png',
     jest: ['Aside'],
     notes: readMe
   } }

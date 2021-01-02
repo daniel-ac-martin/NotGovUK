@@ -2,12 +2,13 @@ import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { A } from '@not-govuk/link';
 import { Footer } from '../src/Footer';
 import readMe from '../README.md';
-export const title = 'Footer';
 
 <Meta
   title="Footer"
   component={ Footer }
   parameters={ {
+    chromatic: { viewports: [800, 600] },
+    description: 'A page footer providing copyright, licensing and other information about your service and department.',
     jest: ['Footer'],
     notes: readMe
   } }
