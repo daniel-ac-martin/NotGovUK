@@ -1,3 +1,4 @@
+import { ComponentProps, ComponentType, FC, createElement as h } from 'react';
 import WTForm, {
   Fork,
   Page,
@@ -6,17 +7,68 @@ import WTForm, {
   mobileNumber as localMobileNumber,
   postalCode as localPostalCode
 } from '@not-govuk/forms';
+import { Submit } from './controls';
 import {
   Checkboxes,
   DateInput,
   Field,
   Radios,
   Select,
-  Submit,
   TextInput,
   Textarea
-} from './controls';
+} from './fields';
 
+export type FormProps = ComponentProps<typeof WTForm>;
+type TForm = ComponentType<FormProps> & {
+  Checkboxes: ComponentType<any>
+  DateInput: ComponentType<any>
+  Field: ComponentType<any>
+  Fork: ComponentType<any>
+  Page: ComponentType<any>
+  Radios: ComponentType<any>
+  Select: ComponentType<any>
+  Submit: ComponentType<any>
+  TextInput: ComponentType<any>
+  Textarea: ComponentType<any>
+};
+
+export const FormComponent: FC<FormProps> = ({ classBlock, ...props }) => h(WTForm, {
+  ...props,
+  classBlock: classBlock || 'not-govuk-form'
+});
+
+export const Form: TForm = Object.assign(
+  FormComponent,
+  {
+    Checkboxes,
+    DateInput,
+    Field,
+    Fork,
+    Page,
+    Radios,
+    Select,
+    Submit,
+    TextInput,
+    Textarea
+  }
+);
+
+const defaultLanguage = 'en';
+const defaultCountry = 'GB';
+const defaultLocale = `${defaultLanguage}_${defaultCountry}`;
+
+export const alpha = localAlpha(defaultLocale);
+export const alphanumeric = localAlphanumeric(defaultLocale);
+export const mobileNumber = localMobileNumber(defaultLocale);
+export const postcode = localPostalCode(defaultCountry);
+
+export default Form;
+export {
+  localAlpha,
+  localAlphanumeric,
+  localMobileNumber,
+  localPostalCode
+};
 export {
   after,
   before,
@@ -36,36 +88,9 @@ export {
   range,
   required,
   url,
-  validator
+  validator,
+  withControl,
+  withForm,
+  withField
 } from '@not-govuk/forms';
-
-const Form: any = WTForm;
-
-Form.Checkboxes = Checkboxes;
-Form.DateInput = DateInput;
-Form.Field = Field;
-Form.Radios = Radios;
-Form.Select = Select;
-Form.Submit = Submit;
-Form.TextInput = TextInput;
-Form.Textarea = Textarea;
-
-Form.Fork = Fork;
-Form.Page = Page;
-
-export {
-  Form,
-  localAlpha,
-  localAlphanumeric,
-  localMobileNumber,
-  localPostalCode
-};
-
-const defaultLanguage = 'en';
-const defaultCountry = 'GB';
-const defaultLocale = `${defaultLanguage}_${defaultCountry}`;
-
-export const alpha = localAlpha(defaultLocale);
-export const alphanumeric = localAlphanumeric(defaultLocale);
-export const mobileNumber = localMobileNumber(defaultLocale);
-export const postcode = localPostalCode(defaultCountry);
+export type { RawField } from '@not-govuk/forms';

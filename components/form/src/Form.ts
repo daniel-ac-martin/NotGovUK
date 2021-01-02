@@ -7,16 +7,16 @@ import WTForm, {
   mobileNumber as localMobileNumber,
   postalCode as localPostalCode
 } from '@not-govuk/forms';
+import { Submit } from './controls';
 import {
   Checkboxes,
   DateInput,
   Field,
   Radios,
   Select,
-  Submit,
   TextInput,
   Textarea
-} from './controls';
+} from './fields';
 
 import '../assets/Form.scss';
 
@@ -90,5 +90,9 @@ export {
   range,
   required,
   url,
-  validator
+  validator,
+  withControl,
+  withForm,
+  withField
 } from '@not-govuk/forms';
+export type { RawField } from '@not-govuk/forms';

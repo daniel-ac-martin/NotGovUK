@@ -1,6 +1,6 @@
 import { ComponentType, FC, createElement as h } from 'react';
 import { useField } from 'formik';
-import { FieldInputProps, useFormikContext } from 'formik';
+import { useFormikContext } from 'formik';
 import { FieldNode, FormatFn } from './graph';
 import { useForm } from './context';
 import { id } from './helpers';
@@ -16,7 +16,7 @@ type MyControlProps = {
   disabled?: boolean
 };
 
-export type RawField<A, Value> = ComponentType<A & FieldInputProps<Value>> & {
+export type RawField<A> = ComponentType<A> & {
   format?: FormatFn
 };
 
@@ -30,7 +30,7 @@ const toString = (v: any): string => (
     : String(v)
 );
 
-export const withField = <A, B>(Component: RawField<A, B>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & MyFieldProps> => props => {
+export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & MyFieldProps & MyControlProps> => props => {
   const validators = [
     ...(props.validators || []),
     ...(implicitValidators || [])
@@ -90,3 +90,9 @@ export const withControl = <A extends MyControlProps>(Component: ComponentType<A
     disabled: disabled
   });
 };
+
+export const withForm = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & MyFieldProps & MyControlProps> => (
+  withControl(
+    withField(Component, implicitValidators, preValidators)
+  )
+);

@@ -11,7 +11,7 @@ import { Graph } from './graph';
 import { Completion, CompletionContext } from './completion';
 import { Register, Registry } from './registry';
 
-export { withField, withControl } from './hocs';
+export { withField, withForm, withControl } from './hocs';
 export { Page } from './page';
 export { Fork } from './fork';
 export {
@@ -169,3 +169,4 @@ export const Form: FC<FormProps<any>> = ({
 };
 
 export default Form;
+export type { RawField } from './hocs';
