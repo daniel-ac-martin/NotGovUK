@@ -1,12 +1,13 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { {{{properCase name}}} } from '../src/{{{properCase name}}}';
 import readMe from '../README.md';
-export const title = '{{{name}}}';
 
 <Meta
   title="{{{name}}}"
   component={ {{{properCase name}}} }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: '{{{description}}}',
     jest: ['{{{properCase name}}}'],
     notes: readMe
   } }

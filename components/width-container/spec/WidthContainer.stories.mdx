@@ -3,12 +3,13 @@ import { Panel } from '@not-govuk/panel';
 import { Tag } from '@not-govuk/tag';
 import { WidthContainer } from '../src/WidthContainer';
 import readMe from '../README.md';
-export const title = 'Width container';
 
 <Meta
   title="Width container"
   component={ WidthContainer }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A simple container to limit the width of its contents.',
     jest: ['WidthContainer'],
     notes: readMe
   } }

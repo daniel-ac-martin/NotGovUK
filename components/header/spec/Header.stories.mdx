@@ -1,12 +1,13 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { Header } from '../src/Header';
 import readMe from '../README.md';
-export const title = 'Header';
 
 <Meta
   title="Header"
   component={ Header }
   parameters={ {
+    chromatic: { viewports: [800, 600] },
+    description: 'A component that shows users whether they are on GOV.UK and which service they are using.',
     jest: ['Header'],
     notes: readMe
   } }

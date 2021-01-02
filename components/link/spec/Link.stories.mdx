@@ -2,12 +2,13 @@ import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { Tag } from '@not-govuk/tag';
 import { A } from '../src/Link';
 import readMe from '../README.md';
-export const title = 'Link';
 
 <Meta
   title="Link"
   component={ A }
   parameters={ {
+    chromatic: { viewports: [320, 320] },
+    description: 'A drop-in replacement for the \'a\' element with GovUK styling.',
     jest: ['Link'],
     notes: readMe
   } }

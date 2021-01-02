@@ -1,4 +1,5 @@
 import { FC, Fragment, createElement as h } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { A } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
@@ -32,6 +33,10 @@ const Page: FC<PageProps> = ({ location }) => {
 
   return (
     <div className="govuk-grid-row">
+      <Helmet>
+        <title>Components - NotGovUK</title>
+        <meta name="og:article:section" content="Components" />
+      </Helmet>
       <div className="govuk-grid-column-one-quarter">
         <aside>
           <h2>Components</h2>
@@ -47,7 +52,7 @@ const Page: FC<PageProps> = ({ location }) => {
           stories ? (
             <Fragment>
               <span className="govuk-caption-xl">Components</span>
-              <DocsPage stories={stories} />
+              <DocsPage siteName="NotGovUK" stories={stories} />
             </Fragment>
           ) : (
             componentName ? (

@@ -1,12 +1,13 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
 import { Table } from '../src/Table';
 import readMe from '../README.md';
-export const title = 'Table';
 
 <Meta
   title="Table"
   component={ Table }
   parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component to make information easier to compare and scan for users.',
     jest: ['Table'],
     notes: readMe
   } }
