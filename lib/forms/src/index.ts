@@ -11,7 +11,7 @@ import { Graph } from './graph';
 import { Completion, CompletionContext } from './completion';
 import { Register, Registry } from './registry';
 
-export { withField, withControl } from './hocs';
+export { withField, withForm, withControl } from './hocs';
 export { Page } from './page';
 export { Fork } from './fork';
 export {

@@ -90,3 +90,9 @@ export const withControl = <A extends MyControlProps>(Component: ComponentType<A
     disabled: disabled
   });
 };
+
+export const withForm = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & MyFieldProps & MyControlProps> => (
+  withControl(
+    withField(Component, implicitValidators, preValidators)
+  )
+);
