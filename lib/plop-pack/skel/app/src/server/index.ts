@@ -38,7 +38,6 @@ const startApp = () => stage1.then(
     AppWrap,
     ErrorPage,
     PageWrap,
-    Template,
     auth: config.auth && (
       ( config.auth.method === AuthMethod.None && { method: AuthMethod.None } )
         || ( config.auth.method === AuthMethod.Dummy && { method: AuthMethod.Dummy, ...config.auth.dummy } )
