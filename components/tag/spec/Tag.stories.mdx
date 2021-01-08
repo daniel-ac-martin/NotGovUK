@@ -1,4 +1,5 @@
 import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Table } from '@not-govuk/table';
 import { Tag } from '../src/Tag';
 import readMe from '../README.md';
 
@@ -19,7 +20,7 @@ A component to display the status of something.
 
 <Preview withToolbar>
   <Story name="Tag">
-    <Tag text="example" />
+    <Tag>example</Tag>
   </Story>
 </Preview>
 
@@ -43,7 +44,7 @@ A standard Tag.
 
 <Preview>
   <Story name="Standard">
-    <Tag text="example" />
+    <Tag>example</Tag>
   </Story>
 </Preview>
 
@@ -56,28 +57,158 @@ The [task list pattern] has an example of how to show one status using tags.
 
 Or it can make sense to have two statuses. For example you may find that there’s a need to have one tag for ‘Active’ users and one for ‘Inactive’ users.
 
-IMPLEMENT ME!
+<Preview>
+  <Story name="One or two">
+    <Table
+      keys={['name', 'status']}
+      headings={{
+        name: 'Name of user',
+        status: 'Status'
+      }}
+      data={[
+        {
+          name: 'Rachel Silver',
+          status: (<Tag classModifiers="grey">inactive</Tag>)
+        },
+        {
+          name: 'Jesse Smith',
+          status: (<Tag classModifiers="grey">inactive</Tag>)
+        },
+        {
+          name: 'Joshua Wessel',
+          status: (<Tag>active</Tag>)
+        },
+        {
+          name: 'Rachel Pepper',
+          status: (<Tag>active</Tag>)
+        },
+        {
+          name: 'Stuart Say',
+          status: (<Tag classModifiers="grey">inactive</Tag>)
+        },
+        {
+          name: 'Laura Frith',
+          status: (<Tag>active</Tag>)
+        },
+        {
+          name: 'Tim Harvey',
+          status: (<Tag classModifiers="grey">inactive</Tag>)
+        }
+      ]}
+    />
+  </Story>
+</Preview>
 
 
 ### Showing multiple statuses
 
 Tags should be helpful to users. The more you add, the harder it is for users to remember them. So start with the smallest number of statuses you think might work, then add more if your user research shows there’s a need for them.
 
-IMPLEMENT ME!
+<Preview>
+  <Story name="Multiple">
+    <Table
+      keys={['name', 'status']}
+      headings={{
+        name: 'Applicaton',
+        status: 'Status'
+      }}
+      data={[
+        {
+          name: 'Joshua Wessel',
+          status: (<Tag classModifiers="red">urgent</Tag>)
+        },
+        {
+          name: 'Rachel Silver',
+          status: (<Tag classModifiers="blue">new</Tag>)
+        },
+        {
+          name: 'Laura Frith',
+          status: (<Tag classModifiers="blue">new</Tag>)
+        },
+        {
+          name: 'Paul French',
+          status: (<Tag classModifiers="blue">new</Tag>)
+        },
+        {
+          name: 'Jesse Smith',
+          status: (<Tag classModifiers="blue">new</Tag>)
+        },
+        {
+          name: 'Rachel Pepper',
+          status: (<Tag classModifiers="green">finished</Tag>)
+        },
+        {
+          name: 'Emma Tennant',
+          status: (<Tag classModifiers="yellow">waiting on</Tag>)
+        }
+      ]}
+    />
+  </Story>
+</Preview>
 
 
 ### Using colour with tags
 
-You can use colour to help distinguish between different tags – or to help draw the user’s attention to a tag if it’s especially important. For example, it probably makes sense to use `govuk-tag--red` for a tag that reads ‘Urgent’.
+You can use colour to help distinguish between different tags – or to help draw the user’s attention to a tag if it’s especially important. For example, it probably makes sense to use `red` for a tag that reads ‘Urgent’.
 
 [Do not use colour alone to convey information] because it’s not accessible. If you use the same tag in more than one place, make sure you keep the colour consistent.
 
-Because tags with solid colours tend to stand out more, it’s usually best to avoid mixing solid colours and tints: use one or the other. This matters less if you’re only using two colours. For example, it’s okay to use the tint `govuk-tag--grey` and solid blue tags together if you only need two statuses.
-Additional colours
+Because tags with solid colours tend to stand out more, it’s usually best to avoid mixing solid colours and tints: use one or the other. This matters less if you’re only using two colours. For example, it’s okay to use the tint `grey` and solid blue tags together if you only need two statuses.
+
+
+#### Additional colours
 
 If you need more tag colours, you can use the following tints.
 
-IMPLEMENT ME!
+<Preview>
+  <Story name="Colours">
+    <Table
+      keys={['modifier', 'result']}
+      headings={{
+        modifier: 'classModifier',
+        result: 'Tag'
+      }}
+      data={[
+        {
+          modifier: (<code>grey</code>),
+          result: (<Tag classModifiers="grey">inactive</Tag>)
+        },
+        {
+          modifier: (<code>green</code>),
+          result: (<Tag classModifiers="green">new</Tag>)
+        },
+        {
+          modifier: (<code>turquoise</code>),
+          result: (<Tag classModifiers="turquoise">active</Tag>)
+        },
+        {
+          modifier: (<code>blue</code>),
+          result: (<Tag classModifiers="blue">pending</Tag>)
+        },
+        {
+          modifier: (<code>purple</code>),
+          result: (<Tag classModifiers="purple">received</Tag>)
+        },
+        {
+          modifier: (<code>pink</code>),
+          result: (<Tag classModifiers="pink">sent</Tag>)
+        },
+        {
+          modifier: (<code>red</code>),
+          result: (<Tag classModifiers="red">rejected</Tag>)
+        },
+        {
+          modifier: (<code>orange</code>),
+          result: (<Tag classModifiers="orange">declined</Tag>)
+        },
+        {
+          modifier: (<code>yellow</code>),
+          result: (<Tag classModifiers="yellow">delayed</Tag>)
+        }
+      ]}
+    />
+  </Story>
+</Preview>
 
 
 ## Research on this component
