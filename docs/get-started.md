@@ -161,7 +161,7 @@ mandatory prior to merging:
 [GitHub]: https://github.com/
 [GitHub Actions]: https://github.com/features/actions
 [install pnpm]: https://pnpm.js.org/en/installation
-[Working on your project]: ./working-on-your-project
+[Working on your project]: ./working-on-your-project.md
 [Chromatic]: https://www.chromatic.com/
 [log in to Chromatic]: https://www.chromatic.com/start
 [Netlify]: https://www.netlify.com/
