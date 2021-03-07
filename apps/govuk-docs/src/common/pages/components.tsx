@@ -20,6 +20,7 @@ const storySources = [
   require('../../../../../components/phase-banner/spec/PhaseBanner.stories.mdx'),
   require('../../../../../components/skip-link/spec/SkipLink.stories.mdx'),
   require('../../../../../components/table/spec/Table.stories.mdx'),
+  require('../../../../../components/tabs/spec/Tabs.stories.mdx'),
   require('../../../../../components/tag/spec/Tag.stories.mdx'),
   require('../../../../../components/warning-text/spec/WarningText.stories.mdx'),
   require('../../../../../components/width-container/spec/WidthContainer.stories.mdx')
