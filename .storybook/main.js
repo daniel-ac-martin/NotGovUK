@@ -22,6 +22,7 @@ module.exports = {
     '../components-internal/anchor/spec/*.stories.@(js|mdx)',
     '../components-internal/anchor-list/spec/*.stories.@(js|mdx)',
     '../components-internal/simple-table/spec/*.stories.@(js|mdx)',
+    '../components-internal/tabs/spec/*.stories.@(js|mdx)',
     '../styles/*.stories.mdx',
     '../packages/components/src/components/**/*.stories.mdx'
   ],
