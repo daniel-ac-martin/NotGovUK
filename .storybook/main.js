@@ -16,6 +16,7 @@ module.exports = {
     '../components/phase-banner/spec/*.stories.@(js|mdx)',
     '../components/skip-link/spec/*.stories.@(js|mdx)',
     '../components/table/spec/*.stories.@(js|mdx)',
+    '../components/tabs/spec/*.stories.@(js|mdx)',
     '../components/tag/spec/*.stories.@(js|mdx)',
     '../components/warning-text/spec/*.stories.@(js|mdx)',
     '../components/width-container/spec/*.stories.@(js|mdx)',
