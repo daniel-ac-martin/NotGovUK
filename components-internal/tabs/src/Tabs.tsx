@@ -12,8 +12,6 @@ type TabItem = {
 
 export type TabsProps = StandardProps & {
   items: TabItem[]
-  /** ID of item to show initially */
-  title?: string
 };
 
 export const Tabs: FC<TabsProps> = ({
@@ -22,7 +20,6 @@ export const Tabs: FC<TabsProps> = ({
   classModifiers,
   className,
   items,
-  title = 'Contents',
   ...attrs
 }) => {
   const classes = classBuilder('penultimate-tabs', classBlock, classModifiers, className);
@@ -42,22 +39,22 @@ export const Tabs: FC<TabsProps> = ({
 
   return (
     <div {...attrs} className={classes()}>
-      <h2 className={classes('title')}>{title}</h2>
       <ul className={classes('list')} role="tablist">
         { items.map(({ id, label }, i) => (
           <li
             key={i}
             className={classes('list-item', id === selected ? 'selected' : undefined )}
-            role="presentation"
             onClick={goToFragment(id)}
+            role="presentation"
           >
             <a
               aria-controls={id}
+              aria-expanded={id === selected ? 'true' : 'false'}
               className={classes('tab')}
               href={id === selected ? '#' : `#${id}`}
               id={`tab_${id}`}
-              role="tab"
               onClick={goToFragment(id)}
+              role="tab"
             >
               {label}
             </a>
@@ -65,7 +62,15 @@ export const Tabs: FC<TabsProps> = ({
         )) }
       </ul>
       { items.map(({ content, id, label, ...attrs2 }, i) => (
-        <div key={i} {...attrs2} className={classes('panel', ssr ? undefined : (id === selected ? 'visible' : 'hidden' ) )} id={id}>
+        <div
+          key={i}
+          {...attrs2}
+          aria-hidden={ssr ? undefined : !(id === selected)}
+          aria-labelledby={`tab_${id}`}
+          className={classes('panel', ssr ? undefined : (id === selected ? 'visible' : 'hidden' ) )}
+          id={id}
+          role="tabpanel"
+        >
           {content}
         </div>
       )) }
