@@ -265,6 +265,7 @@ importers:
   components-internal/tabs:
     dependencies:
       '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
+      '@not-govuk/route-utils': 'link:../../lib/route-utils'
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': 'link:../../lib/component-test-helpers'
@@ -274,8 +275,9 @@ importers:
       typescript: 3.9.7
     specifiers:
       '@mdx-js/react': ^1.6.5
-      '@not-govuk/component-helpers': 'workspace:^0.2.0'
+      '@not-govuk/component-helpers': 'workspace:^0.2.2'
       '@not-govuk/component-test-helpers': 'workspace:^0.2.0'
+      '@not-govuk/route-utils': 'workspace:^0.2.2'
       '@types/react': ^16.9.35
       jest: ^26.1.0
       ts-jest: ^26.1.1
@@ -632,8 +634,8 @@ importers:
       typescript: ^3.9.2
   components/tabs:
     dependencies:
+      '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
       '@not-govuk/sass-base': 'link:../../lib-govuk/sass-base'
-      '@not-govuk/tabs-internal': 'link:../../components-internal/tabs'
       govuk-frontend: 3.9.1
     devDependencies:
       '@mdx-js/react': 1.6.22
@@ -646,10 +648,10 @@ importers:
       typescript: 3.9.9
     specifiers:
       '@mdx-js/react': ^1.6.5
+      '@not-govuk/component-helpers': 'workspace:^0.2.2'
       '@not-govuk/component-test-helpers': 'workspace:^0.2.0'
       '@not-govuk/sass-base': 'workspace:^0.2.1'
       '@not-govuk/table': 'workspace:^0.2.1'
-      '@not-govuk/tabs-internal': 'workspace:^0.2.1'
       '@not-govuk/tag': 'workspace:^0.2.1'
       '@types/react': ^16.9.35
       govuk-frontend: 3.9.1
