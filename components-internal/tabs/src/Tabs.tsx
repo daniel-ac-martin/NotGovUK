@@ -1,5 +1,6 @@
-import { FC, ReactNode, createElement as h, useState } from 'react';
+import { FC, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { useHistory, useLocation } from '@not-govuk/route-utils';
 
 import '../assets/Tabs.scss';
 
@@ -12,7 +13,6 @@ type TabItem = {
 export type TabsProps = StandardProps & {
   items: TabItem[]
   /** ID of item to show initially */
-  initial?: string
   title?: string
 };
 
@@ -21,17 +21,23 @@ export const Tabs: FC<TabsProps> = ({
   classBlock,
   classModifiers,
   className,
-  initial = '',
   items,
   title = 'Contents',
   ...attrs
 }) => {
   const classes = classBuilder('penultimate-tabs', classBlock, classModifiers, className);
   const ssr = !global.window;
-  const [ selected, setSelected ] = useState(initial);
-  const select = (id: string) => (e) => {
+  const history = useHistory();
+  const location = useLocation();
+  const selected = location.hash?.substring(1);
+
+  const goToFragment = (fragment: string) => (e) => {
     e.preventDefault();
-    setSelected(id === selected ? initial ? id : '' : id);
+    location.hash = fragment;
+    history.push({
+      ...location,
+      hash: fragment
+    });
   };
 
   return (
@@ -43,15 +49,15 @@ export const Tabs: FC<TabsProps> = ({
             key={i}
             className={classes('list-item', id === selected ? 'selected' : undefined )}
             role="presentation"
-            onClick={select(id)}
+            onClick={goToFragment(id)}
           >
             <a
               aria-controls={id}
               className={classes('tab')}
-              href={`#${id}`}
+              href={id === selected ? '#' : `#${id}`}
               id={`tab_${id}`}
               role="tab"
-              onClick={select(id)}
+              onClick={goToFragment(id)}
             >
               {label}
             </a>
@@ -59,7 +65,7 @@ export const Tabs: FC<TabsProps> = ({
         )) }
       </ul>
       { items.map(({ content, id, label, ...attrs2 }, i) => (
-        <div key={i} {...attrs2} className={classes('panel', ssr || id === selected ? undefined : 'hidden' )} id={id}>
+        <div key={i} {...attrs2} className={classes('panel', ssr ? undefined : (id === selected ? 'visible' : 'hidden' ) )} id={id}>
           {content}
         </div>
       )) }
