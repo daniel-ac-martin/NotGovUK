@@ -12,8 +12,6 @@ type TabItem = {
 
 export type TabsProps = StandardProps & {
   items: TabItem[]
-  /** ID of item to show initially */
-  title?: string
 };
 
 export const Tabs: FC<TabsProps> = ({
@@ -22,7 +20,6 @@ export const Tabs: FC<TabsProps> = ({
   classModifiers,
   className,
   items,
-  title = 'Contents',
   ...attrs
 }) => {
   const classes = classBuilder('penultimate-tabs', classBlock, classModifiers, className);
@@ -42,7 +39,6 @@ export const Tabs: FC<TabsProps> = ({
 
   return (
     <div {...attrs} className={classes()}>
-      <h2 className={classes('title')}>{title}</h2>
       <ul className={classes('list')} role="tablist">
         { items.map(({ id, label }, i) => (
           <li
