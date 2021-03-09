@@ -1,4 +1,4 @@
-import { FC, ReactNode, createElement as h, useState } from 'react';
+import { FC, KeyboardEvent, ReactNode, SyntheticEvent, createElement as h, useRef, useState } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/Tabs.scss';
@@ -11,8 +11,6 @@ type TabItem = {
 
 export type TabsProps = StandardProps & {
   items: TabItem[]
-  /** ID of item to show initially */
-  initial?: string
   title?: string
 };
 
@@ -21,17 +19,39 @@ export const Tabs: FC<TabsProps> = ({
   classBlock,
   classModifiers,
   className,
-  initial: _initial,
   items,
   title = 'Contents',
   ...attrs
 }) => {
   const classes = classBuilder('govuk-tabs', classBlock, classModifiers, className);
-  const initial = _initial || items[0]?.id;
+  const initial = 0;
   const [ selected, setSelected ] = useState(initial);
-  const select = (id: string) => (e) => {
+  const refs = items.map(() => useRef(null));
+  const select = (i: number) => (e: SyntheticEvent) => {
     e.preventDefault();
-    setSelected(id === selected ? initial ? id : '' : id);
+    i !== selected && setSelected(i);
+  };
+  const keydown = (e: KeyboardEvent) => {
+    switch (e.keyCode) {
+      case 37:
+      case 38:
+        e.preventDefault();
+        if (selected > 0) {
+          const i = selected - 1;
+          setSelected(i);
+          refs[i].current.focus();
+        }
+        break;
+      case 39:
+      case 40:
+        e.preventDefault();
+        if (selected < items.length - 1) {
+          const i = selected + 1;
+          setSelected(i);
+          refs[i]?.current.focus();
+        }
+        break;
+    }
   };
   const ssr = !global.window;
 
@@ -42,19 +62,21 @@ export const Tabs: FC<TabsProps> = ({
         { items.map(({ id, label }, i) => (
           <li
             key={i}
-            className={classes('list-item', id === selected ? 'selected' : undefined )}
-            onClick={select(id)}
+            className={classes('list-item', i === selected ? 'selected' : undefined )}
+            onClick={select(i)}
             role="presentation"
           >
             <a
               aria-controls={id}
-              aria-selected={id === selected ? 'true' : 'false'}
+              aria-selected={i === selected ? 'true' : 'false'}
               className={classes('tab')}
               href={`#${id}`}
               id={`tab_${id}`}
-              onClick={select(id)}
+              onClick={select(i)}
+              onKeyDown={keydown}
+              ref={refs[i]}
               role="tab"
-              tabIndex={id === selected ? 0 : -1}
+              tabIndex={i === selected ? 0 : -1}
             >
               {label}
             </a>
@@ -66,7 +88,7 @@ export const Tabs: FC<TabsProps> = ({
           key={i}
           {...attrs2}
           aria-labelledby={`tab_${id}`}
-          className={classes('panel', ssr || id === selected ? undefined : 'hidden' )}
+          className={classes('panel', ssr || i === selected ? undefined : 'hidden' )}
           id={id}
           role="tabpanel"
         >
