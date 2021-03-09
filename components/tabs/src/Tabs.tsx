@@ -54,6 +54,7 @@ export const Tabs: FC<TabsProps> = ({
               id={`tab_${id}`}
               onClick={select(id)}
               role="tab"
+              tabIndex={id === selected ? 0 : -1}
             >
               {label}
             </a>
