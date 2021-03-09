@@ -48,16 +48,17 @@ export const Tabs: FC<TabsProps> = ({
           <li
             key={i}
             className={classes('list-item', id === selected ? 'selected' : undefined )}
-            role="presentation"
             onClick={goToFragment(id)}
+            role="presentation"
           >
             <a
               aria-controls={id}
+              aria-expanded={id === selected ? 'true' : 'false'}
               className={classes('tab')}
               href={id === selected ? '#' : `#${id}`}
               id={`tab_${id}`}
-              role="tab"
               onClick={goToFragment(id)}
+              role="tab"
             >
               {label}
             </a>
@@ -65,7 +66,15 @@ export const Tabs: FC<TabsProps> = ({
         )) }
       </ul>
       { items.map(({ content, id, label, ...attrs2 }, i) => (
-        <div key={i} {...attrs2} className={classes('panel', ssr ? undefined : (id === selected ? 'visible' : 'hidden' ) )} id={id}>
+        <div
+          key={i}
+          {...attrs2}
+          aria-hidden={ssr ? undefined : !(id === selected)}
+          aria-labelledby={`tab_${id}`}
+          className={classes('panel', ssr ? undefined : (id === selected ? 'visible' : 'hidden' ) )}
+          id={id}
+          role="tabpanel"
+        >
           {content}
         </div>
       )) }
