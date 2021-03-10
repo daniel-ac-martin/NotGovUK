@@ -44,7 +44,7 @@ export const Tabs: FC<TabsProps> = ({
           <li
             key={i}
             className={classes('list-item', id === selected ? 'selected' : undefined )}
-            onClick={goToFragment(id)}
+            onClick={goToFragment(id === selected ? '' : id)}
             role="presentation"
           >
             <a
@@ -53,7 +53,6 @@ export const Tabs: FC<TabsProps> = ({
               className={classes('tab')}
               href={id === selected ? '#' : `#${id}`}
               id={`tab_${id}`}
-              onClick={goToFragment(id)}
               role="tab"
             >
               {label}
