@@ -72,7 +72,6 @@ export const Tabs: FC<TabsProps> = ({
               className={classes('tab')}
               href={`#${id}`}
               id={`tab_${id}`}
-              onClick={select(i)}
               onKeyDown={keydown}
               ref={refs[i]}
               role="tab"
