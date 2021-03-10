@@ -15,6 +15,7 @@ export { default as Radios } from './radios';
 export { default as Select } from './select';
 export { default as SkipLink } from '@not-govuk/skip-link';
 export { default as Tag } from '@not-govuk/tag';
+export { default as Tabs } from '@not-govuk/tabs';
 export { default as TextInput } from './text-input';
 export { default as Textarea } from './textarea';
 export { default as WarningText } from '@not-govuk/warning-text';
