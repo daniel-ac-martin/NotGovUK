@@ -9,6 +9,7 @@ export { default as DateInput } from './date-input';
 export { default as Details } from '@not-govuk/details';
 export { default as FormField } from './form-field';
 export { default as InsetText } from '@not-govuk/inset-text';
+export { default as NavigationMenu } from '@not-govuk/navigation-menu';
 export { default as Panel } from '@not-govuk/panel';
 export { default as PhaseBanner } from '@not-govuk/phase-banner';
 export { default as Radios } from './radios';

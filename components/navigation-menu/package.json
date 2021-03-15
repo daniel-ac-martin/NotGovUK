@@ -1,12 +1,12 @@
 {
-  "name": "@not-govuk/tabs",
+  "name": "@not-govuk/navigation-menu",
   "version": "0.2.5",
-  "description": "A component that lets users navigate between related sections of content, displaying one section at a time.",
-  "main": "src/Tabs.tsx",
-  "sass": "assets/Tabs.scss",
+  "description": "A component that provides users with a list of pages to choose from.",
+  "main": "src/NavigationMenu.tsx",
+  "sass": "assets/NavigationMenu.scss",
   "publishConfig": {
-    "main": "dist/Tabs.js",
-    "typings": "dist/Tabs.d.ts"
+    "main": "dist/NavigationMenu.js",
+    "typings": "dist/NavigationMenu.d.ts"
   },
   "files": [
     "/assets",
@@ -24,8 +24,9 @@
     "react-components"
   ],
   "dependencies": {
-    "@not-govuk/component-helpers": "workspace:^0.2.2",
-    "@not-govuk/sass-base": "workspace:^0.2.1",
+    "@not-govuk/anchor-list": "workspace:^0.2.5",
+    "@not-govuk/component-helpers": "workspace:^0.2.5",
+    "@not-govuk/sass-base": "workspace:^0.2.5",
     "govuk-frontend": "^3.9.1"
   },
   "peerDependencies": {
@@ -34,9 +35,9 @@
   },
   "devDependencies": {
     "@mdx-js/react": "^1.6.5",
+    "@not-govuk/anchor": "workspace:^0.2.5",
     "@not-govuk/component-test-helpers": "workspace:^0.2.0",
-    "@not-govuk/table": "workspace:^0.2.1",
-    "@not-govuk/tag": "workspace:^0.2.1",
+    "@not-govuk/tag": "workspace:^0.2.5",
     "@types/react": "^16.9.35",
     "jest": "^26.1.0",
     "ts-jest": "^26.1.1",
