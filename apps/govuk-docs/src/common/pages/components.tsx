@@ -15,6 +15,7 @@ const storySources = [
   require('../../../../../components/header/spec/Header.stories.mdx'),
   require('../../../../../components/inset-text/spec/InsetText.stories.mdx'),
   require('../../../../../components/link/spec/Link.stories.mdx'),
+  require('../../../../../components/navigation-menu/spec/NavigationMenu.stories.mdx'),
   require('../../../../../components/page/spec/Page.stories.mdx'),
   require('../../../../../components/panel/spec/Panel.stories.mdx'),
   require('../../../../../components/phase-banner/spec/PhaseBanner.stories.mdx'),

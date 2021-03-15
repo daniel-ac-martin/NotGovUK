@@ -1,0 +1,64 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { NavigationMenu } from '../src/NavigationMenu';
+import readMe from '../README.md';
+
+<Meta
+  title="Navigation menu"
+  component={ NavigationMenu }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component that provides users with a list of pages to choose from.',
+    jest: ['NavigationMenu'],
+    notes: readMe
+  } }
+/>
+
+# Navigation menu
+
+<p><Tag text="Unofficial" /></p>
+
+A component that provides users with a list of pages to choose from.
+
+<Preview withToolbar>
+  <Story name="NavigationMenu">
+    <NavigationMenu items={[
+      { href: '/', text: 'Inactive 1' },
+      { href: '#main-content', text: 'Active' },
+      { href: '/#main-content', text: 'Inactive 2' }
+    ]} />
+  </Story>
+</Preview>
+
+<Props of={ NavigationMenu } />
+
+
+## Stories
+### Standard
+
+A standard Navigation menu.
+
+<Preview>
+  <Story name="Standard">
+    <NavigationMenu items={[
+      { href: '/', text: 'Inactive 1' },
+      { href: '#main-content', text: 'Active' },
+      { href: '/#main-content', text: 'Inactive 2' }
+    ]} />
+  </Story>
+</Preview>
+
+
+### Horizontal
+
+A horizontal Navigation menu that can be used as alternative to the main navigation menu.
+
+<Preview>
+  <Story name="Horizontal">
+    <NavigationMenu classModifiers="horizontal" items={[
+      { href: '/', text: 'Inactive 1' },
+      { href: '#main-content', text: 'Active' },
+      { href: '/#main-content', text: 'Inactive 2' }
+    ]} />
+  </Story>
+</Preview>
