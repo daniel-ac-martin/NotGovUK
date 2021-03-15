@@ -1,6 +1,6 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
-import { A } from '@not-govuk/components';
+import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
 
 const reduceToLookup = (acc, cur) => ({...acc, [cur.default.title]: cur});
@@ -16,18 +16,15 @@ const Page: FC<PageProps> = ({ location }) => {
   const nameParam = 'name';
   const subPageName = location.query[nameParam];
   const stories = subpages[subPageName];
+  const navItems = Object.keys(subpages).map(v => ({
+    href: `/styles?${nameParam}=${subpages[v].default.title}`,
+    text: v
+  }));
 
   return (
     <div className="govuk-grid-row">
       <div className="govuk-grid-column-one-quarter">
-        <aside>
-          <h2>Styles</h2>
-          <ul className="plain">
-            {Object.keys(subpages).map((v, i) => (
-              <li key={i}><A href={`/styles?${nameParam}=${v}`}>{subpages[v].default.title}</A></li>
-            ))}
-          </ul>
-        </aside>
+        <NavigationMenu items={navItems} />
       </div>
       <div className="govuk-grid-column-three-quarters">
         {
