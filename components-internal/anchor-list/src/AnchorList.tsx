@@ -35,7 +35,7 @@ export const AnchorList: FC<AnchorListProps> = ({
     const active = isActive(url.query)(match, location);
 
     return (
-      <li key={i} className={classes('item', active && 'active')}>
+      <li key={i} className={classes('item', active ? 'active' : undefined)}>
         <A {...anchorAttrs} classBlock={classes('link')} href={href}>{text}</A>
       </li>
     );
