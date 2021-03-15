@@ -4,8 +4,8 @@
 .not-govuk-aside,
 aside {
   @include govuk-font(16);
+  @include govuk-responsive-padding(2, "top");
   border-top: 2px solid $govuk-brand-colour;
-  padding-top: govuk-spacing(2);
 
   & a,
   & ol,
