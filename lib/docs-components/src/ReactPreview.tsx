@@ -1,4 +1,4 @@
-import { FC, Fragment, createElement as h } from 'react';
+import { FC, ReactNode, createElement as h, useMemo } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
 import { StaticRouter } from 'react-router';
@@ -45,6 +45,15 @@ const formatJsx = (src: string): string => {
 const highlightHtml = (src: string): string => Prism.highlight(src, Prism.languages.html, 'html');
 const highlightJsx = (src: string): string => Prism.highlight(src, Prism.languages.jsx, 'jsx');
 
+const prettyHtml = (s: string) => highlightHtml(formatHtml(s));
+const prettyJsx = (s: string) => highlightJsx(formatJsx(s));
+
+const renderToMarkup = (x: ReactNode) => renderToStaticMarkup(
+  h(HelmetProvider, {},
+    h(StaticRouter, {}, x)
+  )
+);
+
 export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
   /** 'id' attribute to place on the base HTML element */
   id: string
@@ -54,15 +63,8 @@ export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
 
 export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, classModifiers, className, id, source, ...attrs }) => {
   const classes = classBuilder('penultimate-react-preview', classBlock, classModifiers, className);
-  const staticMarkup = renderToStaticMarkup(
-    h(HelmetProvider, {},
-      h(StaticRouter, {},
-        children
-      )
-    )
-  );
-  const html = highlightHtml(formatHtml(staticMarkup));
-  const react = highlightJsx(formatJsx(source));
+  const html = useMemo(() => prettyHtml(renderToMarkup(children)), [children]);
+  const react = useMemo(() => prettyJsx(source), [source]);
 
   return (
     <div {...attrs} id={id} className={classes()}>
