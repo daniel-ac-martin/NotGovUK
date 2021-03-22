@@ -1,8 +1,15 @@
-import { FC, ReactNode, createElement as h } from 'react';
+import { FC, KeyboardEvent, ReactNode, SyntheticEvent, createElement as h, useRef, useState } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { useHistory, useLocation } from '@not-govuk/route-utils';
+import { useLocation } from '@not-govuk/route-utils';
 
 import '../assets/Tabs.scss';
+
+const key = {
+  left: 37,
+  right: 39,
+  up: 38,
+  down: 40
+};
 
 type TabItem = {
   id: string,
@@ -23,19 +30,55 @@ export const Tabs: FC<TabsProps> = ({
   ...attrs
 }) => {
   const classes = classBuilder('penultimate-tabs', classBlock, classModifiers, className);
-  const ssr = !global.window;
-  const history = useHistory();
   const location = useLocation();
-  const selected = location.hash?.substring(1);
-
-  const goToFragment = (fragment: string) => (e) => {
+  const fragment = location.hash?.substring(1);
+  const fragmentSelected = items.reduce((acc: number, cur: TabItem, i: number) => (
+    cur.id === fragment
+      ? i
+      : acc
+  ), undefined);
+  const initial = fragmentSelected || 0;
+  const [ selected, setSelected ] = useState(initial);
+  const [ expanded, setExpanded ] = useState(fragmentSelected !== undefined);
+  const refs = items.map(() => useRef(null));
+  const select = (i: number) => (e: SyntheticEvent) => {
     e.preventDefault();
-    location.hash = fragment;
-    history.push({
-      ...location,
-      hash: fragment
-    });
+    if (i === selected) {
+      setExpanded(!expanded);
+    } else {
+      setSelected(i);
+      setExpanded(true);
+    }
   };
+  const keydown = (e: KeyboardEvent) => {
+    switch (e.keyCode) {
+      case key.left:
+        e.preventDefault();
+        if (selected > 0) {
+          const i = selected - 1;
+          setSelected(i);
+          refs[i].current.focus();
+        }
+        break;
+      case key.right:
+        e.preventDefault();
+        if (selected < items.length - 1) {
+          const i = selected + 1;
+          setSelected(i);
+          refs[i]?.current.focus();
+        }
+        break;
+      case key.up:
+        e.preventDefault();
+        setExpanded(false);
+        break;
+      case key.down:
+        e.preventDefault();
+        setExpanded(true);
+        break;
+    }
+  };
+  const ssr = !global.window;
 
   return (
     <div {...attrs} className={classes()}>
@@ -43,17 +86,20 @@ export const Tabs: FC<TabsProps> = ({
         { items.map(({ id, label }, i) => (
           <li
             key={i}
-            className={classes('list-item', id === selected ? 'selected' : undefined )}
-            onClick={goToFragment(id === selected ? '' : id)}
+            className={classes('list-item', expanded && i === selected ? 'selected' : undefined )}
+            onClick={select(i)}
             role="presentation"
           >
             <a
               aria-controls={id}
-              aria-expanded={id === selected ? 'true' : 'false'}
+              aria-expanded={expanded && i === selected ? 'true' : 'false'}
               className={classes('tab')}
-              href={id === selected ? '#' : `#${id}`}
+              href={expanded && i === selected ? '#' : `#${id}`}
               id={`tab_${id}`}
+              onKeyDown={keydown}
+              ref={refs[i]}
               role="tab"
+              tabIndex={ssr ? undefined : (i === selected ? 0 : -1)}
             >
               {label}
             </a>
@@ -64,9 +110,9 @@ export const Tabs: FC<TabsProps> = ({
         <div
           key={i}
           {...attrs2}
-          aria-hidden={ssr ? undefined : !(id === selected)}
+          aria-hidden={ssr ? undefined : !(expanded && i === selected)}
           aria-labelledby={`tab_${id}`}
-          className={classes('panel', ssr ? undefined : (id === selected ? 'visible' : 'hidden' ) )}
+          className={classes('panel', ssr ? undefined : (expanded && i === selected ? 'visible' : 'hidden' ) )}
           id={id}
           role="tabpanel"
         >
