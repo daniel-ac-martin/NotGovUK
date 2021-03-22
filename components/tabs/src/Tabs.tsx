@@ -1,5 +1,6 @@
 import { FC, KeyboardEvent, ReactNode, SyntheticEvent, createElement as h, useRef, useState } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { useIsMounted } from '@not-govuk/route-utils';
 
 import '../assets/Tabs.scss';
 
@@ -53,7 +54,7 @@ export const Tabs: FC<TabsProps> = ({
         break;
     }
   };
-  const ssr = !global.window;
+  const ssr = !useIsMounted();
 
   return (
     <div {...attrs} className={classes()}>
@@ -75,7 +76,7 @@ export const Tabs: FC<TabsProps> = ({
               onKeyDown={keydown}
               ref={refs[i]}
               role="tab"
-              tabIndex={i === selected ? 0 : -1}
+              tabIndex={ssr ? undefined : (i === selected ? 0 : -1)}
             >
               {label}
             </a>

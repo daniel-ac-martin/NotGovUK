@@ -663,6 +663,7 @@ importers:
   components/tabs:
     dependencies:
       '@not-govuk/component-helpers': 'link:../../lib/component-helpers'
+      '@not-govuk/route-utils': 'link:../../lib/route-utils'
       '@not-govuk/sass-base': 'link:../../lib-govuk/sass-base'
       govuk-frontend: 3.9.1
     devDependencies:
@@ -678,6 +679,7 @@ importers:
       '@mdx-js/react': ^1.6.5
       '@not-govuk/component-helpers': 'workspace:^0.2.2'
       '@not-govuk/component-test-helpers': 'workspace:^0.2.0'
+      '@not-govuk/route-utils': 'workspace:^0.2.6'
       '@not-govuk/sass-base': 'workspace:^0.2.1'
       '@not-govuk/table': 'workspace:^0.2.1'
       '@not-govuk/tag': 'workspace:^0.2.1'
