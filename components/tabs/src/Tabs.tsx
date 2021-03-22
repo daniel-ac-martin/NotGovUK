@@ -75,7 +75,7 @@ export const Tabs: FC<TabsProps> = ({
               onKeyDown={keydown}
               ref={refs[i]}
               role="tab"
-              tabIndex={i === selected ? 0 : -1}
+              tabIndex={ssr ? undefined : (i === selected ? 0 : -1)}
             >
               {label}
             </a>
