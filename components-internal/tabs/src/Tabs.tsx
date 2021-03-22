@@ -1,6 +1,6 @@
 import { FC, KeyboardEvent, ReactNode, SyntheticEvent, createElement as h, useRef, useState } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { useLocation } from '@not-govuk/route-utils';
+import { useIsMounted, useLocation } from '@not-govuk/route-utils';
 
 import '../assets/Tabs.scss';
 
@@ -78,7 +78,7 @@ export const Tabs: FC<TabsProps> = ({
         break;
     }
   };
-  const ssr = !global.window;
+  const ssr = !useIsMounted();
 
   return (
     <div {...attrs} className={classes()}>
