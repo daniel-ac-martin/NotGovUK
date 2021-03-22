@@ -1,0 +1,69 @@
+.penultimate-tabs {
+  background-color: inherit;
+  border-width: 1px;
+  border-style: inherit;
+  border-style: solid;
+  border-color: inherit;
+  margin: 0.25em 0 1.5em 0;
+  padding: 0;
+
+  &__title {
+    color: inherit;
+    background-color: transparent;
+    font-size: 1.2em;
+    font-weight: inherit;
+    display: none;
+  }
+
+  &__list {
+    background-color: inherit;
+    border-width: 0;
+    border-style: inherit;
+    border-color: inherit;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    background-color: transparent;
+    display: inline-block;
+    margin: 0;
+    padding: 1em;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--selected {
+      background-color: inherit;
+      border-width: 0 1px 0 1px;
+      border-style: inherit;
+      border-color: inherit;
+      margin: 0 -1px 0 -1px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        padding-bottom: 1px;
+      }
+    }
+  }
+
+  &__tab {
+    display: inline-block;
+  }
+
+  &__panel {
+    background-color: inherit;
+    border-width: 1px 0 0 0;
+    border-style: inherit;
+    border-color: inherit;
+    margin: -1px 0 0 0;
+    padding: 1em;
+
+    &:not(:target):not(&--visible),
+    &--hidden {
+      display: none;
+    }
+  }
+}

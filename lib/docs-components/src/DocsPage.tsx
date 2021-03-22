@@ -51,7 +51,7 @@ export const DocsPage: FC<DocsPageProps> = ({
     <div {...attrs} className={classes()}>
       { !title ? null : (
         <Helmet>
-          <title>{title}{ !siteName ? null : ` - ${siteName}`}</title>
+          <title>{title}{ !siteName ? '' : ` - ${siteName}`}</title>
           <meta name="og:title" content={title} />
         </Helmet>
       ) }

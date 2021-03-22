@@ -1,7 +1,7 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
-import { A } from '@not-govuk/components';
+import { A, NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
 
 const reduceToLookup = (acc: object, cur) => ({...acc, [cur.default.title]: cur});
@@ -15,11 +15,13 @@ const storySources = [
   require('../../../../../components/header/spec/Header.stories.mdx'),
   require('../../../../../components/inset-text/spec/InsetText.stories.mdx'),
   require('../../../../../components/link/spec/Link.stories.mdx'),
+  require('../../../../../components/navigation-menu/spec/NavigationMenu.stories.mdx'),
   require('../../../../../components/page/spec/Page.stories.mdx'),
   require('../../../../../components/panel/spec/Panel.stories.mdx'),
   require('../../../../../components/phase-banner/spec/PhaseBanner.stories.mdx'),
   require('../../../../../components/skip-link/spec/SkipLink.stories.mdx'),
   require('../../../../../components/table/spec/Table.stories.mdx'),
+  require('../../../../../components/tabs/spec/Tabs.stories.mdx'),
   require('../../../../../components/tag/spec/Tag.stories.mdx'),
   require('../../../../../components/warning-text/spec/WarningText.stories.mdx'),
   require('../../../../../components/width-container/spec/WidthContainer.stories.mdx')
@@ -30,6 +32,10 @@ const Page: FC<PageProps> = ({ location }) => {
   const nameParam = 'name';
   const componentName = location.query[nameParam];
   const stories = subpages[componentName];
+  const navItems = Object.keys(subpages).map(v => ({
+    href: `/components?${nameParam}=${subpages[v].default.title}`,
+    text: v
+  }));
 
   return (
     <div className="govuk-grid-row">
@@ -38,14 +44,7 @@ const Page: FC<PageProps> = ({ location }) => {
         <meta name="og:article:section" content="Components" />
       </Helmet>
       <div className="govuk-grid-column-one-quarter">
-        <aside>
-          <h2>Components</h2>
-          <ul className="plain">
-            {Object.keys(subpages).map((v, i) => (
-              <li key={i}><A href={`/components?${nameParam}=${v}`}>{subpages[v].default.title}</A></li>
-            ))}
-          </ul>
-        </aside>
+        <NavigationMenu items={navItems} />
       </div>
       <div className="govuk-grid-column-three-quarters">
         {

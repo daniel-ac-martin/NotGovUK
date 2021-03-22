@@ -1,3 +1,4 @@
+export { useHistory } from 'react-router-dom';
 export * from './location';
 export * from './match-path';
 export { queryString } from './query-string';

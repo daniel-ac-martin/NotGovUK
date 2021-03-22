@@ -3,8 +3,28 @@
 
 .not-govuk-aside,
 aside {
-  padding-top: govuk-spacing(2);
+  @include govuk-font(16);
+  @include govuk-responsive-padding(2, "top");
   border-top: 2px solid $govuk-brand-colour;
+
+  & a,
+  & ol,
+  & p,
+  & ul,
+  & .govuk-body,
+  & .govuk-link,
+  & .govuk-list {
+    @include govuk-font(16);
+  }
+
+  & .govuk-body-l,
+  & p.lead {
+    @include govuk-font(19);
+  }
+
+  & .govuk-body-s {
+    @include govuk-font(14);
+  }
 
   h1 {
     @extend .govuk-heading-l;

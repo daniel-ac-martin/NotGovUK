@@ -1,0 +1,81 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/core/_lists";
+
+.not-govuk-navigation-menu {
+  @include govuk-font(16);
+  border-color: $govuk-link-colour;
+  border-style: solid;
+  border-width: 0;
+  color: $govuk-link-colour;
+
+  $border-width: 4px;
+
+  &__list {
+    @extend .govuk-list;
+    border-color: inherit;
+    border-style: inherit;
+    border-width: 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+
+    &__item {
+      @include govuk-responsive-padding(1, "top");
+      @include govuk-responsive-padding(0, "left");
+      @include govuk-responsive-padding(1, "bottom");
+      @include govuk-responsive-padding(0, "right");
+      border-color: inherit;
+      border-style: inherit;
+      border-width: 0;
+      color: inherit;
+
+      &--active {
+        border-left-width: $border-width;
+        font-weight: bold;
+        margin-left: -14px;
+        padding-left: 10px;
+      }
+    }
+
+    &__link {
+      padding: 2px 0;
+
+      &:not(:focus):not(:active) {
+        color: inherit;
+      }
+
+      &:not(:hover) {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--horizontal {
+    @include govuk-font(19);
+
+    .not-govuk-navigation-menu__list {
+      margin: 0;
+      padding: 0;
+
+      & > li,
+      &__item {
+        @include govuk-responsive-padding(2, "top");
+        @include govuk-responsive-padding(3, "left");
+        @include govuk-responsive-padding(2, "bottom");
+        @include govuk-responsive-padding(3, "right");
+        display: inline-block;
+        font-weight: bold;
+        margin: 0;
+
+        &--active {
+          border-left-width: 0;
+          border-bottom-width: $border-width;
+
+          .not-govuk-navigation-menu__list__link {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

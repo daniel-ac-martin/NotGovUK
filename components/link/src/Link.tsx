@@ -1,5 +1,4 @@
 import { ComponentProps, FC, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { A as _A } from '@not-govuk/anchor';
 
 import '../assets/Link.scss';
