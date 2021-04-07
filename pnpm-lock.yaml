@@ -1019,7 +1019,7 @@ importers:
   lib/docs-components:
     dependencies:
       '@not-govuk/component-helpers': 'link:../component-helpers'
-      '@not-govuk/route-utils': 'link:../route-utils'
+      '@not-govuk/memoize': 'link:../memoize'
       '@not-govuk/simple-table': 'link:../../components-internal/simple-table'
       '@not-govuk/tabs-internal': 'link:../../components-internal/tabs'
       prettier: 2.0.5
@@ -1030,7 +1030,7 @@ importers:
       typescript: 3.9.7
     specifiers:
       '@not-govuk/component-helpers': 'workspace:^0.2.0'
-      '@not-govuk/route-utils': 'workspace:^0.2.0'
+      '@not-govuk/memoize': 'workspace:^0.2.7'
       '@not-govuk/simple-table': 'workspace:^0.2.0'
       '@not-govuk/tabs-internal': 'workspace:^0.2.1'
       '@types/react': ^16.9.55
@@ -1108,6 +1108,15 @@ importers:
       formik: ^2.1.4
       typescript: ^3.9.2
       validator: ^13.0.0
+  lib/memoize:
+    devDependencies:
+      jest: 26.6.3
+      ts-jest: 26.5.3_jest@26.6.3+typescript@3.9.9
+      typescript: 3.9.9
+    specifiers:
+      jest: ^26.1.0
+      ts-jest: ^26.1.1
+      typescript: ^3.9.2
   lib/plop-pack:
     dependencies:
       fs-extra: 9.0.1
@@ -2769,7 +2778,7 @@ packages:
   /@babel/plugin-syntax-async-generators/7.8.4_@babel+core@7.13.10:
     dependencies:
       '@babel/core': 7.13.10
-      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/helper-plugin-utils': 7.10.4
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -2787,7 +2796,7 @@ packages:
   /@babel/plugin-syntax-bigint/7.8.3_@babel+core@7.11.4:
     dependencies:
       '@babel/core': 7.11.4
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.13.0
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -2948,7 +2957,7 @@ packages:
   /@babel/plugin-syntax-import-meta/7.10.4_@babel+core@7.11.4:
     dependencies:
       '@babel/core': 7.11.4
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.13.0
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -3001,7 +3010,7 @@ packages:
   /@babel/plugin-syntax-json-strings/7.8.3_@babel+core@7.13.10:
     dependencies:
       '@babel/core': 7.13.10
-      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/helper-plugin-utils': 7.10.4
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -3082,7 +3091,7 @@ packages:
   /@babel/plugin-syntax-logical-assignment-operators/7.10.4_@babel+core@7.13.10:
     dependencies:
       '@babel/core': 7.13.10
-      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/helper-plugin-utils': 7.10.4
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -3117,7 +3126,7 @@ packages:
   /@babel/plugin-syntax-nullish-coalescing-operator/7.8.3_@babel+core@7.13.10:
     dependencies:
       '@babel/core': 7.13.10
-      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/helper-plugin-utils': 7.10.4
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -3152,7 +3161,7 @@ packages:
   /@babel/plugin-syntax-numeric-separator/7.10.4_@babel+core@7.13.10:
     dependencies:
       '@babel/core': 7.13.10
-      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/helper-plugin-utils': 7.10.4
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -3196,7 +3205,7 @@ packages:
   /@babel/plugin-syntax-object-rest-spread/7.8.3_@babel+core@7.13.10:
     dependencies:
       '@babel/core': 7.13.10
-      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/helper-plugin-utils': 7.10.4
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -3231,7 +3240,7 @@ packages:
   /@babel/plugin-syntax-optional-catch-binding/7.8.3_@babel+core@7.13.10:
     dependencies:
       '@babel/core': 7.13.10
-      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/helper-plugin-utils': 7.10.4
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -3266,7 +3275,7 @@ packages:
   /@babel/plugin-syntax-optional-chaining/7.8.3_@babel+core@7.13.10:
     dependencies:
       '@babel/core': 7.13.10
-      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/helper-plugin-utils': 7.10.4
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -13551,7 +13560,6 @@ packages:
     resolution:
       integrity: sha1-lpGEQOMEGnpBT4xS48V06zw+HgU=
   /extsprintf/1.4.0:
-    dev: false
     engines:
       '0': node >=0.6.0
     resolution:
@@ -24282,7 +24290,7 @@ packages:
     dependencies:
       assert-plus: 1.0.0
       core-util-is: 1.0.2
-      extsprintf: 1.3.0
+      extsprintf: 1.4.0
     engines:
       '0': node >=0.6.0
     resolution:
