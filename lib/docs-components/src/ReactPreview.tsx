@@ -2,13 +2,11 @@ import { FC, ReactNode, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
 import { StaticRouter } from 'react-router';
-import { Link } from 'react-router-dom';
 import { format } from 'prettier/standalone';
 import parserHtml from 'prettier/parser-html';
 import parserBabel from 'prettier/parser-babel';
 import Prism from 'prismjs';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { queryString, useLocation } from '@not-govuk/route-utils';
 import { memoize } from '@not-govuk/memoize';
 import { Tabs } from '@not-govuk/tabs-internal';
 
