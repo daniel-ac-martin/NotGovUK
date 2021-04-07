@@ -1,4 +1,4 @@
-import { FC, ReactNode, createElement as h, useMemo } from 'react';
+import { FC, ReactNode, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
 import { StaticRouter } from 'react-router';
@@ -9,6 +9,7 @@ import parserBabel from 'prettier/parser-babel';
 import Prism from 'prismjs';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { queryString, useLocation } from '@not-govuk/route-utils';
+import { memoize } from '@not-govuk/memoize';
 import { Tabs } from '@not-govuk/tabs-internal';
 
 import 'prismjs/components/prism-jsx.min';
@@ -48,6 +49,9 @@ const highlightJsx = (src: string): string => Prism.highlight(src, Prism.languag
 const prettyHtml = (s: string) => highlightHtml(formatHtml(s));
 const prettyJsx = (s: string) => highlightJsx(formatJsx(s));
 
+const prettyHtmlFromMemo = memoize(prettyHtml);
+const prettyJsxFromMemo = memoize(prettyJsx);
+
 const renderToMarkup = (x: ReactNode) => renderToStaticMarkup(
   h(HelmetProvider, {},
     h(StaticRouter, {}, x)
@@ -63,8 +67,9 @@ export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
 
 export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, classModifiers, className, id, source, ...attrs }) => {
   const classes = classBuilder('penultimate-react-preview', classBlock, classModifiers, className);
-  const html = useMemo(() => prettyHtml(renderToMarkup(children)), [children]);
-  const react = useMemo(() => prettyJsx(source), [source]);
+  const markup = renderToMarkup(children);
+  const html = prettyHtmlFromMemo(markup);
+  const react = prettyJsxFromMemo(source);
 
   return (
     <div {...attrs} id={id} className={classes()}>
