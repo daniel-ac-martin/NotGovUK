@@ -1,0 +1,29 @@
+{
+  "name": "@not-govuk/memoize",
+  "version": "0.2.7",
+  "description": "Higher-order functions for memoizing pure functions.",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  },
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "MIT",
+  "engines": {
+    "node" : ">=12.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.2"
+  }
+}
