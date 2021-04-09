@@ -4,7 +4,7 @@ import { PageModule, PageInfoSSR, PageLoader } from '@not-govuk/app-composer';
 import { Response } from '@not-govuk/server-renderer';
 import path from 'path';
 
-const pageExtensionPattern = /\.[jt]sx?$/i
+const pageExtensionPattern = /\.([jt]sx?|html)$/i
 
 const removePrecedingDotSlash = (s: string): string => (
   s.startsWith('./')
@@ -35,6 +35,20 @@ const src2Href = (page: string): string => (
   )
 );
 
+const capitaliseFirstLetter = ([ x, ...xs ]: string) => (
+  [ x.toUpperCase(), ...xs ].join('')
+);
+
+const src2Title = (page: string): string => (
+  capitaliseFirstLetter(
+    page
+      .split('/')
+      .pop()
+      .split('.')
+      .shift()
+  )
+);
+
 const href2Path = (s: string): string => (
   addPreceedingSlash(removeTrailingSlash(s))
 );
@@ -46,10 +60,18 @@ export const gatherPages = (pageLoader: PageLoader): Promise<PageInfoSSR[]> => P
       const mod: PageModule = await pageLoader(e);
 
       return {
-        Component: mod.default,
+        Component: (
+          typeof mod === 'string'
+            ? mod
+            : mod.default
+        ),
         href: src2Href(e),
         src: e,
-        title: mod.title
+        title: (
+          typeof mod === 'string'
+            ? src2Title(e)
+            : mod.title
+        )
       };
     } )
 );
