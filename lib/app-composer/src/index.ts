@@ -30,8 +30,10 @@ export type PageInfo = RouteInfo & {
   src: string
 };
 
+type SSRComponent = Page | string;
+
 export type PageInfoSSR = PageInfo & {
-  Component: Page
+  Component: SSRComponent
 };
 
 type ApplicationPropsCommon = {
@@ -80,7 +82,7 @@ export type ErrorPageProps = PageProps & {
 
 export type ErrorPage = ComponentType<ErrorPageProps>;
 
-export type PageModule = {
+export type PageModule = string | {
   default: Page
   title?: string
 };
@@ -124,6 +126,25 @@ type Compose = {
 type DataProviderProps = {
   client?: ApolloClient<any>
 };
+
+const htmlPage = (html: string): Page => {
+  const HTMLPage = (_) => h(
+    'div',
+    {
+      dangerouslySetInnerHTML: { __html: html }
+    }
+  );
+
+  return HTMLPage;
+};
+
+const stringToComponentMod = v => (
+  typeof v === 'string'
+  ? {
+    default: htmlPage(v)
+  }
+    : v
+);
 
 export const compose: Compose = options => {
   const Router = (
@@ -183,14 +204,23 @@ export const compose: Compose = options => {
       .pages
       .map(e => {
         const loaded = (
-          'pageLoader' in options
-            ? options.pageLoader(e.src)
-            : undefined
+          e.Component
+            ? (
+              typeof e.Component === 'string'
+                ? e.Component
+                : { default: e.Component }
+            )
+            : options.pageLoader(e.src)
         );
-        const Component = e.Component || (
+        const loadedComponentMod = (
           loaded instanceof Promise
-            ? lazy(() => loaded)
-            : loaded.default
+            ? loaded.then(stringToComponentMod)
+            : stringToComponentMod(loaded)
+        );
+        const Component = (
+          loadedComponentMod instanceof Promise
+            ? lazy(() => loadedComponentMod)
+            : loadedComponentMod.default
         );
 
         return {
