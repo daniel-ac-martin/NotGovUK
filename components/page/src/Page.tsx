@@ -12,6 +12,9 @@ import { WidthContainer } from '@not-govuk/width-container';
 
 import '../assets/Page.scss';
 
+// Note: This doesn't work with `npm run dev:ssr` as the asset is named differently.
+const govUkFrontend = require('../assets/govuk-frontend-3.9.1.ext.min.js').default;
+
 export type PageProps = (
   StandardProps &
   HTMLProps<HTMLDivElement> &
@@ -29,6 +32,8 @@ export type PageProps = (
     footerContent?: ReactNode
     /** Content for the footer */
     footerNavigation?: NavMenu[]
+    /** HTML prototyping support (adds the GDS JavaScript) */
+    jsForHtml?: boolean
     /** Content for the phase-banner */
     phaseBannerContent?: ReactNode
     /** Title of the HTML page (can be overridden via Helmet  */
@@ -48,6 +53,7 @@ export const Page: FC<PageProps> = ({
   footerContent,
   footerNavigation,
   govUK,
+  jsForHtml = false,
   maxContentsWidth,
   meta,
   metaTitle,
@@ -93,44 +99,55 @@ export const Page: FC<PageProps> = ({
   const mainId = 'main-content';
 
   return (
-    <div {...attrs} className={classes()}>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      </Helmet>
-      <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
-      <Header {...headerProps} className={classes('header')} />
-      <div className={classes('body')}>
-        <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
-          { !phase ? null : (
-            <PhaseBanner id="phase-banner" phase={phase}>
-              { phaseBannerContent || (
-                <Fragment>
-                  This is a new service - your {
-                    feedbackHref
-                      ? (<A href={feedbackHref}>feedback</A>)
-                      : 'feedback'
-                  } will help us to improve it.
-                </Fragment>
-              ) }
-            </PhaseBanner>
-          ) }
-          { breadcrumbs?.length
-            ? (
-              <Breadcrumbs id="breadcrumbs" items={breadcrumbs} />
-            )
-            : ( !backHref ? null : (
-              <BackLink id="back-link" href={backHref} />
-            ) )
-          }
-          <main id={mainId} role="main" className={classes('main')}>
-            {children}
-          </main>
-        </WidthContainer>
+    <Fragment>
+      { !jsForHtml ? null : (
+          <script dangerouslySetInnerHTML={{ __html: 'document.body.className = (document.body.className ? document.body.className + \'js-enabled\' : \'js-enabled\');' }} />
+      ) }
+      <div {...attrs} className={classes()}>
+        <Helmet>
+          <title>{title}</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        </Helmet>
+        <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
+        <Header {...headerProps} className={classes('header')} />
+        <div className={classes('body')}>
+          <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
+            { !phase ? null : (
+              <PhaseBanner id="phase-banner" phase={phase}>
+                { phaseBannerContent || (
+                  <Fragment>
+                    This is a new service - your {
+                      feedbackHref
+                        ? (<A href={feedbackHref}>feedback</A>)
+                        : 'feedback'
+                    } will help us to improve it.
+                  </Fragment>
+                ) }
+              </PhaseBanner>
+            ) }
+            { breadcrumbs?.length
+              ? (
+                <Breadcrumbs id="breadcrumbs" items={breadcrumbs} />
+              )
+              : ( !backHref ? null : (
+                <BackLink id="back-link" href={backHref} />
+              ) )
+            }
+            <main id={mainId} role="main" className={classes('main')}>
+              {children}
+            </main>
+          </WidthContainer>
+        </div>
+        <Footer {...footerProps} className={classes('footer')}>{footerContent}</Footer>
       </div>
-      <Footer {...footerProps} className={classes('footer')}>{footerContent}</Footer>
-    </div>
+      { !jsForHtml ? null : (
+          <Fragment>
+            <script src={govUkFrontend} />
+            <script dangerouslySetInnerHTML={{ __html: 'window.GOVUKFrontend.initAll();' }} />
+          </Fragment>
+      ) }
+    </Fragment>
   );
 };
 

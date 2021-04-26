@@ -33,6 +33,7 @@ export const PageWrap: FC<PageProps> = ({ routes, signInHRef, signOutHRef, child
   return (
     <GovUKPage
       feedbackHref="/feedback"
+      jsForHtml={true}
       navigation={navigation}
       phase="alpha"
       serviceName="NotGovUK"
