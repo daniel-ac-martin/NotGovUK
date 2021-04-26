@@ -160,7 +160,12 @@ export const reactRenderer: ReactRenderer = ({
           ssrOnly
             ? undefined
             : {
-              props: appProps,
+              props: {
+                ...appProps,
+                pages: appProps.pages.map(
+                  ({ Component, ...rest }) => ({ ...rest })
+                )
+              },
               cache: App.extractDataCache(),
               user
             }
