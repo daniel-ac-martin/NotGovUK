@@ -1,4 +1,4 @@
-import { FC, Fragment, HTMLProps, ReactNode, createElement as h } from 'react';
+import { FC, Fragment, HTMLProps, ReactNode, createElement as h, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { BackLink } from '@not-govuk/back-link';
 import { Breadcrumb, Breadcrumbs } from '@not-govuk/breadcrumbs';
@@ -7,6 +7,7 @@ import { Footer, FooterProps, NavMenu } from '@not-govuk/footer';
 import { Header, HeaderProps } from '@not-govuk/header';
 import { A } from '@not-govuk/link';
 import { PhaseBanner, PhaseBannerProps } from '@not-govuk/phase-banner';
+import { useIsMounted } from '@not-govuk/route-utils';
 import { SkipLink } from '@not-govuk/skip-link';
 import { WidthContainer } from '@not-govuk/width-container';
 
@@ -69,6 +70,7 @@ export const Page: FC<PageProps> = ({
   title: _title,
   ...attrs
 }) => {
+  const isMounted = useIsMounted();
   const classModifiers = (
     Array.isArray(_classModifiers)
     ? _classModifiers
@@ -97,10 +99,15 @@ export const Page: FC<PageProps> = ({
     navigation: footerNavigation
   };
   const mainId = 'main-content';
+  const doScripts = jsForHtml && !isMounted;
+
+  useEffect(() =>{
+    (window as any).GOVUKFrontend.initAll();
+  } );
 
   return (
     <Fragment>
-      { !jsForHtml ? null : (
+      { !doScripts ? null : (
           <script dangerouslySetInnerHTML={{ __html: 'document.body.className = (document.body.className ? document.body.className + \'js-enabled\' : \'js-enabled\');' }} />
       ) }
       <div {...attrs} className={classes()}>
@@ -141,7 +148,7 @@ export const Page: FC<PageProps> = ({
         </div>
         <Footer {...footerProps} className={classes('footer')}>{footerContent}</Footer>
       </div>
-      { !jsForHtml ? null : (
+      { !doScripts ? null : (
           <Fragment>
             <script src={govUkFrontend} />
             <script dangerouslySetInnerHTML={{ __html: 'window.GOVUKFrontend.initAll();' }} />
