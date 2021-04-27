@@ -102,7 +102,7 @@ export const Page: FC<PageProps> = ({
   const doScripts = jsForHtml && !isMounted;
 
   useEffect(() =>{
-    (window as any).GOVUKFrontend.initAll();
+    jsForHtml && (window as any).GOVUKFrontend.initAll();
   } );
 
   return (
