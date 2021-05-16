@@ -36,9 +36,10 @@ export const Props: FC<PropsProps> = (props) => {
       : h(
         'details', {},
         [
-          h('summary', {}, 'Props'),
+          h('summary', { key: 0 }, 'Props'),
           h(
             SimpleTable, {
+              key: 1,
               data,
               headings: {
                 default: 'Default',
