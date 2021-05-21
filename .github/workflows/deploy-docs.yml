@@ -28,9 +28,9 @@ jobs:
             pnpm-
 
       - name: Pull dependencies
-        uses: pnpm/action-setup@v1.2.1
+        uses: pnpm/action-setup@v2.0.1
         with:
-          version: 5.4.0
+          version: 6.3.0
           run_install: true
 
       - name: Build docs
@@ -44,13 +44,11 @@ jobs:
         run: |
           cd apps/govuk-docs/
           npm run package:serverless
-          mkdir -p .netlify
+          mkdir -p .netlify/functions .netlify/publish
           cd .netlify
-          mkdir functions
           cp -a ../.serverless/govuk-docs.zip functions/
           echo "process.env['MODE'] = 'serverless'; module.exports = require('./dist/server/index.js');" > govuk-docs.js
           zip -mv functions/govuk-docs.zip govuk-docs.js
-          mkdir publish
           mv ../dist/public/entrypoints.json .
           cp -a ../dist/public/ publish/public
           mv entrypoints.json ../dist/public/
