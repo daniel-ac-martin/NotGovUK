@@ -986,6 +986,7 @@ importers:
   lib/plop-pack:
     specifiers:
       fs-extra: ^9.0.1
+      handlebars: ^4.7.7
       lodash: ^4.17.19
       minimist: ^1.2.5
       node-plop: ^0.26.2
@@ -1000,6 +1001,8 @@ importers:
       plop: 2.7.4
       resolve: 1.17.0
       shelljs: 0.8.4
+    devDependencies:
+      handlebars: 4.7.7
 
   lib/restify:
     specifiers:
@@ -14436,6 +14439,19 @@ packages:
       wordwrap: 1.0.0
     optionalDependencies:
       uglify-js: 3.10.1
+
+  /handlebars/4.7.7:
+    resolution: {integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==}
+    engines: {node: '>=0.4.7'}
+    hasBin: true
+    dependencies:
+      minimist: 1.2.5
+      neo-async: 2.6.2
+      source-map: 0.6.1
+      wordwrap: 1.0.0
+    optionalDependencies:
+      uglify-js: 3.10.1
+    dev: true
 
   /har-schema/2.0.0:
     resolution: {integrity: sha1-qUwiJOvKwEeCoNkDVSHyRzW37JI=}
