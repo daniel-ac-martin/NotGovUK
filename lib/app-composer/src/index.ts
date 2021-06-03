@@ -229,17 +229,19 @@ export const compose: Compose = options => {
           title: e.title
         };
       });
-    const pageProps = {
-      routes,
-      signInHRef: props.signInHRef,
-      signOutHRef: props.signOutHRef
+    const withPageWrap = Component => props => {
+      const fullProps = {
+        routes,
+        signInHRef: props.signInHRef,
+        signOutHRef: props.signOutHRef,
+        ...props
+      };
+
+      return h(
+        options.PageWrap, fullProps,
+        h(Component, fullProps)
+      );
     };
-    const withPageWrap = Component => props => (
-      h(
-        options.PageWrap, pageProps,
-        h(Component, props)
-      )
-    );
     const suspenseProps = (
       "LoadingPage" in options
         ? { fallback: h(withRouter(withPageWrap(options.LoadingPage))) }
@@ -297,8 +299,8 @@ export const compose: Compose = options => {
       h(
         HelmetProvider, { context: helmetContext },
         [
-          h(Helmet, { htmlAttributes: { lang: 'en' }}),
-          h(DataProvider, { client }, router)
+          h(Helmet, { key: 0, htmlAttributes: { lang: 'en' }}),
+          h(DataProvider, { key: 1, client }, router)
         ]
       )
     );

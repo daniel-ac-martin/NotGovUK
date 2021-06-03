@@ -5,7 +5,7 @@ import { A } from '@not-govuk/components';
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
-export const title = 'Result';
+export const pageTitle = 'Result';
 const description = 'The result of filling in the Form component example';
 const section = 'Components';
 
@@ -44,9 +44,9 @@ const Page: FC<PageProps> = ({ location }) => {
   return (
     <div className="govuk-grid-row">
       <Helmet>
-        <title>{title} - NotGovUK</title>
+        <title>{pageTitle} - NotGovUK</title>
         <meta name="description" content={description} />
-        <meta name="og:title" content={title} />
+        <meta name="og:title" content={pageTitle} />
         <meta name="og:description" content={description} />
         <meta name="og:article:section" content={section} />
       </Helmet>
