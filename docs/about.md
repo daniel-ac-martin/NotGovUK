@@ -62,10 +62,6 @@ towards simple, linear workflows such as filling out forms. This is
 unsuitable for less linear workflows that one might find in case-working
 systems or dashboards.
 
-(UPDATE ME) NotGovUK solves these problems by allowing consumers to
-provide an `internal` class on their `body` tag which will change the
-font and expand the layout to use more of the screen.
-
 
 Why is it called 'NotGovUK'?
 ----------------------------
