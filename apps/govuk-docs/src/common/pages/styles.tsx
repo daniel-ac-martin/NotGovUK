@@ -19,7 +19,7 @@ const Page: FC<PageProps> = ({ location }) => {
   const nameParam = 'name';
   const subPageName = location.query[nameParam];
   const stories = subpages[subPageName];
-  const navItems = Object.keys(subpages).map(v => ({
+  const navItems = Object.keys(subpages).sort().map(v => ({
     href: `/styles?${nameParam}=${subpages[v].default.title}`,
     text: v
   }));
