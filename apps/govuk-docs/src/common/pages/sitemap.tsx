@@ -35,11 +35,11 @@ const storiesComponents = [
 const subpagesStyles = createSubpageStore(require.context('../../../../../styles/', false, /^\.\/[^\/]+\.stories\.mdx$/));
 const subpagesComponents = storiesComponents.reduce(reduceToLookup, {})
 const styles = Object.keys(subpagesStyles).sort().map(v => ({
-  href: `/styles?name=${subpagesStyles[v].default.title}`,
+  href: `/styles?name=${encodeURIComponent(subpagesStyles[v].default.title)}`,
   text: v
 }));
 const components = Object.keys(subpagesComponents).sort().map(v => ({
-  href: `/components?name=${subpagesComponents[v].default.title}`,
+  href: `/components?name=${encodeURIComponent(subpagesComponents[v].default.title)}`,
   text: v
 }));
 
