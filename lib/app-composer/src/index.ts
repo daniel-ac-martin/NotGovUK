@@ -299,8 +299,8 @@ export const compose: Compose = options => {
       h(
         HelmetProvider, { context: helmetContext },
         [
-          h(Helmet, { htmlAttributes: { lang: 'en' }}),
-          h(DataProvider, { client }, router)
+          h(Helmet, { key: 0, htmlAttributes: { lang: 'en' }}),
+          h(DataProvider, { key: 1, client }, router)
         ]
       )
     );
