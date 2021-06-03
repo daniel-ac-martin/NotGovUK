@@ -85,7 +85,7 @@ naming things is hard and it might not.
 -- Daniel Martin, December 2019 (updated August 2020).
 
 
-[NotGovUK]: https://not-govuk.netlify.app/
+[NotGovUK]: https://not-gov.uk/
 [GOV.UK Design System]: https://design-system.service.gov.uk/
 [React]: https://reactjs.org/
 [support for writing internal applications]: #what-does-support-for-internal-applications-mean
