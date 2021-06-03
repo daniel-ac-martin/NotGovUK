@@ -29,6 +29,7 @@ const storySources = [
 const subpages = storySources.reduce(reduceToLookup, {})
 
 export const title = 'Components';
+const description = 'The components provided in NotGovUK';
 
 const Page: FC<PageProps> = ({ location }) => {
   const nameParam = 'name';
@@ -43,6 +44,9 @@ const Page: FC<PageProps> = ({ location }) => {
     <div className="govuk-grid-row">
       <Helmet>
         <title>{title} - NotGovUK</title>
+        <meta name="description" content={description} />
+        <meta name="og:title" content={title} />
+        <meta name="og:description" content={description} />
         <meta name="og:article:section" content={title} />
       </Helmet>
       <div className="govuk-grid-column-one-quarter">
