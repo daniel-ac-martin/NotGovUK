@@ -1,8 +1,13 @@
-import { FC, Fragment, createElement as h } from 'react';
+import { FC, createElement as h } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { A } from '@not-govuk/components';
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
+
+export const title = 'Result';
+const description = 'The result of filling in the Form component example';
+const section = 'Components';
 
 const Page: FC<PageProps> = ({ location }) => {
   const data = {
@@ -38,6 +43,13 @@ const Page: FC<PageProps> = ({ location }) => {
 
   return (
     <div className="govuk-grid-row">
+      <Helmet>
+        <title>{title} - NotGovUK</title>
+        <meta name="description" content={description} />
+        <meta name="og:title" content={title} />
+        <meta name="og:description" content={description} />
+        <meta name="og:article:section" content={section} />
+      </Helmet>
       <div className="govuk-grid-column-two-thirds">
         <h1>Form complete</h1>
         <p>
@@ -67,4 +79,3 @@ const Page: FC<PageProps> = ({ location }) => {
 };
 
 export default Page;
-export const title = 'Result';
