@@ -1,4 +1,5 @@
 import { FC, Fragment, createElement as h } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
@@ -12,6 +13,8 @@ const createSubpageStore = r => (
 );
 const subpages = createSubpageStore(require.context('../../../../../styles/', false, /^\.\/[^\/]+\.stories\.mdx$/));
 
+export const title = 'Styles';
+
 const Page: FC<PageProps> = ({ location }) => {
   const nameParam = 'name';
   const subPageName = location.query[nameParam];
@@ -23,6 +26,10 @@ const Page: FC<PageProps> = ({ location }) => {
 
   return (
     <div className="govuk-grid-row">
+      <Helmet>
+        <title>{title} - NotGovUK</title>
+        <meta name="og:article:section" content={title} />
+      </Helmet>
       <div className="govuk-grid-column-one-quarter">
         <NavigationMenu items={navItems} />
       </div>
@@ -30,15 +37,15 @@ const Page: FC<PageProps> = ({ location }) => {
         {
           stories ? (
             <Fragment>
-              <span className="govuk-caption-xl">Styles</span>
-              <DocsPage stories={stories} />
+              <span className="govuk-caption-xl">{title}</span>
+              <DocsPage siteName="NotGovUK" stories={stories} />
             </Fragment>
           ) : (
             subPageName ? (
               null // should be a 404!
             ) : (
               <Fragment>
-                <h1>Styles</h1>
+                <h1>{title}</h1>
                 <p>
                   Make your service look and feel like GOV.UK.
                 </p>
@@ -55,4 +62,3 @@ const Page: FC<PageProps> = ({ location }) => {
 };
 
 export default Page;
-export const title = 'Styles';

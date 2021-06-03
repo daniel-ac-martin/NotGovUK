@@ -28,6 +28,8 @@ const storySources = [
 ];
 const subpages = storySources.reduce(reduceToLookup, {})
 
+export const title = 'Components';
+
 const Page: FC<PageProps> = ({ location }) => {
   const nameParam = 'name';
   const componentName = location.query[nameParam];
@@ -40,8 +42,8 @@ const Page: FC<PageProps> = ({ location }) => {
   return (
     <div className="govuk-grid-row">
       <Helmet>
-        <title>Components - NotGovUK</title>
-        <meta name="og:article:section" content="Components" />
+        <title>{title} - NotGovUK</title>
+        <meta name="og:article:section" content={title} />
       </Helmet>
       <div className="govuk-grid-column-one-quarter">
         <NavigationMenu items={navItems} />
@@ -50,7 +52,7 @@ const Page: FC<PageProps> = ({ location }) => {
         {
           stories ? (
             <Fragment>
-              <span className="govuk-caption-xl">Components</span>
+              <span className="govuk-caption-xl">{title}</span>
               <DocsPage siteName="NotGovUK" stories={stories} />
             </Fragment>
           ) : (
@@ -58,7 +60,7 @@ const Page: FC<PageProps> = ({ location }) => {
               null // should be a 404!
             ) : (
               <Fragment>
-                <h1>Components</h1>
+                <h1>{title}</h1>
                 <p>
                   Components are reusable parts of the user interface that have been made to support a variety of applications.
                 </p>
@@ -75,4 +77,3 @@ const Page: FC<PageProps> = ({ location }) => {
 };
 
 export default Page;
-export const title = 'Components';
