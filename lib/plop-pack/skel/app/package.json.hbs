@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "package:serverless": "sls package",
-    "postinstall": "npm run build",
+    "heroku-postbuild": "npm run build",
     "clean": "rm -rf .serverless dist",
     "dev": "NODE_ENV=development node-hot --fork | bunyan",
     "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --fork | bunyan"

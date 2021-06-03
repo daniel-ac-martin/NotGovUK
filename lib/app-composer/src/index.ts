@@ -2,7 +2,7 @@ import { GraphQLSchema } from 'graphql';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, Fragment, Suspense, createElement as h, lazy } from 'react';
-import { HelmetProvider, FilledContext } from 'react-helmet-async';
+import { Helmet, HelmetProvider, FilledContext } from 'react-helmet-async';
 import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
 import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
 import { Route, RouteComponentProps, withRouter } from '@not-govuk/route-utils';
@@ -296,7 +296,10 @@ export const compose: Compose = options => {
       options.AppWrap, props,
       h(
         HelmetProvider, { context: helmetContext },
-        h(DataProvider, { client }, router)
+        [
+          h(Helmet, { htmlAttributes: { lang: 'en' }}),
+          h(DataProvider, { client }, router)
+        ]
       )
     );
   };

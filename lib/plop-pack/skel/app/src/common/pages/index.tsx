@@ -1,12 +1,21 @@
 import { FC, Fragment, createElement as h } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
+
+export const title = 'Home';
+const description = 'Our homepage';
 
 const Page: FC<PageProps> = props => (
   <Fragment>
-    <h1>Home</h1>
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={description} />
+    </Helmet>
+    <h1>{title}</h1>
     <p>This is the home page.</p>
   </Fragment>
 );
 
 export default Page;
-export const title = 'Home';

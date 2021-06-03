@@ -62,10 +62,6 @@ towards simple, linear workflows such as filling out forms. This is
 unsuitable for less linear workflows that one might find in case-working
 systems or dashboards.
 
-(UPDATE ME) NotGovUK solves these problems by allowing consumers to
-provide an `internal` class on their `body` tag which will change the
-font and expand the layout to use more of the screen.
-
 
 Why is it called 'NotGovUK'?
 ----------------------------
@@ -85,7 +81,7 @@ naming things is hard and it might not.
 -- Daniel Martin, December 2019 (updated August 2020).
 
 
-[NotGovUK]: https://not-govuk.netlify.app/
+[NotGovUK]: https://not-gov.uk/
 [GOV.UK Design System]: https://design-system.service.gov.uk/
 [React]: https://reactjs.org/
 [support for writing internal applications]: #what-does-support-for-internal-applications-mean
