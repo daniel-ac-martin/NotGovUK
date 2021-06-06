@@ -11,6 +11,7 @@ server=$!
 
 selector='.links | .[] | select(.state | contains("BROKEN"))'
 template='.state, " link [", .status, "] in page ", .parent, ", for target: ", .url, "\n"'
+outcome='.passed | "Links and assets verified: ", .'
 curl -fs \
   --retry 15 \
   --retry-delay 2 \
@@ -20,9 +21,8 @@ curl -fs \
   linkinator http://localhost:8080 \
     --verbosity warning \
     --config ./linkinator.config.json \
-    | tee >( jq -jr "${selector} | ${template}" > .missing-links ) \
-    | jq -er '.passed | "Links and assets verified: ", .'
+    | jq -jre "( ${selector} | ${template} ), ( ${outcome} )"
 result=$?
+echo
 kill $server
-cat .missing-links
 exit $result
