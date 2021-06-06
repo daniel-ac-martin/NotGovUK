@@ -59,9 +59,29 @@ jobs:
         run: echo "##[set-output name=flag;]$([[ \"${GITHUB_REF#refs/heads/}\" == \"master\" ]] && echo \"--prod\" || true)"
 
       - name: Deploy docs
+        id: deploy
         uses: netlify/actions/cli@master
         with:
           args: deploy --dir='apps/govuk-docs/.netlify/publish/' --functions='apps/govuk-docs/.netlify/functions/' ${{ steps.target.outputs.flag }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      - name: Scan docs links
+        id: linkscan
+        uses: JustinBeckwith/linkinator-action@v1
+        with:
+          config: apps/govuk-docs/linkinator.config.json
+          paths: ${{ steps.deploy.outputs.NETLIFY_URL }}
+
+      - name: Check docs scan results
+        uses: r26d/jq-action@master
+        env:
+          SELECTOR: '.links | .[] | select(.state | contains("BROKEN"))'
+          TEMPLATE: '.state, " link [", .status, "] in page ", .parent, ", for target: ", .url, "\n"'
+          OUTCOME: '.passed | "Links and assets verified: ", .'
+        with:
+          cmd: |
+            cd apps/govuk-docs/
+            echo "${{ steps.linkscan.outputs.value }}" \
+              | jq -jre "( ${{ env.SELECTOR }} | ${{ env.TEMPLATE }} ), ( ${{ env.OUTCOME }} )"
