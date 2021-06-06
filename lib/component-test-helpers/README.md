@@ -1,5 +1,5 @@
 Not Govuk - Component Test Helpers
-===
+==================================
 
 Helper functions for testing React components.
 

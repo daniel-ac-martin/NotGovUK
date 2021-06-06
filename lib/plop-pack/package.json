@@ -8,7 +8,7 @@
     "/skel"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "true",
     "clean": "true"
   },
@@ -25,5 +25,8 @@
     "plop": "^2.7.4",
     "resolve": "^1.17.0",
     "shelljs": "^0.8.4"
+  },
+  "devDependencies": {
+    "handlebars": "^4.7.7"
   }
 }

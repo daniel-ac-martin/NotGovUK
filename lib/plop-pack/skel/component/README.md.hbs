@@ -1,5 +1,4 @@
-{{{titleCase (pkg 'name')}}} - {{{titleCase name}}}
-===
+{{#title}}{{{titleCase (pkg 'name')}}} - {{{titleCase name}}}{{/title}}
 
 {{{description}}}
 
@@ -42,6 +41,8 @@ pnpm install
 
 ### Testing
 
+Run the unit tests.
+
 ```shell
 npm test
 ```
@@ -49,12 +50,16 @@ npm test
 
 ### Building
 
+Build the package by compiling the TypeScript source code.
+
 ```shell
 npm run build
 ```
 
 
 ### Clean-up
+
+Remove any previously built files.
 
 ```shell
 npm run clean
