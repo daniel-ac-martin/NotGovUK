@@ -14,6 +14,12 @@ const plopFunction = plop => {
     'app',
     extendGenerator(plop, parent, 'app', {
       prompts: [
+        {
+          type: 'confirm',
+          name: 'govuk',
+          message: 'Will this be hosted on service.gov.uk?:',
+          default: false
+        }
       ],
       actions: [
         {
@@ -21,6 +27,12 @@ const plopFunction = plop => {
           destination: 'apps/{{{name}}}/src/',
           source: rel('app/src/'),
           overwrite: true
+        },
+        {
+          type: 'add',
+          path: 'apps/{{{name}}}/src/common/page-wrap.tsx',
+          templateFile: rel('app/src/common/page-wrap.tsx.hbs'),
+          force: true
         },
         {
           type: 'merge',
