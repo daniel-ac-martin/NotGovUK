@@ -12,7 +12,9 @@
     "heroku-postbuild": "npm run build",
     "clean": "rm -rf .serverless dist",
     "dev": "NODE_ENV=development node-hot --fork | bunyan",
-    "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --fork | bunyan"
+    "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --fork | bunyan",
+    "create": "plop",
+    "create:page": "plop page"
   },
   "author": "{{{pkg 'author'}}}",
   "license": "{{{pkg 'license'}}}",
@@ -28,6 +30,7 @@
     "@graphql-tools/schema": "^7.0.0",
     "@not-govuk/anchor-list": "{{#if (eq (pkg 'name')'not-govuk')}}workspace:{{/if}}^0.2.0",
     "@not-govuk/app-composer": "{{#if (eq (pkg 'name')'not-govuk')}}workspace:{{/if}}^0.2.0",
+    "@not-govuk/app-plop-pack": "{{#if (eq (pkg 'name')'not-govuk')}}workspace:{{/if}}^0.2.0",
     "@not-govuk/client-renderer": "{{#if (eq (pkg 'name')'not-govuk')}}workspace:{{/if}}^0.2.0",
     "@not-govuk/engine": "{{#if (eq (pkg 'name')'not-govuk')}}workspace:{{/if}}^0.2.0",
     "@not-govuk/server-renderer": "{{#if (eq (pkg 'name')'not-govuk')}}workspace:{{/if}}^0.2.0",
@@ -41,6 +44,7 @@
     "bunyan": "^1.8.12",
     "graphql": "^15.3.0",
     "node-hot-loader": "^1.19.0",
+    "plop": "^2.7.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet-async": "^1.0.7",
