@@ -9,7 +9,14 @@ const siteTitle = config.title;
 export const title = '{{{ title }}}';
 const description = '{{{ description }}}'
 
-const Page: FC<PageProps> = ({ location }) => (
+{{#if query}}
+const Page: FC<PageProps> = ({ location }) => {
+  const n = Number(location.query['n']) || 0;
+
+  return (
+{{else}}
+const Page: FC<PageProps> = _ => (
+{{/if}}
   <Fragment>
     <Helmet>
       <title>{title} - {siteTitle}</title>
@@ -19,8 +26,18 @@ const Page: FC<PageProps> = ({ location }) => (
     </Helmet>
     <h1>{title}</h1>
     <p>{description}</p>
+{{#if query}}
+    <h1>Accessing query parameters</h1>
+    <p>n = {n}</p>
+    <p><a href={`/{{{ name }}}?n=${n + 1}`}>Next</a></p>
+{{/if}}
   </Fragment>
+{{#if query}}
+  );
+};
+{{else}}
 );
+{{/if}}
 
 export default Page;
 {{else}}
@@ -34,4 +51,13 @@ export default Page;
 {{/if}}
 <h1>{{ title }}</h1>
 <p>{{ description }}</p>
+{{#if query}}
+<h1>Accessing query parameters</h1>
+{{#if (eq ext 'rt')}}
+<p>n = {location.query['n']}</p>
+<p><a href={`/{{{ name }}}?n=${Number(location.query['n'] || 0) + 1}`}>Next</a></p>
+{{else}}
+<p>Sorry, there is no way to access query parameters from an HTML page. You will need to use React for that.</p>
+{{/if}}
+{{/if}}
 {{/if}}
