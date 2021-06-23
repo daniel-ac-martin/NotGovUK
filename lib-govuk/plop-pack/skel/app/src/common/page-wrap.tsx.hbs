@@ -1,8 +1,15 @@
 import { FC, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
-import { GovUKPage } from '@not-govuk/components';
+{{#if govuk}}
+import { GovUKPage as Page} from '@not-govuk/components';
+{{else}}
+import { NotGovUKPage as Page} from '@not-govuk/components';
+{{/if}}
+import config from './config';
 
 import './app.scss';
+
+const siteTitle = config.title;
 
 export const PageWrap: FC<PageProps> = ({ routes, children }) => {
   const compare = (a, b) => (
@@ -11,6 +18,7 @@ export const PageWrap: FC<PageProps> = ({ routes, children }) => {
     : -1
   );
   const navigation = routes
+    .filter(e => e.href !== '/' && e.href !== '/sitemap')
     .map(e => ({
       href: e.href,
       text: e.title
@@ -18,15 +26,18 @@ export const PageWrap: FC<PageProps> = ({ routes, children }) => {
     .sort(compare);
 
   return (
-    <GovUKPage
+    <Page
       feedbackHref="/feedback"
       navigation={navigation}
+      meta={[
+        { href: "/sitemap", text: "Sitemap" },
+      ]}
       phase="alpha"
-      serviceName="NotGovUK"
-      title="NotGovUK"
+      serviceName={siteTitle}
+      title={siteTitle}
     >
       {children}
-    </GovUKPage>
+    </Page>
   );
 };
 

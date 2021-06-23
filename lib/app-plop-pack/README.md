@@ -1,6 +1,7 @@
-{{#mdTitle}}{{{titleCase (pkg 'name')}}} - {{{titleCase name}}}{{/mdTitle}}
+NotGovUK - Application plop-pack
+================================
 
-{{{description}}}
+Generators for use within applications and prototypes.
 
 
 Using this package
@@ -9,16 +10,17 @@ Using this package
 First install the package into your project:
 
 ```shell
-npm install -S @{{{pkg 'name'}}}/{{{name}}}
+npm install -D @not-govuk/app-plop-pack
 ```
 
-Then use it in your code as follows:
+Then use it in your `plopfile.js` as follows:
 
 ```js
-import {{{camelCase name}}} from '@{{{pkg 'name'}}}/{{{name}}}';
+module.exports = plop => {
+  plop.load('@not-govuk/app-plop-pack');
 
-// WRITEME
-
+  // ...
+}
 ```
 
 

@@ -60,7 +60,7 @@ $(dist_dir)/package.base.json: $(source_dir)/package.json
 	$(patch_package) '$(@)'
 
 $(build_dir)/skel-prototype/package.json: $(plopfile)
-	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'docs' 'Documentation website.'
+	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'docs' 'Documentation' 'Documentation website.'
 	$(cp) -r '$(target_dir)/apps/docs/' '$(@D)'
 	rm '$(@D)/README.md' '$(@D)/tsconfig.json'
 
