@@ -50,7 +50,9 @@ export default Page;
 </Helmet>
 {{/if}}
 <h1>{{ title }}</h1>
+{{#if description}}
 <p>{{ description }}</p>
+{{/if}}
 {{#if query}}
 <h1>Accessing query parameters</h1>
 {{#if (eq ext 'rt')}}
