@@ -14,6 +14,7 @@
     "dev": "NODE_ENV=development node-hot --fork | bunyan",
     "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --fork | bunyan",
     "create": "plop",
+    "create:deployment": "plop deployment",
     "create:page": "plop page"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
