@@ -61,10 +61,9 @@ jobs:
 {{#if (eq target 'netlify')}}
       - name: Package
         run: |
-{{#if standalone}}
-{{else}}
+{{#unless standalone}}
           cd {{{ appDir }}}
-{{/if}}
+{{/unless}}
           npm run package:serverless
           mkdir -p .netlify/functions .netlify/publish
           cd .netlify
@@ -92,12 +91,20 @@ jobs:
           NETLIFY_SITE_ID: $\{{ secrets.{{{ siteSecret }}} }}
         timeout-minutes: 2
 {{else if (eq target 'heroku')}}
-      - name: Build and deploy
+      - name: Login to Heroku
         uses: AkhileshNS/heroku-deploy@v3.12.12
         with:
-          appdir: {{{ appDir }}}
           heroku_api_key: $\{{ secrets.{{{ authSecret }}} }}
-          heroku_app_name: $\{{ secrets.{{{ siteSecret }}} }}
+          heroku_app_name: ""
           heroku_email: $\{{ secrets.{{{ usernameSecret }}} }}
-          usedocker: true
+          justlogin: true
+
+      - name: Package and deploy
+        run: |
+{{#unless standalone}}
+          cd {{{ appDir }}}
+{{/unless}}
+          heroku container:login
+          heroku container:push -a '$\{{ secrets.{{{ siteSecret }}} }}' web
+          heroku container:release -a '$\{{ secrets.{{{ siteSecret }}} }}' web
 {{/if}}

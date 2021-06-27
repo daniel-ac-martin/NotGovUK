@@ -113,10 +113,44 @@ changes being merged in to your `master` branch.
 
 ### 7. Optional: Set up Continuous Deployment
 
-The included 'docs' application can be automatically deployed to
-[Netlify]. This allows you to introduce people to your project as well
-as any components and libraries that you publish whilst remaining 'on
-brand'.
+The included 'docs' application can be automatically deployed. This allows you
+to introduce people to your project as well as any components and libraries that
+you publish whilst remaining 'on brand'.
+
+Once this is in place your new website should be updated whenever you push to
+your `master` branch.
+
+Once your website is up and running, you should consider linking to it from your
+README, your `package.json` and your GitHub repository.
+
+To set this up, run the following commands:
+```shell
+cd apps/docs
+npm run create:deployment
+```
+
+Then answer the prompts. In particular, you will need to choose where you want
+to deploy. In most cases the defaults for the other questions should be fine.
+
+Depending on the deployment target you chose, you will need to set up some
+secrets in GitHub.
+
+
+#### [Heroku]
+
+1. Sign up and [log in to Heroku]
+2. Create a new site by following the [Heroku documentation]
+   If you have set up the [Heroku CLI tool], you should be able to do this with
+   `heroku create`.
+3. Create a new secret in GitHub called `HEROKU_EMAIL` with the value of the
+   e-mail address that you log in to Heroku with.
+4. Create a new secret in GitHub called `HEROKU_API_KEY` with the value of your API key as found here:
+   https://dashboard.heroku.com/account
+5. Create a new secret in GitHub called `HEROKU_APP_NAME_DOCS` with the name you
+   chose for your app in Heroku.
+
+
+#### [Netlify]
 
 1. Sign up and [log in to Netlify]
 2. Create a new site by following the [Netlify documentation]
@@ -129,18 +163,12 @@ brand'.
    ```
    You can safely ignore the ssh key and webhook as we will be building
    on GitHub Actions instead of Netlify.
-3. Create a new secret in GitHub called `NETLIFY_SITE_ID` by following
+3. Create a new secret in GitHub called `NETLIFY_SITE_ID_DOCS` by following
    the information here:
    https://docs.netlify.com/cli/get-started/#link-with-an-environment-variable
 4. Create a new secret in GitHub called `NETLIFY_AUTH_TOKEN` by following
    the information here:
    https://docs.netlify.com/cli/get-started/#obtain-a-token-in-the-netlify-ui
-
-Once this is in place your Netlify site should be updated whenever you
-push to your `master` branch.
-
-Once your website is up and running, you should consider linking to it
-from your README, your `package.json` and your GitHub repository.
 
 
 ### 8. Optional: Protect the master branch
@@ -164,6 +192,10 @@ mandatory prior to merging:
 [Working on your project]: ./working-on-your-project
 [Chromatic]: https://www.chromatic.com/
 [log in to Chromatic]: https://www.chromatic.com/start
+[Heroku]: https://www.heroku.com/
+[log in to Heroku]: https://id.heroku.com/login
+[Heroku documentation]: https://devcenter.heroku.com/
+[Heroku CLI tool]: https://devcenter.heroku.com/articles/heroku-cli
 [Netlify]: https://www.netlify.com/
 [log in to Netlify]: https://app.netlify.com/
 [Netlify documentation]: https://docs.netlify.com/
