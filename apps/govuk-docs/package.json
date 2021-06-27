@@ -11,13 +11,17 @@
     "package:serverless": "sls package",
     "clean": "rm -rf .serverless dist",
     "dev": "NODE_ENV=development node-hot --fork | bunyan",
-    "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --fork | bunyan"
+    "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --fork | bunyan",
+    "create": "plop",
+    "create:deployment": "plop deployment",
+    "create:page": "plop page"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "MIT",
   "devDependencies": {
     "@not-govuk/anchor-list": "workspace:^0.2.0",
     "@not-govuk/app-composer": "workspace:^0.2.0",
+    "@not-govuk/app-plop-pack": "workspace:^0.2.13",
     "@not-govuk/client-renderer": "workspace:^0.2.0",
     "@not-govuk/components": "workspace:^0.2.0",
     "@not-govuk/docs-components": "workspace:^0.2.0",
@@ -31,6 +35,7 @@
     "@types/webpack-env": "^1.15.2",
     "bunyan": "^1.8.12",
     "node-hot-loader": "^1.19.0",
+    "plop": "^2.7.3",
     "react": "^16.9.55",
     "react-dom": "^16.9.55",
     "react-helmet-async": "^1.0.7",
