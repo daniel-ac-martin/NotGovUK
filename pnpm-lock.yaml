@@ -94,6 +94,7 @@ importers:
     specifiers:
       '@not-govuk/anchor-list': workspace:^0.2.0
       '@not-govuk/app-composer': workspace:^0.2.0
+      '@not-govuk/app-plop-pack': workspace:^0.2.13
       '@not-govuk/client-renderer': workspace:^0.2.0
       '@not-govuk/components': workspace:^0.2.0
       '@not-govuk/docs-components': workspace:^0.2.0
@@ -107,6 +108,7 @@ importers:
       '@types/webpack-env': ^1.15.2
       bunyan: ^1.8.12
       node-hot-loader: ^1.19.0
+      plop: ^2.7.3
       react: ^16.9.55
       react-dom: ^16.9.55
       react-helmet-async: ^1.0.7
@@ -121,6 +123,7 @@ importers:
     devDependencies:
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
+      '@not-govuk/app-plop-pack': link:../../lib/app-plop-pack
       '@not-govuk/client-renderer': link:../../lib/client-renderer
       '@not-govuk/components': link:../../packages/components
       '@not-govuk/docs-components': link:../../lib/docs-components
@@ -134,6 +137,7 @@ importers:
       '@types/webpack-env': 1.15.2
       bunyan: 1.8.14
       node-hot-loader: 1.20.0_webpack@4.43.0
+      plop: 2.7.4
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
@@ -810,6 +814,72 @@ importers:
     devDependencies:
       plop: 2.7.4
 
+  lib-govuk/create/build/apps/template:
+    specifiers:
+      '@apollo/client': ^3.2.3
+      '@graphql-tools/schema': ^7.0.0
+      '@not-govuk/anchor-list': ^0.2.0
+      '@not-govuk/app-composer': ^0.2.0
+      '@not-govuk/app-plop-pack': ^0.2.0
+      '@not-govuk/client-renderer': ^0.2.0
+      '@not-govuk/components': ^0.2.0
+      '@not-govuk/engine': ^0.2.0
+      '@not-govuk/server-renderer': ^0.2.0
+      '@not-govuk/user-info': ^0.2.0
+      '@not-govuk/webpack-config': ^0.2.0
+      '@types/react': ^16.9.35
+      '@types/react-dom': ^16.9.8
+      '@types/react-router': ^5.1.7
+      '@types/react-router-dom': ^5.1.5
+      '@types/webpack-env': ^1.15.2
+      bunyan: ^1.8.12
+      graphql: ^15.3.0
+      node-hot-loader: ^1.19.0
+      plop: ^2.7.3
+      react: ^16.13.1
+      react-dom: ^16.13.1
+      react-helmet-async: ^1.0.7
+      react-router: ^5.2.0
+      react-router-dom: ^5.2.0
+      serverless: ^1.75.1
+      typescript: ^3.9.2
+      webpack: ^4.43.0
+      webpack-cli: ^3.3.11
+      webpack-dev-middleware: ^3.7.2
+      webpack-hot-middleware: ^2.25.0
+    devDependencies:
+      '@apollo/client': 3.2.5_graphql@15.4.0+react@16.14.0
+      '@graphql-tools/schema': 7.0.0_graphql@15.4.0
+      '@not-govuk/anchor-list': link:../../../../../components-internal/anchor-list
+      '@not-govuk/app-composer': link:../../../../../lib/app-composer
+      '@not-govuk/app-plop-pack': link:../../../../../lib/app-plop-pack
+      '@not-govuk/client-renderer': link:../../../../../lib/client-renderer
+      '@not-govuk/components': link:../../../../../packages/components
+      '@not-govuk/engine': link:../../../../../lib/engine
+      '@not-govuk/server-renderer': link:../../../../../lib/server-renderer
+      '@not-govuk/user-info': link:../../../../../lib/user-info
+      '@not-govuk/webpack-config': link:../../../../../lib/webpack-config
+      '@types/react': 16.14.5
+      '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.5
+      '@types/webpack-env': 1.15.3
+      bunyan: 1.8.14
+      graphql: 15.4.0
+      node-hot-loader: 1.20.0_webpack@4.43.0
+      plop: 2.7.4
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
+      react-router: 5.2.0_react@16.14.0
+      react-router-dom: 5.2.0_react@16.14.0
+      serverless: 1.75.1
+      typescript: 3.9.9
+      webpack: 4.43.0
+      webpack-cli: 3.3.12_webpack@4.43.0
+      webpack-dev-middleware: 3.7.2_webpack@4.43.0
+      webpack-hot-middleware: 2.25.0
+
   lib-govuk/plop-pack:
     specifiers:
       '@not-govuk/plop-pack-internal': workspace:^0.2.0
@@ -892,6 +962,138 @@ importers:
       shelljs: 0.8.4
     devDependencies:
       plop: 2.7.4
+
+  lib/create/build/skel-prototype:
+    specifiers:
+      '@apollo/client': ^3.2.3
+      '@graphql-tools/schema': ^7.0.0
+      '@not-govuk/anchor-list': ^0.2.0
+      '@not-govuk/app-composer': ^0.2.0
+      '@not-govuk/app-plop-pack': ^0.2.0
+      '@not-govuk/client-renderer': ^0.2.0
+      '@not-govuk/engine': ^0.2.0
+      '@not-govuk/server-renderer': ^0.2.0
+      '@not-govuk/user-info': ^0.2.0
+      '@not-govuk/webpack-config': ^0.2.0
+      '@types/react': ^16.9.35
+      '@types/react-dom': ^16.9.8
+      '@types/react-router': ^5.1.7
+      '@types/react-router-dom': ^5.1.5
+      '@types/webpack-env': ^1.15.2
+      bunyan: ^1.8.12
+      graphql: ^15.3.0
+      node-hot-loader: ^1.19.0
+      plop: ^2.7.3
+      react: ^16.13.1
+      react-dom: ^16.13.1
+      react-helmet-async: ^1.0.7
+      react-router: ^5.2.0
+      react-router-dom: ^5.2.0
+      serverless: ^1.75.1
+      typescript: ^3.9.2
+      webpack: ^4.43.0
+      webpack-cli: ^3.3.11
+      webpack-dev-middleware: ^3.7.2
+      webpack-hot-middleware: ^2.25.0
+    devDependencies:
+      '@apollo/client': 3.2.5_graphql@15.4.0+react@16.14.0
+      '@graphql-tools/schema': 7.0.0_graphql@15.4.0
+      '@not-govuk/anchor-list': link:../../../../components-internal/anchor-list
+      '@not-govuk/app-composer': link:../../../app-composer
+      '@not-govuk/app-plop-pack': link:../../../app-plop-pack
+      '@not-govuk/client-renderer': link:../../../client-renderer
+      '@not-govuk/engine': link:../../../engine
+      '@not-govuk/server-renderer': link:../../../server-renderer
+      '@not-govuk/user-info': link:../../../user-info
+      '@not-govuk/webpack-config': link:../../../webpack-config
+      '@types/react': 16.14.5
+      '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.5
+      '@types/webpack-env': 1.15.3
+      bunyan: 1.8.14
+      graphql: 15.4.0
+      node-hot-loader: 1.20.0_webpack@4.43.0
+      plop: 2.7.4
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
+      react-router: 5.2.0_react@16.14.0
+      react-router-dom: 5.2.0_react@16.14.0
+      serverless: 1.75.1
+      typescript: 3.9.9
+      webpack: 4.43.0
+      webpack-cli: 3.3.12_webpack@4.43.0
+      webpack-dev-middleware: 3.7.2_webpack@4.43.0
+      webpack-hot-middleware: 2.25.0
+
+  lib/create/build/skel/apps/docs:
+    specifiers:
+      '@apollo/client': ^3.2.3
+      '@graphql-tools/schema': ^7.0.0
+      '@not-govuk/anchor-list': ^0.2.0
+      '@not-govuk/app-composer': ^0.2.0
+      '@not-govuk/app-plop-pack': ^0.2.0
+      '@not-govuk/client-renderer': ^0.2.0
+      '@not-govuk/components': ^0.2.0
+      '@not-govuk/docs-components': ^0.2.0
+      '@not-govuk/engine': ^0.2.0
+      '@not-govuk/server-renderer': ^0.2.0
+      '@not-govuk/user-info': ^0.2.0
+      '@not-govuk/webpack-config': ^0.2.0
+      '@types/react': ^16.9.55
+      '@types/react-dom': ^16.9.8
+      '@types/react-router': ^5.1.7
+      '@types/react-router-dom': ^5.1.5
+      '@types/webpack-env': ^1.15.2
+      bunyan: ^1.8.12
+      graphql: ^15.3.0
+      node-hot-loader: ^1.19.0
+      plop: ^2.7.3
+      react: ^16.9.55
+      react-dom: ^16.9.55
+      react-helmet-async: ^1.0.7
+      react-router: ^5.2.0
+      react-router-dom: ^5.2.0
+      serverless: ^1.75.1
+      typescript: ^3.9.2
+      webpack: ^4.43.0
+      webpack-cli: ^3.3.11
+      webpack-dev-middleware: ^3.7.2
+      webpack-hot-middleware: ^2.25.0
+    devDependencies:
+      '@apollo/client': 3.2.5_graphql@15.4.0+react@16.14.0
+      '@graphql-tools/schema': 7.0.0_graphql@15.4.0
+      '@not-govuk/anchor-list': link:../../../../../../components-internal/anchor-list
+      '@not-govuk/app-composer': link:../../../../../app-composer
+      '@not-govuk/app-plop-pack': link:../../../../../app-plop-pack
+      '@not-govuk/client-renderer': link:../../../../../client-renderer
+      '@not-govuk/components': link:../../../../../../packages/components
+      '@not-govuk/docs-components': link:../../../../../docs-components
+      '@not-govuk/engine': link:../../../../../engine
+      '@not-govuk/server-renderer': link:../../../../../server-renderer
+      '@not-govuk/user-info': link:../../../../../user-info
+      '@not-govuk/webpack-config': link:../../../../../webpack-config
+      '@types/react': 16.14.5
+      '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.5
+      '@types/webpack-env': 1.15.3
+      bunyan: 1.8.14
+      graphql: 15.4.0
+      node-hot-loader: 1.20.0_webpack@4.43.0
+      plop: 2.7.4
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
+      react-router: 5.2.0_react@16.14.0
+      react-router-dom: 5.2.0_react@16.14.0
+      serverless: 1.75.1
+      typescript: 3.9.9
+      webpack: 4.43.0
+      webpack-cli: 3.3.12_webpack@4.43.0
+      webpack-dev-middleware: 3.7.2_webpack@4.43.0
+      webpack-hot-middleware: 2.25.0
 
   lib/docs-components:
     specifiers:
@@ -10407,7 +10609,7 @@ packages:
   /camel-case/4.1.1:
     resolution: {integrity: sha512-7fa2WcG4fYFkclIvEmxBbTvmibwF2/agfEBc6q3lOpVu0A13ltLsA+Hr/8Hp6kp5f+G7hKi6t8lys6XxP+1K6Q==}
     dependencies:
-      pascal-case: 3.1.1
+      pascal-case: 3.1.2
       tslib: 1.14.1
     dev: true
 
@@ -17105,12 +17307,6 @@ packages:
   /lower-case/1.1.4:
     resolution: {integrity: sha1-miyr0bno4K6ZOkv31YdcOcQujqw=}
 
-  /lower-case/2.0.1:
-    resolution: {integrity: sha512-LiWgfDLLb1dwbFQZsSglpRj+1ctGnayXz3Uv0/WO8n558JycT5fg6zkNcnW0G68Nn0aEldTFeEfmjCfmqry/rQ==}
-    dependencies:
-      tslib: 1.14.1
-    dev: true
-
   /lower-case/2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
@@ -17812,13 +18008,6 @@ packages:
     resolution: {integrity: sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==}
     dependencies:
       lower-case: 1.1.4
-
-  /no-case/3.0.3:
-    resolution: {integrity: sha512-ehY/mVQCf9BL0gKfsJBvFJen+1V//U+0HQMPrWct40ixE4jnv0bfvxDbWtAHL9EcaPEOJHVVYKoQn1TlZUB8Tw==}
-    dependencies:
-      lower-case: 2.0.1
-      tslib: 1.14.1
-    dev: true
 
   /no-case/3.0.4:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
@@ -18627,13 +18816,6 @@ packages:
     dependencies:
       camel-case: 3.0.0
       upper-case-first: 1.1.2
-
-  /pascal-case/3.1.1:
-    resolution: {integrity: sha512-XIeHKqIrsquVTQL2crjq3NfJUxmdLasn3TYOU0VBM+UX2a6ztAWBlJQBePLGY7VHW8+2dRadeIPK5+KImwTxQA==}
-    dependencies:
-      no-case: 3.0.3
-      tslib: 1.14.1
-    dev: true
 
   /pascal-case/3.1.2:
     resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
