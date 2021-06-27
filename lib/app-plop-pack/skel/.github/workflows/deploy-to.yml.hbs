@@ -76,17 +76,21 @@ jobs:
           mv entrypoints.json ../dist/public/
           echo "/* /.netlify/functions/{{{ appName }}}/:splat 200" > publish/_redirects
 
-      - name: Deploy to prod?
-        id: target
-        run: echo "##[set-output name=flag;]$([[ \"${GITHUB_REF#refs/heads/}\" == \"{{{ branch }}}\" ]] && echo \"--prod\" || true)"
-
       - name: Deploy
-        uses: netlify/actions/cli@master
+        uses: nwtgck/actions-netlify@v1.2.2
         with:
-          args: deploy --dir='{{{ appDir }}}.netlify/publish/' --functions='{{{ appDir }}}.netlify/functions/' $\{{ steps.target.outputs.flag }}
+          publish-dir: '{{{ appDir }}}.netlify/publish/'
+          functions-dir: '{{{ appDir }}}.netlify/functions/'
+          production-branch: {{{ branch }}}
+          github-token: $\{{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: $\{{ secrets.{{{ authSecret }}} }}
           NETLIFY_SITE_ID: $\{{ secrets.{{{ siteSecret }}} }}
+        timeout-minutes: 2
 {{else if (eq target 'heroku')}}
       - name: Build and deploy
         uses: AkhileshNS/heroku-deploy@v3.12.12
