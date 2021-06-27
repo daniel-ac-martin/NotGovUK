@@ -6,7 +6,8 @@ dist_dir = ./dist
 source_dir = ../..
 target_dir = $(build_dir)/skel
 sources := $(wildcard \
-	$(source_dir)/.github/workflows/* \
+	$(source_dir)/.github/workflows/chromatic.yml \
+	$(source_dir)/.github/workflows/test.yml \
 	$(source_dir)/.gitignore \
 	$(source_dir)/.jest/*/* \
 	$(source_dir)/.npm/* \
@@ -79,7 +80,6 @@ $(build_dir)/package.docs.json: $(docs_source_dir)/package.json
 
 $(dist_dir)/skel.tar: $(skel_deps)
 	mkdir -p '$(@D)'
-	sed -i 's/$(docs_app)/docs/g' 'build/skel/.github/workflows/deploy-docs.yml'
 	cd 'build/' && tar -cf '../$(@)' 'skel/'
 
 $(dist_dir)/skel-prototype.tar: $(build_dir)/skel-prototype/package.json $(build_dir)/skel-prototype/tsconfig.json
