@@ -1,0 +1,103 @@
+{{#if standalone}}
+name: Deploy to {{{ titleCase target }}}
+{{else}}
+name: Deploy {{{ appName }}} to {{{ titleCase target }}}
+{{/if}}
+on:
+{{#if (eq target 'netlify')}}
+  - push
+{{else}}
+  push:
+    branches:
+      - {{{ branch }}}
+{{/if}}
+jobs:
+{{#if standalone}}
+  deploy_to_{{{ target }}}:
+    name: Deploy to {{{ titleCase target }}}
+{{else}}
+  deploy_{{{ appName }}}_to_{{{ target }}}:
+    name: Deploy {{{ appName }}} to {{{ titleCase target }}}
+{{/if}}
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        env:
+          cache-hash: $\{{ hashFiles('pnpm-lock.yaml') }}
+        with:
+          path: ~/.pnpm-store
+          key: pnpm-os_$\{{ runner.os }}-node_$\{{ matrix.node }}-lock_$\{{ env.cache-hash }}
+          restore-keys: |
+            pnpm-os_$\{{ runner.os }}-node_$\{{ matrix.node }}-
+            pnpm-os_$\{{ runner.os }}-
+            pnpm-
+
+      - name: Pull dependencies
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.3.0
+          run_install: true
+
+      - name: Build
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: |
+{{#if standalone}}
+{{else}}
+          cd {{{ appDir }}}
+{{/if}}
+          npm run build
+
+{{#if (eq target 'netlify')}}
+      - name: Package
+        run: |
+{{#if standalone}}
+{{else}}
+          cd {{{ appDir }}}
+{{/if}}
+          npm run package:serverless
+          mkdir -p .netlify/functions .netlify/publish
+          cd .netlify
+          cp -a ../.serverless/{{{ appName }}}.zip functions/
+          echo "process.env['MODE'] = 'serverless'; module.exports = require('./dist/server/index.js');" > {{{ appName }}}.js
+          zip -mv functions/{{{ appName }}}.zip {{{ appName }}}.js
+          mv ../dist/public/entrypoints.json .
+          cp -a ../dist/public/ publish/public
+          mv entrypoints.json ../dist/public/
+          echo "/* /.netlify/functions/{{{ appName }}}/:splat 200" > publish/_redirects
+
+      - name: Deploy
+        uses: nwtgck/actions-netlify@v1.2.2
+        with:
+          publish-dir: '{{{ appDir }}}.netlify/publish/'
+          functions-dir: '{{{ appDir }}}.netlify/functions/'
+          production-branch: {{{ branch }}}
+          github-token: $\{{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: $\{{ secrets.{{{ authSecret }}} }}
+          NETLIFY_SITE_ID: $\{{ secrets.{{{ siteSecret }}} }}
+        timeout-minutes: 2
+{{else if (eq target 'heroku')}}
+      - name: Build and deploy
+        uses: AkhileshNS/heroku-deploy@v3.12.12
+        with:
+          appdir: {{{ appDir }}}
+          heroku_api_key: $\{{ secrets.{{{ authSecret }}} }}
+          heroku_app_name: $\{{ secrets.{{{ siteSecret }}} }}
+          heroku_email: $\{{ secrets.{{{ usernameSecret }}} }}
+          usedocker: true
+{{/if}}
