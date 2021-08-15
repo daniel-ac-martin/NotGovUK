@@ -90,14 +90,14 @@ documentation to [Netlify].
 [Applications]: https://not-gov.uk/#applications
 [Libraries]: https://not-gov.uk/#libraries
 [Components]: https://not-gov.uk/components
-[apps/]: ./apps/
-[lib/]: ./lib/
-[components/]: ./components/
-[pnpm-workspaces.yaml]: ./pnpm-workspaces.yaml
-[plopfile.js]: ./plopfile.js
+[apps/]: ../apps/
+[lib/]: ../lib/
+[components/]: ../components/
+[pnpm-workspaces.yaml]: ../pnpm-workspaces.yaml
+[plopfile.js]: ../plopfile.js
 [install pnpm]: https://pnpm.js.org/en/installation
 [PLOP]: https://plopjs.com/
-[documentation application]: ./apps/docs
+[documentation application]: ../apps/docs
 [GitHub Actions]: https://github.com/features/actions
-[.github/workflows]: ./.github/workflows
+[.github/workflows]: ../.github/workflows
 [Netlify]: https://www.netlify.com/
