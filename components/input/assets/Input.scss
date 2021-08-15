@@ -1,0 +1,31 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/input";
+
+.govuk-input {
+  &[type="checkbox"],
+  &[type="file"],
+  &[type="radio"],
+  &[type="range"] {
+    border: initial;
+    box-sizing: initial;
+    height: initial;
+    margin: initial;
+    padding: initial;
+    width: initial;
+    appearance: auto;
+  }
+
+  &[type="color"] {
+    width: 2.5em;
+  }
+
+  &[type="range"] {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

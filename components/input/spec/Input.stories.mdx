@@ -1,0 +1,227 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { Input } from '../src/Input';
+import readMe from '../README.md';
+
+<Meta
+  title="Input"
+  component={ Input }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component to allow users to enter a small, single piece of data.',
+    jest: ['Input'],
+    notes: readMe
+  } }
+/>
+
+# Input
+
+<p><Tag text="Internal" /></p>
+
+A component to allow users to enter a small, single piece of data.
+
+<Preview withToolbar>
+  <Story name="Input">
+    <Input name="foo" />
+  </Story>
+</Preview>
+
+<Props of={ Input } />
+
+
+## Stories
+### Standard
+
+A standard Input.
+
+<Preview>
+  <Story name="Standard">
+    <Input name="foo" />
+  </Story>
+</Preview>
+
+
+### Fixed width
+
+An Input with fixed width.
+
+<Preview>
+  <Story name="Fixed width">
+    <Input name="foo" width="2" />
+  </Story>
+</Preview>
+
+
+### Prefix and suffix
+
+An Input with a prefix and a suffix.
+
+<Preview>
+  <Story name="Prefix and suffix">
+    <Input name="foo" prefix="£" suffix="per item" />
+  </Story>
+</Preview>
+
+
+### E-mail
+
+<Preview>
+  <Story name="Input E-mail">
+    <Input name="example" type="email" />
+  </Story>
+</Preview>
+
+
+### Password
+
+<Preview>
+  <Story name="Input Password">
+    <Input name="example" type="password" />
+  </Story>
+</Preview>
+
+
+### Number
+
+<Preview>
+  <Story name="Input Number">
+    <Input name="example" type="number" />
+  </Story>
+</Preview>
+
+
+### Colour
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input Colour">
+    <Input name="example" type="color" />
+  </Story>
+</Preview>
+
+
+### Date
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input Date">
+    <Input name="example" type="date" />
+  </Story>
+</Preview>
+
+
+### Datetime local
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input Datetime local">
+    <Input name="example" type="datetime-local" />
+  </Story>
+</Preview>
+
+
+### Time
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input Time">
+    <Input name="example" type="time" />
+  </Story>
+</Preview>
+
+
+### File
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input File">
+    <Input name="example" type="file" />
+  </Story>
+</Preview>
+
+
+### Month
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input Month">
+    <Input name="example" type="month" />
+  </Story>
+</Preview>
+
+
+### Week
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input Week">
+    <Input name="example" type="week" />
+  </Story>
+</Preview>
+
+
+### Range
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input Range">
+    <Input name="example" type="range" />
+  </Story>
+</Preview>
+
+
+### Search
+
+<Preview>
+  <Story name="Input Search">
+    <Input name="example" type="search" />
+  </Story>
+</Preview>
+
+
+### Tel
+
+<Preview>
+  <Story name="Input Tel">
+    <Input name="example" type="tel" />
+  </Story>
+</Preview>
+
+
+### URL
+
+<Preview>
+  <Story name="Input URL">
+    <Input name="example" type="url" />
+  </Story>
+</Preview>
+
+
+### Checkbox
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input Checkbox">
+    <Input name="example" type="checkbox" />
+  </Story>
+</Preview>
+
+
+### Radio
+
+<p><Tag text="Unofficial" /></p>
+
+<Preview>
+  <Story name="Input Radio">
+    <Input name="example" type="radio" />
+  </Story>
+</Preview>
