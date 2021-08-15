@@ -11,7 +11,7 @@
     "/dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "prepublishOnly": "npm run clean && npm run build",
     "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
@@ -30,6 +30,8 @@
     "@types/history": "^4.7.6",
     "@types/react-router": "^5.1.8",
     "@types/url-parse": "^1.4.3",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
     "typescript": "^3.9.2"
   }
 }
