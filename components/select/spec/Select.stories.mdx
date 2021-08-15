@@ -1,15 +1,16 @@
-import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
-import { boolean, object, text } from "@storybook/addon-knobs";
-import { Select } from '../../';
-import readMe from './README.md';
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Select } from '../src/Select';
+import readMe from '../README.md';
 
 <Meta
   title="Select"
-  component={Select}
-  parameters={{
-    jest: ['select'],
+  component={ Select }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component to allow users to choose from many options.',
+    jest: ['Select'],
     notes: readMe
-  }}
+  } }
 />
 
 # Select
@@ -17,14 +18,9 @@ import readMe from './README.md';
 <Preview withToolbar>
   <Story name="Select">
     <Select
-      className={text('className')}
-      disabled={boolean('disabled', false)}
-      error={text('error')}
-      hint={text('hint')}
-      id={text('id')}
-      label={text('label', 'Sort by')}
-      name={text('name', 'sort')}
-      options={object('options'), [
+      label="Sort by"
+      name="sort"
+      options={[
         { value: 'published', label: 'Recently published' },
         { value: 'updated', label: 'Recently updated', selected: true },
         { value: 'views', label: 'Most views' },
@@ -34,7 +30,7 @@ import readMe from './README.md';
   </Story>
 </Preview>
 
-<Props of={Select} />
+<Props of={ Select } />
 
 
 ## When to use this component
@@ -53,7 +49,7 @@ Asking questions means you’re less likely to need to use the select component,
     <Select
       label="Sort by"
       name="sort"
-      options={object('options'), [
+      options={[
         { value: 'published', label: 'Recently published' },
         { value: 'updated', label: 'Recently updated', selected: true },
         { value: 'views', label: 'Most views' },
@@ -62,10 +58,3 @@ Asking questions means you’re less likely to need to use the select component,
     />
   </Story>
 </Preview>
-
-## Research on this component
-
-Watch a video about how some [users struggle with selects].
-
-
-[users struggle with selects]: https://www.youtube.com/watch?v=CUkMCQR4TpY

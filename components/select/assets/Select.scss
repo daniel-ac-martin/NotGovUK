@@ -1,0 +1,23 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/select";
+
+.govuk-select {
+  &[multiple] {
+    height: auto;
+    padding: 0;
+
+    option {
+      padding: 0.3125em;
+
+      &:nth-child(even) {
+        background-color: govuk-colour('light-grey');
+        color: $govuk-text-colour;
+      }
+
+      &[disabled],
+      &:nth-child(even)[disabled] {
+        color: govuk-colour('mid-grey');
+      }
+    }
+  }
+}
