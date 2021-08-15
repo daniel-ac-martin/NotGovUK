@@ -1,15 +1,16 @@
-import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
-import { boolean, number, text } from "@storybook/addon-knobs";
-import { Textarea } from '../../';
-import readMe from './README.md';
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Textarea } from '../src/Textarea';
+import readMe from '../README.md';
 
 <Meta
   title="Textarea"
-  component={Textarea}
-  parameters={{
-    jest: ['textarea'],
+  component={ Textarea }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component to allow users to enter multiple lines of text.',
+    jest: ['Textarea'],
     notes: readMe
-  }}
+  } }
 />
 
 # Textarea
@@ -17,22 +18,14 @@ import readMe from './README.md';
 <Preview withToolbar>
   <Story name="Textarea">
     <Textarea
-      autoComplete={text('autoComplete')}
-      className={text('className')}
-      defaultValue={text('defaultValue')}
-      disabled={boolean('disabled', false)}
-      error={text('error')}
-      hint={text('hint', 'Do not include personal or financial information, like your National Insurance number or credit card details.')}
-      id={text('id')}
-      label={text('label', 'Can you provide more detail?')}
-      name={text('name', 'more-detail')}
-      rows={number('rows')}
-      spellCheck={boolean('spellCheck')}
+      hint="Do not include personal or financial information, like your National Insurance number or credit card details."
+      label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
+      name="more-detail"
     />
   </Story>
 </Preview>
 
-<Props of={Textarea} />
+<Props of={ Textarea } />
 
 
 ## When to use this component
@@ -52,33 +45,32 @@ Do not use the textarea component if you need to let users enter shorter answers
 
 ## How it works
 
+You must label textareas. Placeholder text is not a suitable substitute for a
+label, as it disappears when users click inside the textarea.
+
+Labels must be aligned above the textarea they refer to. They should be short,
+direct and written in sentence case. Do not use colons at the end of labels.
+
 <Preview>
   <Story name="Standard">
     <Textarea
       hint="Do not include personal or financial information, like your National Insurance number or credit card details."
-      label="Can you provide more detail?"
+      label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
       name="more-detail"
     />
   </Story>
 </Preview>
 
 
-### Label textareas
-
-You must label textareas. Placeholder text is not a suitable substitute for a label, as it disappears when users click inside the textarea.
-
-Labels must be aligned above the textarea they refer to. They should be short, direct and written in sentence case. Do not use colons at the end of labels.
-
-
 ### Use appropriately-sized textareas
 
-Make the height of a textarea proportional to the amount of text you expect users to enter. You can set the height of a textarea by by specifying the `rows` prop.
+Make the height of a textarea proportional to the amount of text you expect users to enter. You can set the height of a textarea by by specifying the `rows` attribute.
 
 <Preview>
   <Story name="Sized">
     <Textarea
       hint="Do not include personal or financial information, like your National Insurance number or credit card details."
-      label="Can you provide more detail?"
+      label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
       name="more-detail"
       rows="8"
     />
@@ -89,6 +81,22 @@ Make the height of a textarea proportional to the amount of text you expect user
 ### Do not disable copy and paste
 
 Users will often need to copy and paste information into a textarea, so do not stop them from doing this.
+
+
+### If you’re asking more than one question on the page
+
+If you’re asking more than one question on the page, do not set the contents of
+the `<label>` as the page heading. Read more about [asking multiple questions on
+question pages].
+
+<Preview>
+  <Story name="No heading">
+    <Textarea
+      label="Can you provide more detail?"
+      name="more-detail"
+    />
+  </Story>
+</Preview>
 
 
 ### Limiting the number of characters
@@ -104,7 +112,7 @@ Error messages should be styled like this:
   <Story name="Errors">
     <Textarea
       hint="Do not include personal or financial information, like your National Insurance number or credit card details."
-      label="Can you provide more detail?"
+      label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
       name="more-detail"
       error="Enter more detail"
     />
@@ -148,3 +156,6 @@ For example, ‘Summary must not include è and £’.
 
 Say ‘[whatever it is] must only include [list of allowed characters]’.
 For example, ‘Summary must only include letters a to z, hyphens, spaces and apostrophes.
+
+
+[asking multiple questions on question pages]: https://design-system.service.gov.uk/patterns/question-pages/#asking-multiple-questions-on-a-page

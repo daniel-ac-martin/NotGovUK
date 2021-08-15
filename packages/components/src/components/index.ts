@@ -25,7 +25,7 @@ export { default as Tag } from '@not-govuk/tag';
 export { default as Table } from '@not-govuk/table';
 export { default as Tabs } from '@not-govuk/tabs';
 export { default as TextInput } from '@not-govuk/text-input';
-export { default as Textarea } from './textarea';
+export { default as Textarea } from '@not-govuk/textarea';
 export { default as WarningText } from '@not-govuk/warning-text';
 
 export { default as Footer } from '@not-govuk/footer';
