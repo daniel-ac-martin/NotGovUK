@@ -9,7 +9,7 @@
         border-color: map_get($v, "colour-websafe") !important;
 
         .govuk-header__navigation-item--active a,
-        .govuk-header__navigation-item a.active {
+        .govuk-header__navigation-item a.govuk-header__link--active {
           &:link,
           &:hover,
           &:visited {
@@ -67,7 +67,7 @@
     margin-bottom: initial;
 
     // Links set to active by the router
-    .active {
+    .govuk-header__link--active {
       $govuk-header-link-active: #1d8feb;
 
       &:link,
