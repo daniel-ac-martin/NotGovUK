@@ -1,0 +1,59 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { Label } from '../src/Label';
+import readMe from '../README.md';
+
+<Meta
+  title="Label"
+  component={ Label }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A label for a form field.',
+    jest: ['Label'],
+    notes: readMe
+  } }
+/>
+
+# Label
+
+<p><Tag text="Internal" /></p>
+
+A label for a form field.
+
+<Preview withToolbar>
+  <Story name="Label">
+    <form action="#" method="get">
+      <Label htmlFor="my-field">My label</Label>
+      <input type="text" id="my-field" name="my-field" />
+    </form>
+  </Story>
+</Preview>
+
+<Props of={ Label } />
+
+
+## Stories
+### Standard
+
+A standard Label.
+
+<Preview>
+  <Story name="Standard">
+    <form action="#" method="get">
+      <Label htmlFor="my-field2">My label</Label>
+      <input type="text" id="my-field2" name="my-field" />
+    </form>
+  </Story>
+</Preview>
+
+
+### In-line
+
+<Preview>
+  <Story name="In-line">
+    <form action="#" method="get">
+      <Label>My label<input type="text" name="my-field" />
+      </Label>
+    </form>
+  </Story>
+</Preview>
