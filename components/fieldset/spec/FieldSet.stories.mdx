@@ -1,0 +1,41 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { FieldSet } from '../src/FieldSet';
+import readMe from '../README.md';
+
+<Meta
+  title="FieldSet"
+  component={ FieldSet }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A set of form fields.',
+    jest: ['FieldSet'],
+    notes: readMe
+  } }
+/>
+
+# FieldSet
+
+<p><Tag text="Internal" /></p>
+
+A set of form fields.
+
+<Preview withToolbar>
+  <Story name="FieldSet">
+    <FieldSet legend="My fieldset">Content</FieldSet>
+  </Story>
+</Preview>
+
+<Props of={ FieldSet } />
+
+
+## Stories
+### Standard
+
+A standard FieldSet.
+
+<Preview>
+  <Story name="Standard">
+    <FieldSet legend="My fieldset">Content</FieldSet>
+  </Story>
+</Preview>
