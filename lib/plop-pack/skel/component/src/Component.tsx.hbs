@@ -8,7 +8,14 @@ export type {{{properCase name}}}Props = StandardProps & {
   heading?: string
 };
 
-export const {{{properCase name}}}: FC<{{{properCase name}}}Props> = ({ children, classBlock, classModifiers, className, heading, ...attrs }) => {
+export const {{{properCase name}}}: FC<{{{properCase name}}}Props> = ({
+  children,
+  classBlock,
+  classModifiers,
+  className,
+  heading,
+  ...attrs
+}) => {
   const classes = classBuilder('{{{dashCase (pkg 'name')}}}-{{{dashCase name}}}', classBlock, classModifiers, className);
   const title = heading || '{{{name}}}';
 
