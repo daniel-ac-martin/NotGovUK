@@ -80,5 +80,13 @@
     "webpack": "^4.43.0",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^16.9.55",
+      "@types/react-dom": "^16.9.8",
+      "@types/react-router": "^5.1.7",
+      "@types/react-router-dom": "^5.1.5"
+    }
   }
 }
