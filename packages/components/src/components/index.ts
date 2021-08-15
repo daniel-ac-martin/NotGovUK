@@ -18,7 +18,7 @@ export { default as Label } from '@not-govuk/label';
 export { default as NavigationMenu } from '@not-govuk/navigation-menu';
 export { default as Panel } from '@not-govuk/panel';
 export { default as PhaseBanner } from '@not-govuk/phase-banner';
-export { default as Radios } from './radios';
+export { default as Radios } from '@not-govuk/radios';
 export { default as Select } from '@not-govuk/select';
 export { default as SkipLink } from '@not-govuk/skip-link';
 export { default as Tag } from '@not-govuk/tag';
