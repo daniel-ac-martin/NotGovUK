@@ -3,7 +3,7 @@ export { default as Anchor, default as A, default as Link } from '@not-govuk/lin
 export { default as Aside } from '@not-govuk/aside';
 export { default as BackLink } from '@not-govuk/back-link';
 export { default as Breadcrumbs } from '@not-govuk/breadcrumbs';
-export { default as Button, StartButton, SubmitButton } from './button';
+export { default as Button, StartButton, SubmitButton } from '@not-govuk/button';
 export { default as Checkboxes } from './checkboxes';
 export { default as DateInput } from './date-input';
 export { default as Details } from '@not-govuk/details';
