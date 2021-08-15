@@ -4,7 +4,7 @@ export { default as Aside } from '@not-govuk/aside';
 export { default as BackLink } from '@not-govuk/back-link';
 export { default as Breadcrumbs } from '@not-govuk/breadcrumbs';
 export { default as Button, StartButton, SubmitButton } from '@not-govuk/button';
-export { default as Checkboxes } from './checkboxes';
+export { default as Checkboxes } from '@not-govuk/checkboxes';
 export { default as DateInput } from '@not-govuk/date-input';
 export { default as Details } from '@not-govuk/details';
 export { default as ErrorMessage } from '@not-govuk/error-message';
