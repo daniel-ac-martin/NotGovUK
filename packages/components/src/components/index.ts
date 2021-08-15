@@ -7,6 +7,7 @@ export { default as Button, StartButton, SubmitButton } from '@not-govuk/button'
 export { default as Checkboxes } from './checkboxes';
 export { default as DateInput } from './date-input';
 export { default as Details } from '@not-govuk/details';
+export { default as ErrorMessage } from '@not-govuk/error-message';
 export { default as FormField } from './form-field';
 export { default as InsetText } from '@not-govuk/inset-text';
 export { default as NavigationMenu } from '@not-govuk/navigation-menu';
