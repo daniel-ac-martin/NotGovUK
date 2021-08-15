@@ -33,7 +33,7 @@ A component to collect information from the user.
             required()
           ]}
         />
-        <Form.Submit value="Continue" />
+        <Form.Submit>Continue</Form.Submit>
       </Form.Page>
       <Form.Page>
         <Form.Radios
@@ -48,7 +48,7 @@ A component to collect information from the user.
             required('Provide your sex')
           ]}
         />
-        <Form.Submit value="Continue" />
+        <Form.Submit>Continue</Form.Submit>
       </Form.Page>
       <Form.Fork
         if={v => v.sex === 'male'}
@@ -64,7 +64,7 @@ A component to collect information from the user.
                 after('1900-01-01')()
               ]}
             />
-            <Form.Submit value="Submit" />
+            <Form.Submit>Submit</Form.Submit>
           </Form.Page>
         }
         else={
@@ -80,7 +80,7 @@ A component to collect information from the user.
                 required('Provide your marital status')
               ]}
             />
-            <Form.Submit value="Submit" />
+            <Form.Submit>Submit</Form.Submit>
           </Form.Page>
         }
       />
@@ -141,7 +141,7 @@ A standard Form.
           required('Provide your marital status')
         ]}
       />
-      <Form.Submit value="Submit" />
+      <Form.Submit>Submit</Form.Submit>
     </Form>
   </Story>
 </Preview>
@@ -164,7 +164,7 @@ Break up your form into steps, using `Form.Page`, to make it less overwhelming f
             required()
           ]}
         />
-        <Form.Submit value="Continue" />
+        <Form.Submit>Continue</Form.Submit>
       </Form.Page>
       <Form.Page>
         <Form.Radios
@@ -179,7 +179,7 @@ Break up your form into steps, using `Form.Page`, to make it less overwhelming f
             required('Provide your sex')
           ]}
         />
-        <Form.Submit value="Continue" />
+        <Form.Submit>Continue</Form.Submit>
       </Form.Page>
       <Form.Page>
         <Form.DateInput
@@ -192,7 +192,7 @@ Break up your form into steps, using `Form.Page`, to make it less overwhelming f
             after('1900-01-01')()
           ]}
         />
-        <Form.Submit value="Continue" />
+        <Form.Submit>Continue</Form.Submit>
       </Form.Page>
       <Form.Page>
         <Form.Radios
@@ -206,7 +206,7 @@ Break up your form into steps, using `Form.Page`, to make it less overwhelming f
             required('Provide your marital status')
           ]}
         />
-        <Form.Submit value="Submit" />
+        <Form.Submit>Submit</Form.Submit>
       </Form.Page>
     </Form>
   </Story>
@@ -232,7 +232,7 @@ The example below will send the user down a different path depending on their se
             required()
           ]}
         />
-        <Form.Submit value="Continue" />
+        <Form.Submit>Continue</Form.Submit>
       </Form.Page>
       <Form.Page>
         <Form.Radios
@@ -247,7 +247,7 @@ The example below will send the user down a different path depending on their se
             required('Provide your sex')
           ]}
         />
-        <Form.Submit value="Continue" />
+        <Form.Submit>Continue</Form.Submit>
       </Form.Page>
       <Form.Fork
         if={v => v.sex === 'male'}
@@ -263,7 +263,7 @@ The example below will send the user down a different path depending on their se
                 after('1900-01-01')()
               ]}
             />
-            <Form.Submit value="Submit" />
+            <Form.Submit>Submit</Form.Submit>
           </Form.Page>
         }
         else={
@@ -279,7 +279,7 @@ The example below will send the user down a different path depending on their se
                 required('Provide your marital status')
               ]}
             />
-            <Form.Submit value="Submit" />
+            <Form.Submit>Submit</Form.Submit>
           </Form.Page>
         }
       />
