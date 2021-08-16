@@ -84,7 +84,7 @@ export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyV
     ...field,
     error: meta.error && meta.touched && meta.error,
     value: field.value === null ? '' : field.value
-  });
+  } as any);
 };
 
 export const withControl = <A extends MyControlProps>(Component: ComponentType<A>): FC<A> => props => {
