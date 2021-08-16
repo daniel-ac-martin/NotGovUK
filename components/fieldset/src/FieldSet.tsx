@@ -25,6 +25,6 @@ export const FieldSet: FC<FieldSetProps> = ({
   );
 };
 
-Fieldset.displayName = 'Fieldset';
+FieldSet.displayName = 'FieldSet';
 
 export default FieldSet;
