@@ -13,7 +13,7 @@ export const DateInput = withForm(_DateInput, [date()], {
   month: [integer(), range(1, 12)('Enter a month between 1 and 12')],
   year: [integer(), minimum(1000)('Enter a 4-digit year')]
 });
-export const Field = withForm(_Field);
+export const Field = withForm(_Field as any);
 export const Radios = withForm(_Radios);
 export const Select = withForm(_Select);
 export const TextInput = withForm(_TextInput);
