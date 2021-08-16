@@ -30,9 +30,14 @@ const toString = (v: any): string => (
     : String(v)
 );
 
-export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & MyFieldProps & MyControlProps> => props => {
+export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & MyFieldProps & MyControlProps> => ({
+  name,
+  prettyName,
+  validators: _validators,
+  ...props
+}) => {
   const validators = [
-    ...(props.validators || []),
+    ...(_validators || []),
     ...(implicitValidators || [])
   ];
 
@@ -60,12 +65,12 @@ export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyV
   );
   const validate = validators && (
     v => validators
-      .map(f => f({ name: props.name, prettyName: props.prettyName })(toString(v)))
+      .map(f => f({ name, prettyName })(toString(v)))
       .filter(id)[0]
   );
-  const [field, meta] = useField(props.name);
+  const [field, meta] = useField(name);
   const form = useForm();
-  const node: FieldNode = new FieldNode(props.name, Component.format, validate, preValidate);
+  const node: FieldNode = new FieldNode(name, Component.format, validate, preValidate);
 
   form.registry.register(node);
 
@@ -74,8 +79,9 @@ export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyV
   //console.debug(state)
 
   return h(Component, {
-    ...field,
+    name,
     ...props,
+    ...field,
     error: meta.error && meta.touched && meta.error,
     value: field.value === null ? '' : field.value
   });
