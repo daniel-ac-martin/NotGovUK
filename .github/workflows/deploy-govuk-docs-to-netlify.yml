@@ -35,7 +35,7 @@ jobs:
 
       - name: Build
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=6144
         run: |
           cd ./apps/govuk-docs/
           npm run build
