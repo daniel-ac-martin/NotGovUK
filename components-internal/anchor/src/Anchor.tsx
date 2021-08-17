@@ -96,7 +96,7 @@ export const Anchor: FC<AnchorProps> = ({
     basicAnchor
     ? (
       <a
-        {...attrs}
+        {...attrs as any} // Temp-fix for type package clash!
         className={classes()}
         href={href}
       >
