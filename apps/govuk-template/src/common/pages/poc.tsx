@@ -57,10 +57,10 @@ const Page: FC<PageProps> = props => (
         { text: 'Subsection', href: '#' }
       ]} />
       <h2>Buttons</h2>
-      <SubmitButton value="Save and continue" />
-      <Button value="Save as draft" />
-      <Button value="Delete" warning />
-      <SubmitButton value="Disabled" disabled />
+      <SubmitButton>Save and continue</SubmitButton>
+      <Button>Save as draft</Button>
+      <Button classModifiers="warning">Delete</Button>
+      <SubmitButton disabled>Disabled</SubmitButton>
       <h2>Checkboxes</h2>
       <Checkboxes
         name="waste-type"
