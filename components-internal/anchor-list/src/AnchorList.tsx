@@ -12,7 +12,7 @@ export type Anchor = AnchorProps & {
 
 export type AnchorListProps = StandardProps & {
   /** List component to use  */
-  as?: ComponentType<HTMLProps<HTMLUListElement | HTMLUListElement>> | 'ol' | 'ul'
+  as?: ComponentType<HTMLProps<HTMLOListElement | HTMLUListElement>> | 'ol' | 'ul'
   /** List of links to choose from */
   items: Anchor[]
 };
