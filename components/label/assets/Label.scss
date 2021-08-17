@@ -3,26 +3,27 @@
 
 .govuk-label {
   h1, h2, h3, h4, h5, h6 {
+    @extend .govuk-label-wrapper;
     margin: 0;
+  }
 
-    &.govuk-heading-xl {
-      @extend .govuk-label--xl;
-      margin-bottom: govuk-spacing(3);
-    }
+  h1, .govuk-heading-xl {
+    @extend .govuk-label--xl;
+    margin-bottom: govuk-spacing(3);
+  }
 
-    &.govuk-heading-l {
-      @extend .govuk-label--l;
-      margin-bottom: govuk-spacing(3);
-    }
+  h2, .govuk-heading-l {
+    @extend .govuk-label--l;
+    margin-bottom: govuk-spacing(3);
+  }
 
-    &.govuk-heading-m {
-      @extend .govuk-label--m;
-      margin-bottom: govuk-spacing(2);
-    }
+  h3, .govuk-heading-m {
+    @extend .govuk-label--m;
+    margin-bottom: govuk-spacing(2);
+  }
 
-    &.govuk-heading-s {
-      @extend .govuk-label--s;
-      margin-bottom: govuk-spacing(1);
-    }
+  h4, .govuk-heading-s {
+    @extend .govuk-label--s;
+    margin-bottom: govuk-spacing(1);
   }
 }
