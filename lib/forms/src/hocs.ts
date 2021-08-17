@@ -6,7 +6,7 @@ import { useForm } from './context';
 import { id } from './helpers';
 import { ReadyValidator } from './validators';
 
-type MyFieldProps = {
+export type FieldProps = {
   name: string
   prettyName?: string
   validators?: any[]
@@ -30,7 +30,7 @@ const toString = (v: any): string => (
     : String(v)
 );
 
-export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & MyFieldProps & MyControlProps> => ({
+export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & FieldProps & MyControlProps> => ({
   name,
   prettyName,
   validators: _validators,
@@ -97,7 +97,7 @@ export const withControl = <A extends MyControlProps>(Component: ComponentType<A
   });
 };
 
-export const withForm = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & MyFieldProps & MyControlProps> => (
+export const withForm = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & FieldProps & MyControlProps> => (
   withControl(
     withField(Component, implicitValidators, preValidators)
   )
