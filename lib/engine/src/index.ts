@@ -61,6 +61,7 @@ export type EngineStage2Options = {
   graphQL?: {
     schema: GraphQLSchema
   }
+  privacy?: boolean
   pageLoader: PageLoader
 };
 
@@ -178,7 +179,7 @@ export const engine = async (options1: EngineStage1Options) => {
     if (options2.auth) {
       const { apply: applyAuth } = await auth(options2.auth);
 
-      applyAuth(httpd);
+      applyAuth(httpd, options2.privacy);
     }
 
     // Serve static assets built by webpack
@@ -187,7 +188,7 @@ export const engine = async (options1: EngineStage1Options) => {
 
     if (webpack) {
       // Serve assets built by webpack
-      httpd.pre(webpack.serveFiles);
+      httpd.use(webpack.serveFiles);
     }
 
     httpd.head(publicPaths, servePublicFiles);

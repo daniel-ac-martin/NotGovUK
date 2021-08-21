@@ -29,7 +29,7 @@ export type Request = _Request & {
   logout?: () => void
 };
 
-export type Apply = (httpd: Server) => Server;
+export type Apply = (httpd: Server, siteWide?: boolean) => Server;
 export type Middleware = (req: Request, res: Response, next: Next) => void;
 
 type UserExtractor = (req: _Request) => UserProfile;

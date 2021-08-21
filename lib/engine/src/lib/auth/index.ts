@@ -26,7 +26,7 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
     terminate
   } = await options;
 
-  const apply: Apply = (httpd) => {
+  const apply: Apply = (httpd, siteWide: boolean = false) => {
     if (innerApply) {
       innerApply(httpd);
     } else if (extractor) {
@@ -40,6 +40,10 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
 
 
     if (authenticate) {
+      if (siteWide) {
+        httpd.use(authenticate);
+      }
+
       httpd.get('/auth/sign-in', authenticate);
       httpd.post('/auth/sign-in', authenticate);
 
@@ -51,7 +55,6 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
       if (terminate) {
         httpd.get('/auth/sign-out', terminate);
       }
-
     }
 
     return httpd;
