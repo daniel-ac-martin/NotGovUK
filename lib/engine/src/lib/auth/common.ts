@@ -4,6 +4,7 @@ export enum AuthMethod {
   None = 'none',
   Dummy = 'dummy',
   Headers = 'headers',
+  Basic = 'basic',
   OIDC = 'oidc'
 };
 
@@ -17,8 +18,8 @@ export type UserProfile = {
     middleName?: string
   },
   emails?: Array<{ value: string, type?: string }>
-    photos?: Array<{ value: string }>
-    username: string
+  photos?: Array<{ value: string }>
+  username: string
   groups?: string[]
   roles?: string[]
 };
@@ -28,7 +29,7 @@ export type Request = _Request & {
   logout?: () => void
 };
 
-export type Apply = (httpd: Server) => Server;
+export type Apply = (httpd: Server, siteWide?: boolean) => Server;
 export type Middleware = (req: Request, res: Response, next: Next) => void;
 
 type UserExtractor = (req: _Request) => UserProfile;

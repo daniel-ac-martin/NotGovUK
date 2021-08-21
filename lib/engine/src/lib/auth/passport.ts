@@ -50,7 +50,6 @@ export const passportBag: AuthBagger<PassportOptions> = ({
     },
     authenticate: (req, res, next) => {
       passport.authenticate(id)(req, res, next);
-      next();
     },
     callback: (
       !callback

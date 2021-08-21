@@ -1,4 +1,5 @@
 import { Apply, AuthBag, AuthMethod, Middleware, Promised } from './common';
+import { AuthOptionsBasic, basicAuth } from './basic';
 import { AuthOptionsDummy, dummyAuth } from './dummy';
 import { AuthOptionsHeaders, headersAuth } from './headers';
 import { AuthOptionsOIDC, oidcAuth } from './oidc';
@@ -7,7 +8,7 @@ type AuthOptionsNone = {
   method: AuthMethod.None
 };
 
-export type AuthOptions = AuthOptionsNone | AuthOptionsDummy | AuthOptionsHeaders | AuthOptionsOIDC;
+export type AuthOptions = AuthOptionsNone | AuthOptionsDummy | AuthOptionsHeaders | AuthOptionsBasic | AuthOptionsOIDC;
 
 export type AuthTools = {
   apply: Apply
@@ -25,7 +26,7 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
     terminate
   } = await options;
 
-  const apply: Apply = (httpd) => {
+  const apply: Apply = (httpd, siteWide: boolean = false) => {
     if (innerApply) {
       innerApply(httpd);
     } else if (extractor) {
@@ -39,6 +40,10 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
 
 
     if (authenticate) {
+      if (siteWide) {
+        httpd.use(authenticate);
+      }
+
       httpd.get('/auth/sign-in', authenticate);
       httpd.post('/auth/sign-in', authenticate);
 
@@ -50,7 +55,6 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
       if (terminate) {
         httpd.get('/auth/sign-out', terminate);
       }
-
     }
 
     return httpd;
@@ -65,6 +69,7 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
 export const isAuthOptionsNone = (v: AuthOptions): v is AuthOptionsNone => v.method === AuthMethod.None;
 const isAuthOptionsDummy = (v: AuthOptions): v is AuthOptionsDummy => v.method === AuthMethod.Dummy;
 const isAuthOptionsHeaders = (v: AuthOptions): v is AuthOptionsHeaders => v.method === AuthMethod.Headers;
+const isAuthOptionsBasic = (v: AuthOptions): v is AuthOptionsBasic => v.method === AuthMethod.Basic;
 const isAuthOptionsOIDC = (v: AuthOptions): v is AuthOptionsOIDC => v.method === AuthMethod.OIDC;
 
 const noAuth: AuthOptionsNone = { method: AuthMethod.None };
@@ -72,6 +77,7 @@ const noAuth: AuthOptionsNone = { method: AuthMethod.None };
 export const auth = async (options: AuthOptions = noAuth): Promise<AuthTools> => buildTools(
   isAuthOptionsDummy(options) ? dummyAuth(options)
     : isAuthOptionsHeaders(options) ? headersAuth(options)
+    : isAuthOptionsBasic(options) ? basicAuth(options)
     : isAuthOptionsOIDC(options) ? oidcAuth(options)
     : {}
 );

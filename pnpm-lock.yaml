@@ -1140,6 +1140,7 @@ importers:
       http-proxy-middleware: ^1.0.5
       openid-client: ^4.2.1
       passport: ^0.4.1
+      passport-http: ^0.3.0
       serverless-http: ^2.4.1
       typescript: ^3.9.2
     dependencies:
@@ -1152,6 +1153,7 @@ importers:
       http-proxy-middleware: 1.0.5
       openid-client: 4.2.1
       passport: 0.4.1
+      passport-http: 0.3.0
       serverless-http: 2.5.0
     devDependencies:
       '@not-govuk/app-composer': link:../app-composer
@@ -18826,6 +18828,13 @@ packages:
   /pascalcase/0.1.1:
     resolution: {integrity: sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=}
     engines: {node: '>=0.10.0'}
+
+  /passport-http/0.3.0:
+    resolution: {integrity: sha1-juU9Q4C+nGDfIVGSUCmCb3cRVgM=}
+    engines: {node: '>= 0.4.0'}
+    dependencies:
+      passport-strategy: 1.0.0
+    dev: false
 
   /passport-strategy/1.0.0:
     resolution: {integrity: sha1-tVOaqPwiWj0a0XlHbd8ja0QPUuQ=}
