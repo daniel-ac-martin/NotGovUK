@@ -17,8 +17,8 @@ export type UserProfile = {
     middleName?: string
   },
   emails?: Array<{ value: string, type?: string }>
-    photos?: Array<{ value: string }>
-    username: string
+  photos?: Array<{ value: string }>
+  username: string
   groups?: string[]
   roles?: string[]
 };
