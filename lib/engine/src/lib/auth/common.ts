@@ -4,6 +4,7 @@ export enum AuthMethod {
   None = 'none',
   Dummy = 'dummy',
   Headers = 'headers',
+  Basic = 'basic',
   OIDC = 'oidc'
 };
 
