@@ -77,7 +77,7 @@ jobs:
       - name: Build everything
         env:
           NODE_OPTIONS: --max_old_space_size=6144
-        run: npm run all:build
+        run: npm run all:build --workspace-concurrency=1
 
       - name: Test applications (WRITEME!)
         run: echo 'UNIMPLEMENTED'
