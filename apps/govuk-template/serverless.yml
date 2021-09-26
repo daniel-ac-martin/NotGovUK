@@ -6,12 +6,12 @@ provider:
     MODE: serverless
     NODE_ENV: production
 package:
-  include:
-    - dist/**
+  excludeDevDependencies: false
   exclude:
-    - node_modules/**
-    - src/**
     - ./**
+  include:
+    - '!./**'
+    - dist/**
 functions:
   server:
     handler: dist/server/index.handler
