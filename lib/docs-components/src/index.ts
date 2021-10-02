@@ -28,9 +28,10 @@ export const Meta: FC<MetaProps> = (props) => {
 };
 
 export type PreviewProps = ComponentProps<typeof _Preview> & {
+  id?: string
 };
 
-const DocsPreview: FC<PreviewProps> = ({ children }) => {
+const DocsPreview: FC<PreviewProps> = ({ children, id: _id }) => {
   const { storySource } = useDocs() as any;
   const childArray = Array.isArray(children) ? children : [children];
   const stories = childArray
@@ -39,9 +40,14 @@ const DocsPreview: FC<PreviewProps> = ({ children }) => {
   const source = stories
     .map(e => storySource[e])
     .join('\n');
+  const name = (
+    stories.length
+      ? `${stories[0]}-example`
+      : undefined
+  );
 
   return h(ReactPreview, {
-    id: `${stories[0]}-example`,
+    id: _id || name,
     source
   }, children);
 };
