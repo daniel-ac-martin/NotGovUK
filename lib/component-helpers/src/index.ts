@@ -9,6 +9,8 @@ export type StandardProps = {
   className?: string
 };
 
+export type ClassBuilder = (element?: string, elementModifiers?: string | string[], extra2?: string) => string;
+
 // Define a pointless component to coax react-docgen-typescript-loader
 const StandardComponent = (props: StandardProps) => null;
 
@@ -30,7 +32,7 @@ const toArray = <T>(v?: T | T[]): T[] => (
     : v && [v]
 );
 
-export const classBuilder = (blockDefault: string, blockOverride?: string, blockModifiers?: string | string[], extra?: string) => {
+export const classBuilder = (blockDefault: string, blockOverride?: string, blockModifiers?: string | string[], extra?: string): ClassBuilder => {
   const block = blockOverride || blockDefault;
   const bModifiers = toArray(blockModifiers);
 

@@ -11,7 +11,7 @@ const Page: FC<PageProps> = ({ location }) => (
         name="q"
         label={<h2>Search</h2>}
       />
-      <Form.Submit value="Search" />
+      <Form.Submit>Search</Form.Submit>
     </Form>
     <div className="width-one-half" style={{ float: 'left' }}>
       <h2>Result</h2>

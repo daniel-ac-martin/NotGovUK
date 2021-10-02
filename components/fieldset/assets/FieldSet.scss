@@ -1,0 +1,32 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/core/_typography";
+@import "govuk-frontend/govuk/components/fieldset";
+
+.govuk-fieldset {
+  &__legend {
+    h1, h2, h3, h4, h5, h6 {
+      // @extend .govuk-fieldset__heading;
+      margin: 0;
+    }
+
+    h1, .govuk-heading-xl {
+      @extend .govuk-fieldset__legend--xl;
+      margin-bottom: govuk-spacing(1);
+    }
+
+    h2, .govuk-heading-l {
+      @extend .govuk-fieldset__legend--l;
+      margin-bottom: govuk-spacing(1);
+    }
+
+    h3, .govuk-heading-m {
+      @extend .govuk-fieldset__legend--m;
+      margin-bottom: govuk-spacing(1);
+    }
+
+    h4, .govuk-heading-s {
+      @extend .govuk-fieldset__legend--s;
+      margin-bottom: 0;
+    }
+  }
+}

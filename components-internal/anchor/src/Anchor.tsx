@@ -1,9 +1,9 @@
 import { Location } from 'history';
 import { AnchorHTMLAttributes, FC, createElement as h } from 'react';
 import { match as Match } from 'react-router';
-import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { urlParse } from '@not-govuk/route-utils';
+import { urlParse, useIsMounted, useLocation } from '@not-govuk/route-utils';
 
 import '../assets/Anchor.scss';
 
@@ -11,6 +11,11 @@ export type AnchorProps = StandardProps & AnchorHTMLAttributes<HTMLAnchorElement
   /** Whether to force the link to be treated as external (useful for internal links that are NOT handled by the application) */
   forceExternal?: boolean
 };
+
+const supportedProtocols = [
+  'http:',
+  'https:'
+];
 
 const includes = (haystack: object, needle: object): boolean => {
   const subIncludes = (haystack: any, needle: any): boolean => (
@@ -43,32 +48,77 @@ export const isActive = (query: object) => (match: Match<object>, location: Loca
   )
 );
 
-export const Anchor: FC<AnchorProps> = ({ children, classBlock, classModifiers, className, forceExternal = false, href, ...attrs }) => {
-  const classes = classBuilder('penultimate-anchor', classBlock, classModifiers, className);
+export const Anchor: FC<AnchorProps> = ({
+  children,
+  classBlock,
+  classModifiers,
+  className,
+  forceExternal = false,
+  href,
+  ...attrs
+}) => {
+  const defaultClassBlock = 'penultimate-anchor';
+  const activeClassName = `${classBlock || defaultClassBlock}--active`;
+  const classes = classBuilder(defaultClassBlock, classBlock, classModifiers, className);
+  const isMounted = useIsMounted();
   const url = urlParse(href);
+  const unsupported = url.protocol !== '' && !supportedProtocols.includes(url.protocol);
+  const noPath = url.pathname === '';
+  const noSearch = url.search === '';
+  const noHash = url.hash === '';
+  const hashLink = noPath && noSearch;
+  const current = useLocation();
+  const location = {
+    pathname: (
+      noPath
+      ? current.pathname
+      : url.pathname
+    ),
+    search: (
+      hashLink
+      ? current.search
+      : url.search
+    ),
+    hash: (
+      noHash
+      ? '#'
+      : url.hash
+    )
+  };
+  const basicAnchor = (
+    forceExternal ||
+    unsupported ||
+    url.host ||
+    !isMounted && hashLink
+  );
 
-  return (forceExternal || url.host) ? (
-    <a
-      {...attrs}
-      className={classes()}
-      href={href}
-    >
-      {children}
-    </a>
-  ) : (
-    <NavLink
-      {...attrs}
-      className={classes()}
-      to={href}
-      isActive={isActive(url.query)}
-      exact
-    >
-      {children}
-    </NavLink>
+  return (
+    basicAnchor
+    ? (
+      <a
+        {...attrs as any} // Temp-fix for type package clash!
+        className={classes()}
+        href={href}
+      >
+        {children}
+      </a>
+    )
+    : (
+      <NavHashLink
+        {...attrs}
+        activeClassName={activeClassName}
+        className={classes()}
+        exact
+        isActive={isActive(url.query)}
+        to={location}
+      >
+        {children}
+      </NavHashLink>
+    )
   );
 };
 
 Anchor.displayName = 'A';
 
 export default Anchor;
-export const A = Anchor;
+export const A: FC<AnchorProps> = Anchor;

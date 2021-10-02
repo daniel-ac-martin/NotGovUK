@@ -1,4 +1,4 @@
 import { withControl } from '@not-govuk/forms';
-import { SubmitButton as RawSubmit } from '@not-govuk/components';
+import { SubmitButton as _Submit } from '@not-govuk/button';
 
-export const Submit: typeof RawSubmit = withControl(RawSubmit);
+export const Submit: typeof _Submit = withControl(_Submit);

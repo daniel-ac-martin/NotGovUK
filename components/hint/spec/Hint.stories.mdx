@@ -1,0 +1,41 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { Hint } from '../src/Hint';
+import readMe from '../README.md';
+
+<Meta
+  title="Hint"
+  component={ Hint }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'Hint text for a form field.',
+    jest: ['Hint'],
+    notes: readMe
+  } }
+/>
+
+# Hint
+
+<p><Tag text="Internal" /></p>
+
+Hint text for a form field.
+
+<Preview withToolbar>
+  <Story name="Hint">
+    <Hint id="field-id-hint">Hint text</Hint>
+  </Story>
+</Preview>
+
+<Props of={ Hint } />
+
+
+## Stories
+### Standard
+
+A standard Hint.
+
+<Preview>
+  <Story name="Standard">
+    <Hint id="field-id2-hint">Hint text</Hint>
+  </Story>
+</Preview>

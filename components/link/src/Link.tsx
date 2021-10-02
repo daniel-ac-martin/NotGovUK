@@ -12,4 +12,4 @@ export const Link: FC<LinkProps> = ({ classBlock, ...props }) => (
 Link.displayName = 'A';
 
 export default Link;
-export const A = Link;
+export const A: FC<LinkProps> = Link;

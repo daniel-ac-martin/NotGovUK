@@ -1,22 +1,21 @@
-import { date, integer, minimum, range, withForm } from '@not-govuk/forms';
-import {
-  Checkboxes as RawCheckboxes,
-  DateInput as RawDateInput,
-  FormField as RawField,
-  Radios as RawRadios,
-  Select as RawSelect,
-  TextInput as RawTextInput,
-  Textarea as RawTextarea
-} from '@not-govuk/components';
+import { ComponentType } from 'react';
+import { FieldProps, date, integer, minimum, range, withForm } from '@not-govuk/forms';
+import { Checkboxes as _Checkboxes, CheckboxesProps } from '@not-govuk/checkboxes';
+import { DateInput as _DateInput, DateInputProps } from '@not-govuk/date-input';
+import { FormField as _Field, FormFieldProps } from '@not-govuk/form-field';
+import { Radios as _Radios, RadiosProps } from '@not-govuk/radios';
+import { Select as _Select, SelectProps } from '@not-govuk/select';
+import { TextInput as _TextInput, TextInputProps } from '@not-govuk/text-input';
+import { Textarea as _Textarea, TextareaProps } from '@not-govuk/textarea';
 
-export const Checkboxes = withForm(RawCheckboxes);
-export const DateInput = withForm(RawDateInput, [date()], {
+export const Checkboxes: ComponentType<CheckboxesProps & FieldProps> = withForm(_Checkboxes);
+export const DateInput: ComponentType<DateInputProps & FieldProps> = withForm(_DateInput, [date()], {
   day: [integer(), range(1, 31)('Enter a day between 1 and 31')],
   month: [integer(), range(1, 12)('Enter a month between 1 and 12')],
   year: [integer(), minimum(1000)('Enter a 4-digit year')]
 });
-export const Field = withForm(RawField);
-export const Radios = withForm(RawRadios);
-export const Select = withForm(RawSelect);
-export const TextInput = withForm(RawTextInput);
-export const Textarea = withForm(RawTextarea);
+export const Field: ComponentType<FormFieldProps & FieldProps> = withForm(_Field as any);
+export const Radios: ComponentType<RadiosProps & FieldProps> = withForm(_Radios);
+export const Select: ComponentType<SelectProps & FieldProps> = withForm(_Select);
+export const TextInput: ComponentType<TextInputProps & FieldProps> = withForm(_TextInput);
+export const Textarea: ComponentType<TextareaProps & FieldProps> = withForm(_Textarea);

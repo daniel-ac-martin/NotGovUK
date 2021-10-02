@@ -3,8 +3,20 @@ import { mount } from '@not-govuk/component-test-helpers';
 import {{{properCase name}}} from '../src/{{{properCase name}}}';
 
 describe('{{{properCase name}}}', () => {
-  describe('when given valid props', () => {
-    const component = mount(h({{{properCase name}}}, { heading: 'My heading' }, 'Child'));
+  const minimalProps = {
+  };
+
+  describe('when given minimal valid props', () => {
+    const component = mount(h({{{properCase name}}}, minimalProps, 'Child'));
+
+    it('renders', () => undefined);
+  });
+
+  describe('when given all valid props', () => {
+    const props = {
+      ...minimalProps
+    };
+    const component = mount(h({{{properCase name}}}, props, 'Child'));
 
     it('renders', () => undefined);
   });

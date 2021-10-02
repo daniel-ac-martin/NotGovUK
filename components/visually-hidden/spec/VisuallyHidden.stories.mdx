@@ -1,0 +1,41 @@
+import { Meta, Preview, Props, Story } from '@not-govuk/docs-components';
+import { Tag } from '@not-govuk/tag';
+import { VisuallyHidden } from '../src/VisuallyHidden';
+import readMe from '../README.md';
+
+<Meta
+  title="Visually hidden"
+  component={ VisuallyHidden }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'Invisible text that can be read by software such as screen-readers.',
+    jest: ['VisuallyHidden'],
+    notes: readMe
+  } }
+/>
+
+# Visually hidden
+
+<p><Tag text="Internal" /></p>
+
+Invisible text that can be read by software such as screen-readers.
+
+<Preview withToolbar>
+  <Story name="VisuallyHidden">
+    <VisuallyHidden>Error:</VisuallyHidden> Something went wrong
+  </Story>
+</Preview>
+
+<Props of={ VisuallyHidden } />
+
+
+## Stories
+### Standard
+
+A standard Visually hidden.
+
+<Preview>
+  <Story name="Standard">
+    <VisuallyHidden>Error:</VisuallyHidden> Something went wrong
+  </Story>
+</Preview>

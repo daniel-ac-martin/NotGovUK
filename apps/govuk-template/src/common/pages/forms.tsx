@@ -60,7 +60,7 @@ const Page: FC<PageProps> = props => {
               required('Provide your sex')
             ]}
           />
-          <Form.Submit value="Continue" />
+          <Form.Submit>Continue</Form.Submit>
         </Form.Page>
         <Form.Fork
           if={v => v.sex === 'female'}
@@ -82,7 +82,7 @@ const Page: FC<PageProps> = props => {
                   after('1900-01-01')()
                 ]}
               />
-              <Form.Submit value="Continue" />
+              <Form.Submit>Continue</Form.Submit>
             </Form.Page>
           }
           else={
@@ -103,7 +103,7 @@ const Page: FC<PageProps> = props => {
                   after('1900-01-01')()
                 ]}
               />
-              <Form.Submit value="Continue" />
+              <Form.Submit>Continue</Form.Submit>
             </Form.Page>
           }
         />
@@ -129,7 +129,7 @@ const Page: FC<PageProps> = props => {
               notFrench()
             ]}
           />
-          <Form.Submit value="Continue" />
+          <Form.Submit>Continue</Form.Submit>
         </Form.Page>
         <Form.Page>
           <Form.Checkboxes
@@ -146,7 +146,7 @@ const Page: FC<PageProps> = props => {
               required('Everyone has at least one vice!')
             ]}
           />
-          <Form.Submit value="Continue" />
+          <Form.Submit >Continue</Form.Submit>
         </Form.Page>
         <Form.Page>
           <Form.Textarea
@@ -158,7 +158,7 @@ const Page: FC<PageProps> = props => {
               maxWords(12)('We didn\'t ask for war and peace!')
             ]}
           />
-          <Form.Submit value="Submit" />
+          <Form.Submit>Submit</Form.Submit>
         </Form.Page>
       </Form>
       <div className="width-one-half" style={{ float: 'left' }}>

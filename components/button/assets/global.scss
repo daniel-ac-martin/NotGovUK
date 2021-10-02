@@ -1,0 +1,19 @@
+@import "./Button.scss";
+
+a[role=button],
+button,
+input[type=button],
+input[type=submit] {
+  @extend .govuk-button
+}
+
+button:not([type=submit]),
+input[type=button] {
+  @extend .govuk-button--secondary
+}
+
+button:disabled,
+input[type=button]:disabled,
+input[type=submit]:disabled {
+  @extend .govuk-button--disabled
+}

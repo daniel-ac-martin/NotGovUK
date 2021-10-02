@@ -34,7 +34,7 @@ jobs:
       - name: Pull dependencies
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.3.0
+          version: 6.13.0
           run_install: true
 
       - name: Run unit tests
@@ -71,13 +71,13 @@ jobs:
       - name: Pull dependencies
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.3.0
+          version: 6.13.0
           run_install: true
 
       - name: Build everything
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
-        run: npm run all:build
+          NODE_OPTIONS: --max_old_space_size=6144
+        run: npm run all:build --workspace-concurrency=1
 
       - name: Test applications (WRITEME!)
         run: echo 'UNIMPLEMENTED'
