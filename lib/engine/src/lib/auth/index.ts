@@ -38,7 +38,6 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
       httpd.use(userInfo);
     }
 
-
     if (authenticate) {
       if (siteWide) {
         httpd.use(authenticate);
