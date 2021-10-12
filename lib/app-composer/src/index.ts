@@ -229,12 +229,12 @@ export const compose: Compose = options => {
           title: e.title
         };
       });
-    const withPageWrap = Component => props => {
+    const withPageWrap = Component => componentProps => {
       const fullProps = {
         routes,
         signInHRef: props.signInHRef,
         signOutHRef: props.signOutHRef,
-        ...props
+        ...componentProps
       };
 
       return h(
