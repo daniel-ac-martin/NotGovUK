@@ -1281,6 +1281,72 @@ importers:
     devDependencies:
       plop: 2.7.4
 
+  lib-govuk/create/build/apps/template:
+    specifiers:
+      '@apollo/client': ^3.2.3
+      '@graphql-tools/schema': ^7.0.0
+      '@not-govuk/anchor-list': ^0.3.0
+      '@not-govuk/app-composer': ^0.3.0
+      '@not-govuk/app-plop-pack': ^0.3.0
+      '@not-govuk/client-renderer': ^0.3.0
+      '@not-govuk/components': ^0.3.0
+      '@not-govuk/engine': ^0.3.0
+      '@not-govuk/server-renderer': ^0.3.0
+      '@not-govuk/user-info': ^0.3.0
+      '@not-govuk/webpack-config': ^0.3.0
+      '@types/react': 16.9.55
+      '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.5
+      '@types/webpack-env': ^1.15.2
+      bunyan: ^1.8.12
+      graphql: ^15.3.0
+      node-hot-loader: ^1.19.0
+      plop: ^2.7.3
+      react: ^16.9.55
+      react-dom: ^16.9.55
+      react-helmet-async: ^1.0.7
+      react-router: ^5.2.0
+      react-router-dom: ^5.2.0
+      serverless: ^2.62.0
+      typescript: 3.9.9
+      webpack: ^4.43.0
+      webpack-cli: ^3.3.11
+      webpack-dev-middleware: ^3.7.2
+      webpack-hot-middleware: ^2.25.0
+    devDependencies:
+      '@apollo/client': 3.2.5_graphql@15.4.0+react@16.14.0
+      '@graphql-tools/schema': 7.0.0_graphql@15.4.0
+      '@not-govuk/anchor-list': link:../../../../../components-internal/anchor-list
+      '@not-govuk/app-composer': link:../../../../../lib/app-composer
+      '@not-govuk/app-plop-pack': link:../../../../../lib/app-plop-pack
+      '@not-govuk/client-renderer': link:../../../../../lib/client-renderer
+      '@not-govuk/components': link:../../../../../packages/components
+      '@not-govuk/engine': link:../../../../../lib/engine
+      '@not-govuk/server-renderer': link:../../../../../lib/server-renderer
+      '@not-govuk/user-info': link:../../../../../lib/user-info
+      '@not-govuk/webpack-config': link:../../../../../lib/webpack-config
+      '@types/react': 16.9.55
+      '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.5
+      '@types/webpack-env': 1.15.3
+      bunyan: 1.8.14
+      graphql: 15.4.0
+      node-hot-loader: 1.20.0_97a508fbab9dc5c2abfa56457d79f6b9
+      plop: 2.7.4
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
+      react-router: 5.2.0_react@16.14.0
+      react-router-dom: 5.2.0_react@16.14.0
+      serverless: 2.62.0
+      typescript: 3.9.9
+      webpack: 4.43.0
+      webpack-cli: 3.3.12_webpack@4.43.0
+      webpack-dev-middleware: 3.7.2_webpack@4.43.0
+      webpack-hot-middleware: 2.25.0
+
   lib-govuk/plop-pack:
     specifiers:
       '@not-govuk/plop-pack-internal': workspace:^0.3.0
@@ -1363,6 +1429,138 @@ importers:
       shelljs: 0.8.4
     devDependencies:
       plop: 2.7.4
+
+  lib/create/build/skel-prototype:
+    specifiers:
+      '@apollo/client': ^3.2.3
+      '@graphql-tools/schema': ^7.0.0
+      '@not-govuk/anchor-list': ^0.3.0
+      '@not-govuk/app-composer': ^0.3.0
+      '@not-govuk/app-plop-pack': ^0.3.0
+      '@not-govuk/client-renderer': ^0.3.0
+      '@not-govuk/engine': ^0.3.0
+      '@not-govuk/server-renderer': ^0.3.0
+      '@not-govuk/user-info': ^0.3.0
+      '@not-govuk/webpack-config': ^0.3.0
+      '@types/react': 16.9.55
+      '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.5
+      '@types/webpack-env': ^1.15.2
+      bunyan: ^1.8.12
+      graphql: ^15.3.0
+      node-hot-loader: ^1.19.0
+      plop: ^2.7.3
+      react: ^16.9.55
+      react-dom: ^16.9.55
+      react-helmet-async: ^1.0.7
+      react-router: ^5.2.0
+      react-router-dom: ^5.2.0
+      serverless: ^2.62.0
+      typescript: 3.9.9
+      webpack: ^4.43.0
+      webpack-cli: ^3.3.11
+      webpack-dev-middleware: ^3.7.2
+      webpack-hot-middleware: ^2.25.0
+    devDependencies:
+      '@apollo/client': 3.2.5_graphql@15.4.0+react@16.14.0
+      '@graphql-tools/schema': 7.0.0_graphql@15.4.0
+      '@not-govuk/anchor-list': link:../../../../components-internal/anchor-list
+      '@not-govuk/app-composer': link:../../../app-composer
+      '@not-govuk/app-plop-pack': link:../../../app-plop-pack
+      '@not-govuk/client-renderer': link:../../../client-renderer
+      '@not-govuk/engine': link:../../../engine
+      '@not-govuk/server-renderer': link:../../../server-renderer
+      '@not-govuk/user-info': link:../../../user-info
+      '@not-govuk/webpack-config': link:../../../webpack-config
+      '@types/react': 16.9.55
+      '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.5
+      '@types/webpack-env': 1.15.3
+      bunyan: 1.8.14
+      graphql: 15.4.0
+      node-hot-loader: 1.20.0_97a508fbab9dc5c2abfa56457d79f6b9
+      plop: 2.7.4
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
+      react-router: 5.2.0_react@16.14.0
+      react-router-dom: 5.2.0_react@16.14.0
+      serverless: 2.62.0
+      typescript: 3.9.9
+      webpack: 4.43.0
+      webpack-cli: 3.3.12_webpack@4.43.0
+      webpack-dev-middleware: 3.7.2_webpack@4.43.0
+      webpack-hot-middleware: 2.25.0
+
+  lib/create/build/skel/apps/docs:
+    specifiers:
+      '@apollo/client': ^3.2.3
+      '@graphql-tools/schema': ^7.0.0
+      '@not-govuk/anchor-list': ^0.3.0
+      '@not-govuk/app-composer': ^0.3.0
+      '@not-govuk/app-plop-pack': ^0.3.0
+      '@not-govuk/client-renderer': ^0.3.0
+      '@not-govuk/components': ^0.3.0
+      '@not-govuk/docs-components': ^0.3.0
+      '@not-govuk/engine': ^0.3.0
+      '@not-govuk/server-renderer': ^0.3.0
+      '@not-govuk/user-info': ^0.3.0
+      '@not-govuk/webpack-config': ^0.3.0
+      '@types/react': 16.9.55
+      '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.5
+      '@types/webpack-env': ^1.15.2
+      bunyan: ^1.8.12
+      graphql: ^15.3.0
+      node-hot-loader: ^1.19.0
+      plop: ^2.7.3
+      react: ^16.9.55
+      react-dom: ^16.9.55
+      react-helmet-async: ^1.0.7
+      react-router: ^5.2.0
+      react-router-dom: ^5.2.0
+      serverless: ^2.62.0
+      typescript: 3.9.9
+      webpack: ^4.43.0
+      webpack-cli: ^3.3.11
+      webpack-dev-middleware: ^3.7.2
+      webpack-hot-middleware: ^2.25.0
+    devDependencies:
+      '@apollo/client': 3.2.5_graphql@15.4.0+react@16.14.0
+      '@graphql-tools/schema': 7.0.0_graphql@15.4.0
+      '@not-govuk/anchor-list': link:../../../../../../components-internal/anchor-list
+      '@not-govuk/app-composer': link:../../../../../app-composer
+      '@not-govuk/app-plop-pack': link:../../../../../app-plop-pack
+      '@not-govuk/client-renderer': link:../../../../../client-renderer
+      '@not-govuk/components': link:../../../../../../packages/components
+      '@not-govuk/docs-components': link:../../../../../docs-components
+      '@not-govuk/engine': link:../../../../../engine
+      '@not-govuk/server-renderer': link:../../../../../server-renderer
+      '@not-govuk/user-info': link:../../../../../user-info
+      '@not-govuk/webpack-config': link:../../../../../webpack-config
+      '@types/react': 16.9.55
+      '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.5
+      '@types/webpack-env': 1.15.3
+      bunyan: 1.8.14
+      graphql: 15.4.0
+      node-hot-loader: 1.20.0_97a508fbab9dc5c2abfa56457d79f6b9
+      plop: 2.7.4
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
+      react-router: 5.2.0_react@16.14.0
+      react-router-dom: 5.2.0_react@16.14.0
+      serverless: 2.62.0
+      typescript: 3.9.9
+      webpack: 4.43.0
+      webpack-cli: 3.3.12_webpack@4.43.0
+      webpack-dev-middleware: 3.7.2_webpack@4.43.0
+      webpack-hot-middleware: 2.25.0
 
   lib/docs-components:
     specifiers:
@@ -1499,7 +1697,7 @@ importers:
       '@types/bunyan': ^1.8.6
       '@types/restify': ^8.4.2
       bunyan: ^1.8.12
-      restify: ^8.5.1
+      restify: 8.5.1
       restify-bunyan-logger: ^2.0.7
       restify-errors: ^8.0.2
       stoppable: ^1.1.0
@@ -10111,7 +10309,7 @@ packages:
     resolution: {integrity: sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==}
     dependencies:
       base64-js: 1.5.1
-      ieee754: 1.1.13
+      ieee754: 1.2.1
       isarray: 1.0.0
     dev: true
 
@@ -10163,7 +10361,7 @@ packages:
       bluebird: 3.7.2
       chownr: 1.1.4
       figgy-pudding: 3.5.2
-      glob: 7.1.7
+      glob: 7.2.0
       graceful-fs: 4.2.8
       infer-owner: 1.0.4
       lru-cache: 5.1.1
@@ -10279,7 +10477,6 @@ packages:
     dependencies:
       function-bind: 1.1.1
       get-intrinsic: 1.1.1
-    dev: true
 
   /call-me-maybe/1.0.1:
     resolution: {integrity: sha1-JtII6onje1y95gJQoV8DHBak1ms=}
@@ -10506,7 +10703,7 @@ packages:
       glob-parent: 3.1.0
       inherits: 2.0.4
       is-binary-path: 1.0.1
-      is-glob: 4.0.1
+      is-glob: 4.0.3
       normalize-path: 3.0.0
       path-is-absolute: 1.0.1
       readdirp: 2.2.1
@@ -10798,8 +10995,8 @@ packages:
   /cliui/6.0.0:
     resolution: {integrity: sha512-t6wbgtoCXvAzst7QgXxJYqPt0usEfbgQdftEPbLL/cvv6HPE5VgvqCuAIDR0NgU52ds6rFwqrgakNLrHEjCbrQ==}
     dependencies:
-      string-width: 4.2.2
-      strip-ansi: 6.0.0
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
       wrap-ansi: 6.2.0
     dev: true
 
@@ -11466,6 +11663,7 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
+    dev: true
 
   /debug/4.3.2:
     resolution: {integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==}
@@ -11477,7 +11675,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: true
 
   /decamelize-keys/1.1.0:
     resolution: {integrity: sha1-0XGoeTMlKAfrPLYdwcFEXQeN8tk=}
@@ -11966,7 +12163,7 @@ packages:
     engines: {node: '>=0.10'}
     requiresBuild: true
     dependencies:
-      nan: 2.14.2
+      nan: 2.15.0
     optional: true
 
   /duplexer/0.1.2:
@@ -12746,7 +12943,6 @@ packages:
   /extsprintf/1.4.0:
     resolution: {integrity: sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=}
     engines: {'0': node >=0.6.0}
-    dev: false
 
   /fake-tag/2.0.0:
     resolution: {integrity: sha512-QDz+8qiNQ9AfBZ31EXlID5JIbUkU3e1nXDWk4tidFzd2gy8XJaEUW1HCuDY6DUy6t2Y0nvhD6PsUc+2WYy5w0w==}
@@ -13063,7 +13259,7 @@ packages:
     engines: {node: '>= 0.10'}
     dependencies:
       detect-file: 1.0.0
-      is-glob: 4.0.1
+      is-glob: 4.0.3
       micromatch: 3.1.10
       resolve-dir: 1.0.1
     dev: true
@@ -13352,7 +13548,7 @@ packages:
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
-      nan: 2.14.2
+      nan: 2.15.0
     dev: true
     optional: true
 
@@ -13428,7 +13624,6 @@ packages:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.2
-    dev: true
 
   /get-package-type/0.1.0:
     resolution: {integrity: sha512-pjzuKtY64GYfWizNAJ0fr9VqttZkNiK2iS430LtIHzjBEr6bX8Am2zm4sW4Ro5wjWW5cAlRL1qAMTcXbjNAO2Q==}
@@ -13594,7 +13789,7 @@ packages:
     dependencies:
       expand-tilde: 2.0.2
       homedir-polyfill: 1.0.3
-      ini: 1.3.5
+      ini: 1.3.8
       is-windows: 1.0.2
       which: 1.3.1
 
@@ -13602,7 +13797,7 @@ packages:
     resolution: {integrity: sha512-awConJSVCHVGND6x3tmMaKcQvwXLhjdkmomy2W+Goaui8YPgYgXJZewhg3fWC+DlfqqQuWg8AwqjGTD2nAPVWg==}
     engines: {node: '>=6'}
     dependencies:
-      ini: 1.3.5
+      ini: 1.3.8
       kind-of: 6.0.3
       which: 1.3.1
     dev: true
@@ -13888,7 +14083,6 @@ packages:
   /has-symbols/1.0.2:
     resolution: {integrity: sha512-chXa79rL/UC2KlX17jo3vRGz0azaWEx5tGqZg5pO3NUyEJVB17dMruQlzCCOfUvElghKcm5194+BCRvi2Rv/Gw==}
     engines: {node: '>= 0.4'}
-    dev: true
 
   /has-unicode/2.0.1:
     resolution: {integrity: sha1-4Ob+aijPUROIVeCG0Wkedx3iqLk=}
@@ -14196,7 +14390,7 @@ packages:
       depd: 1.1.2
       inherits: 2.0.3
       setprototypeof: 1.1.0
-      statuses: 1.4.0
+      statuses: 1.5.0
     dev: false
 
   /http-errors/1.7.2:
@@ -14435,10 +14629,6 @@ packages:
 
   /inherits/2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
-
-  /ini/1.3.5:
-    resolution: {integrity: sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==}
-    deprecated: Please update to ini >=1.3.6 to avoid a prototype pollution issue
 
   /ini/1.3.8:
     resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
@@ -16100,7 +16290,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-node/8.0.1_log@6.3.1:
     resolution: {integrity: sha512-w6ii8zZo+O4Os9EBB0+ruaeVU6CysNgYj/cUDOtobBxnNPRHynjMjzyqjEuNKGT/AD89sZzGh0pS3/0ZPRR1iQ==}
@@ -16796,13 +16985,8 @@ packages:
       rimraf: 2.4.5
     optional: true
 
-  /nan/2.14.2:
-    resolution: {integrity: sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==}
-    optional: true
-
   /nan/2.15.0:
     resolution: {integrity: sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==}
-    dev: true
     optional: true
 
   /nanoid/2.1.11:
@@ -17180,7 +17364,6 @@ packages:
 
   /object-inspect/1.11.0:
     resolution: {integrity: sha512-jp7ikS6Sd3GxQfZJPyH3cjcbJF6GZPClgdV+EFygjFLQ5FmW/dRUnTd9PQ9k0JhoNDabWFbpF1yCdSWCC6gexg==}
-    dev: true
 
   /object-inspect/1.8.0:
     resolution: {integrity: sha512-jLdtEOB112fORuypAyl/50VRVIBIdVQOSUUGQHzJ4xBSbit81zRarz7GThkEFZy1RceYrWYcPcBFPQwHyAc1gA==}
@@ -18333,7 +18516,6 @@ packages:
     engines: {node: '>=0.6'}
     dependencies:
       side-channel: 1.0.4
-    dev: true
 
   /qs/6.5.2:
     resolution: {integrity: sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==}
@@ -19389,13 +19571,13 @@ packages:
       find-my-way: 2.2.5
       formidable: 1.2.2
       http-signature: 1.3.5
-      lodash: 4.17.20
+      lodash: 4.17.21
       lru-cache: 5.1.1
       mime: 2.4.7
       negotiator: 0.6.2
       once: 1.4.0
       pidusage: 2.0.21
-      qs: 6.9.4
+      qs: 6.10.1
       restify-errors: 8.0.2
       semver: 6.3.0
       send: 0.16.2
@@ -19466,7 +19648,7 @@ packages:
     resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
     hasBin: true
     dependencies:
-      glob: 7.1.7
+      glob: 7.2.0
 
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
@@ -19999,7 +20181,6 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.1.1
       object-inspect: 1.11.0
-    dev: true
 
   /sigmund/1.0.1:
     resolution: {integrity: sha1-P/IfGYytIXX587eBhT/ZTQ0ZtZA=}
@@ -20202,7 +20383,7 @@ packages:
   /spdy-transport/3.0.0:
     resolution: {integrity: sha512-hsLVFE5SjA6TCisWeJXFKniGGOpBgMLmerfO2aCyCU5s7nJ/rpAepqmFifv/GCbSbueEeAJJnmSQ2rKC/g8Fcw==}
     dependencies:
-      debug: 4.3.1
+      debug: 4.3.2
       detect-node: 2.0.4
       hpack.js: 2.1.6
       obuf: 1.1.2
@@ -20216,7 +20397,7 @@ packages:
     resolution: {integrity: sha512-r46gZQZQV+Kl9oItvl1JZZqJKGr+oEkB08A6BzkiR7593/7IbtuncXHd2YoYeTsG4157ZssMu9KYvUHLcjcDoA==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      debug: 4.3.1
+      debug: 4.3.2
       handle-thing: 2.0.1
       http-deceiver: 1.2.7
       select-hose: 2.0.0
@@ -20312,7 +20493,6 @@ packages:
   /statuses/1.5.0:
     resolution: {integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=}
     engines: {node: '>= 0.6'}
-    dev: true
 
   /stealthy-require/1.1.1:
     resolution: {integrity: sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=}
@@ -20415,15 +20595,6 @@ packages:
       emoji-regex: 8.0.0
       is-fullwidth-code-point: 3.0.0
       strip-ansi: 6.0.0
-
-  /string-width/4.2.2:
-    resolution: {integrity: sha512-XBJbT3N4JhVumXE0eoLU9DCjcaF92KLNqTmFCnG1pf8duUxFGwtP6AD6nkjw9a3IdiRtL3E2w3JDiE/xi3vOeA==}
-    engines: {node: '>=8'}
-    dependencies:
-      emoji-regex: 8.0.0
-      is-fullwidth-code-point: 3.0.0
-      strip-ansi: 6.0.0
-    dev: true
 
   /string-width/4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -21707,7 +21878,7 @@ packages:
     dependencies:
       assert-plus: 1.0.0
       core-util-is: 1.0.2
-      extsprintf: 1.3.0
+      extsprintf: 1.4.0
 
   /vfile-location/3.0.1:
     resolution: {integrity: sha512-yYBO06eeN/Ki6Kh1QAkgzYpWT1d3Qln+ZCtSbJqFExPl1S3y2qqotJQXoh6qEvl/jDlgpUJolBn3PItVnnZRqQ==}
@@ -21786,7 +21957,7 @@ packages:
       graceful-fs: 4.2.8
       neo-async: 2.6.2
     optionalDependencies:
-      chokidar: 3.4.3
+      chokidar: 3.5.2
       watchpack-chokidar2: 2.0.0
     dev: true
 
@@ -21858,7 +22029,7 @@ packages:
     dependencies:
       ansi-html: 0.0.7
       html-entities: 1.3.1
-      querystring: 0.2.0
+      querystring: 0.2.1
       strip-ansi: 3.0.1
     dev: true
 
@@ -22064,8 +22235,8 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       ansi-styles: 4.3.0
-      string-width: 4.2.2
-      strip-ansi: 6.0.0
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
     dev: true
 
   /wrap-ansi/7.0.0:
@@ -22241,7 +22412,7 @@ packages:
       require-directory: 2.1.1
       require-main-filename: 2.0.0
       set-blocking: 2.0.0
-      string-width: 4.2.2
+      string-width: 4.2.3
       which-module: 2.0.0
       y18n: 4.0.3
       yargs-parser: 18.1.3
