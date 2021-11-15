@@ -18,6 +18,13 @@ h4 {
   color: inherit;
 }
 
+h5 {
+  @extend .govuk-heading-s;
+  color: inherit;
+  font-weight: normal;
+  font-style: italic;
+}
+
 // FIXME: Remove?
 .govuk-caption,
 .caption {
