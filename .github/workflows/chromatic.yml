@@ -23,9 +23,9 @@ jobs:
           cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
         with:
           path: ~/.pnpm-store
-          key: pnpm-os_${{ runner.os }}-node_12-lock_${{ env.cache-hash }}
+          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
           restore-keys: |
-            pnpm-os_${{ runner.os }}-node_12-
+            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
             pnpm-os_${{ runner.os }}-
             pnpm-
 
