@@ -1281,72 +1281,6 @@ importers:
     devDependencies:
       plop: 2.7.4
 
-  lib-govuk/create/build/apps/template:
-    specifiers:
-      '@apollo/client': ^3.2.3
-      '@graphql-tools/schema': ^7.0.0
-      '@not-govuk/anchor-list': ^0.3.0
-      '@not-govuk/app-composer': ^0.3.0
-      '@not-govuk/app-plop-pack': ^0.3.0
-      '@not-govuk/client-renderer': ^0.3.0
-      '@not-govuk/components': ^0.3.0
-      '@not-govuk/engine': ^0.3.0
-      '@not-govuk/server-renderer': ^0.3.0
-      '@not-govuk/user-info': ^0.3.0
-      '@not-govuk/webpack-config': ^0.3.0
-      '@types/react': 16.9.55
-      '@types/react-dom': 16.9.8
-      '@types/react-router': 5.1.8
-      '@types/react-router-dom': 5.1.5
-      '@types/webpack-env': ^1.15.2
-      bunyan: ^1.8.12
-      graphql: ^15.3.0
-      node-hot-loader: ^1.19.0
-      plop: ^2.7.3
-      react: ^16.9.55
-      react-dom: ^16.9.55
-      react-helmet-async: ^1.0.7
-      react-router: ^5.2.0
-      react-router-dom: ^5.2.0
-      serverless: ^2.62.0
-      typescript: 3.9.9
-      webpack: ^4.43.0
-      webpack-cli: ^3.3.11
-      webpack-dev-middleware: ^3.7.2
-      webpack-hot-middleware: ^2.25.0
-    devDependencies:
-      '@apollo/client': 3.2.5_graphql@15.4.0+react@16.14.0
-      '@graphql-tools/schema': 7.0.0_graphql@15.4.0
-      '@not-govuk/anchor-list': link:../../../../../components-internal/anchor-list
-      '@not-govuk/app-composer': link:../../../../../lib/app-composer
-      '@not-govuk/app-plop-pack': link:../../../../../lib/app-plop-pack
-      '@not-govuk/client-renderer': link:../../../../../lib/client-renderer
-      '@not-govuk/components': link:../../../../../packages/components
-      '@not-govuk/engine': link:../../../../../lib/engine
-      '@not-govuk/server-renderer': link:../../../../../lib/server-renderer
-      '@not-govuk/user-info': link:../../../../../lib/user-info
-      '@not-govuk/webpack-config': link:../../../../../lib/webpack-config
-      '@types/react': 16.9.55
-      '@types/react-dom': 16.9.8
-      '@types/react-router': 5.1.8
-      '@types/react-router-dom': 5.1.5
-      '@types/webpack-env': 1.15.3
-      bunyan: 1.8.14
-      graphql: 15.4.0
-      node-hot-loader: 1.20.0_97a508fbab9dc5c2abfa56457d79f6b9
-      plop: 2.7.4
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
-      react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
-      react-router: 5.2.0_react@16.14.0
-      react-router-dom: 5.2.0_react@16.14.0
-      serverless: 2.62.0
-      typescript: 3.9.9
-      webpack: 4.43.0
-      webpack-cli: 3.3.12_webpack@4.43.0
-      webpack-dev-middleware: 3.7.2_webpack@4.43.0
-      webpack-hot-middleware: 2.25.0
-
   lib-govuk/plop-pack:
     specifiers:
       '@not-govuk/plop-pack-internal': workspace:^0.3.0
@@ -1429,138 +1363,6 @@ importers:
       shelljs: 0.8.4
     devDependencies:
       plop: 2.7.4
-
-  lib/create/build/skel-prototype:
-    specifiers:
-      '@apollo/client': ^3.2.3
-      '@graphql-tools/schema': ^7.0.0
-      '@not-govuk/anchor-list': ^0.3.0
-      '@not-govuk/app-composer': ^0.3.0
-      '@not-govuk/app-plop-pack': ^0.3.0
-      '@not-govuk/client-renderer': ^0.3.0
-      '@not-govuk/engine': ^0.3.0
-      '@not-govuk/server-renderer': ^0.3.0
-      '@not-govuk/user-info': ^0.3.0
-      '@not-govuk/webpack-config': ^0.3.0
-      '@types/react': 16.9.55
-      '@types/react-dom': 16.9.8
-      '@types/react-router': 5.1.8
-      '@types/react-router-dom': 5.1.5
-      '@types/webpack-env': ^1.15.2
-      bunyan: ^1.8.12
-      graphql: ^15.3.0
-      node-hot-loader: ^1.19.0
-      plop: ^2.7.3
-      react: ^16.9.55
-      react-dom: ^16.9.55
-      react-helmet-async: ^1.0.7
-      react-router: ^5.2.0
-      react-router-dom: ^5.2.0
-      serverless: ^2.62.0
-      typescript: 3.9.9
-      webpack: ^4.43.0
-      webpack-cli: ^3.3.11
-      webpack-dev-middleware: ^3.7.2
-      webpack-hot-middleware: ^2.25.0
-    devDependencies:
-      '@apollo/client': 3.2.5_graphql@15.4.0+react@16.14.0
-      '@graphql-tools/schema': 7.0.0_graphql@15.4.0
-      '@not-govuk/anchor-list': link:../../../../components-internal/anchor-list
-      '@not-govuk/app-composer': link:../../../app-composer
-      '@not-govuk/app-plop-pack': link:../../../app-plop-pack
-      '@not-govuk/client-renderer': link:../../../client-renderer
-      '@not-govuk/engine': link:../../../engine
-      '@not-govuk/server-renderer': link:../../../server-renderer
-      '@not-govuk/user-info': link:../../../user-info
-      '@not-govuk/webpack-config': link:../../../webpack-config
-      '@types/react': 16.9.55
-      '@types/react-dom': 16.9.8
-      '@types/react-router': 5.1.8
-      '@types/react-router-dom': 5.1.5
-      '@types/webpack-env': 1.15.3
-      bunyan: 1.8.14
-      graphql: 15.4.0
-      node-hot-loader: 1.20.0_97a508fbab9dc5c2abfa56457d79f6b9
-      plop: 2.7.4
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
-      react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
-      react-router: 5.2.0_react@16.14.0
-      react-router-dom: 5.2.0_react@16.14.0
-      serverless: 2.62.0
-      typescript: 3.9.9
-      webpack: 4.43.0
-      webpack-cli: 3.3.12_webpack@4.43.0
-      webpack-dev-middleware: 3.7.2_webpack@4.43.0
-      webpack-hot-middleware: 2.25.0
-
-  lib/create/build/skel/apps/docs:
-    specifiers:
-      '@apollo/client': ^3.2.3
-      '@graphql-tools/schema': ^7.0.0
-      '@not-govuk/anchor-list': ^0.3.0
-      '@not-govuk/app-composer': ^0.3.0
-      '@not-govuk/app-plop-pack': ^0.3.0
-      '@not-govuk/client-renderer': ^0.3.0
-      '@not-govuk/components': ^0.3.0
-      '@not-govuk/docs-components': ^0.3.0
-      '@not-govuk/engine': ^0.3.0
-      '@not-govuk/server-renderer': ^0.3.0
-      '@not-govuk/user-info': ^0.3.0
-      '@not-govuk/webpack-config': ^0.3.0
-      '@types/react': 16.9.55
-      '@types/react-dom': 16.9.8
-      '@types/react-router': 5.1.8
-      '@types/react-router-dom': 5.1.5
-      '@types/webpack-env': ^1.15.2
-      bunyan: ^1.8.12
-      graphql: ^15.3.0
-      node-hot-loader: ^1.19.0
-      plop: ^2.7.3
-      react: ^16.9.55
-      react-dom: ^16.9.55
-      react-helmet-async: ^1.0.7
-      react-router: ^5.2.0
-      react-router-dom: ^5.2.0
-      serverless: ^2.62.0
-      typescript: 3.9.9
-      webpack: ^4.43.0
-      webpack-cli: ^3.3.11
-      webpack-dev-middleware: ^3.7.2
-      webpack-hot-middleware: ^2.25.0
-    devDependencies:
-      '@apollo/client': 3.2.5_graphql@15.4.0+react@16.14.0
-      '@graphql-tools/schema': 7.0.0_graphql@15.4.0
-      '@not-govuk/anchor-list': link:../../../../../../components-internal/anchor-list
-      '@not-govuk/app-composer': link:../../../../../app-composer
-      '@not-govuk/app-plop-pack': link:../../../../../app-plop-pack
-      '@not-govuk/client-renderer': link:../../../../../client-renderer
-      '@not-govuk/components': link:../../../../../../packages/components
-      '@not-govuk/docs-components': link:../../../../../docs-components
-      '@not-govuk/engine': link:../../../../../engine
-      '@not-govuk/server-renderer': link:../../../../../server-renderer
-      '@not-govuk/user-info': link:../../../../../user-info
-      '@not-govuk/webpack-config': link:../../../../../webpack-config
-      '@types/react': 16.9.55
-      '@types/react-dom': 16.9.8
-      '@types/react-router': 5.1.8
-      '@types/react-router-dom': 5.1.5
-      '@types/webpack-env': 1.15.3
-      bunyan: 1.8.14
-      graphql: 15.4.0
-      node-hot-loader: 1.20.0_97a508fbab9dc5c2abfa56457d79f6b9
-      plop: 2.7.4
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
-      react-helmet-async: 1.0.7_react-dom@16.14.0+react@16.14.0
-      react-router: 5.2.0_react@16.14.0
-      react-router-dom: 5.2.0_react@16.14.0
-      serverless: 2.62.0
-      typescript: 3.9.9
-      webpack: 4.43.0
-      webpack-cli: 3.3.12_webpack@4.43.0
-      webpack-dev-middleware: 3.7.2_webpack@4.43.0
-      webpack-hot-middleware: 2.25.0
 
   lib/docs-components:
     specifiers:
@@ -1805,7 +1607,7 @@ importers:
       mini-css-extract-plugin: ^0.9.0
       react-docgen-typescript-loader: ^3.7.2
       resolve-url-loader: ^3.1.1
-      sass: ^1.26.10
+      sass: 1.32.13
       sass-loader: ^8.0.2
       webpack-manifest-plugin: ^2.2.0
       webpack-node-externals: ^2.5.1
@@ -1827,8 +1629,8 @@ importers:
       ignore-loader: 0.1.2
       mini-css-extract-plugin: 0.9.0_webpack@4.43.0
       resolve-url-loader: 3.1.1
-      sass: 1.26.10
-      sass-loader: 8.0.2_442f4ee89a4149303732b52295388697
+      sass: 1.32.13
+      sass-loader: 8.0.2_f800f781bfc9598e7ddb9ae153bb6e40
       webpack-manifest-plugin: 2.2.0_webpack@4.43.0
       webpack-node-externals: 2.5.1
     optionalDependencies:
@@ -9107,6 +8909,7 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.2.2
+    dev: true
 
   /anymatch/3.1.2:
     resolution: {integrity: sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==}
@@ -9114,7 +8917,6 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.0
-    dev: true
 
   /apollo-cache-control/0.1.1_graphql@15.4.0:
     resolution: {integrity: sha512-XJQs167e9u+e5ybSi51nGYr70NPBbswdvTEHtbtXbwkZ+n9t0SLPvUcoqceayOSwjK1XYOdU/EKPawNdb3rLQA==}
@@ -10713,21 +10515,6 @@ packages:
     dev: true
     optional: true
 
-  /chokidar/3.4.1:
-    resolution: {integrity: sha512-TQTJyr2stihpC4Sya9hs2Xh+O2wf+igjL36Y75xx2WdHuiICcn/XJza46Jwt0eT5hVpQOzo3FpY3cj3RVYLX0g==}
-    engines: {node: '>= 8.10.0'}
-    dependencies:
-      anymatch: 3.1.1
-      braces: 3.0.2
-      glob-parent: 5.1.1
-      is-binary-path: 2.1.0
-      is-glob: 4.0.1
-      normalize-path: 3.0.0
-      readdirp: 3.4.0
-    optionalDependencies:
-      fsevents: 2.1.3
-    dev: false
-
   /chokidar/3.4.3:
     resolution: {integrity: sha512-DtM3g7juCXQxFVSNPNByEC2+NImtBuxQQvWlHunpJIS5Ocr0lG306cC7FCi7cEA0fzmybPUIl4txBIobk1gGOQ==}
     engines: {node: '>= 8.10.0'}
@@ -10756,7 +10543,6 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /chownr/1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
@@ -13557,13 +13343,13 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     deprecated: '"Please update to latest v2.3 or v2.2"'
+    dev: true
     optional: true
 
   /fsevents/2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
-    dev: true
     optional: true
 
   /function-bind/1.1.1:
@@ -13707,6 +13493,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       is-glob: 4.0.1
+    dev: true
 
   /glob-parent/5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -19098,13 +18885,6 @@ packages:
     dev: true
     optional: true
 
-  /readdirp/3.4.0:
-    resolution: {integrity: sha512-0xe001vZBnJEK+uKcj8qOhyAKPzIT+gStxWr3LCB0DwcXR5NZJ3IaC+yGnHCYzB/S7ov3m3EEbZI2zeNvX+hGQ==}
-    engines: {node: '>=8.10.0'}
-    dependencies:
-      picomatch: 2.2.2
-    dev: false
-
   /readdirp/3.5.0:
     resolution: {integrity: sha512-cMhu7c/8rdhkHXWsY+osBhfSy0JikwpHK/5+imo+LpeasTF8ouErHrlYkwT0++njiyuDvc7OFY5T3ukvZ8qmFQ==}
     engines: {node: '>=8.10.0'}
@@ -19117,7 +18897,6 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.0
-    dev: true
 
   /rechoir/0.6.2:
     resolution: {integrity: sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=}
@@ -19768,7 +19547,7 @@ packages:
       walker: 1.0.7
     dev: true
 
-  /sass-loader/8.0.2_442f4ee89a4149303732b52295388697:
+  /sass-loader/8.0.2_f800f781bfc9598e7ddb9ae153bb6e40:
     resolution: {integrity: sha512-7o4dbSK8/Ol2KflEmSco4jTjQoV988bM82P9CZdmo9hR3RLnvNc0ufMNdMrB0caq38JQ/FgF4/7RcbcfKzxoFQ==}
     engines: {node: '>= 8.9.0'}
     peerDependencies:
@@ -19788,18 +19567,18 @@ packages:
       fibers: 5.0.0
       loader-utils: 1.4.0
       neo-async: 2.6.2
-      sass: 1.26.10
+      sass: 1.32.13
       schema-utils: 2.7.0
       semver: 6.3.0
       webpack: 4.43.0
     dev: false
 
-  /sass/1.26.10:
-    resolution: {integrity: sha512-bzN0uvmzfsTvjz0qwccN1sPm2HxxpNI/Xa+7PlUEMS+nQvbyuEK7Y0qFqxlPHhiNHb1Ze8WQJtU31olMObkAMw==}
+  /sass/1.32.13:
+    resolution: {integrity: sha512-dEgI9nShraqP7cXQH+lEXVf73WOPCse0QlFzSD8k+1TcOxCMwVXfQlr0jtoluZysQOyJGnfr21dLvYKDJq8HkA==}
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
-      chokidar: 3.4.1
+      chokidar: 3.5.2
     dev: false
 
   /sax/1.2.1:
