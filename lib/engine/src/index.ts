@@ -4,7 +4,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import { ComponentType } from 'react';
 import serverless from 'serverless-http';
 import { Configuration as WebpackConfig } from 'webpack';
-import restify, { Router } from '@not-govuk/restify';
+import restify, { IsReady, Router } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
 import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
@@ -61,6 +61,7 @@ export type EngineStage2Options = {
   graphQL?: {
     schema: GraphQLSchema
   }
+  isReady: IsReady
   privacy?: boolean
   pageLoader: PageLoader
 };
@@ -171,6 +172,7 @@ export const engine = async (options1: EngineStage1Options) => {
         'application/xhtml+xml; q=0.2': formatHTML,
         'text/html; q=0.2': formatHTML
       },
+      isReady: options2.isReady
     });
 
     httpd.use(react.renderer);
@@ -259,3 +261,4 @@ export const engine = async (options1: EngineStage1Options) => {
 export default engine;
 export { AuthMethod };
 export { Router, errors } from '@not-govuk/restify';
+export type { IsReady };
