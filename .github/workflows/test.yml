@@ -79,8 +79,11 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=6144
         run: npm run all:build --workspace-concurrency=1
 
-      - name: Test applications (WRITEME!)
-        run: echo 'UNIMPLEMENTED'
+      - name: Test applications
+        env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        run: npm run pnpm:apps -- run test:functional:ci:record
 
       - name: Clean-up
         run: npm run all:clean
