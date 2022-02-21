@@ -5,6 +5,7 @@ import AppWrap from '../common/app-wrap';
 import ErrorPage from '../common/error-page';
 import PageWrap from '../common/page-wrap';
 import pageLoader from '../common/page-loader';
+import isReady from './readiness';
 import graphQLSchema from './graphql';
 
 const setup = () => {
@@ -48,6 +49,7 @@ const startApp = () => stage1.then(
     graphQL: {
       schema: graphQLSchema
     },
+    isReady,
     pageLoader,
     privacy: config.privacy
   })

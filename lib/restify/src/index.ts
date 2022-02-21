@@ -5,15 +5,18 @@ import { liveness } from './middleware/health-check';
 import { htmlByDefault } from './middleware/html-by-default';
 import { preventClickjacking } from './middleware/prevent-clickjacking';
 import { noCacheByDefault } from './middleware/no-cache-by-default';
+import { IsReady, readiness } from './middleware/readiness';
 import { ILoggerOptions, logger } from './lib/logger';
 import { installServeAPI } from './lib/serve-api';
 
 export type ServerOptions = _ServerOptions & {
   bodyParser?: plugins.BodyParserOptions | false
   grace?: number
+  isReady?: IsReady
   liveness?: string
   logger?: ILoggerOptions
   queryParser?: plugins.QueryParserOptions
+  readiness?: string
   requestLogger?: plugins.RequestLogger
 };
 
@@ -89,6 +92,10 @@ export const createServer = (options: ServerOptions ) => {
 
   httpd.get(options.liveness || '/healthz', liveness);
 
+  if (options.isReady) {
+    httpd.get(options.readiness || '/readiness', readiness(options.isReady));
+  }
+
   return httpd;
 };
 
@@ -100,3 +107,6 @@ export const restify = {
 export default restify;
 export * as errors from 'restify-errors';
 export { Router } from './lib/router';
+export type { IsReady };
+export type { Next, Request, Response } from 'restify';
+export type { Middleware } from './middleware/common';

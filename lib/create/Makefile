@@ -6,6 +6,7 @@ dist_dir = ./dist
 source_dir = ../..
 target_dir = $(build_dir)/skel
 sources := $(wildcard \
+	$(source_dir)/.cypress/*/* \
 	$(source_dir)/.github/workflows/chromatic.yml \
 	$(source_dir)/.github/workflows/test.yml \
 	$(source_dir)/.gitignore \
@@ -14,6 +15,7 @@ sources := $(wildcard \
 	$(source_dir)/.storybook/* \
 	$(source_dir)/apps/README.md \
 	$(source_dir)/babel.config.js \
+	$(source_dir)/cypress.json \
 	$(source_dir)/components/README.md \
 	$(source_dir)/docs/about.md \
 	$(source_dir)/docs/contributing.md \
