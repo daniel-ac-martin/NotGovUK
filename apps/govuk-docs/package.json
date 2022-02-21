@@ -7,17 +7,31 @@
   "scripts": {
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:ci": "npm test && npm run test:functional:ci",
+    "test:functional": "cypress run",
+    "test:functional:record": "npm run test:functional -- --record --group app/govuk-docs",
+    "test:functional:ci": "start-server-and-test start 'http-get://localhost:8080/readiness' test:functional",
+    "test:functional:ci:record": "start-server-and-test start 'http-get://localhost:8080/readiness' test:functional:record",
     "build": "webpack",
     "package:serverless": "sls package",
+    "heroku-postbuild": "npm run build",
     "clean": "rm -rf .serverless dist",
     "dev": "NODE_ENV=development node-hot --fork | bunyan",
     "dev:ssr": "NODE_ENV=development SSR_ONLY=true node-hot --fork | bunyan",
+    "cypress": "cypress open",
     "create": "plop",
     "create:deployment": "plop deployment",
     "create:page": "plop page"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0",
+    "os": [
+      "darwin",
+      "linux"
+    ]
+  },
   "devDependencies": {
     "@not-govuk/anchor-list": "workspace:^0.3.0",
     "@not-govuk/app-composer": "workspace:^0.3.0",
@@ -34,6 +48,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/webpack-env": "^1.15.2",
     "bunyan": "^1.8.12",
+    "cypress": "^7.7.0",
     "node-hot-loader": "^1.19.0",
     "plop": "^2.7.3",
     "react": "^16.9.55",
@@ -42,6 +57,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "serverless": "^2.62.0",
+    "start-server-and-test": "^1.14.0",
     "typescript": "^3.9.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
