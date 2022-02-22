@@ -20,7 +20,7 @@ export type ServerOptions = _ServerOptions & {
   requestLogger?: plugins.RequestLogger
 };
 
-const originalCreateServer = _restify.createServer.bind(_restify);
+const _createServer = _restify.createServer.bind(_restify);
 
 export const createServer = (options: ServerOptions ) => {
   if (options.name) {
@@ -41,7 +41,7 @@ export const createServer = (options: ServerOptions ) => {
     'text/html'
   ];
 
-  const httpd = originalCreateServer({
+  const httpd = _createServer({
     ...options,
     formatters: {
       'application/graphql; q=0.2': formatText,
