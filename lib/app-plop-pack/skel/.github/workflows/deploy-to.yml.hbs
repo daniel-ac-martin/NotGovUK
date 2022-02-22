@@ -64,16 +64,7 @@ jobs:
 {{#unless standalone}}
           cd {{{ appDir }}}
 {{/unless}}
-          npm run package:serverless
-          mkdir -p .netlify/functions .netlify/publish
-          cd .netlify
-          cp -a ../.serverless/{{{ appName }}}.zip functions/
-          echo "process.env['MODE'] = 'serverless'; module.exports = require('./dist/server/index.js');" > {{{ appName }}}.js
-          zip -mv functions/{{{ appName }}}.zip {{{ appName }}}.js
-          mv ../dist/public/entrypoints.json .
-          cp -a ../dist/public/ publish/public
-          mv entrypoints.json ../dist/public/
-          echo "/* /.netlify/functions/{{{ appName }}}/:splat 200" > publish/_redirects
+          make netlify
 
       - name: Deploy
         uses: nwtgck/actions-netlify@v1.2.2
