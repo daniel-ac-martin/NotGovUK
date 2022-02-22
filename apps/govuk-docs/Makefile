@@ -74,7 +74,10 @@ deploy: docker-push
 	$(kubectl) set image "deployment/$(KUBE_DEPLOYMENT)" "$(KUBE_CONTAINER)=$(DOCKER_REPO):$(full_version)"
 	$(kubectl) rollout status "deployment/$(KUBE_DEPLOYMENT)"
 
+functional-test: build
+	npm run 'test:functional:ci'
+
 unit-test: node-deps
 	npm test
 
-test: unit-test
+test: unit-test functional-test
