@@ -1,0 +1,1 @@
+../../lib/plop-pack/skel/app/test.Dockerfile

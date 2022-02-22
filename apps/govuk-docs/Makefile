@@ -37,8 +37,12 @@ dist/%: node_modules/.bin/webpack
 docker: build
 	docker build -t '$(DOCKER_IMAGE)' .
 
+docker-test:
+	docker build -t '$(DOCKER_IMAGE)-test' -f 'test.Dockerfile' .
+
 docker-clean:
 	docker rmi -f '$(DOCKER_IMAGE)' || true
+	docker rmi -f '$(DOCKER_IMAGE)-test' || true
 
 docker-push: docker
 	docker tag $(DOCKER_IMAGE) '$(DOCKER_REPO):$(full_version)' && docker push '$(DOCKER_REPO):$(full_version)'
