@@ -43,22 +43,13 @@ jobs:
       - name: Package
         run: |
           cd ./apps/govuk-docs/
-          npm run package:serverless
-          mkdir -p .netlify/functions .netlify/publish
-          cd .netlify
-          cp -a ../.serverless/govuk-docs.zip functions/
-          echo "process.env['MODE'] = 'serverless'; module.exports = require('./dist/server/index.js');" > govuk-docs.js
-          zip -mv functions/govuk-docs.zip govuk-docs.js
-          mv ../dist/public/entrypoints.json .
-          cp -a ../dist/public/ publish/public
-          mv entrypoints.json ../dist/public/
-          echo "/* /.netlify/functions/govuk-docs/:splat 200" > publish/_redirects
+          make netlify
 
       - name: Deploy
         uses: nwtgck/actions-netlify@v1.2.2
         with:
-          publish-dir: './apps/govuk-docs/.netlify/publish/'
-          functions-dir: './apps/govuk-docs/.netlify/functions/'
+          publish-dir: './apps/govuk-docs/pkg/netlify/publish/'
+          functions-dir: './apps/govuk-docs/pkg/netlify/functions/'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
