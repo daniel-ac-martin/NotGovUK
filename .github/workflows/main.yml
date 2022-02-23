@@ -186,13 +186,34 @@ jobs:
     strategy:
       matrix:
         browser: [ 'chrome', 'electron', 'firefox' ]
-    container:
-      image: cypress/included:9.5.0
-      options: --user 1001
+        node: [ '12' ]
     steps:
 
       - name: Check out repository
         uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        env:
+          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
+        with:
+          path: ~/.pnpm-store
+          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
+          restore-keys: |
+            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
+            pnpm-os_${{ runner.os }}-
+            pnpm-
+
+      - name: Pull dependencies
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.13.0
+          run_install: true
 
       - name: Download build directory
         uses: actions/download-artifact@v2
@@ -201,22 +222,12 @@ jobs:
           path: apps/govuk-docs/dist
 
       - name: Run functional tests
-        uses: cypress-io/github-action@v2
-        with:
-          working-directory: apps/govuk-docs
-          install: false
-          start: npm start
-          wait-on: 'http://localhost:8080/readiness'
-          wait-on-timeout: 25
-          browser: ${{ matrix.browser }}
-          record: true
-          parallel: false
-          group: 'app/govuk-docs,node/16,browser/${{ matrix.browser }}'
-          tag: 'app/govuk-docs,node/16,browser/${{ matrix.browser }}'
+        uses: docker://cypress/included:9.5.0
+        run: cd apps/govuk-docs && npm run test:functional:ci
         env:
+          CYPRESS_FLAGS: '--record --browser "${{ matrix.browser }}" --group "app/govuk-docs,node/node_16,browser/${{ matrix.browser }}" --tag "app/govuk-docs,node/16,browser/${{ matrix.browser }}"'
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@master
         if: failure()
