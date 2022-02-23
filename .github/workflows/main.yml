@@ -1,0 +1,286 @@
+name: Main
+on:
+  - pull_request
+  - push
+jobs:
+  common:
+    name: Dependencies, Unit tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12', '14', '16' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        env:
+          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
+        with:
+          path: ~/.pnpm-store
+          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
+          restore-keys: |
+            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
+            pnpm-os_${{ runner.os }}-
+            pnpm-
+
+      - name: Pull dependencies
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.13.0
+          run_install: true
+
+      - name: Run unit tests
+        run: npm test
+
+  libs:
+    name: Build libraries
+    needs:
+      - common
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        env:
+          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
+        with:
+          path: ~/.pnpm-store
+          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
+          restore-keys: |
+            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
+            pnpm-os_${{ runner.os }}-
+            pnpm-
+
+      - name: Pull dependencies
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.13.0
+          run_install: true
+
+      - name: Build libraries
+        run: npm run libs:build
+
+  chromatic:
+    name: Chromatic
+    needs:
+      - libs
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        env:
+          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
+        with:
+          path: ~/.pnpm-store
+          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
+          restore-keys: |
+            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
+            pnpm-os_${{ runner.os }}-
+            pnpm-
+
+      - name: Pull dependencies
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.13.0
+          run_install: true
+
+      - name: Push Storybook to Chromatic
+        env:
+          NODE_OPTIONS: --max_old_space_size=6144
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: 'build:storybook'
+          autoAcceptChanges: master
+          exitZeroOnChanges: true
+          exitOnceUploaded: true
+
+  build-docs:
+    name: Build docs
+    needs:
+      - common
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        env:
+          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
+        with:
+          path: ~/.pnpm-store
+          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
+          restore-keys: |
+            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
+            pnpm-os_${{ runner.os }}-
+            pnpm-
+
+      - name: Pull dependencies
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.13.0
+          run_install: true
+
+      - name: Build application
+        env:
+          NODE_OPTIONS: --max_old_space_size=6144
+        run: cd ./apps/govuk-docs/ && npm run build
+
+      - name: Save build directory
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-govuk-docs
+          path: apps/govuk-docs/dist
+          if-no-files-found: error
+          retention-days: 2
+
+  test-docs:
+    name: Test docs
+    needs:
+      - build-docs
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [ 'chrome', 'electron', 'firefox' ]
+    container:
+      image: cypress/browsers:node12.16.1-chrome80-ff73
+      options: --user 1001
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Download build directory
+        uses: actions/download-artifact@v2
+        with:
+          name: build-govuk-docs
+          path: apps/govuk-docs/dist
+
+      - name: Run functional tests
+        uses: cypress-io/github-action@v2
+        with:
+          working-directory: apps/govuk-docs
+          install: false
+          start: npm start
+          wait-on: 'http://localhost:8080/readiness'
+          wait-on-timeout: 25
+          browser: ${{ matrix.browser }}
+          record: true
+          parallel: false
+          group: 'app/govuk-docs,node/12,browser/${{ matrix.browser }}'
+          tag: 'app/govuk-docs,node/12,browser/${{ matrix.browser }}'
+        env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/upload-artifact@master
+        if: failure()
+        with:
+          name: screenshots
+          path: apps/govuk-docs/.cypress/screenshots
+
+  deploy-docs-to-netlify:
+    name: Deploy docs to Netlify
+    needs:
+      - build-docs
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        env:
+          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
+        with:
+          path: ~/.pnpm-store
+          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
+          restore-keys: |
+            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
+            pnpm-os_${{ runner.os }}-
+            pnpm-
+
+      - name: Pull dependencies
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.13.0
+          run_install: true
+
+      - name: Download build directory
+        uses: actions/download-artifact@v2
+        with:
+          name: build-govuk-docs
+          path: apps/govuk-docs/dist
+
+      - name: Package
+        run: cd ./apps/govuk-docs/ && make netlify
+
+      - name: Deploy
+        uses: nwtgck/actions-netlify@v1.2.2
+        with:
+          publish-dir: './apps/govuk-docs/pkg/netlify/publish/'
+          functions-dir: './apps/govuk-docs/pkg/netlify/functions/'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 2
