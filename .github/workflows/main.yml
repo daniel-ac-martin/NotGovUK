@@ -183,6 +183,9 @@ jobs:
     needs:
       - build-docs
     runs-on: ubuntu-latest
+    container:
+      image: cypress/included:9.5.0
+      options: --user 1001
     strategy:
       matrix:
         browser: [ 'chrome', 'electron', 'firefox' ]
@@ -222,7 +225,6 @@ jobs:
           path: apps/govuk-docs/dist
 
       - name: Run functional tests
-        uses: docker://cypress/included:9.5.0
         run: cd apps/govuk-docs && npm run test:functional:ci
         env:
           CYPRESS_FLAGS: '--record --browser "${{ matrix.browser }}" --group "app/govuk-docs,node/node_16,browser/${{ matrix.browser }}" --tag "app/govuk-docs,node/16,browser/${{ matrix.browser }}"'
