@@ -187,7 +187,7 @@ jobs:
       matrix:
         browser: [ 'chrome', 'electron', 'firefox' ]
     container:
-      image: cypress/browsers:node12.16.1-chrome80-ff73
+      image: cypress/included:9.5.0
       options: --user 1001
     steps:
 
@@ -211,8 +211,8 @@ jobs:
           browser: ${{ matrix.browser }}
           record: true
           parallel: false
-          group: 'app/govuk-docs,node/12,browser/${{ matrix.browser }}'
-          tag: 'app/govuk-docs,node/12,browser/${{ matrix.browser }}'
+          group: 'app/govuk-docs,node/16,browser/${{ matrix.browser }}'
+          tag: 'app/govuk-docs,node/16,browser/${{ matrix.browser }}'
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
