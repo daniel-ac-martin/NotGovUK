@@ -185,7 +185,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: cypress/included:9.5.0
-      options: --user 1001
     strategy:
       matrix:
         browser: [ 'chrome', 'electron', 'firefox' ]
