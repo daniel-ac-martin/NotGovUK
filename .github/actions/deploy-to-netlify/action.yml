@@ -1,0 +1,50 @@
+name: Deploy to Netlify
+inputs:
+  app:
+    required: true
+    type: string
+  github-token:
+    required: false
+    type: string
+  netlify-auth-token:
+    required: true
+    type: string
+  netlify-site-id:
+    required: true
+    type: string
+outputs:
+  deploy-url: ${{ steps.deploy.outputs.deploy-url }}
+runs:
+  using: composite
+  steps:
+
+    - name: Package
+      shell: bash
+      working-directory: './apps/${{ inputs.app }}/'
+      run: 'make netlify'
+
+    - id: deploy
+      name: Deploy
+      uses: nwtgck/actions-netlify@v1.2.2
+      with:
+        publish-dir: './apps/${{ inputs.app }}/pkg/netlify/publish/'
+        functions-dir: './apps/${{ inputs.app }}/pkg/netlify/functions/'
+        production-branch: master
+        github-token: ${{ inputs.github-token }}
+        deploy-message: "Deploy from GitHub Actions"
+        enable-pull-request-comment: false
+        enable-commit-comment: true
+        overwrites-pull-request-comment: true
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ inputs.netlify-auth-token }}
+        NETLIFY_SITE_ID: ${{ inputs.netlify-site-id }}
+      timeout-minutes: 2
+
+    - name: Run functional tests
+      uses: './.github/actions/test-app'
+      with:
+        app: ${{ inputs.app }}
+        base-url: ${{ steps.deploy.outputs.deploy-url }}
+        smoke: true
+        cypress-project-id: ${{ inputs.cypress-project-id }}
+        cypress-record-key: ${{ inputs.cypress-record-key }}

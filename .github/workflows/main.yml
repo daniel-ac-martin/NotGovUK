@@ -14,25 +14,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup
+        uses: ./.github/actions/setup
         with:
-          node-version: ${{ matrix.node }}
-          cache: 'pnpm'
-
-      - name: Cache Cypress.io
-        uses: actions/cache@v2
-        env:
-          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
-        with:
-          path: '~/.cache/Cypress'
-          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
-
-      - name: Pull dependencies
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6.13.0
-          run_install: true
+          node: ${{ matrix.node }}
 
       - name: Run unit tests
         run: npm test
@@ -50,25 +35,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup
+        uses: ./.github/actions/setup
         with:
-          node-version: ${{ matrix.node }}
-          cache: 'pnpm'
-
-      - name: Cache Cypress.io
-        uses: actions/cache@v2
-        env:
-          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
-        with:
-          path: '~/.cache/Cypress'
-          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
-
-      - name: Pull dependencies
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6.13.0
-          run_install: true
+          node: ${{ matrix.node }}
 
       - name: Build libraries
         run: npm run libs:build
@@ -78,6 +48,7 @@ jobs:
     needs:
       - libs
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
     strategy:
       matrix:
         node: [ '12' ]
@@ -88,25 +59,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup
+        uses: ./.github/actions/setup
         with:
-          node-version: ${{ matrix.node }}
-          cache: 'pnpm'
-
-      - name: Cache Cypress.io
-        uses: actions/cache@v2
-        env:
-          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
-        with:
-          path: '~/.cache/Cypress'
-          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
-
-      - name: Pull dependencies
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6.13.0
-          run_install: true
+          node: ${{ matrix.node }}
 
       - name: Push Storybook to Chromatic
         env:
@@ -124,24 +80,65 @@ jobs:
     name: Build application
     needs:
       - common
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         app: [ 'govuk-docs', 'govuk-template' ]
-    uses: ./.github/workflows/build-app.yml
-    with:
-      app: ${{ matrix.app }}
-    secrets:
-      CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          node: ${{ matrix.node }}
+
+      - name: Build
+        uses: ./.github/actions/build-app
+        with:
+          app: ${{ matrix.app }}
+          cypress-project-id: ${{ secrets.CYPRESS_PROJECT_ID }}
+          cypress-record-key: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      - name: Save build directory
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'build-${{ matrix.app }}'
+          path: 'apps/${{ matrix.app }}/dist'
+          if-no-files-found: error
+          retention-days: 2
 
   deploy-docs-to-netlify:
     name: Deploy docs to Netlify
     needs:
       - build-app
+    runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
-    uses: ./.github/workflows/deploy-to-netlify.yml
-    with:
-      app: govuk-docs
-    secrets:
-      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+    strategy:
+      matrix:
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          node: ${{ matrix.node }}
+
+      - name: Download build directory
+        uses: actions/download-artifact@v2
+        with:
+          name: 'build-govuk-docs'
+          path: 'apps/govuk-docs/dist'
+
+      - name: Deploy
+        uses: ./.github/actions/deploy-to-netlify
+        with:
+          app: govuk-docs
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}

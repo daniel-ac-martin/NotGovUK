@@ -1,0 +1,47 @@
+name: Test application
+description: Test a NotGovUK application or deployment
+inputs:
+  app:
+    required: true
+    type: string
+  base-url:
+    required: false
+    type: string
+  browser:
+    required: false
+    default: 'electron'
+  cypress-project-id:
+    required: false
+  cypress-record-key:
+    required: false
+  smoke:
+    required: false
+    default: false
+runs:
+  using: composite
+  steps:
+
+    - name: Setup Firefox
+      uses: browser-actions/setup-firefox@latest
+      if: inputs.browser == 'firefox'
+
+    - name: Setup Chromium
+      uses: browser-actions/setup-chromium@latest
+      if: inputs.browser == 'chromium'
+
+    - name: Run functional tests
+      shell: bash
+      working-directory: 'apps/${{ inputs.app }}'
+      run: "if [[ -z ${CYPRESS_BASE_URL} ]]; then npm run 'test:functional:ci'; else npm run 'test:functional'; fi;"
+      env:
+        CYPRESS_BASE_URL: ${{ inputs.base-url }}
+        CYPRESS_SMOKE: ${{ inputs.smoke }}
+        CYPRESS_FLAGS: '--browser "${{ inputs.browser }}" --group "app/${{ inputs.app }},node/node_16,browser/${{ inputs.browser }}" --tag "app/${{ inputs.app }},node/16,browser/${{ inputs.browser }}"'
+        CYPRESS_PROJECT_ID: ${{ inputs.cypress-project-id }}
+        CYPRESS_RECORD_KEY: ${{ inputs.cypress-record-key }}
+
+    - uses: actions/upload-artifact@master
+      if: failure()
+      with:
+        name: screenshots
+        path: apps/${{ inputs.app }}/.cypress/screenshots
