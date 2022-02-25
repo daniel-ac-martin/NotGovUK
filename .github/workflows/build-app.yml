@@ -1,0 +1,117 @@
+name: Build application
+on:
+  workflow_call:
+    inputs:
+      app:
+        required: true
+        type: string
+    secrets:
+      CYPRESS_PROJECT_ID:
+        required: false
+      CYPRESS_RECORD_KEY:
+        required: false
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'pnpm'
+
+      - name: Cache Cypress.io
+        uses: actions/cache@v2
+        env:
+          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
+        with:
+          path: '~/.cache/Cypress'
+          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
+
+      - name: Pull dependencies
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6.13.0
+          run_install: true
+
+      - name: Build application
+        env:
+          NODE_OPTIONS: --max_old_space_size=6144
+        run: 'cd "./apps/${{ inputs.app }}/" && npm run build'
+
+      - name: Save build directory
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'build-${{ inputs.app }}'
+          path: 'apps/${{ inputs.app }}/dist'
+          if-no-files-found: error
+          retention-days: 2
+
+  test:
+    name: Test
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [ 'chromium', 'electron', 'firefox' ]
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'pnpm'
+
+      - name: Cache Cypress.io
+        uses: actions/cache@v2
+        env:
+          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
+        with:
+          path: '~/.cache/Cypress'
+          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
+
+      - name: Pull dependencies
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6.13.0
+          run_install: true
+
+      - name: Setup Firefox
+        uses: browser-actions/setup-firefox@latest
+        if: matrix.browser == 'firefox'
+
+      - name: Setup Chromium
+        uses: browser-actions/setup-chromium@latest
+        if: matrix.browser == 'chromium'
+
+      - name: Download build directory
+        uses: actions/download-artifact@v2
+        with:
+          name: 'build-${{ inputs.app }}'
+          path: 'apps/${{ inputs.app }}/dist'
+
+      - name: Run functional tests
+        run: 'cd apps/${{ inputs.app }} && npm run test:functional:ci'
+        env:
+          CYPRESS_FLAGS: '--browser "${{ matrix.browser }}" --group "app/${{ inputs.app }},node/node_16,browser/${{ matrix.browser }}" --tag "app/${{ inputs.app }},node/16,browser/${{ matrix.browser }}"'
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      - uses: actions/upload-artifact@master
+        if: failure()
+        with:
+          name: screenshots
+          path: apps/${{ inputs.app }}/.cypress/screenshots

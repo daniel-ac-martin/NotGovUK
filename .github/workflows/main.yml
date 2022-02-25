@@ -15,24 +15,21 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+          cache: 'pnpm'
 
-      - name: Cache NPM dependencies
+      - name: Cache Cypress.io
         uses: actions/cache@v2
         env:
           cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
         with:
-          path: ~/.pnpm-store
-          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
-          restore-keys: |
-            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
-            pnpm-os_${{ runner.os }}-
-            pnpm-
+          path: '~/.cache/Cypress'
+          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
 
       - name: Pull dependencies
-        uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v2.2.1
         with:
           version: 6.13.0
           run_install: true
@@ -54,24 +51,21 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+          cache: 'pnpm'
 
-      - name: Cache NPM dependencies
+      - name: Cache Cypress.io
         uses: actions/cache@v2
         env:
           cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
         with:
-          path: ~/.pnpm-store
-          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
-          restore-keys: |
-            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
-            pnpm-os_${{ runner.os }}-
-            pnpm-
+          path: '~/.cache/Cypress'
+          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
 
       - name: Pull dependencies
-        uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v2.2.1
         with:
           version: 6.13.0
           run_install: true
@@ -95,24 +89,21 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+          cache: 'pnpm'
 
-      - name: Cache NPM dependencies
+      - name: Cache Cypress.io
         uses: actions/cache@v2
         env:
           cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
         with:
-          path: ~/.pnpm-store
-          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
-          restore-keys: |
-            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
-            pnpm-os_${{ runner.os }}-
-            pnpm-
+          path: '~/.cache/Cypress'
+          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
 
       - name: Pull dependencies
-        uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v2.2.1
         with:
           version: 6.13.0
           run_install: true
@@ -129,170 +120,28 @@ jobs:
           exitZeroOnChanges: true
           exitOnceUploaded: true
 
-  build-docs:
-    name: Build docs
+  build-app:
+    name: Build application
     needs:
       - common
-    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '12' ]
-    steps:
-
-      - name: Check out repository
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: ${{ matrix.node }}
-
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        env:
-          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
-        with:
-          path: ~/.pnpm-store
-          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
-          restore-keys: |
-            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
-            pnpm-os_${{ runner.os }}-
-            pnpm-
-
-      - name: Pull dependencies
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6.13.0
-          run_install: true
-
-      - name: Build application
-        env:
-          NODE_OPTIONS: --max_old_space_size=6144
-        run: cd ./apps/govuk-docs/ && npm run build
-
-      - name: Save build directory
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-govuk-docs
-          path: apps/govuk-docs/dist
-          if-no-files-found: error
-          retention-days: 2
-
-  test-docs:
-    name: Test docs
-    needs:
-      - build-docs
-    runs-on: ubuntu-latest
-    container:
-      image: cypress/included:9.5.0
-    strategy:
-      matrix:
-        browser: [ 'chrome', 'electron', 'firefox' ]
-        node: [ '12' ]
-    steps:
-
-      - name: Check out repository
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: ${{ matrix.node }}
-
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        env:
-          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
-        with:
-          path: ~/.pnpm-store
-          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
-          restore-keys: |
-            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
-            pnpm-os_${{ runner.os }}-
-            pnpm-
-
-      - name: Pull dependencies
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6.13.0
-          run_install: true
-
-      - name: Download build directory
-        uses: actions/download-artifact@v2
-        with:
-          name: build-govuk-docs
-          path: apps/govuk-docs/dist
-
-      - name: Run functional tests
-        run: cd apps/govuk-docs && npm run test:functional:ci
-        env:
-          CYPRESS_FLAGS: '--record --browser "${{ matrix.browser }}" --group "app/govuk-docs,node/node_16,browser/${{ matrix.browser }}" --tag "app/govuk-docs,node/16,browser/${{ matrix.browser }}"'
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-
-      - uses: actions/upload-artifact@master
-        if: failure()
-        with:
-          name: screenshots
-          path: apps/govuk-docs/.cypress/screenshots
+        app: [ 'govuk-docs', 'govuk-template' ]
+    uses: ./.github/workflows/build-app.yml
+    with:
+      app: ${{ matrix.app }}
+    secrets:
+      CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
   deploy-docs-to-netlify:
     name: Deploy docs to Netlify
     needs:
-      - build-docs
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ '12' ]
-    steps:
-
-      - name: Check out repository
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: ${{ matrix.node }}
-
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        env:
-          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
-        with:
-          path: ~/.pnpm-store
-          key: pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-lock_${{ env.cache-hash }}
-          restore-keys: |
-            pnpm-os_${{ runner.os }}-node_${{ matrix.node }}-
-            pnpm-os_${{ runner.os }}-
-            pnpm-
-
-      - name: Pull dependencies
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6.13.0
-          run_install: true
-
-      - name: Download build directory
-        uses: actions/download-artifact@v2
-        with:
-          name: build-govuk-docs
-          path: apps/govuk-docs/dist
-
-      - name: Package
-        run: cd ./apps/govuk-docs/ && make netlify
-
-      - name: Deploy
-        uses: nwtgck/actions-netlify@v1.2.2
-        with:
-          publish-dir: './apps/govuk-docs/pkg/netlify/publish/'
-          functions-dir: './apps/govuk-docs/pkg/netlify/functions/'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 2
+      - build-app
+    if: github.event_name != 'pull_request'
+    uses: ./.github/workflows/deploy-to-netlify.yml
+    with:
+      app: govuk-docs
+    secrets:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
