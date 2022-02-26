@@ -40,7 +40,6 @@ runs:
       env:
         NETLIFY_AUTH_TOKEN: ${{ inputs.netlify-auth-token }}
         NETLIFY_SITE_ID: ${{ inputs.netlify-site-id }}
-      timeout-minutes: 2
 
     - name: Run functional tests
       uses: './.github/actions/test-app'
