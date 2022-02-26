@@ -9,6 +9,18 @@ runs:
   using: composite
   steps:
 
+    - name: Setup PNPM
+      uses: pnpm/action-setup@v2.2.1
+      with:
+        version: 6.13.0
+        run_install: false
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node }}
+        cache: 'pnpm'
+
     - name: Cache Cypress.io
       uses: actions/cache@v2
       env:
@@ -22,10 +34,3 @@ runs:
       with:
         version: 6.13.0
         run_install: true
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node }}
-        cache: 'pnpm'
-
