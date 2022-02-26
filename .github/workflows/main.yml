@@ -128,6 +128,12 @@ jobs:
         with:
           node: ${{ matrix.node }}
 
+      - name: Download build directory
+        uses: actions/download-artifact@v2
+        with:
+          name: 'build-${{ matrix.app }}'
+          path: 'apps/${{ matrix.app }}/dist'
+
       - name: Run functional tests
         uses: './.github/actions/test-app'
         with:
