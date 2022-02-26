@@ -40,12 +40,3 @@ runs:
       env:
         NETLIFY_AUTH_TOKEN: ${{ inputs.netlify-auth-token }}
         NETLIFY_SITE_ID: ${{ inputs.netlify-site-id }}
-
-    - name: Run functional tests
-      uses: './.github/actions/test-app'
-      with:
-        app: ${{ inputs.app }}
-        base-url: ${{ steps.deploy.outputs.deploy-url }}
-        smoke: true
-        cypress-project-id: ${{ inputs.cypress-project-id }}
-        cypress-record-key: ${{ inputs.cypress-record-key }}
