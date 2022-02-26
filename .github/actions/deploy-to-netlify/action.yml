@@ -13,7 +13,9 @@ inputs:
     required: true
     type: string
 outputs:
-  deploy-url: ${{ steps.deploy.outputs.deploy-url }}
+  deploy-url:
+    description: The URL for accessing the deployment
+    value: ${{ steps.deploy.outputs.deploy-url }}
 runs:
   using: composite
   steps:
@@ -38,7 +40,7 @@ runs:
       env:
         NETLIFY_AUTH_TOKEN: ${{ inputs.netlify-auth-token }}
         NETLIFY_SITE_ID: ${{ inputs.netlify-site-id }}
-      # timeout-minutes: 2
+      timeout-minutes: 2
 
     - name: Run functional tests
       uses: './.github/actions/test-app'
