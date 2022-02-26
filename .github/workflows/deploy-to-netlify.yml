@@ -41,6 +41,7 @@ jobs:
           path: 'apps/${{ inputs.app }}/dist'
 
       - name: Deploy
+        id: deploy
         uses: ./.github/actions/deploy-to-netlify
         with:
           app: ${{ inputs.app }}
