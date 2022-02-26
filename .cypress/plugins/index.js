@@ -6,7 +6,8 @@ const projectConfig = require('../../cypress.json');
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
   return {
+    ...config,
     ...projectConfig,
-    config
+    baseUrl: config.baseUrl || projectConfig.baseUrl
   };
 }
