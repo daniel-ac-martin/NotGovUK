@@ -99,8 +99,6 @@ jobs:
         uses: ./.github/actions/build-app
         with:
           app: ${{ matrix.app }}
-          cypress-project-id: ${{ secrets.CYPRESS_PROJECT_ID }}
-          cypress-record-key: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name: Save build directory
         uses: actions/upload-artifact@v2
@@ -110,14 +108,15 @@ jobs:
           if-no-files-found: error
           retention-days: 2
 
-  deploy-docs-to-netlify:
-    name: Deploy docs to Netlify
+  test-app:
+    name: Test application
     needs:
       - build-app
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
     strategy:
       matrix:
+        app: [ 'govuk-docs', 'govuk-template' ]
+        browser: [ 'chromium', 'firefox', 'electron' ]
         node: [ '12' ]
     steps:
 
@@ -129,16 +128,24 @@ jobs:
         with:
           node: ${{ matrix.node }}
 
-      - name: Download build directory
-        uses: actions/download-artifact@v2
+      - name: Run functional tests
+        uses: './.github/actions/test-app'
         with:
-          name: 'build-govuk-docs'
-          path: 'apps/govuk-docs/dist'
+          app: ${{ matrix.app }}
+          browser: ${{ matrix.browser }}
+          cypress-project-id: ${{ secrets.CYPRESS_PROJECT_ID }}
+          cypress-record-key: ${{ secrets.CYPRESS_RECORD_KEY }}
 
-      - name: Deploy
-        uses: ./.github/actions/deploy-to-netlify
-        with:
-          app: govuk-docs
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+  deploy-docs-to-netlify:
+    if: github.event_name != 'pull_request'
+    needs:
+      - build-app
+    uses: './.github/workflows/deploy-to-netlify.yml'
+    with:
+      app: govuk-docs
+      node: 12
+    secrets:
+      CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

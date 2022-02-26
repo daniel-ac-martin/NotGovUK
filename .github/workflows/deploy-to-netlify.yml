@@ -1,48 +1,37 @@
-name: Build application
+name: Deploy to Netlify and test
 on:
   workflow_call:
     inputs:
       app:
         required: true
         type: string
+      node:
+        required: false
+        default: 12
     secrets:
       NETLIFY_AUTH_TOKEN:
         required: true
       NETLIFY_SITE_ID:
         required: true
+      CYPRESS_PROJECT_ID:
+        required: false
+      CYPRESS_RECORD_KEY:
+        required: false
 jobs:
   deploy:
-    name: Deploy to Netlify
+    name: Deploy
     runs-on: ubuntu-latest
     outputs:
       deploy-url: ${{ steps.deploy.outputs.deploy-url }}
-    strategy:
-      matrix:
-        node: [ '12' ]
     steps:
 
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup
+        uses: ./.github/actions/setup
         with:
-          node-version: ${{ matrix.node }}
-          cache: 'pnpm'
-
-      - name: Cache Cypress.io
-        uses: actions/cache@v2
-        env:
-          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
-        with:
-          path: '~/.cache/Cypress'
-          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
-
-      - name: Pull dependencies
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6.13.0
-          run_install: true
+          node: ${{ inputs.node }}
 
       - name: Download build directory
         uses: actions/download-artifact@v2
@@ -50,25 +39,13 @@ jobs:
           name: 'build-${{ inputs.app }}'
           path: 'apps/${{ inputs.app }}/dist'
 
-      - name: Package
-        run: 'cd ./apps/${{ inputs.app }}/ && make netlify'
-
-      - id: deploy
-        name: Deploy
-        uses: nwtgck/actions-netlify@v1.2.2
+      - name: Deploy
+        uses: ./.github/actions/deploy-to-netlify
         with:
-          publish-dir: './apps/${{ inputs.app }}/pkg/netlify/publish/'
-          functions-dir: './apps/${{ inputs.app }}/pkg/netlify/functions/'
-          production-branch: master
+          app: ${{ inputs.app }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 2
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
 
   test:
     name: Test
@@ -77,58 +54,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [ 'chromium', 'electron', 'firefox' ]
-        node: [ '12' ]
+        browser: [ 'electron' ]
     steps:
 
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup
+        uses: ./.github/actions/setup
         with:
-          node-version: ${{ matrix.node }}
-          cache: 'pnpm'
-
-      - name: Cache Cypress.io
-        uses: actions/cache@v2
-        env:
-          cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
-        with:
-          path: '~/.cache/Cypress'
-          key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
-
-      - name: Pull dependencies
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6.13.0
-          run_install: true
-
-      - name: Setup Firefox
-        uses: browser-actions/setup-firefox@latest
-        if: matrix.browser == 'firefox'
-
-      - name: Setup Chromium
-        uses: browser-actions/setup-chromium@latest
-        if: matrix.browser == 'chromium'
-
-      - name: Download build directory
-        uses: actions/download-artifact@v2
-        with:
-          name: 'build-${{ inputs.app }}'
-          path: 'apps/${{ inputs.app }}/dist'
+          node: ${{ inputs.node }}
 
       - name: Run functional tests
-        run: 'cd apps/${{ inputs.app }} && npm run test:functional'
-        env:
-          CYPRESS_BASE_URL: ${{ needs.deploy.outputs.deploy-url }}
-          CYPRESS_SMOKE: true
-          CYPRESS_FLAGS: '--browser "${{ matrix.browser }}" --group "app/${{ inputs.app }},node/node_16,browser/${{ matrix.browser }}" --tag "app/${{ inputs.app }},node/16,browser/${{ matrix.browser }}"'
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-
-      - uses: actions/upload-artifact@master
-        if: failure()
+        uses: './.github/actions/test-app'
         with:
-          name: screenshots
-          path: apps/${{ inputs.app }}/.cypress/screenshots
+          app: ${{ inputs.app }}
+          base-url: ${{ needs.deploy.outputs.deploy-url }}
+          browser: ${{ matrix.browser }}
+          smoke: true
+          cypress-project-id: ${{ secrets.CYPRESS_PROJECT_ID }}
+          cypress-record-key: ${{ secrets.CYPRESS_RECORD_KEY }}

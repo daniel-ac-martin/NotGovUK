@@ -44,4 +44,4 @@ runs:
       if: failure()
       with:
         name: screenshots
-        path: apps/${{ inputs.app }}/.cypress/screenshots
+        path: 'apps/${{ inputs.app }}/.cypress/screenshots'
