@@ -37,7 +37,7 @@ runs:
         DEBUG: 'cypress:*'
         CYPRESS_BASE_URL: ${{ inputs.base-url }}
         CYPRESS_SMOKE: ${{ inputs.smoke }}
-        CYPRESS_FLAGS: '--browser "${{ inputs.browser }}" --group "app/${{ inputs.app }},node/node_16,browser/${{ inputs.browser }}" --tag "app/${{ inputs.app }},node/16,browser/${{ inputs.browser }}"'
+        CYPRESS_FLAGS: '--browser ${{ inputs.browser }} --group "app/${{ inputs.app }},node/node_16,browser/${{ inputs.browser }}" --tag "app/${{ inputs.app }},node/16,browser/${{ inputs.browser }}"'
         CYPRESS_PROJECT_ID: ${{ inputs.cypress-project-id }}
         CYPRESS_RECORD_KEY: ${{ inputs.cypress-record-key }}
 
