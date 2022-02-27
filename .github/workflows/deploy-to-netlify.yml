@@ -73,6 +73,8 @@ jobs:
           app: ${{ inputs.app }}
           base-url: ${{ needs.deploy.outputs.deploy-url }}
           browser: ${{ matrix.browser }}
-          smoke: true
           cypress-project-id: ${{ secrets.CYPRESS_PROJECT_ID }}
           cypress-record-key: ${{ secrets.CYPRESS_RECORD_KEY }}
+          deployment: netlify
+          node: 12
+          smoke: true
