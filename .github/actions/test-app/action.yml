@@ -38,7 +38,7 @@ runs:
 
     - name: Run functional tests
       shell: bash
-      working-directory: '${{ inputs.app && format("apps/{0}", inputs.app) }}'
+      working-directory: "${{ inputs.app && format('apps/{0}', inputs.app) }}"
       run: "if [[ -z ${CYPRESS_BASE_URL} ]]; then npm run 'test:functional:ci'; else npm run 'test:functional'; fi;"
       env:
         CYPRESS_BASE_URL: ${{ inputs.base-url }}
@@ -51,4 +51,4 @@ runs:
       if: failure()
       with:
         name: screenshots
-        path: '${{ inputs.app && format("apps/{0}", inputs.app) }}.cypress/screenshots'
+        path: "${{ inputs.app && format('apps/{0}', inputs.app) }}.cypress/screenshots"

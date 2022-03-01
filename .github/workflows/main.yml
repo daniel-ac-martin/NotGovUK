@@ -104,7 +104,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: 'build-${{ matrix.app }}'
-          path: '${{ matrix.app && format("apps/{0}", matrix.app) }}dist'
+          path: "${{ matrix.app && format('apps/{0}', matrix.app) }}dist"
           if-no-files-found: error
           retention-days: 2
 
@@ -132,7 +132,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: 'build-${{ matrix.app }}'
-          path: '${{ matrix.app && format("apps/{0}", matrix.app) }}dist'
+          path: "${{ matrix.app && format('apps/{0}', matrix.app) }}dist"
 
       - name: Run functional tests
         uses: './.github/actions/test-app'
