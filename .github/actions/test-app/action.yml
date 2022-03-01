@@ -2,7 +2,7 @@ name: Test application
 description: Test a NotGovUK application or deployment
 inputs:
   app:
-    required: true
+    required: false
     type: string
   base-url:
     required: false
@@ -38,7 +38,7 @@ runs:
 
     - name: Run functional tests
       shell: bash
-      working-directory: 'apps/${{ inputs.app }}'
+      working-directory: '${{ inputs.app && "apps/${{ inputs.app }}/"}}'
       run: "if [[ -z ${CYPRESS_BASE_URL} ]]; then npm run 'test:functional:ci'; else npm run 'test:functional'; fi;"
       env:
         CYPRESS_BASE_URL: ${{ inputs.base-url }}
@@ -51,4 +51,4 @@ runs:
       if: failure()
       with:
         name: screenshots
-        path: 'apps/${{ inputs.app }}/.cypress/screenshots'
+        path: '${{ inputs.app && "apps/${{ inputs.app }}/"}}.cypress/screenshots'

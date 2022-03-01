@@ -3,7 +3,7 @@ on:
   workflow_call:
     inputs:
       app:
-        required: true
+        required: false
         type: string
       node:
         required: false
@@ -38,7 +38,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: 'build-${{ inputs.app }}'
-          path: 'apps/${{ inputs.app }}/dist'
+          path: '${{ inputs.app && "apps/${{ inputs.app }}/"}}/dist'
 
       - name: Deploy
         id: deploy
