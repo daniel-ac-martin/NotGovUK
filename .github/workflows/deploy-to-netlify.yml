@@ -38,7 +38,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: 'build-${{ inputs.app }}'
-          path: '${{ inputs.app && "apps/${{ inputs.app }}/"}}/dist'
+          path: '${{ inputs.app && format("apps/{0}", inputs.app) }}/dist'
 
       - name: Deploy
         id: deploy
