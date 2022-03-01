@@ -29,8 +29,8 @@ runs:
       name: Deploy
       uses: nwtgck/actions-netlify@v1.2.2
       with:
-        publish-dir: "${{ inputs.app && format('apps/{0}', inputs.app) }}pkg/netlify/publish/"
-        functions-dir: "${{ inputs.app && format('apps/{0}', inputs.app) }}pkg/netlify/functions/"
+        publish-dir: "${{ inputs.app && format('apps/{0}/', inputs.app) }}pkg/netlify/publish/"
+        functions-dir: "${{ inputs.app && format('apps/{0}/', inputs.app) }}pkg/netlify/functions/"
         production-branch: master
         github-token: ${{ inputs.github-token }}
         deploy-message: "Deploy from GitHub Actions"
