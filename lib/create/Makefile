@@ -5,10 +5,17 @@ build_dir = ./build
 dist_dir = ./dist
 source_dir = ../..
 target_dir = $(build_dir)/skel
+ci_sources := $(wildcard \
+	$(source_dir)/.github/actions/*/* \
+	$(source_dir)/.github/workflows/deploy-to-netlify.yml \
+	$(source_dir)/.github/workflows/deploy-to-heroku.yml \
+	$(source_dir)/.jest/*/* \
+	$(source_dir)/cypress.json \
+	$(source_dir)/jest.config.base.js \
+)
 sources := $(wildcard \
+  $(ci_sources) \
 	$(source_dir)/.cypress/*/* \
-	$(source_dir)/.github/workflows/chromatic.yml \
-	$(source_dir)/.github/workflows/test.yml \
 	$(source_dir)/.gitignore \
 	$(source_dir)/.jest/*/* \
 	$(source_dir)/.npm/* \
@@ -40,7 +47,10 @@ docs_sources := $(wildcard \
 	$(docs_source_dir)/src/common/pages/index.tsx \
 	$(docs_source_dir)/webpack.config.js \
 )
+ci_deps = $(patsubst $(source_dir)/%,$(target_dir)/%,$(ci_sources))
 skel_deps = \
+	$(ci_deps) \
+	$(target_dir)/.github/workflows/main.yml \
 	$(patsubst $(source_dir)/%,$(target_dir)/%,$(sources)) \
 	$(patsubst $(docs_source_dir)/%,$(docs_target_dir)/%,$(docs_sources)) \
 	$(target_dir)/plopfile.js \
@@ -62,10 +72,15 @@ $(dist_dir)/package.base.json: $(source_dir)/package.json
 	$(strip_package) '$(<)' > '$(@)'
 	$(patch_package) '$(@)'
 
-$(build_dir)/skel-prototype/package.json: $(plopfile)
+$(build_dir)/skel-prototype/package.json: $(plopfile) $(target_dir)/.github/workflows/main.yml $(ci_deps)
 	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'docs' 'Documentation' 'Documentation website.'
 	$(cp) -r '$(target_dir)/apps/docs/' '$(@D)'
-	rm '$(@D)/README.md' '$(@D)/tsconfig.json'
+	$(cp) -r '$(target_dir)/.github/' '$(@D)/.github'
+	$(cp) -r '$(target_dir)/.jest/' '$(@D)/.jest'
+	$(cp) '$(target_dir)/cypress.json' '$(@D)'
+	$(cp) '$(target_dir)/jest.config.base.js' '$(@D)/jest.config.base.js'
+	sed -i 's/..\/..\/jest.config.base/.\/jest.config.base/' '$(@D)/jest.config.js'
+	rm '$(@D)/README.md' '$(@D)/tsconfig.json' '$(@D)/.github/actions/setup/action.yml' '$(@D)/.github/workflows/main.yml'
 
 $(build_dir)/skel-prototype/tsconfig.json: $(source_dir)/tsconfig.json $(source_dir)/tsconfig.webpack.json $(build_dir)/skel-prototype/package.json
 	mkdir -p '$(@D)'
@@ -94,6 +109,10 @@ $(docs_target_dir)/package.json: $(build_dir)/package.app.json $(build_dir)/pack
 $(docs_target_dir)/%: $(docs_source_dir)/% $(docs_target_dir)/package.json
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
+
+$(target_dir)/.github/workflows/main.yml: $(source_dir)/.github/workflows/main.yml
+	mkdir -p '$(@D)'
+	sed -n '/deploy-/q;p' '$(<)' | sed 's/app: \[.*\]/app: []/' > '$(@)'
 
 $(target_dir)/plopfile.js: $(source_dir)/plopfile.js
 	mkdir -p '$(@D)'
