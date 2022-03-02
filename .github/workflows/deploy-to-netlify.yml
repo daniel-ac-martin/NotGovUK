@@ -6,18 +6,22 @@ on:
         required: false
         type: string
       node:
+        default: 12
         required: false
         type: string
-        default: 12
+      production-branch:
+        default: master
+        required: false
+        type: string
     secrets:
-      NETLIFY_AUTH_TOKEN:
-        required: true
-      NETLIFY_SITE_ID:
-        required: true
       CYPRESS_PROJECT_ID:
         required: false
       CYPRESS_RECORD_KEY:
         required: false
+      NETLIFY_AUTH_TOKEN:
+        required: true
+      NETLIFY_SITE_ID:
+        required: true
 jobs:
   deploy:
     name: Deploy
@@ -48,6 +52,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+          production-branch: ${{ inputs.production-branch }}
 
   test:
     name: Test

@@ -12,6 +12,10 @@ inputs:
   netlify-site-id:
     required: true
     type: string
+  production-branch:
+    default: master
+    required: false
+    type: string
 outputs:
   deploy-url:
     description: The URL for accessing the deployment
@@ -31,7 +35,7 @@ runs:
       with:
         publish-dir: "${{ inputs.app && format('apps/{0}/', inputs.app) }}pkg/netlify/publish/"
         functions-dir: "${{ inputs.app && format('apps/{0}/', inputs.app) }}pkg/netlify/functions/"
-        production-branch: master
+        production-branch: ${{ inputs.production-branch }}
         github-token: ${{ inputs.github-token }}
         deploy-message: "Deploy from GitHub Actions"
         enable-pull-request-comment: false
