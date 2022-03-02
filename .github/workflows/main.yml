@@ -144,6 +144,7 @@ jobs:
           node: ${{ matrix.node }}
 
   deploy-docs-to-netlify:
+    name: Deploy to Netlify and test
     if: github.event_name != 'pull_request'
     needs:
       - build-app
