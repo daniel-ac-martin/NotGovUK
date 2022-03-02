@@ -1,0 +1,85 @@
+name: Main
+on:
+  - pull_request
+  - push
+jobs:
+  common:
+    name: Dependencies, Unit tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12', '14', '16' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          node: ${{ matrix.node }}
+
+      - name: Run unit tests
+        run: npm test
+
+  build-app:
+    name: Build application
+    needs:
+      - common
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          node: ${{ matrix.node }}
+
+      - name: Build
+        uses: ./.github/actions/build-app
+
+      - name: Save build directory
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'build'
+          path: "dist"
+          if-no-files-found: error
+          retention-days: 2
+
+  test-app:
+    name: Test application
+    needs:
+      - build-app
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [ 'chromium', 'firefox', 'electron' ]
+        node: [ '12' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          node: ${{ matrix.node }}
+
+      - name: Download build directory
+        uses: actions/download-artifact@v2
+        with:
+          name: 'build'
+          path: "dist"
+
+      - name: Run functional tests
+        uses: './.github/actions/test-app'
+        with:
+          browser: ${{ matrix.browser }}
+          cypress-project-id: ${{ secrets.CYPRESS_PROJECT_ID }}
+          cypress-record-key: ${{ secrets.CYPRESS_RECORD_KEY }}
+          node: ${{ matrix.node }}

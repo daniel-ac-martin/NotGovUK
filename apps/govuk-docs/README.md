@@ -1,5 +1,5 @@
-Not Govuk - Govuk Docs
-======================
+NotGovUK - Documentation website
+================================
 
 NotGovUK documentation website.
 

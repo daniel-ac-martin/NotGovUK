@@ -48,7 +48,7 @@ $(dist_dir)/package.base.json: $(source_dir)/package.json
 	$(strip_package) '$(<)' > '$(@)'
 	$(patch_package) '$(@)'
 
-$(dist_dir)/package.app.json: $(plopfile)
+$(dist_dir)/package.app.json: $(plopfile) $(build_dir)/.github/workflows/main.yml
 	mkdir -p '$(@D)'
 	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'template' 'Template' 'Template.' 'n'
 	$(strip_package) '$(docs_source_dir)/package.json' > '$(@)'
@@ -76,6 +76,10 @@ $(docs_target_dir)/%: $(dist_dir)/package.app.json
 $(proto_target_dir)/%: $(dist_dir)/package.app.json
 	mkdir -p '$(@D)'
 	$(cp) '$(docs_source_dir)/$(*)' '$(@D)'
+
+$(build_dir)/%: $(source_dir)/%
+	mkdir -p '$(@D)'
+	$(cp) '$(<)' '$(@D)'
 
 $(target_dir)/%: $(source_dir)/%
 	mkdir -p '$(@D)'

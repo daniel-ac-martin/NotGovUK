@@ -1,0 +1,16 @@
+name: Build application
+description: Build a NotGovUK application
+inputs:
+  app:
+    required: false
+    type: string
+runs:
+  using: composite
+  steps:
+
+    - name: Build application
+      env:
+        NODE_OPTIONS: --max_old_space_size=6144
+      shell: bash
+      working-directory: "${{ inputs.app && format('apps/{0}/', inputs.app) }}"
+      run: 'npm run build'

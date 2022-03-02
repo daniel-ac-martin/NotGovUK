@@ -1,0 +1,28 @@
+name: Set-up
+description: Set-up for building, testing and deployment of standalone NotGovUK apps
+inputs:
+  node:
+    description: The version of Node.js to use.
+    required: false
+    default: 12
+runs:
+  using: composite
+  steps:
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node }}
+        cache: 'npm'
+
+    - name: Cache Cypress.io
+      uses: actions/cache@v2
+      env:
+        cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
+      with:
+        path: '~/.cache/Cypress'
+        key: cypress-os_${{ runner.os }}-lock_${{ env.cache-hash }}
+
+    - name: Pull dependencies
+      shell: bash
+      run: 'if [[ -f "package-lock.json" ]]; then npm ci; else npm install; fi'
