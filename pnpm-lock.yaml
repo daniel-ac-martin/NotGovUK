@@ -119,6 +119,7 @@ importers:
       '@types/webpack-env': ^1.15.2
       bunyan: ^1.8.12
       cypress: ^9.5.0
+      jest: 26.1.0
       node-hot-loader: ^1.19.0
       plop: ^2.7.3
       react: ^16.9.55
@@ -128,6 +129,7 @@ importers:
       react-router-dom: ^5.2.0
       serverless: ^2.62.0
       start-server-and-test: ^1.14.0
+      ts-jest: 26.1.3
       typescript: 3.9.9
       webpack: ^4.43.0
       webpack-cli: ^3.3.11
@@ -150,6 +152,7 @@ importers:
       '@types/webpack-env': 1.15.2
       bunyan: 1.8.14
       cypress: 9.5.0
+      jest: 26.1.0
       node-hot-loader: 1.20.0_97a508fbab9dc5c2abfa56457d79f6b9
       plop: 2.7.4
       react: 16.14.0
@@ -159,6 +162,7 @@ importers:
       react-router-dom: 5.2.0_react@16.14.0
       serverless: 2.62.0
       start-server-and-test: 1.14.0
+      ts-jest: 26.1.3_jest@26.1.0+typescript@3.9.9
       typescript: 3.9.9
       webpack: 4.43.0
       webpack-cli: 3.3.12_webpack@4.43.0
@@ -187,6 +191,7 @@ importers:
       bunyan: ^1.8.12
       cypress: ^9.5.0
       graphql: ^15.3.0
+      jest: 26.1.0
       node-hot-loader: ^1.19.0
       plop: ^2.7.3
       react: ^16.9.55
@@ -196,6 +201,7 @@ importers:
       react-router-dom: ^5.2.0
       serverless: ^2.62.0
       start-server-and-test: ^1.14.0
+      ts-jest: 26.1.3
       typescript: 3.9.9
       webpack: ^4.43.0
       webpack-cli: ^3.3.11
@@ -222,6 +228,7 @@ importers:
       bunyan: 1.8.14
       cypress: 9.5.0
       graphql: 15.4.0
+      jest: 26.1.0
       node-hot-loader: 1.20.0_97a508fbab9dc5c2abfa56457d79f6b9
       plop: 2.7.4
       react: 16.14.0
@@ -231,6 +238,7 @@ importers:
       react-router-dom: 5.2.0_react@16.14.0
       serverless: 2.62.0
       start-server-and-test: 1.14.0
+      ts-jest: 26.1.3_jest@26.1.0+typescript@3.9.9
       typescript: 3.9.9
       webpack: 4.43.0
       webpack-cli: 3.3.12_webpack@4.43.0
@@ -6209,7 +6217,7 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       chalk: 4.1.2
       jest-message-util: 26.6.2
       jest-util: 26.6.2
@@ -6225,7 +6233,7 @@ packages:
       '@jest/test-result': 26.6.2
       '@jest/transform': 26.6.2
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       exit: 0.1.2
@@ -6247,7 +6255,7 @@ packages:
       p-each-series: 2.2.0
       rimraf: 3.0.2
       slash: 3.0.0
-      strip-ansi: 6.0.0
+      strip-ansi: 6.0.1
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -6262,7 +6270,7 @@ packages:
     dependencies:
       '@jest/fake-timers': 26.6.2
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       jest-mock: 26.6.2
     dev: true
 
@@ -6272,7 +6280,7 @@ packages:
     dependencies:
       '@jest/types': 26.6.2
       '@sinonjs/fake-timers': 6.0.1
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       jest-message-util: 26.6.2
       jest-mock: 26.6.2
       jest-util: 26.6.2
@@ -6299,7 +6307,7 @@ packages:
       chalk: 4.1.2
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
-      glob: 7.1.7
+      glob: 7.2.0
       graceful-fs: 4.2.8
       istanbul-lib-coverage: 3.0.0
       istanbul-lib-instrument: 4.0.3
@@ -6430,7 +6438,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.3
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       '@types/yargs': 15.0.14
       chalk: 4.1.2
     dev: true
@@ -8037,7 +8045,7 @@ packages:
   /@types/graceful-fs/4.1.5:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
     dependencies:
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
     dev: true
 
   /@types/hast/2.3.1:
@@ -10606,7 +10614,7 @@ packages:
 
   /chokidar/2.1.8:
     resolution: {integrity: sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==}
-    deprecated: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+    deprecated: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
     dependencies:
       anymatch: 2.0.0
       async-each: 1.0.3
@@ -12770,7 +12778,7 @@ packages:
       is-stream: 1.1.0
       npm-run-path: 2.0.2
       p-finally: 1.0.0
-      signal-exit: 3.0.3
+      signal-exit: 3.0.5
       strip-eof: 1.0.0
     dev: true
 
@@ -13469,7 +13477,7 @@ packages:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
-      mime-types: 2.1.32
+      mime-types: 2.1.33
     dev: true
 
   /format/0.2.2:
@@ -15019,7 +15027,6 @@ packages:
   /is-fullwidth-code-point/2.0.0:
     resolution: {integrity: sha1-o7MKXE8ZkYMWeqq5O+764937ZU8=}
     engines: {node: '>=4'}
-    dev: true
 
   /is-fullwidth-code-point/3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
@@ -15432,7 +15439,7 @@ packages:
       babel-jest: 26.6.3_@babel+core@7.15.0
       chalk: 4.1.2
       deepmerge: 4.2.2
-      glob: 7.1.7
+      glob: 7.2.0
       graceful-fs: 4.2.8
       jest-environment-jsdom: 26.6.2
       jest-environment-node: 26.6.2
@@ -15496,7 +15503,7 @@ packages:
       '@jest/environment': 26.6.2
       '@jest/fake-timers': 26.6.2
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       jest-mock: 26.6.2
       jest-util: 26.6.2
       jsdom: 16.7.0
@@ -15514,7 +15521,7 @@ packages:
       '@jest/environment': 26.6.2
       '@jest/fake-timers': 26.6.2
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       jest-mock: 26.6.2
       jest-util: 26.6.2
     dev: true
@@ -15556,7 +15563,7 @@ packages:
     dependencies:
       '@jest/types': 26.6.2
       '@types/graceful-fs': 4.1.5
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       anymatch: 3.1.2
       fb-watchman: 2.0.1
       graceful-fs: 4.2.8
@@ -15580,7 +15587,7 @@ packages:
       '@jest/source-map': 26.6.2
       '@jest/test-result': 26.6.2
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       chalk: 4.1.2
       co: 4.6.0
       expect: 26.6.2
@@ -15639,7 +15646,7 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
     dev: true
 
   /jest-pnp-resolver/1.2.2_jest-resolve@26.6.2:
@@ -15690,7 +15697,7 @@ packages:
       '@jest/environment': 26.6.2
       '@jest/test-result': 26.6.2
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       chalk: 4.1.2
       emittery: 0.7.2
       exit: 0.1.2
@@ -15732,7 +15739,7 @@ packages:
       cjs-module-lexer: 0.6.0
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
-      glob: 7.1.7
+      glob: 7.2.0
       graceful-fs: 4.2.8
       jest-config: 26.6.3
       jest-haste-map: 26.6.2
@@ -15766,7 +15773,7 @@ packages:
     resolution: {integrity: sha512-S5wqyz0DXnNJPd/xfIzZ5Xnp1HrJWBczg8mMfMpN78OJ5eDxXyf+Ygld9wX1DnUWbIbhM1YDY95NjR4CBXkb2g==}
     engines: {node: '>= 10.14.2'}
     dependencies:
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       graceful-fs: 4.2.8
     dev: true
 
@@ -15809,7 +15816,7 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       chalk: 4.1.2
       graceful-fs: 4.2.8
       is-ci: 2.0.0
@@ -15834,7 +15841,7 @@ packages:
     dependencies:
       '@jest/test-result': 26.6.2
       '@jest/types': 26.6.2
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       jest-util: 26.6.2
@@ -15854,7 +15861,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 16.4.13
+      '@types/node': 16.10.5
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
@@ -15980,7 +15987,7 @@ packages:
       whatwg-encoding: 1.0.5
       whatwg-mimetype: 2.3.0
       whatwg-url: 8.7.0
-      ws: 7.5.3
+      ws: 7.5.5
       xml-name-validator: 3.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -16908,11 +16915,6 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /mime-db/1.49.0:
-    resolution: {integrity: sha512-CIc8j9URtOVApSFCQIF+VBkX1RwXp/oMMOrqdyXSBXq5RWNEsRfyj1kiRnQgmNXmHxPoFIxOroKA3zcU9P+nAA==}
-    engines: {node: '>= 0.6'}
-    dev: true
-
   /mime-db/1.50.0:
     resolution: {integrity: sha512-9tMZCDlYHqeERXEHO9f/hKfNXhre5dK2eE/krIvUjZbS2KPcqGDfNShIWS1uW9XOTKQKqK6qbeOci18rbfW77A==}
     engines: {node: '>= 0.6'}
@@ -16923,13 +16925,6 @@ packages:
     engines: {node: '>= 0.6'}
     dependencies:
       mime-db: 1.44.0
-    dev: true
-
-  /mime-types/2.1.32:
-    resolution: {integrity: sha512-hJGaVS4G4c9TSMYh2n6SQAGrC4RnfU+daP8G7cSCmaqNjiOoUY0VHCMS42pxnQmVF1GWwFhbHWn3RIxCqTmZ9A==}
-    engines: {node: '>= 0.6'}
-    dependencies:
-      mime-db: 1.49.0
     dev: true
 
   /mime-types/2.1.33:
@@ -18468,7 +18463,7 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       '@jest/types': 26.6.2
-      ansi-regex: 5.0.0
+      ansi-regex: 5.0.1
       ansi-styles: 4.3.0
       react-is: 17.0.2
     dev: true
@@ -20569,6 +20564,7 @@ packages:
 
   /source-map-resolve/0.5.3:
     resolution: {integrity: sha512-Htz+RnsXWk5+P2slx5Jh3Q66vhQj1Cllm0zvnaY98+NFx+Dv2CF/f5O/t8x+KaNdrdIAsruNzoh/KpialbqAnw==}
+    deprecated: See https://github.com/lydell/source-map-resolve#deprecated
     dependencies:
       atob: 2.1.2
       decode-uri-component: 0.2.0
@@ -20584,6 +20580,7 @@ packages:
 
   /source-map-url/0.4.1:
     resolution: {integrity: sha512-cPiFOTLUKvJFIg4SKVScy4ilPPW6rFgMgfuZJPNoDuMs3nC1HbMUycBoJw77xFIp6z1UJQJOfx6C9GMH80DiTw==}
+    deprecated: See https://github.com/lydell/source-map-url#deprecated
 
   /source-map/0.5.7:
     resolution: {integrity: sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=}
@@ -20830,7 +20827,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       char-regex: 1.0.2
-      strip-ansi: 6.0.0
+      strip-ansi: 6.0.1
     dev: true
 
   /string-width/1.0.2:
@@ -20847,7 +20844,6 @@ packages:
     dependencies:
       is-fullwidth-code-point: 2.0.0
       strip-ansi: 4.0.0
-    dev: true
 
   /string-width/3.1.0:
     resolution: {integrity: sha512-vafcv6KjVZKSgz06oM/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJPQ1b+KDUqDFctkdRW44e1w==}
@@ -21042,6 +21038,7 @@ packages:
   /superagent/3.8.3:
     resolution: {integrity: sha512-GLQtLMCoEIK4eDv6OGtkOoSMt3D+oq0y3dsxMuYuDvaNUvuT8eFBuLmfR0iYYzHC1e8hpzC6ZsxbuP6DIalMFA==}
     engines: {node: '>= 4.0'}
+    deprecated: Please upgrade to v7.0.2+ of superagent.  We have fixed numerous issues with streams, form-data, attach(), filesystem errors not bubbling up (ENOENT on attach()), and all tests are now passing.  See the releases tab for more information at <https://github.com/visionmedia/superagent/releases>.
     dependencies:
       component-emitter: 1.3.0
       cookiejar: 2.1.3
@@ -22456,7 +22453,7 @@ packages:
   /wide-align/1.1.3:
     resolution: {integrity: sha512-QGkOQc8XL6Bt5PwnsExKBPuMKBxnGxWWW3fU55Xt4feHozMUhdUMaBCk290qpm/wG5u/RSKzwdAC4i51YigihA==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 2.1.1
 
   /widest-line/3.1.0:
     resolution: {integrity: sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==}
@@ -22576,19 +22573,6 @@ packages:
         optional: true
     dev: true
 
-  /ws/7.5.3:
-    resolution: {integrity: sha512-kQ/dHIzuLrS6Je9+uv81ueZomEwH0qVYstcAQ4/Z93K8zeko9gtAbttJWzoC5ukqXY1PpoouV3+VSOqEAFt5wg==}
-    engines: {node: '>=8.3.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: ^5.0.2
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-    dev: true
-
   /ws/7.5.5:
     resolution: {integrity: sha512-BAkMFcAzl8as1G/hArkxOxq3G7pjUqQ3gzYbLL0/5zNkph70e+lCoxBGnm6AW1+/aiNeV4fnKqZ8m4GZewmH2w==}
     engines: {node: '>=8.3.0'}
@@ -22609,7 +22593,7 @@ packages:
   /xml2js/0.4.19:
     resolution: {integrity: sha512-esZnJZJOiJR9wWKMyuvSE1y6Dq5LCuJanqhxslH2bxM6duahNZ+HMpCLhBQGZkbX6xRf8x1Y2eJlgt2q3qo49Q==}
     dependencies:
-      sax: 1.2.1
+      sax: 1.2.4
       xmlbuilder: 9.0.7
     dev: true
 
