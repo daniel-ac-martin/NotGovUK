@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '12' ]
+        node: [ '14' ]
     steps:
 
       - name: Check out repository
@@ -51,7 +51,7 @@ jobs:
     if: github.event_name != 'pull_request'
     strategy:
       matrix:
-        node: [ '12' ]
+        node: [ '14' ]
     steps:
 
       - name: Check out repository
@@ -84,7 +84,7 @@ jobs:
     strategy:
       matrix:
         app: [ 'govuk-docs', 'govuk-template' ]
-        node: [ '12' ]
+        node: [ '14' ]
     steps:
 
       - name: Check out repository
@@ -117,7 +117,7 @@ jobs:
       matrix:
         app: [ 'govuk-docs', 'govuk-template' ]
         browser: [ 'chromium', 'firefox', 'electron' ]
-        node: [ '12' ]
+        node: [ '14' ]
     steps:
 
       - name: Check out repository
@@ -151,7 +151,7 @@ jobs:
     uses: './.github/workflows/deploy-to-netlify.yml'
     with:
       app: govuk-docs
-      node: 12
+      node: 14
       production-branch: master
     secrets:
       CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
