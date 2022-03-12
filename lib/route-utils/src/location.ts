@@ -11,8 +11,8 @@ export const enhanceLocation = <S>(location: _Location<S>): Location<S> => ({
   query: qsParse(location.search)
 });
 
-export const useLocation = (): Location => {
+export const useLocation = (): Location<object> => {
   const location = useRawLocation();
 
-  return enhanceLocation(location);
+  return enhanceLocation(location as _Location<object>);
 };
