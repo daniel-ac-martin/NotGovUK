@@ -1,0 +1,28 @@
+@import "@not-govuk/sass-base";
+//@import "govuk-frontend/govuk/components/cookie-banner";
+
+// Need this until we can upgrade govuk-frontend
+$border-bottom-width: govuk-spacing(2);
+
+.govuk-cookie-banner {
+  padding-top: govuk-spacing(4);
+  border-bottom: $border-bottom-width solid transparent;
+
+  background-color: govuk-colour("light-grey", $legacy: "grey-3");
+}
+
+.govuk-cookie-banner[hidden] {
+  display: none;
+}
+
+.govuk-cookie-banner__message {
+  margin-bottom: -$border-bottom-width;
+
+  &[hidden] {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
