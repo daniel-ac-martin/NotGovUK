@@ -7,6 +7,7 @@ module.exports = {
     '../components/breadcrumbs/spec/*.stories.@(js|mdx)',
     '../components/button/spec/*.stories.@(js|mdx)',
     '../components/button-group/spec/*.stories.@(js|mdx)',
+    '../components/cookie-banner/spec/*.stories.@(js|mdx)',
     '../components/checkboxes/spec/*.stories.@(js|mdx)',
     '../components/date-input/spec/*.stories.@(js|mdx)',
     '../components/details/spec/*.stories.@(js|mdx)',

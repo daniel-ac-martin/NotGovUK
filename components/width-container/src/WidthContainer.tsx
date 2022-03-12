@@ -1,9 +1,9 @@
-import { FC, createElement as h } from 'react';
+import { FC, HTMLAttributes, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/WidthContainer.scss';
 
-export type WidthContainerProps = StandardProps & {
+export type WidthContainerProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** Maximum width of the container in px units (-1 for full width) */
   maxWidth?: number
 };

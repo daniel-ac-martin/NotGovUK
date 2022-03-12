@@ -11,6 +11,7 @@ const mainStories = [
   require('../../../../../components/back-link/spec/BackLink.stories.mdx'),
   require('../../../../../components/breadcrumbs/spec/Breadcrumbs.stories.mdx'),
   require('../../../../../components/button/spec/Button.stories.mdx'),
+  require('../../../../../components/cookie-banner/spec/CookieBanner.stories.mdx'),
   require('../../../../../components/checkboxes/spec/Checkboxes.stories.mdx'),
   require('../../../../../components/date-input/spec/DateInput.stories.mdx'),
   require('../../../../../components/details/spec/Details.stories.mdx'),
