@@ -1,5 +1,4 @@
 import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks";
-import { boolean, object, text } from "@storybook/addon-knobs";
 import { Site, StartButton } from '../../';
 import readMe from './README.md';
 
@@ -19,16 +18,11 @@ A component for defining an entire web site.
 <Preview withToolbar>
   <Story name="Site">
     <Site
-      department={text('department')}
-      logoHref={text('logoHref')}
-      phase={text('phase', 'alpha')}
-      signOutHref={text('signOutHref')}
-      signOutText={text('signOutText')}
-      title={text('title', 'My service')}
-      titleHref={text('titleHref', '#my-service')}
-      wide={boolean('wide')}
+      phase="alpha"
+      title="My service"
+      titleHref="#my-service"
     >
-      {text('children', 'My site.')}
+      My site.
     </Site>
   </Story>
 </Preview>
