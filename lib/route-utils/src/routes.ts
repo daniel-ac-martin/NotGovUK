@@ -5,10 +5,9 @@ import { Location, enhanceLocation } from './location';
 
 export interface RouteComponentProps<
   Params extends { [K in keyof Params]?: string } = {},
-  C extends StaticContext = StaticContext,
-  S = LocationState
-  > extends Omit<_RouteComponentProps<Params, C, S>, 'location'> {
-    location: Location<S>;
+  C extends StaticContext = StaticContext
+  > extends Omit<_RouteComponentProps<Params, C, object>, 'location'> {
+    location: Location<object>;
   }
 
 const withEnhancements = (Component: ComponentType<RouteComponentProps | any>): FC<any> => (
