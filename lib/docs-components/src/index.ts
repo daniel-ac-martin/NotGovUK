@@ -11,6 +11,7 @@ import {
 } from '@storybook/addon-docs/blocks';
 
 export type MetaProps = ComponentProps<typeof _Meta> & {
+  title?: string // Defunct?
 };
 
 export const Meta: FC<MetaProps> = (props) => {

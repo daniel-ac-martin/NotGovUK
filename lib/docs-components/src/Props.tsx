@@ -1,6 +1,7 @@
 import { ComponentType, FC, createElement as h } from 'react';
 import { Props as _Props } from '@storybook/addon-docs/blocks';
-import { extractArgTypes } from '@storybook/addon-docs/dist/frameworks/react/extractArgTypes';
+//import type { extractArgTypes } from '@storybook/addon-docs/dist/ts3.4/frameworks/react/extractArgTypes';
+import { extractArgTypes } from '@storybook/addon-docs/dist/esm/frameworks/react/extractArgTypes';
 import { SimpleTable } from '@not-govuk/simple-table';
 import { inStorybook } from './common';
 
