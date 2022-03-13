@@ -61,7 +61,7 @@ netlify: pkg/netlify/functions/govuk-docs.zip pkg/netlify/publish/_redirects
 pkg/netlify/functions/%.zip: pkg/aws-lambda/%.zip
 	mkdir -p '$(@D)'
 	cp -a '$(<)' '$(@)'
-	echo "process.env['MODE'] = 'serverless'; module.exports = require('./dist/server/index.js');" > 'pkg/netlify/$(basename $(@F)).js'
+	echo "process.env['MODE'] = 'serverless'; process.env['NODE_ENV'] = 'production'; module.exports = require('./dist/server/index.js');" > 'pkg/netlify/$(basename $(@F)).js'
 	zip -mvj '$(@)' 'pkg/netlify/$(basename $(@F)).js'
 
 pkg/netlify/publish/_redirects: dist/server/index.js
