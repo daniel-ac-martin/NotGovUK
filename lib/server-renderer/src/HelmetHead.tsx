@@ -1,11 +1,11 @@
 import { FC, createElement as h } from 'react';
-import { HelmetData } from 'react-helmet-async';
+import { HelmetServerState } from 'react-helmet-async';
 import { Hydration, HydrationData } from '@not-govuk/app-composer';
 
 export type HelmetHeadProps = {
   assetsPath: string
   charSet?: string
-  helmet: HelmetData
+  helmet: HelmetServerState
   hydrationData?: HydrationData
   rootId: string
   stylesheets: string[]
