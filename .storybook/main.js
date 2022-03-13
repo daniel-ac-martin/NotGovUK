@@ -57,7 +57,6 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-docs/register',
     '@storybook/addon-jest/register',
-    '@storybook/addon-knobs/register',
     '@storybook/addon-links',
     '@storybook/addon-storysource',
     '@storybook/addon-viewport/register'
