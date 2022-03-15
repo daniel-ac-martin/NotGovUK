@@ -129,7 +129,7 @@ jobs:
           node: ${{ matrix.node }}
 
       - name: Download build directory
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: 'build-${{ matrix.app }}'
           path: "${{ matrix.app && format('apps/{0}/', matrix.app) }}dist"
