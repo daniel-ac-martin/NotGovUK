@@ -39,7 +39,7 @@ jobs:
           node: ${{ inputs.node }}
 
       - name: Download build directory
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: 'build-${{ inputs.app }}'
           path: "${{ inputs.app && format('apps/{0}/', inputs.app) }}dist"
