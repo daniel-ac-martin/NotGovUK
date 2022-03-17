@@ -44,7 +44,7 @@ jobs:
         uses: ./.github/actions/build-app
 
       - name: Save build directory
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: 'build'
           path: "dist"
