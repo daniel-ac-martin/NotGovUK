@@ -1,5 +1,50 @@
 {
   "extends": [
     "config:base"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "cypress/included",
+        "cypress"
+      ],
+      "groupName": "react"
+    },
+    {
+      "matchPackageNames": [
+        "@types/babel-jest",
+        "@types/jest",
+        "@types/ts-jest",
+        "babel-jest",
+        "jest",
+        "ts-jest"
+      ],
+      "groupName": "jest"
+    },
+    {
+      "matchPackageNames": [
+        "@types/react",
+        "@types/react-dom",
+        "react",
+        "react-dom"
+      ],
+      "groupName": "react"
+    },
+    {
+      "matchPackageNames": [
+        "@types/react-router",
+        "@types/react-router-dom",
+        "react-router",
+        "react-router-dom"
+      ],
+      "groupName": "react-router"
+    },
+    {
+      "matchPackagePatterns": [
+        "^@types/webpack",
+        "^webpack"
+      ],
+      "groupName": "webpack"
+    }
   ]
 }
