@@ -7,9 +7,7 @@ provider:
     NODE_ENV: production
 package:
   excludeDevDependencies: false
-  exclude:
-    - ./**
-  include:
+  patterns:
     - '!./**'
     - dist/**
 functions:
