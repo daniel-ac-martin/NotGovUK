@@ -16,7 +16,7 @@ runs:
         cache: 'npm'
 
     - name: Cache Cypress.io
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       env:
         cache-hash: ${{ hashFiles('pnpm-lock.yaml') }}
       with:
