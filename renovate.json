@@ -8,7 +8,7 @@
         "cypress/included",
         "cypress"
       ],
-      "groupName": "react"
+      "groupName": "cypress"
     },
     {
       "matchPackageNames": [
@@ -20,6 +20,13 @@
         "ts-jest"
       ],
       "groupName": "jest"
+    },
+    {
+      "matchPackageNames": [
+        "node-plop",
+        "plop"
+      ],
+      "groupName": "plop"
     },
     {
       "matchPackageNames": [
@@ -38,13 +45,6 @@
         "react-router-dom"
       ],
       "groupName": "react-router"
-    },
-    {
-      "matchPackagePatterns": [
-        "^@types/webpack",
-        "^webpack"
-      ],
-      "groupName": "webpack"
     }
   ]
 }
