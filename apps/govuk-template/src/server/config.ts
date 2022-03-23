@@ -34,6 +34,7 @@ const serverConfig = {
   },
   env,
   logger: {
+    destination: process.env.LOG_DESTINATION,
     level: process.env.LOG_LEVEL || 'info'
   },
   httpd: {

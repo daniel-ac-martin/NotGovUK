@@ -27,6 +27,7 @@ const setup = () => {
       port: config.httpd.port
     },
     logger: {
+      destination: config.logger.destination,
       level: config.logger.level && (
         (config.logger.level === 'trace' && 'trace')
           || (config.logger.level === 'debug' && 'debug')
