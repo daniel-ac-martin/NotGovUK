@@ -26,6 +26,16 @@ const setup = () => {
       host: config.httpd.host,
       port: config.httpd.port
     },
+    logger: {
+      level: config.logger.level && (
+        (config.logger.level === 'trace' && 'trace')
+          || (config.logger.level === 'debug' && 'debug')
+          || (config.logger.level === 'info' && 'info')
+          || (config.logger.level === 'warn' && 'warn')
+          || (config.logger.level === 'error' && 'error')
+          || (config.logger.level === 'fatal' && 'fatal')
+      ) || undefined
+    },
     mode: config.mode,
     name: config.name,
     ssrOnly: config.ssrOnly
