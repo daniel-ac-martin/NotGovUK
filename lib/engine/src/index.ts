@@ -4,7 +4,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import { ComponentType } from 'react';
 import serverless from 'serverless-http';
 import { Configuration as WebpackConfig } from 'webpack';
-import restify, { IsReady, Router } from '@not-govuk/restify';
+import restify, { IsReady, LogLevelString, LoggerOptions, Router } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
 import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
@@ -43,6 +43,9 @@ const isWebpackConfig = (v: Assets): v is WebpackConfig => !isPreBuiltAssets(v);
 export type EngineStage1Options = {
   assets: Assets
   env: NodeEnv
+  logger?: {
+    level?: LogLevelString
+  }
   httpd: {
     host: string
     port: number
@@ -94,6 +97,9 @@ export const engine = async (options1: EngineStage1Options) => {
       ? options1.httpd.port + 1
       : options1.httpd.port
   );
+  const logger: LoggerOptions = {
+    level: options1?.logger?.level
+  };
 
   let proxy;
 
@@ -101,6 +107,7 @@ export const engine = async (options1: EngineStage1Options) => {
     // Set up extra Restify instance for proxy
     const httpd = restify.createServer({
       bodyParser: false,
+      logger,
       name: `${options1.name}-asset-proxy`
     });
     const proxyMiddleware = createProxyMiddleware({
@@ -172,7 +179,8 @@ export const engine = async (options1: EngineStage1Options) => {
         'application/xhtml+xml; q=0.2': formatHTML,
         'text/html; q=0.2': formatHTML
       },
-      isReady: options2.isReady
+      isReady: options2.isReady,
+      logger
     });
 
     httpd.use(react.renderer);
