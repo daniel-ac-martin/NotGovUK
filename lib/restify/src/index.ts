@@ -6,8 +6,12 @@ import { htmlByDefault } from './middleware/html-by-default';
 import { preventClickjacking } from './middleware/prevent-clickjacking';
 import { noCacheByDefault } from './middleware/no-cache-by-default';
 import { IsReady, readiness } from './middleware/readiness';
-import { LoggerOptions, logger } from './lib/logger';
+import { LoggerOptions as _LoggerOptions, logger } from './lib/logger';
 import { installServeAPI } from './lib/serve-api';
+
+export type LoggerOptions = Omit<_LoggerOptions, 'name'> & {
+  name?: string
+}
 
 export type ServerOptions = _ServerOptions & {
   bodyParser?: plugins.BodyParserOptions | false
