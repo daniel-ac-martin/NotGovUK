@@ -6,3 +6,6 @@ export default logger;
 export type {
   LoggerOptions
 };
+export type {
+  LogLevelString
+} from 'bunyan';
