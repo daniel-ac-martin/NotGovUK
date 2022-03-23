@@ -1,4 +1,5 @@
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
+import { createWriteStream } from 'fs';
 import { GraphQLSchema } from 'graphql';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { ComponentType } from 'react';
@@ -44,6 +45,7 @@ export type EngineStage1Options = {
   assets: Assets
   env: NodeEnv
   logger?: {
+    destination?: NodeJS.WritableStream | string
     level?: LogLevelString
   }
   httpd: {
@@ -97,8 +99,14 @@ export const engine = async (options1: EngineStage1Options) => {
       ? options1.httpd.port + 1
       : options1.httpd.port
   );
+  const logDestination = options1?.logger?.destination;
   const logger: LoggerOptions = {
-    level: options1?.logger?.level
+    level: options1?.logger?.level,
+    stream: (
+      typeof logDestination === 'string'
+        ? createWriteStream(logDestination)
+        : logDestination
+    )
   };
 
   let proxy;
