@@ -6,15 +6,19 @@ import { htmlByDefault } from './middleware/html-by-default';
 import { preventClickjacking } from './middleware/prevent-clickjacking';
 import { noCacheByDefault } from './middleware/no-cache-by-default';
 import { IsReady, readiness } from './middleware/readiness';
-import { ILoggerOptions, logger } from './lib/logger';
+import { LoggerOptions as _LoggerOptions, logger } from './lib/logger';
 import { installServeAPI } from './lib/serve-api';
+
+export type LoggerOptions = Omit<_LoggerOptions, 'name'> & {
+  name?: string
+}
 
 export type ServerOptions = _ServerOptions & {
   bodyParser?: plugins.BodyParserOptions | false
   grace?: number
   isReady?: IsReady
   liveness?: string
-  logger?: ILoggerOptions
+  logger?: LoggerOptions
   queryParser?: plugins.QueryParserOptions
   readiness?: string
   requestLogger?: plugins.RequestLogger
@@ -109,4 +113,5 @@ export * as errors from 'restify-errors';
 export { Router } from './lib/router';
 export type { IsReady };
 export type { Next, Request, Response } from 'restify';
+export type { LogLevelString } from './lib/logger';
 export type { Middleware } from './middleware/common';

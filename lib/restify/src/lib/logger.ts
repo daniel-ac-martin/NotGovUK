@@ -1,8 +1,11 @@
-import Bunyan, { LoggerOptions as ILoggerOptions } from 'bunyan';
+import Bunyan, { LoggerOptions } from 'bunyan';
 
-export const logger = (options: ILoggerOptions) => new Bunyan(options);
+export const logger = (options: LoggerOptions) => new Bunyan(options);
 
 export default logger;
 export type {
-  ILoggerOptions
+  LoggerOptions
 };
+export type {
+  LogLevelString
+} from 'bunyan';
