@@ -6,7 +6,7 @@ import { htmlByDefault } from './middleware/html-by-default';
 import { preventClickjacking } from './middleware/prevent-clickjacking';
 import { noCacheByDefault } from './middleware/no-cache-by-default';
 import { IsReady, readiness } from './middleware/readiness';
-import { ILoggerOptions, logger } from './lib/logger';
+import { LoggerOptions, logger } from './lib/logger';
 import { installServeAPI } from './lib/serve-api';
 
 export type ServerOptions = _ServerOptions & {
@@ -14,7 +14,7 @@ export type ServerOptions = _ServerOptions & {
   grace?: number
   isReady?: IsReady
   liveness?: string
-  logger?: ILoggerOptions
+  logger?: LoggerOptions
   queryParser?: plugins.QueryParserOptions
   readiness?: string
   requestLogger?: plugins.RequestLogger
