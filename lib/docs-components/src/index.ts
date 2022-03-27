@@ -10,6 +10,7 @@ import type {
 } from '@storybook/addon-docs/blocks';
 
 export type MetaProps = ComponentProps<typeof _Meta> & {
+  title?: string
 };
 
 export const Meta: FC<MetaProps> = (props) => {
