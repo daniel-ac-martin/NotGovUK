@@ -61,6 +61,9 @@ module.exports = {
     '@storybook/addon-storysource',
     '@storybook/addon-viewport/register'
   ],
+  core: {
+    builder: 'webpack5'
+  },
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.(stories|story)\.[tj]sx?$/,
