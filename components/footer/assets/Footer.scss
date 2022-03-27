@@ -2,10 +2,6 @@
 @import "govuk-frontend/govuk/components/footer/_index";
 
 .govuk-footer {
-  &__copyright-logo {
-    background-image: url('~govuk-frontend/govuk/assets/images/govuk-crest.png') !important; // TODO: !important is required due to SCSS being included twice.
-  }
-
   .govuk-link, a {
     @extend .govuk-footer__link;
   }
