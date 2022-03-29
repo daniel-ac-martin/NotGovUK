@@ -8,6 +8,9 @@ $govuk-font-family: inherit;
 $govuk-text-colour: inherit;
 $govuk-link-active-colour: inherit;
 
+// Set the asset path to be relative to the SCSS components
+$govuk-assets-path: '../../assets/';
+
 @import "govuk-frontend/govuk/_base";
 
 // Dark mode variables
