@@ -1,8 +1,8 @@
 import { ComponentType, FC, createElement as h } from 'react';
-import { Props as _Props } from '@storybook/addon-docs/blocks';
 import { extractArgTypes } from '@storybook/addon-docs/dist/frameworks/react/extractArgTypes';
 import { SimpleTable } from '@not-govuk/simple-table';
-import { inStorybook } from './common';
+
+import type { Props as _Props } from '@storybook/addon-docs/blocks';
 
 type PropsTableRow = {
   default: string
@@ -30,26 +30,22 @@ export const Props: FC<PropsProps> = (props) => {
       });
     });
 
-  return (
-    inStorybook
-      ? h(_Props, props)
-      : h(
-        'details', {},
-        [
-          h('summary', { key: 0 }, 'Props'),
-          h(
-            SimpleTable, {
-              key: 1,
-              data,
-              headings: {
-                default: 'Default',
-                description: 'Description',
-                name: 'Name',
-                type: 'Type'
-              },
-              keys: [ 'name', 'type', 'default', 'description' ]
-            })
-        ]
-      )
+  return h(
+    'details', {},
+    [
+      h('summary', { key: 0 }, 'Props'),
+      h(
+        SimpleTable, {
+          key: 1,
+          data,
+          headings: {
+            default: 'Default',
+            description: 'Description',
+            name: 'Name',
+            type: 'Type'
+          },
+          keys: [ 'name', 'type', 'default', 'description' ]
+        })
+    ]
   );
 };

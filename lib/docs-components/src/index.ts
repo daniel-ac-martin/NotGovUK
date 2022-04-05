@@ -1,10 +1,9 @@
 import { ComponentProps, ComponentType, FC, Fragment, ReactElement, createElement as h } from 'react';
 import { id } from '@not-govuk/component-helpers';
 import { ReactPreview } from './ReactPreview';
-import { inStorybook } from './common';
 import { useDocs } from './context';
 
-import {
+import type {
   Meta as _Meta,
   Preview as _Preview,
   Story as _Story
@@ -20,11 +19,7 @@ export const Meta: FC<MetaProps> = (props) => {
   ctx.title = title;
   ctx.decorators = decorators;
 
-  return (
-    inStorybook
-      ? h(_Meta, props)
-      : null
-  );
+  return null;
 };
 
 export type PreviewProps = ComponentProps<typeof _Preview> & {
@@ -53,18 +48,14 @@ const DocsPreview: FC<PreviewProps> = ({ children, id: _id }) => {
 };
 
 export const Preview: FC<PreviewProps> = (props) => (
-  inStorybook
-    ? h(_Preview, props)
-    : h(DocsPreview, props)
+  h(DocsPreview, props)
 );
 
 export type StoryProps = ComponentProps<typeof _Story> & {
 };
 
-export const Story: FC<StoryProps> = ({ children, ...props }) => (
-  inStorybook
-    ? h(_Story, props)
-    : h(Fragment, {}, children)
+export const Story: FC<StoryProps> = ({ children }) => (
+  h(Fragment, {}, children)
 );
 
 export * from './DocsPage';
