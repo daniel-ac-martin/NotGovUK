@@ -66,7 +66,7 @@ export type EngineStage2Options = {
   graphQL?: {
     schema: GraphQLSchema
   }
-  isReady: IsReady
+  isReady?: IsReady
   privacy?: boolean
   pageLoader: PageLoader
 };
