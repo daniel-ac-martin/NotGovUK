@@ -1,5 +1,5 @@
 import base64url from 'base64url';
-import { Client, Issuer, Strategy, StrategyOptions } from 'openid-client';
+import { Client, Issuer, Strategy, StrategyOptions, custom } from 'openid-client';
 import { AuthBagger, AuthMethod, UserProfile } from './common';
 import { passportBag } from './passport';
 
@@ -34,6 +34,10 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
   redirectUri,
   sessionsSecret
 }) => {
+  custom.setHttpOptionsDefaults({
+    timeout: 5000,
+  });
+
   const iss = await Issuer.discover(issuer);
   const client = new iss.Client({
     client_id: clientId,
