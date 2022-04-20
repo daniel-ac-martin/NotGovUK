@@ -15,8 +15,7 @@ docs_targets = \
 	$(docs_target_dir)/src/common/app.scss \
 	$(docs_target_dir)/src/common/loading-page.tsx \
 	$(docs_target_dir)/src/common/page-wrap.tsx \
-	$(docs_target_dir)/src/common/error-page.tsx \
-	$(docs_target_dir)/src/server/template.tsx
+	$(docs_target_dir)/src/common/error-page.tsx
 skel_deps = \
 	$(patsubst $(source_dir)/%,$(target_dir)/%,$(sources)) \
 	$(docs_targets)
@@ -25,8 +24,7 @@ skel_proto_deps = \
 	$(proto_target_dir)/src/common/app.scss \
 	$(proto_target_dir)/src/common/loading-page.tsx \
 	$(proto_target_dir)/src/common/page-wrap.tsx \
-	$(proto_target_dir)/src/common/error-page.tsx \
-	$(proto_target_dir)/src/server/template.tsx
+	$(proto_target_dir)/src/common/error-page.tsx
 plopfile = $(build_dir)/plopfile.js
 
 .PHONY: all clean debug
