@@ -8,7 +8,7 @@ const dummyRoles = ['books.author', 'books.title'];
 const serverConfig = {
   ...commonConfig,
   auth: {
-    method: process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.OIDC ),
+    method: process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.Basic ),
     sessionsSecret: process.env.SESSIONS_SECRET || 'changeme',
     dummy: {
       username: 'TestUser',

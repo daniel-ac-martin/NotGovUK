@@ -4,6 +4,10 @@ import commonConfig from '../common/config';
 const serverConfig = {
   ...commonConfig,
   env: process.env.NODE_ENV as NodeEnv,
+  logger: {
+    destination: process.env.LOG_DESTINATION,
+    level: process.env.LOG_LEVEL || 'info'
+  },
   httpd: {
     host: process.env.LISTEN_HOST || '0.0.0.0',
     port: Number(process.env.PORT) || Number(process.env.LISTEN_PORT) || 8080

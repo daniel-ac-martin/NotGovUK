@@ -144,9 +144,24 @@ export const reactRenderer: ReactRenderer = ({
     const renderToHtml = (appRender?: string): string => {
       appRender = appRender || renderToString(app);
 
-      const assetsByChunkName = res?.locals?.webpack?.devMiddleware.stats.toJson().assetsByChunkName || // v4 dev-middleware
-        res?.locals?.webpackStats?.toJson().assetsByChunkName || // v3 dev-middleware
-        entrypoints; // pre-built assets
+      let fromHeader = undefined;
+
+      if (!entrypoints) {
+        try {
+          const header = req.headers['x-entrypoints'];
+          const str = (
+            header instanceof Array
+              ? header[0]
+              : header
+          );
+          fromHeader = JSON.parse(str);
+        } catch (_e) {}
+      }
+
+      const assetsByChunkName = (
+        entrypoints || // pre-built assets
+        fromHeader // from asset proxy
+      );
       const assets: string[] = (
         Object.values(assetsByChunkName)
           .flat()
