@@ -8,7 +8,7 @@ const dummyRoles = ['books.author', 'books.title'];
 const serverConfig = {
   ...commonConfig,
   auth: {
-    method: process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.OIDC ),
+    method: process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.Basic ),
     sessionsSecret: process.env.SESSIONS_SECRET || 'changeme',
     dummy: {
       username: 'TestUser',
@@ -26,7 +26,7 @@ const serverConfig = {
       roles: dummyRoles,
     },
     oidc: {
-      issuer: process.env.OIDC_ISSUER || 'https://sso-dev.notprod.homeoffice.gov.uk/auth/realms/lev/',
+      issuer: process.env.OIDC_ISSUER || 'https://sso-dev.notprod.homeoffice.gov.uk/auth/realms/YOUR_REALM/',
       clientId: process.env.OIDC_CLIENT_ID || 'local-dev',
       clientSecret: process.env.OIDC_CLIENT_SECRET,
       redirectUri: process.env.OIDC_REDIRECT_URI || 'http://localhost:8080'
