@@ -1,5 +1,5 @@
-Not Govuk - Engine
-==================
+NotGovUK - Engine
+=================
 
 An engine for running NotGovUK applications.
 
@@ -17,32 +17,51 @@ Then use it in your code as follows:
 
 ```js
 const engine = require('@not-govuk/engine');
+const { resolve } = require('path');
 
-const Template = require('./template');
+const isReady = require('./readiness');
+const graphQLSchema = require('./graphql');
+
 const AppWrap = require('../common/app-wrap');
 const ErrorPage = require('../common/error-page');
 const PageWrap = require('../common/page-wrap');
 const pageLoader = require('../common/page-loader');
 
-const webpackConfig = require('../../webpack.config');
 const entrypoints = require('../../dist/public/entrypoints.json');
 
 const app = engine({
   AppWrap,
   ErrorPage,
   PageWrap,
-  Template,
-  entrypoints,
+  assets: {
+    localPath: resolve(__dirname, '..', '..', 'dist', 'public'),
+    publicPath: '/public/',
+    entrypoints
+  },
+  auth: {
+    method: AuthMethod.Basic,
+    username: 'guest',
+    password: 'password',
+    roles: [],
+    sessionsSecret: 'my-secret'
+  }
   env: 'production',
+  graphQL: {
+    schema: graphQLSchema
+  },
   httpd: {
     host: '0.0.0.0',
     port: 8080,
   },
+  logger: {
+    level: 'info'
+  },
+  isReady,
   mode: 'server',
-  name: 'my-app',
+  name: 'my-app'
   pageLoader,
-  ssrOnly: false,
-  webpackConfig
+  privacy: false,
+  ssrOnly: false
 });
 ```
 
