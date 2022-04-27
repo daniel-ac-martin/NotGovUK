@@ -24,6 +24,9 @@ export const webpackMiddleware = webpackConfig => {
       res.locals = res.locals || {};
 
       const restifyTransport = {
+        getHeader(key) {
+          res.getHeader(key);
+        },
         setHeader(key, val) {
           res.setHeader(key, val);
         },

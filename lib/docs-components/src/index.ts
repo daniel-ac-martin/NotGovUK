@@ -1,15 +1,17 @@
-import { ComponentProps, ComponentType, FC, Fragment, ReactElement, createElement as h } from 'react';
+import { ComponentProps, FC, Fragment, ReactElement, createElement as h } from 'react';
 import { id } from '@not-govuk/component-helpers';
 import { ReactPreview } from './ReactPreview';
 import { useDocs } from './context';
 
 import type {
+  AddContext as _AddContext,
   Meta as _Meta,
   Preview as _Preview,
   Story as _Story
 } from '@storybook/addon-docs/blocks';
 
 export type MetaProps = ComponentProps<typeof _Meta> & {
+  title?: string
 };
 
 export const Meta: FC<MetaProps> = (props) => {
@@ -55,6 +57,13 @@ export type StoryProps = ComponentProps<typeof _Story> & {
 };
 
 export const Story: FC<StoryProps> = ({ children }) => (
+  h(Fragment, {}, children)
+);
+
+export type AddContextProps = ComponentProps<typeof _AddContext> & {
+};
+
+export const AddContext: FC<AddContextProps> = ({ children }) => (
   h(Fragment, {}, children)
 );
 

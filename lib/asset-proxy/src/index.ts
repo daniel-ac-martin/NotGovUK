@@ -33,10 +33,7 @@ export const assetProxy = ({
     target: `http://localhost:${port + 1}`,
     changeOrigin: true,
     onProxyReq: (proxyReq, _req, res) => {
-      const entrypoints = (
-        res?.locals?.webpack?.devmiddleware.stats.tojson().assetsbychunkname || // v4 dev-middleware
-        res?.locals?.webpackStats?.toJson().assetsByChunkName // v3 dev-middleware
-      );
+      const entrypoints = res.locals.webpack.devMiddleware.stats.toJson().assetsByChunkName;
 
       proxyReq.setHeader('X-Entrypoints', JSON.stringify(entrypoints));
     }

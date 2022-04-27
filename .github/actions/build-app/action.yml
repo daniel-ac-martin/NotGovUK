@@ -9,8 +9,6 @@ runs:
   steps:
 
     - name: Build application
-      env:
-        NODE_OPTIONS: --max_old_space_size=6144
       shell: bash
       working-directory: "${{ inputs.app && format('apps/{0}/', inputs.app) }}"
       run: 'npm run build'
