@@ -4,13 +4,13 @@ import { Page, PageProps } from './Page';
 
 import '../assets/GovUKPage.scss';
 
-const favicon = require('govuk-frontend/govuk/assets/images/favicon.ico').default;
-const maskIcon = require('govuk-frontend/govuk/assets/images/govuk-mask-icon.svg').default;
-const appleTouchIcon180 = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-180x180.png').default;
-const appleTouchIcon167 = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-167x167.png').default;
-const appleTouchIcon152 = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-152x152.png').default;
-const appleTouchIcon = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon.png').default;
-const ogImage = require('govuk-frontend/govuk/assets/images/govuk-opengraph-image.png').default;
+const favicon = require('govuk-frontend/govuk/assets/images/favicon.ico');
+const maskIcon = require('govuk-frontend/govuk/assets/images/govuk-mask-icon.svg');
+const appleTouchIcon180 = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-180x180.png');
+const appleTouchIcon167 = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-167x167.png');
+const appleTouchIcon152 = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-152x152.png');
+const appleTouchIcon = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon.png');
+const ogImage = require('govuk-frontend/govuk/assets/images/govuk-opengraph-image.png');
 
 export type GovUKPageProps = Omit<PageProps, 'govUK'>;
 

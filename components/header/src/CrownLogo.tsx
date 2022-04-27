@@ -2,7 +2,7 @@ import { FC, createElement as h } from 'react';
 import { LogoProps } from './LogoProps';
 
 const crown = {
-  png: require('govuk-frontend/govuk/assets/images/govuk-logotype-crown.png').default
+  png: require('govuk-frontend/govuk/assets/images/govuk-logotype-crown.png')
 };
 
 const fallbackSrcProps = { src: crown.png }
