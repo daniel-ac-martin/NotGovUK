@@ -4,12 +4,12 @@ import { Page, PageProps } from './Page';
 
 import '../assets/NotGovUKPage.scss';
 
-const favicon = require('../assets/coat-favicon.ico').default;
-const appleTouchIcon180 = require('../assets/coat-apple-touch-icon-180x180.png').default;
-const appleTouchIcon167 = require('../assets/coat-apple-touch-icon-167x167.png').default;
-const appleTouchIcon152 = require('../assets/coat-apple-touch-icon-152x152.png').default;
-const appleTouchIcon = require('../assets/coat-apple-touch-icon.png').default;
-const ogImage = require('../assets/coat-opengraph-image.png').default;
+const favicon = require('../assets/coat-favicon.ico');
+const appleTouchIcon180 = require('../assets/coat-apple-touch-icon-180x180.png');
+const appleTouchIcon167 = require('../assets/coat-apple-touch-icon-167x167.png');
+const appleTouchIcon152 = require('../assets/coat-apple-touch-icon-152x152.png');
+const appleTouchIcon = require('../assets/coat-apple-touch-icon.png');
+const ogImage = require('../assets/coat-opengraph-image.png');
 
 export type NotGovUKPageProps = Omit<PageProps, 'govUK'>;
 
