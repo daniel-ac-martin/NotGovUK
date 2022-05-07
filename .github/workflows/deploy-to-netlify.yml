@@ -6,7 +6,7 @@ on:
         required: false
         type: string
       node:
-        default: 14
+        default: 16
         required: false
         type: string
       production-branch:
@@ -81,5 +81,5 @@ jobs:
           cypress-project-id: ${{ secrets.CYPRESS_PROJECT_ID }}
           cypress-record-key: ${{ secrets.CYPRESS_RECORD_KEY }}
           deployment: netlify
-          node: 14
+          node: 16
           smoke: true
