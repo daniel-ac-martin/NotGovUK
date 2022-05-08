@@ -31,7 +31,7 @@ importers:
       '@types/jest': 27.4.1
       babel-jest: 27.5.1
       babel-plugin-transform-class-properties: 6.24.1
-      chromatic: 6.5.3
+      chromatic: 6.5.4
       enzyme: 3.11.0
       enzyme-adapter-react-16: 1.15.6
       enzyme-to-json: 3.6.2
@@ -76,7 +76,7 @@ importers:
       '@types/jest': 27.4.1
       babel-jest: 27.5.1_@babel+core@7.17.8
       babel-plugin-transform-class-properties: 6.24.1
-      chromatic: 6.5.3
+      chromatic: 6.5.4
       enzyme: 3.11.0
       enzyme-adapter-react-16: 1.15.6_4f82faf5e8cab057bc46d4d95079ec42
       enzyme-to-json: 3.6.2_enzyme@3.11.0
@@ -9232,8 +9232,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic/6.5.3:
-    resolution: {integrity: sha512-6Wy2lsNaojY5wTvobE3WV5VrQ5oP7B8kal6zWGrxu9g7Qbenb2cTcQ5SYgQY7tzT0Ed0zeHVyQm4TMmKz+XfXA==}
+  /chromatic/6.5.4:
+    resolution: {integrity: sha512-/yunI/+rdc56C6x0IhpPmdfK/DRMOvQ2hoNyAe6uuU9rdWRoAH72lYatr2NcpdsOdHGOcV5DKgIaKgVdPfUk1w==}
     hasBin: true
     dev: true
 
@@ -11841,6 +11841,7 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: true
 
   /follow-redirects/1.14.9_debug@4.3.2:
     resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
@@ -11852,7 +11853,6 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.2
-    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
@@ -12999,7 +12999,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.5
-      follow-redirects: 1.14.9
+      follow-redirects: 1.14.9_debug@4.3.2
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
