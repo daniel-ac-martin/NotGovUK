@@ -1669,7 +1669,7 @@ importers:
       source-map-loader: ^3.0.1
       webpack-bundle-analyzer: ^4.5.0
       webpack-manifest-plugin: ^5.0.0
-      webpack-node-externals: ^2.5.1
+      webpack-node-externals: ^3.0.0
     dependencies:
       '@babel/core': 7.10.5
       '@babel/plugin-proposal-class-properties': 7.10.4_@babel+core@7.10.5
@@ -1696,7 +1696,7 @@ importers:
       source-map-loader: 3.0.1_webpack@5.70.0
       webpack-bundle-analyzer: 4.5.0
       webpack-manifest-plugin: 5.0.0_webpack@5.70.0
-      webpack-node-externals: 2.5.1
+      webpack-node-externals: 3.0.0
 
   packages/components:
     specifiers:
@@ -20479,8 +20479,9 @@ packages:
       wildcard: 2.0.0
     dev: true
 
-  /webpack-node-externals/2.5.1:
-    resolution: {integrity: sha512-RWxKGibUU5kuJT6JDYmXGa3QsZskqIaiBvZ2wBxHlJzWVJPOyBMnroXf23uxEHnj1rYS8jNdyUfrNAXJ2bANNw==}
+  /webpack-node-externals/3.0.0:
+    resolution: {integrity: sha512-LnL6Z3GGDPht/AigwRh2dvL9PQPFQ8skEpVrWZXLWBYmqcaojHNN0onvHzie6rq7EWKrrBfPYqNEzTJgiwEQDQ==}
+    engines: {node: '>=6'}
     dev: false
 
   /webpack-sources/1.4.3:
