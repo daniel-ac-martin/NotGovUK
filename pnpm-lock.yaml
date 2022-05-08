@@ -121,7 +121,7 @@ importers:
       react-helmet-async: 1.3.0
       react-router: 5.2.1
       react-router-dom: 5.3.0
-      serverless: 3.8.0
+      serverless: 3.16.0
       start-server-and-test: 1.14.0
       ts-jest: 27.1.3
       typescript: 4.6.4
@@ -155,7 +155,7 @@ importers:
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
       react-router: 5.2.1_react@16.14.0
       react-router-dom: 5.3.0_react@16.14.0
-      serverless: 3.8.0
+      serverless: 3.16.0
       start-server-and-test: 1.14.0
       ts-jest: 27.1.3_503223244159864e2399277b79d41b5f
       typescript: 4.6.4
@@ -195,7 +195,7 @@ importers:
       react-helmet-async: 1.3.0
       react-router: 5.2.1
       react-router-dom: 5.3.0
-      serverless: 3.8.0
+      serverless: 3.16.0
       start-server-and-test: 1.14.0
       ts-jest: 27.1.3
       typescript: 4.6.4
@@ -233,7 +233,7 @@ importers:
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
       react-router: 5.2.1_react@16.14.0
       react-router-dom: 5.3.0_react@16.14.0
-      serverless: 3.8.0
+      serverless: 3.16.0
       start-server-and-test: 1.14.0
       ts-jest: 27.1.3_503223244159864e2399277b79d41b5f
       typescript: 4.6.4
@@ -1797,7 +1797,7 @@ packages:
     resolution: {integrity: sha512-HqiDzaLDFCXkcCO/SwoyhRwqYtINFHF7t9BDRq4x90TOKNAJpiqUt9X5lQ08bwxYzc067HUywDjGySpebHcUpw==}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
     dev: true
 
   /@ampproject/remapping/2.1.2:
@@ -5265,8 +5265,8 @@ packages:
     resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
     dev: true
 
-  /@serverless/dashboard-plugin/6.1.6_supports-color@8.1.1:
-    resolution: {integrity: sha512-TqdwrmWiYapIVMIc/eMdo24sY45VxjiHvA5WO04pH9SI8+iLqwKw4Z2qa5MwmdXG0tm+XpsLM2BSKrFvz9Bikw==}
+  /@serverless/dashboard-plugin/6.2.2_supports-color@8.1.1:
+    resolution: {integrity: sha512-h3zOprpuWZCdAP7qoOKT2nboB+AaxMkGoSzOD0jIBpt9s0cXqLE2VFjR2vKn8Cvam47Qa3XYnT2/XN6tR6rZgQ==}
     engines: {node: '>=12.0'}
     dependencies:
       '@serverless/event-mocks': 1.1.1
@@ -5277,15 +5277,15 @@ packages:
       flat: 5.0.2
       fs-extra: 9.1.0
       js-yaml: 4.1.0
-      jszip: 3.7.1
+      jszip: 3.9.1
       lodash: 4.17.21
       memoizee: 0.4.15
       ncjsm: 4.3.0
       node-dir: 0.1.17
       node-fetch: 2.6.7
       open: 7.4.2
-      semver: 7.3.5
-      simple-git: 3.4.0_supports-color@8.1.1
+      semver: 7.3.7
+      simple-git: 3.7.1_supports-color@8.1.1
       type: 2.6.0
       uuid: 8.3.2
       yamljs: 0.3.0
@@ -5309,10 +5309,10 @@ packages:
     engines: {node: '>=10.0'}
     dependencies:
       adm-zip: 0.5.9
-      archiver: 5.3.0
+      archiver: 5.3.1
       axios: 0.21.4
       fast-glob: 3.2.11
-      https-proxy-agent: 5.0.0_supports-color@8.1.1
+      https-proxy-agent: 5.0.1_supports-color@8.1.1
       ignore: 5.2.0
       isomorphic-ws: 4.0.1_ws@7.5.7
       js-yaml: 3.14.1
@@ -5337,7 +5337,7 @@ packages:
       archive-type: 4.0.0
       chalk: 4.1.2
       ci-info: 3.3.0
-      cli-progress-footer: 2.3.0
+      cli-progress-footer: 2.3.1
       content-disposition: 0.5.4
       d: 1.0.1
       decompress: 4.2.1
@@ -7965,7 +7965,7 @@ packages:
       ajv:
         optional: true
     dependencies:
-      ajv: 8.10.0
+      ajv: 8.11.0
 
   /ajv-keywords/3.5.2_ajv@6.12.6:
     resolution: {integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==}
@@ -7992,6 +7992,14 @@ packages:
 
   /ajv/8.10.0:
     resolution: {integrity: sha512-bzqAEZOjkrUMl2afH8dknrq5KEk2SrwdBROR+vH1EKVQTqaUbJVPdc/gEdggTMM0Se+s+Ja4ju4TlNcStKl2Hw==}
+    dependencies:
+      fast-deep-equal: 3.1.3
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
+      uri-js: 4.4.1
+
+  /ajv/8.11.0:
+    resolution: {integrity: sha512-wGgprdCvMalC0BztXvitD2hC04YffAvtsUn93JbGXYLAtCUO4xd17mCCZQxUOItiBwZvJScWo8NIvQMQ71rdpg==}
     dependencies:
       fast-deep-equal: 3.1.3
       json-schema-traverse: 1.0.0
@@ -8150,7 +8158,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       glob: 7.2.0
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       lazystream: 1.0.1
       lodash.defaults: 4.2.0
       lodash.difference: 4.5.0
@@ -8161,8 +8169,8 @@ packages:
       readable-stream: 2.3.7
     dev: true
 
-  /archiver/5.3.0:
-    resolution: {integrity: sha512-iUw+oDwK0fgNpvveEsdQ0Ase6IIKztBJU2U0E9MzszMfmVVUyv1QJhS2ITW9ZCqx8dktAxVAjWWkKehuZE8OPg==}
+  /archiver/5.3.1:
+    resolution: {integrity: sha512-8KyabkmbYrH+9ibcTScQ1xCJC/CGcugdVIwB+53f5sZziXgwUh3iXlAlANMxcZyDEfTHMe6+Z5FofV8nopXP7w==}
     engines: {node: '>= 10'}
     dependencies:
       archiver-utils: 2.1.0
@@ -8377,8 +8385,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /aws-sdk/2.1096.0:
-    resolution: {integrity: sha512-q+hotU57U8bGpz1pf5CkO4z630ay0xGJ9HedahKPZ0Xk3/X0GH+QFYPBWJ5IMTtO30bjfPH0zTaL2vJmMXLBrQ==}
+  /aws-sdk/2.1130.0:
+    resolution: {integrity: sha512-bkLXuOpHphKvaMAbbmqaHQtYsGICmoyEJdLlNOTCq7dH0uKxARcZEj01ebCifsJJ/fOrPt8EbNUHPu4/DOueDA==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       buffer: 4.9.2
@@ -9213,7 +9221,7 @@ packages:
       chownr: 1.1.4
       figgy-pudding: 3.5.2
       glob: 7.2.0
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       infer-owner: 1.0.4
       lru-cache: 5.1.1
       mississippi: 3.0.0
@@ -9592,12 +9600,12 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /cli-color/2.0.1:
-    resolution: {integrity: sha512-eBbxZF6fqPUNnf7CLAFOersUnyYzv83tHFLSlts+OAHsNendaqv2tHCq+/MO+b3Y+9JeoUlIvobyxG/Z8GNeOg==}
+  /cli-color/2.0.2:
+    resolution: {integrity: sha512-g4JYjrTW9MGtCziFNjkqp3IMpGhnJyeB0lOtRPjQkYhXzKYr6tYnXKyEVnMzITxhpbahsEW9KsxOYIDKwcsIBw==}
     engines: {node: '>=0.10'}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       es6-iterator: 2.0.3
       memoizee: 0.4.15
       timers-ext: 0.1.7
@@ -9615,13 +9623,13 @@ packages:
     dependencies:
       restore-cursor: 3.1.0
 
-  /cli-progress-footer/2.3.0:
-    resolution: {integrity: sha512-xJl+jqvdsE0Gjh5tKoLzZrQS4nPHC+yzeitgq2faAZiHl+/Peuwzoy5Sed6EBkm8JNrPk7W4U3YNVO/uxoqOFg==}
+  /cli-progress-footer/2.3.1:
+    resolution: {integrity: sha512-urD1hiEIQeZadVABtW5ExM8wse1phnmz15oJ4QEe46GQN87v1VBa0lZQ7gXkPELMzP6At4VY6v07baAiyztulw==}
     engines: {node: '>=10.0'}
     dependencies:
-      cli-color: 2.0.1
+      cli-color: 2.0.2
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       mute-stream: 0.0.8
       process-utils: 4.0.0
       timers-ext: 0.1.7
@@ -9641,8 +9649,8 @@ packages:
     resolution: {integrity: sha512-BbEjY9BEdA6wagVwTqPvmAwGB24U93rQPBFZUT8lNCDxXzre5LFHQUTJc70czjgUomVg8u8R5kW8oY9DYRFNeg==}
     engines: {node: '>=6.0'}
     dependencies:
-      cli-color: 2.0.1
-      es5-ext: 0.10.58
+      cli-color: 2.0.2
+      es5-ext: 0.10.61
       sprintf-kit: 2.0.1
       supports-color: 6.1.0
     dev: true
@@ -10033,7 +10041,7 @@ packages:
     resolution: {integrity: sha512-0Cbj7gyvFVApzpK/uhCtQ/9kE9UnYpxMzaq5nQQC/Dh4iaj5fxp7iEFIullrYwzj8nf0qnsI1Qsx34hAeAebvw==}
     engines: {node: '>=8'}
     dependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       make-dir: 3.1.0
       nested-error-stacks: 2.1.1
       p-event: 4.2.0
@@ -10351,8 +10359,8 @@ packages:
     resolution: {integrity: sha512-wbNwDfBHHur9UOzNUjeKUOJ0fCb0a52Wx0xInmQ7Y8FstyajiV1NmK1e00cxsr9YrE9r7yAChE0VvpuY5Rnlow==}
     dev: true
 
-  /dayjs/1.11.0:
-    resolution: {integrity: sha512-JLC809s6Y948/FuCZPm5IX8rRhQwOiyMb2TfVVQEixG7P8Lm/gt5S7yoQZmC8x1UehI9Pb7sksEt4xx14m+7Ug==}
+  /dayjs/1.11.2:
+    resolution: {integrity: sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==}
     dev: true
 
   /debug/2.6.9:
@@ -10497,7 +10505,7 @@ packages:
       decompress-tarbz2: 4.1.1
       decompress-targz: 4.1.1
       decompress-unzip: 4.0.1
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       make-dir: 1.3.0
       pify: 2.3.0
       strip-dirs: 2.1.0
@@ -10542,7 +10550,7 @@ packages:
     resolution: {integrity: sha512-8eluCl/Blx4YOGwMapBvXRKxHXhA8ejDXYzEaK8+/gtcm8hRMhSLmXSqDmNUKNc/C8HNSmuyyp/hflhqDAvK2A==}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       event-emitter: 0.3.5
       next-tick: 1.1.0
       timers-ext: 0.1.7
@@ -10844,7 +10852,7 @@ packages:
     resolution: {integrity: sha512-06kgtea+bGreF5eKYgI/36A6pLXggY7oR4p1pq4SmdFBn1ReOL5D8RhG64VrqfTTKNucqqtBAwEj8aB88mcqrg==}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
     dev: true
 
   /ecc-jsbn/0.1.2:
@@ -10950,7 +10958,7 @@ packages:
     resolution: {integrity: sha512-GIm3fQfwLJ8YZx2smuHpBKkXC1yOk+OBEmKckVyL0i/ea8mqDEykK3ld5dgH1QYPNyT/lIllxV2LULnxCHaHkA==}
     engines: {node: '>=10.13.0'}
     dependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       tapable: 2.2.1
     dev: true
 
@@ -11196,6 +11204,16 @@ packages:
       next-tick: 1.1.0
     dev: true
 
+  /es5-ext/0.10.61:
+    resolution: {integrity: sha512-yFhIqQAzu2Ca2I4SE2Au3rxVfmohU9Y7wqGR+s7+H7krk26NXhIRAZDgqd6xqjCEFUomDEA3/Bo/7fKmIkW1kA==}
+    engines: {node: '>=0.10'}
+    requiresBuild: true
+    dependencies:
+      es6-iterator: 2.0.3
+      es6-symbol: 3.1.3
+      next-tick: 1.1.0
+    dev: true
+
   /es5-shim/4.6.5:
     resolution: {integrity: sha512-vfQ4UAai8szn0sAubCy97xnZ4sJVDD1gt/Grn736hg8D7540wemIb1YPrYZSTqlM2H69EQX1or4HU/tSwRTI3w==}
     engines: {node: '>=0.4.0'}
@@ -11205,7 +11223,7 @@ packages:
     resolution: {integrity: sha1-p96IkUGgWpSwhUQDstCg+/qY87c=}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       es6-symbol: 3.1.3
     dev: true
 
@@ -11213,7 +11231,7 @@ packages:
     resolution: {integrity: sha1-0rPsXU2ADO2BjbU40ol02wpzzLE=}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       es6-iterator: 2.0.3
       es6-symbol: 3.1.1
       event-emitter: 0.3.5
@@ -11227,7 +11245,7 @@ packages:
     resolution: {integrity: sha1-vwDvT9q2uhtG7Le2KbTH7VcVzHc=}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
     dev: true
 
   /es6-symbol/3.1.3:
@@ -11241,7 +11259,7 @@ packages:
     resolution: {integrity: sha512-p5um32HOTO1kP+w7PRnB+5lQ43Z6muuMuIMffvDN8ZB4GcnjLBV6zGStpbASIMk4DCAvEaamhe2zhyCb/QXXsA==}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       es6-iterator: 2.0.3
       es6-symbol: 3.1.3
     dev: true
@@ -11513,7 +11531,7 @@ packages:
     resolution: {integrity: sha1-xmhJIp+RRk3t4uDUAgHtar9l8qw=}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
     dev: true
 
   /esprima/4.0.1:
@@ -11568,7 +11586,7 @@ packages:
     resolution: {integrity: sha1-34xp7vFkeSPHFXuc6DhAYQsCzDk=}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
     dev: true
 
   /event-stream/3.3.4:
@@ -11857,7 +11875,7 @@ packages:
       '@nodelib/fs.walk': 1.2.8
       glob-parent: 5.1.2
       merge2: 1.4.1
-      micromatch: 4.0.4
+      micromatch: 4.0.5
     dev: true
 
   /fast-glob/3.2.4:
@@ -12057,7 +12075,7 @@ packages:
     resolution: {integrity: sha512-UME7hNwBfzeISSFQcBEDemEEskpOjI/shPrpJM5PI4DSdn6hX0dmz+2dL70blZER2z8tSnTRL+2rfzlYgtbBoQ==}
     hasBin: true
     dependencies:
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       esniff: 1.1.0
     dev: true
 
@@ -12397,7 +12415,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       at-least-node: 1.0.0
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
     dev: true
@@ -12415,7 +12433,7 @@ packages:
   /fs-write-stream-atomic/1.0.10:
     resolution: {integrity: sha1-tH31NJPvkR33VzHnCp3tAYnbQMk=}
     dependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       iferr: 0.1.5
       imurmurhash: 0.1.4
       readable-stream: 2.3.7
@@ -12430,7 +12448,7 @@ packages:
     dependencies:
       d: 1.0.1
       deferred: 0.7.11
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       event-emitter: 0.3.5
       ignore: 5.2.0
       memoizee: 0.4.15
@@ -12795,6 +12813,9 @@ packages:
   /govuk-frontend/3.11.0:
     resolution: {integrity: sha512-1hW/3etYBtKPM+PNdWVOijvWVI3mpYL8eb7WLTtlh/Qxf2mCp6LkCsZk9I034n4EJBYQ5jlUWsUlTOOIypftpg==}
     engines: {node: '>= 4.2.0'}
+
+  /graceful-fs/4.2.10:
+    resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
 
   /graceful-fs/4.2.9:
     resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
@@ -13343,8 +13364,8 @@ packages:
       - supports-color
     dev: true
 
-  /https-proxy-agent/5.0.0_supports-color@8.1.1:
-    resolution: {integrity: sha512-EkYm5BcKUGiduxzSt3Eppko+PiNWNEpa4ySk9vTC6wDsQJW9rHSa+UhGNJoRYp7bz6Ht1eaRIa6QaJqO5rCFbA==}
+  /https-proxy-agent/5.0.1_supports-color@8.1.1:
+    resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2_supports-color@8.1.1
@@ -14830,7 +14851,7 @@ packages:
   /jsonfile/2.4.0:
     resolution: {integrity: sha1-NzaitCi4e72gzIO1P6PWM6NcKug=}
     optionalDependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
     dev: true
 
   /jsonfile/6.1.0:
@@ -14838,7 +14859,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
 
   /jsprim/2.0.2:
     resolution: {integrity: sha512-gqXddjPqQ6G40VdnI6T6yObEC+pDNvyP95wdQhkWkg7crHH3km5qP1FsOXEkzEQwnz6gz5qGTn1c2Y52wP3OyQ==}
@@ -14849,8 +14870,8 @@ packages:
       json-schema: 0.4.0
       verror: 1.10.0
 
-  /jszip/3.7.1:
-    resolution: {integrity: sha512-ghL0tz1XG9ZEmRMcEN2vt7xabrDdqHHeykgARpmZ0BiIctWxM47Vt63ZO2dnp4QYt/xJVLLy5Zv1l/xRdh2byg==}
+  /jszip/3.9.1:
+    resolution: {integrity: sha512-H9A60xPqJ1CuC4Ka6qxzXZeU8aNmgOeP5IFqwJbQQwtu2EUYxota3LdsiZWplF7Wgd9tkAd0mdu36nceSaPuYw==}
     dependencies:
       lie: 3.3.0
       pako: 1.0.11
@@ -14914,7 +14935,7 @@ packages:
   /klaw/1.3.1:
     resolution: {integrity: sha1-QIhDO0azsbolnXh4XY6W9zugJDk=}
     optionalDependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
     dev: true
 
   /kleur/3.0.3:
@@ -15130,10 +15151,10 @@ packages:
       log: ^6.0.0
     dependencies:
       ansi-regex: 5.0.1
-      cli-color: 2.0.1
+      cli-color: 2.0.2
       cli-sprintf-format: 1.1.1
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       log: 6.3.1
       sprintf-kit: 2.0.1
       supports-color: 8.1.1
@@ -15169,7 +15190,7 @@ packages:
     dependencies:
       d: 1.0.1
       duration: 0.2.2
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       event-emitter: 0.3.5
       sprintf-kit: 2.0.1
       type: 2.6.0
@@ -15232,7 +15253,7 @@ packages:
   /lru-queue/0.1.0:
     resolution: {integrity: sha1-Jzi9nw089PhEkMVzbEhpmsYyzaM=}
     dependencies:
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
     dev: true
 
   /make-dir/1.3.0:
@@ -15392,7 +15413,7 @@ packages:
     resolution: {integrity: sha512-UBWmJpLZd5STPm7PMUlOw/TSy972M+z8gcyQ5veOnSDRREz/0bmpyTfKt3/51DhEBqCZQn1udM/5flcSPYhkdQ==}
     dependencies:
       d: 1.0.1
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       es6-weak-map: 2.0.3
       event-emitter: 0.3.5
       is-promise: 2.2.2
@@ -15469,6 +15490,14 @@ packages:
     dependencies:
       braces: 3.0.2
       picomatch: 2.3.1
+
+  /micromatch/4.0.5:
+    resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
+    engines: {node: '>=8.6'}
+    dependencies:
+      braces: 3.0.2
+      picomatch: 2.3.1
+    dev: true
 
   /miller-rabin/4.0.1:
     resolution: {integrity: sha512-115fLhvZVqWwHPbClyntxEVfVDfl9DLLTuJvq3g2O/Oxi8AiNouAHvDSzHS0viUJc+V5vm3eq91Xwqn9dp4jRA==}
@@ -15748,7 +15777,7 @@ packages:
     dependencies:
       builtin-modules: 3.2.0
       deferred: 0.7.11
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       es6-set: 0.1.5
       ext: 1.6.0
       find-requires: 1.0.0
@@ -15975,7 +16004,7 @@ packages:
       fs2: 0.3.9
       memoizee: 0.4.15
       node-fetch: 2.6.7
-      semver: 7.3.5
+      semver: 7.3.7
       type: 2.6.0
       validate-npm-package-name: 3.0.0
     transitivePeerDependencies:
@@ -17603,7 +17632,7 @@ packages:
     engines: {node: '>=0.10'}
     requiresBuild: true
     dependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       micromatch: 3.1.10
       readable-stream: 2.3.7
     transitivePeerDependencies:
@@ -18352,6 +18381,14 @@ packages:
     dependencies:
       lru-cache: 6.0.0
 
+  /semver/7.3.7:
+    resolution: {integrity: sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /send/0.16.2:
     resolution: {integrity: sha512-E64YFPUssFHEFBvpbbjr44NCLtI1AohxQ8ZSiJjQLskAdKuriYEP6VyGEsRDH8ScozGpkaX1BGvhanqCwkcEZw==}
     engines: {node: '>= 0.8.0'}
@@ -18448,27 +18485,27 @@ packages:
       '@types/aws-lambda': 8.10.95
     dev: false
 
-  /serverless/3.8.0:
-    resolution: {integrity: sha512-yKTbDQVrO3JN0EPeeWis/OEprx8GiOjoMB0zPDpEubii3/wpJgmkU7Td37z9GT9vCWKJVztutM3Zx8iyCwG/9w==}
+  /serverless/3.16.0:
+    resolution: {integrity: sha512-z/UV32k+Pipii6CVtaCTDka5+rYExUwvF0Kx8808ghr7MstWclfL81x4CGDoXSTixRE/lus2KHLQfdljnunBnA==}
     engines: {node: '>=12.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@serverless/dashboard-plugin': 6.1.6_supports-color@8.1.1
+      '@serverless/dashboard-plugin': 6.2.2_supports-color@8.1.1
       '@serverless/platform-client': 4.3.2_supports-color@8.1.1
       '@serverless/utils': 6.0.3
-      ajv: 8.10.0
+      ajv: 8.11.0
       ajv-formats: 2.1.1
-      archiver: 5.3.0
-      aws-sdk: 2.1096.0
+      archiver: 5.3.1
+      aws-sdk: 2.1130.0
       bluebird: 3.7.2
       cachedir: 2.3.0
       chalk: 4.1.2
       child-process-ext: 2.1.1
       ci-info: 3.3.0
-      cli-progress-footer: 2.3.0
+      cli-progress-footer: 2.3.1
       d: 1.0.1
-      dayjs: 1.11.0
+      dayjs: 1.11.2
       decompress: 4.2.1
       dotenv: 10.0.0
       dotenv-expand: 5.1.0
@@ -18480,15 +18517,15 @@ packages:
       get-stdin: 8.0.0
       globby: 11.1.0
       got: 11.8.3
-      graceful-fs: 4.2.9
-      https-proxy-agent: 5.0.0_supports-color@8.1.1
+      graceful-fs: 4.2.10
+      https-proxy-agent: 5.0.1_supports-color@8.1.1
       is-docker: 2.2.1
       js-yaml: 4.1.0
       json-cycle: 1.3.0
       json-refs: 3.0.15_supports-color@8.1.1
       lodash: 4.17.21
       memoizee: 0.4.15
-      micromatch: 4.0.4
+      micromatch: 4.0.5
       node-fetch: 2.6.7
       npm-registry-utilities: 1.0.0
       object-hash: 2.2.0
@@ -18497,7 +18534,7 @@ packages:
       process-utils: 4.0.0
       promise-queue: 2.2.5
       require-from-string: 2.0.2
-      semver: 7.3.5
+      semver: 7.3.7
       signal-exit: 3.0.7
       strip-ansi: 6.0.1
       supports-color: 8.1.1
@@ -18611,8 +18648,8 @@ packages:
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
 
-  /simple-git/3.4.0_supports-color@8.1.1:
-    resolution: {integrity: sha512-sBRdudUc1yvi0xQQPuHXc1L9gTWkRn4hP2bbc7q4BTxR502d3JJAGsDOhrmsBY+wAZAw5JLl82tx55fSWYE65w==}
+  /simple-git/3.7.1_supports-color@8.1.1:
+    resolution: {integrity: sha512-+Osjtsumbtew2y9to0pOYjNzSIr4NkKGBg7Po5SUtjQhaJf2QBmiTX/9E9cv9rmc7oUiSGFIB9e7ys5ibnT9+A==}
     dependencies:
       '@kwsites/file-exists': 1.1.1_supports-color@8.1.1
       '@kwsites/promise-deferred': 1.1.1
@@ -18847,7 +18884,7 @@ packages:
   /sprintf-kit/2.0.1:
     resolution: {integrity: sha512-2PNlcs3j5JflQKcg4wpdqpZ+AjhQJ2OZEo34NXDtlB0tIPG84xaaXhpA8XFacFiwjKA4m49UOYG83y3hbMn/gQ==}
     dependencies:
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
     dev: true
 
   /sshpk/1.16.1:
@@ -18972,7 +19009,7 @@ packages:
     resolution: {integrity: sha512-P+7muTGs2C8yRcgJw/PPt61q7O517tDHiwYEzMWo1GSBCcZedUMT/clz7vUNsSxFphIlJ6QUL4GexQKlfJoVtA==}
     dependencies:
       2-thenable: 1.0.0
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       is-stream: 1.1.0
     dev: true
 
@@ -19469,7 +19506,7 @@ packages:
   /timers-ext/0.1.7:
     resolution: {integrity: sha512-b85NUNzTSdodShTIbky6ZF02e8STtVVfD+fu4aXXShEELpozH+bCpJLYMPZbsABN2wDH7fJpqIoXxJpzbf0NqQ==}
     dependencies:
-      es5-ext: 0.10.58
+      es5-ext: 0.10.61
       next-tick: 1.1.0
     dev: true
 
@@ -20306,7 +20343,7 @@ packages:
     engines: {node: '>=10.13.0'}
     dependencies:
       glob-to-regexp: 0.4.1
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
     dev: true
 
   /wbuf/1.7.3:
