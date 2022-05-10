@@ -167,7 +167,7 @@ importers:
   apps/govuk-template:
     specifiers:
       '@apollo/client': 3.5.10
-      '@graphql-tools/schema': 8.3.10
+      '@graphql-tools/schema': 8.3.11
       '@not-govuk/anchor-list': workspace:^0.4.0
       '@not-govuk/app-composer': workspace:^0.4.0
       '@not-govuk/app-plop-pack': workspace:^0.4.0
@@ -205,7 +205,7 @@ importers:
       webpack-hot-middleware: 2.25.1
     devDependencies:
       '@apollo/client': 3.5.10_graphql@15.8.0+react@16.14.0
-      '@graphql-tools/schema': 8.3.10_graphql@15.8.0
+      '@graphql-tools/schema': 8.3.11_graphql@15.8.0
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
       '@not-govuk/app-plop-pack': link:../../lib/app-plop-pack
@@ -4696,35 +4696,35 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@graphql-tools/merge/8.2.10_graphql@15.8.0:
-    resolution: {integrity: sha512-wpg22seOTNfkIO8jFAgo8w1BsT3IS2OTMpkCNf+dvcKSP09SVidYCOliyWHgjDCmpCrvvSjOX855NUKDx/Biew==}
+  /@graphql-tools/merge/8.2.11_graphql@15.8.0:
+    resolution: {integrity: sha512-fsjJVdsk9GV1jj1Ed2AKLlHYlsf0ZadTK8X5KxFRE1ZSnKqh56BLVX93JrtOIAnsiHkwOK2TC43HGhApF1swpQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 8.6.9_graphql@15.8.0
+      '@graphql-tools/utils': 8.6.10_graphql@15.8.0
       graphql: 15.8.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
-  /@graphql-tools/schema/8.3.10_graphql@15.8.0:
-    resolution: {integrity: sha512-tfhjSTi3OzheDrVzG7rkPZg2BbQjmZRLM2vvQoM2b1TnUwgUIbpAgcnf+AWDLRsoCOWlezeLgij1BLeAR0Q0jg==}
+  /@graphql-tools/schema/8.3.11_graphql@15.8.0:
+    resolution: {integrity: sha512-esMEnbyXbp8B5VEI4o395+x0G7Qmz3JSX5onFBF8HeLYcqWJasY5vBuWkO18VxrZpEnvnryodP6Y00bVag9O3Q==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/merge': 8.2.10_graphql@15.8.0
-      '@graphql-tools/utils': 8.6.9_graphql@15.8.0
+      '@graphql-tools/merge': 8.2.11_graphql@15.8.0
+      '@graphql-tools/utils': 8.6.10_graphql@15.8.0
       graphql: 15.8.0
-      tslib: 2.3.1
+      tslib: 2.4.0
       value-or-promise: 1.0.11
     dev: true
 
-  /@graphql-tools/utils/8.6.9_graphql@15.8.0:
-    resolution: {integrity: sha512-Z1X4d4GCT81+8CSt6SgU4t1w1UAUsAIRb67mI90k/zAs+ArkB95iE3bWXuJCUmd1+r8DGGtmUNOArtd6wkt+OQ==}
+  /@graphql-tools/utils/8.6.10_graphql@15.8.0:
+    resolution: {integrity: sha512-bJH9qwuyM3BP0PTU6/lvBDkk6jdEIOn+dbyk4pHMVNnvbJ1gZQwo62To8SHxxaUTus8OMhhVPSh9ApWXREURcg==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       graphql: 15.8.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
   /@graphql-typed-document-node/core/3.1.0:
@@ -12099,6 +12099,7 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: true
 
   /follow-redirects/1.14.9_debug@4.3.2:
     resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
@@ -12110,7 +12111,6 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.2
-    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
@@ -13263,7 +13263,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.5
-      follow-redirects: 1.14.9
+      follow-redirects: 1.14.9_debug@4.3.2
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -19577,6 +19577,10 @@ packages:
 
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
+    dev: true
 
   /tty-browserify/0.0.0:
     resolution: {integrity: sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=}
