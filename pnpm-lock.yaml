@@ -40,8 +40,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0
       react-helmet-async: 1.3.0
-      react-router: 5.3.1
-      react-router-dom: 5.3.1
+      react-router: 6.3.0
+      react-router-dom: 6.3.0
       ts-jest: 27.1.4
       typescript: 4.6.4
       webpack: 5.70.0
@@ -85,8 +85,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
-      react-router: 5.3.1_react@16.14.0
-      react-router-dom: 5.3.1_react@16.14.0
+      react-router: 6.3.0_react@16.14.0
+      react-router-dom: 6.3.0_react-dom@16.14.0+react@16.14.0
       ts-jest: 27.1.4_b9494841e57bab118b2da0bbe32becd6
       typescript: 4.6.4
       webpack: 5.70.0_webpack-cli@4.9.2
@@ -119,8 +119,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0
       react-helmet-async: 1.3.0
-      react-router: 5.3.1
-      react-router-dom: 5.3.1
+      react-router: 6.3.0
+      react-router-dom: 6.3.0
       serverless: 3.17.0
       start-server-and-test: 1.14.0
       ts-jest: 27.1.4
@@ -153,8 +153,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
-      react-router: 5.3.1_react@16.14.0
-      react-router-dom: 5.3.1_react@16.14.0
+      react-router: 6.3.0_react@16.14.0
+      react-router-dom: 6.3.0_react-dom@16.14.0+react@16.14.0
       serverless: 3.17.0
       start-server-and-test: 1.14.0
       ts-jest: 27.1.4_b9494841e57bab118b2da0bbe32becd6
@@ -193,8 +193,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0
       react-helmet-async: 1.3.0
-      react-router: 5.3.1
-      react-router-dom: 5.3.1
+      react-router: 6.3.0
+      react-router-dom: 6.3.0
       serverless: 3.17.0
       start-server-and-test: 1.14.0
       ts-jest: 27.1.4
@@ -231,8 +231,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
-      react-router: 5.3.1_react@16.14.0
-      react-router-dom: 5.3.1_react@16.14.0
+      react-router: 6.3.0_react@16.14.0
+      react-router-dom: 6.3.0_react-dom@16.14.0+react@16.14.0
       serverless: 3.17.0
       start-server-and-test: 1.14.0
       ts-jest: 27.1.4_b9494841e57bab118b2da0bbe32becd6
@@ -258,7 +258,7 @@ importers:
     dependencies:
       '@not-govuk/component-helpers': link:../../lib/component-helpers
       '@not-govuk/route-utils': link:../../lib/route-utils
-      react-router-hash-link: 2.4.3_0dab6dbe4ab5198c6d1aeb554026c2ba
+      react-router-hash-link: 2.4.3_e180dcbb9e6aa521f136888e8adf067c
     devDependencies:
       '@mdx-js/react': 1.6.22_react@16.14.0
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
@@ -4454,6 +4454,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
+    dev: false
 
   /@babel/runtime/7.17.8:
     resolution: {integrity: sha512-dQpEpK0O9o6lj6oPu0gRDbbnk+4LeHlNcBpspf6Olzt3GIX4P1lWF1gS+pHLDFlaJvbR6q7jCfQ08zA4QJBnmA==}
@@ -13056,6 +13057,7 @@ packages:
       tiny-invariant: 1.2.0
       tiny-warning: 1.0.3
       value-equal: 1.0.1
+    dev: false
 
   /history/5.0.0:
     resolution: {integrity: sha512-3NyRMKIiFSJmIPdq7FxkNMJkQ7ZEtVblOQ38VtKaA0zZMW1Eo6Q6W8oDKEflr1kNNTItSnk4JMCO1deeSgbLLg==}
@@ -13971,10 +13973,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-docker: 2.2.1
-    dev: true
-
-  /isarray/0.0.1:
-    resolution: {integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=}
     dev: true
 
   /isarray/1.0.0:
@@ -15487,18 +15485,6 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /mini-create-react-context/0.4.0_prop-types@15.8.1+react@16.14.0:
-    resolution: {integrity: sha512-b0TytUgFSbgFJGzJqXPKCFCBWigAjpjo+Fl7Vf7ZbKRDptszpppKxXH6DRXEABZ/gcEQczeb0iZ7JvL8e8jjCA==}
-    peerDependencies:
-      prop-types: ^15.0.0
-      react: ^0.14.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      '@babel/runtime': 7.17.8
-      prop-types: 15.8.1
-      react: 16.14.0
-      tiny-warning: 1.0.3
-    dev: true
-
   /mini-css-extract-plugin/2.6.0_webpack@5.70.0:
     resolution: {integrity: sha512-ndG8nxCEnAemsg4FSgS+yNyHKgkTB4nPKqCOgh65j3/30qqC5RaSQQXMm++Y6sb6E1zRSxPkztj9fqxhS1Eo6w==}
     engines: {node: '>= 12.13.0'}
@@ -16538,12 +16524,6 @@ packages:
     resolution: {integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=}
     dev: true
 
-  /path-to-regexp/1.8.0:
-    resolution: {integrity: sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==}
-    dependencies:
-      isarray: 0.0.1
-    dev: true
-
   /path-type/3.0.0:
     resolution: {integrity: sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==}
     engines: {node: '>=4'}
@@ -17317,21 +17297,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom/5.3.1_react@16.14.0:
-    resolution: {integrity: sha512-f0pj/gMAbv9e8gahTmCEY20oFhxhrmHwYeIwH5EO5xu0qme+wXtsdB8YfUOAZzUz4VaXmb58m3ceiLtjMhqYmQ==}
-    peerDependencies:
-      react: '>=15'
-    dependencies:
-      '@babel/runtime': 7.17.8
-      history: 4.10.1
-      loose-envify: 1.4.0
-      prop-types: 15.8.1
-      react: 16.14.0
-      react-router: 5.3.1_react@16.14.0
-      tiny-invariant: 1.2.0
-      tiny-warning: 1.0.3
-    dev: true
-
   /react-router-dom/6.3.0_react-dom@16.14.0+react@16.14.0:
     resolution: {integrity: sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw==}
     peerDependencies:
@@ -17344,7 +17309,7 @@ packages:
       react-router: 6.3.0_react@16.14.0
     dev: true
 
-  /react-router-hash-link/2.4.3_0dab6dbe4ab5198c6d1aeb554026c2ba:
+  /react-router-hash-link/2.4.3_e180dcbb9e6aa521f136888e8adf067c:
     resolution: {integrity: sha512-NU7GWc265m92xh/aYD79Vr1W+zAIXDWp3L2YZOYP4rCqPnJ6LI6vh3+rKgkidtYijozHclaEQTAHaAaMWPVI4A==}
     peerDependencies:
       react: '>=15'
@@ -17352,26 +17317,8 @@ packages:
     dependencies:
       prop-types: 15.7.2
       react: 16.14.0
-      react-router-dom: 5.3.1_react@16.14.0
+      react-router-dom: 6.3.0_react-dom@16.14.0+react@16.14.0
     dev: false
-
-  /react-router/5.3.1_react@16.14.0:
-    resolution: {integrity: sha512-v+zwjqb7bakqgF+wMVKlAPTca/cEmPOvQ9zt7gpSNyPXau1+0qvuYZ5BWzzNDP1y6s15zDwgb9rPN63+SIniRQ==}
-    peerDependencies:
-      react: '>=15'
-    dependencies:
-      '@babel/runtime': 7.17.8
-      history: 4.10.1
-      hoist-non-react-statics: 3.3.2
-      loose-envify: 1.4.0
-      mini-create-react-context: 0.4.0_prop-types@15.8.1+react@16.14.0
-      path-to-regexp: 1.8.0
-      prop-types: 15.8.1
-      react: 16.14.0
-      react-is: 16.13.1
-      tiny-invariant: 1.2.0
-      tiny-warning: 1.0.3
-    dev: true
 
   /react-router/6.3.0_react@16.14.0:
     resolution: {integrity: sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==}
@@ -17846,6 +17793,7 @@ packages:
 
   /resolve-pathname/3.0.0:
     resolution: {integrity: sha512-C7rARubxI8bXFNB/hqcp/4iUeIXJhJZvFPFPiSPRnhU5UPxzMFIl+2E6yY6c4k9giDJAhtV+enfA+G89N6Csng==}
+    dev: false
 
   /resolve-url-loader/5.0.0:
     resolution: {integrity: sha512-uZtduh8/8srhBoMx//5bwqjQ+rfYOUq8zC9NrMUGtjBiGTtFJM42s58/36+hTqeqINcnYe08Nj3LkK9lW4N8Xg==}
@@ -19373,9 +19321,11 @@ packages:
 
   /tiny-invariant/1.2.0:
     resolution: {integrity: sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==}
+    dev: false
 
   /tiny-warning/1.0.3:
     resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
+    dev: false
 
   /title-case/3.0.3:
     resolution: {integrity: sha512-e1zGYRvbffpcHIrnuqT0Dh+gEJtDaxDSoG4JAIpq4oDFyooziLBIiYQv0GBT4FUAnUop5uZ1hiIAj7oAF6sOCA==}
@@ -20080,6 +20030,7 @@ packages:
 
   /value-equal/1.0.1:
     resolution: {integrity: sha512-NOJ6JZCAWr0zlxZt+xqCHNTEKOsrks2HQd4MqhP1qy4z1SkbEP467eNx6TgDKXMvUOb+OENfJCZwM+16n7fRfw==}
+    dev: false
 
   /value-or-promise/1.0.11:
     resolution: {integrity: sha512-41BrgH+dIbCFXClcSapVs5M6GkENd3gQOJpEfPDNa71LsUGMXDL0jMWpI/Rh7WhX+Aalfz2TTS3Zt5pUsbnhLg==}
