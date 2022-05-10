@@ -1372,7 +1372,7 @@ importers:
       '@types/express-serve-static-core': 4.17.28
       '@types/webpack': 4.41.32
       '@types/webpack-dev-middleware': 3.7.5
-      '@types/webpack-hot-middleware': 2.25.3
+      '@types/webpack-hot-middleware': 2.25.6
       etag: ^1.8.1
       http-proxy-middleware: ^2.0.0
       typescript: 4.6.4
@@ -1385,7 +1385,7 @@ importers:
       '@types/express-serve-static-core': 4.17.28
       '@types/webpack': 4.41.32
       '@types/webpack-dev-middleware': 3.7.5
-      '@types/webpack-hot-middleware': 2.25.3
+      '@types/webpack-hot-middleware': 2.25.6_webpack-cli@4.9.2
       typescript: 4.6.4
 
   lib/client-renderer:
@@ -7414,11 +7414,17 @@ packages:
     resolution: {integrity: sha512-llS8qveOUX3wxHnSykP5hlYFFuMfJ9p5JvIyCiBgp7WTfl6K5ZcyHj8r8JsN/J6QODkAsRRCLIcTuOCu8etkUw==}
     dev: true
 
-  /@types/webpack-hot-middleware/2.25.3:
-    resolution: {integrity: sha512-zGkTzrwQnhSadIXGYGZLu7tpXQwn4+6y9nGeql+5UeRtW/k54Jp4SnzB0Qw00ednw0ZFoZOvqTFfXSbFXohc5Q==}
+  /@types/webpack-hot-middleware/2.25.6_webpack-cli@4.9.2:
+    resolution: {integrity: sha512-1Q9ClNvZR30HIsEAHYQL3bXJK1K7IsrqjGMTfIureFjphsGOZ3TkbeoCupbCmi26pSLjVTPHp+pFrJNpOkBSVg==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/webpack': 4.41.32
+      tapable: 2.2.1
+      webpack: 5.70.0_webpack-cli@4.9.2
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+      - webpack-cli
     dev: true
 
   /@types/webpack-sources/3.2.0:
@@ -12110,6 +12116,7 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: true
 
   /follow-redirects/1.14.9_debug@4.3.2:
     resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
@@ -12121,7 +12128,6 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.2
-    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
@@ -13274,7 +13280,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.5
-      follow-redirects: 1.14.9
+      follow-redirects: 1.14.9_debug@4.3.2
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
