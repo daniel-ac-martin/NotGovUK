@@ -3,6 +3,7 @@
   "version": "0.4.2",
   "description": "A project and prototype initialiser.",
   "main": "plopfile.js",
+  "type": "module",
   "bin": "bin/create",
   "files": [
     "/bin",
@@ -25,6 +26,6 @@
     "shelljs": "^0.8.4"
   },
   "devDependencies": {
-    "plop": "2.7.6"
+    "plop": "3.1.0"
   }
 }

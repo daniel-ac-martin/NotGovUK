@@ -3,6 +3,7 @@
   "version": "0.4.2",
   "description": "Generators for use within applications and prototypes.",
   "main": "src/index.js",
+  "type": "module",
   "files": [
     "/src",
     "/skel"
@@ -18,7 +19,7 @@
     "node": ">=12.0.0"
   },
   "devDependencies": {
-    "plop": "2.7.6"
+    "plop": "3.1.0"
   },
   "dependencies": {
     "@not-govuk/plop-pack-internal": "workspace:^0.4.0"

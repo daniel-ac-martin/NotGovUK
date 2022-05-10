@@ -1,8 +1,6 @@
 #! /usr/bin/env node
-'use strict';
-
-const { resolve } = require('path');
-const { runPlop } = require('@not-govuk/plop-pack-internal');
+import { resolve } from 'path';
+import { runPlop } from '@not-govuk/plop-pack-internal';
 
 const plopfile = resolve(__dirname, '..', 'plopfile.js');
 

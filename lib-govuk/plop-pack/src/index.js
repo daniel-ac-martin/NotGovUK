@@ -1,18 +1,22 @@
-'use strict';
+import { extendGenerator, relativePath } from '@not-govuk/plop-pack-internal';
+import { createRequire } from 'node:module';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const { extendGenerator, relativePath } = require('@not-govuk/plop-pack-internal');
+const require = createRequire(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const plopPackInternal = require.resolve('@not-govuk/plop-pack-internal');
-
 const rel = relativePath(__dirname, '..', 'skel');
 
-const plopFunction = plop => {
-  const parent = require.resolve('@not-govuk/plop-pack-internal');
+const plopFunction = async (plop) => {
+  const parent = plopPackInternal;
 
   plop.load(plopPackInternal, undefined, { actionTypes: true, generators: false, helpers: true, partials: false });
 
   plop.setGenerator(
     'app',
-    extendGenerator(plop, parent, 'app', {
+    await extendGenerator(plop, parent, 'app', {
       prompts: [
         {
           type: 'confirm',
@@ -45,7 +49,7 @@ const plopFunction = plop => {
 
   plop.setGenerator(
     'component',
-    extendGenerator(plop, parent, 'component', {
+    await extendGenerator(plop, parent, 'component', {
       prompts: [
       ],
       actions: [
@@ -55,7 +59,7 @@ const plopFunction = plop => {
 
   plop.setGenerator(
     'lib',
-    extendGenerator(plop, parent, 'lib', {
+    await extendGenerator(plop, parent, 'lib', {
       prompts: [
       ],
       actions: [
@@ -66,4 +70,4 @@ const plopFunction = plop => {
   plop.setDefaultInclude({ actionTypes: true, generators: true, helpers: true });
 };
 
-module.exports = plopFunction;
+export default plopFunction;
