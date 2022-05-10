@@ -114,7 +114,7 @@ importers:
       bunyan: 1.8.15
       cypress: 9.6.1
       jest: 27.5.1
-      node-hot-loader: 1.21.6
+      node-hot-loader: 1.21.7
       plop: 3.1.0
       react: 16.14.0
       react-dom: 16.14.0
@@ -148,7 +148,7 @@ importers:
       bunyan: 1.8.15
       cypress: 9.6.1
       jest: 27.5.1
-      node-hot-loader: 1.21.6_2a0488f1a2617d8b852acb55a592e611
+      node-hot-loader: 1.21.7_2a0488f1a2617d8b852acb55a592e611
       plop: 3.1.0
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -188,7 +188,7 @@ importers:
       cypress: 9.6.1
       graphql: 15.8.0
       jest: 27.5.1
-      node-hot-loader: 1.21.6
+      node-hot-loader: 1.21.7
       plop: 3.1.0
       react: 16.14.0
       react-dom: 16.14.0
@@ -226,7 +226,7 @@ importers:
       cypress: 9.6.1
       graphql: 15.8.0
       jest: 27.5.1
-      node-hot-loader: 1.21.6_2a0488f1a2617d8b852acb55a592e611
+      node-hot-loader: 1.21.7_2a0488f1a2617d8b852acb55a592e611
       plop: 3.1.0
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -4421,6 +4421,20 @@ packages:
 
   /@babel/register/7.17.0_@babel+core@7.17.10:
     resolution: {integrity: sha512-UNZsMAZ7uKoGHo1HlEXfteEOYssf64n/PNLHGqOKq/bgYcu/4LrQWAHJwSCb3BRZK8Hi5gkJdRcwrGTO2wtRCg==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.17.10
+      clone-deep: 4.0.1
+      find-cache-dir: 2.1.0
+      make-dir: 2.1.0
+      pirates: 4.0.5
+      source-map-support: 0.5.21
+    dev: true
+
+  /@babel/register/7.17.7_@babel+core@7.17.10:
+    resolution: {integrity: sha512-fg56SwvXRifootQEDQAu1mKdjh5uthPzdO0N6t358FktfL4XjAVXuH58ULoiW8mesxiOgNIrxiImqEwv0+hRRA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -15746,17 +15760,17 @@ packages:
       whatwg-url: 5.0.0
     dev: true
 
-  /node-hot-loader/1.21.6_2a0488f1a2617d8b852acb55a592e611:
-    resolution: {integrity: sha512-YWwnm2D6m3blLPC35Eg7lZMLVB8fbqp9+MrorJcf8ic7kX0int7IlM8ghZpQ9Y5B4YzwEiv+c/9fm/Da9PlQlw==}
+  /node-hot-loader/1.21.7_2a0488f1a2617d8b852acb55a592e611:
+    resolution: {integrity: sha512-ECSpgJVVGwB3+tOBcAvTFS9HXY07MZiRR4hw2z/QzOomOsu76Ux2vbZOeDGwDeyrh219t+y8FYd/Y1UYoyx99g==}
     hasBin: true
     peerDependencies:
       webpack: '>= 2.x'
     dependencies:
-      '@babel/register': 7.17.0_@babel+core@7.17.10
+      '@babel/register': 7.17.7_@babel+core@7.17.10
       require-from-string: 2.0.2
       source-map-support: 0.5.21
       webpack: 5.70.0_webpack-cli@4.9.2
-      yargs: 17.3.1
+      yargs: 17.4.1
     transitivePeerDependencies:
       - '@babel/core'
     dev: true
@@ -20702,8 +20716,8 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /yargs/17.3.1:
-    resolution: {integrity: sha512-WUANQeVgjLbNsEmGk20f+nlHgOqzRFpiGWVaBrYGYIGANIIu3lWjoyi0fNlFmJkvfhCZ6BXINe7/W2O2bV4iaA==}
+  /yargs/17.4.1:
+    resolution: {integrity: sha512-WSZD9jgobAg3ZKuCQZSa3g9QOJeCCqLoLAykiWgmXnDo9EPnn4RPf5qVTtzgOx66o6/oqhcA5tHtJXpG8pMt3g==}
     engines: {node: '>=12'}
     dependencies:
       cliui: 7.0.4
