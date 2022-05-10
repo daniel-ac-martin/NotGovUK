@@ -1472,7 +1472,7 @@ importers:
       openid-client: ^4.2.1
       passport: ^0.5.0
       passport-http: ^0.3.0
-      serverless-http: ^2.4.1
+      serverless-http: ^3.0.0
       typescript: 4.6.4
     dependencies:
       '@not-govuk/restify': link:../restify
@@ -1483,7 +1483,7 @@ importers:
       openid-client: 4.2.1
       passport: 0.5.2
       passport-http: 0.3.0
-      serverless-http: 2.5.0
+      serverless-http: 3.0.1
     devDependencies:
       '@not-govuk/app-composer': link:../app-composer
       '@types/client-sessions': 0.8.3
@@ -6902,12 +6902,6 @@ packages:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
     dev: true
-
-  /@types/aws-lambda/8.10.95:
-    resolution: {integrity: sha512-wGtzLbd04EmqhFjTZmXgLzvmhDdyVU7AMo/JkiPmA2VUdBFQfUBQFCEzaVVK+f1PP5aWx1ejnb7K/8MXYI/frQ==}
-    requiresBuild: true
-    dev: false
-    optional: true
 
   /@types/babel__core/7.1.15:
     resolution: {integrity: sha512-bxlMKPDbY8x5h6HBwVzEOk2C8fb6SLfYQ5Jw3uBYuYF1lfWk/kbLd81la82vrIkBb0l+JdmrZaDikPrNxpS/Ew==}
@@ -18326,11 +18320,9 @@ packages:
       - supports-color
     dev: true
 
-  /serverless-http/2.5.0:
-    resolution: {integrity: sha512-p0c1aTQ7mLZEtQkaP+K/zT4zFUY1YZs+mRlw/Q0yl+HptJL6IOLLylx6WXXFlQoH5+uUibivRzBbNotatvqDkg==}
-    engines: {node: '>=8.0'}
-    optionalDependencies:
-      '@types/aws-lambda': 8.10.95
+  /serverless-http/3.0.1:
+    resolution: {integrity: sha512-VEgmMYXvlZ5PLkBAj2IIAGIw25RBsDnLu2fansuaFCmw2fXGUP1VGROfTaEJrjHpZrmvlPu1JRFDNRV8UvDFyw==}
+    engines: {node: '>=12.0'}
     dev: false
 
   /serverless/3.17.0:
