@@ -53,9 +53,9 @@ skel_deps = \
 	$(target_dir)/.github/workflows/main.yml \
 	$(patsubst $(source_dir)/%,$(target_dir)/%,$(sources)) \
 	$(patsubst $(docs_source_dir)/%,$(docs_target_dir)/%,$(docs_sources)) \
-	$(target_dir)/plopfile.js \
+	$(target_dir)/plopfile.mjs \
 	$(docs_target_dir)/package.json
-plopfile = $(target_dir)/plopfile.js
+plopfile = $(target_dir)/plopfile.mjs
 
 .PHONY: all clean
 
@@ -114,7 +114,7 @@ $(target_dir)/.github/workflows/main.yml: $(source_dir)/.github/workflows/main.y
 	mkdir -p '$(@D)'
 	sed -n '/deploy-/q;p' '$(<)' | sed 's/app: \[.*\]/app: []/' > '$(@)'
 
-$(target_dir)/plopfile.js: $(source_dir)/plopfile.js
+$(target_dir)/plopfile.mjs: $(source_dir)/plopfile.mjs
 	mkdir -p '$(@D)'
 	sed 's/plop-pack/plop-pack-internal/' '$(<)' > '$(@)'
 

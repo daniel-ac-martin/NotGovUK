@@ -6,7 +6,7 @@ dist_dir = ./dist
 source_dir = ../..
 target_dir = $(build_dir)/skel
 sources := $(wildcard \
-	$(source_dir)/plopfile.js \
+	$(source_dir)/plopfile.mjs \
 	$(source_dir)/pnpm-lock.yaml \
 )
 docs_source_dir = $(build_dir)/apps/template
@@ -25,7 +25,7 @@ skel_proto_deps = \
 	$(proto_target_dir)/src/common/loading-page.tsx \
 	$(proto_target_dir)/src/common/page-wrap.tsx \
 	$(proto_target_dir)/src/common/error-page.tsx
-plopfile = $(build_dir)/plopfile.js
+plopfile = $(build_dir)/plopfile.mjs
 
 .PHONY: all clean debug
 
@@ -59,7 +59,7 @@ $(dist_dir)/skel-prototype.tar: $(skel_proto_deps)
 	mkdir -p '$(@D)'
 	cd 'build/' && tar -cf '../$(@)' 'skel-prototype/'
 
-$(plopfile): $(source_dir)/plopfile.js
+$(plopfile): $(source_dir)/plopfile.mjs
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
 
