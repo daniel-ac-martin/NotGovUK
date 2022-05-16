@@ -23,6 +23,13 @@
     },
     {
       "matchPackageNames": [
+        "@types/node",
+        "node"
+      ],
+      "groupName": "node"
+    },
+    {
+      "matchPackageNames": [
         "node-plop",
         "plop"
       ],
@@ -42,9 +49,28 @@
         "@types/react-router",
         "@types/react-router-dom",
         "react-router",
-        "react-router-dom"
+        "react-router-dom",
+        "history"
       ],
       "groupName": "react-router"
+    },
+    {
+      "matchPackageNames": [
+	"mdx-js",
+        "storybook"
+      ],
+      "matchPackagePatterns": [
+        "^@mdx-js/",
+        "^@storybook/"
+      ],
+      "groupName": "storybook"
+    },
+    {
+      "matchPackagePatterns": [
+        "^@types/webpack",
+        "^webpack"
+      ],
+      "groupName": "webpack"
     }
   ]
 }
