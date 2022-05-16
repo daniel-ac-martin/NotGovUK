@@ -7,7 +7,9 @@ const path = require('path');
 const config = {
   preset: 'ts-jest/presets/js-with-babel',
   testEnvironment: 'jsdom',
-  testURL: 'http://localhost/',
+  testEnvironmentOptions: {
+    url: 'http://localhost/'
+  },
   setupFilesAfterEnv: [
     path.resolve(__dirname, '.jest', 'setup', 'enzyme.js')
   ],
