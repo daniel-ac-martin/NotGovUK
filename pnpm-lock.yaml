@@ -1371,7 +1371,7 @@ importers:
       '@types/connect': 3.4.35
       '@types/express-serve-static-core': 4.17.28
       '@types/webpack': 4.41.32
-      '@types/webpack-dev-middleware': 3.7.5
+      '@types/webpack-dev-middleware': 5.0.2
       '@types/webpack-hot-middleware': 2.25.3
       etag: ^1.8.1
       http-proxy-middleware: ^2.0.0
@@ -1384,7 +1384,7 @@ importers:
       '@types/connect': 3.4.35
       '@types/express-serve-static-core': 4.17.28
       '@types/webpack': 4.41.32
-      '@types/webpack-dev-middleware': 3.7.5
+      '@types/webpack-dev-middleware': 5.0.2_webpack-cli@4.9.2
       '@types/webpack-hot-middleware': 2.25.3
       typescript: 4.6.4
 
@@ -7184,12 +7184,6 @@ packages:
       '@types/unist': 2.0.3
     dev: false
 
-  /@types/memory-fs/0.3.3:
-    resolution: {integrity: sha512-rLEYzl1xODshz+Lm+YX8NYws8Xw7/qcYbQInMkotl96VpLZmUvoCfYYGxfajMSiugANV02QO5Fc+R98KKeE4gQ==}
-    dependencies:
-      '@types/node': 17.0.21
-    dev: true
-
   /@types/mime/2.0.3:
     resolution: {integrity: sha512-Jus9s4CDbqwocc5pOAnh8ShfrnMcPHuJYzVcSUU7lrh8Ni5HuIqX3oilL86p3dlTrk0LzHRCgA/GQ7uNCw6l2Q==}
     dev: true
@@ -7397,13 +7391,17 @@ packages:
     resolution: {integrity: sha512-zqqcGKyNWgTLFBxmaexGUKQyWqeG7HjXj20EuQJSJWwXe54BjX0ihIo5cJB9yAQzH8dNugJ9GvkBYMjPXs/PJw==}
     dev: true
 
-  /@types/webpack-dev-middleware/3.7.5:
-    resolution: {integrity: sha512-jHcCoRc2Hh6oDozoc27ibKAqrfn8nlewheoFV704EMJqheaOe7HxZZp9Q39bPh2eUDLtEJApLNQy6l20yT/4jA==}
+  /@types/webpack-dev-middleware/5.0.2_webpack-cli@4.9.2:
+    resolution: {integrity: sha512-S3WUtef//Vx6WETyWZkM45WqgRxWSaqbpWtPcKySNRhiQNyhCqM9EueggaMX3L9N2IbG4dJIK5PgYcAWUifUbA==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/memory-fs': 0.3.3
-      '@types/webpack': 4.41.32
-      loglevel: 1.8.0
+      tapable: 2.2.1
+      webpack: 5.70.0_webpack-cli@4.9.2
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+      - webpack-cli
     dev: true
 
   /@types/webpack-env/1.16.3:
@@ -7784,12 +7782,12 @@ packages:
       acorn-walk: 7.2.0
     dev: true
 
-  /acorn-import-assertions/1.8.0_acorn@8.4.1:
+  /acorn-import-assertions/1.8.0_acorn@8.7.0:
     resolution: {integrity: sha512-m7VZ3jwz4eK6A4Vtt8Ew1/mNbP24u0FhdyfA7fSvnJR6LMdfOYnmuIrrJAgrYfYJ10F/otaHTtrtrtmHdMNzEw==}
     peerDependencies:
       acorn: ^8
     dependencies:
-      acorn: 8.4.1
+      acorn: 8.7.0
     dev: true
 
   /acorn-jsx/5.3.2_acorn@7.4.1:
@@ -12110,7 +12108,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: true
 
   /follow-redirects/1.14.9_debug@4.3.2:
     resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
@@ -12122,6 +12119,7 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.2
+    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
@@ -13274,7 +13272,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.5
-      follow-redirects: 1.14.9_debug@4.3.2
+      follow-redirects: 1.14.9
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -15120,11 +15118,6 @@ packages:
       sprintf-kit: 2.0.1
       type: 2.6.0
       uni-global: 1.0.0
-    dev: true
-
-  /loglevel/1.8.0:
-    resolution: {integrity: sha512-G6A/nJLRgWOuuwdNuA6koovfEV1YpqqAG4pRUlFaz3jj2QNZ8M4vBqnVA+HBTmU/AMNUtlOsMmSpF6NyOjztbA==}
-    engines: {node: '>= 0.6.0'}
     dev: true
 
   /loose-envify/1.4.0:
@@ -20467,16 +20460,16 @@ packages:
       '@webassemblyjs/ast': 1.11.1
       '@webassemblyjs/wasm-edit': 1.11.1
       '@webassemblyjs/wasm-parser': 1.11.1
-      acorn: 8.4.1
-      acorn-import-assertions: 1.8.0_acorn@8.4.1
-      browserslist: 4.20.0
+      acorn: 8.7.0
+      acorn-import-assertions: 1.8.0_acorn@8.7.0
+      browserslist: 4.20.3
       chrome-trace-event: 1.0.3
       enhanced-resolve: 5.9.2
       es-module-lexer: 0.9.3
       eslint-scope: 5.1.1
       events: 3.3.0
       glob-to-regexp: 0.4.1
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       json-parse-better-errors: 1.0.2
       loader-runner: 4.2.0
       mime-types: 2.1.35
