@@ -1,3 +1,4 @@
+import { adapt } from '@not-govuk/express-adapter';
 import clientSessions from 'client-sessions';
 import passport, { Strategy } from 'passport';
 import { AuthBagger } from './common';
@@ -48,41 +49,11 @@ export const passportBag: AuthBagger<PassportOptions> = ({
 
       return httpd;
     },
-    authenticate: (req, res, next) => {
-      const res2 = {
-        ...res,
-        getHeader(key) {
-          res.getHeader(key);
-        },
-        setHeader(key, val) {
-          res.setHeader(key, val);
-        },
-        send(content) {
-          res.send(content);
-          next();
-        },
-        end() {
-          res.statusCode = this.statusCode;
-          res.end();
-          next(false);
-        },
-        redirect(uri: string) { return res.redirect(uri, next) }
-      };
-      passport.authenticate(id)(req, res2, next);
-    },
+    authenticate: adapt(passport.authenticate(id)),
     callback: (
       !callback
         ? undefined
-        : (
-          (req, res, next) => {
-            const res2 = {
-              ...res,
-              redirect: (uri: string) => res.redirect(uri, next)
-            };
-
-            passport.authenticate(id, {successRedirect: '/'})(req, res2, next);
-          }
-        )
+        : adapt(passport.authenticate(id, {successRedirect: '/'}))
     ),
     terminate: (req, res, next) => {
       req.logout();
