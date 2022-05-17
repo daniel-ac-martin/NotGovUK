@@ -44,7 +44,7 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
       };
 
       if (siteWide) {
-        httpd.use(authenticate);
+        httpd.pre(authenticate);
 
         httpd.get('/auth/sign-in', redirect);
         httpd.post('/auth/sign-in', redirect);
