@@ -1,7 +1,7 @@
 {
-  "name": "@{{{pkg 'name'}}}/{{{name}}}",
-  "version": "{{{pkg 'version'}}}",
-  "description": "{{{description}}}",
+  "name": "@not-govuk/express-adapter",
+  "version": "0.4.2",
+  "description": "Adapts to Express middleware to run on Restify.",
   "main": "src/index.ts",
   "publishConfig": {
     "main": "dist/index.js",
@@ -16,12 +16,15 @@
     "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
-  "author": "{{{pkg 'author'}}}",
-  "license": "{{{pkg 'license'}}}",
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "MIT",
   "engines": {
-    "node" : ">=14.0.0"
+    "node": ">=14.0.0"
   },
   "devDependencies": {
+    "@not-govuk/restify": "workspace:^0.4.2",
+    "@types/connect": "3.4.35",
+    "@types/express-serve-static-core": "4.17.28",
     "jest": "28.1.0",
     "jest-environment-jsdom": "28.1.0",
     "ts-jest": "28.0.2",
