@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@apollo/client': 3.6.2
+      '@apollo/client': 3.6.4
       '@babel/core': 7.17.10
       '@babel/plugin-proposal-export-namespace-from': 7.16.7
       '@babel/preset-env': 7.17.10
@@ -50,7 +50,7 @@ importers:
       webpack-dev-middleware: 5.3.1
       webpack-hot-middleware: 2.25.1
     devDependencies:
-      '@apollo/client': 3.6.2_react@16.14.0
+      '@apollo/client': 3.6.4_react@16.14.0
       '@babel/core': 7.17.10
       '@babel/plugin-proposal-export-namespace-from': 7.16.7_@babel+core@7.17.10
       '@babel/preset-env': 7.17.10_@babel+core@7.17.10
@@ -170,7 +170,7 @@ importers:
 
   apps/govuk-template:
     specifiers:
-      '@apollo/client': 3.6.2
+      '@apollo/client': 3.6.4
       '@graphql-tools/schema': 8.3.11
       '@not-govuk/anchor-list': workspace:^0.4.0
       '@not-govuk/app-composer': workspace:^0.4.0
@@ -209,7 +209,7 @@ importers:
       webpack-dev-middleware: 5.3.1
       webpack-hot-middleware: 2.25.1
     devDependencies:
-      '@apollo/client': 3.6.2_graphql@15.8.0+react@16.14.0
+      '@apollo/client': 3.6.4_graphql@15.8.0+react@16.14.0
       '@graphql-tools/schema': 8.3.11_graphql@15.8.0
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
@@ -1901,8 +1901,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.4
     dev: true
 
-  /@apollo/client/3.6.2_graphql@15.8.0+react@16.14.0:
-    resolution: {integrity: sha512-DNWyl+NNU2VsfHtXwOr4rV9hnQFPkl2/dNXeouhk9q7bXCWdEh3K8YTt/frULGVKbQjtnlPmz8C+LFI/JZ2N3w==}
+  /@apollo/client/3.6.4_graphql@15.8.0+react@16.14.0:
+    resolution: {integrity: sha512-2z0dzQpx2HhGK5Pip/rbMM5kkbE4BLZGK2ItSmy2lMPy9/SZGFnw+zWBXSoIook0JT2bDscm+FsdmtV+1AhdJw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
@@ -1927,14 +1927,13 @@ packages:
       prop-types: 15.8.1
       react: 16.14.0
       symbol-observable: 4.0.0
-      ts-invariant: 0.10.2
+      ts-invariant: 0.10.3
       tslib: 2.4.0
-      use-sync-external-store: 1.1.0_react@16.14.0
-      zen-observable-ts: 1.2.3
+      zen-observable-ts: 1.2.5
     dev: true
 
-  /@apollo/client/3.6.2_react@16.14.0:
-    resolution: {integrity: sha512-DNWyl+NNU2VsfHtXwOr4rV9hnQFPkl2/dNXeouhk9q7bXCWdEh3K8YTt/frULGVKbQjtnlPmz8C+LFI/JZ2N3w==}
+  /@apollo/client/3.6.4_react@16.14.0:
+    resolution: {integrity: sha512-2z0dzQpx2HhGK5Pip/rbMM5kkbE4BLZGK2ItSmy2lMPy9/SZGFnw+zWBXSoIook0JT2bDscm+FsdmtV+1AhdJw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
@@ -1958,10 +1957,9 @@ packages:
       prop-types: 15.8.1
       react: 16.14.0
       symbol-observable: 4.0.0
-      ts-invariant: 0.10.2
+      ts-invariant: 0.10.3
       tslib: 2.4.0
-      use-sync-external-store: 1.1.0_react@16.14.0
-      zen-observable-ts: 1.2.3
+      zen-observable-ts: 1.2.5
     dev: true
 
   /@babel/code-frame/7.10.4:
@@ -12028,7 +12026,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: true
 
   /follow-redirects/1.14.9_debug@4.3.2:
     resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
@@ -12040,6 +12037,7 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.2
+    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
@@ -13201,7 +13199,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.5
-      follow-redirects: 1.14.9_debug@4.3.2
+      follow-redirects: 1.14.9
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -19502,8 +19500,8 @@ packages:
     engines: {node: '>=6.10'}
     dev: true
 
-  /ts-invariant/0.10.2:
-    resolution: {integrity: sha512-5BybOL23OXYmmnA0C8NYPkUo5Kb/I4IVQk31K1VcdBZpQIn4fWKMIORGBJqGkwvDLyu9cxUb4Zv4G6xA4/07IQ==}
+  /ts-invariant/0.10.3:
+    resolution: {integrity: sha512-uivwYcQaxAucv1CzRp2n/QdYPo4ILf9VXgH19zEIjFx2EJufV16P0JtJVpYHy89DItG6Kwj2oIUjrcK5au+4tQ==}
     engines: {node: '>=8'}
     dependencies:
       tslib: 2.4.0
@@ -19949,14 +19947,6 @@ packages:
     dependencies:
       react: 16.14.0
       use-isomorphic-layout-effect: 1.1.1_react@16.14.0
-    dev: true
-
-  /use-sync-external-store/1.1.0_react@16.14.0:
-    resolution: {integrity: sha512-SEnieB2FPKEVne66NpXPd1Np4R1lTNKfjuy3XdIoPQKYBAFdzbzSZlSn1KJZUiihQLQC5Znot4SBz1EOTBwQAQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 16.14.0
     dev: true
 
   /use/3.1.1:
@@ -20739,8 +20729,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zen-observable-ts/1.2.3:
-    resolution: {integrity: sha512-hc/TGiPkAWpByykMwDcem3SdUgA4We+0Qb36bItSuJC9xD0XVBZoFHYoadAomDSNf64CG8Ydj0Qb8Od8BUWz5g==}
+  /zen-observable-ts/1.2.5:
+    resolution: {integrity: sha512-QZWQekv6iB72Naeake9hS1KxHlotfRpe+WGNbNx5/ta+R3DNjVO2bswf63gXlWDcs+EMd7XY8HfVQyP1X6T4Zg==}
     dependencies:
       zen-observable: 0.8.15
     dev: true
