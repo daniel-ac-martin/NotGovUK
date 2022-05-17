@@ -40,7 +40,7 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
 
     if (authenticate) {
       const redirect: Middleware = (_req, res, next) => {
-        res.redirect('/', next);
+        res.redirect(302, '/', next);
       };
 
       if (siteWide) {
