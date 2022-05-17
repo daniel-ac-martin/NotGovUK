@@ -39,12 +39,19 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
     }
 
     if (authenticate) {
+      const redirect: Middleware = (_req, res, next) => {
+        res.redirect('/', next);
+      };
+
       if (siteWide) {
         httpd.use(authenticate);
-      }
 
-      httpd.get('/auth/sign-in', authenticate);
-      httpd.post('/auth/sign-in', authenticate);
+        httpd.get('/auth/sign-in', redirect);
+        httpd.post('/auth/sign-in', redirect);
+      } else {
+        httpd.get('/auth/sign-in', authenticate, redirect);
+        httpd.post('/auth/sign-in', authenticate, redirect);
+      }
 
       if (callback) {
         httpd.get('/auth/callback', callback);
