@@ -41,8 +41,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0
       react-helmet-async: 1.3.0
-      react-router: 5.3.2
-      react-router-dom: 5.3.2
+      react-router: 5.3.3
+      react-router-dom: 5.3.3
       ts-jest: 28.0.2
       typescript: 4.6.4
       webpack: 5.72.1
@@ -87,8 +87,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
-      react-router: 5.3.2_react@16.14.0
-      react-router-dom: 5.3.2_react@16.14.0
+      react-router: 5.3.3_react@16.14.0
+      react-router-dom: 5.3.3_react@16.14.0
       ts-jest: 28.0.2_fc4531861fa29230825433aaad75a319
       typescript: 4.6.4
       webpack: 5.72.1_webpack-cli@4.9.2
@@ -122,8 +122,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0
       react-helmet-async: 1.3.0
-      react-router: 5.3.2
-      react-router-dom: 5.3.2
+      react-router: 5.3.3
+      react-router-dom: 5.3.3
       serverless: 3.17.0
       start-server-and-test: 1.14.0
       ts-jest: 28.0.2
@@ -157,8 +157,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
-      react-router: 5.3.2_react@16.14.0
-      react-router-dom: 5.3.2_react@16.14.0
+      react-router: 5.3.3_react@16.14.0
+      react-router-dom: 5.3.3_react@16.14.0
       serverless: 3.17.0
       start-server-and-test: 1.14.0
       ts-jest: 28.0.2_fc4531861fa29230825433aaad75a319
@@ -198,8 +198,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0
       react-helmet-async: 1.3.0
-      react-router: 5.3.2
-      react-router-dom: 5.3.2
+      react-router: 5.3.3
+      react-router-dom: 5.3.3
       serverless: 3.17.0
       start-server-and-test: 1.14.0
       ts-jest: 28.0.2
@@ -237,8 +237,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
-      react-router: 5.3.2_react@16.14.0
-      react-router-dom: 5.3.2_react@16.14.0
+      react-router: 5.3.3_react@16.14.0
+      react-router-dom: 5.3.3_react@16.14.0
       serverless: 3.17.0
       start-server-and-test: 1.14.0
       ts-jest: 28.0.2_fc4531861fa29230825433aaad75a319
@@ -265,7 +265,7 @@ importers:
     dependencies:
       '@not-govuk/component-helpers': link:../../lib/component-helpers
       '@not-govuk/route-utils': link:../../lib/route-utils
-      react-router-hash-link: 2.4.3_d3572504bd24d4e4a50db6e009646e20
+      react-router-hash-link: 2.4.3_a451da5b949fedfa55800d6967ec9ba8
     devDependencies:
       '@mdx-js/react': 1.6.22_react@16.14.0
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
@@ -17367,8 +17367,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom/5.3.2_react@16.14.0:
-    resolution: {integrity: sha512-j8sAq4YdWsrkM2DfDX26GnjtDKWUSd65LzHyBz8NcgFcK0ct7oTvYlwhOr532xpXsYP1HONq6QqUGA7GhbAY5w==}
+  /react-router-dom/5.3.3_react@16.14.0:
+    resolution: {integrity: sha512-Ov0tGPMBgqmbu5CDmN++tv2HQ9HlWDuWIIqn4b88gjlAN5IHI+4ZUZRcpz9Hl0azFIwihbLDYw1OiHGRo7ZIng==}
     peerDependencies:
       react: '>=15'
     dependencies:
@@ -17377,7 +17377,7 @@ packages:
       loose-envify: 1.4.0
       prop-types: 15.8.1
       react: 16.14.0
-      react-router: 5.3.2_react@16.14.0
+      react-router: 5.3.3_react@16.14.0
       tiny-invariant: 1.2.0
       tiny-warning: 1.0.3
     dev: true
@@ -17394,7 +17394,7 @@ packages:
       react-router: 6.3.0_react@16.14.0
     dev: true
 
-  /react-router-hash-link/2.4.3_d3572504bd24d4e4a50db6e009646e20:
+  /react-router-hash-link/2.4.3_a451da5b949fedfa55800d6967ec9ba8:
     resolution: {integrity: sha512-NU7GWc265m92xh/aYD79Vr1W+zAIXDWp3L2YZOYP4rCqPnJ6LI6vh3+rKgkidtYijozHclaEQTAHaAaMWPVI4A==}
     peerDependencies:
       react: '>=15'
@@ -17402,11 +17402,11 @@ packages:
     dependencies:
       prop-types: 15.7.2
       react: 16.14.0
-      react-router-dom: 5.3.2_react@16.14.0
+      react-router-dom: 5.3.3_react@16.14.0
     dev: false
 
-  /react-router/5.3.2_react@16.14.0:
-    resolution: {integrity: sha512-GlsSUckZ4JthgsW5lV9oSCs5CoQ7q0t0Ump/Y5YQ8qhiS+WjaAhaoJhc7otpZW9eVhO6N06vYPt40SpEzuuZeg==}
+  /react-router/5.3.3_react@16.14.0:
+    resolution: {integrity: sha512-mzQGUvS3bM84TnbtMYR8ZjKnuPJ71IjSzR+DE6UkUqvN4czWIqEs17yLL8xkAycv4ev0AiN+IGrWu88vJs/p2w==}
     peerDependencies:
       react: '>=15'
     dependencies:
