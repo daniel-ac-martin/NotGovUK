@@ -1,12 +1,7 @@
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import { errors } from '@not-govuk/restify';
-import etag from 'etag';
-import { Response } from 'express-serve-static-core';
-import { NextHandleFunction } from 'connect';
-
-type HotHandleFunction = NextHandleFunction & webpackHotMiddleware.EventStream;
+import { adapt } from '@not-govuk/express-adapter';
 
 // Note: Inspired by https://github.com/cpeddecord/restify-webpack-middleware
 export const webpackMiddleware = webpackConfig => {
@@ -16,39 +11,18 @@ export const webpackMiddleware = webpackConfig => {
     publicPath: webpackConfig.output.publicPath,
     serverSideRender: true
   };
-  const dev: NextHandleFunction = webpackDevMiddleware(compiler, devOptions)
-  const hot: HotHandleFunction = webpackHotMiddleware(compiler, {})
+  const dev = webpackDevMiddleware(compiler, devOptions);
+  const hot = webpackHotMiddleware(compiler, {});
+  const devMiddleware = adapt(dev);
+  const hotMiddleware = adapt(hot);
 
   return {
-    serveFiles: (req, res, next) => {
-      res.locals = res.locals || {};
-
-      const restifyTransport = {
-        getHeader(key) {
-          res.getHeader(key);
-        },
-        setHeader(key, val) {
-          res.setHeader(key, val);
-        },
-        send(content) {
-          res.charSet('utf-8');
-          res.writeHead(this.statusCode || 200, {
-            'Cache-Control': 'private, no-cache',
-            'ETag': etag(content, { weak: true })
-          });
-          res.write(content);
-          res.end();
-        },
-        end() {
-          return;
-        },
-        locals: res.locals
-      };
-
-      return dev(req, restifyTransport as Response, next);
+    hot: {
+      close: hot.close.bind(hot)
     },
-    hot,
-    hotPath: '/__webpack_hmr'
+    hotMiddleware,
+    hotPath: '/__webpack_hmr',
+    serveFiles: devMiddleware
   };
 };
 

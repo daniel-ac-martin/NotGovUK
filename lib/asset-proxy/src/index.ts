@@ -43,7 +43,7 @@ export const assetProxy = ({
   // Serve assets built by webpack
   httpd.pre(webpack.serveFiles);
   // Endpoint for HMR websocket
-  httpd.get(webpack.hotPath, webpack.hot);
+  httpd.get(webpack.hotPath, webpack.hotMiddleware);
   // Proxy everything else
   httpd.get('/*', proxyMiddleware);
   httpd.post('/*', proxyMiddleware);

@@ -19,8 +19,8 @@
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "MIT",
   "dependencies": {
+    "@not-govuk/express-adapter": "workspace:^0.4.2",
     "@not-govuk/restify": "workspace:^0.4.0",
-    "etag": "^1.8.1",
     "http-proxy-middleware": "^2.0.0"
   },
   "peerDependencies": {
@@ -29,8 +29,6 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "devDependencies": {
-    "@types/connect": "3.4.35",
-    "@types/express-serve-static-core": "4.17.28",
     "@types/webpack": "5.28.0",
     "@types/webpack-dev-middleware": "5.0.2",
     "@types/webpack-hot-middleware": "2.25.6",
