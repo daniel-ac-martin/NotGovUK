@@ -124,7 +124,7 @@ importers:
       react-helmet-async: 1.3.0
       react-router: 5.3.3
       react-router-dom: 5.3.3
-      serverless: 3.17.0
+      serverless: 3.18.1
       start-server-and-test: 1.14.0
       ts-jest: 28.0.2
       typescript: 4.6.4
@@ -159,7 +159,7 @@ importers:
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
       react-router: 5.3.3_react@16.14.0
       react-router-dom: 5.3.3_react@16.14.0
-      serverless: 3.17.0
+      serverless: 3.18.1
       start-server-and-test: 1.14.0
       ts-jest: 28.0.2_fc4531861fa29230825433aaad75a319
       typescript: 4.6.4
@@ -200,7 +200,7 @@ importers:
       react-helmet-async: 1.3.0
       react-router: 5.3.3
       react-router-dom: 5.3.3
-      serverless: 3.17.0
+      serverless: 3.18.1
       start-server-and-test: 1.14.0
       ts-jest: 28.0.2
       typescript: 4.6.4
@@ -239,7 +239,7 @@ importers:
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
       react-router: 5.3.3_react@16.14.0
       react-router-dom: 5.3.3_react@16.14.0
-      serverless: 3.17.0
+      serverless: 3.18.1
       start-server-and-test: 1.14.0
       ts-jest: 28.0.2_fc4531861fa29230825433aaad75a319
       typescript: 4.6.4
@@ -5415,7 +5415,7 @@ packages:
     dependencies:
       '@serverless/event-mocks': 1.1.1
       '@serverless/platform-client': 4.3.2_supports-color@8.1.1
-      '@serverless/utils': 6.3.0
+      '@serverless/utils': 6.6.0
       child-process-ext: 2.1.1
       chokidar: 3.5.3
       flat: 5.0.2
@@ -5474,13 +5474,13 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@serverless/utils/6.3.0:
-    resolution: {integrity: sha512-P/oqfBi/2biT1W0JJ3knxnlPBr8jYPT6TJhyB7ziGUZndKvhzywCp5Pk+8i/8/6pLAqcKIpgjEn/HlhqOgHu4g==}
+  /@serverless/utils/6.6.0:
+    resolution: {integrity: sha512-+zw5m41L44psgKh9Snj0tVaXKI2mg/MW2l7VlySjAEK5jqLKHNmFMw0n2oD75nbaJvr2xYhc05wmeFdLqVF6Sw==}
     engines: {node: '>=12.0'}
     dependencies:
       archive-type: 4.0.0
       chalk: 4.1.2
-      ci-info: 3.3.0
+      ci-info: 3.3.1
       cli-progress-footer: 2.3.1
       content-disposition: 0.5.4
       d: 1.0.1
@@ -8260,7 +8260,7 @@ packages:
     dev: true
 
   /archive-type/4.0.0:
-    resolution: {integrity: sha1-+S5yIzBW38aWlHJ0nCZ72wRrHXA=}
+    resolution: {integrity: sha512-zV4Ky0v1F8dBrdYElwTvQhweQ0P7Kwc1aluqJsYtOBP01jXcWCyW2IEfI1YiqsG+Iy7ZR+o5LF1N+PGECBxHWA==}
     engines: {node: '>=4'}
     dependencies:
       file-type: 4.4.0
@@ -8504,8 +8504,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /aws-sdk/2.1132.0:
-    resolution: {integrity: sha512-NPDesfTrNx8UMQ5VuosQNlFFFhswJ8cGVcVltZBXKVl1kW0BCp52XQBySSruIznaRX7vG6Ir2+nox0NdL05qBQ==}
+  /aws-sdk/2.1139.0:
+    resolution: {integrity: sha512-aLmdIhIQuOdbf6F/QJCHm3xfr+9Esh9vWxZmOi54iEOcfHuO48VEEfa2A6NXb2JmUtWGB5AX80ssp6F90bhA6g==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       buffer: 4.9.2
@@ -9185,11 +9185,11 @@ packages:
     dev: true
 
   /buffer-crc32/0.2.13:
-    resolution: {integrity: sha1-DTM+PwDqxQqhRUq9MO+MKl2ackI=}
+    resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
     dev: true
 
   /buffer-fill/1.0.0:
-    resolution: {integrity: sha1-+PeLdniYiO858gXNY39o5wISKyw=}
+    resolution: {integrity: sha512-T7zexNBwiiaCOGDg9xNX9PBmjrubblRkENuptryuI64URkXDFum9il/JGL8Lm8wYfAXpredVXXZz7eMHilimiQ==}
     dev: true
 
   /buffer-from/1.1.2:
@@ -9229,7 +9229,7 @@ packages:
     dev: true
 
   /builtins/1.0.3:
-    resolution: {integrity: sha1-y5T662HIaWRR2zZTThQi+U8K7og=}
+    resolution: {integrity: sha512-uYBjakWipfaO/bXI7E8rq6kpwHRZK5cNYrUv2OzZSI/FvmdMyXJ2tG9dKcjEC5YHmHpUAwsargWIZNWdxb/bnQ==}
     dev: true
 
   /bunyan/1.8.14:
@@ -9596,6 +9596,10 @@ packages:
 
   /ci-info/3.3.0:
     resolution: {integrity: sha512-riT/3vI5YpVH6/qomlDnJow6TBee2PBKSEpx3O32EGPYbWGIRsIlGRms3Sm74wYE1JMo8RnO04Hb12+v1J5ICw==}
+    dev: true
+
+  /ci-info/3.3.1:
+    resolution: {integrity: sha512-SXgeMX9VwDe7iFFaEWkA5AstuER9YKqy4EhHqr4DVqkwmD9rpVimkMKWHdjn30Ja45txyjhSn63lVX69eVCckg==}
     dev: true
 
   /cipher-base/1.0.4:
@@ -13677,7 +13681,7 @@ packages:
     resolution: {integrity: sha512-ZYvCgrefwqoQ6yTyYUbQu64HsITZ3NfKX1lzaEYdkTDcfKzzCI/wthRRYKkdjHKFVgNiXKAKm65Zo1pk2as/QQ==}
     hasBin: true
     dependencies:
-      ci-info: 3.3.0
+      ci-info: 3.3.1
     dev: true
 
   /is-core-module/2.8.1:
@@ -18077,7 +18081,7 @@ packages:
   /rxjs/7.5.5:
     resolution: {integrity: sha512-sy+H0pQofO95VDmFLzyaw9xNJU4KTRSwQIGM6+iG3SypAtCiLDzpeG8sJrNCWn2Up9km+KhkvTdbkrdy+yzZdw==}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.4.0
 
   /safe-buffer/5.1.1:
     resolution: {integrity: sha512-kKvNJn6Mm93gAczWVJg7wH+wGYWNrDHdWvpUmHyEsgCtIwwo3bqPtV4tR5tuPaUhTOo/kvhVwd8XwwOllGYkbg==}
@@ -18379,24 +18383,24 @@ packages:
     engines: {node: '>=12.0'}
     dev: false
 
-  /serverless/3.17.0:
-    resolution: {integrity: sha512-M3VJc8PW/elxCAU/vQeNYPdjp3m7Ms/WyE+A+s2TTJYOVBVUuQhX2s+4u6GulTkxeBF3s83EvX26eAJ4RdXCTQ==}
+  /serverless/3.18.1:
+    resolution: {integrity: sha512-cdUdG7RW/0A2sfTnXVwHAgHTOZ4nt45lbYddyR2rMDXST+6CGghPaK7i6c7pdV8UUuU2iS00y/R5TwtKFU9AOg==}
     engines: {node: '>=12.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@serverless/dashboard-plugin': 6.2.2_supports-color@8.1.1
       '@serverless/platform-client': 4.3.2_supports-color@8.1.1
-      '@serverless/utils': 6.3.0
+      '@serverless/utils': 6.6.0
       ajv: 8.11.0
       ajv-formats: 2.1.1
       archiver: 5.3.1
-      aws-sdk: 2.1132.0
+      aws-sdk: 2.1139.0
       bluebird: 3.7.2
       cachedir: 2.3.0
       chalk: 4.1.2
       child-process-ext: 2.1.1
-      ci-info: 3.3.0
+      ci-info: 3.3.1
       cli-progress-footer: 2.3.1
       d: 1.0.1
       dayjs: 1.11.2
@@ -19674,7 +19678,6 @@ packages:
 
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
-    dev: true
 
   /tty-browserify/0.0.0:
     resolution: {integrity: sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=}
