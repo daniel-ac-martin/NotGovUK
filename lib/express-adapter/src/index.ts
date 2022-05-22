@@ -47,8 +47,14 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
             return next(false);
           }
         case 'redirect':
-          return (uri: string) => {
-            return target.redirect(uri, next)
+          return (_code: number | string, _uri?: string) => {
+            const { code, uri }: { code?: number, uri: string } = (
+              _uri === undefined
+                ? { code: undefined, uri: _code as string }
+                : { code: _code as number, uri: _uri }
+            );
+
+            return target.redirect(code, uri, next);
           }
         case 'send':
           return (content) => {
