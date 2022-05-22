@@ -62,7 +62,8 @@ module.exports = {
     '@storybook/addon-viewport/register'
   ],
   core: {
-    builder: 'webpack5'
+    builder: 'webpack5',
+    disableTelemetry: true
   },
   webpackFinal: async (config) => {
     config.module.rules.push({
