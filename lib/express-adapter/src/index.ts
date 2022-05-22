@@ -1,8 +1,15 @@
 import etag from 'etag';
 
-import type { NextHandleFunction as ExpressMiddleware } from 'connect';
-import type { Response } from 'express-serve-static-core';
+import type { Request as _Request, Response, NextFunction } from 'express-serve-static-core';
 import type { Middleware as RestifyMiddleware } from '@not-govuk/restify';
+
+type Callback = () => void;
+
+type Request = _Request & {
+  logout?: (options?: object | Callback, done?: Callback) => void
+};
+
+type ExpressMiddleware = (req: Request, res: Response, next: NextFunction) => void;
 
 export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req, res, next) => {
   const expressRes: unknown = new Proxy(res, {
