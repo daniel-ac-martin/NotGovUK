@@ -12,6 +12,32 @@ type Request = _Request & {
 type ExpressMiddleware = (req: Request, res: Response, next: NextFunction) => void;
 
 export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req, res, next) => {
+  const expressSession: unknown = (
+    !req['session']
+      ? undefined
+      : new Proxy(req['session'], {
+        get(target, prop, receiver) {
+          switch (prop) {
+            case 'regenerate':
+              return (cb: (err?: Error) => any) => cb();
+            case 'save':
+              return (cb: (err?: Error) => any) => cb();
+          }
+
+          return Reflect.get(target, prop, receiver);
+        }
+      })
+  );
+  const expressReq: unknown = new Proxy(req, {
+    get(target, prop, receiver) {
+      switch (prop) {
+        case 'session':
+          return expressSession;
+      }
+
+      return Reflect.get(target, prop, receiver);
+    }
+  });
   const expressRes: unknown = new Proxy(res, {
     get(target, prop, receiver) {
       switch (prop) {
@@ -47,7 +73,7 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
 
   expressRes['locals'] = expressRes['locals'] || {};
 
-  return middleware(req, expressRes as Response, next);
+  return middleware(expressReq as Request, expressRes as Response, next);
 };
 
 export default adapt;
