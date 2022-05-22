@@ -39,12 +39,10 @@ export const passportBag: AuthBagger<PassportOptions> = ({
         }));
       }
 
-      httpd.use((req, res, next) => {
-        passport.initialize({ userProperty: 'auth' })(req as any, res as any, next)
-      });
+      httpd.use(adapt(passport.initialize({ userProperty: 'auth' })));
 
       if (sessions) {
-        httpd.use(passport.session());
+        httpd.use(adapt(passport.session()));
       }
 
       return httpd;
@@ -55,10 +53,13 @@ export const passportBag: AuthBagger<PassportOptions> = ({
         ? undefined
         : adapt(passport.authenticate(id, {successRedirect: '/'}))
     ),
-    terminate: (req, res, next) => {
-      req.logout();
-      res.redirect(302, '/', next);
-    }
+    terminate: adapt(
+      (req, res) => {
+        req.logout(() => {
+          res.redirect(302, '/');
+        });
+      }
+    )
   };
 };
 
