@@ -24,9 +24,11 @@ export type UserProfile = {
   roles?: string[]
 };
 
+type Callback = () => void;
+
 export type Request = _Request & {
   auth?: UserProfile,
-  logout?: () => void
+  logout?: (options: object | Callback, done?: Callback) => void
 };
 
 export type Apply = (httpd: Server, siteWide?: boolean) => Server;
