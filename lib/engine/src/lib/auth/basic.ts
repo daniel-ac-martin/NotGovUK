@@ -10,7 +10,6 @@ export type AuthOptionsBasic = {
   username: string
   password: string
   roles?: string[]
-  sessionsSecret: string
 };
 
 export type AuthInfo = UserProfile & {
@@ -19,7 +18,6 @@ export type AuthInfo = UserProfile & {
 export const basicAuth: AuthBagger<AuthOptionsBasic> = async ({
   password,
   roles = [],
-  sessionsSecret,
   username
 }) => {
   const verify = (suppliedUsername, suppliedPassword, done) => {
@@ -43,7 +41,6 @@ export const basicAuth: AuthBagger<AuthOptionsBasic> = async ({
     callback: false,
     id: 'basic',
     sessions: true,
-    sessionsSecret,
     strategy
   });
 };

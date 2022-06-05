@@ -5,6 +5,7 @@ import { ComponentType } from 'react';
 import serverless from 'serverless-http';
 import restify, { IsReady, LogLevelString, LoggerOptions, Router } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
+import { consentCookies } from '@not-govuk/consent-cookies';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
 import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
@@ -38,6 +39,7 @@ export type EngineOptions = {
   apis?: Api[]
   assets: Assets
   auth?: AuthOptions
+  encryptionSecret: string
   env: NodeEnv
   graphQL?: {
     schema: GraphQLSchema
@@ -65,6 +67,7 @@ export const engine = async ({
   apis,
   assets,
   auth: authOptions,
+  encryptionSecret,
   env,
   graphQL: _graphQL,
   httpd: { host, port },
@@ -78,6 +81,7 @@ export const engine = async ({
 }: EngineOptions) => {
   const publicPath = assets.publicPath;
   const localAssetsPath = assets.localPath;
+  const cookies = [];
   const logDestination = _logger?.destination;
   const logger: LoggerOptions = {
     level: _logger?.level,
@@ -87,6 +91,8 @@ export const engine = async ({
         : logDestination
     )
   };
+
+  let sessions = false;
 
   const signInOut = authOptions && !([
     AuthMethod.None,
@@ -135,10 +141,24 @@ export const engine = async ({
 
   httpd.use(react.renderer);
 
+  let applyAuth;
+
   // Gather auth information
   if (authOptions) {
-    const { apply: applyAuth } = await auth(authOptions);
+    const { apply, cookies: authCookies, sessions: authSessions } = await auth(authOptions);
 
+    cookies.concat(authCookies);
+    sessions = sessions || authSessions;
+    applyAuth = apply;
+  }
+
+  httpd.use(consentCookies({
+    cookies,
+    secret: encryptionSecret,
+    provideSession: sessions
+  }));
+
+  if (applyAuth) {
     applyAuth(httpd, privacy);
   }
 

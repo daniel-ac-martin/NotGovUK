@@ -1,5 +1,7 @@
 import { Next, Request as _Request, Response, Server } from 'restify';
 
+import type { Cookie } from '@not-govuk/consent-cookies';
+
 export enum AuthMethod {
   None = 'none',
   Dummy = 'dummy',
@@ -40,7 +42,9 @@ export type AuthBag = {
   apply?: Apply
   authenticate?: Middleware
   callback?: Middleware
+  cookies?: Cookie[]
   extractor?: UserExtractor
+  sessions?: boolean
   terminate?: Middleware
 };
 
