@@ -64,7 +64,7 @@ export const engine = async ({
   PageWrap,
   apis,
   assets,
-  auth: _auth,
+  auth: authOptions,
   env,
   graphQL: _graphQL,
   httpd: { host, port },
@@ -88,11 +88,11 @@ export const engine = async ({
     )
   };
 
-  const signInOut = _auth && !([
+  const signInOut = authOptions && !([
     AuthMethod.None,
     AuthMethod.Dummy,
     AuthMethod.Headers
-  ].includes(_auth.method))
+  ].includes(authOptions.method))
   const signInHRef = (
     signInOut
       ? '/auth/sign-in'
@@ -136,8 +136,8 @@ export const engine = async ({
   httpd.use(react.renderer);
 
   // Gather auth information
-  if (_auth) {
-    const { apply: applyAuth } = await auth(_auth);
+  if (authOptions) {
+    const { apply: applyAuth } = await auth(authOptions);
 
     applyAuth(httpd, privacy);
   }
