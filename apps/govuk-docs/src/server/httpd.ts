@@ -22,6 +22,7 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
       publicPath: '/public/',
       entrypoints
     },
+    encryptionSecret: config.encryptionSecret,
     env: config.env,
     httpd: {
       host: config.httpd.host,

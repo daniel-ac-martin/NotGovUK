@@ -9,7 +9,6 @@ const serverConfig = {
   ...commonConfig,
   auth: {
     method: process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.Basic ),
-    sessionsSecret: process.env.SESSIONS_SECRET || 'changeme',
     dummy: {
       username: 'TestUser',
       groups: [],
@@ -32,6 +31,7 @@ const serverConfig = {
       redirectUri: process.env.OIDC_REDIRECT_URI || 'http://localhost:8080'
     }
   },
+  encryptionSecret: process.env.ENCRYPTION_SECRET || 'changeme',
   env,
   logger: {
     destination: process.env.LOG_DESTINATION,

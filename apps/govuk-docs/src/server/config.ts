@@ -3,6 +3,7 @@ import commonConfig from '../common/config';
 
 const serverConfig = {
   ...commonConfig,
+  encryptionSecret: process.env.ENCRYPTION_SECRET || 'changeme',
   env: process.env.NODE_ENV as NodeEnv,
   logger: {
     destination: process.env.LOG_DESTINATION,

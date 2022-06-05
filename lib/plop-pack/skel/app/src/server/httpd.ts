@@ -27,9 +27,10 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
       ( config.auth.method === AuthMethod.None && { method: AuthMethod.None } )
         || ( config.auth.method === AuthMethod.Dummy && { method: AuthMethod.Dummy, ...config.auth.dummy } )
         || ( config.auth.method === AuthMethod.Headers && { method: AuthMethod.Headers, ...config.auth.headers } )
-        || ( config.auth.method === AuthMethod.Basic && { method: AuthMethod.Basic, ...config.auth.basic, sessionsSecret: config.auth.sessionsSecret } )
-        || ( config.auth.method === AuthMethod.OIDC && { method: AuthMethod.OIDC, ...config.auth.oidc, sessionsSecret: config.auth.sessionsSecret } )
+        || ( config.auth.method === AuthMethod.Basic && { method: AuthMethod.Basic, ...config.auth.basic } )
+        || ( config.auth.method === AuthMethod.OIDC && { method: AuthMethod.OIDC, ...config.auth.oidc } )
     ),
+    encryptionSecret: config.encryptionSecret,
     env: config.env,
     graphQL: {
       schema: graphQLSchema
