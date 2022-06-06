@@ -86,7 +86,8 @@ export const consentCookies = ({
 
     const setCookie: SetCookie = function(name, value, options) {
       if (active[name]) {
-        const httpOnly = active[name].httpOnly !== false; // No access from JavaScript, by default
+        const { description, group, httpOnly: _httpOnly, ...declaration } = active[name];
+        const httpOnly = _httpOnly !== false; // No access from JavaScript, by default
         const content = (
           !httpOnly
             ? encodeClear(value)
@@ -98,6 +99,7 @@ export const consentCookies = ({
           sameSite: 'strict', // Some CSRF protection
           secure: process.env['NODE_ENV'] === 'production', // Require TLS in production
           ...defaults,
+          ...declaration,
           ...options,
           httpOnly
         }))
