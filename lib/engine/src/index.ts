@@ -39,7 +39,10 @@ export type EngineOptions = {
   apis?: Api[]
   assets: Assets
   auth?: AuthOptions
-  encryptionSecret: string
+  cookies: {
+    secret: string
+    secure?: boolean
+  }
   env: NodeEnv
   graphQL?: {
     schema: GraphQLSchema
@@ -67,7 +70,7 @@ export const engine = async ({
   apis,
   assets,
   auth: authOptions,
-  encryptionSecret,
+  cookies: cookieOptions,
   env,
   graphQL: _graphQL,
   httpd: { host, port },
@@ -154,8 +157,9 @@ export const engine = async ({
 
   httpd.use(consentCookies({
     cookies,
-    secret: encryptionSecret,
-    provideSession: sessions
+    provideSession: sessions,
+    secret: cookieOptions.secret,
+    secure: cookieOptions.secure
   }));
 
   if (applyAuth) {
