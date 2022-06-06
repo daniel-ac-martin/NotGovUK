@@ -155,12 +155,14 @@ export const engine = async ({
     applyAuth = apply;
   }
 
-  httpd.use(consentCookies({
-    cookies,
-    provideSession: sessions,
-    secret: cookieOptions.secret,
-    secure: cookieOptions.secure
-  }));
+  if ( sessions || cookies.length ) {
+    httpd.use(consentCookies({
+      cookies,
+      provideSession: sessions,
+      secret: cookieOptions.secret,
+      secure: cookieOptions.secure
+    }));
+  }
 
   if (applyAuth) {
     applyAuth(httpd, privacy);
