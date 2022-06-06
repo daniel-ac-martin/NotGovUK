@@ -11,7 +11,6 @@ export type AuthOptionsOIDC = {
   clientId: string
   clientSecret?: string
   redirectUri: string
-  sessionsSecret: string
 };
 
 export type AuthInfo = UserProfile & {
@@ -31,8 +30,7 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
   clientId,
   clientSecret,
   issuer,
-  redirectUri,
-  sessionsSecret
+  redirectUri
 }) => {
   custom.setHttpOptionsDefaults({
     timeout: 5000,
@@ -108,7 +106,6 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
     callback: true,
     id: 'oidc',
     sessions: true,
-    sessionsSecret,
     strategy
   });
 };

@@ -1,5 +1,4 @@
 import { adapt } from '@not-govuk/express-adapter';
-import clientSessions from 'client-sessions';
 import passport, { Strategy } from 'passport';
 import { AuthBagger } from './common';
 
@@ -7,7 +6,6 @@ type PassportOptions = {
   callback: boolean
   id: string
   sessions: boolean
-  sessionsSecret: string
   strategy: Strategy
 };
 
@@ -15,7 +13,6 @@ export const passportBag: AuthBagger<PassportOptions> = ({
   callback,
   id,
   sessions,
-  sessionsSecret,
   strategy
 }) => {
   const serDes = (user, done) => done(null, user);
@@ -26,19 +23,6 @@ export const passportBag: AuthBagger<PassportOptions> = ({
 
   return {
     apply: (httpd) => {
-      if (sessions) {
-        httpd.use(clientSessions({
-          cookieName: 'session',
-          secret: sessionsSecret,
-          cookie: {
-            path: '/', // Cover entire site
-            domain: undefined, // Do NOT cover subdomains (yes, really)
-            httpOnly: true, // No access from JavaScript
-            sameSite: 'lax' // Some sane CSRF protection
-          }
-        }));
-      }
-
       httpd.use(adapt(passport.initialize({ userProperty: 'auth' })));
 
       if (sessions) {
@@ -53,6 +37,7 @@ export const passportBag: AuthBagger<PassportOptions> = ({
         ? undefined
         : adapt(passport.authenticate(id, {successRedirect: '/'}))
     ),
+    sessions,
     terminate: adapt(
       (req, res) => {
         req.logout(() => {

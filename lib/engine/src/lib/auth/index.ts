@@ -4,6 +4,8 @@ import { AuthOptionsDummy, dummyAuth } from './dummy';
 import { AuthOptionsHeaders, headersAuth } from './headers';
 import { AuthOptionsOIDC, oidcAuth } from './oidc';
 
+import type { Cookie } from '@not-govuk/consent-cookies';
+
 type AuthOptionsNone = {
   method: AuthMethod.None
 };
@@ -13,22 +15,26 @@ export type AuthOptions = AuthOptionsNone | AuthOptionsDummy | AuthOptionsHeader
 export type AuthTools = {
   apply: Apply
   authenticate: Middleware
+  cookies: Cookie[]
+  sessions: boolean
 };
 
 const noOpMiddleware: Middleware = (_req, _res, next) => next();
 
 const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
   const {
-    apply: innerApply,
+    apply: _apply,
     authenticate = noOpMiddleware,
     callback,
+    cookies = [],
     extractor,
+    sessions = false,
     terminate
   } = await options;
 
   const apply: Apply = (httpd, siteWide: boolean = false) => {
-    if (innerApply) {
-      innerApply(httpd);
+    if (_apply) {
+      _apply(httpd);
     } else if (extractor) {
       const userInfo: Middleware = (req, _res, next) => {
         req.auth = extractor(req);
@@ -68,7 +74,9 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
 
   return {
     apply,
-    authenticate
+    authenticate,
+    cookies,
+    sessions
   };
 };
 

@@ -5,6 +5,7 @@ import { ComponentType } from 'react';
 import serverless from 'serverless-http';
 import restify, { IsReady, LogLevelString, LoggerOptions, Router } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
+import { consentCookies } from '@not-govuk/consent-cookies';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
 import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
@@ -38,6 +39,10 @@ export type EngineOptions = {
   apis?: Api[]
   assets: Assets
   auth?: AuthOptions
+  cookies: {
+    secret: string
+    secure?: boolean
+  }
   env: NodeEnv
   graphQL?: {
     schema: GraphQLSchema
@@ -64,7 +69,8 @@ export const engine = async ({
   PageWrap,
   apis,
   assets,
-  auth: _auth,
+  auth: authOptions,
+  cookies: cookieOptions,
   env,
   graphQL: _graphQL,
   httpd: { host, port },
@@ -78,6 +84,7 @@ export const engine = async ({
 }: EngineOptions) => {
   const publicPath = assets.publicPath;
   const localAssetsPath = assets.localPath;
+  const cookies = [];
   const logDestination = _logger?.destination;
   const logger: LoggerOptions = {
     level: _logger?.level,
@@ -88,11 +95,13 @@ export const engine = async ({
     )
   };
 
-  const signInOut = _auth && !([
+  let sessions = false;
+
+  const signInOut = authOptions && !([
     AuthMethod.None,
     AuthMethod.Dummy,
     AuthMethod.Headers
-  ].includes(_auth.method))
+  ].includes(authOptions.method))
   const signInHRef = (
     signInOut
       ? '/auth/sign-in'
@@ -135,10 +144,25 @@ export const engine = async ({
 
   httpd.use(react.renderer);
 
-  // Gather auth information
-  if (_auth) {
-    const { apply: applyAuth } = await auth(_auth);
+  let applyAuth;
 
+  // Gather auth information
+  if (authOptions) {
+    const { apply, cookies: authCookies, sessions: authSessions } = await auth(authOptions);
+
+    cookies.concat(authCookies);
+    sessions = sessions || authSessions;
+    applyAuth = apply;
+  }
+
+  httpd.use(consentCookies({
+    cookies,
+    provideSession: sessions,
+    secret: cookieOptions.secret,
+    secure: cookieOptions.secure
+  }));
+
+  if (applyAuth) {
     applyAuth(httpd, privacy);
   }
 
@@ -211,4 +235,5 @@ export const engine = async ({
 export default engine;
 export { AuthMethod };
 export { Router, errors } from '@not-govuk/restify';
+export { defaultsFalse, defaultsTrue } from './lib/config-helpers';
 export type { IsReady };
