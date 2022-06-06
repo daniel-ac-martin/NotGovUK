@@ -235,4 +235,5 @@ export const engine = async ({
 export default engine;
 export { AuthMethod };
 export { Router, errors } from '@not-govuk/restify';
+export { defaultsFalse, defaultsTrue } from './lib/config-helpers';
 export type { IsReady };
