@@ -117,11 +117,6 @@ export const consentCookies = ({
     res.setCookie = setCookie;
     res.setCookieConsent = setCookieConsent;
 
-    // Set initial consent cookie if required
-    if (_consent === undefined) {
-      res.setCookieConsent([]);
-    }
-
     provideSession ? sessions(req, res, next) : next();
   }
 };
