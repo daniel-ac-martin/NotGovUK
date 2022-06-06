@@ -97,7 +97,7 @@ export const consentCookies = ({
           path: '/', // Cover entire site
           domain: undefined, // Do NOT cover subdomains (yes, really)
           sameSite: 'strict', // Some CSRF protection
-          secure: process.env['NODE_ENV'] === 'production', // Require TLS in production
+          secure: true, // Require TLS
           ...defaults,
           ...declaration,
           ...options,
