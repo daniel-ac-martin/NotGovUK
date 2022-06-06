@@ -196,7 +196,7 @@ export const engine = async ({
       context: { auth: req.auth }
     });
     const graphQL = new Router();
-    const handler = graphqlRestify(graphQLOptions);
+    const handler = [ graphqlRestify(graphQLOptions), markFlushed ];
 
     graphQL.post('/', handler);
     graphQL.get('/', handler);
