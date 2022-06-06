@@ -30,7 +30,10 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
         || ( config.auth.method === AuthMethod.Basic && { method: AuthMethod.Basic, ...config.auth.basic } )
         || ( config.auth.method === AuthMethod.OIDC && { method: AuthMethod.OIDC, ...config.auth.oidc } )
     ),
-    encryptionSecret: config.encryptionSecret,
+    cookies: {
+      secret: config.cookies.secret,
+      secure: config.cookies.secure
+    },
     env: config.env,
     graphQL: {
       schema: graphQLSchema

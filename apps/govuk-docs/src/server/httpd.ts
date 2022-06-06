@@ -22,7 +22,10 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
       publicPath: '/public/',
       entrypoints
     },
-    encryptionSecret: config.encryptionSecret,
+    cookies: {
+      secret: config.cookies.secret,
+      secure: config.cookies.secure
+    },
     env: config.env,
     httpd: {
       host: config.httpd.host,

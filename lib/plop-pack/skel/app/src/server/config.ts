@@ -1,4 +1,4 @@
-import { AuthMethod, Mode, NodeEnv } from '@not-govuk/engine';
+import { AuthMethod, Mode, NodeEnv, defaultsFalse, defaultsTrue } from '@not-govuk/engine';
 import commonConfig from '../common/config';
 
 const env = process.env.NODE_ENV as NodeEnv;
@@ -31,7 +31,10 @@ const serverConfig = {
       redirectUri: process.env.OIDC_REDIRECT_URI || 'http://localhost:8080'
     }
   },
-  encryptionSecret: process.env.ENCRYPTION_SECRET || 'changeme',
+  cookies: {
+    secret: process.env.COOKIES_SECRET || 'changeme',
+    secure: ( devMode ? defaultsFalse : defaultsTrue )(process.env.COOKIES_SECURE)
+  },
   env,
   logger: {
     destination: process.env.LOG_DESTINATION,
@@ -42,8 +45,8 @@ const serverConfig = {
     port: Number(process.env.PORT) || Number(process.env.LISTEN_PORT) || 8080
   },
   mode: (process.env.MODE || 'server') as Mode,
-  privacy: !!(process.env.PRIVACY && process.env.PRIVACY.match(/(yes|true)/i)),
-  ssrOnly: !!(process.env.SSR_ONLY && process.env.SSR_ONLY.match(/(yes|true)/i))
+  privacy: defaultsFalse(process.env.PRIVACY),
+  ssrOnly: defaultsFalse(process.env.SSR_ONLY)
 };
 
 export default serverConfig;
