@@ -55,7 +55,7 @@ if (module.hot) {
             () => {
               v.log.info(`${v.name} is no longer listening`)
 
-              if (state.needSetup) {
+              if (state.needSetup && proxy) {
                 state.needSetup = false;
 
                 proxy.log.info(`${proxy.name} is going down...`);
