@@ -7,7 +7,8 @@ type WriteHead = (statusCode: number, statusMessage?: string | Headers, headers?
 export const sessionCookie: Cookie = {
   name: 'session',
   description: 'Your session on this website.',
-  httpOnly: true // No access from JavaScript
+  httpOnly: true, // No access from JavaScript
+  sameSite: 'lax' // Some sane CSRF protection
 };
 
 export const sessions: Middleware = (req, res, next) => {
@@ -47,12 +48,7 @@ export const sessions: Middleware = (req, res, next) => {
   const _writeHead: WriteHead = res.writeHead.bind(res);
   const writeHead: WriteHead = function (statusCode, statusMessage, headers) {
     if (modified) {
-      this.setCookie(sessionCookie.name, req.session, {
-        path: '/', // Cover entire site
-        domain: undefined, // Do NOT cover subdomains (yes, really)
-        sameSite: 'lax', // Some sane CSRF protection
-        secure: process.env['NODE_ENV'] === 'production', // Require TLS in production
-      })
+      this.setCookie(sessionCookie.name, req.session)
     }
 
     return _writeHead(statusCode, statusMessage, headers);

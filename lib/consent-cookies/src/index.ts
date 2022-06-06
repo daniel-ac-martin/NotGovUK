@@ -12,7 +12,9 @@ export type ConsentCookiesOptions = CookieOptions & {
 
 const consentCookie: Cookie = {
   name: 'consent',
-  description: 'A store of the cookies that you have consented to.'
+  description: 'A store of the cookies that you have consented to.',
+  httpOnly: false,
+  sameSite: 'lax'
 };
 
 const id = <T>(v: T): T => v;
@@ -109,10 +111,7 @@ export const consentCookies = ({
     };
 
     const setCookieConsent: SetCookieConsent = function(value: string[]) {
-      this.setCookie(consentCookie.name, value, {
-        httpOnly: false,
-        sameSite: 'lax'
-      });
+      this.setCookie(consentCookie.name, value);
     };
 
     // Provide method for setting cookies
