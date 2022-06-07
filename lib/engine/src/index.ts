@@ -155,12 +155,14 @@ export const engine = async ({
     applyAuth = apply;
   }
 
-  httpd.use(consentCookies({
-    cookies,
-    provideSession: sessions,
-    secret: cookieOptions.secret,
-    secure: cookieOptions.secure
-  }));
+  if ( sessions || cookies.length ) {
+    httpd.use(consentCookies({
+      cookies,
+      provideSession: sessions,
+      secret: cookieOptions.secret,
+      secure: cookieOptions.secure
+    }));
+  }
 
   if (applyAuth) {
     applyAuth(httpd, privacy);
@@ -168,7 +170,12 @@ export const engine = async ({
 
   // Serve static assets built by webpack
   const publicPaths = publicPath + '*';
-  const servePublicFiles = restify.plugins.serveStaticFiles(localAssetsPath);
+  const markFlushed = (req, res, next) => {
+    // This is a workaround for a bug that emerges when using serveStaticFiles with Restify's gzip plugin
+    res._flushed = true;
+    next();
+  }
+  const servePublicFiles = [ restify.plugins.serveStaticFiles(localAssetsPath), markFlushed ];
 
   httpd.head(publicPaths, servePublicFiles);
   httpd.get(publicPaths, servePublicFiles);
@@ -189,7 +196,7 @@ export const engine = async ({
       context: { auth: req.auth }
     });
     const graphQL = new Router();
-    const handler = graphqlRestify(graphQLOptions);
+    const handler = [ graphqlRestify(graphQLOptions), markFlushed ];
 
     graphQL.post('/', handler);
     graphQL.get('/', handler);

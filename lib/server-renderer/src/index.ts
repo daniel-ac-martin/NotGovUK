@@ -160,7 +160,8 @@ export const reactRenderer: ReactRenderer = ({
 
       const assetsByChunkName = (
         entrypoints || // pre-built assets
-        fromHeader // from asset proxy
+        fromHeader || // from asset proxy
+        {}
       );
       const assets: string[] = (
         Object.values(assetsByChunkName)

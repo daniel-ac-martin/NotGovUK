@@ -3,16 +3,33 @@ import config from './config';
 import { createServer } from './httpd';
 import webpackConfig from '../../webpack.config';
 
-const startProxy = () => (
+const getEntrypoints = () => {
+  try {
+    return require('../../dist/public/entrypoints.json');
+  } catch (_e) {
+    console.warn('WARNING: No assets found. You can create them with \'npm run build\'.');
+    return undefined
+  }
+};
+
+const { entrypoints, port, startProxy } = (
   config.ssrOnly
-    ? undefined
-    : assetProxy({
-      httpd: config.httpd,
-      name: config.name,
-      webpackConfig
-    })
+    ? {
+      entrypoints: getEntrypoints(),
+      port: config.httpd.port,
+      startProxy: () => undefined
+    }
+    : {
+      entrypoints: undefined,
+      port: config.httpd.port + 1,
+      startProxy: () => assetProxy({
+        httpd: config.httpd,
+        name: config.name,
+        webpackConfig
+      })
+    }
 );
-const startApp = () => createServer({ port: config.httpd.port + 1 }).app;
+const startApp = () => createServer({ entrypoints, port }).app;
 
 let proxy = startProxy();
 let server = startApp();
@@ -38,7 +55,7 @@ if (module.hot) {
             () => {
               v.log.info(`${v.name} is no longer listening`)
 
-              if (state.needSetup) {
+              if (state.needSetup && proxy) {
                 state.needSetup = false;
 
                 proxy.log.info(`${proxy.name} is going down...`);
