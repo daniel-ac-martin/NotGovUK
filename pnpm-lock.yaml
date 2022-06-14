@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@apollo/client': 3.6.6
+      '@apollo/client': 3.6.8
       '@babel/core': 7.18.2
       '@babel/plugin-proposal-export-namespace-from': 7.17.12
       '@babel/preset-env': 7.18.2
@@ -50,7 +50,7 @@ importers:
       webpack-dev-middleware: 5.3.3
       webpack-hot-middleware: 2.25.1
     devDependencies:
-      '@apollo/client': 3.6.6_react@16.14.0
+      '@apollo/client': 3.6.8_react@16.14.0
       '@babel/core': 7.18.2
       '@babel/plugin-proposal-export-namespace-from': 7.17.12_@babel+core@7.18.2
       '@babel/preset-env': 7.18.2_@babel+core@7.18.2
@@ -170,7 +170,7 @@ importers:
 
   apps/govuk-template:
     specifiers:
-      '@apollo/client': 3.6.6
+      '@apollo/client': 3.6.8
       '@graphql-tools/schema': 8.3.14
       '@not-govuk/anchor-list': workspace:^0.4.0
       '@not-govuk/app-composer': workspace:^0.4.0
@@ -209,7 +209,7 @@ importers:
       webpack-dev-middleware: 5.3.3
       webpack-hot-middleware: 2.25.1
     devDependencies:
-      '@apollo/client': 3.6.6_graphql@15.8.0+react@16.14.0
+      '@apollo/client': 3.6.8_graphql@15.8.0+react@16.14.0
       '@graphql-tools/schema': 8.3.14_graphql@15.8.0
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
@@ -1942,8 +1942,8 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.13
 
-  /@apollo/client/3.6.6_graphql@15.8.0+react@16.14.0:
-    resolution: {integrity: sha512-AzNLN043wy0bDTTR9wzKYSu+I1IT2Ox3+vWckxgIt88Jfw5jHBvumf3lXE1JlgvbFCTiKS/Sa66AadQXWMVBRQ==}
+  /@apollo/client/3.6.8_graphql@15.8.0+react@16.14.0:
+    resolution: {integrity: sha512-p/J6KRHZZPGX0bZtMLvRFAIcReYsRYGg+Jz9MkgabWPy0L8rwgyolq9fvKsNqkH888Tj9Yvwrxz9V84KfcORJA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
@@ -1973,8 +1973,8 @@ packages:
       zen-observable-ts: 1.2.5
     dev: true
 
-  /@apollo/client/3.6.6_react@16.14.0:
-    resolution: {integrity: sha512-AzNLN043wy0bDTTR9wzKYSu+I1IT2Ox3+vWckxgIt88Jfw5jHBvumf3lXE1JlgvbFCTiKS/Sa66AadQXWMVBRQ==}
+  /@apollo/client/3.6.8_react@16.14.0:
+    resolution: {integrity: sha512-p/J6KRHZZPGX0bZtMLvRFAIcReYsRYGg+Jz9MkgabWPy0L8rwgyolq9fvKsNqkH888Tj9Yvwrxz9V84KfcORJA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
