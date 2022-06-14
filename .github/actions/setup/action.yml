@@ -18,7 +18,7 @@ runs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node }}
+        node-version: ${{ inputs.node }}
         cache: 'pnpm'
 
     - name: Cache Cypress.io
