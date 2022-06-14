@@ -1802,7 +1802,7 @@ importers:
       resolve-url-loader: ^5.0.0
       sass: 1.52.3
       sass-loader: ^13.0.0
-      source-map-loader: ^3.0.1
+      source-map-loader: ^4.0.0
       webpack-bundle-analyzer: ^4.5.0
       webpack-manifest-plugin: ^5.0.0
       webpack-node-externals: ^3.0.0
@@ -1829,7 +1829,7 @@ importers:
       resolve-url-loader: 5.0.0
       sass: 1.52.3
       sass-loader: 13.0.0_sass@1.52.3+webpack@5.73.0
-      source-map-loader: 3.0.1_webpack@5.73.0
+      source-map-loader: 4.0.0_webpack@5.73.0
       webpack-bundle-analyzer: 4.5.0
       webpack-manifest-plugin: 5.0.0_webpack@5.73.0
       webpack-node-externals: 3.0.0
@@ -17576,11 +17576,11 @@ packages:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
 
-  /source-map-loader/3.0.1_webpack@5.73.0:
-    resolution: {integrity: sha512-Vp1UsfyPvgujKQzi4pyDiTOnE3E4H+yHvkVRN3c/9PJmQS4CQJExvcDvaX/D+RV+xQben9HJ56jMJS3CgUeWyA==}
-    engines: {node: '>= 12.13.0'}
+  /source-map-loader/4.0.0_webpack@5.73.0:
+    resolution: {integrity: sha512-i3KVgM3+QPAHNbGavK+VBq03YoJl24m9JWNbLgsjTj8aJzXG9M61bantBTNBt7CNwY2FYf+RJRYJ3pzalKjIrw==}
+    engines: {node: '>= 14.15.0'}
     peerDependencies:
-      webpack: ^5.0.0
+      webpack: ^5.72.1
     dependencies:
       abab: 2.0.6
       iconv-lite: 0.6.3
