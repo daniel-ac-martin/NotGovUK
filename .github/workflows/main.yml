@@ -23,7 +23,7 @@ jobs:
         run: npm test
 
   scan-code:
-    name: Scan code-base
+    name: Scan code-base for vulnerabilities
     needs:
       - common
     runs-on: ubuntu-latest
