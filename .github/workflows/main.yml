@@ -22,6 +22,30 @@ jobs:
       - name: Run unit tests
         run: npm test
 
+  scan-code:
+    name: Scan code-base
+    needs:
+      - common
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '16' ]
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          node: ${{ matrix.node }}
+
+      - name: Scan code-base
+        uses: ./.github/actions/scan-code
+        with:
+          baseline-branch: master
+          token: ${{ secrets.GITHUB_TOKEN }}
+
   libs:
     name: Build libraries
     needs:
