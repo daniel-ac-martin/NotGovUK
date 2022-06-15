@@ -167,34 +167,6 @@ jobs:
           cypress-record-key: ${{ secrets.CYPRESS_RECORD_KEY }}
           node: ${{ matrix.node }}
 
-  scan-app:
-    name: Scan application for vulnerabilities
-    needs:
-      - build-app
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        app: [ 'govuk-docs', 'govuk-template' ]
-        node: [ '16' ]
-    steps:
-
-      - name: Check out repository
-        uses: actions/checkout@v3
-
-      - name: Setup
-        uses: ./.github/actions/setup
-        with:
-          node: ${{ matrix.node }}
-
-      - name: Download build directory
-        uses: actions/download-artifact@v3
-        with:
-          name: 'build-${{ matrix.app }}'
-          path: "${{ matrix.app && format('apps/{0}/', matrix.app) }}dist"
-
-      - name: Scan application
-        uses: './.github/actions/scan-app'
-
   deploy-docs-to-netlify:
     name: Deploy to Netlify and test
     if: github.event_name != 'pull_request'
