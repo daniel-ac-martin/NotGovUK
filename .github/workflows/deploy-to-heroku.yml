@@ -77,3 +77,12 @@ jobs:
           deployment: heroku
           node: 16
           smoke: true
+
+      - name: Scan service for vulnerabilities
+        uses: './.github/actions/scan-app'
+        with:
+          app: ${{ inputs.app }}
+          baseline-branch: ${{ inputs.production-branch }}
+          smoke: true
+          target: ${{ needs.deploy.outputs.deploy-url }}
+          token: ${{ secrets.GITHUB_TOKEN }}
