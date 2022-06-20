@@ -1,4 +1,4 @@
-import { contentSecurityPolicy } from './middleware/content-security-policy';
+import { contentSecurityPolicy } from './content-security-policy';
 
 export const preventClickjacking = (req, res, next) => {
   res.header('X-Frame-Options', 'DENY'); // Consider: SAMEORIGIN
