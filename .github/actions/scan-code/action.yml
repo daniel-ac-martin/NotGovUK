@@ -12,6 +12,11 @@ runs:
   using: composite
   steps:
 
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: 'javascript'
+
     - name: Cache vdb
       uses: actions/cache@v3
       with:
@@ -19,10 +24,12 @@ runs:
           ${{ github.workspace }}/vdb
         key: vdb-os_${{ runner.os }}
 
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+
     - name: Scan
       uses: ShiftLeftSecurity/scan-action@master
       env:
-        CREDSCAN_DEPTH: 20
         DISABLE_TELEMETRY: 'true'
         ENABLE_OSS_RISK: 'true'
         FETCH_LICENSE: 'true'
@@ -30,7 +37,7 @@ runs:
         WORKSPACE: https://github.com/${{ github.repository }}/blob/${{ github.sha }}
         GITHUB_TOKEN: ${{ inputs.token }}
       with:
-        type: credscan,nodejs,json,yaml,serverless,dockerfile,kubernetes,depscan,bom
+        type: json,yaml,serverless,dockerfile,kubernetes,depscan,bom
         output: reports
 
     - name: Upload scan reports
