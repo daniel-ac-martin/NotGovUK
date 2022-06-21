@@ -44,6 +44,7 @@ runs:
         allow_issue_writing: ${{ steps.info.outputs.write-issue }}
         issue_title: "${{ steps.info.outputs.prefix }}: ZAP Scan Report (baseline)"
         fail_action: ${{ steps.info.outputs.fail-action }}
+        rules_file_name: "./.zap/rules.tsv"
 
     - name: ZAP Scan (full)
       if: ${{ !inputs.smoke }}
@@ -54,3 +55,4 @@ runs:
         allow_issue_writing: ${{ steps.info.outputs.write-issue }}
         issue_title: "${{ steps.info.outputs.prefix }}: ZAP Scan Report"
         fail_action: ${{ steps.info.outputs.fail-action }}
+        rules_file_name: "./.zap/rules.tsv"
