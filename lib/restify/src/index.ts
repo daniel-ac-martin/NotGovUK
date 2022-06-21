@@ -92,9 +92,9 @@ export const createServer = (options: ServerOptions ) => {
 
   httpd.on('after', restifyBunyanLogger());
 
-  httpd.use(preventClickjacking);
-  httpd.use(preventMimeSniffing);
-  httpd.use(noCacheByDefault);
+  httpd.pre(preventClickjacking);
+  httpd.pre(preventMimeSniffing);
+  httpd.pre(noCacheByDefault);
 
   httpd.get(options.liveness || '/healthz', liveness);
 
