@@ -1,10 +1,11 @@
 import { GraphQLSchema } from 'graphql';
 import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
-import { Next, Request as _Request, Response as _Response } from 'restify';
 import { html as beautifyHtml } from 'js-beautify';
 import { ApplicationProps, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
 import { htmlEnvelope } from './html-envelope';
+
+import type { Next, Request as _Request, Response as _Response } from '@not-govuk/restify';
 
 type Request = _Request & {
   auth?: any
@@ -186,6 +187,7 @@ export const reactRenderer: ReactRenderer = ({
               user
             }
         ),
+        nonce: res.nonce,
         rootId,
         scripts: (
           ssrOnly

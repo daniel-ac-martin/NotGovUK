@@ -4,6 +4,7 @@ import stoppable from 'stoppable';
 import { liveness } from './middleware/health-check';
 import { htmlByDefault } from './middleware/html-by-default';
 import { preventClickjacking } from './middleware/prevent-clickjacking';
+import { preventMimeSniffing } from './middleware/prevent-mime-sniffing';
 import { noCacheByDefault } from './middleware/no-cache-by-default';
 import { IsReady, readiness } from './middleware/readiness';
 import { LoggerOptions as _LoggerOptions, logger } from './lib/logger';
@@ -91,8 +92,9 @@ export const createServer = (options: ServerOptions ) => {
 
   httpd.on('after', restifyBunyanLogger());
 
-  httpd.use(preventClickjacking);
-  httpd.use(noCacheByDefault);
+  httpd.pre(preventClickjacking);
+  httpd.pre(preventMimeSniffing);
+  httpd.pre(noCacheByDefault);
 
   httpd.get(options.liveness || '/healthz', liveness);
 
@@ -112,6 +114,5 @@ export default restify;
 export * as errors from 'restify-errors';
 export { Router } from './lib/router';
 export type { IsReady };
-export type { Next, Request, Response } from 'restify';
 export type { LogLevelString } from './lib/logger';
-export type { Middleware } from './middleware/common';
+export type { Next, Request, Response, Middleware } from './middleware/common';

@@ -13,6 +13,7 @@ export const htmlEnvelope: HtmlEnvelope = ({
   charSet,
   helmet,
   hydrationData,
+  nonce,
   rootId,
   scripts: _scripts,
   stylesheets
@@ -22,6 +23,7 @@ export const htmlEnvelope: HtmlEnvelope = ({
     charSet,
     helmet,
     hydrationData,
+    nonce,
     rootId,
     stylesheets
   } ));
@@ -30,6 +32,7 @@ export const htmlEnvelope: HtmlEnvelope = ({
       ? ''
       : r(h(Scripts, {
         assetsPath,
+        nonce,
         scripts: _scripts
       } ))
   );

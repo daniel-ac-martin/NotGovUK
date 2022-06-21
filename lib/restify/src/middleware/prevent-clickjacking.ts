@@ -1,8 +1,11 @@
-export const preventClickjacking = (req, res, next) => {
-  res.header('X-Frame-Options', 'DENY');
-  res.header('Content-Security-Policy', 'frame-ancestors \'none\'');
+import { contentSecurityPolicy } from './content-security-policy';
 
-  next();
+import type { Middleware } from './common';
+
+export const preventClickjacking: Middleware = (req, res, next) => {
+  res.header('X-Frame-Options', 'DENY'); // Consider: SAMEORIGIN
+
+  contentSecurityPolicy(req, res, next);
 };
 
 export default preventClickjacking;

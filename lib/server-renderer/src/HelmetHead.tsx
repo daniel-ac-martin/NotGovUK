@@ -7,6 +7,7 @@ export type HelmetHeadProps = {
   charSet?: string
   helmet: HelmetServerState
   hydrationData?: HydrationData
+  nonce: string
   rootId: string
   stylesheets: string[]
 };
@@ -16,6 +17,7 @@ export const HelmetHead: FC<HelmetHeadProps> = ({
   charSet = 'UTF-8',
   helmet,
   hydrationData,
+  nonce,
   rootId,
   stylesheets
 }) => {
@@ -37,7 +39,7 @@ window.hydration = ${JSON.stringify(hydration)?.replace(/</g, '\\u003c')};
         <link key={v} href={`${assetsPath}${v}`} rel="stylesheet" />
       ) ) }
       { !hydrationData ? null : (
-        <script dangerouslySetInnerHTML={{ __html: hydrationDataScript }} />
+        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: hydrationDataScript }} />
       ) }
     </head>
   );
