@@ -187,6 +187,7 @@ export const reactRenderer: ReactRenderer = ({
               user
             }
         ),
+        nonce: res.nonce,
         rootId,
         scripts: (
           ssrOnly
