@@ -114,6 +114,5 @@ export default restify;
 export * as errors from 'restify-errors';
 export { Router } from './lib/router';
 export type { IsReady };
-export type { Next, Request, Response } from 'restify';
 export type { LogLevelString } from './lib/logger';
-export type { Middleware } from './middleware/common';
+export type { Next, Request, Response, Middleware } from './middleware/common';
