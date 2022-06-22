@@ -5,6 +5,8 @@
 10035	IGNORE	(Strict-Transport-Security Header Not Set)
 # Netlify quirk?
 10050	IGNORE	(Retrieved from Cache)
+# We can't seem to run the Ajax spider
+10109	INFO	(Modern Web Application)
 # We don't control the headers on Netlify's CDN
 10021	OUTOFSCOPE	.*/public/.*
 # These are not timestamps
