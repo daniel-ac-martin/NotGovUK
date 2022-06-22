@@ -1800,7 +1800,7 @@ importers:
       mini-css-extract-plugin: ^2.0.0
       node-loader: ^2.0.0
       resolve-url-loader: ^5.0.0
-      sass: 1.52.3
+      sass: 1.53.0
       sass-loader: ^13.0.0
       source-map-loader: ^4.0.0
       webpack-bundle-analyzer: ^4.5.0
@@ -1827,8 +1827,8 @@ importers:
       mini-css-extract-plugin: 2.6.0_webpack@5.73.0
       node-loader: 2.0.0_webpack@5.73.0
       resolve-url-loader: 5.0.0
-      sass: 1.52.3
-      sass-loader: 13.0.0_sass@1.52.3+webpack@5.73.0
+      sass: 1.53.0
+      sass-loader: 13.0.0_sass@1.53.0+webpack@5.73.0
       source-map-loader: 4.0.0_webpack@5.73.0
       webpack-bundle-analyzer: 4.5.0
       webpack-manifest-plugin: 5.0.0_webpack@5.73.0
@@ -10873,6 +10873,7 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
+    dev: true
 
   /debug/4.3.3:
     resolution: {integrity: sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==}
@@ -12539,7 +12540,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: true
 
   /follow-redirects/1.14.9_debug@4.3.2:
     resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
@@ -12551,6 +12551,7 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.2
+    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha512-7EwmXrOjyL+ChxMhmG5lnW9MPt1aIeZEwKhQzoBUdTV0N3zuwWDZYVJatDvZ2OyzPUvdIAZDsCetk3coyMfcnQ==}
@@ -13635,7 +13636,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.5
-      follow-redirects: 1.14.9_debug@4.3.2
+      follow-redirects: 1.14.9
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -18217,7 +18218,7 @@ packages:
       - supports-color
     dev: true
 
-  /sass-loader/13.0.0_sass@1.52.3+webpack@5.73.0:
+  /sass-loader/13.0.0_sass@1.53.0+webpack@5.73.0:
     resolution: {integrity: sha512-IHCFecI+rbPvXE2zO/mqdVFe8MU7ElGrwga9hh2H65Ru4iaBJAMRteum1c4Gsxi9Cq1FOtTEDd6+/AEYuQDM4Q==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -18238,12 +18239,12 @@ packages:
     dependencies:
       klona: 2.0.5
       neo-async: 2.6.2
-      sass: 1.52.3
+      sass: 1.53.0
       webpack: 5.73.0_webpack-cli@4.10.0
     dev: false
 
-  /sass/1.52.3:
-    resolution: {integrity: sha512-LNNPJ9lafx+j1ArtA7GyEJm9eawXN8KlA1+5dF6IZyoONg1Tyo/g+muOsENWJH/2Q1FHbbV4UwliU0cXMa/VIA==}
+  /sass/1.53.0:
+    resolution: {integrity: sha512-zb/oMirbKhUgRQ0/GFz8TSAwRq2IlR29vOUJZOx0l8sV+CkHUfHa4u5nqrG+1VceZp7Jfj59SVW9ogdhTvJDcQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
