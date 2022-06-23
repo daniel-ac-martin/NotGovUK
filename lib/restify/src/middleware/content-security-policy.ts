@@ -12,19 +12,13 @@ const csp = (nonce: string) => ({
   'prefetch-src': 'self', // Only pre-fetch from ourselves
   'script-src': (
     process.env.NODE_ENV === 'development'
-      ? ['self', `nonce-${nonce}`, 'unsafe-eval'] // Looser policy for HMR in local-dev environment
-      : ['self', `nonce-${nonce}`] // Only load our own (java)scripts
+      ? [ 'self', `nonce-${nonce}`, 'unsafe-eval' ] // Looser policy for HMR in local-dev environment
+      : [ 'self', `nonce-${nonce}` ] // Only load our own (java)scripts
   ),
-  'style-src': 'self', // Only load our own CSS
+  'style-src': [ 'self', 'unsafe-inline' ], // Only load our own CSS, but allow inline styles
   // Navigation directives
   'form-action': 'self', // Form submissions must come back to us
-  'frame-ancestors': 'none', // Pages cannot be shown inside frames at all. Consider: 'self'
-  // Other
-  'require-trusted-types-for': (
-    process.env.NODE_ENV === 'development'
-      ? undefined
-      : 'script' // Some extra XSS protection
-  )
+  'frame-ancestors': 'none' // Pages cannot be shown inside frames at all. Consider: 'self'
 });
 
 const isDefined = (v: any): boolean => (
