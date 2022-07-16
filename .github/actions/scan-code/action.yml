@@ -48,10 +48,9 @@ runs:
 
     - name: Update scan baseline
       shell: bash
-      if: ${{ github.ref == 'refs/heads/${{ inputs.baseline-branch }}' }}
+      if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}', inputs.baseline-branch) }}
       run: |
-        cp reports/.sastscan.baseline .
-        git add -f .sastscan.baseline
+        git add -f reports/.sastscan.baseline
         git config --global user.name "scan+github-actions[bot]"
         git config --global user.email "scan+github-actions[bot]@users.noreply.github.com"
         git commit -m "Update slscan baseline"
