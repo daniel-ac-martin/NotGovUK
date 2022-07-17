@@ -1,0 +1,21 @@
+name: Update built files
+description: Update built files
+inputs:
+  baseline-branch:
+    description: Name of branch to store baseline on
+    required: false
+    default: master
+runs:
+  using: composite
+  steps:
+
+    - name: Update built files
+      shell: bash
+      if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}', inputs.baseline-branch) }}
+      run: |
+        git add -f .jest-results
+        git add -f reports/.sastscan.baseline
+        git config --global user.name "scan+github-actions[bot]"
+        git config --global user.email "scan+github-actions[bot]@users.noreply.github.com"
+        git commit -m "Auto-commit: Update built files"
+        git push

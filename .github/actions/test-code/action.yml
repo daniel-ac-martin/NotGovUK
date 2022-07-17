@@ -24,13 +24,3 @@ runs:
       with:
         name: coverage-report
         path: coverage
-
-    - name: Update test results
-      shell: bash
-      if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}', inputs.baseline-branch) }}
-      run: |
-        git add -f .jest-results
-        git config --global user.name "scan+github-actions[bot]"
-        git config --global user.email "scan+github-actions[bot]@users.noreply.github.com"
-        git commit -m "Update Jest results"
-        git push
