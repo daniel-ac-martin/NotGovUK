@@ -2,6 +2,10 @@ name: Update built files
 on:
   push:
     branches: [ 'master' ]
+    paths-ignore:
+      - '.jest-result.json'
+      - '.sastscan.baseline'
+      - 'pnpm-lock.yaml'
 jobs:
   common:
     name: Build files

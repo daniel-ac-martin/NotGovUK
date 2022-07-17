@@ -11,15 +11,20 @@ runs:
   using: composite
   steps:
 
-    - name: Publish
+    - name: Set up NPM and Git
       shell: bash
       env:
         NPM_TOKEN: ${{ inputs.npm-token }}
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+
+    - name: Publish
+      shell: bash
+      env:
         VERSION: ${{ inputs.version }}
       run: |
-        git config --global user.name "publish+github-actions[bot]"
-        git config --global user.email "publish+github-actions[bot]@users.noreply.github.com"
-        npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
         npm version "${VERSION}"
         npm run all:publish
         git push

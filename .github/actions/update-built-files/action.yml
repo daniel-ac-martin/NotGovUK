@@ -9,13 +9,18 @@ runs:
   using: composite
   steps:
 
+    - name: Set up Git
+      shell: bash
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
     - name: Update built files
       shell: bash
       if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}', inputs.baseline-branch) }}
       run: |
-        git config --global user.name "auto+github-actions[bot]"
-        git config --global user.email "auto+github-actions[bot]@users.noreply.github.com"
         git add -f .jest-results.json
+        git add -f .pnpm-lock.yaml
         git add -f reports/.sastscan.baseline
-        git commit -m "Auto-commit: Update built files"
+        git commit -m "[skip ci] Update built files"
         git push
