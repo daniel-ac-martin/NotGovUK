@@ -46,7 +46,7 @@ $(dist_dir)/package.base.json: $(source_dir)/package.json
 	$(strip_package) '$(<)' > '$(@)'
 	$(patch_package) '$(@)'
 
-$(dist_dir)/package.app.json: $(plopfile) $(build_dir)/.github/workflows/main.yml
+$(dist_dir)/package.app.json: $(plopfile) $(build_dir)/.github/workflows/change-assurance.yml
 	mkdir -p '$(@D)'
 	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'template' 'Template' 'Template.' 'n'
 	$(strip_package) '$(docs_source_dir)/package.json' > '$(@)'
