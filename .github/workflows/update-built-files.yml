@@ -3,7 +3,6 @@ on:
   push:
     branches: [ 'master' ]
     paths-ignore:
-      - '.jest-result.json'
       - '.sastscan.baseline'
       - 'pnpm-lock.yaml'
 jobs:
@@ -21,9 +20,6 @@ jobs:
         uses: ./.github/actions/setup
         with:
           node: 16
-
-      - name: Run unit tests
-        uses: ./.github/actions/test-code
 
       - name: Scan code-base
         uses: ./.github/actions/scan-code
