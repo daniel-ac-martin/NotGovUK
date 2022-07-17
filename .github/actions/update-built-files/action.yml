@@ -22,5 +22,5 @@ runs:
         git add -f .jest-results.json
         git add -f .pnpm-lock.yaml
         git add -f reports/.sastscan.baseline
-        git commit -m "Auto-commit: Update built files"
+        git commit -m "[skip ci] Update built files"
         git push
