@@ -20,7 +20,9 @@ jobs:
           node: ${{ matrix.node }}
 
       - name: Run unit tests
-        run: npm test
+        uses: ./.github/actions/test-code
+        with:
+          baseline-branch: 'master'
 
   libs:
     name: Build libraries
