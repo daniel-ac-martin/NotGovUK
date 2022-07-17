@@ -4,10 +4,6 @@ inputs:
   token:
     description: GitHub token
     required: true
-  baseline-branch:
-    description: Name of branch to store baseline on
-    required: false
-    default: master
 runs:
   using: composite
   steps:

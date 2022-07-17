@@ -1,10 +1,5 @@
-name: 'CodeQL'
+name: 'Analysis'
 on:
-  push:
-    branches: [ 'master' ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ 'master' ]
   schedule:
     - cron: '35 1 * * 2'
 jobs:
@@ -17,8 +12,6 @@ jobs:
       security-events: write
     strategy:
       fail-fast: false
-      matrix:
-        node: [ '16' ]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -26,10 +19,9 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
         with:
-          node: ${{ matrix.node }}
+          node: 16
 
       - name: Scan code-base
         uses: ./.github/actions/scan-code
         with:
-          baseline-branch: 'master'
           token: ${{ secrets.GITHUB_TOKEN }}
