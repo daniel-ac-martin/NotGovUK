@@ -1,6 +1,8 @@
 # False positives
 10027	IGNORE	(Information Disclosure - Suspicious Comments)
 10031	IGNORE	(User Controllable HTML Element Attribute)
+# Netlify seems to randomly generate these
+10096	IGNORE	(Timestamp Disclosure)
 # HSTS should be set by the proxy terminating TLS
 10035	IGNORE	(Strict-Transport-Security Header Not Set)
 # Netlify quirk?
