@@ -13,7 +13,7 @@ runs:
       shell: bash
       if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}', inputs.baseline-branch) }}
       run: |
-        git add -f .jest-results
+        git add -f .jest-results.json
         git add -f reports/.sastscan.baseline
         git config --global user.name "scan+github-actions[bot]"
         git config --global user.email "scan+github-actions[bot]@users.noreply.github.com"
