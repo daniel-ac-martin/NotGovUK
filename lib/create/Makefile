@@ -10,6 +10,7 @@ ci_sources := $(wildcard \
 	$(source_dir)/.github/workflows/analysis.yml \
 	$(source_dir)/.github/workflows/deploy-to-netlify.yml \
 	$(source_dir)/.github/workflows/deploy-to-heroku.yml \
+	$(source_dir)/.github/workflows/publish.yml \
 	$(source_dir)/.jest/*/* \
 	$(source_dir)/cypress.json \
 	$(source_dir)/jest.config.base.js \
