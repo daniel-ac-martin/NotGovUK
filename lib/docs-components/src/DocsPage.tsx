@@ -49,6 +49,9 @@ export const DocsPage: FC<DocsPageProps> = ({
 
   return (
     <div {...attrs} className={classes()}>
+      <DocsContext.Provider value={contextValue}>
+        {content}
+      </DocsContext.Provider>
       { !title ? null : (
         <Helmet>
           <title>{title}{ !siteName ? '' : ` - ${siteName}`}</title>
@@ -69,9 +72,6 @@ export const DocsPage: FC<DocsPageProps> = ({
       <Helmet>
         <meta name="og:type" content="article" />
       </Helmet>
-      <DocsContext.Provider value={contextValue}>
-        {content}
-      </DocsContext.Provider>
     </div>
   );
 };
