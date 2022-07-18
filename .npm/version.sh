@@ -9,7 +9,7 @@ version="$(jq -r '.version' 'package.json')"
 pnpm recursive --filter '@*/*' exec -- npm version --no-git-tag-version --allow-same-version "${version}"
 
 # Update workspace packages
-pnpm recursive up --workspace
+pnpm recursive up --workspace "@${name}/*"
 
 # Update references in template files
 sed -i -E "s/workspace:([^\^0-9]*)(\^)?.+\"/workspace:\1\2${version}\"/g" \
