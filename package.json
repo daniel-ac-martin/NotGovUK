@@ -19,7 +19,7 @@
     "apps:clean": "npm run pnpm:apps -- run clean",
     "libs:build": "npm run pnpm:libs -- run build",
     "libs:clean": "npm run pnpm:libs -- run clean",
-    "libs:publish": "npm run pnpm:libs -- publish --access public --ignore-scripts",
+    "libs:publish": "npm run pnpm:libs -- publish --access public",
     "build": "npm run build:storybook",
     "clean": "npm run clean:storybook",
     "preversion": "echo 'Warning: This should only be done on a fresh branch from master.'",
