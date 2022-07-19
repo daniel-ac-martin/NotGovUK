@@ -1,7 +1,7 @@
 import { FC, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
-import config from '../config';
+import config from '../config.js';
 
 const siteTitle = config.title;
 

@@ -2,9 +2,9 @@ import { ComponentType, FC, createElement as h } from 'react';
 import { useField } from 'formik';
 import { useFormikContext } from 'formik';
 import { FieldNode, FormatFn } from './graph';
-import { useForm } from './context';
-import { id } from './helpers';
-import { ReadyValidator } from './validators';
+import { useForm } from './context.js';
+import { id } from './helpers.js';
+import { ReadyValidator } from './validators.js';
 
 export type FieldProps = {
   name: string

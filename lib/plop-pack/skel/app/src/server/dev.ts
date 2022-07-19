@@ -1,6 +1,6 @@
 import { assetProxy } from '@not-govuk/asset-proxy';
-import config from './config';
-import { createServer } from './httpd';
+import config from './config.js';
+import { createServer } from './httpd.js';
 import webpackConfig from '../../webpack.config';
 
 const getEntrypoints = () => {

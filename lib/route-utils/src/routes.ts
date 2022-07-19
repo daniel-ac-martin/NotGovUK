@@ -1,7 +1,7 @@
 import { LocationState } from 'history';
 import { ComponentType, FC, createElement as h } from 'react';
 import { Route as _Route, RouteProps, RouteComponentProps as _RouteComponentProps, StaticContext, withRouter as _withRouter } from 'react-router';
-import { Location, enhanceLocation } from './location';
+import { Location, enhanceLocation } from './location.js';
 
 export interface RouteComponentProps<
   Params extends { [K in keyof Params]?: string } = {},

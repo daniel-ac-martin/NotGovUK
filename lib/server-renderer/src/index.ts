@@ -3,7 +3,7 @@ import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
 import { html as beautifyHtml } from 'js-beautify';
 import { ApplicationProps, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
-import { htmlEnvelope } from './html-envelope';
+import { htmlEnvelope } from './html-envelope.js';
 
 import type { Next, Request as _Request, Response as _Response } from '@not-govuk/restify';
 

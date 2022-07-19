@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Label from '../src/Label';
+import Label from '../src/Label.js';
 
 describe('Label', () => {
   describe('when given valid props', () => {

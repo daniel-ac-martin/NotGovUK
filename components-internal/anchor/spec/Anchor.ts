@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Anchor from '../src/Anchor';
+import Anchor from '../src/Anchor.js';
 
 describe('Anchor', () => {
   describe('when given a href with a relative URL', () => {

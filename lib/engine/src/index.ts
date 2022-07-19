@@ -8,7 +8,7 @@ import { PageLoader } from '@not-govuk/app-composer';
 import { consentCookies } from '@not-govuk/consent-cookies';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
 import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
-import { gatherPages, pageRoutes } from './lib/pages';
+import { gatherPages, pageRoutes } from './lib/pages.js';
 
 export type Api = {
   path: string
@@ -242,5 +242,5 @@ export const engine = async ({
 export default engine;
 export { AuthMethod };
 export { Router, errors } from '@not-govuk/restify';
-export { defaultsFalse, defaultsTrue } from './lib/config-helpers';
+export { defaultsFalse, defaultsTrue } from './lib/config-helpers.js';
 export type { IsReady };

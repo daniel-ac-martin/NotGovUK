@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import WarningText from '../src/WarningText';
+import WarningText from '../src/WarningText.js';
 
 describe('WarningText', () => {
   describe('when given valid props', () => {

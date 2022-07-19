@@ -1,6 +1,6 @@
 import { adapt } from '@not-govuk/express-adapter';
 import passport, { Strategy } from 'passport';
-import { AuthBagger } from './common';
+import { AuthBagger } from './common.js';
 
 type PassportOptions = {
   callback: boolean

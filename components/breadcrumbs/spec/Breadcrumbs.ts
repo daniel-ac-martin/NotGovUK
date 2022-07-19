@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Breadcrumbs from '../src/Breadcrumbs';
+import Breadcrumbs from '../src/Breadcrumbs.js';
 
 describe('Breadcrumbs', () => {
   describe('when given valid props', () => {

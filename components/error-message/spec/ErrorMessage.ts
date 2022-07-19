@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import ErrorMessage from '../src/ErrorMessage';
+import ErrorMessage from '../src/ErrorMessage.js';
 
 describe('ErrorMessage', () => {
   describe('when given valid props', () => {

@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import NotGovUKPage from '../src/NotGovUKPage';
+import NotGovUKPage from '../src/NotGovUKPage.js';
 
 describe('NotGovUKPage', () => {
   describe('when given valid props', () => {

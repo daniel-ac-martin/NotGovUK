@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import PhaseBanner from '../src/PhaseBanner';
+import PhaseBanner from '../src/PhaseBanner.js';
 
 describe('PhaseBanner', () => {
   describe('when given valid props', () => {

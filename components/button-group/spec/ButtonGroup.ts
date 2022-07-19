@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import ButtonGroup from '../src/ButtonGroup';
+import ButtonGroup from '../src/ButtonGroup.js';
 
 describe('ButtonGroup', () => {
   describe('when given valid props', () => {

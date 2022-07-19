@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Form from '../src/Form';
+import Form from '../src/Form.js';
 
 describe('Form', () => {
   describe('when given valid props', () => {

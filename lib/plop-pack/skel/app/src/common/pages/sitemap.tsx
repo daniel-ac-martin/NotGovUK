@@ -2,7 +2,7 @@ import { FC, Fragment, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { AnchorList } from '@not-govuk/anchor-list';
-import config from '../config';
+import config from '../config.js';
 
 const siteTitle = config.title;
 

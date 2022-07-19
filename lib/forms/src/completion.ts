@@ -1,6 +1,6 @@
 import { Context, createContext, useContext } from 'react';
 import { Graph, Path, PathItem, FormatFn, PreValidateFn, ValidateFn } from './graph';
-import { id } from './helpers';
+import { id } from './helpers.js';
 
 const calculateNext = (fields: string[], fieldStatus: object, errors: object): string => {
   const reducer = (acc, cur) => (

@@ -1,6 +1,6 @@
-import { Node, NodeFn } from './node';
-import { Path } from './path';
-import { FieldNode, isFieldNode } from './field';
+import { Node, NodeFn } from './node.js';
+import { Path } from './path.js';
+import { FieldNode, isFieldNode } from './field.js';
 
 export class Graph extends Array<Node> {
   constructor(...args) {

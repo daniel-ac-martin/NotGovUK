@@ -1,5 +1,5 @@
 import { createLocation } from 'history';
-import { urlParse } from '../src/url-parse';
+import { urlParse } from '../src/url-parse.js';
 
 describe('urlParse', () => {
   it('is a function', () => expect(urlParse).toBeInstanceOf(Function));

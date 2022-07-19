@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import FieldSet from '../src/FieldSet';
+import FieldSet from '../src/FieldSet.js';
 
 describe('FieldSet', () => {
   describe('when given valid props', () => {

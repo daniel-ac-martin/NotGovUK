@@ -1,4 +1,4 @@
-import { Middleware } from './common';
+import { Middleware } from './common.js';
 
 const csp = (nonce: string) => ({
   // Fetch directives

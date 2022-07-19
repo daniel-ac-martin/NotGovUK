@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Checkboxes from '../src/Checkboxes';
+import Checkboxes from '../src/Checkboxes.js';
 
 describe('Checkboxes', () => {
   describe('when given minimal valid props', () => {

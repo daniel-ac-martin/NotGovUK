@@ -1,7 +1,7 @@
 import base64url from 'base64url';
 import { BasicStrategy } from 'passport-http';
-import { AuthBagger, AuthMethod, UserProfile } from './common';
-import { passportBag } from './passport';
+import { AuthBagger, AuthMethod, UserProfile } from './common.js';
+import { passportBag } from './passport.js';
 
 // OpenID Connect
 

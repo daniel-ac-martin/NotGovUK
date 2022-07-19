@@ -1,6 +1,6 @@
-import { Graph } from './graph';
-import { Node } from './node';
-import { PathItem } from './path';
+import { Graph } from './graph.js';
+import { Node } from './node.js';
+import { PathItem } from './path.js';
 
 export class ForkItem implements PathItem {
   tag: string;

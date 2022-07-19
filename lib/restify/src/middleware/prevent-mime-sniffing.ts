@@ -1,4 +1,4 @@
-import type { Middleware } from './common';
+import type { Middleware } from './common.js';
 
 export const preventMimeSniffing: Middleware = (_req, res, next) => {
   res.header('X-Content-Type-Options', 'nosniff');

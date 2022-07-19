@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import NavigationMenu from '../src/NavigationMenu';
+import NavigationMenu from '../src/NavigationMenu.js';
 
 describe('NavigationMenu', () => {
   describe('when given minimal valid props', () => {

@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import AnchorList from '../src/AnchorList';
+import AnchorList from '../src/AnchorList.js';
 
 describe('AnchorList', () => {
   describe('when given minimal valid props', () => {

@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import WidthContainer from '../src/WidthContainer';
+import WidthContainer from '../src/WidthContainer.js';
 
 describe('WidthContainer', () => {
   describe('when given valid props', () => {

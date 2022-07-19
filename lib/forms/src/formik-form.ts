@@ -1,7 +1,7 @@
 import { ComponentType, FC, HTMLProps, createElement as h } from 'react';
 import { Formik, FormikConfig, FormikProps } from 'formik';
-import { useForm } from './context';
-import { Form as RawForm } from './form';
+import { useForm } from './context.js';
+import { Form as RawForm } from './form.js';
 
 type HTMLFormProps = HTMLProps<HTMLFormElement>;
 type HTMLFormPropsMini = Omit<HTMLFormProps, 'onSubmit' | 'onReset'>;

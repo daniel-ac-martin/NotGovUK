@@ -1,7 +1,7 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { GovUKPage, NotGovUKPage } from '../';
 import { Route, Switch } from 'react-router-dom';
-import { bem, className } from '../../helpers';
+import { bem, className } from '../../helpers.js';
 import { RouteComponentProps } from 'react-router';
 
 interface IFeedback {

@@ -1,4 +1,4 @@
-import { createServer } from './httpd';
+import { createServer } from './httpd.js';
 
 export const { app, handler } = createServer({
   entrypoints: require('../../dist/public/entrypoints.json')

@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import FormGroup from '../src/FormGroup';
+import FormGroup from '../src/FormGroup.js';
 
 describe('FormGroup', () => {
   describe('when given minimal valid props', () => {

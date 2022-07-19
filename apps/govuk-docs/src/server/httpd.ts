@@ -1,11 +1,11 @@
 import { resolve } from 'path';
 import engine, { Mode } from '@not-govuk/engine';
-import config from './config';
-import AppWrap from '../common/app-wrap';
-import ErrorPage from '../common/error-page';
-import PageWrap from '../common/page-wrap';
-import pageLoader from '../common/page-loader';
-import isReady from './readiness';
+import config from './config.js';
+import AppWrap from '../common/app-wrap.js';
+import ErrorPage from '../common/error-page.js';
+import PageWrap from '../common/page-wrap.js';
+import pageLoader from '../common/page-loader.js';
+import isReady from './readiness.js';
 
 export type httpdOptions = {
   entrypoints?: object

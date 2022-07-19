@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Table from '../src/Table';
+import Table from '../src/Table.js';
 
 describe('Table', () => {
   describe('when given valid props', () => {

@@ -7,7 +7,7 @@ import WTForm, {
   mobileNumber as localMobileNumber,
   postalCode as localPostalCode
 } from '@not-govuk/forms';
-import { Submit } from './controls';
+import { Submit } from './controls.js';
 import {
   Checkboxes,
   DateInput,

@@ -1,5 +1,5 @@
 import { FC, createElement as h } from 'react';
-import { LogoProps } from './LogoProps';
+import { LogoProps } from './LogoProps.js';
 
 import crown from 'govuk-frontend/govuk/assets/images/govuk-logotype-crown.png';
 

@@ -1,6 +1,6 @@
 import { FC, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Page, PageProps } from './Page';
+import { Page, PageProps } from './Page.js';
 
 import favicon from 'govuk-frontend/govuk/assets/images/favicon.ico';
 import maskIcon from 'govuk-frontend/govuk/assets/images/govuk-mask-icon.svg';

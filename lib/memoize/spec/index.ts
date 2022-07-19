@@ -1,4 +1,4 @@
-import memoize from '../src';
+import memoize from '../src.js';
 import { jest } from '@jest/globals';
 
 describe('memoize', () => {

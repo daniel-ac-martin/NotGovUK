@@ -1,6 +1,6 @@
-import { Server } from '../lib/serve-api';
+import { Server } from '../lib/serve-api.js';
 
-import type { Middleware } from './common';
+import type { Middleware } from './common.js';
 
 export const htmlByDefault = (httpd: Server): Middleware => (req, res, next) => {
   if (!httpd.forAPI(req)) {

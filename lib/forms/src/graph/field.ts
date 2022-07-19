@@ -1,5 +1,5 @@
-import { Node } from './node';
-import { PathItem } from './path';
+import { Node } from './node.js';
+import { PathItem } from './path.js';
 
 export type FormatFn = (v: any) => string;
 export type PreValidateFn = (v: any) => object;

@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Textarea from '../src/Textarea';
+import Textarea from '../src/Textarea.js';
 
 describe('Textarea', () => {
   describe('when given minimal valid props', () => {

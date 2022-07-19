@@ -1,4 +1,4 @@
-import { Middleware } from './common';
+import { Middleware } from './common.js';
 
 export type IsReady = () => boolean;
 

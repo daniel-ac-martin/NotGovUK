@@ -1,8 +1,8 @@
-import { Apply, AuthBag, AuthMethod, Middleware, Promised } from './common';
-import { AuthOptionsBasic, basicAuth } from './basic';
-import { AuthOptionsDummy, dummyAuth } from './dummy';
-import { AuthOptionsHeaders, headersAuth } from './headers';
-import { AuthOptionsOIDC, oidcAuth } from './oidc';
+import { Apply, AuthBag, AuthMethod, Middleware, Promised } from './common.js';
+import { AuthOptionsBasic, basicAuth } from './basic.js';
+import { AuthOptionsDummy, dummyAuth } from './dummy.js';
+import { AuthOptionsHeaders, headersAuth } from './headers.js';
+import { AuthOptionsOIDC, oidcAuth } from './oidc.js';
 
 import type { Cookie } from '@not-govuk/consent-cookies';
 
@@ -98,4 +98,4 @@ export const auth = async (options: AuthOptions = noAuth): Promise<AuthTools> =>
 
 export default auth;
 export { AuthMethod };
-export type { Request, UserProfile } from './common';
+export type { Request, UserProfile } from './common.js';

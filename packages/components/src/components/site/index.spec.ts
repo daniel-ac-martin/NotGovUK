@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { createElement as h } from 'react';
-import Site from './';
+import Site from './index.js';
 
 describe.skip('Site', () => {
   describe('when given children', () => {

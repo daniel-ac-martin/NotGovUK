@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import TextInput from '../src/TextInput';
+import TextInput from '../src/TextInput.js';
 
 describe('TextInput', () => {
   describe('when given minimal valid props', () => {

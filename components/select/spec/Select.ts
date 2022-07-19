@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Select from '../src/Select';
+import Select from '../src/Select.js';
 
 describe('Select', () => {
   describe('when given minimal valid props', () => {

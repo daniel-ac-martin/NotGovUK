@@ -1,7 +1,7 @@
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { Configuration as WebpackConfig } from 'webpack';
 import restify from '@not-govuk/restify';
-import { webpackMiddleware } from './lib/webpack';
+import { webpackMiddleware } from './lib/webpack.js';
 
 export type AssetProxyOptions = {
   httpd: {
