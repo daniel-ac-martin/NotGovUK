@@ -2,15 +2,15 @@ import { FC, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Page, PageProps } from './Page';
 
-import '../assets/GovUKPage.scss';
+import favicon from 'govuk-frontend/govuk/assets/images/favicon.ico';
+import maskIcon from 'govuk-frontend/govuk/assets/images/govuk-mask-icon.svg';
+import appleTouchIcon180 from 'govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-180x180.png';
+import appleTouchIcon167 from 'govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-167x167.png';
+import appleTouchIcon152 from 'govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-152x152.png';
+import appleTouchIcon from 'govuk-frontend/govuk/assets/images/govuk-apple-touch-icon.png';
+import ogImage from 'govuk-frontend/govuk/assets/images/govuk-opengraph-image.png';
 
-const favicon = require('govuk-frontend/govuk/assets/images/favicon.ico');
-const maskIcon = require('govuk-frontend/govuk/assets/images/govuk-mask-icon.svg');
-const appleTouchIcon180 = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-180x180.png');
-const appleTouchIcon167 = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-167x167.png');
-const appleTouchIcon152 = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon-152x152.png');
-const appleTouchIcon = require('govuk-frontend/govuk/assets/images/govuk-apple-touch-icon.png');
-const ogImage = require('govuk-frontend/govuk/assets/images/govuk-opengraph-image.png');
+import '../assets/GovUKPage.scss';
 
 export type GovUKPageProps = Omit<PageProps, 'govUK'>;
 
