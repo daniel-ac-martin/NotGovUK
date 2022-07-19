@@ -99,7 +99,7 @@ export const Site: FC<ISite> = props => {
       {p.children}
     </Page>
   );
-  const withPage = <T extends unknown>(Component: React.ComponentType<T>) => (props: T) => (
+  const withPage = <T extends object>(Component: React.ComponentType<T>) => (props: T) => (
     <SitePage>
       <Component {...props} />
     </SitePage>
