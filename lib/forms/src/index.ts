@@ -1,5 +1,5 @@
 import { FC, createElement as h } from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
+import reactDomServer from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { useHistory } from 'react-router-dom';
 import deepEqual from 'fast-deep-equal/es6';
@@ -10,6 +10,8 @@ import FormikForm from './formik-form';
 import { Graph } from './graph';
 import { Completion, CompletionContext } from './completion';
 import { Register, Registry } from './registry';
+
+const { renderToStaticMarkup } = reactDomServer;
 
 export { withField, withForm, withControl } from './hocs';
 export { Page } from './page';
