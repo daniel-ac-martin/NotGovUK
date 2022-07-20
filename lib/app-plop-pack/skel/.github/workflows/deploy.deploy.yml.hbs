@@ -8,7 +8,7 @@
 {{#if (eq target 'netlify')}}
     if: github.event_name == 'push'
 {{else}}
-    if: github.event_name == 'push' && github.branch == 'refs/heads/{{{ branch }}}'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/{{{ branch }}}'
 {{/if}}
     uses: './.github/workflows/deploy-to-{{{ target }}}.yml'
     with:
