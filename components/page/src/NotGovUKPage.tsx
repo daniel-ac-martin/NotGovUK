@@ -1,6 +1,6 @@
 import { FC, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Page, PageProps } from './Page.js';
+import { Page, PageProps } from './Page';
 
 import favicon from '../assets/coat-favicon.ico';
 import appleTouchIcon180 from '../assets/coat-apple-touch-icon-180x180.png';

@@ -1,4 +1,4 @@
-import { AuthBagger, AuthMethod } from './common.js';
+import { AuthBagger, AuthMethod } from './common';
 
 // Accept authentication from upstream via headers
 

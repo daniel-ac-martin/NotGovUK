@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Hint from '../src/Hint.js';
+import Hint from '../src/Hint';
 
 describe('Hint', () => {
   describe('when given valid props', () => {

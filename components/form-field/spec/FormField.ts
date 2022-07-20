@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import FormField from '../src/FormField.js';
+import FormField from '../src/FormField';
 
 describe('FormField', () => {
   const minimalProps = {

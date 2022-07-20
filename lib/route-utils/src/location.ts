@@ -1,6 +1,6 @@
 import { Location as _Location, LocationState } from 'history';
 import { useLocation as useRawLocation } from 'react-router';
-import { parse as qsParse } from './query-string.js';
+import { parse as qsParse } from './query-string';
 
 export type Location<S = LocationState> = _Location<S> & {
   query: object

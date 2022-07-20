@@ -1,6 +1,6 @@
 import { useFormikContext } from 'formik';
-import { useCompletionContext } from './completion.js';
-import { useRegistrationContext } from './registry.js';
+import { useCompletionContext } from './completion';
+import { useRegistrationContext } from './registry';
 
 export const useForm = (): any => {
   const completion = useCompletionContext();

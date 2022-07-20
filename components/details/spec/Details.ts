@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Details from '../src/Details.js';
+import Details from '../src/Details';
 
 describe('Details', () => {
   describe('when given valid props', () => {

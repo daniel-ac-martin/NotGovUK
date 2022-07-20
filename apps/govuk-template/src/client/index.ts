@@ -1,9 +1,9 @@
 import { hydrateOrRender } from '@not-govuk/client-renderer';
-import { AppWrap } from '../common/app-wrap.js';
-import { PageWrap } from '../common/page-wrap.js';
-import { ErrorPage } from '../common/error-page.js';
-import { LoadingPage } from '../common/loading-page.js';
-import { pageLoader } from '../common/page-loader.js';
+import { AppWrap } from '../common/app-wrap';
+import { PageWrap } from '../common/page-wrap';
+import { ErrorPage } from '../common/error-page';
+import { LoadingPage } from '../common/loading-page';
+import { pageLoader } from '../common/page-loader';
 
 const main = () => {
   hydrateOrRender({

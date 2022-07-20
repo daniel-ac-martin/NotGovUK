@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Footer from '../src/Footer.js';
+import Footer from '../src/Footer';
 
 describe('Footer', () => {
   describe('when given valid props', () => {

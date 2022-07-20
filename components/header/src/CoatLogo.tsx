@@ -1,5 +1,5 @@
 import { FC, createElement as h } from 'react';
-import { LogoProps } from './LogoProps.js';
+import { LogoProps } from './LogoProps';
 
 export const CoatLogo: FC<LogoProps> = ({ fallback, ...props }) => (
   <svg

@@ -1,7 +1,7 @@
 import { ComponentProps, FC, Fragment, ReactElement, createElement as h } from 'react';
 import { id } from '@not-govuk/component-helpers';
-import { ReactPreview } from './ReactPreview.js';
-import { useDocs } from './context.js';
+import { ReactPreview } from './ReactPreview';
+import { useDocs } from './context';
 
 import type {
   AddContext as _AddContext,
@@ -67,6 +67,6 @@ export const AddContext: FC<AddContextProps> = ({ children }) => (
   h(Fragment, {}, children)
 );
 
-export * from './DocsPage.js';
-export * from './Props.js';
-export * from './context.js';
+export * from './DocsPage';
+export * from './Props';
+export * from './context';

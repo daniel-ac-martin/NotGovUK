@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Tag from '../src/Tag.js';
+import Tag from '../src/Tag';
 
 describe('Tag', () => {
   describe('when given valid props', () => {

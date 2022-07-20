@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Radios from '../src/Radios.js';
+import Radios from '../src/Radios';
 
 describe('Radios', () => {
   describe('when given minimal valid props', () => {

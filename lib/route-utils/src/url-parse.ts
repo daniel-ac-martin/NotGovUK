@@ -1,5 +1,5 @@
 import parse from 'url-parse';
-import { parse as qsParse, stringify as qsStringify } from './query-string.js';
+import { parse as qsParse, stringify as qsStringify } from './query-string';
 
 export const urlParse = (s: string) => {
   const wrap = (parsed) => {

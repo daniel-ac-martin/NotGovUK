@@ -6,16 +6,16 @@ import deepEqual from 'fast-deep-equal/es6';
 import { FormikHelpers } from 'formik';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { urlParse, useLocation } from '@not-govuk/route-utils';
-import FormikForm from './formik-form.js';
+import FormikForm from './formik-form';
 import { Graph } from './graph';
-import { Completion, CompletionContext } from './completion.js';
-import { Register, Registry } from './registry.js';
+import { Completion, CompletionContext } from './completion';
+import { Register, Registry } from './registry';
 
 const { renderToStaticMarkup } = reactDomServer;
 
-export { withField, withForm, withControl } from './hocs.js';
-export { Page } from './page.js';
-export { Fork } from './fork.js';
+export { withField, withForm, withControl } from './hocs';
+export { Page } from './page';
+export { Fork } from './fork';
 export {
   after,
   alpha,
@@ -171,4 +171,4 @@ export const Form: FC<FormProps<any>> = ({
 };
 
 export default Form;
-export type { FieldProps, RawField } from './hocs.js';
+export type { FieldProps, RawField } from './hocs';

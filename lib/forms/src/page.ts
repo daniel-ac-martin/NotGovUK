@@ -1,6 +1,6 @@
 import { FC, createElement as h } from 'react';
-import { useForm } from './context.js';
-import { Register, Registry } from './registry.js';
+import { useForm } from './context';
+import { Register, Registry } from './registry';
 import { Graph, PageNode } from './graph';
 
 export const Page: FC<any> = props => {

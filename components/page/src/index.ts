@@ -1,6 +1,6 @@
-import Page from './Page.js';
+import Page from './Page';
 
 export default Page;
-export * from './GovUKPage.js';
-export * from './NotGovUKPage.js';
-export * from './Page.js';
+export * from './GovUKPage';
+export * from './NotGovUKPage';
+export * from './Page';

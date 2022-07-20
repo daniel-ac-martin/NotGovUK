@@ -1,14 +1,14 @@
 import _restify, { plugins, ServerOptions as _ServerOptions } from 'restify';
 import restifyBunyanLogger from 'restify-bunyan-logger';
 import stoppable from 'stoppable';
-import { liveness } from './middleware/health-check.js';
-import { htmlByDefault } from './middleware/html-by-default.js';
-import { preventClickjacking } from './middleware/prevent-clickjacking.js';
-import { preventMimeSniffing } from './middleware/prevent-mime-sniffing.js';
-import { noCacheByDefault } from './middleware/no-cache-by-default.js';
-import { IsReady, readiness } from './middleware/readiness.js';
-import { LoggerOptions as _LoggerOptions, logger } from './lib/logger.js';
-import { installServeAPI } from './lib/serve-api.js';
+import { liveness } from './middleware/health-check';
+import { htmlByDefault } from './middleware/html-by-default';
+import { preventClickjacking } from './middleware/prevent-clickjacking';
+import { preventMimeSniffing } from './middleware/prevent-mime-sniffing';
+import { noCacheByDefault } from './middleware/no-cache-by-default';
+import { IsReady, readiness } from './middleware/readiness';
+import { LoggerOptions as _LoggerOptions, logger } from './lib/logger';
+import { installServeAPI } from './lib/serve-api';
 
 export type LoggerOptions = Omit<_LoggerOptions, 'name'> & {
   name?: string
@@ -112,7 +112,7 @@ export const restify = {
 
 export default restify;
 export * as errors from 'restify-errors';
-export { Router } from './lib/router.js';
+export { Router } from './lib/router';
 export type { IsReady };
-export type { LogLevelString } from './lib/logger.js';
-export type { Next, Request, Response, Middleware } from './middleware/common.js';
+export type { LogLevelString } from './lib/logger';
+export type { Next, Request, Response, Middleware } from './middleware/common';

@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Input from '../src/Input.js';
+import Input from '../src/Input';
 
 describe('Input', () => {
   const minimalProps = {

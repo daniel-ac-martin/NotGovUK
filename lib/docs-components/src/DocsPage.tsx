@@ -1,7 +1,7 @@
 import { FC, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { DocsContext } from './context.js';
+import { DocsContext } from './context';
 
 export type StoriesModule = object & {
   default: {

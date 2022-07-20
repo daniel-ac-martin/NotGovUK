@@ -1,6 +1,6 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import UserInfoContext, { UserInfo, useUserInfo } from '../src/UserInfo.js';
+import UserInfoContext, { UserInfo, useUserInfo } from '../src/UserInfo';
 
 const Consumer: FC<{}> = () => {
   const userInfo = useUserInfo();

@@ -1,8 +1,8 @@
 import cookie from 'cookie';
 import Cryptr from 'cryptr';
-import { sessions, sessionCookie } from './sessions.js';
+import { sessions, sessionCookie } from './sessions';
 
-import type { Cookie, CookieOptions, Middleware, SetCookie, SetCookieConsent } from './common.js';
+import type { Cookie, CookieOptions, Middleware, SetCookie, SetCookieConsent } from './common';
 
 export type ConsentCookiesOptions = CookieOptions & {
   cookies: Cookie[]

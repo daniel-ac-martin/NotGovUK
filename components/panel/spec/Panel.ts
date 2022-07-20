@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Panel from '../src/Panel.js';
+import Panel from '../src/Panel';
 
 describe('Panel', () => {
   describe('when given valid props', () => {

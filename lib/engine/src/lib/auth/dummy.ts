@@ -1,4 +1,4 @@
-import { AuthBagger, AuthMethod } from './common.js';
+import { AuthBagger, AuthMethod } from './common';
 
 // Accept a hard-coded user from the options
 

@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Page from '../src/Page.js';
+import Page from '../src/Page';
 
 describe('Page', () => {
   describe('when given valid props', () => {

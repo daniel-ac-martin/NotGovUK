@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Tabs from '../src/Tabs.js';
+import Tabs from '../src/Tabs';
 
 describe('Tabs', () => {
   describe('when given minimal valid props', () => {

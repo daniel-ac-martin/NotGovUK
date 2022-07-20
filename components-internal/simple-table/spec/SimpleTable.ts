@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import SimpleTable from '../src/SimpleTable.js';
+import SimpleTable from '../src/SimpleTable';
 
 describe('SimpleTable', () => {
   describe('when given valid props', () => {

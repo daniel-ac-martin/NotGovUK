@@ -1,7 +1,7 @@
 import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
-import { Radio } from './Radio.js';
+import { Radio } from './Radio';
 
 import '../assets/Radios.scss';
 

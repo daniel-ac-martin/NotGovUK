@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import BackLink from '../src/BackLink.js';
+import BackLink from '../src/BackLink';
 
 describe('BackLink', () => {
   describe('when given a href', () => {

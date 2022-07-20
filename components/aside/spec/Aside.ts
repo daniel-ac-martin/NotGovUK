@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Aside from '../src/Aside.js';
+import Aside from '../src/Aside';
 
 describe('Aside', () => {
   describe('when given valid props', () => {

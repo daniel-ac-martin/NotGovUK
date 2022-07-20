@@ -1,4 +1,4 @@
-import type { Cookie, Middleware } from './common.js';
+import type { Cookie, Middleware } from './common';
 import type { OutgoingHttpHeader, OutgoingHttpHeaders, ServerResponse } from 'http';
 
 type Headers = OutgoingHttpHeaders | OutgoingHttpHeader[];

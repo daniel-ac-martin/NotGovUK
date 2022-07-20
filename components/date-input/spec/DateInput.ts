@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import DateInput from '../src/DateInput.js';
+import DateInput from '../src/DateInput';
 
 describe('DateInput', () => {
   describe('when given valid props', () => {

@@ -1,7 +1,7 @@
 export { useHistory } from 'react-router-dom';
-export * from './is-mounted.js';
-export * from './location.js';
-export * from './match-path.js';
-export { queryString } from './query-string.js';
-export * from './routes.js';
-export * from './url-parse.js';
+export * from './is-mounted';
+export * from './location';
+export * from './match-path';
+export { queryString } from './query-string';
+export * from './routes';
+export * from './url-parse';

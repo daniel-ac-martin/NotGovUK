@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Link from '../src/Link.js';
+import Link from '../src/Link';
 
 describe('Link', () => {
   describe('when given valid props', () => {

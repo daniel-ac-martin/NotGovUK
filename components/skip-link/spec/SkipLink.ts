@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import SkipLink from '../src/SkipLink.js';
+import SkipLink from '../src/SkipLink';
 
 describe('SkipLink', () => {
   describe('when given minimal valid props', () => {

@@ -1,5 +1,5 @@
 import { AuthMethod, Mode, NodeEnv, defaultsFalse, defaultsTrue } from '@not-govuk/engine';
-import commonConfig from '../common/config.js';
+import commonConfig from '../common/config';
 
 const env = process.env.NODE_ENV as NodeEnv;
 const devMode = env === NodeEnv.Development;

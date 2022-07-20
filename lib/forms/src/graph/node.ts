@@ -1,4 +1,4 @@
-import { PathItem } from './path.js';
+import { PathItem } from './path';
 
 export type NodeFn = (Node) => any
 

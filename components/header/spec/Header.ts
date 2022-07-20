@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { mount } from '@not-govuk/component-test-helpers';
-import Header from '../src/Header.js';
+import Header from '../src/Header';
 
 describe('Header', () => {
   describe('when given valid props', () => {

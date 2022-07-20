@@ -1,7 +1,7 @@
 import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
-import { Checkbox } from './Checkbox.js';
+import { Checkbox } from './Checkbox';
 
 import '../assets/Checkboxes.scss';
 

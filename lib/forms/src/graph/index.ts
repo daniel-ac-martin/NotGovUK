@@ -1,12 +1,12 @@
-import * as P from './path.js';
-import * as F from './field.js';
+import * as P from './path';
+import * as F from './field';
 
-export { Graph } from './graph.js';
-export { Node } from './node.js';
-export { Path } from './path.js';
-export { FieldItem, FieldNode, isFieldItem, isFieldNode } from './field.js';
-export { PageItem, PageNode, isPageItem, isPageNode } from './page.js';
-export { ForkItem, ForkNode, isForkItem, isForkNode } from './fork.js';
+export { Graph } from './graph';
+export { Node } from './node';
+export { Path } from './path';
+export { FieldItem, FieldNode, isFieldItem, isFieldNode } from './field';
+export { PageItem, PageNode, isPageItem, isPageNode } from './page';
+export { ForkItem, ForkNode, isForkItem, isForkNode } from './fork';
 
 export type FormatFn = F.FormatFn;
 export type PathItem = P.PathItem;

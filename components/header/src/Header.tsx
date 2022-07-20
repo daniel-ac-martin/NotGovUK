@@ -2,8 +2,8 @@ import { FC, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
-import { CrownLogo } from './CrownLogo.js';
-import { CoatLogo } from './CoatLogo.js';
+import { CrownLogo } from './CrownLogo';
+import { CoatLogo } from './CoatLogo';
 
 import '../assets/Header.scss';
 

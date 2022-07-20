@@ -1,7 +1,7 @@
 import { createElement as h } from 'react';
 import { renderToStaticMarkup as r } from 'react-dom/server';
-import { HelmetHead, HelmetHeadProps } from './HelmetHead.js';
-import { Scripts, ScriptsProps } from './Scripts.js';
+import { HelmetHead, HelmetHeadProps } from './HelmetHead';
+import { Scripts, ScriptsProps } from './Scripts';
 
 export type HtmlEnvelope = (options: HelmetHeadProps & Partial<ScriptsProps>) => {
   head: string
