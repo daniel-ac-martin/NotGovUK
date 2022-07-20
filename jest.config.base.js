@@ -29,10 +29,15 @@ const config = {
   transformIgnorePatterns: [
     'node_modules/\.pnpm/(?!@)'
   ],
+  extensionsToTreatAsEsm: [
+    '.ts',
+    '.tsx'
+  ],
   globals: {
     'ts-jest': {
       isolatedModules: true,
-      tsconfig: path.resolve(__dirname, 'tsconfig.nodejs.json')
+      tsconfig: path.resolve(__dirname, 'tsconfig.json'),
+      useESM: true
     }
   }
 };

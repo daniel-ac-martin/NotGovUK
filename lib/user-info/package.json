@@ -2,7 +2,6 @@
   "name": "@not-govuk/user-info",
   "version": "0.5.3",
   "description": "A React context for providing information on the user.",
-  "type": "module",
   "main": "src/UserInfo.ts",
   "publishConfig": {
     "main": "dist/UserInfo.js",
@@ -12,7 +11,7 @@
     "/dist"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
     "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
@@ -31,6 +30,6 @@
     "jest": "28.1.3",
     "jest-environment-jsdom": "28.1.3",
     "ts-jest": "28.0.7",
-    "typescript": "4.6.4"
+    "typescript": "4.7.4"
   }
 }

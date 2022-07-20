@@ -2,7 +2,6 @@
   "name": "@not-govuk/simple-table",
   "version": "0.5.3",
   "description": "A simple table for displaying data.",
-  "type": "module",
   "main": "src/SimpleTable.tsx",
   "sass": "assets/SimpleTable.scss",
   "publishConfig": {
@@ -14,7 +13,7 @@
     "/dist"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
     "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
@@ -47,6 +46,6 @@
     "jest": "28.1.3",
     "jest-environment-jsdom": "28.1.3",
     "ts-jest": "28.0.7",
-    "typescript": "4.6.4"
+    "typescript": "4.7.4"
   }
 }

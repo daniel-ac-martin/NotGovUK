@@ -1,4 +1,5 @@
-import {
+import validatorLib from 'validator';
+const {
   isAfter,
   isAlpha,
   isAlphanumeric,
@@ -10,7 +11,7 @@ import {
   isNumeric,
   isPostalCode,
   isURL
-} from 'validator';
+} = validatorLib;
 
 export interface IFieldContext {
   name: string

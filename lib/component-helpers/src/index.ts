@@ -19,7 +19,8 @@ export const id = <T>(v: T): T => v;
 interface ArrayTree<T> extends Array<ArrayTreeNode<T>> {}
 type ArrayTreeNode<T> = T | ArrayTree<T>;
 
-const concatClasses = (...classes: ArrayTreeNode<string>[]) => (
+const concatClasses = (...classes: ArrayTreeNode<string>[]): string => (
+  // @ts-ignore
   classes
     .flat(Infinity)
     .filter(id)

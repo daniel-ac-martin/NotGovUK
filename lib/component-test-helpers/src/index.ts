@@ -2,7 +2,11 @@ import { FC, ReactElement, ReactNode, createElement as h } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router';
 import { render as _render, RenderOptions } from '@testing-library/react';
-import { mount as _mount } from 'enzyme';
+import enzyme from 'enzyme';
+
+export const shallow = enzyme.shallow;
+
+const _mount = enzyme.mount;
 
 const Providers: FC<{ routerProps?: object }> = ({
   children,
@@ -33,4 +37,3 @@ export const render = (
 )
 
 export * from '@testing-library/react'
-export { shallow } from 'enzyme';

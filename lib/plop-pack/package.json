@@ -9,7 +9,7 @@
     "/skel"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "build": "true",
     "clean": "true"
   },

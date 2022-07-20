@@ -2,7 +2,6 @@
   "name": "@{{{pkg 'name'}}}/{{{dashCase name}}}",
   "version": "{{{pkg 'version'}}}",
   "description": "{{{description}}}",
-  "type": "module",
   "main": "src/{{{properCase name}}}.tsx",
   "sass": "assets/{{{properCase name}}}.scss",
   "publishConfig": {
@@ -14,7 +13,7 @@
     "/dist"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
     "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"

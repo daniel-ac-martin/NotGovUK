@@ -1,4 +1,5 @@
 import memoize from '../src';
+import { jest } from '@jest/globals';
 
 describe('memoize', () => {
   it('is a function', () => expect(memoize).toBeInstanceOf(Function));

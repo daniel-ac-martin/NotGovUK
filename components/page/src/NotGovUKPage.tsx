@@ -2,14 +2,14 @@ import { FC, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Page, PageProps } from './Page';
 
-import '../assets/NotGovUKPage.scss';
+import favicon from '../assets/coat-favicon.ico';
+import appleTouchIcon180 from '../assets/coat-apple-touch-icon-180x180.png';
+import appleTouchIcon167 from '../assets/coat-apple-touch-icon-167x167.png';
+import appleTouchIcon152 from '../assets/coat-apple-touch-icon-152x152.png';
+import appleTouchIcon from '../assets/coat-apple-touch-icon.png';
+import ogImage from '../assets/coat-opengraph-image.png';
 
-const favicon = require('../assets/coat-favicon.ico');
-const appleTouchIcon180 = require('../assets/coat-apple-touch-icon-180x180.png');
-const appleTouchIcon167 = require('../assets/coat-apple-touch-icon-167x167.png');
-const appleTouchIcon152 = require('../assets/coat-apple-touch-icon-152x152.png');
-const appleTouchIcon = require('../assets/coat-apple-touch-icon.png');
-const ogImage = require('../assets/coat-opengraph-image.png');
+import '../assets/NotGovUKPage.scss';
 
 export type NotGovUKPageProps = Omit<PageProps, 'govUK'>;
 
