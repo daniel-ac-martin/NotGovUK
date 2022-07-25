@@ -10,14 +10,14 @@ const plopPackInternal = require.resolve('@not-govuk/plop-pack-internal');
 const tarball = resolve(__dirname, 'dist', 'skel.tar');
 const tarballPrototype = resolve(__dirname, 'dist', 'skel-prototype.tar');
 
-export default plop => {
+export const plopFile = async (plop) => {
   const parent = require.resolve('@not-govuk/create-internal');
 
   plop.load(plopPackInternal, undefined, { actionTypes: true, generators: false, helpers: true, partials: false });
 
   plop.setGenerator(
     'project',
-    extendGenerator(plop, parent, 'project', {
+    await extendGenerator(plop, parent, 'project', {
       prompts: [
       ],
       actions: [
@@ -45,7 +45,7 @@ export default plop => {
 
   plop.setGenerator(
     'prototype',
-    extendGenerator(plop, parent, 'prototype', {
+    await extendGenerator(plop, parent, 'prototype', {
       prompts: [
       ],
       actions: [
@@ -66,3 +66,5 @@ export default plop => {
     }, -1, 1)
   );
 };
+
+export default plopFile;
