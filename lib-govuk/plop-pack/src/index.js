@@ -1,10 +1,10 @@
 import { extendGenerator, relativePath } from '@not-govuk/plop-pack-internal';
 import { createRequire } from 'node:module';
-import path from 'node:path';
+import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const require = createRequire(import.meta.url);
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const plopPackInternal = require.resolve('@not-govuk/plop-pack-internal');
 const rel = relativePath(__dirname, '..', 'skel');
