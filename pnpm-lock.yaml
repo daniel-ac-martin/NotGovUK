@@ -124,7 +124,7 @@ importers:
       react-helmet-async: 1.3.0
       react-router: 5.3.4
       react-router-dom: 5.3.4
-      serverless: 3.21.0
+      serverless: 3.22.0
       start-server-and-test: 1.14.0
       ts-jest: 28.0.8
       typescript: 4.7.4
@@ -159,7 +159,7 @@ importers:
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
       react-router: 5.3.4_react@16.14.0
       react-router-dom: 5.3.4_react@16.14.0
-      serverless: 3.21.0
+      serverless: 3.22.0
       start-server-and-test: 1.14.0
       ts-jest: 28.0.8_9a759de3690b67967dee22e0d6aa4503
       typescript: 4.7.4
@@ -200,7 +200,7 @@ importers:
       react-helmet-async: 1.3.0
       react-router: 5.3.4
       react-router-dom: 5.3.4
-      serverless: 3.21.0
+      serverless: 3.22.0
       start-server-and-test: 1.14.0
       ts-jest: 28.0.8
       typescript: 4.7.4
@@ -239,7 +239,7 @@ importers:
       react-helmet-async: 1.3.0_react-dom@16.14.0+react@16.14.0
       react-router: 5.3.4_react@16.14.0
       react-router-dom: 5.3.4_react@16.14.0
-      serverless: 3.21.0
+      serverless: 3.22.0
       start-server-and-test: 1.14.0
       ts-jest: 28.0.8_9a759de3690b67967dee22e0d6aa4503
       typescript: 4.7.4
@@ -5069,7 +5069,7 @@ packages:
       open: 7.4.2
       semver: 7.3.7
       simple-git: 3.7.1_supports-color@8.1.1
-      type: 2.6.0
+      type: 2.7.2
       uuid: 8.3.2
       yamljs: 0.3.0
     transitivePeerDependencies:
@@ -5145,7 +5145,7 @@ packages:
       p-event: 4.2.0
       supports-color: 8.1.1
       timers-ext: 0.1.7
-      type: 2.6.0
+      type: 2.7.2
       uni-global: 1.0.0
       uuid: 8.3.2
       write-file-atomic: 4.0.1
@@ -7932,8 +7932,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /aws-sdk/2.1175.0:
-    resolution: {integrity: sha512-iv4SL2yn9DJzuqbzSbBNi3iI6Mehrqo2CUbsLEsEnIuiTf0uBR1Hp4061whgQOj2RxOuEPe4yKEsGWURkc8X6A==}
+  /aws-sdk/2.1231.0:
+    resolution: {integrity: sha512-ONBuRsOxsu0zL8u/Vmz49tPWi9D4ls2pjb6szdfSx9VQef7bOnWe9gJpWoA94OTzcjOWsvjsG7UgjvQJkIuPBg==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       buffer: 4.9.2
@@ -9097,7 +9097,7 @@ packages:
       mute-stream: 0.0.8
       process-utils: 4.0.0
       timers-ext: 0.1.7
-      type: 2.6.0
+      type: 2.7.2
     dev: true
 
   /cli-spinners/2.6.1:
@@ -9743,8 +9743,8 @@ packages:
     resolution: {integrity: sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==}
     dev: true
 
-  /dayjs/1.11.3:
-    resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
+  /dayjs/1.11.5:
+    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==}
     dev: true
 
   /debug/2.6.9:
@@ -11104,7 +11104,7 @@ packages:
   /ext/1.6.0:
     resolution: {integrity: sha512-sdBImtzkq2HpkdRLtlLWDa6w4DX22ijZLKx8BMPUuKe1c5lbN6xwQDQCxSfxBQnHZ13ls/FH0MQZx/q/gr6FQg==}
     dependencies:
-      type: 2.6.0
+      type: 2.7.2
     dev: true
 
   /extend-shallow/2.0.1:
@@ -11209,6 +11209,11 @@ packages:
 
   /fastest-levenshtein/1.0.12:
     resolution: {integrity: sha512-On2N+BpYJ15xIC974QNVuYGMOlEVt4s0EOI3wwMqOmK1fdDY+FN/zltPV8vosq4ad4c/gJ1KHScUn/6AWIgiow==}
+
+  /fastest-levenshtein/1.0.16:
+    resolution: {integrity: sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg==}
+    engines: {node: '>= 4.9.1'}
+    dev: true
 
   /fastq/1.13.0:
     resolution: {integrity: sha512-YpkpUnK8od0o1hmeSc7UUs/eB/vIPWJYjKck2QKIzAf71Vm1AAQ3EbuZB3g2JIy+pg+ERD0vqI79KyZiB2e2Nw==}
@@ -11755,7 +11760,7 @@ packages:
       event-emitter: 0.3.5
       ignore: 5.2.0
       memoizee: 0.4.15
-      type: 2.6.0
+      type: 2.7.2
     dev: true
 
   /fsevents/1.2.13:
@@ -14273,7 +14278,7 @@ packages:
       log: 6.3.1
       sprintf-kit: 2.0.1
       supports-color: 8.1.1
-      type: 2.6.0
+      type: 2.7.2
     dev: true
 
   /log-symbols/4.1.0:
@@ -14308,7 +14313,7 @@ packages:
       es5-ext: 0.10.61
       event-emitter: 0.3.5
       sprintf-kit: 2.0.1
-      type: 2.6.0
+      type: 2.7.2
       uni-global: 1.0.0
     dev: true
 
@@ -14844,7 +14849,7 @@ packages:
       ext: 1.6.0
       find-requires: 1.0.0
       fs2: 0.3.9
-      type: 2.6.0
+      type: 2.7.2
     dev: true
 
   /ncp/2.0.0:
@@ -15029,7 +15034,7 @@ packages:
       memoizee: 0.4.15
       node-fetch: 2.6.7
       semver: 7.3.7
-      type: 2.6.0
+      type: 2.7.2
       validate-npm-package-name: 3.0.0
     transitivePeerDependencies:
       - encoding
@@ -15136,7 +15141,7 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
-      define-properties: 1.1.3
+      define-properties: 1.1.4
       has-symbols: 1.0.3
       object-keys: 1.1.1
 
@@ -15964,7 +15969,7 @@ packages:
       ext: 1.6.0
       fs2: 0.3.9
       memoizee: 0.4.15
-      type: 2.6.0
+      type: 2.7.2
     dev: true
 
   /process/0.11.10:
@@ -16126,6 +16131,7 @@ packages:
     engines: {node: '>=0.6'}
     dependencies:
       side-channel: 1.0.4
+    dev: false
 
   /qs/6.11.0:
     resolution: {integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==}
@@ -17183,8 +17189,8 @@ packages:
     engines: {node: '>=12.0'}
     dev: false
 
-  /serverless/3.21.0:
-    resolution: {integrity: sha512-swDn12DWEN3jyb/DPrr+a5Gy+DcV+cI+Yuii+zjxGTPGrEDfLymPBEtx3e7YmxKWn174ekmRCfRNbbtffo3LcQ==}
+  /serverless/3.22.0:
+    resolution: {integrity: sha512-S/C4jbTFW95AwAw2wSqQa28FCordHwj+sUt3SHPgLNq0ryWcagR03C7vvIEnunmb7Rj5uEIcvArmjuaYNYN0+w==}
     engines: {node: '>=12.0'}
     hasBin: true
     requiresBuild: true
@@ -17195,7 +17201,7 @@ packages:
       ajv: 8.11.0
       ajv-formats: 2.1.1
       archiver: 5.3.1
-      aws-sdk: 2.1175.0
+      aws-sdk: 2.1231.0
       bluebird: 3.7.2
       cachedir: 2.3.0
       chalk: 4.1.2
@@ -17203,13 +17209,13 @@ packages:
       ci-info: 3.3.2
       cli-progress-footer: 2.3.2
       d: 1.0.1
-      dayjs: 1.11.3
+      dayjs: 1.11.5
       decompress: 4.2.1
       dotenv: 10.0.0
       dotenv-expand: 5.1.0
       essentials: 1.2.0
       ext: 1.6.0
-      fastest-levenshtein: 1.0.12
+      fastest-levenshtein: 1.0.16
       filesize: 8.0.7
       fs-extra: 9.1.0
       get-stdin: 8.0.0
@@ -17238,7 +17244,7 @@ packages:
       supports-color: 8.1.1
       tar: 6.1.11
       timers-ext: 0.1.7
-      type: 2.6.0
+      type: 2.7.2
       untildify: 4.0.0
       uuid: 8.3.2
       yaml-ast-parser: 0.0.43
@@ -17931,7 +17937,7 @@ packages:
       formidable: 1.2.6
       methods: 1.1.2
       mime: 1.6.0
-      qs: 6.10.3
+      qs: 6.11.0
       readable-stream: 2.3.7
     transitivePeerDependencies:
       - supports-color
@@ -18470,8 +18476,8 @@ packages:
     resolution: {integrity: sha512-+5nt5AAniqsCnu2cEQQdpzCAh33kVx8n0VoFidKpB1dVVLAN/F+bgVOqOJqOnEnrhp222clB5p3vUlD+1QAnfg==}
     dev: true
 
-  /type/2.6.0:
-    resolution: {integrity: sha512-eiDBDOmkih5pMbo9OqsqPRGMljLodLcwd5XD5JbtNB0o89xZAwynY9EdCDsJU7LtcVCClu9DvM7/0Ep1hYX3EQ==}
+  /type/2.7.2:
+    resolution: {integrity: sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==}
     dev: true
 
   /typedarray-to-buffer/3.1.5:
@@ -18530,7 +18536,7 @@ packages:
   /uni-global/1.0.0:
     resolution: {integrity: sha512-WWM3HP+siTxzIWPNUg7hZ4XO8clKi6NoCAJJWnuRL+BAqyFXF8gC03WNyTefGoUXYc47uYgXxpKLIEvo65PEHw==}
     dependencies:
-      type: 2.6.0
+      type: 2.7.2
     dev: true
 
   /unicode-canonical-property-names-ecmascript/2.0.0:
@@ -19511,7 +19517,7 @@ packages:
     dev: true
 
   /yauzl/2.10.0:
-    resolution: {integrity: sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk=}
+    resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
     dependencies:
       buffer-crc32: 0.2.13
       fd-slicer: 1.1.0
