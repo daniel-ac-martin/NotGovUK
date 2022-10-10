@@ -60,15 +60,11 @@ export const gatherPages = (pageLoader: PageLoader): Promise<PageInfoSSR[]> => P
       const mod: PageModule = await pageLoader(e);
 
       return {
-        Component: (
-          typeof mod === 'string'
-            ? mod
-            : mod.default
-        ),
+        Component: mod.default,
         href: src2Href(e),
         src: e,
         title: (
-          typeof mod === 'string'
+          typeof mod.default === 'string'
             ? src2Title(e)
             : mod.title
         )

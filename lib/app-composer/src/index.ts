@@ -82,8 +82,8 @@ export type ErrorPageProps = PageProps & {
 
 export type ErrorPage = ComponentType<ErrorPageProps>;
 
-export type PageModule = string | {
-  default: Page
+export type PageModule = {
+  default: Page | string
   title?: string
 };
 
@@ -139,9 +139,9 @@ const htmlPage = (html: string): Page => {
 };
 
 const stringToComponentMod = v => (
-  typeof v === 'string'
+  typeof v.default === 'string'
   ? {
-    default: htmlPage(v)
+    default: htmlPage(v.default)
   }
     : v
 );
@@ -205,11 +205,7 @@ export const compose: Compose = options => {
       .map(e => {
         const loaded = (
           e.Component
-            ? (
-              typeof e.Component === 'string'
-                ? e.Component
-                : { default: e.Component }
-            )
+            ? { default: e.Component }
             : options.pageLoader(e.src)
         );
         const loadedComponentMod = (
