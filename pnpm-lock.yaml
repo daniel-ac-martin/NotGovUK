@@ -171,7 +171,7 @@ importers:
   apps/govuk-template:
     specifiers:
       '@apollo/client': 3.6.9
-      '@graphql-tools/schema': 8.5.1
+      '@graphql-tools/schema': 9.0.4
       '@not-govuk/anchor-list': workspace:^0.5.9
       '@not-govuk/app-composer': workspace:^0.5.9
       '@not-govuk/app-plop-pack': workspace:^0.5.9
@@ -210,7 +210,7 @@ importers:
       webpack-hot-middleware: 2.25.1
     devDependencies:
       '@apollo/client': 3.6.9_graphql@15.8.0+react@16.14.0
-      '@graphql-tools/schema': 8.5.1_graphql@15.8.0
+      '@graphql-tools/schema': 9.0.4_graphql@15.8.0
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
       '@not-govuk/app-plop-pack': link:../../lib/app-plop-pack
@@ -5957,30 +5957,30 @@ packages:
   /@gar/promisify/1.1.3:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
 
-  /@graphql-tools/merge/8.3.1_graphql@15.8.0:
-    resolution: {integrity: sha512-BMm99mqdNZbEYeTPK3it9r9S6rsZsQKtlqJsSBknAclXq2pGEfOxjcIZi+kBSkHZKPKCRrYDd5vY0+rUmIHVLg==}
+  /@graphql-tools/merge/8.3.6_graphql@15.8.0:
+    resolution: {integrity: sha512-uUBokxXi89bj08P+iCvQk3Vew4vcfL5ZM6NTylWi8PIpoq4r5nJ625bRuN8h2uubEdRiH8ntN9M4xkd/j7AybQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-tools/utils': 8.9.0_graphql@15.8.0
+      '@graphql-tools/utils': 8.12.0_graphql@15.8.0
       graphql: 15.8.0
       tslib: 2.4.0
     dev: true
 
-  /@graphql-tools/schema/8.5.1_graphql@15.8.0:
-    resolution: {integrity: sha512-0Esilsh0P/qYcB5DKQpiKeQs/jevzIadNTaT0jeWklPMwNbT7yMX4EqZany7mbeRRlSRwMzNzL5olyFdffHBZg==}
+  /@graphql-tools/schema/9.0.4_graphql@15.8.0:
+    resolution: {integrity: sha512-B/b8ukjs18fq+/s7p97P8L1VMrwapYc3N2KvdG/uNThSazRRn8GsBK0Nr+FH+mVKiUfb4Dno79e3SumZVoHuOQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-tools/merge': 8.3.1_graphql@15.8.0
-      '@graphql-tools/utils': 8.9.0_graphql@15.8.0
+      '@graphql-tools/merge': 8.3.6_graphql@15.8.0
+      '@graphql-tools/utils': 8.12.0_graphql@15.8.0
       graphql: 15.8.0
       tslib: 2.4.0
       value-or-promise: 1.0.11
     dev: true
 
-  /@graphql-tools/utils/8.9.0_graphql@15.8.0:
-    resolution: {integrity: sha512-pjJIWH0XOVnYGXCqej8g/u/tsfV4LvLlj0eATKQu5zwnxd/TiTHq7Cg313qUPTFFHZ3PP5wJ15chYVtLDwaymg==}
+  /@graphql-tools/utils/8.12.0_graphql@15.8.0:
+    resolution: {integrity: sha512-TeO+MJWGXjUTS52qfK4R8HiPoF/R7X+qmgtOYd8DTH0l6b+5Y/tlg5aGeUJefqImRq7nvi93Ms40k/Uz4D5CWw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
