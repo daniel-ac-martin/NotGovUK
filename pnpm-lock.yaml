@@ -48,7 +48,7 @@ importers:
       webpack: 5.74.0
       webpack-cli: 4.10.0
       webpack-dev-middleware: 5.3.3
-      webpack-hot-middleware: 2.25.1
+      webpack-hot-middleware: 2.25.2
     devDependencies:
       '@apollo/client': 3.6.9_react@16.14.0
       '@babel/core': 7.19.3
@@ -72,7 +72,7 @@ importers:
       '@storybook/addons': 6.5.12_react-dom@16.14.0+react@16.14.0
       '@storybook/builder-webpack5': 6.5.12_e07d382b93481f740b347d16dc22092d
       '@storybook/manager-webpack5': 6.5.12_e07d382b93481f740b347d16dc22092d
-      '@storybook/react': 6.5.12_3986691d1c063de1f17a6be2c00f2130
+      '@storybook/react': 6.5.12_81df613207cbe988a6a3dbebb28e5e30
       '@storybook/theming': 6.5.12_react-dom@16.14.0+react@16.14.0
       '@types/jest': 28.1.8
       babel-jest: 28.1.3_@babel+core@7.19.3
@@ -94,7 +94,7 @@ importers:
       webpack: 5.74.0_webpack-cli@4.10.0
       webpack-cli: 4.10.0_webpack@5.74.0
       webpack-dev-middleware: 5.3.3_webpack@5.74.0
-      webpack-hot-middleware: 2.25.1
+      webpack-hot-middleware: 2.25.2
 
   apps/govuk-docs:
     specifiers:
@@ -112,7 +112,7 @@ importers:
       '@types/react-dom': 16.9.16
       '@types/react-router': 5.1.19
       '@types/react-router-dom': 5.3.3
-      '@types/webpack-env': 1.17.0
+      '@types/webpack-env': 1.18.0
       bunyan: 1.8.15
       cypress: 9.7.0
       jest: 28.1.3
@@ -131,7 +131,7 @@ importers:
       webpack: 5.74.0
       webpack-cli: 4.10.0
       webpack-dev-middleware: 5.3.3
-      webpack-hot-middleware: 2.25.1
+      webpack-hot-middleware: 2.25.2
     devDependencies:
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
@@ -147,7 +147,7 @@ importers:
       '@types/react-dom': 16.9.16
       '@types/react-router': 5.1.19
       '@types/react-router-dom': 5.3.3
-      '@types/webpack-env': 1.17.0
+      '@types/webpack-env': 1.18.0
       bunyan: 1.8.15
       cypress: 9.7.0
       jest: 28.1.3
@@ -166,7 +166,7 @@ importers:
       webpack: 5.74.0_webpack-cli@4.10.0
       webpack-cli: 4.10.0_webpack@5.74.0
       webpack-dev-middleware: 5.3.3_webpack@5.74.0
-      webpack-hot-middleware: 2.25.1
+      webpack-hot-middleware: 2.25.2
 
   apps/govuk-template:
     specifiers:
@@ -187,7 +187,7 @@ importers:
       '@types/react-dom': 16.9.16
       '@types/react-router': 5.1.19
       '@types/react-router-dom': 5.3.3
-      '@types/webpack-env': 1.17.0
+      '@types/webpack-env': 1.18.0
       bunyan: 1.8.15
       cypress: 9.7.0
       graphql: 15.8.0
@@ -207,7 +207,7 @@ importers:
       webpack: 5.74.0
       webpack-cli: 4.10.0
       webpack-dev-middleware: 5.3.3
-      webpack-hot-middleware: 2.25.1
+      webpack-hot-middleware: 2.25.2
     devDependencies:
       '@apollo/client': 3.6.9_graphql@15.8.0+react@16.14.0
       '@graphql-tools/schema': 8.5.1_graphql@15.8.0
@@ -226,7 +226,7 @@ importers:
       '@types/react-dom': 16.9.16
       '@types/react-router': 5.1.19
       '@types/react-router-dom': 5.3.3
-      '@types/webpack-env': 1.17.0
+      '@types/webpack-env': 1.18.0
       bunyan: 1.8.15
       cypress: 9.7.0
       graphql: 15.8.0
@@ -246,7 +246,7 @@ importers:
       webpack: 5.74.0_webpack-cli@4.10.0
       webpack-cli: 4.10.0_webpack@5.74.0
       webpack-dev-middleware: 5.3.3_webpack@5.74.0
-      webpack-hot-middleware: 2.25.1
+      webpack-hot-middleware: 2.25.2
 
   components-internal/anchor:
     specifiers:
@@ -1559,7 +1559,7 @@ importers:
       '@not-govuk/memoize': link:../memoize
       '@not-govuk/simple-table': link:../../components-internal/simple-table
       '@not-govuk/tabs-internal': link:../../components-internal/tabs
-      '@storybook/react': 6.5.12_3986691d1c063de1f17a6be2c00f2130
+      '@storybook/react': 6.5.12_81df613207cbe988a6a3dbebb28e5e30
       prettier: 2.7.1
       prismjs: 1.28.0
       prismjs-github: 1.0.0
@@ -6416,7 +6416,7 @@ packages:
       mkdirp: 1.0.4
       rimraf: 3.0.2
 
-  /@pmmmwh/react-refresh-webpack-plugin/0.5.5_f47f23c6f5f2504f16a1daf4a72ce3e2:
+  /@pmmmwh/react-refresh-webpack-plugin/0.5.5_c6c5f5d286fca9037e937d72b9371938:
     resolution: {integrity: sha512-RbG7h6TuP6nFFYKJwbcToA1rjC1FyPg25NR2noAZ0vKI+la01KTSRPkuVPE+U88jXv7javx2JHglUcL1MHcshQ==}
     engines: {node: '>= 10.13'}
     peerDependencies:
@@ -6453,7 +6453,7 @@ packages:
       schema-utils: 3.1.1
       source-map: 0.7.3
       webpack: 5.74.0_webpack-cli@4.10.0
-      webpack-hot-middleware: 2.25.1
+      webpack-hot-middleware: 2.25.2
 
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
@@ -6989,7 +6989,7 @@ packages:
       util-deprecate: 1.0.2
       webpack: 5.74.0_webpack-cli@4.10.0
       webpack-dev-middleware: 4.3.0_webpack@5.74.0
-      webpack-hot-middleware: 2.25.1
+      webpack-hot-middleware: 2.25.2
       webpack-virtual-modules: 0.4.3
     transitivePeerDependencies:
       - '@swc/core'
@@ -7614,7 +7614,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@storybook/react/6.5.12_3986691d1c063de1f17a6be2c00f2130:
+  /@storybook/react/6.5.12_81df613207cbe988a6a3dbebb28e5e30:
     resolution: {integrity: sha512-1tG8EdSfp+OZAKAWPT2UrexF4o007jEMwQFFXw1atIQrQOADzSnZ7lTYJ08o5TyJwksswtr18tH3oJJ9sG3KPw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -7645,7 +7645,7 @@ packages:
       '@babel/core': 7.19.3
       '@babel/preset-flow': 7.16.7_@babel+core@7.19.3
       '@babel/preset-react': 7.18.6_@babel+core@7.19.3
-      '@pmmmwh/react-refresh-webpack-plugin': 0.5.5_f47f23c6f5f2504f16a1daf4a72ce3e2
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.5_c6c5f5d286fca9037e937d72b9371938
       '@storybook/addons': 6.5.12_react-dom@16.14.0+react@16.14.0
       '@storybook/builder-webpack5': 6.5.12_e07d382b93481f740b347d16dc22092d
       '@storybook/client-logger': 6.5.12
@@ -8462,6 +8462,10 @@ packages:
 
   /@types/webpack-env/1.17.0:
     resolution: {integrity: sha512-eHSaNYEyxRA5IAG0Ym/yCyf86niZUIF/TpWKofQI/CVfh5HsMEUyfE2kwFxha4ow0s5g0LfISQxpDKjbRDrizw==}
+
+  /@types/webpack-env/1.18.0:
+    resolution: {integrity: sha512-56/MAlX5WMsPVbOg7tAxnYvNYMMWr/QJiIp6BxVSW3JJXUVzzOn64qW8TzQyMSqSUFM2+PVI4aUHcHOzIz/1tg==}
+    dev: true
 
   /@types/webpack-hot-middleware/2.25.6_webpack-cli@4.10.0:
     resolution: {integrity: sha512-1Q9ClNvZR30HIsEAHYQL3bXJK1K7IsrqjGMTfIureFjphsGOZ3TkbeoCupbCmi26pSLjVTPHp+pFrJNpOkBSVg==}
@@ -20640,6 +20644,13 @@ packages:
       ansi-html-community: 0.0.8
       html-entities: 2.3.3
       querystring: 0.2.1
+      strip-ansi: 6.0.1
+
+  /webpack-hot-middleware/2.25.2:
+    resolution: {integrity: sha512-CVgm3NAQyfdIonRvXisRwPTUYuSbyZ6BY7782tMeUzWOO7RmVI2NaBYuCp41qyD4gYCkJyTneAJdK69A13B0+A==}
+    dependencies:
+      ansi-html-community: 0.0.8
+      html-entities: 2.3.3
       strip-ansi: 6.0.1
 
   /webpack-log/2.0.0:
