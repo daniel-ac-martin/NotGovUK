@@ -3,13 +3,13 @@ import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/Hint.scss';
 
-export type HintProps = StandardProps & HTMLAttributes<HTMLSpanElement>;
+export type HintProps = StandardProps & HTMLAttributes<HTMLDivElement>;
 
 export const Hint: FC<HintProps> = ({ children, classBlock, classModifiers, className, ...attrs }) => {
   const classes = classBuilder('govuk-hint', classBlock, classModifiers, className);
 
   return (
-    <span {...attrs} className={classes()}>{children}</span>
+    <div {...attrs} className={classes()}>{children}</div>
   );
 };
 
