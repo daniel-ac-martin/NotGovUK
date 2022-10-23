@@ -111,10 +111,10 @@ export const Header: FC<HeaderProps> = ({
               {
                 govUK
                 ? (
-                  <CrownLogo role="presentation" focusable="false" className={classes('logotype-crown')} height="30" width="36" fallback={{ className: classes('logotype-crown-fallback-image'), width: 36, height: 32 }} />
+                  <CrownLogo aria-hidden="true" focusable="false" className={classes('logotype-crown')} height="30" width="36" fallback={{ className: classes('logotype-crown-fallback-image'), width: 36, height: 32 }} />
                 )
                 : (
-                  <CoatLogo role="presentation" focusable="false" className={classes('logotype-coat')} height="30" width="36" fallback={{ className: classes('logotype-coat-fallback-image') }} />
+                  <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype-coat')} height="30" width="36" fallback={{ className: classes('logotype-coat-fallback-image') }} />
                 )
               }
               &nbsp;
@@ -128,10 +128,10 @@ export const Header: FC<HeaderProps> = ({
           { !serviceName ? null : (
             <A href={serviceHref} classModifiers="service-name">{serviceName}</A>
           ) }
-          <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
           { !navLinks.length ? null : (
-            <nav>
-              <ul id="navigation" className={classes('navigation')} aria-label="Top Level Navigation">
+            <nav className={classes('navigation')} aria-label="Menu">
+              <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" aria-label="Show or hide menu" hidden>Menu</button>
+              <ul id="navigation" className={classes('navigation-list')}>
                 { navLinks.map(({ active, text, ...linkAttrs }, i) => (
                   <li key={i} className={classes('navigation-item', active ? 'active' : undefined)}>
                     <A {...linkAttrs}>{text}</A>

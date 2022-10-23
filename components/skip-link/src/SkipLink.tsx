@@ -20,7 +20,7 @@ export const SkipLink: FC<SkipLinkProps> = ({
   const href = `#${forProp}`;
 
   return (
-    <a {...attrs} className={classes()} href={href}>{children}</a>
+    <a {...attrs} className={classes()} href={href} data-module="govuk-skip-link">{children}</a>
   );
 };
 

@@ -13,6 +13,8 @@ type Link = LinkProps & {
 export type NavMenu = {
   /** Number of columns to display the links in */
   columns?: number
+  /** Width of each navigation section in the footer. Defaults to full width. You can pass any design system grid width here, for example, 'one-third'; 'two-thirds'; 'one-half'. */
+  width?: number
   /** List of links to choose from */
   items: Link[]
   /** Title of the menu */
@@ -53,8 +55,8 @@ export const Footer: FC<FooterProps> = ({
         { !navigation ? null : (
           <Fragment>
             <div className={classes('navigation')}>
-              { navigation.map(({ columns, title, items }, i) => (
-                <div key={i} className={classes('section')}>
+              { navigation.map(({ columns, width, title, items }, i) => (
+                <div key={i} className={classes('section', undefined, width && `govuk-grid-column-${width}`)}>
                   <h2 className={classes('heading', undefined, 'govuk-heading-m')}>
                     {title}
                   </h2>
