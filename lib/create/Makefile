@@ -12,7 +12,7 @@ ci_sources := $(wildcard \
 	$(source_dir)/.github/workflows/deploy-to-heroku.yml \
 	$(source_dir)/.github/workflows/publish.yml \
 	$(source_dir)/.jest/*/* \
-	$(source_dir)/cypress.json \
+	$(source_dir)/cypress.config.mjs \
 	$(source_dir)/jest.config.base.js \
 )
 sources := $(wildcard \
@@ -24,7 +24,7 @@ sources := $(wildcard \
 	$(source_dir)/.storybook/* \
 	$(source_dir)/apps/README.md \
 	$(source_dir)/babel.config.js \
-	$(source_dir)/cypress.json \
+	$(source_dir)/cypress.config.mjs \
 	$(source_dir)/components/README.md \
 	$(source_dir)/docs/about.md \
 	$(source_dir)/docs/contributing.md \
@@ -80,7 +80,7 @@ $(build_dir)/skel-prototype/package.json: $(plopfile) $(target_dir)/.github/work
 	$(cp) -r '$(target_dir)/apps/docs/' '$(@D)'
 	$(cp) -r '$(target_dir)/.github/' '$(@D)/.github'
 	$(cp) -r '$(target_dir)/.jest/' '$(@D)/.jest'
-	$(cp) '$(target_dir)/cypress.json' '$(@D)'
+	$(cp) '$(target_dir)/cypress.config.mjs' '$(@D)'
 	$(cp) '$(target_dir)/jest.config.base.js' '$(@D)/jest.config.base.js'
 	sed -i 's/..\/..\/jest.config.base/.\/jest.config.base/' '$(@D)/jest.config.js'
 	rm '$(@D)/README.md' '$(@D)/tsconfig.json' '$(@D)/.github/actions/setup/action.yml' '$(@D)/.github/workflows/change-assurance.yml' '$(@D)/.github/workflows/deploy.yml'
