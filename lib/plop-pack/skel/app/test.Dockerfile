@@ -1,4 +1,4 @@
-FROM cypress/included:9.7.0
+FROM cypress/included:10.10.0
 
 RUN mv /root/.cache /home/node/.cache && \
     mkdir -p /cypress && \
