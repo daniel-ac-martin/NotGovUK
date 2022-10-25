@@ -16,7 +16,7 @@ export type FileUploadProps = Omit<InputProps, 'type'> & {
 
 export const FileUpload: FC<FileUploadProps> = ({
   children,
-  classBlock,
+  classBlock = 'govuk-file-upload',
   classModifiers: _classModifiers = [],
   className,
   error,
@@ -29,7 +29,6 @@ export const FileUpload: FC<FileUploadProps> = ({
     error && 'error',
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
-  const classes = classBuilder('govuk-file-upload', classBlock, classModifiers, className);
   const id = _id || attrs.name;
   const fieldId = `${id}-input`;
   const hintId = `${id}-hint`;
@@ -46,7 +45,9 @@ export const FileUpload: FC<FileUploadProps> = ({
       <Input
         {...attrs}
         type="file"
-        className={classes()}
+        classBlock={classBlock}
+        classModifiers={classModifiers}
+        className={className}
         aria-describedby={hint && hintId}
         id={fieldId}
       />
