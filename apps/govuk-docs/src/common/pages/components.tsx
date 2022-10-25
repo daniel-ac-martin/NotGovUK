@@ -17,6 +17,7 @@ const mainStories = [
   require('../../../../../components/details/spec/Details.stories.mdx'),
   require('../../../../../components/error-message/spec/ErrorMessage.stories.mdx'),
   require('../../../../../components/fieldset/spec/FieldSet.stories.mdx'),
+  require('../../../../../components/file-upload/spec/FileUpload.stories.mdx'),
   require('../../../../../components/footer/spec/Footer.stories.mdx'),
   require('../../../../../components/header/spec/Header.stories.mdx'),
   require('../../../../../components/inset-text/spec/InsetText.stories.mdx'),

@@ -1,0 +1,124 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
+import { FileUpload } from '../src/FileUpload';
+import readMe from '../README.md';
+
+<Meta
+  title="File upload"
+  component={ FileUpload }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A component to help users select and upload a file.',
+    jest: ['FileUpload'],
+    notes: readMe
+  } }
+/>
+
+# File upload
+
+Help users select and upload a file.
+
+<Preview withToolbar>
+  <Story name="FileUpload">
+    <FileUpload
+      id="file-upload-1"
+      name="file-upload-1"
+      label="Upload a file"
+    />
+  </Story>
+</Preview>
+
+<Props of={ FileUpload } />
+
+
+## When to use this component
+
+You should only ask users to upload something if it’s critical to the delivery of your service.
+
+
+## How it works
+
+<Preview>
+  <Story name="Standard">
+    <FileUpload
+      id="file-upload-1"
+      name="file-upload-1"
+      label="Upload a file"
+    />
+  </Story>
+</Preview>
+
+
+### Error messages
+
+Error messages should be styled like this:
+
+<Preview>
+  <Story name="Error messages">
+    <FileUpload
+      id="file-upload-1"
+      name="file-upload-1"
+      label="Upload a file"
+      error="The CSV must be smaller than 2MB"
+    />
+  </Story>
+</Preview>
+
+Make sure errors follow the guidance in [error message] and have specific error messages for specific error states.
+
+
+#### If no file has been selected
+
+Say ‘Select a [whatever they need to select]’.
+For example, ‘Select a report’.
+
+
+#### If the file is the wrong file type
+
+Say ‘The selected file must be a [list of file types]’.
+For example, ‘The selected file must be a CSV or ODS’ or ‘The selected file must be a JPG, BMP, PNG, TIF or PDF’.
+
+
+#### If the file is too big
+
+Say ‘The selected file must be smaller than [largest file size]’.
+For example, ‘The selected file must be smaller than 2MB’.
+
+
+#### If the file is empty
+
+Say ‘The selected file is empty’.
+
+
+#### If the file contains a virus
+
+Say ‘The selected file contains a virus’.
+
+
+#### If the file is password protected
+
+Say ‘The selected file is password protected’.
+
+
+#### If there was a problem and the file was not uploaded
+
+Say ‘The selected file could not be uploaded – try again’.
+
+
+#### If there is a limit on how many files the user can select
+
+Say ‘You can only select up to [highest number] files at the same time’.
+For example, ‘You can only select up to 10 files at the same time’.
+
+
+#### If the file is not in a template that must be used or the template has been changed
+
+Say ‘The selected file must use the template’.
+
+
+## Research on this component
+
+Read a blog post about [design tips for helping users upload things].
+
+
+[error message]: https://design-system.service.gov.uk/components/error-message/
+[design tips for helping users upload things]: https://designnotes.blog.gov.uk/2017/02/14/some-design-tips-for-uploading-things/
