@@ -24,7 +24,12 @@ const config = {
     'enzyme-to-json/serializer'
   ],
   transform: {
-    "^.+\\.jsx?$": 'babel-jest'
+    "^.+\\.jsx?$": 'babel-jest',
+    "^.+\\.tsx?$": ['ts-jest', {
+      isolatedModules: true,
+      tsconfig: path.resolve(__dirname, 'tsconfig.json'),
+      useESM: true
+    }]
   },
   transformIgnorePatterns: [
     'node_modules/\.pnpm/(?!@)'
@@ -32,14 +37,7 @@ const config = {
   extensionsToTreatAsEsm: [
     '.ts',
     '.tsx'
-  ],
-  globals: {
-    'ts-jest': {
-      isolatedModules: true,
-      tsconfig: path.resolve(__dirname, 'tsconfig.json'),
-      useESM: true
-    }
-  }
+  ]
 };
 
 module.exports = config;
