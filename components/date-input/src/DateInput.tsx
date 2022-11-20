@@ -60,7 +60,7 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
   className,
   defaultValue,
   error: _error,
-  hint = 'For example, 12 11 2007',
+  hint,
   id: _id,
   label,
   name,
