@@ -1604,7 +1604,7 @@ importers:
       '@not-govuk/restify': workspace:^0.5.9
       '@not-govuk/server-renderer': workspace:^0.5.9
       '@types/client-sessions': 0.8.3
-      '@types/node': 16.18.0
+      '@types/node': 16.18.11
       '@types/passport': 1.0.11
       '@types/restify': 8.5.5
       apollo-server-restify: ^1.3.6
@@ -1629,7 +1629,7 @@ importers:
     devDependencies:
       '@not-govuk/app-composer': link:../app-composer
       '@types/client-sessions': 0.8.3
-      '@types/node': 16.18.0
+      '@types/node': 16.18.11
       '@types/passport': 1.0.11
       '@types/restify': 8.5.5
       graphql: 15.8.0
@@ -1767,7 +1767,7 @@ importers:
       '@not-govuk/app-composer': workspace:^0.5.9
       '@not-govuk/restify': workspace:^0.5.9
       '@types/js-beautify': 1.13.3
-      '@types/node': 16.18.0
+      '@types/node': 16.18.11
       '@types/react': 16.14.32
       '@types/react-dom': 16.9.16
       graphql: 15.8.0
@@ -1782,7 +1782,7 @@ importers:
     devDependencies:
       '@not-govuk/restify': link:../restify
       '@types/js-beautify': 1.13.3
-      '@types/node': 16.18.0
+      '@types/node': 16.18.11
       '@types/react': 16.14.32
       '@types/react-dom': 16.9.16
       graphql: 15.8.0
@@ -1909,7 +1909,7 @@ importers:
       '@not-govuk/text-input': workspace:^0.5.9
       '@not-govuk/textarea': workspace:^0.5.9
       '@not-govuk/warning-text': workspace:^0.5.9
-      '@types/node': 16.18.0
+      '@types/node': 16.18.11
       '@types/react': 16.14.32
       '@types/react-dom': 16.9.16
       '@types/react-router': 5.1.19
@@ -1956,7 +1956,7 @@ importers:
       '@not-govuk/warning-text': link:../../components/warning-text
     devDependencies:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/node': 16.18.0
+      '@types/node': 16.18.11
       '@types/react': 16.14.32
       '@types/react-dom': 16.9.16
       '@types/react-router': 5.1.19
@@ -6789,7 +6789,7 @@ packages:
     resolution: {integrity: sha512-W98JrE0j2K78swW4ukqMleo8R7h/pFETjM2DQ90MF6XK2i4LO4W3gQ71Lt4w3bfm2EvVSyWHplECvB5sK22yFQ==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 18.11.3
+      '@types/node': 18.11.4
     dev: true
 
   /@types/bunyan/1.8.8:
@@ -6817,7 +6817,7 @@ packages:
     resolution: {integrity: sha512-PCkcXtVDZI21FirzxIqkawwLGm5bjA280fG9KKaWFNUTLTWIgeIXhd/piAu/Pjc2JEyeNJlZmFCEFuOKTGOu1g==}
     dependencies:
       '@types/cookies': 0.7.5
-      '@types/node': 18.11.3
+      '@types/node': 18.11.4
     dev: true
 
   /@types/connect/3.4.35:
@@ -6836,7 +6836,7 @@ packages:
       '@types/connect': 3.4.35
       '@types/express': 4.17.9
       '@types/keygrip': 1.0.2
-      '@types/node': 18.11.3
+      '@types/node': 18.11.4
     dev: true
 
   /@types/cryptr/4.0.1:
@@ -6882,7 +6882,7 @@ packages:
   /@types/express-serve-static-core/4.17.30:
     resolution: {integrity: sha512-gstzbTWro2/nFed1WXtf+TtrpwxH7Ggs4RLYTLbeVgIkUQOI3WG/JKjgeOU1zXDvezllupjrf8OPIdvTbIaVOQ==}
     dependencies:
-      '@types/node': 18.11.3
+      '@types/node': 18.11.4
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.3
     dev: true
@@ -7047,6 +7047,10 @@ packages:
   /@types/node/16.18.0:
     resolution: {integrity: sha512-LqYqYzYvnbCaQfLAwRt0zboqnsViwhZm+vjaMSqcfN36vulAg7Pt0T83q4WZO2YOBw3XdyHi8cQ88H22zmULOA==}
 
+  /@types/node/16.18.11:
+    resolution: {integrity: sha512-3oJbGBUWuS6ahSnEq1eN2XrCyf4YsWI8OyCvo7c64zQJNplk3mO84t53o8lfTk+2ji59g5ycfc6qQ3fdHliHuA==}
+    dev: true
+
   /@types/node/17.0.21:
     resolution: {integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==}
 
@@ -7171,7 +7175,7 @@ packages:
     resolution: {integrity: sha512-3diZWucbR+xTmbDlU+FRRxBf+31OhFew7cJXML/zh9NmvSPTNoFecAwHB66BUqFgENJtqMiyl7JAwUE/siqdLw==}
     dependencies:
       '@types/mime': 2.0.3
-      '@types/node': 18.11.3
+      '@types/node': 18.11.4
     dev: true
 
   /@types/sinonjs__fake-timers/8.1.1:
