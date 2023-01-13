@@ -33,6 +33,8 @@ export const TextInput: FC<TextInputProps> = ({
   const id = _id || attrs.name;
   const fieldId = `${id}-input`;
   const hintId = `${id}-hint`;
+  const errorId = `${id}-error`;
+  const describedById = error ? errorId : hint && hintId;
 
   return (
     <FormGroup
@@ -45,7 +47,7 @@ export const TextInput: FC<TextInputProps> = ({
     >
       <Input
         {...attrs}
-        aria-describedby={hint && hintId}
+        aria-describedby={describedById}
         id={fieldId}
       />
     </FormGroup>

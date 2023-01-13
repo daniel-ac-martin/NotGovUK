@@ -35,6 +35,9 @@ export const FormGroup: FC<FormGroupProps> = ({
   ];
   const classes = classBuilder('govuk-form-group', classBlock, classModifiers, className);
   const hintId = _hintId || `${id}-hint`;
+  const errorId = `${id}-error`;
+  const describedById = error ? errorId : hint && hintId;
+  
   const children = (
     <Fragment>
       { !hint ? null : <Hint id={hintId}>{hint}</Hint> }
@@ -51,7 +54,7 @@ export const FormGroup: FC<FormGroupProps> = ({
             {children}
           </Fragment>
         ) : (
-          <FieldSet aria-describedby={hintId} legend={label}>
+          <FieldSet aria-describedby={describedById} legend={label}>
             {children}
           </FieldSet>
       ) }

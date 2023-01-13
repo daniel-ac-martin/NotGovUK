@@ -36,6 +36,9 @@ export const Textarea: FC<TextareaProps> = ({
   const id = _id || attrs.name;
   const fieldId = `${id}-input`;
   const hintId = `${id}-hint`;
+  const errorId = `${id}-error`;
+  const describedById = error ? errorId : hint && hintId;
+
   const maxWidth = width && (
     (((width >= 10) ? 4.76 : 1.76) + 1.81 * width) + 'ex'
   );
@@ -54,7 +57,7 @@ export const Textarea: FC<TextareaProps> = ({
     >
       <textarea
         {...attrs}
-        aria-describedby={hint && hintId}
+        aria-describedby={describedById}
         className={classes()}
         id={fieldId}
         rows={rows}
