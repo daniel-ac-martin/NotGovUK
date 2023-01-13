@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
+import { FC, InputHTMLAttributes, ReactNode, createElement as h, useState, SyntheticEvent } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 import { Radio } from './Radio';
@@ -53,6 +53,8 @@ export const Radios: FC<RadiosProps> = ({
   const id = _id || attrs.name;
   const hintId = `${id}-hint`;
 
+  const [selectedId, setSelectedId] = useState<number | undefined>();
+
   return (
     <FormGroup
       id={id}
@@ -65,7 +67,7 @@ export const Radios: FC<RadiosProps> = ({
         {options.map((v, i) => {
           if (isOption(v)) {
             const optionId = `${id}-radio-${i}`;
-            const { selected, ...rest } = v;
+            const { selected, conditional, ...rest } = v;
             const defaultChecked = (
               defaultValue === undefined
               ? selected
@@ -80,10 +82,15 @@ export const Radios: FC<RadiosProps> = ({
               <Radio
                 {...rest}
                 {...attrs}
+                conditional={conditional}
                 classes={classes}
-                defaultChecked={defaultChecked}
+                aria-expanded={selectedId === i && Boolean(conditional) ? true : null}
+                defaultChecked={defaultChecked || selectedId === i}
                 id={optionId}
                 key={i}
+                onChange={(e: SyntheticEvent) => {
+                  setSelectedId(i);
+                }}
               />
             );
           } else {
