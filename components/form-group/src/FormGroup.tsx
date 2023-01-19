@@ -9,6 +9,7 @@ import '../assets/FormGroup.scss';
 
 export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>, 'id' | 'label'> & {
   error?: ReactNode
+  errorId?: string
   fieldId?: string
   hint?: ReactNode
   hintId?: string
@@ -22,6 +23,7 @@ export const FormGroup: FC<FormGroupProps> = ({
   classModifiers: _classModifiers = [],
   className,
   error,
+  errorId: _errorId,
   fieldId,
   hint,
   hintId: _hintId,
@@ -35,8 +37,14 @@ export const FormGroup: FC<FormGroupProps> = ({
   ];
   const classes = classBuilder('govuk-form-group', classBlock, classModifiers, className);
   const hintId = _hintId || `${id}-hint`;
-  const errorId = `${id}-error`;
-  const describedById = error ? errorId : hint && hintId;
+  const errorId = _errorId || `${id}-error`;
+  const describedBy = ([
+    hint && hintId,
+    error && errorId
+  ]
+    .filter(e => e)
+    .join(' ') || undefined
+  );
   
   const children = (
     <Fragment>
@@ -54,7 +62,7 @@ export const FormGroup: FC<FormGroupProps> = ({
             {children}
           </Fragment>
         ) : (
-          <FieldSet aria-describedby={describedById} legend={label}>
+          <FieldSet aria-describedby={describedBy} legend={label}>
             {children}
           </FieldSet>
       ) }
