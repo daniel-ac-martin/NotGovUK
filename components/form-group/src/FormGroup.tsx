@@ -49,7 +49,7 @@ export const FormGroup: FC<FormGroupProps> = ({
   const children = (
     <Fragment>
       { !hint ? null : <Hint id={hintId}>{hint}</Hint> }
-      { !error ? null : <ErrorMessage id={`${id}-error`}>{error}</ErrorMessage>}
+      { !error ? null : <ErrorMessage id={errorId}>{error}</ErrorMessage>}
       {_children}
     </Fragment>
   );
