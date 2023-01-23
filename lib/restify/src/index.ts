@@ -3,6 +3,7 @@ import restifyBunyanLogger from 'restify-bunyan-logger';
 import stoppable from 'stoppable';
 import { liveness } from './middleware/health-check';
 import { htmlByDefault } from './middleware/html-by-default';
+import { permissionsPolicy } from './middleware/permissions-policy';
 import { preventClickjacking } from './middleware/prevent-clickjacking';
 import { preventMimeSniffing } from './middleware/prevent-mime-sniffing';
 import { noCacheByDefault } from './middleware/no-cache-by-default';
@@ -92,6 +93,7 @@ export const createServer = (options: ServerOptions ) => {
 
   httpd.on('after', restifyBunyanLogger());
 
+  httpd.pre(permissionsPolicy);
   httpd.pre(preventClickjacking);
   httpd.pre(preventMimeSniffing);
   httpd.pre(noCacheByDefault);
