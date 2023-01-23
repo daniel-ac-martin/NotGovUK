@@ -1638,7 +1638,7 @@ importers:
   lib/express-adapter:
     specifiers:
       '@not-govuk/restify': workspace:^0.5.9
-      '@types/express-serve-static-core': 4.17.31
+      '@types/express-serve-static-core': 4.17.32
       etag: ^1.8.1
       jest: 29.2.2
       jest-environment-jsdom: 29.2.2
@@ -1648,7 +1648,7 @@ importers:
       etag: 1.8.1
     devDependencies:
       '@not-govuk/restify': link:../restify
-      '@types/express-serve-static-core': 4.17.31
+      '@types/express-serve-static-core': 4.17.32
       jest: 29.2.2
       jest-environment-jsdom: 29.2.2
       ts-jest: 29.0.3_c9e7405176a727fa296a1f3b5ca5268d
@@ -6942,10 +6942,10 @@ packages:
       '@types/range-parser': 1.2.3
     dev: true
 
-  /@types/express-serve-static-core/4.17.31:
-    resolution: {integrity: sha512-DxMhY+NAsTwMMFHBTtJFNp5qiHKJ7TeqOo23zVEM9alT1Ml27Q3xcTH0xwxn7Q0BbMcVEJOs/7aQtUWupUQN3Q==}
+  /@types/express-serve-static-core/4.17.32:
+    resolution: {integrity: sha512-aI5h/VOkxOF2Z1saPy0Zsxs5avets/iaiAJYznQFm5By/pamU31xWKL//epiF4OfUA2qTOc9PV6tCUjhO8wlZA==}
     dependencies:
-      '@types/node': 17.0.21
+      '@types/node': 18.11.4
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.3
     dev: true
