@@ -26,6 +26,7 @@ jobs:
           autoAcceptChanges: master
           exitZeroOnChanges: true
           exitOnceUploaded: true
+          onlyChanged: true
 
   deploy-docs-to-netlify:
     name: Deploy to Netlify and test
