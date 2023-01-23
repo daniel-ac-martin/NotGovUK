@@ -2,8 +2,8 @@ name: Change assurance
 on:
   pull_request:
 jobs:
-  analyse:
-    name: Analyse
+  static-analysis:
+    name: Static analysis
     runs-on: ubuntu-latest
     permissions:
       actions: read
