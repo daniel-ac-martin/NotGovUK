@@ -21,8 +21,8 @@ jobs:
         with:
           node: 16
 
-      - name: Scan code-base
-        uses: ./.github/actions/scan-code
+      - name: Scan dependencies
+        uses: ./.github/actions/scan-dependencies
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
