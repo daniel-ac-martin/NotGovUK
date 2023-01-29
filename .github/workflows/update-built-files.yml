@@ -31,3 +31,17 @@ jobs:
         with:
           baseline-branch: 'master'
 
+  static-analysis:
+    name: Static analysis
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Scan code-base
+        uses: ./.github/actions/scan-code
