@@ -89,7 +89,8 @@ export const Anchor: FC<AnchorProps> = ({
     forceExternal ||
     unsupported ||
     url.host ||
-    !isMounted && hashLink
+    !isMounted && hashLink ||
+    hashLink && url.hash === '#'
   );
 
   return (

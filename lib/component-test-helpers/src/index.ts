@@ -4,6 +4,8 @@ import { MemoryRouter } from 'react-router';
 import { render as _render, RenderOptions } from '@testing-library/react';
 import enzyme from 'enzyme';
 
+import '@testing-library/jest-dom';
+
 export const shallow = enzyme.shallow;
 
 const _mount = enzyme.mount;
@@ -36,4 +38,5 @@ export const render = (
   }
 )
 
-export * from '@testing-library/react'
+export * from '@testing-library/react';
+export * from '@testing-library/user-event';
