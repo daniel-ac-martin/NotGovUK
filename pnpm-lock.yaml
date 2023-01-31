@@ -1860,7 +1860,7 @@ importers:
       '@mdx-js/loader': ^1.6.22
       '@storybook/react-docgen-typescript-plugin': ^1.0.1
       '@swc/core': ^1.2.215
-      babel-loader: ^8.2.5
+      babel-loader: ^9.0.0
       clean-webpack-plugin: ^4.0.0
       css-loader: ^6.7.1
       esbuild: ^0.17.0
@@ -1887,7 +1887,7 @@ importers:
       '@mdx-js/loader': 1.6.22_react@16.14.0
       '@storybook/react-docgen-typescript-plugin': 1.0.1_typescript@4.8.4+webpack@5.75.0
       '@swc/core': 1.2.218
-      babel-loader: 8.2.5_76e3ab9af51bb05387845865e588b15d
+      babel-loader: 9.1.2_76e3ab9af51bb05387845865e588b15d
       clean-webpack-plugin: 4.0.0_webpack@5.75.0
       css-loader: 6.7.1_webpack@5.75.0
       esbuild: 0.17.5
@@ -7400,9 +7400,6 @@ packages:
       parse5: 7.1.1
     dev: true
 
-  /@types/json-schema/7.0.10:
-    resolution: {integrity: sha512-BLO9bBq59vW3fxCpD4o0N4U+DXsvwvIcl+jofw0frQo/GrBFC+/jRZj1E7kgp6dvTyNmA4y6JCV5Id/r3mNP5A==}
-
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
 
@@ -8235,12 +8232,12 @@ packages:
     dependencies:
       ajv: 6.12.6
 
-  /ajv-keywords/5.1.0_ajv@8.11.0:
+  /ajv-keywords/5.1.0_ajv@8.12.0:
     resolution: {integrity: sha512-YCS/JNFAUyr5vAuhk1DWm1CBxRHW9LbJ2ozWeemrIqpbsqKjHVxYPyi5GC0rjZIT5JxJ3virVTS8wk4i/Z+krw==}
     peerDependencies:
       ajv: ^8.8.2
     dependencies:
-      ajv: 8.11.0
+      ajv: 8.12.0
       fast-deep-equal: 3.1.3
 
   /ajv/6.12.6:
@@ -8249,14 +8246,6 @@ packages:
       fast-deep-equal: 3.1.3
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
-      uri-js: 4.4.1
-
-  /ajv/8.11.0:
-    resolution: {integrity: sha512-wGgprdCvMalC0BztXvitD2hC04YffAvtsUn93JbGXYLAtCUO4xd17mCCZQxUOItiBwZvJScWo8NIvQMQ71rdpg==}
-    dependencies:
-      fast-deep-equal: 3.1.3
-      json-schema-traverse: 1.0.0
-      require-from-string: 2.0.2
       uri-js: 4.4.1
 
   /ajv/8.12.0:
@@ -8773,18 +8762,16 @@ packages:
       schema-utils: 2.7.1
       webpack: 4.43.0_webpack-cli@4.10.0
 
-  /babel-loader/8.2.5_76e3ab9af51bb05387845865e588b15d:
-    resolution: {integrity: sha512-OSiFfH89LrEMiWd4pLNqGz4CwJDtbs2ZVc+iGu2HrkRfPxId9F2anQj38IxWpmRfsUY0aBZYi1EFcd3mhtRMLQ==}
-    engines: {node: '>= 8.9'}
+  /babel-loader/9.1.2_76e3ab9af51bb05387845865e588b15d:
+    resolution: {integrity: sha512-mN14niXW43tddohGl8HPu5yfQq70iUThvFL/4QzESA7GcZoC0eVOhvWdQ8+3UlSjaDE9MVtsW9mxDY07W7VpVA==}
+    engines: {node: '>= 14.15.0'}
     peerDependencies:
-      '@babel/core': ^7.0.0
-      webpack: '>=2'
+      '@babel/core': ^7.12.0
+      webpack: '>=5'
     dependencies:
       '@babel/core': 7.18.6
       find-cache-dir: 3.3.2
-      loader-utils: 2.0.2
-      make-dir: 3.1.0
-      schema-utils: 2.7.1
+      schema-utils: 4.0.0
       webpack: 5.75.0_webpack-cli@4.10.0
     dev: false
 
@@ -9433,7 +9420,7 @@ packages:
       minipass-pipeline: 1.2.4
       mkdirp: 1.0.4
       p-map: 4.0.0
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 3.0.2
       ssri: 8.0.1
       tar: 6.1.11
@@ -16873,14 +16860,6 @@ packages:
       promise: 7.3.1
     dev: true
 
-  /promise-inflight/1.0.1:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-
   /promise-inflight/1.0.1_bluebird@3.7.2:
     resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
     peerDependencies:
@@ -17995,10 +17974,10 @@ packages:
     resolution: {integrity: sha512-1edyXKgh6XnJsJSQ8mKWXnN/BVaIbFMLpouRUrXgVq7WYne5kw3MW7UPhO44uRXQSIpTSXoJbmrR2X0w9kUTyg==}
     engines: {node: '>= 12.13.0'}
     dependencies:
-      '@types/json-schema': 7.0.10
-      ajv: 8.11.0
+      '@types/json-schema': 7.0.11
+      ajv: 8.12.0
       ajv-formats: 2.1.1
-      ajv-keywords: 5.1.0_ajv@8.11.0
+      ajv-keywords: 5.1.0_ajv@8.12.0
 
   /seek-bzip/1.0.6:
     resolution: {integrity: sha512-e1QtP3YL5tWww8uKaOCQ18UxIT2laNBXHjV/S2WYCiK4udiv8lkG89KRIoCjUagnAmCBurjF4zEVX2ByBbnCjQ==}
