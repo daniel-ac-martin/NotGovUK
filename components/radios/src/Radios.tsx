@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
+import { FC, InputHTMLAttributes, ReactNode, createElement as h, useState } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 import { Radio } from './Radio';
@@ -45,6 +45,7 @@ export const Radios: FC<RadiosProps> = ({
   hint,
   id: _id,
   label,
+  onChange: _onChange,
   options,
   value,
   ...attrs
@@ -52,6 +53,14 @@ export const Radios: FC<RadiosProps> = ({
   const classes = classBuilder('govuk-radios', classBlock, classModifiers, className);
   const id = _id || attrs.name;
   const hintId = `${id}-hint`;
+  const setState = useState({})[1];
+  const forceUpdate = () => setState({});
+  const withUpdate = <A, B>(f: (a: A) => B) => (e: A): B => {
+    forceUpdate();
+    return f && f(e);
+  };
+
+  const onChange = withUpdate(_onChange);
 
   return (
     <FormGroup
@@ -84,6 +93,7 @@ export const Radios: FC<RadiosProps> = ({
                 defaultChecked={defaultChecked}
                 id={optionId}
                 key={i}
+                onChange={onChange}
               />
             );
           } else {
