@@ -31,6 +31,8 @@ export const Checkbox: FC<CheckboxProps> = ({
   const ref = useRef(null);
   const conditionalId = `conditional-${id}`;
 
+  const isChecked = () => ref.current?.checked;
+
   return (
     <Fragment>
       <div className={classes('item')}>
@@ -41,7 +43,8 @@ export const Checkbox: FC<CheckboxProps> = ({
           type="checkbox"
           ref={ref}
           onChange={onChange}
-          data-aria-controls={conditional && conditionalId}
+          aria-controls={conditional && conditionalId}
+          aria-expanded={!!(conditional && isChecked())}
         />
         <Label htmlFor={id} className={classes('label')}>{label}</Label>
         {hint && <Hint id={`${id}-hint`} className={classes('hint')}>{hint}</Hint>}
@@ -49,7 +52,7 @@ export const Checkbox: FC<CheckboxProps> = ({
       { !conditional ? null : (
           <div
             id={conditionalId}
-            className={classes('conditional', ref.current?.checked ? undefined : 'hidden')}
+            className={classes('conditional', isChecked() ? undefined : 'hidden')}
           >
             {conditional}
           </div>
