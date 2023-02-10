@@ -1,4 +1,4 @@
-import { FC, Fragment, InputHTMLAttributes, ReactNode, createElement as h, useRef, useState } from 'react';
+import { FC, Fragment, InputHTMLAttributes, ReactNode, createElement as h, useRef } from 'react';
 import { ClassBuilder } from '@not-govuk/component-helpers';
 import { Hint } from '@not-govuk/hint';
 import { Label } from '@not-govuk/label';
@@ -17,19 +17,12 @@ export const Radio: FC<RadioProps> = ({
   hint,
   id,
   label,
-  onChange: _onChange,
   ...attrs
 }) => {
-  const setState = useState({})[1];
-  const forceUpdate = () => setState({});
-  const withUpdate = <A, B>(f: (a: A) => B) => (e: A): B => {
-    forceUpdate();
-    return f && f(e);
-  };
-
-  const onChange = withUpdate(_onChange);
   const ref = useRef(null);
   const conditionalId = `conditional-${id}`;
+
+  const isChecked = () => ref.current?.checked;
 
   return (
     <Fragment>
@@ -40,8 +33,8 @@ export const Radio: FC<RadioProps> = ({
           className={classes('input')}
           type="radio"
           ref={ref}
-          onChange={onChange}
-          data-aria-controls={conditional && conditionalId}
+          aria-controls={conditional && conditionalId}
+          aria-expanded={!!(conditional && isChecked())}
         />
         <Label htmlFor={id} className={classes('label')}>{label}</Label>
         {hint && <Hint id={`${id}-hint`} className={classes('hint')}>{hint}</Hint>}
@@ -49,7 +42,7 @@ export const Radio: FC<RadioProps> = ({
       { !conditional ? null : (
           <div
             id={conditionalId}
-            className={classes('conditional', ref.current?.checked ? undefined : 'hidden')}
+            className={classes('conditional', isChecked() ? undefined : 'hidden')}
           >
             {conditional}
           </div>
