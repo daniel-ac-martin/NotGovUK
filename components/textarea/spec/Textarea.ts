@@ -1,27 +1,34 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import Textarea from '../src/Textarea';
 
 describe('Textarea', () => {
-  describe('when given minimal valid props', () => {
-    const props = {
-      label: 'Description',
-      name: 'desc',
-    };
-    const component = mount(h(Textarea, props));
+  const minimalProps = {
+    label: 'Description',
+    name: 'desc',
+  };
 
-    it('renders', () => undefined);
+  describe('when given minimal valid props', () => {
+    beforeEach(async () => {
+      render(h(Textarea, minimalProps));
+    });
+
+    it('renders a textbox', async () => expect(screen.getByRole('textbox')).toBeInTheDocument());
+    it('renders the label', async () => expect(screen.getByLabelText('Description')).toBeInTheDocument());
   });
 
   describe('when given all valid props', () => {
     const props = {
-      label: 'Description',
-      name: 'desc',
+      ...minimalProps,
       error: 'Write a description',
       hint: 'Describe the thing'
     };
-    const component = mount(h(Textarea, props));
+    beforeEach(async () => {
+      render(h(Textarea, props));
+    });
 
-    it('renders', () => undefined);
+    it('renders a textbox', async () => expect(screen.getByRole('textbox')).toBeInTheDocument());
+    it('renders the label', async () => expect(screen.getByLabelText('Description')).toBeInTheDocument());
+    it('is described by the error and the hint', async () => expect(screen.getByLabelText('Description')).toHaveAccessibleDescription('Describe the thing Error: Write a description'));
   });
 });

@@ -1,5 +1,5 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import Input from '../src/Input';
 
 describe('Input', () => {
@@ -7,9 +7,11 @@ describe('Input', () => {
   };
 
   describe('when given minimal valid props', () => {
-    const component = mount(h(Input, minimalProps));
+    beforeEach(async () => {
+      render(h(Input, minimalProps));
+    });
 
-    it('renders', () => undefined);
+    it('renders a textbox', async () => expect(screen.getByRole('textbox')).toBeInTheDocument());
   });
 
   describe('when given all valid props', () => {
@@ -18,8 +20,12 @@ describe('Input', () => {
       suffix: 'Suffix',
       width: 2
     };
-    const component = mount(h(Input, props));
+    beforeEach(async () => {
+      render(h(Input, props));
+    });
 
-    it('renders', () => undefined);
+    it('renders a textbox', async () => expect(screen.getByRole('textbox')).toBeInTheDocument());
+    it('with a prefix', async () => expect(screen.getByText('Prefix')).toBeInTheDocument());
+    it('with a suffix', async () => expect(screen.getByText('Suffix')).toBeInTheDocument());
   });
 });

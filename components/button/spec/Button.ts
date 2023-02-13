@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { jest } from '@jest/globals';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen, userEvent } from '@not-govuk/component-test-helpers';
 import Button from '../src/Button';
 
 describe('Button', () => {
@@ -8,10 +8,11 @@ describe('Button', () => {
   };
 
   describe('when given minimal valid props', () => {
-    const component = mount(h(Button, minimalProps));
+    beforeEach(async () => {
+      render(h(Button, minimalProps));
+    });
 
-    it('renders', () => undefined);
-    it('is a button', () => expect(component.find('button').length).toEqual(1));
+    it('renders a button', async () => expect(screen.getByRole('button')).toBeInTheDocument());
   });
 
   describe('when given all valid props (inc. href)', () => {
@@ -22,11 +23,15 @@ describe('Button', () => {
       id: 'my-button',
       start: true
     };
-    const component = mount(h(Button, props, 'Go'));
 
-    it('renders', () => undefined);
-    it('is an anchor', () => expect(component.find('a').length).toEqual(1));
-    it('contains the expected text', () => expect(component.find('a').text()).toEqual('Go'));
+    beforeEach(async () => {
+      render(h(Button, props, 'Go'));
+    });
+
+    it('renders a button', async () => expect(screen.getByRole('button')).toBeInTheDocument());
+    it('that contains the expected text', async () => expect(screen.getByRole('button')).toHaveTextContent('Go'));
+    it('that links to the href', async () => expect(screen.getByRole('button')).toHaveAttribute('href', '/foo/bar'));
+    it('that has the supplied id', async () => expect(screen.getByRole('button')).toHaveAttribute('id', 'my-button'));
   });
 
   describe('when given all valid props besides a href', () => {
@@ -38,18 +43,18 @@ describe('Button', () => {
       onClick: spy,
       start: true
     };
-    const component = mount(h(Button, props, 'Go'));
 
-    it('renders', () => undefined);
-    it('is a button', () => expect(component.find('button').length).toEqual(1));
-    it('contains the expected text', () => expect(component.find('button').text()).toEqual('Go'));
+    beforeEach(async () => {
+      render(h(Button, props, 'Go'));
+    });
+
+    it('renders a button', async () => expect(screen.getByRole('button')).toBeInTheDocument());
+    it('that contains the expected text', async () => expect(screen.getByRole('button')).toHaveTextContent('Go'));
 
     describe.skip('when clicked', () => {
-      component
-        .find('button#my-button')
-        .simulate('click');
+      beforeEach(async () => userEvent.click(screen.getByRole('button')));
 
-      it('calls the onClick prop', () => expect(spy).toHaveBeenCalled());
+      it('calls the onClick prop', async () => expect(spy).toHaveBeenCalledTimes(1));
     });
   });
 });

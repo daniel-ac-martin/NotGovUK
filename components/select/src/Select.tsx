@@ -33,11 +33,12 @@ export const Select: FC<SelectProps> = ({
   classBlock,
   classModifiers: _classModifiers = [],
   className,
-  defaultValue,
+  defaultValue: _defaultValue,
   error,
   hint,
   id: _id,
   label,
+  multiple,
   options,
   width,
   ...attrs
@@ -50,12 +51,34 @@ export const Select: FC<SelectProps> = ({
   const id = _id || attrs.name;
   const fieldId = `${id}-input`;
   const hintId = `${id}-hint`;
+  const errorId = `${id}-error`;
+  const describedBy = ([
+    hint && hintId,
+    error && errorId
+  ]
+    .filter(e => e)
+    .join(' ') || undefined
+  );
   const maxWidth = width && (
     (((width >= 10) ? 4.76 : 1.76) + 1.81 * width) + 'ex'
   );
   const style = maxWidth && {
     maxWidth
   };
+  const defaultValuePre = _defaultValue || options.reduce((acc, cur) => [...acc, cur.selected && cur.value], []).filter(x => x);
+  const defaultValue = (
+    !Array.isArray(defaultValuePre)
+    ? defaultValuePre
+    : (
+      defaultValuePre.length === 0
+      ? undefined
+      : (
+        multiple
+        ? defaultValuePre
+        : defaultValuePre[0]
+      )
+    )
+  );
 
   return (
     <FormGroup
@@ -65,36 +88,26 @@ export const Select: FC<SelectProps> = ({
       hint={hint}
       hintId={hintId}
       error={error}
+      errorId={errorId}
     >
       <select
         {...attrs}
-        aria-describedby={hint && hintId}
+        aria-describedby={describedBy}
         className={classes()}
         defaultValue={defaultValue}
         id={fieldId}
+        multiple={multiple}
         style={style}
       >
-        {options.map((v, i) => {
-          const selected = (
-            defaultValue === undefined
-            ? v.selected
-            : (
-              Array.isArray(defaultValue)
-              ? defaultValue.includes(v.value)
-              : defaultValue === v.value
-            )
-          );
-
-          return (
+        {options.map(({ label, selected, ...attrs }, i) => (
             <option
-              {...v}
-              selected={selected}
+              {...attrs}
               key={i}
             >
-              {v.label}
+              {label}
             </option>
-          );
-        } ) }
+          )
+        ) }
       </select>
     </FormGroup>
   );

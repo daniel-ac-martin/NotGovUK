@@ -1,11 +1,13 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import Hint from '../src/Hint';
 
 describe('Hint', () => {
   describe('when given valid props', () => {
-    const component = mount(h(Hint, { id: 'field-id-hint' }, 'Hint text'));
+    beforeEach(async () => {
+      render(h(Hint, { id: 'field-id-hint' }, 'Hint text'));
+    });
 
-    it('renders', () => undefined);
+    it('renders the children', async () => expect(screen.getByText('Hint text')).toBeInTheDocument());
   });
 });

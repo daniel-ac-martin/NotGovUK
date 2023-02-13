@@ -1,5 +1,5 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import CookieBanner from '../src/CookieBanner';
 
 describe('CookieBanner', () => {
@@ -10,10 +10,12 @@ describe('CookieBanner', () => {
   };
 
   describe('when given minimal valid props', () => {
-    const component = mount(h(CookieBanner, minimalProps));
+    beforeEach(async () => {
+      render(h(CookieBanner, minimalProps));
+    });
 
-    it('renders', () => undefined);
-    it('contains the expected text', () => expect(component.text()).toContain('My message'));
+    it('renders an element', async () => expect(screen.getByRole('region')).toBeInTheDocument());
+    it('contains the expected text', async () => expect(screen.getByRole('region')).toHaveTextContent('My message'));
   });
 
   describe('when given all valid props', () => {
@@ -33,12 +35,14 @@ describe('CookieBanner', () => {
         }
       ]
     };
-    const component = mount(h(CookieBanner, props));
+    beforeEach(async () => {
+      render(h(CookieBanner, props));
+    });
 
-    it('renders', () => undefined);
-    it('contains the expected text', () => expect(component.text()).toContain('My message'));
-    it('contains the first message', () => expect(component.text()).toContain('One'));
-    it('contains the second message', () => expect(component.text()).toContain('Two'));
-    it('contains the action', () => expect(component.text()).toContain('Action'));
+    it('renders a region', async () => expect(screen.getByRole('region')).toBeInTheDocument());
+    it('contains the expected text', async () => expect(screen.getByRole('region')).toHaveTextContent('My message'));
+    it('contains the first message', async () => expect(screen.getByRole('region')).toHaveTextContent('One'));
+    it('contains the second message', async () => expect(screen.getByRole('region')).toHaveTextContent('Two'));
+    it('contains the action', async () => expect(screen.getByRole('region')).toHaveTextContent('Action'));
   });
 });

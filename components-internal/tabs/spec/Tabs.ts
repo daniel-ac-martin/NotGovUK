@@ -1,31 +1,44 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import Tabs from '../src/Tabs';
 
 describe('Tabs', () => {
-  describe('when given minimal valid props', () => {
-    const component = mount(h(Tabs, {
-      items: [
-        {
-          id: 'a1',
-          label: 'AAA',
-          content: h('p', {}, 'A-content')
-        },
-        {
-          id: 'b1',
-          label: 'BBB',
-          content: h('p', {}, 'B-content')
-        },
-        {
-          id: 'c1',
-          label: 'CCC',
-          content: h('p', {}, 'C-content')
-        }
-      ]
-    }));
+  const minimalProps = {
+    items: [
+      {
+        id: 'a1',
+        label: 'AAA',
+        content: h('p', {}, 'A-content')
+      },
+      {
+        id: 'b1',
+        label: 'BBB',
+        content: h('p', {}, 'B-content')
+      },
+      {
+        id: 'c1',
+        label: 'CCC',
+        content: h('p', {}, 'C-content')
+      }
+    ]
+  };
 
-    it('renders', () => undefined);
-    it('contains the labels', () => expect(component.text()).toContain('AAABBBCCC'));
-    it('contains the content', () => expect(component.text()).toContain('A-contentB-contentC-content'));
+  describe('when given minimal valid props', () => {
+    beforeEach(async () => {
+      render(h(Tabs, minimalProps));
+    });
+
+    it('renders a list of tabs', async () => expect(screen.getByRole('tablist')).toBeInTheDocument());
+    it('with the correct number of items', async () => expect(screen.getAllByRole('tab')).toHaveLength(3));
+    it('with the 1st label', async () => expect(screen.getAllByRole('tab')[0]).toHaveTextContent('AAA'));
+    it('with the 2nd label', async () => expect(screen.getAllByRole('tab')[1]).toHaveTextContent('BBB'));
+    it('with the 3rd label', async () => expect(screen.getAllByRole('tab')[2]).toHaveTextContent('CCC'));
+    it('renders the correct number of panels', async () => expect(screen.getAllByRole('tabpanel', { hidden: true })).toHaveLength(3));
+    it('with the 1st content', async () => expect(screen.getByLabelText('AAA')).toHaveTextContent('A-content'));
+    it('with the 2nd content', async () => expect(screen.getByLabelText('BBB')).toHaveTextContent('B-content'));
+    it('with the 3rd content', async () => expect(screen.getByLabelText('CCC')).toHaveTextContent('C-content'));
+    it('hides the 1st panel', async () => expect(screen.getByLabelText('AAA')).toHaveClass('penultimate-tabs__panel--hidden'));
+    it('hides the 2nd panel', async () => expect(screen.getByLabelText('BBB')).toHaveClass('penultimate-tabs__panel--hidden'));
+    it('hides the 3rd panel', async () => expect(screen.getByLabelText('CCC')).toHaveClass('penultimate-tabs__panel--hidden'));
   });
 });

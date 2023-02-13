@@ -1,22 +1,29 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import SkipLink from '../src/SkipLink';
 
 describe('SkipLink', () => {
-  describe('when given minimal valid props', () => {
-    const component = mount(h(SkipLink, { for: 'content' }));
+  const minimalProps = {
+    for: 'content'
+  };
 
-    it('renders', () => undefined);
-    it('contains a link', () => expect(component.find('a').length).toBeTruthy());
-    it('contains a link to the content', () => expect(component.find('a[href="#content"]').length).toBeTruthy());
+  describe('when given minimal valid props', () => {
+    beforeEach(async () => {
+      render(h(SkipLink, minimalProps));
+    });
+
+    it('renders a link', async () => expect(screen.getByRole('link')).toBeInTheDocument());
+    it('to the provided ID', async () => expect(screen.getByRole('link')).toHaveAttribute('href', '#content'));
+    it('with appropriate text', async () => expect(screen.getByRole('link')).toHaveTextContent('Skip to main content'));
   });
 
   describe('when given all valid props', () => {
-    const component = mount(h(SkipLink, { for: 'content' }, 'Skip ahead'));
+    beforeEach(async () => {
+      render(h(SkipLink, minimalProps, 'Skip ahead'));
+    });
 
-    it('renders', () => undefined);
-    it('contains a link', () => expect(component.find('a').length).toBeTruthy());
-    it('contains a link to the content', () => expect(component.find('a[href="#content"]').length).toBeTruthy());
-    it('contains the children', () => expect(component.text()).toContain('Skip ahead'));
+    it('renders a link', async () => expect(screen.getByRole('link')).toBeInTheDocument());
+    it('to the provided ID', async () => expect(screen.getByRole('link')).toHaveAttribute('href', '#content'));
+    it('with children as the text', async () => expect(screen.getByRole('link')).toHaveTextContent('Skip ahead'));
   });
 });

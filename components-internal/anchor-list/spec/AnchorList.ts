@@ -1,33 +1,42 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
-import AnchorList from '../src/AnchorList';
+import { render, screen } from '@not-govuk/component-test-helpers';
+import AnchorList, { AnchorListProps } from '../src/AnchorList';
 
 describe('AnchorList', () => {
-  describe('when given minimal valid props', () => {
-    const component = mount(h(AnchorList, { items: [
+  const minimalProps = {
+    items: [
       { href: '#', text: 'One' },
       { href: '#', text: 'Two' },
       { href: '#', text: 'Three' }
-    ] }));
+    ]
+  };
 
-    it('renders', () => undefined);
-    it('contains as many link as were provided', () => expect(component.find('li a').length).toEqual(3));
-    it('contains the link text provided', () => expect(component.text()).toEqual('OneTwoThree'));
+  describe('when given minimal valid props', () => {
+    beforeEach(async () => {
+      render(h(AnchorList, minimalProps));
+    });
+
+    it('renders a list', async () => expect(screen.getByRole('list')).toBeInTheDocument());
+    it('with as many links as were provided', async () => expect(screen.getAllByRole('link')).toHaveLength(3));
+    it('with the correct text for the 1st link', async () => expect(screen.getAllByRole('link')[0]).toHaveTextContent('One'));
+    it('with the correct text for the 2nd link', async () => expect(screen.getAllByRole('link')[1]).toHaveTextContent('Two'));
+    it('with the correct text for the 3rd link', async () => expect(screen.getAllByRole('link')[2]).toHaveTextContent('Three'));
   });
 
   describe('when given all valid props', () => {
-    const component = mount(h(AnchorList, {
-      as: 'ol',
-      items: [
-        { href: '#', text: 'One' },
-        { href: '#', text: 'Two' },
-        { href: '#', text: 'Three' }
-      ]
-    }));
+    const props: AnchorListProps = {
+      ...minimalProps,
+      as: 'ol'
+    };
 
-    it('renders', () => undefined);
-    it('contains the component provided', () => expect(component.find('ol').length).toEqual(1));
-    it('contains as many link as were provided', () => expect(component.find('ol > li a').length).toEqual(3));
-    it('contains the link text provided', () => expect(component.text()).toEqual('OneTwoThree'));
+    beforeEach(async () => {
+      render(h(AnchorList, props));
+    });
+
+    it('renders a list', async () => expect(screen.getByRole('list')).toBeInTheDocument());
+    it('with as many links as were provided', async () => expect(screen.getAllByRole('link')).toHaveLength(3));
+    it('with the correct text for the 1st link', async () => expect(screen.getAllByRole('link')[0]).toHaveTextContent('One'));
+    it('with the correct text for the 2nd link', async () => expect(screen.getAllByRole('link')[1]).toHaveTextContent('Two'));
+    it('with the correct text for the 3rd link', async () => expect(screen.getAllByRole('link')[2]).toHaveTextContent('Three'));
   });
 });

@@ -3,7 +3,7 @@ import { jest } from '@jest/globals';
 
 describe('memoize', () => {
   it('is a function', () => expect(memoize).toBeInstanceOf(Function));
-  it('that takes one parameter', () => expect(memoize.length).toEqual(1));
+  it('that takes one parameter', () => expect(memoize).toHaveLength(1));
 
   describe('when given a pure function', () => {
     const pureFn = (s: string) => s.length;
@@ -11,7 +11,7 @@ describe('memoize', () => {
     const memoFn = memoize(origFn);
 
     it('returns a function', () => expect(memoFn).toBeInstanceOf(Function));
-    it('of the same length as the original', () => expect(memoFn.length).toEqual(origFn.length));
+    it('of the same length as the original', () => expect(memoFn).toHaveLength(origFn.length));
 
     describe('that when called', () => {
       const param = 'foo';

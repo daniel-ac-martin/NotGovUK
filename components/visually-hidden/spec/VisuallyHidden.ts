@@ -1,11 +1,16 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import VisuallyHidden from '../src/VisuallyHidden';
 
 describe('VisuallyHidden', () => {
-  describe('when given valid props', () => {
-    const component = mount(h(VisuallyHidden, {}, 'Text'));
+  const minimalProps = {};
 
-    it('renders', () => undefined);
+  describe('when given valid props', () => {
+    beforeEach(async () => {
+      render(h(VisuallyHidden, minimalProps, 'Text'));
+    });
+
+    it('renders an element', async () => expect(screen.getAllByRole('generic')[0]).toBeInTheDocument());
+    it('contains the child provided', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Text'));
   });
 });

@@ -46,10 +46,9 @@ describe('Checkboxes', () => {
     });
 
     it('renders a fieldset', async () => expect(screen.getByRole('group')).toBeInTheDocument());
+    it('that is described by the error and the hint', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('Select all that apply. Error: Select an option'));
     it('renders 4 checkboxes', async () => expect(screen.getAllByRole('checkbox')).toHaveLength(4));
     it('renders the label', async () => expect(screen.getByRole('group')).toHaveTextContent('Which types of waste do you transport?'));
-    it('renders the error', async () => expect(screen.getByRole('group')).toHaveTextContent('Select an option'));
-    it('renders the hint', async () => expect(screen.getByRole('group')).toHaveTextContent('Select all that apply.'));
     it('renders the 1st option', async () => expect(screen.getByRole('group')).toHaveTextContent('Waste from animal carcasses'));
     it('renders the 2nd option', async () => expect(screen.getByRole('group')).toHaveTextContent('Waste from mines or quarries'));
     it('renders the 3rd option', async () => expect(screen.getByRole('group')).toHaveTextContent('Farm or agricultural waste'));

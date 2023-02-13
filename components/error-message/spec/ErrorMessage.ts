@@ -1,11 +1,14 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import ErrorMessage from '../src/ErrorMessage';
 
 describe('ErrorMessage', () => {
   describe('when given valid props', () => {
-    const component = mount(h(ErrorMessage, {}, 'Invalid'));
+    beforeEach(async () => {
+      render(h(ErrorMessage, {}, 'Invalid'));
+    });
 
-    it('renders', () => undefined);
+    it('renders an element', async () => expect(screen.getAllByRole('generic')[0]).toBeInTheDocument());
+    it('includes the error message provided', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Invalid'));
   });
 });
