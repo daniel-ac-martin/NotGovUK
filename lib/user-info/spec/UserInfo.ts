@@ -1,5 +1,5 @@
 import { FC, Fragment, createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import UserInfoContext, { UserInfo, useUserInfo } from '../src/UserInfo';
 
 const Consumer: FC<{}> = () => {
@@ -11,17 +11,23 @@ const Consumer: FC<{}> = () => {
 const consumer = h(Consumer);
 
 describe('UserInfo', () => {
-  describe('when given valid props', () => {
-    const userInfo: UserInfo = {
-      username: 'TestUser',
-      groups: ['TestGroup'],
-      roles: ['TestRole']
-    };
-    const component = mount(h(UserInfoContext.Provider, { value: userInfo }, consumer));
+  const userInfo: UserInfo = {
+    username: 'TestUser',
+    groups: ['TestGroup'],
+    roles: ['TestRole']
+  };
+  const minimalProps = {
+    value: userInfo
+  };
 
-    it('renders', () => undefined);
-    it('provides the username', () => expect(component.text()).toContain('TestUser'));
-    it('provides the groups', () => expect(component.text()).toContain('TestGroup'));
-    it('provides the roles', () => expect(component.text()).toContain('TestRole'));
+  describe('when given valid props', () => {
+    beforeEach(async () => {
+      render(h(UserInfoContext.Provider, minimalProps, consumer));
+    });
+
+    it('renders an element', async () => expect(screen.getByRole('generic')).toBeInTheDocument());
+    it('provides the username', () => expect(screen.getByRole('generic')).toHaveTextContent('TestUser'));
+    it('provides the groups', () => expect(screen.getByRole('generic')).toHaveTextContent('TestGroup'));
+    it('provides the roles', () => expect(screen.getByRole('generic')).toHaveTextContent('TestRole'));
   });
 });

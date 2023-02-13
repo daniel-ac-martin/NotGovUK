@@ -1,16 +1,21 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import Footer from '../src/Footer';
 
 describe('Footer', () => {
-  describe('when given valid props', () => {
-    const component = mount(h(Footer, {}));
+  const minimalProps = {};
 
-    it('renders', () => undefined);
+  describe('when given valid props', () => {
+    beforeEach(async () => {
+      render(h(Footer, minimalProps));
+    });
+
+    it('renders an element', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
   });
 
   describe('when given all valid props', () => {
     const props = {
+      ...minimalProps,
       govUK: true,
       navigation: [
         {
@@ -136,8 +141,11 @@ describe('Footer', () => {
         }
       ]
     };
-    const component = mount(h(Footer, props, 'Child'));
+    beforeEach(async () => {
+      render(h(Footer, props, 'Child'));
+    });
 
-    it('renders', () => undefined);
+    it('renders an element', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
+    it('with the children provided', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Child'));
   });
 });

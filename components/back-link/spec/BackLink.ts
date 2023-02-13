@@ -1,41 +1,40 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import BackLink from '../src/BackLink';
 
 describe('BackLink', () => {
   describe('when given a href', () => {
     describe('and a text property', () => {
-      const backLink = h(BackLink, { href: '/back', text: 'Reverse' });
-      const component = mount(backLink);
+      beforeEach(async () => {
+        render(h(BackLink, { href: '/back', text: 'Reverse' }));
+      });
 
-      it('is a link', () => expect(component.find('a').length).toEqual(1));
-      it('is a link with the text provided', () =>expect(component.find('a[children="Reverse"]').length).toEqual(1));
-      it('links to the href provided', () => expect(component.find('a[href="/back"]').length).toEqual(1));
+      it('is a link', async () => expect(screen.getByRole('link')).toBeInTheDocument());
+      it('is a link with the text provided', async () => expect(screen.getByRole('link')).toHaveTextContent('Reverse'));
+      it('links to the href provided', async () => expect(screen.getByRole('link')).toHaveAttribute('href', '/back'));
     });
 
     describe('but NOT a text property', () => {
-      const backLink = h(BackLink, { href: '/back' });
-      const component = mount(backLink);
+      beforeEach(async () => {
+        render(h(BackLink, { href: '/back' }));
+      });
 
-      it('is a link', () => expect(component.find('a').length).toEqual(1));
-      it('is a link with the text \'Back\'', () => expect(component.find('a[children="Back"]').length).toEqual(1));
-      it('links to the href provided', () => expect(component.find('a[href="/back"]').length).toEqual(1));
+      it('is a link', async () => expect(screen.getByRole('link')).toBeInTheDocument());
+      it('is a link with the text \'Back\'', async () => expect(screen.getByRole('link')).toHaveTextContent('Back'));
+      it('links to the href provided', async () => expect(screen.getByRole('link')).toHaveAttribute('href', '/back'));
     });
   });
 
   describe('when NOT given a href', () => {
-    const backLink = h(BackLink, { id: 'back' });
-    const component = mount(backLink);
+    beforeEach(async () => {
+      render(h(BackLink, { id: 'back' }));
+    });
 
-    it('is a link', () => expect(component.find('a').length).toEqual(1));
-    it('is a link with the text \'Back\'', () => expect(component.find('a[children="Back"]').length).toEqual(1));
+    it('is a link', async () => expect(screen.getByRole('link')).toBeInTheDocument());
+    it('is a link with the text \'Back\'', async () => expect(screen.getByRole('link')).toHaveTextContent('Back'));
 
     describe.skip('when clicked', () => {
-      component
-        .find('a#back')
-        .simulate('click');
-
-      it('takes a step back in the history', () => expect(false).toEqual(true));
+      it('takes a step back in the history', async () => expect(false).toEqual(true));
     });
   });
 });

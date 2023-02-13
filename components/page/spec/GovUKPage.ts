@@ -1,12 +1,17 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import GovUKPage from '../src/GovUKPage';
 
 describe('GovUKPage', () => {
   describe('when given valid props', () => {
-    const component = mount(h(GovUKPage, {}));
+    beforeEach(async () => {
+      render(h(GovUKPage, {}));
+    });
 
-    it('renders', () => undefined);
-    it('is GOV.UK branded', () => expect(component.find('.govuk-header__logotype-crown').length).toBeTruthy());
+    it('renders an element', async () => expect(screen.getAllByRole('generic')[0]).toBeInTheDocument());
+    it('renders a skip-link', async () => expect(screen.getAllByRole('link')[0]).toHaveTextContent('Skip to main content'));
+    it('renders a header', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
+    it('renders a footer', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
+    it('is GOV.UK branded', async () => expect(screen.getByText('GOV.UK')).toBeInTheDocument());
   });
 });

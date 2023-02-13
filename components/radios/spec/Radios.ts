@@ -49,10 +49,9 @@ describe('Radios', () => {
     });
 
     it('renders a fieldset', async () => expect(screen.getByRole('group')).toBeInTheDocument());
+    it('that is described by the error and the hint', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('Select one. Error: Select an option'));
     it('renders 5 radios', async () => expect(screen.getAllByRole('radio')).toHaveLength(5));
     it('renders the label', async () => expect(screen.getByRole('group')).toHaveTextContent('Where do you live?'));
-    it('renders the error', async () => expect(screen.getByRole('group')).toHaveTextContent('Select an option'));
-    it('renders the hint', async () => expect(screen.getByRole('group')).toHaveTextContent('Select one.'));
     it('renders the 1st option', async () => expect(screen.getByRole('group')).toHaveTextContent('England'));
     it('renders the 2nd option', async () => expect(screen.getByRole('group')).toHaveTextContent('Scotland'));
     it('renders the 3rd option', async () => expect(screen.getByRole('group')).toHaveTextContent('Wales'));

@@ -1,32 +1,57 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import FormGroup from '../src/FormGroup';
 
 describe('FormGroup', () => {
-  describe('when given minimal valid props', () => {
-    const props = {
-      id: 'my-field',
-      label: 'My field'
-    };
-    const component = mount(h(FormGroup, props, 'Child'));
+  const minimalProps = {
+    id: 'my-field',
+    label: 'My field'
+  };
 
-    it('renders', () => undefined);
-    it('contains a fieldset', () => expect(component.find('fieldset').length).toBeGreaterThan(0));
-    it('does NOT contain a label', () => expect(component.find('label').length).toBe(0));
+  describe('when given minimal valid props', () => {
+    beforeEach(async () => {
+      render(h(FormGroup, minimalProps, 'Child'));
+    });
+
+    it('renders a fieldset', async () => expect(screen.getByRole('group')).toBeInTheDocument());
+    it('renders the label (as a legend)', async () => expect(screen.getByText('My field')).toBeInTheDocument());
+    it('does NOT render a label', async () => expect(screen.queryByLabelText('My field')).toBeNull());
   });
 
   describe('when given all valid props', () => {
     const props = {
-      error: 'Error',
-      fieldId: 'my-field-input',
-      hint: 'Hint',
-      id: 'my-field',
-      label: 'My field'
+      ...minimalProps,
+      error: 'My error',
+      hint: 'My hint',
     };
-    const component = mount(h(FormGroup, props, 'Child'));
 
-    it('renders', () => undefined);
-    it('does NOT contain a fieldset', () => expect(component.find('fieldset').length).toBe(0));
-    it('contains a label', () => expect(component.find('label').length).toBeGreaterThan(0));
+    describe('NOT including a fieldId', () => {
+      beforeEach(async () => {
+        render(h(FormGroup, props, 'Child'));
+      });
+
+      it('renders a fieldset', async () => expect(screen.getByRole('group')).toBeInTheDocument());
+      it('that is described by the error and the hint', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('My hint Error: My error'));
+      it('renders the label (as a legend)', async () => expect(screen.getByText('My field')).toBeInTheDocument());
+      it('does NOT render a label', async () => expect(screen.queryByLabelText('My field')).toBeNull());
+    });
+
+    describe('including a fieldId', () => {
+      const props = {
+        error: 'My error',
+        fieldId: 'my-field-input',
+        hint: 'My hint',
+        id: 'my-field',
+        label: 'My field'
+      };
+      beforeEach(async () => {
+        render(h(FormGroup, props, 'Child'));
+      });
+
+      it('does NOT render a fieldset', async () => expect(screen.queryByRole('group')).toBeNull());
+      it('renders the label', async () => expect(screen.getByText('My field')).toBeInTheDocument());
+      it('renders the hint', async () => expect(screen.getByText('My hint')).toBeInTheDocument());
+      it('renders the error', async () => expect(screen.getByText('My error')).toBeInTheDocument());
+    });
   });
 });

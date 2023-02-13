@@ -1,16 +1,25 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import Page from '../src/Page';
 
 describe('Page', () => {
-  describe('when given valid props', () => {
-    const component = mount(h(Page, {}));
+  const minimalProps = {};
 
-    it('renders', () => undefined);
+  describe('when given valid props', () => {
+    beforeEach(async () => {
+      render(h(Page, minimalProps));
+    });
+
+    it('renders an element', async () => expect(screen.getAllByRole('generic')[0]).toBeInTheDocument());
+    it('renders a skip-link', async () => expect(screen.getAllByRole('link')[0]).toHaveTextContent('Skip to main content'));
+    it('renders a header', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
+    it('renders a footer', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
+    it('is NOT GOV.UK branded', async () => expect(screen.queryByText('GOV.UK')).toBeNull());
   });
 
-  describe('when given all valid props', () => {
+  describe.only('when given all valid props', () => {
     const props = {
+      ...minimalProps,
       backHref: '/back',
       breadcrumbs: [
         {
@@ -76,22 +85,25 @@ describe('Page', () => {
       signOutText: 'Log out',
       signOutHref: '#sign-out',
     };
-    const component = mount(h(Page, props, 'Child'));
-    const text = component.text();
+    beforeEach(async () => {
+      render(h(Page, props, 'Child'));
+    });
 
-    it('renders', () => undefined);
-    it('contains the breadcrumbs', () => expect(text).toContain('Breadcrumb 2'));
-    it('contains the footer content', () => expect(text).toContain('Footer content'));
-    it('contains the footer navigation', () => expect(text).toContain('Footer navigation'));
-    it('is GOV.UK branded', () => expect(component.find('.govuk-header__logotype-crown').length).toBeTruthy());
-    it('contains the meta navigation', () => expect(text).toContain('Meta item 2'));
-    it('contains the meta title', () => expect(text).toContain('Meta title'));
-    it('contains the organisation text', () => expect(text).toContain('Organisation text'));
-    it('contains the phase', () => expect(text).toContain('gamma'));
-    it('contains the phase banner content', () => expect(text).toContain('Phase banner content'));
-    it('contains the service name', () => expect(text).toContain('Service name'));
-    it('contains the navigation links', () => expect(text).toContain('Navigation item 2'));
-    it('contains the sign-out link', () => expect(text).toContain('Log out'));
-    it('includes the children provided', () => expect(text).toContain('Child'));
+    it('renders an element', async () => expect(screen.getAllByRole('generic')[0]).toBeInTheDocument());
+    it('renders a skip-link', async () => expect(screen.getAllByRole('link')[0]).toHaveTextContent('Skip to main content'));
+    it('renders a header', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
+    it('renders a footer', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
+    it('contains the breadcrumbs', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Breadcrumb 2'));
+    it('contains the footer content', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Footer content'));
+    it('contains the footer navigation', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Footer navigation'));
+    it('contains the meta navigation', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Meta item 2'));
+    it('contains the meta title', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Meta title'));
+    it('contains the organisation text', async () => expect(screen.getByRole('banner')).toHaveTextContent('Organisation text'));
+    it('contains the phase', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('gamma'));
+    it('contains the phase banner content', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Phase banner content'));
+    it('contains the service name', async () => expect(screen.getByRole('banner')).toHaveTextContent('Service name'));
+    it('contains the navigation links', async () => expect(screen.getByRole('banner')).toHaveTextContent('Navigation item 2'));
+    it('contains the sign-out link', async () => expect(screen.getByRole('banner')).toHaveTextContent('Log out'));
+    it('includes the children provided', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Child'));
   });
 });

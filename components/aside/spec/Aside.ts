@@ -1,13 +1,14 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import Aside from '../src/Aside';
 
 describe('Aside', () => {
   describe('when given valid props', () => {
-    const component = mount(h(Aside, {}, 'Child'));
-    const text = component.text();
+    beforeEach(async () => {
+      render(h(Aside, {}, 'Child'));
+    });
 
-    it('renders', () => undefined);
-    it('contains the children', () => expect(text).toContain('Child'));
+    it('renders an element', async () => expect(screen.getByRole('complementary')).toBeInTheDocument());
+    it('renders the children', async () => expect(screen.getByRole('complementary')).toHaveTextContent('Child'));
   });
 });

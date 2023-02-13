@@ -1,11 +1,19 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
-import Form from '../src/Form';
+import { render, screen } from '@not-govuk/component-test-helpers';
+import Form, { FormProps } from '../src/Form';
 
 describe('Form', () => {
-  describe('when given valid props', () => {
-    const component = mount(h(Form, { action: '.', method: 'get' }, 'Child'));
+  const minimalProps: FormProps = {
+    action: '.',
+    method: 'get'
+  };
 
-    it('renders', () => undefined);
+  describe('when given valid props', () => {
+    beforeEach(async () => {
+      render(h(Form, minimalProps, 'Child'));
+    });
+
+    it('renders an element', async () => expect(screen.getByRole('generic')).toBeInTheDocument());
+    it('with the children provided', async () => expect(screen.getByRole('generic')).toHaveTextContent('Child'));
   });
 });

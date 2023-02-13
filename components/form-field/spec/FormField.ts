@@ -1,5 +1,5 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import FormField from '../src/FormField';
 
 describe('FormField', () => {
@@ -9,10 +9,12 @@ describe('FormField', () => {
   };
 
   describe('when given minimal valid props', () => {
-    const component = mount(h(FormField, minimalProps));
+    beforeEach(async () => {
+      render(h(FormField, minimalProps));
+    });
 
-    it('renders', () => undefined);
-    it('as a TextInput', () => expect(component.find('TextInput').length).toEqual(1));
+    it('renders a textbox', async () => expect(screen.getByRole('textbox')).toBeInTheDocument());
+    it('that is a text field', async () => expect(screen.getByLabelText('Date of birth')).toHaveAttribute('type', 'text'));
   });
 
   describe('when given a \'date\' type', () => {
@@ -20,10 +22,14 @@ describe('FormField', () => {
       ...minimalProps,
       type: 'date'
     };
-    const component = mount(h(FormField, props));
+    beforeEach(async () => {
+      render(h(FormField, props));
+    });
 
-    it('renders', () => undefined);
-    it('as a DateInput', () => expect(component.find('DateInput').length).toEqual(1));
+    it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
+    it('with a day field', async () => expect(screen.getByLabelText('Day')).toHaveAttribute('type', 'text'));
+    it('with a month field', async () => expect(screen.getByLabelText('Month')).toHaveAttribute('type', 'text'));
+    it('with a year field', async () => expect(screen.getByLabelText('Year')).toHaveAttribute('type', 'text'));
   });
 
   describe('when given a \'native-date\' type', () => {
@@ -31,11 +37,11 @@ describe('FormField', () => {
       ...minimalProps,
       type: 'native-date'
     };
-    const component = mount(h(FormField, props));
+    beforeEach(async () => {
+      render(h(FormField, props));
+    });
 
-    it('renders', () => undefined);
-    it('as a TextInput', () => expect(component.find('TextInput').length).toEqual(1));
-    it('with type="date"', () => expect(component.find('TextInput[type="date"]').length).toEqual(1));
+    it('renders a date field', async () => expect(screen.getByLabelText('Date of birth')).toHaveAttribute('type', 'date'));
   });
 
   describe('when given a \'email\' type', () => {
@@ -43,11 +49,12 @@ describe('FormField', () => {
       ...minimalProps,
       type: 'email'
     };
-    const component = mount(h(FormField, props));
+    beforeEach(async () => {
+      render(h(FormField, props));
+    });
 
-    it('renders', () => undefined);
-    it('as a TextInput', () => expect(component.find('TextInput').length).toEqual(1));
-    it('with type="email"', () => expect(component.find('TextInput[type="email"]').length).toEqual(1));
+    it('renders a textbox', async () => expect(screen.getByRole('textbox')).toBeInTheDocument());
+    it('that is an email field', async () => expect(screen.getByLabelText('Date of birth')).toHaveAttribute('type', 'email'));
   });
 
   describe('when given a \'password\' type', () => {
@@ -55,11 +62,11 @@ describe('FormField', () => {
       ...minimalProps,
       type: 'password'
     };
-    const component = mount(h(FormField, props));
+    beforeEach(async () => {
+      render(h(FormField, props));
+    });
 
-    it('renders', () => undefined);
-    it('as a TextInput', () => expect(component.find('TextInput').length).toEqual(1));
-    it('with type="password"', () => expect(component.find('TextInput[type="password"]').length).toEqual(1));
+    it('renders a password field', async () => expect(screen.getByLabelText('Date of birth')).toHaveAttribute('type', 'password'));
   });
 
   describe('when given a row prop', () => {
@@ -67,10 +74,11 @@ describe('FormField', () => {
       ...minimalProps,
       rows: 5
     };
-    const component = mount(h(FormField, props));
+    beforeEach(async () => {
+      render(h(FormField, props));
+    });
 
-    it('renders', () => undefined);
-    it('as a Textarea', () => expect(component.find('Textarea').length).toEqual(1));
+    it('renders a textarea', async () => expect(screen.getByRole('textbox')).toBeInTheDocument());
   });
 
   describe('when given a few options', () => {
@@ -82,10 +90,13 @@ describe('FormField', () => {
         { value: '2002-04-01', label: '2002' }
       ]
     };
-    const component = mount(h(FormField, props));
+    beforeEach(async () => {
+      render(h(FormField, props));
+    });
 
-    it('renders', () => undefined);
-    it('as Radios', () => expect(component.find('Radios').length).toEqual(1));
+    it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
+    it('renders the options as radios', async () => expect(screen.getAllByRole('radio')).toHaveLength(3));
+    it('that are NOT small', async () => expect(screen.getAllByRole('radio')[0].parentElement.parentElement).not.toHaveClass('govuk-radios--small'));
   });
 
   describe('when given a few options and multiple', () => {
@@ -98,10 +109,13 @@ describe('FormField', () => {
       ],
       multiple: true
     };
-    const component = mount(h(FormField, props));
+    beforeEach(async () => {
+      render(h(FormField, props));
+    });
 
-    it('renders', () => undefined);
-    it('as Checkboxes', () => expect(component.find('Checkboxes').length).toEqual(1));
+    it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
+    it('renders the options as radios', async () => expect(screen.getAllByRole('checkbox')).toHaveLength(3));
+    it('that are NOT small', async () => expect(screen.getAllByRole('checkbox')[0].parentElement.parentElement).not.toHaveClass('govuk-checkbox--small'));
   });
 
   describe('when given a fair few options', () => {
@@ -117,11 +131,13 @@ describe('FormField', () => {
         { value: '2006-04-01', label: '2006' }
       ]
     };
-    const component = mount(h(FormField, props));
+    beforeEach(async () => {
+      render(h(FormField, props));
+    });
 
-    it('renders', () => undefined);
-    it('as Radios', () => expect(component.find('Radios').length).toEqual(1));
-    it('that are small', () => expect(component.find('.govuk-radios--small').length).toEqual(1));
+    it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
+    it('renders the options as radios', async () => expect(screen.getAllByRole('radio')).toHaveLength(7));
+    it('that are small', async () => expect(screen.getAllByRole('radio')[0].parentElement.parentElement).toHaveClass('govuk-radios--small'));
   });
 
   describe('when given lots of options', () => {
@@ -141,9 +157,11 @@ describe('FormField', () => {
         { value: '2010-04-01', label: '2010' }
       ]
     };
-    const component = mount(h(FormField, props));
+    beforeEach(async () => {
+      render(h(FormField, props));
+    });
 
-    it('renders', () => undefined);
-    it('as a Select', () => expect(component.find('Select').length).toEqual(1));
+    it('renders a select', async () => expect(screen.getByRole('combobox')).toBeInTheDocument());
+    it('renders the options as options', async () => expect(screen.getAllByRole('option')).toHaveLength(11));
   });
 });
