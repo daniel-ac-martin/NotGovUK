@@ -50,6 +50,14 @@ export const Select: FC<SelectProps> = ({
   const id = _id || attrs.name;
   const fieldId = `${id}-input`;
   const hintId = `${id}-hint`;
+  const errorId = `${id}-error`;
+  const describedBy = ([
+    hint && hintId,
+    error && errorId
+  ]
+    .filter(e => e)
+    .join(' ') || undefined
+  );
   const maxWidth = width && (
     (((width >= 10) ? 4.76 : 1.76) + 1.81 * width) + 'ex'
   );
@@ -65,10 +73,11 @@ export const Select: FC<SelectProps> = ({
       hint={hint}
       hintId={hintId}
       error={error}
+      errorId={errorId}
     >
       <select
         {...attrs}
-        aria-describedby={hint && hintId}
+        aria-describedby={describedBy}
         className={classes()}
         defaultValue={defaultValue}
         id={fieldId}
