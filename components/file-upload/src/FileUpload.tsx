@@ -32,6 +32,14 @@ export const FileUpload: FC<FileUploadProps> = ({
   const id = _id || attrs.name;
   const fieldId = `${id}-input`;
   const hintId = `${id}-hint`;
+  const errorId = `${id}-error`;
+  const describedBy = ([
+    hint && hintId,
+    error && errorId
+  ]
+    .filter(e => e)
+    .join(' ') || undefined
+  );
 
   return (
     <FormGroup
@@ -41,6 +49,7 @@ export const FileUpload: FC<FileUploadProps> = ({
       hint={hint}
       hintId={hintId}
       error={error}
+      errorId={errorId}
     >
       <Input
         {...attrs}
@@ -48,7 +57,7 @@ export const FileUpload: FC<FileUploadProps> = ({
         classBlock={classBlock}
         classModifiers={classModifiers}
         className={className}
-        aria-describedby={hint && hintId}
+        aria-describedby={describedBy}
         id={fieldId}
       />
     </FormGroup>
