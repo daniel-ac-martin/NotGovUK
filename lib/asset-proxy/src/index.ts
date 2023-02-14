@@ -1,5 +1,6 @@
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { Configuration as WebpackConfig } from 'webpack';
+import { adaptCrudely } from '@not-govuk/express-adapter';
 import restify from '@not-govuk/restify';
 import { webpackMiddleware } from './lib/webpack';
 
@@ -29,7 +30,7 @@ export const assetProxy = ({
     bodyParser: false,
     name: `${name}-asset-proxy`
   });
-  const proxyMiddleware = createProxyMiddleware({
+  const proxyMiddleware = adaptCrudely(createProxyMiddleware({
     target: `http://localhost:${port + 1}`,
     changeOrigin: true,
     onProxyReq: (proxyReq, _req, res) => {
@@ -37,7 +38,7 @@ export const assetProxy = ({
 
       proxyReq.setHeader('X-Entrypoints', JSON.stringify(entrypoints));
     }
-  });
+  }));
   const close = httpd.close.bind(httpd);
 
   // Serve assets built by webpack
