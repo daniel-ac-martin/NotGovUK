@@ -94,4 +94,19 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
   }
 };
 
+// Some middlewares don't seem to work with a proxied Response object.
+// I'm not sure why. This function just provides the req and res objects
+// as-is but prevents any promises being passed to Restify as Restify
+// treats them differently.
+export const adaptCrudely = (middleware: ExpressMiddleware): RestifyMiddleware => (req, res, next) => {
+  const expressReq: Request = req as unknown as Request;
+  const expressRes: Response = res as unknown as Response;
+
+  if (isAsync(middleware)) {
+    middleware(expressReq, expressRes, next);
+  } else {
+    return middleware(expressReq, expressRes, next);
+  }
+};
+
 export default adapt;
