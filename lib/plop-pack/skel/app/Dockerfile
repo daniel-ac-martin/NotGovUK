@@ -15,7 +15,7 @@ COPY package.json /app/
 COPY dist/ /app/dist/
 
 USER 31337
-ENV LISTEN_HOST="0.0.0.0" \
+ENV LISTEN_HOST="::" \
     LISTEN_PORT="8080" \
     SSR_ONLY="false" \
     SESSIONS_SECRET="changeme" \
