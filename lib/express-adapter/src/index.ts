@@ -42,8 +42,8 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
     get(target, prop, receiver) {
       switch (prop) {
         case 'end':
-          return () => {
-            target.end();
+          return (chunk, encoding, callback) => {
+            target.end(chunk, encoding, callback);
             return next(false);
           }
         case 'redirect':
