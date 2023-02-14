@@ -9,7 +9,15 @@ type Request = _Request & {
   logout?: (options?: object | Callback, done?: Callback) => void
 };
 
-type ExpressMiddleware = (req: Request, res: Response, next: NextFunction) => void;
+type ExpressMiddleware = ExpressMiddlewareSync | ExpressMiddlewareAsync;
+type ExpressMiddlewareSync = (req: Request, res: Response, next: NextFunction) => void;
+type ExpressMiddlewareAsync = (req: Request, res: Response, next: NextFunction) => Promise<unknown>;
+
+const AsyncFunction = async function () {}.constructor;
+
+const isAsync = (x: ExpressMiddleware): x is ExpressMiddlewareAsync => (
+  x instanceof AsyncFunction
+);
 
 export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req, res, next) => {
   const expressSession: unknown = (
@@ -79,7 +87,11 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
 
   expressRes['locals'] = expressRes['locals'] || {};
 
-  return middleware(expressReq as Request, expressRes as Response, next);
+  if (isAsync(middleware)) {
+    middleware(expressReq as Request, expressRes as Response, next);
+  } else {
+    return middleware(expressReq as Request, expressRes as Response, next);
+  }
 };
 
 export default adapt;
