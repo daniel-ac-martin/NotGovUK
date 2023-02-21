@@ -34,7 +34,7 @@ export const Radio: FC<RadioProps> = ({
           type="radio"
           ref={ref}
           aria-controls={conditional && conditionalId}
-          aria-expanded={!!(conditional && isChecked())}
+          aria-expanded={conditional && !!isChecked()}
         />
         <Label htmlFor={id} className={classes('label')}>{label}</Label>
         {hint && <Hint id={`${id}-hint`} className={classes('hint')}>{hint}</Hint>}
