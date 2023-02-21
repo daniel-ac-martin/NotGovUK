@@ -1326,7 +1326,6 @@ importers:
   components/text-input:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.7.1
       '@not-govuk/component-test-helpers': workspace:^0.7.1
       '@not-govuk/form-group': workspace:^0.7.1
       '@not-govuk/input': workspace:^0.7.1
@@ -1336,7 +1335,6 @@ importers:
       ts-jest: 29.0.5
       typescript: 4.9.5
     dependencies:
-      '@not-govuk/component-helpers': link:../../lib/component-helpers
       '@not-govuk/form-group': link:../form-group
       '@not-govuk/input': link:../input
     devDependencies:

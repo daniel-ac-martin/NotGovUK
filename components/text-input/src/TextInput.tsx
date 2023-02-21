@@ -1,5 +1,4 @@
 import { FC, ReactNode, createElement as h } from 'react';
-import { classBuilder } from '@not-govuk/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 import { Input, InputProps } from '@not-govuk/input';
 
@@ -29,7 +28,6 @@ export const TextInput: FC<TextInputProps> = ({
     error && 'error',
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
-  const classes = classBuilder('govuk-text-input', classBlock, classModifiers, className);
   const id = _id || attrs.name;
   const fieldId = `${id}-input`;
   const hintId = `${id}-hint`;
@@ -55,6 +53,9 @@ export const TextInput: FC<TextInputProps> = ({
       <Input
         {...attrs}
         aria-describedby={describedBy}
+        classBlock={classBlock}
+        classModifiers={classModifiers}
+        className={className}
         id={fieldId}
       />
     </FormGroup>
