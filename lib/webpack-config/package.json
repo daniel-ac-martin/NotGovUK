@@ -18,7 +18,7 @@
     "@babel/preset-env": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/loader": "^2.0.0",
     "@storybook/react-docgen-typescript-plugin": "^1.0.1",
     "@swc/core": "^1.2.215",
     "babel-loader": "^9.0.0",
@@ -39,6 +39,6 @@
     "webpack-node-externals": "^3.0.0"
   },
   "peerDependencies": {
-    "@storybook/addon-docs": "^6.4.19"
+    "@storybook/addon-docs": "^6.4.19 || ^7.0.0"
   }
 }
