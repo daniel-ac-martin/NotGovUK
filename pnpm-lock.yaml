@@ -28,7 +28,7 @@ importers:
       '@storybook/manager-webpack5': 6.5.16
       '@storybook/react': 6.5.16
       '@storybook/theming': 6.5.16
-      '@types/jest': 29.5.0
+      '@types/jest': 29.5.1
       babel-jest: 29.5.0
       babel-plugin-transform-class-properties: 6.24.1
       chromatic: 6.17.3
@@ -71,7 +71,7 @@ importers:
       '@storybook/manager-webpack5': 6.5.16_ecf5fb22c35108765591118afa5deefe
       '@storybook/react': 6.5.16_cece8bcad67c9cbb3b250b8b34d15f53
       '@storybook/theming': 6.5.16_react-dom@16.14.0+react@16.14.0
-      '@types/jest': 29.5.0
+      '@types/jest': 29.5.1
       babel-jest: 29.5.0_@babel+core@7.21.4
       babel-plugin-transform-class-properties: 6.24.1
       chromatic: 6.17.3
@@ -5171,7 +5171,7 @@ packages:
       chalk: 4.1.2
       convert-source-map: 1.9.0
       fast-json-stable-stringify: 2.1.0
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jest-haste-map: 26.6.2
       jest-regex-util: 26.0.0
       jest-util: 26.6.2
@@ -7250,8 +7250,8 @@ packages:
       pretty-format: 29.4.3
     dev: false
 
-  /@types/jest/29.5.0:
-    resolution: {integrity: sha512-3Emr5VOl/aoBwnWcH/EFQvlSAmjV+XtV9GGu5mwdYew5vhQh0IUZx/60x0TzHDu09Bi7HMx10t/namdJw5QIcg==}
+  /@types/jest/29.5.1:
+    resolution: {integrity: sha512-tEuVcHrpaixS36w7hpsfLBLpjtMRJUE09/MHXn923LOVojDwyC14cWcfc0rDs0VEfUyYmt/+iX1kxxp+gZMcaQ==}
     dependencies:
       expect: 29.5.0
       pretty-format: 29.5.0
@@ -13728,7 +13728,7 @@ packages:
       '@types/node': 18.15.11
       anymatch: 3.1.3
       fb-watchman: 2.0.2
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jest-regex-util: 26.0.0
       jest-serializer: 26.6.2
       jest-util: 26.6.2
@@ -13808,7 +13808,7 @@ packages:
     resolution: {integrity: sha512-Kijeg9Dag6CKtIDA7O21zNTACqD5MD/8HfIV8pdD94vFyFuer52SigdC3IQMhab3vACxXMiFk+yMHNdbqtyTGA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
-      '@babel/code-frame': 7.18.6
+      '@babel/code-frame': 7.21.4
       '@jest/types': 29.5.0
       '@types/stack-utils': 2.0.1
       chalk: 4.1.2
@@ -13939,7 +13939,7 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@types/node': 18.15.11
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
     dev: true
 
   /jest-snapshot/29.5.0:
@@ -13980,7 +13980,7 @@ packages:
       '@jest/types': 26.6.2
       '@types/node': 18.15.11
       chalk: 4.1.2
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       is-ci: 2.0.0
       micromatch: 4.0.5
     dev: true
