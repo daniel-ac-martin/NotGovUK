@@ -165,7 +165,7 @@ importers:
   apps/govuk-template:
     specifiers:
       '@apollo/client': 3.6.9
-      '@graphql-tools/schema': 9.0.18
+      '@graphql-tools/schema': 9.0.19
       '@not-govuk/anchor-list': workspace:^0.7.2
       '@not-govuk/app-composer': workspace:^0.7.2
       '@not-govuk/app-plop-pack': workspace:^0.7.2
@@ -204,7 +204,7 @@ importers:
       webpack-hot-middleware: 2.25.3
     devDependencies:
       '@apollo/client': 3.6.9_graphql@15.8.0+react@16.14.0
-      '@graphql-tools/schema': 9.0.18_graphql@15.8.0
+      '@graphql-tools/schema': 9.0.19_graphql@15.8.0
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
       '@not-govuk/app-plop-pack': link:../../lib/app-plop-pack
@@ -4916,8 +4916,8 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /@graphql-tools/schema/9.0.18_graphql@15.8.0:
-    resolution: {integrity: sha512-Kckb+qoo36o5RSIVfBNU5XR5fOg4adNa1xuhhUgbQejDaI684tIJbTWwYbrDPVEGL/dqJJX3rrsq7RLufjNFoQ==}
+  /@graphql-tools/schema/9.0.19_graphql@15.8.0:
+    resolution: {integrity: sha512-oBRPoNBtCkk0zbUsyP4GaIzCt8C0aCI4ycIRUL67KK5pOHljKLBBtGT+Jr6hkzA74C8Gco8bpZPe7aWFjiaK2w==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
