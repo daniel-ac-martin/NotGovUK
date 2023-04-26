@@ -9,6 +9,7 @@ export { default as CookieBanner } from '@not-govuk/cookie-banner';
 export { default as DateInput } from '@not-govuk/date-input';
 export { default as Details } from '@not-govuk/details';
 export { default as ErrorMessage } from '@not-govuk/error-message';
+export { default as ErrorSummary } from '@not-govuk/error-summary';
 export { default as Fieldset } from '@not-govuk/fieldset';
 export { default as FileUpload } from '@not-govuk/file-upload';
 export { default as FormField } from '@not-govuk/form-field';
