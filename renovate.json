@@ -2,7 +2,12 @@
   "extends": [
     "config:base"
   ],
+  "minimumReleaseAge": "2 days",
   "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "3 days"
+    },
     {
       "matchPackageNames": [
         "cypress/included",
@@ -88,5 +93,6 @@
       ],
       "groupName": "webpack"
     }
-  ]
+  ],
+  "schedule": ["before 3am on Monday"]
 }
