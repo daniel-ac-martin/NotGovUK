@@ -16,6 +16,7 @@ const mainStories = [
   require('../../../../../components/date-input/spec/DateInput.stories.mdx'),
   require('../../../../../components/details/spec/Details.stories.mdx'),
   require('../../../../../components/error-message/spec/ErrorMessage.stories.mdx'),
+  require('../../../../../components/error-summary/spec/ErrorSummary.stories.mdx'),
   require('../../../../../components/fieldset/spec/FieldSet.stories.mdx'),
   require('../../../../../components/file-upload/spec/FileUpload.stories.mdx'),
   require('../../../../../components/footer/spec/Footer.stories.mdx'),
