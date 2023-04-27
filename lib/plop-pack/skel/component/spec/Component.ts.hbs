@@ -1,5 +1,5 @@
 import { createElement as h } from 'react';
-import { mount } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@not-govuk/component-test-helpers';
 import {{{properCase name}}} from '../src/{{{properCase name}}}';
 
 describe('{{{properCase name}}}', () => {
@@ -7,17 +7,22 @@ describe('{{{properCase name}}}', () => {
   };
 
   describe('when given minimal valid props', () => {
-    const component = mount(h({{{properCase name}}}, minimalProps, 'Child'));
+    beforeEach(async () => {
+      render(h({{{properCase name}}}, minimalProps));
+    });
 
-    it('renders', () => undefined);
+    it('renders an element', async () => expect(screen.getByRole('generic')).toBeInTheDocument());
   });
 
   describe('when given all valid props', () => {
     const props = {
       ...minimalProps
     };
-    const component = mount(h({{{properCase name}}}, props, 'Child'));
 
-    it('renders', () => undefined);
+    beforeEach(async () => {
+      render(h({{{properCase name}}}, props));
+    });
+
+    it('renders an element', async () => expect(screen.getByRole('generic')).toBeInTheDocument());
   });
 });
