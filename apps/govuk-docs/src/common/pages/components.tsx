@@ -49,6 +49,7 @@ const internalStories = [
   require('../../../../../components/input/spec/Input.stories.mdx'),
   require('../../../../../components/label/spec/Label.stories.mdx'),
   require('../../../../../components/link/spec/Link.stories.mdx'),
+  require('../../../../../components/summary-card/spec/SummaryCard.stories.mdx'),
   require('../../../../../components/visually-hidden/spec/VisuallyHidden.stories.mdx'),
   require('../../../../../components/width-container/spec/WidthContainer.stories.mdx')
 ];

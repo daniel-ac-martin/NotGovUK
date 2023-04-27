@@ -29,14 +29,14 @@ export const AnchorList: FC<AnchorListProps> = ({
   const classes = classBuilder('penultimate-anchor-list', classBlock, classModifiers, className);
   const location = useLocation();
   const matcher = matchPath(location);
-  const processedItems = items.map(({ text, href, ...anchorAttrs }, i) => {
+  const processedItems = items.map(({ children, text, href, ...anchorAttrs }, i) => {
     const url = urlParse(href);
     const match = matcher(href);
     const active = isActive(url.query)(match, location);
 
     return (
       <li key={i} className={classes('item', active ? 'active' : undefined)}>
-        <A {...anchorAttrs} classBlock={classes('link')} href={href}>{text}</A>
+        <A {...anchorAttrs} classBlock={classes('link')} href={href}>{children || text}</A>
       </li>
     );
   } );

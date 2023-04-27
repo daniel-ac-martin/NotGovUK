@@ -1,0 +1,15 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/summary-list";
+@import "govuk-frontend/govuk/core/links";
+
+.govuk-summary-card {
+  &__actions {
+    &__item {
+      @extend .govuk-summary-card__action;
+    }
+
+    &__link {
+      @extend .govuk-link;
+    }
+  }
+}
