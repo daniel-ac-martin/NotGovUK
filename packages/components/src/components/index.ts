@@ -26,6 +26,7 @@ export { default as Radios } from '@not-govuk/radios';
 export { default as Select } from '@not-govuk/select';
 export { default as SkipLink } from '@not-govuk/skip-link';
 export { default as SummaryCard } from '@not-govuk/summary-card';
+export { default as SummaryList } from '@not-govuk/summary-list';
 export { default as Tag } from '@not-govuk/tag';
 export { default as Table } from '@not-govuk/table';
 export { default as Tabs } from '@not-govuk/tabs';

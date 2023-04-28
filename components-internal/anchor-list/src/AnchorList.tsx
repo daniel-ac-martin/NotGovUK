@@ -7,7 +7,7 @@ import '../assets/AnchorList.scss';
 
 export type Anchor = AnchorProps & {
   /** Text of the link */
-  text: string
+  text?: string
 };
 
 export type AnchorListProps = StandardProps & {

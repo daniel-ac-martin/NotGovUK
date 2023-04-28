@@ -28,6 +28,7 @@ const mainStories = [
   require('../../../../../components/radios/spec/Radios.stories.mdx'),
   require('../../../../../components/select/spec/Select.stories.mdx'),
   require('../../../../../components/skip-link/spec/SkipLink.stories.mdx'),
+  require('../../../../../components/summary-list/spec/SummaryList.stories.mdx'),
   require('../../../../../components/table/spec/Table.stories.mdx'),
   require('../../../../../components/tabs/spec/Tabs.stories.mdx'),
   require('../../../../../components/tag/spec/Tag.stories.mdx'),
