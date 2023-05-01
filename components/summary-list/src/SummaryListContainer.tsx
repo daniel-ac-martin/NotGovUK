@@ -1,7 +1,7 @@
-import { FC, createElement as h } from 'react';
+import { FC, HTMLAttributes, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
-export type SummaryListContainerProps = StandardProps & {
+export type SummaryListContainerProps = StandardProps & HTMLAttributes<HTMLDListElement> & {
 };
 
 export const SummaryListContainer: FC<SummaryListContainerProps> = ({

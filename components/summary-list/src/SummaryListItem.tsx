@@ -1,11 +1,11 @@
-import { FC, ReactNode, createElement as h } from 'react';
+import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { Anchor, AnchorList } from '@not-govuk/anchor-list';
 import { A } from '@not-govuk/link';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 export type Action = Anchor;
 
-export type SummaryListItemProps = StandardProps & {
+export type SummaryListItemProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** Name or 'key' of the item */
   name: ReactNode | string
   /** Value of the item */
