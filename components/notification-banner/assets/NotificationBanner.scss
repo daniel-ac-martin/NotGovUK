@@ -1,0 +1,26 @@
+@import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/notification-banner";
+
+.govuk-notification-banner {
+  &__content {
+    & .heading,
+    & .govuk-heading,
+    & h2 {
+      @extend .govuk-notification-banner__title;
+    }
+  }
+
+  &__content {
+    & .heading,
+    & .govuk-heading,
+    & h3 {
+      @extend .govuk-notification-banner__heading;
+    }
+
+    & .link,
+    & .govuk-link,
+    & a {
+      @extend .govuk-notification-banner__link;
+    }
+  }
+}
