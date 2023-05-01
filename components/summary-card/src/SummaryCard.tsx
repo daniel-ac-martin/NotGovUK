@@ -1,10 +1,10 @@
-import { FC, ReactNode, createElement as h } from 'react';
+import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Anchor, AnchorList } from "@not-govuk/anchor-list";
 
 import '../assets/SummaryCard.scss';
 
-export type SummaryCardProps = StandardProps & {
+export type SummaryCardProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** Links to perform status related actions */
   actions?: Anchor[]
   /** Contents */

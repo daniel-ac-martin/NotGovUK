@@ -19,6 +19,7 @@ export { default as Input } from '@not-govuk/input';
 export { default as InsetText } from '@not-govuk/inset-text';
 export { default as Label } from '@not-govuk/label';
 export { default as NavigationMenu } from '@not-govuk/navigation-menu';
+export { default as NotificationBanner } from '@not-govuk/notification-banner';
 export { default as Pagination } from '@not-govuk/pagination';
 export { default as Panel } from '@not-govuk/panel';
 export { default as PhaseBanner } from '@not-govuk/phase-banner';

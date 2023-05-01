@@ -22,6 +22,7 @@ const mainStories = [
   require('../../../../../components/footer/spec/Footer.stories.mdx'),
   require('../../../../../components/header/spec/Header.stories.mdx'),
   require('../../../../../components/inset-text/spec/InsetText.stories.mdx'),
+  require('../../../../../components/notification-banner/spec/NotificationBanner.stories.mdx'),
   require('../../../../../components/pagination/spec/Pagination.stories.mdx'),
   require('../../../../../components/panel/spec/Panel.stories.mdx'),
   require('../../../../../components/phase-banner/spec/PhaseBanner.stories.mdx'),
