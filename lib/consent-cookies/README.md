@@ -35,7 +35,7 @@ Then use it in your code as follows:
 const restify = require('restify');
 const consentCookies = require('@not-govuk/consent-cookies');
 
-consy myCookies = [
+const myCookies = [
   {
     name: 'ga',
     description: 'Enables us to track you use of the site and helps us to optimise your experience.',
