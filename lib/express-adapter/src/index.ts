@@ -58,7 +58,7 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
           return (_code: number | string, _uri?: string) => {
             const { code, uri }: { code?: number, uri: string } = (
               _uri === undefined
-                ? { code: undefined, uri: _code as string }
+                ? { code: 302, uri: _code as string }
                 : { code: _code as number, uri: _uri }
             );
 
