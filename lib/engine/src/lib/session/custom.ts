@@ -19,12 +19,18 @@ export const customSession: Session<SessionOptionsCustom> = ({
   write
 }) => async (req, res) => {
   // Look for an existing session
-  const id = req.cookies[cookie.name];
-  const sessionData = (
+  const id: string = String(req.cookies[cookie.name]);
+  const currentSessionData = (
     id === undefined
       ? {}
       : await read(id)
-  ) || {};
+  );
+  const newSession = currentSessionData === undefined;
+  const sessionData = (
+    newSession
+      ? {}
+      : currentSessionData
+  );
 
   // Make session data available on the request
   let modified = false;
@@ -54,7 +60,6 @@ export const customSession: Session<SessionOptionsCustom> = ({
   const _writeHead: WriteHead = res.writeHead.bind(res);
   const writeHead: WriteHead = function (statusCode, statusMessage, headers) {
     if (modified) {
-      const newSession = id === undefined;
       const newId = (
         newSession
           ? randomUUID()
