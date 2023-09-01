@@ -7,13 +7,22 @@ export type CookieOptions = Omit<CookieSerializeOptions, 'encode'>;
 export type SetCookie = (name: string, value: any, options: Omit<CookieOptions, 'httpOnly'>) => void;
 export type SetCookieConsent = (value: string[]) => void;
 
-type Request = _Request & {
+type LogFunction = (message: string, args?: object) => void;
+
+export type Request = _Request & {
   cookies?: object
   cookiesMeta?: object
+  log?: {
+    error: LogFunction
+    warn: LogFunction
+    info: LogFunction
+    debug: LogFunction
+    trace: LogFunction
+  }
   session?: object
 };
 
-type Response = _Response & {
+export type Response = _Response & {
   setCookie?: SetCookie
   setCookieConsent?: SetCookieConsent
 };

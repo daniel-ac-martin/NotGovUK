@@ -2,7 +2,7 @@ import cookie from 'cookie';
 import Cryptr from 'cryptr';
 import { sessions, sessionCookie } from './sessions';
 
-import type { Cookie, CookieOptions, Middleware, SetCookie, SetCookieConsent } from './common';
+import type { Cookie, CookieOptions, Middleware, Request, SetCookie, SetCookieConsent } from './common';
 
 export type ConsentCookiesOptions = CookieOptions & {
   cookies: Cookie[]
@@ -20,10 +20,11 @@ const consentCookie: Cookie = {
 const id = <T>(v: T): T => v;
 
 const encodeClear = (v: any) => JSON.stringify(v);
-const decodeClear = (v: any) => {
+const decodeClear = (v: any, req?: Request) => {
   try {
     return JSON.parse(v);
   } catch (e) {
+    (req?.log || console).warn('Unable to parse cookie data as JSON');
     return undefined;
   }
 };
@@ -36,10 +37,11 @@ export const consentCookies = ({
 }: ConsentCookiesOptions): Middleware => {
   const cryptr = new Cryptr(secret);
   const encodeSecure = (v: any) => cryptr.encrypt(encodeClear(v));
-  const decodeSecure = (v: any) => {
+  const decodeSecure = (v: any, req?: Request) => {
     try {
-      return decodeClear(cryptr.decrypt(v));
+      return decodeClear(cryptr.decrypt(v), req);
     } catch (e) {
+      (req?.log || console).warn('Unable to decrypt cookie data');
       return undefined;
     }
   };
