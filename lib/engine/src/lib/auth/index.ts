@@ -28,11 +28,12 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
     callback,
     cookies = [],
     extractor,
+    privacy = true,
     sessions = false,
     terminate
   } = await options;
 
-  const apply: Apply = (httpd, siteWide: boolean = false) => {
+  const apply: Apply = (httpd) => {
     if (_apply) {
       _apply(httpd);
     } else if (extractor) {
@@ -54,7 +55,7 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
       const signOutPath = pathPrefix + 'sign-out';
       const callbackPath = pathPrefix + 'callback';
 
-      if (siteWide) {
+      if (privacy) {
         const whitelist = (
           callback
             ? [ callbackPath, signOutPath ]
@@ -107,11 +108,11 @@ const isAuthOptionsOIDC = (v: AuthOptions): v is AuthOptionsOIDC => v.method ===
 
 const noAuth: AuthOptionsNone = { method: AuthMethod.None };
 
-export const auth = async (options: AuthOptions = noAuth): Promise<AuthTools> => buildTools(
-  isAuthOptionsDummy(options) ? dummyAuth(options)
-    : isAuthOptionsHeaders(options) ? headersAuth(options)
-    : isAuthOptionsBasic(options) ? basicAuth(options)
-    : isAuthOptionsOIDC(options) ? oidcAuth(options)
+export const auth = async (options: AuthOptions = noAuth, privacy: boolean = false): Promise<AuthTools> => buildTools(
+  isAuthOptionsDummy(options) ? dummyAuth(options, privacy)
+    : isAuthOptionsHeaders(options) ? headersAuth(options, privacy)
+    : isAuthOptionsBasic(options) ? basicAuth(options, privacy)
+    : isAuthOptionsOIDC(options) ? oidcAuth(options, privacy)
     : {}
 );
 

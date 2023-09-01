@@ -150,7 +150,7 @@ export const engine = async ({
 
   // Gather auth information
   if (authOptions) {
-    const { apply, cookies: authCookies, sessions: authSessions } = await auth(authOptions);
+    const { apply, cookies: authCookies, sessions: authSessions } = await auth(authOptions, privacy);
 
     cookies.concat(authCookies);
     needSessions = needSessions || authSessions;
@@ -179,7 +179,7 @@ export const engine = async ({
   }
 
   if (applyAuth) {
-    applyAuth(httpd, privacy);
+    applyAuth(httpd);
   }
 
   // Serve static assets built by webpack

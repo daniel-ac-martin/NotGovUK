@@ -46,11 +46,12 @@ export type AuthBag = {
   callback?: Middleware
   cookies?: Cookie[]
   extractor?: UserExtractor
+  privacy?: boolean
   sessions?: boolean
   terminate?: Middleware
 };
 
-export type AuthBagger<T> = (config: T) => Promised<AuthBag>;
+export type AuthBagger<T> = (config: T, privacy: boolean) => Promised<AuthBag>;
 
 export {
   Promised
