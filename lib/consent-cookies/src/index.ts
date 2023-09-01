@@ -125,4 +125,4 @@ export const consentCookies = ({
 };
 
 export default consentCookies;
-export type { Cookie };
+export type { Cookie, CookieOptions, Middleware, Request, Response } from './common';
