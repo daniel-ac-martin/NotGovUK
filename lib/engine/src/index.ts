@@ -9,6 +9,7 @@ import { consentCookies } from '@not-govuk/consent-cookies';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
 import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
+import { SessionStore, SessionOptions, cookie as sessionCookie, session } from './lib/session';
 
 export type Api = {
   path: string
@@ -60,6 +61,7 @@ export type EngineOptions = {
   name: string
   pageLoader: PageLoader
   privacy?: boolean
+  session?: SessionOptions
   ssrOnly: boolean
 };
 
@@ -80,6 +82,7 @@ export const engine = async ({
   name,
   pageLoader,
   privacy,
+  session: sessionOptions,
   ssrOnly
 }: EngineOptions) => {
   const publicPath = assets.publicPath;
@@ -94,8 +97,6 @@ export const engine = async ({
         : logDestination
     )
   };
-
-  let sessions = false;
 
   const signInOut = authOptions && !([
     AuthMethod.None,
@@ -144,6 +145,7 @@ export const engine = async ({
 
   httpd.use(react.renderer);
 
+  let needSessions = !!sessionOptions;
   let applyAuth;
 
   // Gather auth information
@@ -151,17 +153,29 @@ export const engine = async ({
     const { apply, cookies: authCookies, sessions: authSessions } = await auth(authOptions);
 
     cookies.concat(authCookies);
-    sessions = sessions || authSessions;
+    needSessions = needSessions || authSessions;
     applyAuth = apply;
   }
 
-  if ( sessions || cookies.length ) {
+  const sessionMiddleware = sessionOptions && await session(sessionOptions);
+  const cookieSessions = needSessions && !sessionMiddleware;
+
+  if ( needSessions || cookies.length ) {
+
+    if (sessionMiddleware) {
+      cookies.push(sessionCookie);
+    }
+
     httpd.use(consentCookies({
       cookies,
-      provideSession: sessions,
+      provideSession: cookieSessions,
       secret: cookieOptions.secret,
       secure: cookieOptions.secure
     }));
+
+    if (sessionMiddleware) {
+      httpd.use(sessionMiddleware);
+    }
   }
 
   if (applyAuth) {
@@ -240,7 +254,7 @@ export const engine = async ({
 };
 
 export default engine;
-export { AuthMethod };
+export { AuthMethod, SessionStore };
 export { Router, errors } from '@not-govuk/restify';
 export { defaultsFalse, defaultsTrue } from './lib/config-helpers';
 export type { IsReady };
