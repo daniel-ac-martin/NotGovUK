@@ -31,7 +31,7 @@ const decodeClear = (v: any, req?: Request) => {
 
 export const consentCookies = ({
   cookies: _cookies,
-  provideSession = true,
+  provideSession = false,
   secret,
   ...defaults
 }: ConsentCookiesOptions): Middleware => {
