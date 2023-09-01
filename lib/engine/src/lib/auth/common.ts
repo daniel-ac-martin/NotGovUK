@@ -1,5 +1,6 @@
 import { Next, Request as _Request, Response, Server } from 'restify';
 
+import type { Promised } from '../common';
 import type { Cookie } from '@not-govuk/consent-cookies';
 
 export enum AuthMethod {
@@ -48,6 +49,8 @@ export type AuthBag = {
   terminate?: Middleware
 };
 
-export type Promised<T> = T | Promise<T>;
-
 export type AuthBagger<T> = (config: T) => Promised<AuthBag>;
+
+export {
+  Promised
+};
