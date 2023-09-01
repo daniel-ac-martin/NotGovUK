@@ -20,7 +20,7 @@ export const basicAuth: AuthBagger<AuthOptionsBasic> = async ({
   roles = [],
   username
 }) => {
-  const verify = (suppliedUsername, suppliedPassword, done) => {
+  const verify = (suppliedUsername: string, suppliedPassword: string, done) => {
     if (username === suppliedUsername && password === suppliedPassword) {
       const user: AuthInfo = {
         provider: 'basic',
