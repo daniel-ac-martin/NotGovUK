@@ -41,7 +41,7 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
         next();
       }
 
-      httpd.use(userInfo);
+      httpd.pre(userInfo);
     }
 
     if (authenticate) {
@@ -49,23 +49,42 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
         res.redirect(302, '/', next);
       };
 
-      if (siteWide) {
-        httpd.pre(authenticate);
+      const pathPrefix = '/auth/';
+      const signInPath = pathPrefix + 'sign-in';
+      const signOutPath = pathPrefix + 'sign-out';
+      const callbackPath = pathPrefix + 'callback';
 
-        httpd.get('/auth/sign-in', redirect);
-        httpd.post('/auth/sign-in', redirect);
+      if (siteWide) {
+        const whitelist = (
+          callback
+            ? [ callbackPath, signOutPath ]
+            : [ signOutPath ]
+        );
+
+        const siteWideAuth: Middleware = (req, res, next) => {
+          if (req.isAuthenticated() || whitelist.includes(req.getPath())) {
+            next();
+          } else {
+            authenticate(req, res, next);
+          }
+        };
+
+        httpd.pre(siteWideAuth);
+
+        httpd.get(signInPath, redirect);
+        httpd.post(signInPath, redirect);
       } else {
-        httpd.get('/auth/sign-in', authenticate, redirect);
-        httpd.post('/auth/sign-in', authenticate, redirect);
+        httpd.get(signInPath, authenticate, redirect);
+        httpd.post(signInPath, authenticate, redirect);
       }
 
       if (callback) {
-        httpd.get('/auth/callback', callback);
-        httpd.post('/auth/callback', callback);
+        httpd.get(callbackPath, callback);
+        httpd.post(callbackPath, callback);
       }
 
       if (terminate) {
-        httpd.get('/auth/sign-out', terminate);
+        httpd.get(signOutPath, terminate);
       }
     }
 

@@ -166,7 +166,7 @@ export const engine = async ({
       cookies.push(sessionCookie);
     }
 
-    httpd.use(consentCookies({
+    httpd.pre(consentCookies({
       cookies,
       provideSession: cookieSessions,
       secret: cookieOptions.secret,
@@ -174,7 +174,7 @@ export const engine = async ({
     }));
 
     if (sessionMiddleware) {
-      httpd.use(sessionMiddleware);
+      httpd.pre(sessionMiddleware);
     }
   }
 

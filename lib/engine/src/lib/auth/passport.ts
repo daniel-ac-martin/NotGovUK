@@ -16,6 +16,7 @@ export const passportBag: AuthBagger<PassportOptions> = ({
   strategy
 }) => {
   const serDes = (user, done) => done(null, user);
+  const authenticateOptions = { session: sessions };
 
   passport.use(id, strategy);
   passport.serializeUser(serDes);
@@ -23,19 +24,19 @@ export const passportBag: AuthBagger<PassportOptions> = ({
 
   return {
     apply: (httpd) => {
-      httpd.use(adapt(passport.initialize({ userProperty: 'auth' })));
+      httpd.pre(adapt(passport.initialize({ userProperty: 'auth' })));
 
       if (sessions) {
-        httpd.use(adapt(passport.session()));
+        httpd.pre(adapt(passport.session()));
       }
 
       return httpd;
     },
-    authenticate: adapt(passport.authenticate(id)),
+    authenticate: adapt(passport.authenticate(id, authenticateOptions)),
     callback: (
       !callback
         ? undefined
-        : adapt(passport.authenticate(id, {successRedirect: '/'}))
+        : adapt(passport.authenticate(id, { ...authenticateOptions, successRedirect: '/' }))
     ),
     sessions,
     terminate: adapt(

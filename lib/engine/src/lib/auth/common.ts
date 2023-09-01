@@ -30,7 +30,8 @@ export type UserProfile = {
 type Callback = () => void;
 
 export type Request = _Request & {
-  auth?: UserProfile,
+  auth?: UserProfile
+  isAuthenticated?: () => boolean
   logout?: (options: object | Callback, done?: Callback) => void
 };
 
