@@ -48,7 +48,7 @@ export const sessions: Middleware = (req, res, next) => {
   const _writeHead: WriteHead = res.writeHead.bind(res);
   const writeHead: WriteHead = function (statusCode, statusMessage, headers) {
     if (modified) {
-      this.setCookie(sessionCookie.name, req.session)
+      this.setCookie(sessionCookie.name, req.session);
     }
 
     return _writeHead(statusCode, statusMessage, headers);
