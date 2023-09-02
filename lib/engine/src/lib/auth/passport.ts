@@ -2,6 +2,9 @@ import { adapt } from '@not-govuk/express-adapter';
 import passport, { Strategy } from 'passport';
 import { AuthBagger } from './common';
 
+export type Done = (err: Error | null, user: any) => void;
+export type Serialize = (user: any, done: Done) => void;
+
 type PassportOptions = {
   callback: boolean
   id: string
@@ -18,8 +21,8 @@ export const passportBag: AuthBagger<PassportOptions> = ({
   const session = sessions || !privacy;
   const authenticateOptions = { session };
 
-  const serDes = (user, done) => done(null, user);
-  const redact = (user, done) => done(null, {
+  const serDes: Serialize = (user, done) => done(null, user);
+  const redact: Serialize = (user, done) => done(null, {
     username: user.username,
     roles: user.roles
   });

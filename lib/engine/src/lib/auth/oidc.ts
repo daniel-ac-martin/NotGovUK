@@ -1,5 +1,5 @@
 import base64url from 'base64url';
-import { Client, Issuer, Strategy, StrategyOptions, custom } from 'openid-client';
+import { Client, Issuer, Strategy, StrategyOptions, StrategyVerifyCallbackReqUserInfo, custom } from 'openid-client';
 import { AuthBagger, AuthMethod, UserProfile } from './common';
 import { passportBag } from './passport';
 
@@ -17,6 +17,8 @@ export type AuthInfo = UserProfile & {
   accessToken?: string
   refreshToken?: string
 };
+
+type Verify = StrategyVerifyCallbackReqUserInfo<AuthInfo>;
 
 const id = <T>(x: T): T => x;
 
@@ -55,7 +57,7 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
     passReqToCallback: true
   };
 
-  const verify = (_req, tokenset, userinfo, done) => {
+  const verify: Verify = (_req, tokenset, userinfo, done) => {
     const accessClaims = JSON.parse(
       base64url.decode(
         tokenset.access_token.split('.')[1]
