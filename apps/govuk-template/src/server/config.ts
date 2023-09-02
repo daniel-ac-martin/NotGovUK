@@ -8,7 +8,7 @@ const dummyRoles = ['books.author', 'books.title'];
 const serverConfig = {
   ...commonConfig,
   auth: {
-    method: process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.Basic ),
+    method: (process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.Basic )) as AuthMethod,
     dummy: {
       username: 'TestUser',
       groups: [],
@@ -47,7 +47,7 @@ const serverConfig = {
   mode: (process.env.MODE || 'server') as Mode,
   privacy: defaultsFalse(process.env.PRIVACY),
   session: {
-    store: process.env.SESSION_STORE || SessionStore.Memory
+    store: process.env.SESSION_STORE as SessionStore
   },
   ssrOnly: defaultsFalse(process.env.SSR_ONLY)
 };

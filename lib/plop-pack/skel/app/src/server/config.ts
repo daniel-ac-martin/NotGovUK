@@ -1,4 +1,4 @@
-import { AuthMethod, Mode, NodeEnv, defaultsFalse, defaultsTrue } from '@not-govuk/engine';
+import { AuthMethod, Mode, NodeEnv, SessionStore, defaultsFalse, defaultsTrue } from '@not-govuk/engine';
 import commonConfig from '../common/config';
 
 const env = process.env.NODE_ENV as NodeEnv;
@@ -8,7 +8,7 @@ const dummyRoles = ['books.author', 'books.title'];
 const serverConfig = {
   ...commonConfig,
   auth: {
-    method: process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.Basic ),
+    method: (process.env.AUTH_METHOD || ( devMode ? AuthMethod.Dummy : AuthMethod.Basic )) as AuthMethod,
     dummy: {
       username: 'TestUser',
       groups: [],
@@ -46,6 +46,9 @@ const serverConfig = {
   },
   mode: (process.env.MODE || 'server') as Mode,
   privacy: defaultsFalse(process.env.PRIVACY),
+  session: {
+    store: process.env.SESSION_STORE as SessionStore
+  },
   ssrOnly: defaultsFalse(process.env.SSR_ONLY)
 };
 
