@@ -145,20 +145,21 @@ export const engine = async ({
 
   httpd.use(react.renderer);
 
-  let needSessions = !!sessionOptions;
   let applyAuth;
+  let needSessions = !!sessionOptions;
+  const sessionMiddleware = sessionOptions && await session(sessionOptions);
+  const fullSessions = !!sessionMiddleware;
 
   // Gather auth information
   if (authOptions) {
-    const { apply, cookies: authCookies, sessions: authSessions } = await auth(authOptions, privacy);
+    const { apply, cookies: authCookies, sessions: authSessions } = await auth(authOptions, privacy, fullSessions);
 
     cookies.concat(authCookies);
     needSessions = needSessions || authSessions;
     applyAuth = apply;
   }
 
-  const sessionMiddleware = sessionOptions && await session(sessionOptions);
-  const cookieSessions = needSessions && !sessionMiddleware;
+  const cookieSessions = needSessions && !fullSessions;
 
   if ( needSessions || cookies.length ) {
 

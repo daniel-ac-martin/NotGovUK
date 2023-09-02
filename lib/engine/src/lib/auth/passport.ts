@@ -14,14 +14,18 @@ export const passportBag: AuthBagger<PassportOptions> = ({
   id,
   sessions,
   strategy
-}, privacy) => {
-  const serDes = (user, done) => done(null, user);
-  const authenticateOptions = { session: sessions };
+}, privacy, fullSessions) => {
   const session = sessions || !privacy;
   const authenticateOptions = { session };
 
+  const serDes = (user, done) => done(null, user);
+  const redact = (user, done) => done(null, {
+    username: user.username,
+    roles: user.roles
+  });
+
   passport.use(id, strategy);
-  passport.serializeUser(serDes);
+  passport.serializeUser(fullSessions ? serDes : redact);
   passport.deserializeUser(serDes);
 
   return {

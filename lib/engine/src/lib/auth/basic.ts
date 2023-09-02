@@ -19,7 +19,7 @@ export const basicAuth: AuthBagger<AuthOptionsBasic> = async ({
   password,
   roles = [],
   username
-}, privacy) => {
+}, privacy, fullSessions) => {
   const verify = (suppliedUsername: string, suppliedPassword: string, done) => {
     if (username === suppliedUsername && password === suppliedPassword) {
       const user: AuthInfo = {
@@ -42,7 +42,7 @@ export const basicAuth: AuthBagger<AuthOptionsBasic> = async ({
     id: 'basic',
     sessions: false,
     strategy
-  }, privacy);
+  }, privacy, fullSessions);
 };
 
 export default basicAuth;

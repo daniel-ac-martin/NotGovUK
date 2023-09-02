@@ -31,7 +31,7 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
   clientSecret,
   issuer,
   redirectUri
-}, privacy) => {
+}, privacy, fullSessions) => {
   custom.setHttpOptionsDefaults({
     timeout: 5000,
   });
@@ -107,7 +107,7 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
     id: 'oidc',
     sessions: true,
     strategy
-  }, privacy);
+  }, privacy, fullSessions);
 };
 
 export default oidcAuth;

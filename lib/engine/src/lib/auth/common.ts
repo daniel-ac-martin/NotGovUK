@@ -51,7 +51,7 @@ export type AuthBag = {
   terminate?: Middleware
 };
 
-export type AuthBagger<T> = (config: T, privacy: boolean) => Promised<AuthBag>;
+export type AuthBagger<T> = (config: T, privacy: boolean, fullSessions: boolean) => Promised<AuthBag>;
 
 export {
   Promised

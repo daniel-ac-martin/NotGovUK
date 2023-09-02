@@ -108,11 +108,11 @@ const isAuthOptionsOIDC = (v: AuthOptions): v is AuthOptionsOIDC => v.method ===
 
 const noAuth: AuthOptionsNone = { method: AuthMethod.None };
 
-export const auth = async (options: AuthOptions = noAuth, privacy: boolean = false): Promise<AuthTools> => buildTools(
-  isAuthOptionsDummy(options) ? dummyAuth(options, privacy)
-    : isAuthOptionsHeaders(options) ? headersAuth(options, privacy)
-    : isAuthOptionsBasic(options) ? basicAuth(options, privacy)
-    : isAuthOptionsOIDC(options) ? oidcAuth(options, privacy)
+export const auth = async (options: AuthOptions = noAuth, privacy: boolean = false, fullSessions = false): Promise<AuthTools> => buildTools(
+  isAuthOptionsDummy(options) ? dummyAuth(options, privacy, fullSessions)
+    : isAuthOptionsHeaders(options) ? headersAuth(options, privacy, fullSessions)
+    : isAuthOptionsBasic(options) ? basicAuth(options, privacy, fullSessions)
+    : isAuthOptionsOIDC(options) ? oidcAuth(options, privacy, fullSessions)
     : {}
 );
 
