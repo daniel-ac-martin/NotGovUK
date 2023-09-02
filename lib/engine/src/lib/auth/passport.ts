@@ -7,14 +7,18 @@ export type Serialize = (user: any, done: Done) => void;
 
 type PassportOptions = {
   callback: boolean
+  deserialize?: Serialize
   id: string
+  serialize?: Serialize
   sessions: boolean
   strategy: Strategy
 };
 
 export const passportBag: AuthBagger<PassportOptions> = ({
   callback,
+  deserialize,
   id,
+  serialize,
   sessions,
   strategy
 }, privacy, fullSessions) => {
@@ -28,8 +32,12 @@ export const passportBag: AuthBagger<PassportOptions> = ({
   });
 
   passport.use(id, strategy);
-  passport.serializeUser(fullSessions ? serDes : redact);
-  passport.deserializeUser(serDes);
+  passport.serializeUser(serialize || (
+    fullSessions
+      ? serDes
+      : redact
+  ));
+  passport.deserializeUser(deserialize || serDes);
 
   return {
     apply: (httpd) => {
