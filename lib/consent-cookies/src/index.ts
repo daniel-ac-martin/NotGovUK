@@ -97,6 +97,14 @@ export const consentCookies = ({
             ? encodeClear(value)
             : encodeSecure(value)
         );
+        const size = content.length;
+        const maxSize = 4096;
+
+        if (size > maxSize) {
+          const overrun = size - maxSize;
+          this?.log.warn(`Attempting to set cookie, '${name}', which is ${overrun} bytes larger than allowed (4kiB) and likely to be rejected`);
+        }
+
         this.setHeader('Set-Cookie', cookie.serialize(name, content, {
           path: '/', // Cover entire site
           domain: undefined, // Do NOT cover subdomains (yes, really)
