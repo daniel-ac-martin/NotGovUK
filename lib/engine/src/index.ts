@@ -152,9 +152,8 @@ export const engine = async ({
 
   // Gather auth information
   if (authOptions) {
-    const { apply, cookies: authCookies, sessions: authSessions } = await auth(authOptions, privacy, fullSessions);
+    const { apply, sessions: authSessions } = await auth(authOptions, privacy, fullSessions);
 
-    cookies.concat(authCookies);
     needSessions = needSessions || authSessions;
     applyAuth = apply;
   }
