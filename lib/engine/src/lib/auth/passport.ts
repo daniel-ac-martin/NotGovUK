@@ -56,7 +56,7 @@ export const passportBag: AuthBagger<PassportOptions> = ({
         : adapt(passport.authenticate(id, { ...authenticateOptions, successRedirect: '/' }))
     ),
     privacy,
-    sessions,
+    sessions: session,
     terminate: adapt(
       (req, res) => {
         req.logout(() => {
