@@ -13,7 +13,7 @@ export const dummyAuth: AuthBagger<AuthOptionsDummy> = ({
   username,
   groups = [],
   roles = [],
-}) => ({
+}, _privacy, _fullSessions) => ({
   extractor: (_) => ({
     username,
     groups,

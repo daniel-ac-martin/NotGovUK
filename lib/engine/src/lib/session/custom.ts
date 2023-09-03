@@ -1,23 +1,33 @@
-import type { Cookie, Middleware } from './common';
+import { randomUUID } from 'node:crypto';
+import { Promised, Session, SessionStore, cookie } from './common';
+
 import type { OutgoingHttpHeader, OutgoingHttpHeaders, ServerResponse } from 'http';
+
+export type SessionOptionsCustom = {
+  store: SessionStore.Custom
+  read: (id: string) => Promised<object>
+  write: (id: string, data: object) => Promised<void>
+};
 
 type Headers = OutgoingHttpHeaders | OutgoingHttpHeader[];
 type WriteHead = (statusCode: number, statusMessage?: string | Headers, headers?: Headers) => ServerResponse;
 
-export const sessionCookie: Cookie = {
-  name: 'session',
-  description: 'Your session on this website.',
-  httpOnly: true, // No access from JavaScript
-  sameSite: 'lax' // Some sane CSRF protection
-};
-
-export const sessions: Middleware = (req, res, next) => {
+export const customSession: Session<SessionOptionsCustom> = ({
+  read,
+  write
+}) => async (req, res) => {
   // Look for an existing session
-  const rawData = req.cookies[sessionCookie.name];
-  const sessionData: object = (
-    rawData && typeof rawData === 'object'
-      ? req.cookies[sessionCookie.name]
-      : {}
+  const id: string = String(req.cookies[cookie.name]);
+  const currentSessionData = (
+    id === undefined
+      ? {}
+      : await read(id)
+  );
+  const newSession = currentSessionData === undefined;
+  const sessionData = (
+    newSession
+      ? {}
+      : currentSessionData
   );
 
   // Make session data available on the request
@@ -48,15 +58,23 @@ export const sessions: Middleware = (req, res, next) => {
   const _writeHead: WriteHead = res.writeHead.bind(res);
   const writeHead: WriteHead = function (statusCode, statusMessage, headers) {
     if (modified) {
-      this.setCookie(sessionCookie.name, req.session);
+      const newId = (
+        newSession
+          ? randomUUID()
+          : id
+      );
+
+      write(newId, sessionData);
+
+      if(newSession) {
+        this.setCookie(cookie.name, newId);
+      }
     }
 
     return _writeHead(statusCode, statusMessage, headers);
   };
 
   res.writeHead = writeHead;
+};
 
-  next();
-}
-
-export default sessions;
+export default customSession;

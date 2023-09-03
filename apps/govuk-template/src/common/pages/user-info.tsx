@@ -3,8 +3,9 @@ import { PageProps } from '@not-govuk/app-composer';
 import { useUserInfo } from '@not-govuk/user-info';
 
 const Page: FC<PageProps> = () => {
-  const { username, groups, roles, displayName, name } = useUserInfo() || {};
+  const { username, groups, roles, displayName, name, emails, expiry } = useUserInfo() || {};
   const { givenName, familyName } = name || {};
+  const email = emails && emails[0]?.value;
 
   return (
     <Fragment>
@@ -23,6 +24,10 @@ const Page: FC<PageProps> = () => {
           <dd>{givenName}</dd>
           <dt>Family name</dt>
           <dd>{familyName}</dd>
+          <dt>Email</dt>
+          <dd>{email}</dd>
+          <dt>Session expires at</dt>
+          <dd>{expiry}</dd>
         </dl>
       ) }
     </Fragment>

@@ -9,6 +9,7 @@ import { consentCookies } from '@not-govuk/consent-cookies';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
 import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
+import { SessionStore, SessionOptions, cookie as sessionCookie, session } from './lib/session';
 
 export type Api = {
   path: string
@@ -60,6 +61,7 @@ export type EngineOptions = {
   name: string
   pageLoader: PageLoader
   privacy?: boolean
+  session?: SessionOptions
   ssrOnly: boolean
 };
 
@@ -80,6 +82,7 @@ export const engine = async ({
   name,
   pageLoader,
   privacy,
+  session: sessionOptions,
   ssrOnly
 }: EngineOptions) => {
   const publicPath = assets.publicPath;
@@ -94,8 +97,6 @@ export const engine = async ({
         : logDestination
     )
   };
-
-  let sessions = false;
 
   const signInOut = authOptions && !([
     AuthMethod.None,
@@ -145,27 +146,40 @@ export const engine = async ({
   httpd.use(react.renderer);
 
   let applyAuth;
+  let needSessions = !!sessionOptions;
+  const sessionMiddleware = sessionOptions && session(sessionOptions);
+  const fullSessions = !!sessionMiddleware;
 
   // Gather auth information
   if (authOptions) {
-    const { apply, cookies: authCookies, sessions: authSessions } = await auth(authOptions);
+    const { apply, sessions: authSessions } = await auth(authOptions, privacy, fullSessions);
 
-    cookies.concat(authCookies);
-    sessions = sessions || authSessions;
+    needSessions = needSessions || authSessions;
     applyAuth = apply;
   }
 
-  if ( sessions || cookies.length ) {
-    httpd.use(consentCookies({
+  const cookieSessions = needSessions && !fullSessions;
+
+  if ( needSessions || cookies.length ) {
+
+    if (sessionMiddleware) {
+      cookies.push(sessionCookie);
+    }
+
+    httpd.pre(consentCookies({
       cookies,
-      provideSession: sessions,
+      provideSession: cookieSessions,
       secret: cookieOptions.secret,
       secure: cookieOptions.secure
     }));
+
+    if (sessionMiddleware) {
+      httpd.pre(sessionMiddleware);
+    }
   }
 
   if (applyAuth) {
-    applyAuth(httpd, privacy);
+    applyAuth(httpd);
   }
 
   // Serve static assets built by webpack
@@ -240,7 +254,7 @@ export const engine = async ({
 };
 
 export default engine;
-export { AuthMethod };
+export { AuthMethod, SessionStore };
 export { Router, errors } from '@not-govuk/restify';
 export { defaultsFalse, defaultsTrue } from './lib/config-helpers';
 export type { IsReady };

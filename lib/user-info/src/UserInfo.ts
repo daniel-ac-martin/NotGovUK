@@ -3,6 +3,7 @@ import { Context, createContext, useContext } from 'react';
 export type UserInfo = {
   displayName?: string
   emails?: Array<{ value: string, type?: string }>
+  expiry?: string
   groups: string[]
   name?: {
     familyName?: string

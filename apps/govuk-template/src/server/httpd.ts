@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import engine, { AuthMethod, Mode } from '@not-govuk/engine';
+import engine, { AuthMethod, Mode, SessionStore } from '@not-govuk/engine';
 import config from './config';
 import AppWrap from '../common/app-wrap';
 import ErrorPage from '../common/error-page';
@@ -58,6 +58,10 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
     name: config.name,
     pageLoader,
     privacy: config.privacy,
+    session: config.session && (
+      ( config.session.store === SessionStore.Cookie && { store: SessionStore.Cookie } )
+        || ( config.session.store === SessionStore.Memory && { store: SessionStore.Memory } )
+    ),
     ssrOnly: config.ssrOnly
   });
 
