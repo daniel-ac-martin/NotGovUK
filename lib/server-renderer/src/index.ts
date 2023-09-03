@@ -100,7 +100,8 @@ export const reactRenderer: ReactRenderer = ({
       name: req.auth?.name,
       photos: req.auth?.photos,
       roles: req.auth?.roles,
-      username: req.auth?.username
+      username: req.auth?.username,
+      expiry: req.auth?.expiry?.toISOString()
     };
     const routerProps = {
       location: req.url,
@@ -136,7 +137,7 @@ export const reactRenderer: ReactRenderer = ({
       },
       routerProps,
       data,
-      user: { ...user, accessToken: req.auth?.accessToken }
+      user: { ...user, accessToken: req.auth?.accessToken } // Add the access token separately, in order to keep it off the client
     });
     const app = h(App, appProps)
 
