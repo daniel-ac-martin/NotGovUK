@@ -1,7 +1,10 @@
 import { customSession } from './custom';
 import { Session, SessionStore } from './common';
 
-// Accept a hard-coded user from the options
+// A simple in-memory session
+//
+// Note: This will NOT work with multiple instances of the application or
+// in serverless deployments.
 
 export type SessionOptionsMemory = {
   store: SessionStore.Memory

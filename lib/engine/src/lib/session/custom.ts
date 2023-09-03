@@ -3,8 +3,6 @@ import { Promised, Session, SessionStore, cookie } from './common';
 
 import type { OutgoingHttpHeader, OutgoingHttpHeaders, ServerResponse } from 'http';
 
-// Accept a hard-coded user from the options
-
 export type SessionOptionsCustom = {
   store: SessionStore.Custom
   read: (id: string) => Promised<object>
