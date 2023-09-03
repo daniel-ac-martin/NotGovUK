@@ -16,12 +16,10 @@ export type AuthTools = {
   sessions: boolean
 };
 
-const noOpMiddleware: Middleware = (_req, _res, next) => next();
-
 const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
   const {
     apply: _apply,
-    authenticate = noOpMiddleware,
+    authenticate,
     callback,
     extractor,
     privacy = true,
