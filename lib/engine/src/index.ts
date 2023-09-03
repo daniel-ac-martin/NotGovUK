@@ -147,7 +147,7 @@ export const engine = async ({
 
   let applyAuth;
   let needSessions = !!sessionOptions;
-  const sessionMiddleware = sessionOptions && await session(sessionOptions);
+  const sessionMiddleware = sessionOptions && session(sessionOptions);
   const fullSessions = !!sessionMiddleware;
 
   // Gather auth information
