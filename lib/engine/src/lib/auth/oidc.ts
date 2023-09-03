@@ -15,9 +15,22 @@ export type AuthOptionsOIDC = {
 
 export type AuthInfo = UserProfile & {
   accessToken?: string
+  accessTokenValid?: boolean
   refreshToken?: string
+  refreshTokenValid?: boolean
   idToken?: string
+  idTokenValid?: boolean
   userinfo?: object
+};
+
+type JWT = {
+  iss?: string
+  sub?: string
+  aud?: string | string[]
+  exp?: number
+  nbf?: number
+  iat?: number
+  jti?: string
 };
 
 type Verify = StrategyVerifyCallbackReqUserInfo<AuthInfo>;
@@ -59,13 +72,12 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
     passReqToCallback: true
   };
 
-  const extractJWTClaims = (token?: string) => token && JSON.parse(
-    base64url.decode(
-      token.split('.')[1]
-    )
-  ) || {};
-
   const authInfo = (accessToken: string, refreshToken: string, idToken: string, userinfo: object): AuthInfo => {
+    const extractJWTClaims = (token?: string) => token && JSON.parse(
+      base64url.decode(
+        token.split('.')[1]
+      )
+    ) || {};
     const accessClaims = extractJWTClaims(accessToken);
     const idClaims = extractJWTClaims(idToken);
     const refreshClaims = extractJWTClaims(refreshToken);
@@ -78,6 +90,19 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
       idToken,
       userinfo
     };
+    const expiry = new Date((refreshClaims.exp || accessClaims.exp) * 1000);
+
+    const now = Math.floor(Date.now() / 1000);
+    const isValid = ({
+      nbf = 0,
+      exp = 0
+    }: JWT) => (
+      ( nbf <= now ) && ( now < exp )
+    );
+
+    const accessTokenValid = isValid(accessClaims);
+    const refreshTokenValid = isValid(refreshClaims);
+    const idTokenValid = isValid(idClaims);
 
     return {
       provider: 'oidc',
@@ -106,17 +131,18 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
         ...(Object.entries(data.resource_access || {}).reduce(resourceToRoles, []))
       ].filter(id),
       accessToken: data.accessToken,
+      accessTokenValid,
       refreshToken: data.refreshToken,
+      refreshTokenValid,
       idToken: data.idToken,
-      userinfo: data.userinfo
+      idTokenValid,
+      userinfo: data.userinfo,
+      expiry
     };
   };
 
   const verify: Verify = (_req, tokenset, userinfo, done) => {
-    const accessToken = tokenset.access_token;
-    const refreshToken = tokenset.refresh_token;
-    const idToken = tokenset.id_token;
-    const user: AuthInfo = authInfo(accessToken, refreshToken, idToken, userinfo || {});
+    const user: AuthInfo = authInfo(tokenset.access_token, tokenset.refresh_token, tokenset.id_token, userinfo || {});
 
     if (user.username) {
       done(null, user);
@@ -125,7 +151,7 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
     }
   };
 
-  const serialize: Serialize = (user, done) => {
+  const serialize: Serialize = (req, user, done) => {
     if (fullSessions) {
       done(null, user);
     } else {
@@ -160,6 +186,7 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
           } else {
             delete payload.refreshToken; // This will cut short the user's session
 
+            req.log.warn('Cannot fit refresh token in session; session will expire early');
             done(null, payload);
           }
         }
@@ -167,12 +194,38 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
     }
   };
 
-  const deserialize: Serialize = ({accessToken, refreshToken, idToken, userinfo}, done) => {
+  const deserialize: Serialize = (req, {accessToken, refreshToken, idToken, userinfo}, done) => {
     const user: AuthInfo = authInfo(accessToken, refreshToken, idToken, userinfo || {});
 
-    if (user.username) {
+    if (user.username && user.accessTokenValid) {
       done(null, user);
+    } else if (!user.accessTokenValid && user.refreshTokenValid) {
+      // The access token has expired, let's try to get a new one
+      client.refresh(refreshToken)
+        .then(tokenset => {
+          req.log.info('Obtained new access token');
+          const newUser: AuthInfo = authInfo(tokenset.access_token, tokenset.refresh_token, tokenset.id_token, userinfo || {});
+
+          if (newUser.username && newUser.accessTokenValid) {
+            req.login(newUser, (err) => {
+              if (err) {
+                req.log.error('Failed to persist new access token');
+                done(null, null);
+              } else {
+                done(null, newUser);
+              }
+            });
+          } else {
+            req.log.error('Access token was invalid');
+            done(null, null);
+          }
+        })
+        .catch(_err => {
+          req.log.error('Failed to obtain new access token');
+          done(null, null);
+        });
     } else {
+      req.log.info('Access token has expired and cannot renew, ending session');
       done(null, null);
     }
   };

@@ -1,9 +1,11 @@
 import { adapt } from '@not-govuk/express-adapter';
 import passport, { Strategy } from 'passport';
-import { AuthBagger } from './common';
+import { AuthBagger, Request } from './common';
 
 export type Done = (err: Error | null, user: any) => void;
-export type Serialize = (user: any, done: Done) => void;
+export type Serialize = (
+  ( (user: any, done: Done) => void) | ( (req: Request, user: any, done: Done) => void )
+);
 
 type PassportOptions = {
   callback: boolean
@@ -44,7 +46,7 @@ export const passportBag: AuthBagger<PassportOptions> = ({
       httpd.pre(adapt(passport.initialize({ userProperty: 'auth' })));
 
       if (session) {
-        httpd.pre(adapt(passport.session()));
+        httpd.pre(adapt(passport.session({ pauseStream: true })));
       }
 
       return httpd;

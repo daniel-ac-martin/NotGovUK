@@ -1,5 +1,6 @@
 import { Next, Request as _Request, Response, Server } from 'restify';
 
+import type { LogInOptions, LogOutOptions } from 'passport';
 import type { Promised } from '../common';
 
 export enum AuthMethod {
@@ -24,14 +25,18 @@ export type UserProfile = {
   username: string
   groups?: string[]
   roles?: string[]
+  expiry?: Date
 };
 
-type Callback = () => void;
+type Callback = (err: any) => void;
 
 export type Request = _Request & {
   auth?: UserProfile
   isAuthenticated?: () => boolean
-  logout?: (options: object | Callback, done?: Callback) => void
+  login(user: UserProfile, done: Callback): void;
+  login(user: UserProfile, options: LogInOptions, done: Callback): void
+  logout(options: LogOutOptions, done: Callback): void
+  logout(done: Callback): void
 };
 
 export type Apply = (httpd: Server, siteWide?: boolean) => Server;
