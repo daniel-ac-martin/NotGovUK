@@ -81,22 +81,22 @@ export const createServer = (options: ServerOptions ) => {
   httpd.pre(restify.plugins.pre.sanitizePath());
   httpd.pre(htmlByDefault(httpd));
 
-  httpd.use(restify.plugins.acceptParser(httpd.acceptable.filter(v => acceptable.includes(v))));
-  (options.bodyParser !== false) && httpd.use(restify.plugins.bodyParser(Object.assign({ mapParams: false }, options.bodyParser)));
-  httpd.use(restify.plugins.queryParser(Object.assign({ mapParams: false }, options.queryParser)));
-  httpd.use(restify.plugins.requestLogger(options.requestLogger));
-  httpd.use(restify.plugins.fullResponse());
-
-  if (process.env['NODE_ENV'] !== 'development') {
-    httpd.use(restify.plugins.gzipResponse());
-  }
-
-  httpd.on('after', restifyBunyanLogger());
-
   httpd.pre(permissionsPolicy);
   httpd.pre(preventClickjacking);
   httpd.pre(preventMimeSniffing);
   httpd.pre(noCacheByDefault);
+
+  httpd.pre(restify.plugins.acceptParser(httpd.acceptable.filter(v => acceptable.includes(v))));
+  (options.bodyParser !== false) && httpd.pre(restify.plugins.bodyParser(Object.assign({ mapParams: false }, options.bodyParser)));
+  httpd.pre(restify.plugins.queryParser(Object.assign({ mapParams: false }, options.queryParser)));
+  httpd.pre(restify.plugins.requestLogger(options.requestLogger));
+  httpd.pre(restify.plugins.fullResponse());
+
+  if (process.env['NODE_ENV'] !== 'development') {
+    httpd.pre(restify.plugins.gzipResponse());
+  }
+
+  httpd.on('after', restifyBunyanLogger());
 
   httpd.get(options.liveness || '/healthz', liveness);
 
