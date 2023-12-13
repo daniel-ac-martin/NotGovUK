@@ -6,10 +6,19 @@
   margin: 1em 0;
 
   &__stories {
+    position: relative;
     border-width: 0 0 1px 0;
     border-style: inherit;
     border-color: inherit;
     padding: 1.5em;
+  }
+
+  &__frame {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    max-width: 100%;
+    border: none;
   }
 
   &__code {

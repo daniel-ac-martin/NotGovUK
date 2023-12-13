@@ -2,6 +2,7 @@ import { FC, ReactNode, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
 import { StaticRouter } from 'react-router';
+import Frame from 'react-frame-component';
 import { format } from 'prettier/standalone';
 import parserHtml from 'prettier/parser-html';
 import parserBabel from 'prettier/parser-babel';
@@ -68,11 +69,24 @@ export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, clas
   const markup = renderToMarkup(children);
   const html = prettyHtmlFromMemo(markup);
   const react = prettyJsxFromMemo(source);
+  const wrappedHTML = `<!doctype html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="root">
+      ${markup}
+    </div>
+  </body>
+</html>
+`;
 
   return (
     <div {...attrs} id={id} className={classes()}>
       <div className={classes('stories')}>
-        {children}
+        <Frame className={classes('frame')} initialContent={wrappedHTML} mountTarget="#root">
+          {children}
+        </Frame>
       </div>
       <Tabs className={classes('code')} items={[
         {
