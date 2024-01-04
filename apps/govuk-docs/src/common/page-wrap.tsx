@@ -18,8 +18,9 @@ export const PageWrap: FC<PageProps> = ({ children }) => {
       footerContent={(
         <Fragment>
           Copyright (C) 2019, 2020, 2021 Crown Copyright<br />
-          Copyright (C) 2019, 2020, 2021 <A href="https://github.com/daniel-ac-martin">Daniel A.C. Martin</A>
-      </Fragment>
+          Copyright (C) 2019, 2020, 2021 <A href="https://github.com/daniel-ac-martin">Daniel A.C. Martin</A><br />
+          NotGovUK operates independently from <A href="https://gov.uk">GOV.UK</A> and is not affiliated, endorsed or supported by HM Government
+        </Fragment>
       )}
       navigation={navigation}
       meta={[
