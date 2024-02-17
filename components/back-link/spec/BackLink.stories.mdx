@@ -1,5 +1,6 @@
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
 import { BackLink } from '../src/BackLink';
+import { Panel } from '@not-govuk/panel';
 import readMe from '../README.md';
 
 <Meta
@@ -48,14 +49,28 @@ Make sure the link takes users to the previous page they were on, in the state t
 
 If this is not possible, you should hide the back link when JavaScript is not available.
 
-## Stories
-### Standard
-
-A standard back link.
-
 <Preview>
   <Story name="Standard">
     <BackLink href="#" />
+  </Story>
+</Preview>
+
+Using the default link text (‘Back’) is ideal for services with a simple journey. For example, [applying for a National Insurance number]. Users will only ever go back to the previous page in the service.
+
+For more complex user journeys, consider using different link text, like ‘Go back to [page]’. For example, in an admin system with many different areas. In this case, if you used ‘Back’, it might not be clear to users what they are going back to.
+
+
+### Back links on dark backgrounds
+
+Use the `govuk-back-link--inverse` modifier class to show a white link on a dark background – for example, in headers, custom components, and patterns with darker backgrounds.
+
+Make sure all users can see the back link – the background colour [must have a contrast ratio of at least 4.5:1] with white.
+
+<Preview>
+  <Story name="Dark backgrounds">
+    <Panel classModifiers="interruption">
+      <BackLink classModifiers="inverse" href="#" />
+    </Panel>
   </Story>
 </Preview>
 
@@ -80,3 +95,7 @@ A back link which relies on Javascript to go back as no `href` propery has been 
     <BackLink />
   </Story>
 </Preview>
+
+
+[applying for a National Insurance number]: https://www.gov.uk/apply-national-insurance-number
+[must have a contrast ratio of at least 4.5:1]: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html

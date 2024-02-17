@@ -5,10 +5,6 @@ About NotGovUK
 that provides [support for writing internal applications] in addition to
 public ones. (See also: [Design decisions])
 
-> **Warning:** NotGovUK is a work in progress and should currently only
-> be used in production by brave souls*.
-> (* As well as those with nowhere else to turn!)
-
 In addition to the components themselves, a full framework is provided
 enabling you to:
 1. quickly prototype services
@@ -18,6 +14,10 @@ enabling you to:
 5. quickly set-up Continuous Integration (CI)
 6. work to common standards
 (See also: [Getting started])
+
+> **Warning:** Whilst the _components_ are fairly mature, the NotGovUK
+> _framework_ is a work in progress and should currently only be used in
+> production by those prepared to contribute bug-fixes.
 
 
 What is NotGovUK suitable for?
@@ -78,7 +78,7 @@ even provides extra features.
 naming things is hard and it might not.
 
 
--- Daniel Martin, December 2019 (updated August 2020).
+-- Daniel Martin, December 2019 (updated February 2024).
 
 
 [NotGovUK]: https://not-gov.uk/

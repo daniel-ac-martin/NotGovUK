@@ -1,6 +1,7 @@
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
 import { Tag } from '@not-govuk/tag';
 import { Aside } from '@not-govuk/aside';
+import { StartButton } from '@not-govuk/button';
 import { GovUKPage, NotGovUKPage, Page } from '../src';
 import readMe from '../README.md';
 
@@ -35,6 +36,7 @@ A fully branded page with content sandwiched between the header and footer.
       phase="alpha"
       serviceName="My service"
       serviceHref="#"
+      useTudorCrown
     >
       <div className="govuk-grid-row">
         <div className="govuk-grid-column-two-thirds">
@@ -154,6 +156,11 @@ A page suitable for dashboards. This is achieved by providing the `dark` classMo
 <Preview>
   <Story name="Dark mode">
     <NotGovUKPage
+      breadcrumbs={[
+        { href: '', text: 'Home' },
+        { href: '', text: 'Passports, travel and living abroad' },
+        { href: '', text: 'Travel abroad' },
+      ]}
       classModifiers="dark"
       department="home-office"
       maxContentsWidth="690"
@@ -175,11 +182,12 @@ A page suitable for dashboards. This is achieved by providing the `dark` classMo
             My page
           </h1>
           <p>My content</p>
+          <StartButton href="#" />
         </div>
         <div className="govuk-grid-column-one-third">
           <aside>
             <h2>Did you know?</h2>
-            <p>NotGovUK can cater for both public and internal websites.</p>
+            <p><a href="#">NotGovUK</a> can cater for both public and internal websites.</p>
           </aside>
         </div>
       </div>

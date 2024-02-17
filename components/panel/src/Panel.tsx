@@ -5,7 +5,7 @@ import '../assets/Panel.scss';
 
 export type PanelProps = StandardProps & {
   /** Heading of the panel */
-  title: string
+  title?: string
 };
 
 export const Panel: FC<PanelProps> = ({ children, classBlock, classModifiers, className, title, ...attrs }) => {
@@ -13,7 +13,9 @@ export const Panel: FC<PanelProps> = ({ children, classBlock, classModifiers, cl
 
   return (
     <div {...attrs} className={classes()}>
-      <h1 className={classes('title')}>{title}</h1>
+      { !title ? null : (
+        <h1 className={classes('title')}>{title}</h1>
+      ) }
       <div className={classes('body')}>
         {children}
       </div>

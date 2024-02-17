@@ -4,6 +4,7 @@ import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
 import { CrownLogo } from './CrownLogo';
 import { CoatLogo } from './CoatLogo';
+import { TudorCrownLogo } from './TudorCrownLogo';
 
 import '../assets/Header.scss';
 
@@ -35,6 +36,8 @@ export type HeaderProps = StandardProps & {
   signOutHref?: string
   /** Sign out link text */
   signOutText?: string
+  /** Whether to use the tudor crown of King Charles III */
+  useTudorCrown?: boolean
 };
 
 const departmentMap = {
@@ -90,6 +93,7 @@ export const Header: FC<HeaderProps> = ({
   serviceName,
   signOutHref,
   signOutText = 'Sign out',
+  useTudorCrown = false,
   ...attrs
 }) => {
   const classes = classBuilder('govuk-header', classBlock, classModifiers, className);
@@ -111,7 +115,13 @@ export const Header: FC<HeaderProps> = ({
               {
                 govUK
                 ? (
-                  <CrownLogo aria-hidden="true" focusable="false" className={classes('logotype-crown')} height="30" width="36" fallback={{ className: classes('logotype-crown-fallback-image'), width: 36, height: 32 }} />
+                  useTudorCrown
+                  ? (
+                    <TudorCrownLogo aria-hidden="true" focusable="false" className={classes('logotype-crown')} height="30" width="32" fallback={{ className: classes('logotype-crown-fallback-image'), width: 32, height: 30 }} />
+                  )
+                  : (
+                    <CrownLogo aria-hidden="true" focusable="false" className={classes('logotype-crown')} height="30" width="36" fallback={{ className: classes('logotype-crown-fallback-image'), width: 36, height: 32 }} />
+                  )
                 )
                 : (
                   <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype-coat')} height="30" width="36" fallback={{ className: classes('logotype-coat-fallback-image') }} />
