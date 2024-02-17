@@ -61,6 +61,7 @@ export const Page: FC<PageProps> = ({
   signOutHref,
   signOutText,
   title: _title,
+  useTudorCrown = false,
   ...attrs
 }) => {
   const classModifiers = (
@@ -81,7 +82,8 @@ export const Page: FC<PageProps> = ({
     serviceHref,
     serviceName,
     signOutHref,
-    signOutText
+    signOutText,
+    useTudorCrown
   };
   const footerProps = {
     govUK,
