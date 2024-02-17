@@ -1,2 +1,10 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/govuk/components/panel/_index";
+
+.govuk-panel {
+  &--interruption {
+    @extend .govuk-panel--confirmation;
+    background: govuk-colour("blue");
+    text-align: left !important;
+  }
+}
