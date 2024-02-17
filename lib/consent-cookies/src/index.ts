@@ -35,7 +35,7 @@ export const consentCookies = ({
   secret,
   ...defaults
 }: ConsentCookiesOptions): Middleware => {
-  const cryptr = new Cryptr(secret);
+  const cryptr = new Cryptr(secret, { encoding: 'base64' });
   const encodeSecure = (v: any) => cryptr.encrypt(encodeClear(v));
   const decodeSecure = (v: any, req?: Request) => {
     try {
