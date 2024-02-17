@@ -2,6 +2,7 @@ import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
 import { ButtonGroup } from '@not-govuk/button-group';
 import { A } from '@not-govuk/link';
 import { Tag } from '@not-govuk/tag';
+import { Panel } from '@not-govuk/panel';
 import { Button, StartButton, SubmitButton } from '../src/Button';
 import readMe from '../README.md';
 
@@ -129,6 +130,21 @@ the colour or will understand what it signifies. Make sure the context and
 button text make clear what will happen if the user selects it.
 
 
+### Buttons on dark backgrounds
+
+Use the `govuk-button--inverse` modifier class to show white buttons on dark backgrounds – for example, in headers, custom components, and patterns with darker backgrounds.
+
+Make sure all users can see the button – the white button and background colour [must have a contrast ratio of at least 3:1].
+
+<Preview>
+  <Story name="Dark backgrounds">
+    <Panel classModifiers="interruption">
+      <Button classModifiers="inverse">Create an account</Button>
+    </Panel>
+  </Story>
+</Preview>
+
+
 ### Disabled buttons
 
 Disabled buttons have poor contrast and can confuse some users, so avoid them if
@@ -235,3 +251,4 @@ When your button is not part of a form you will probably want it to be a hyperli
 [check answers]: https://design-system.service.gov.uk/patterns/check-answers/
 [start page]: https://design-system.service.gov.uk/patterns/start-pages/
 [group default and secondary buttons together]: https://design-system.service.gov.uk/components/button/#grouping-buttons
+[must have a contrast ratio of at least 3:1]: https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html
