@@ -1,4 +1,5 @@
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
+import { Panel } from '@not-govuk/panel';
 import { Tag } from '@not-govuk/tag';
 import { A } from '../src/Link';
 import readMe from '../README.md';
@@ -44,17 +45,19 @@ Use this component wherever you would normally use a normal HTML `<a>` tag.
 It wraps the `Link` component from [React Router] and so allows the router to
 handle the links without a page reload when possible.
 
-
-## Stories
-### Standard
-
-A standard Link.
-
 <Preview>
   <Story name="Standard">
     <A href="#">Text</A>
   </Story>
 </Preview>
+
+
+### External links
+
+If it’s an external link to a non-government website, make that clear in the
+link text. For example, ‘read advice on writing link text from [name of
+organisation]’. There’s no need to say explicitly that you’re linking to an
+external site. [Do not use an external link icon].
 
 
 ### No visited state
@@ -90,29 +93,60 @@ risk of [reverse tabnabbing]. The following example shows how to do this in HTML
   </Story>
 </Preview>
 
+If you’re displaying lots of links together and want to save space and avoid repetition, consider doing both of the following:
 
-## Other information
-### External links
+- adding a line of text before the links saying ‘The following links open in a new tab’
+- including `<span class="govuk-visually-hidden">(opens in new tab)</span>` as part of the link text, so that part of the link text is visually hidden but still accessible to screen readers
 
-If it’s an external link to a non-government website, make that clear in the
-link text. For example, ‘read advice on writing link text from [name of
-organisation]’. There’s no need to say explicitly that you’re linking to an
-external site. [Do not use an external link icon].
+
+### Links on dark backgrounds
+
+Use the `govuk-link--inverse` modifier class to show white links on dark backgrounds – for example, in headers, custom components, and patterns with darker backgrounds.
+
+Make sure all users can see the links – the white links and background colour [must have a contrast ratio of at least 4.5:1].
+
+<Preview>
+  <Story name="Dark backgrounds">
+    <Panel classModifiers="interruption">
+      <p>
+        <A classModifiers="inverse" href="#">Text</A>
+      </p>
+    </Panel>
+  </Story>
+</Preview>
 
 
 ### Links without underlines
 
-Only remove underlines from links if:
-- the number or placement of links makes them difficult to scan or interact with
-  the element they’re part of, and
-- it’s clear to the user from the context that they’re links, even without the
-  underline
+Use the `govuk-link--no-underline` modifier class to remove underlines from links.
 
-For example, navigation links in a header won’t necessarily need underlines.
-Users will understand that they’re links because of their position on the page.
+Only do this if the context tells the user that the text is a link, even without the underline.
+
+For example, links in a header or side navigation might not need underlines. Users will understand that they’re links because of where they are, at the same place, across different pages.
+
+<Preview>
+  <Story name="No underline">
+    <A href="#" classModifier="no-underline">Text</A>
+  </Story>
+</Preview>
+
+
+### Links to change a language
+
+You can use links to allow a user to access the current content in a different language.
+
+When offering links to content in other languages, make sure:
+
+- the link’s text includes the name of the alternative language in both English and the source language
+- the link’s purpose is always clear, even when taken out of context
+- the link element includes an [`hreflang` attribute] that identifies the language of the linked page.
+
+For example, your link text could be ‘use [Service name] in [language]’.
 
 
 [React Router]: https://reacttraining.com/react-router/
 [can cause accessibility problems for people who aren’t able to visually perceive that the new tab has opened]: https://www.w3.org/TR/WCAG20-TECHS/G200.html
 [reverse tabnabbing]: https://owasp.org/www-community/attacks/Reverse_Tabnabbing
 [Do not use an external link icon]: https://designnotes.blog.gov.uk/2016/11/28/removing-the-external-link-icon-from-gov-uk/
+[must have a contrast ratio of at least 4.5:1]: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
+[`hreflang` attribute]: https://www.w3schools.com/tags/att_a_hreflang.asp
