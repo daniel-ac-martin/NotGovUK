@@ -1,7 +1,29 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/govuk/components/panel/_index";
+@import "govuk-frontend/govuk/components/button/_index";
+@import "govuk-frontend/govuk/core/_links";
+
+$govuk-inverse-button-text-colour: $govuk-brand-colour !default;
 
 .govuk-panel {
+  &--confirmation {
+    .govuk-button {
+      @extend .govuk-button--inverse;
+      color: $govuk-inverse-button-text-colour;
+
+      &:link,
+      &:visited,
+      &:active,
+      &:hover {
+        color: $govuk-inverse-button-text-colour;
+      }
+    }
+
+    a, .govuk-link {
+      @include govuk-link-style-inverse;
+    }
+  }
+
   &--interruption {
     @extend .govuk-panel--confirmation;
     background: govuk-colour("blue");
