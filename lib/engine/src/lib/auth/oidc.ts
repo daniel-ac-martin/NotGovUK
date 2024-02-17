@@ -160,7 +160,7 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
       //   1. We don't know what else is in the session
       //   2. Subsequent encryption will increase the size of the data
       const cookieLimit = 4096;
-      const encryptionCost = 2.2; // This is an estimate! - This should be reduced to 1.5 when we have base64 encoding
+      const encryptionCost = 1.5; // This is an estimate!
       const smallEnough = (v: object) => (
         JSON.stringify(v).length * encryptionCost <= cookieLimit
       );
