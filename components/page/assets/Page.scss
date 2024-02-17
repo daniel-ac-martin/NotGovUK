@@ -1,6 +1,12 @@
 @import "@not-govuk/sass-base";
+@import "govuk-frontend/govuk/components/back-link/_index";
+@import "govuk-frontend/govuk/components/breadcrumbs/_index";
+@import "govuk-frontend/govuk/components/button/_index";
+@import "govuk-frontend/govuk/core/_links";
 @import "govuk-frontend/govuk/objects/_template";
 @import "govuk-frontend/govuk/objects/_main-wrapper";
+
+$govuk-inverse-button-text-colour: $govuk-brand-colour !default;
 
 .not-govuk-page {
   @extend .govuk-template__body;
@@ -22,6 +28,30 @@
   &--dark {
     background-color: $not-govuk-dark-mode-background-colour;
     color: $not-govuk-dark-mode-text-colour;
+
+    .govuk-back-link {
+      @extend .govuk-back-link--inverse;
+    }
+
+    .govuk-breadcrumbs {
+      @extend .govuk-breadcrumbs--inverse;
+    }
+
+    .govuk-button {
+      @extend .govuk-button--inverse;
+
+      &,
+      &:link,
+      &:visited,
+      &:active,
+      &:hover {
+        color: $govuk-inverse-button-text-colour;
+      }
+    }
+
+    a, .govuk-link {
+      @extend .govuk-link--inverse;
+    }
   }
 
   &__body {
