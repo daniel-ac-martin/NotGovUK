@@ -1997,7 +1997,7 @@ importers:
       fork-ts-checker-webpack-plugin: ^8.0.0
       html-loader: ^4.2.0
       ignore-loader: ^0.1.2
-      mini-css-extract-plugin: ^2.7.7
+      mini-css-extract-plugin: ^2.8.0
       node-loader: ^2.0.0
       resolve-url-loader: ^5.0.0
       sass: 1.64.2
@@ -2024,7 +2024,7 @@ importers:
       fork-ts-checker-webpack-plugin: 8.0.0
       html-loader: 4.2.0
       ignore-loader: 0.1.2
-      mini-css-extract-plugin: 2.7.7
+      mini-css-extract-plugin: 2.8.0
       node-loader: 2.0.0
       resolve-url-loader: 5.0.0
       sass: 1.64.2
@@ -14730,13 +14730,14 @@ packages:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
 
-  /mini-css-extract-plugin/2.7.7:
-    resolution: {integrity: sha512-+0n11YGyRavUR3IlaOzJ0/4Il1avMvJ1VJfhWfCn24ITQXhRr1gghbhhrda6tgtNcpZaWKdSuwKq20Jb7fnlyw==}
+  /mini-css-extract-plugin/2.8.0:
+    resolution: {integrity: sha512-CxmUYPFcTgET1zImteG/LZOy/4T5rTojesQXkSNBiquhydn78tfbCE9sjIjnJ/UcjNjOC1bphTCCW5rrS7cXAg==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
       schema-utils: 4.0.0
+      tapable: 2.2.1
     dev: false
 
   /minimalistic-assert/1.0.1:
