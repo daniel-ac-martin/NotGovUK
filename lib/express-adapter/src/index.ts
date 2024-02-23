@@ -51,8 +51,11 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
       switch (prop) {
         case 'end':
           return (chunk, encoding, callback) => {
-            target.end(chunk, encoding, callback);
-            return next(false);
+            (target as any)._flushed = true; // This is a workaround for a bug that emerges when using Restify's gzip plugin
+            return target.end(chunk, encoding, () => {
+              callback && callback();
+              return next(false);
+            });
           }
         case 'redirect':
           return (_code: number | string, _uri?: string) => {
