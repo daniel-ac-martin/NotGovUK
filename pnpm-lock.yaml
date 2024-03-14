@@ -38,7 +38,7 @@ importers:
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0
-      react-helmet-async: 1.3.0
+      react-helmet-async: 2.0.4
       react-router: 5.3.4
       react-router-dom: 5.3.4
       ts-jest: 29.1.2
@@ -82,7 +82,7 @@ importers:
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
-      react-helmet-async: 1.3.0_wcqkhtmu7mswc6yz4uyexck3ty
+      react-helmet-async: 2.0.4_wcqkhtmu7mswc6yz4uyexck3ty
       react-router: 5.3.4_react@16.14.0
       react-router-dom: 5.3.4_react@16.14.0
       ts-jest: 29.1.2_xanl3p34lwsjo2pltycbrvorsu
@@ -117,7 +117,7 @@ importers:
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0
-      react-helmet-async: 1.3.0
+      react-helmet-async: 2.0.4
       react-router: 5.3.4
       react-router-dom: 5.3.4
       serverless: 3.38.0
@@ -152,7 +152,7 @@ importers:
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
-      react-helmet-async: 1.3.0_wcqkhtmu7mswc6yz4uyexck3ty
+      react-helmet-async: 2.0.4_wcqkhtmu7mswc6yz4uyexck3ty
       react-router: 5.3.4_react@16.14.0
       react-router-dom: 5.3.4_react@16.14.0
       serverless: 3.38.0
@@ -193,7 +193,7 @@ importers:
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0
-      react-helmet-async: 1.3.0
+      react-helmet-async: 2.0.4
       react-router: 5.3.4
       react-router-dom: 5.3.4
       serverless: 3.38.0
@@ -232,7 +232,7 @@ importers:
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
-      react-helmet-async: 1.3.0_wcqkhtmu7mswc6yz4uyexck3ty
+      react-helmet-async: 2.0.4_wcqkhtmu7mswc6yz4uyexck3ty
       react-router: 5.3.4_react@16.14.0
       react-router-dom: 5.3.4_react@16.14.0
       serverless: 3.38.0
@@ -1937,7 +1937,7 @@ importers:
       '@types/react-dom': 16.9.24
       graphql: 15.8.0
       js-beautify: ^1.15.1
-      react-helmet-async: 1.3.0
+      react-helmet-async: 2.0.4
       restify-errors: ^8.0.2
       typescript: 4.9.5
     dependencies:
@@ -1951,7 +1951,7 @@ importers:
       '@types/react': 16.14.57
       '@types/react-dom': 16.9.24
       graphql: 15.8.0
-      react-helmet-async: 1.3.0
+      react-helmet-async: 2.0.4
       typescript: 4.9.5
 
   lib/storybook-preset:
@@ -17675,35 +17675,31 @@ packages:
     resolution: {integrity: sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==}
     dev: false
 
-  /react-fast-compare/3.2.0:
-    resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
+  /react-fast-compare/3.2.2:
+    resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
     dev: true
 
-  /react-helmet-async/1.3.0:
-    resolution: {integrity: sha512-9jZ57/dAn9t3q6hneQS0wukqC2ENOBgMNVEhb/ZG9ZSxUetzVIw4iAmEU38IaVg3QGYauQPhSeUTuIUtFglWpg==}
+  /react-helmet-async/2.0.4:
+    resolution: {integrity: sha512-yxjQMWposw+akRfvpl5+8xejl4JtUlHnEBcji6u8/e6oc7ozT+P9PNTWMhCbz2y9tc5zPegw2BvKjQA+NwdEjQ==}
     peerDependencies:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.21.0
       invariant: 2.2.4
-      prop-types: 15.8.1
-      react-fast-compare: 3.2.0
+      react-fast-compare: 3.2.2
       shallowequal: 1.1.0
     dev: true
 
-  /react-helmet-async/1.3.0_wcqkhtmu7mswc6yz4uyexck3ty:
-    resolution: {integrity: sha512-9jZ57/dAn9t3q6hneQS0wukqC2ENOBgMNVEhb/ZG9ZSxUetzVIw4iAmEU38IaVg3QGYauQPhSeUTuIUtFglWpg==}
+  /react-helmet-async/2.0.4_wcqkhtmu7mswc6yz4uyexck3ty:
+    resolution: {integrity: sha512-yxjQMWposw+akRfvpl5+8xejl4JtUlHnEBcji6u8/e6oc7ozT+P9PNTWMhCbz2y9tc5zPegw2BvKjQA+NwdEjQ==}
     peerDependencies:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.21.0
       invariant: 2.2.4
-      prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
-      react-fast-compare: 3.2.0
+      react-fast-compare: 3.2.2
       shallowequal: 1.1.0
     dev: true
 
