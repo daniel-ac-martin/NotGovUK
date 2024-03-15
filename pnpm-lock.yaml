@@ -1776,7 +1776,7 @@ importers:
       apollo-server-restify: ^1.3.6
       base64url: ^3.0.1
       graphql: 15.8.0
-      openid-client: ^5.6.4
+      openid-client: ^5.6.5
       passport: ^0.7.0
       passport-http: ^0.3.0
       serverless-http: ^3.2.0
@@ -1788,7 +1788,7 @@ importers:
       '@not-govuk/server-renderer': link:../server-renderer
       apollo-server-restify: 1.3.6_graphql@15.8.0
       base64url: 3.0.1
-      openid-client: 5.6.4
+      openid-client: 5.6.5
       passport: 0.7.0
       passport-http: 0.3.0
       serverless-http: 3.2.0
@@ -15067,8 +15067,8 @@ packages:
       '@sideway/pinpoint': 2.0.0
     dev: true
 
-  /jose/4.15.4:
-    resolution: {integrity: sha512-W+oqK4H+r5sITxfxpSU+MMdr/YSWGvgZMQDIsNoBDGGy4i7GBPTtvFKibQzW06n3U3TqHjhvBJsirShsEJ6eeQ==}
+  /jose/4.15.5:
+    resolution: {integrity: sha512-jc7BFxgKPKi94uOvEmzlSWFFe2+vASyXaKUpdQKatWAESU2MWjDfFf0fdfc83CDKcA5QecabZeNLyfhe3yKNkg==}
     dev: false
 
   /js-beautify/1.15.1:
@@ -16522,10 +16522,10 @@ packages:
     hasBin: true
     dev: false
 
-  /openid-client/5.6.4:
-    resolution: {integrity: sha512-T1h3B10BRPKfcObdBklX639tVz+xh34O7GjofqrqiAQdm7eHsQ00ih18x6wuJ/E6FxdtS2u3FmUGPDeEcMwzNA==}
+  /openid-client/5.6.5:
+    resolution: {integrity: sha512-5P4qO9nGJzB5PI0LFlhj4Dzg3m4odt0qsJTfyEtZyOlkgpILwEioOhVVJOrS1iVH494S4Ee5OCjjg6Bf5WOj3w==}
     dependencies:
-      jose: 4.15.4
+      jose: 4.15.5
       lru-cache: 6.0.0
       object-hash: 2.2.0
       oidc-token-hash: 5.0.3
