@@ -45,7 +45,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.90.3
       webpack-cli: 5.1.4
-      webpack-dev-middleware: 6.1.1
+      webpack-dev-middleware: 6.1.2
       webpack-hot-middleware: 2.26.1
     devDependencies:
       '@apollo/client': 3.9.7_wcqkhtmu7mswc6yz4uyexck3ty
@@ -89,7 +89,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.90.3_webpack-cli@5.1.4
       webpack-cli: 5.1.4_webpack@5.90.3
-      webpack-dev-middleware: 6.1.1_webpack@5.90.3
+      webpack-dev-middleware: 6.1.2_webpack@5.90.3
       webpack-hot-middleware: 2.26.1
 
   apps/govuk-docs:
@@ -126,7 +126,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.90.3
       webpack-cli: 5.1.4
-      webpack-dev-middleware: 6.1.1
+      webpack-dev-middleware: 6.1.2
       webpack-hot-middleware: 2.26.1
     devDependencies:
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
@@ -161,7 +161,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.90.3_webpack-cli@5.1.4
       webpack-cli: 5.1.4_webpack@5.90.3
-      webpack-dev-middleware: 6.1.1_webpack@5.90.3
+      webpack-dev-middleware: 6.1.2_webpack@5.90.3
       webpack-hot-middleware: 2.26.1
 
   apps/govuk-template:
@@ -202,7 +202,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.90.3
       webpack-cli: 5.1.4
-      webpack-dev-middleware: 6.1.1
+      webpack-dev-middleware: 6.1.2
       webpack-hot-middleware: 2.26.1
     devDependencies:
       '@apollo/client': 3.9.7_w6in7dnkg5kotumk4eeh423o7e
@@ -241,7 +241,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.90.3_webpack-cli@5.1.4
       webpack-cli: 5.1.4_webpack@5.90.3
-      webpack-dev-middleware: 6.1.1_webpack@5.90.3
+      webpack-dev-middleware: 6.1.2_webpack@5.90.3
       webpack-hot-middleware: 2.26.1
 
   components-internal/anchor:
@@ -8373,7 +8373,7 @@ packages:
     resolution: {integrity: sha512-SklLlklFBfTyIXo1iWXxzeytjlysWfj5QfIcRJrCc7MgzuCjnZOHXviQwe81iFGq9ZkCUXAg2fpbZdHhj5lSWA==}
     deprecated: This is a stub types definition. webpack-dev-middleware provides its own type definitions, so you do not need this installed.
     dependencies:
-      webpack-dev-middleware: 6.1.1
+      webpack-dev-middleware: 6.1.2
     transitivePeerDependencies:
       - webpack
     dev: true
@@ -20446,8 +20446,8 @@ packages:
       webpack: 5.90.3_webpack-cli@5.1.4
     dev: true
 
-  /webpack-dev-middleware/6.1.1:
-    resolution: {integrity: sha512-y51HrHaFeeWir0YO4f0g+9GwZawuigzcAdRNon6jErXy/SqV/+O6eaVAzDqE6t3e3NpGeR5CS+cCDaTC+V3yEQ==}
+  /webpack-dev-middleware/6.1.2:
+    resolution: {integrity: sha512-Wu+EHmX326YPYUpQLKmKbTyZZJIB8/n6R09pTmB03kJmnMsVPTo9COzHZFr01txwaCAuZvfBJE4ZCHRcKs5JaQ==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -20462,8 +20462,8 @@ packages:
       schema-utils: 4.0.0
     dev: true
 
-  /webpack-dev-middleware/6.1.1_webpack@5.90.3:
-    resolution: {integrity: sha512-y51HrHaFeeWir0YO4f0g+9GwZawuigzcAdRNon6jErXy/SqV/+O6eaVAzDqE6t3e3NpGeR5CS+cCDaTC+V3yEQ==}
+  /webpack-dev-middleware/6.1.2_webpack@5.90.3:
+    resolution: {integrity: sha512-Wu+EHmX326YPYUpQLKmKbTyZZJIB8/n6R09pTmB03kJmnMsVPTo9COzHZFr01txwaCAuZvfBJE4ZCHRcKs5JaQ==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       webpack: ^5.0.0
