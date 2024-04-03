@@ -49,7 +49,7 @@ runs:
 
     - name: ZAP Scan (full)
       if: ${{ !inputs.smoke }}
-      uses: zaproxy/action-full-scan@v0.9.0
+      uses: zaproxy/action-full-scan@v0.10.0
       with:
         token: ${{ inputs.token }}
         target: ${{ steps.info.outputs.target }}
