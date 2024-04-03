@@ -3,7 +3,7 @@ import { createWriteStream } from 'fs';
 import { GraphQLSchema } from 'graphql';
 import { ComponentType } from 'react';
 import serverless from 'serverless-http';
-import restify, { IsReady, LogLevelString, LoggerOptions, Router } from '@not-govuk/restify';
+import restify, { CSPSources, IsReady, LogLevelString, LoggerOptions, Router, cspNone } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { consentCookies } from '@not-govuk/consent-cookies';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
@@ -45,6 +45,7 @@ export type EngineOptions = {
     secure?: boolean
   }
   env: NodeEnv
+  frameAncestors?: CSPSources
   graphQL?: {
     schema: GraphQLSchema
   }
@@ -74,6 +75,7 @@ export const engine = async ({
   auth: authOptions,
   cookies: cookieOptions,
   env,
+  frameAncestors = cspNone,
   graphQL: _graphQL,
   httpd: { host, port },
   isReady,
@@ -139,6 +141,7 @@ export const engine = async ({
       'application/xhtml+xml; q=0.2': formatHTML,
       'text/html; q=0.2': formatHTML
     },
+    frameAncestors,
     isReady,
     logger
   });
@@ -255,6 +258,6 @@ export const engine = async ({
 
 export default engine;
 export { AuthMethod, SessionStore };
-export { Router, errors } from '@not-govuk/restify';
+export { Router, cspNone, cspSelf, errors } from '@not-govuk/restify';
 export { defaultsFalse, defaultsTrue } from './lib/config-helpers';
 export type { IsReady };

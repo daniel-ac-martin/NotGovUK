@@ -35,6 +35,7 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
       secure: config.cookies.secure
     },
     env: config.env,
+    frameAncestors: config.frameAncestors,
     graphQL: {
       schema: graphQLSchema
     },

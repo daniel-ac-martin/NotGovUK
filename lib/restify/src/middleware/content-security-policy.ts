@@ -1,32 +1,57 @@
 import { Middleware } from './common';
 
-const csp = (nonce: string) => ({
-  // Fetch directives
-  'default-src': 'none', // Secure by default!
-  'connect-src': 'self', // Only connect (with JS etc) to ourselves
-  'font-src': 'self', // Only load our own fonts
-  'frame-src': 'self', // Only load our own pages in frames (although we currently block this anyway)
-  'img-src': 'self', // Only load our own images (no hot-linking) - I think this is a good idea as it helps prevent tracking
-  'manifest-src': 'self', // Only load our own manifests
-  'media-src': 'self', // Only load our own media
-  'prefetch-src': 'self', // Only pre-fetch from ourselves
-  'script-src': (
-    process.env.NODE_ENV === 'development'
-      ? [ 'self', `nonce-${nonce}`, 'unsafe-eval' ] // Looser policy for HMR in local-dev environment
-      : [ 'self', `nonce-${nonce}` ] // Only load our own (java)scripts
-  ),
-  'style-src': [ 'self', 'unsafe-inline' ], // Only load our own CSS, but allow inline styles
-  // Navigation directives
-  'form-action': 'self', // Form submissions must come back to us
-  'frame-ancestors': 'none' // Pages cannot be shown inside frames at all. Consider: 'self'
-});
+
+export type Source = '\'none\'' | '\'self\'' | string
+export type Sources = Source | Source[]
+
+export type CSPOptions = {
+  frameAncestors?: Sources
+};
+
+export const none: Source = "'none'";
+export const self: Source = "'self'";
+export const unsafeEval: Source = "'unsafe-eval'";
+export const unsafeInline: Source = "'unsafe-inline'";
+
+const id = <T>(v: T): T => v;
+
+const csp = ({
+  frameAncestors: _frameAncestors
+}: CSPOptions, nonce: string) => {
+  const frameAncestors = (
+    Array.isArray(_frameAncestors)
+      ? _frameAncestors
+      : [_frameAncestors]
+  ).filter(id);
+
+  return {
+    // Fetch directives
+    'default-src': none, // Secure by default!
+    'connect-src': self, // Only connect (with JS etc) to ourselves
+    'font-src': self, // Only load our own fonts
+    'frame-src': self, // Only load our own pages in frames (although we currently block this anyway)
+    'img-src': self, // Only load our own images (no hot-linking) - I think this is a good idea as it helps prevent tracking
+    'manifest-src': self, // Only load our own manifests
+    'media-src': self, // Only load our own media
+    'prefetch-src': self, // Only pre-fetch from ourselves
+    'script-src': (
+      process.env.NODE_ENV === 'development'
+        ? [ self, `'nonce-${nonce}'`, unsafeEval ] // Looser policy for HMR in local-dev environment
+        : [ self, `'nonce-${nonce}'` ] // Only load our own (java)scripts
+    ),
+    'style-src': [ self, unsafeInline ], // Only load our own CSS, but allow inline styles
+    // Navigation directives
+    'form-action': self, // Form submissions must come back to us
+    'frame-ancestors': frameAncestors.length && frameAncestors || none // Pages cannot be shown inside frames at all. Consider: self
+  };
+};
 
 const isDefined = (v: any): boolean => (
-  v !== undefined
+  v !== undefined && v !== ''
 );
 
-const policy = (nonce: string) => {
-  const cspObj = csp(nonce);
+const policy = (options: CSPOptions, nonce: string) => {
+  const cspObj = csp(options, nonce);
 
   return Object.keys(cspObj)
     .map(directive => {
@@ -39,7 +64,7 @@ const policy = (nonce: string) => {
       const values = (
         valueArr
           .filter(isDefined)
-          .map(v => `'${v}'`)
+          .map(v => `${v}`)
           .join(' ')
       );
 
@@ -53,7 +78,7 @@ const policy = (nonce: string) => {
     .join('; ')
 };
 
-export const contentSecurityPolicy: Middleware = (_req, res, next) => {
+export const contentSecurityPolicy = (options: CSPOptions = {}): Middleware => (_req, res, next) => {
   // Generate nonce
   const nonce = Math.random()
     .toString(36)
@@ -63,7 +88,7 @@ export const contentSecurityPolicy: Middleware = (_req, res, next) => {
   res.nonce = nonce;
 
   // Set CSP
-  res.header('Content-Security-Policy', policy(nonce));
+  res.header('Content-Security-Policy', policy(options, nonce));
 
   next();
 };
