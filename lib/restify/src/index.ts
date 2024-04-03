@@ -4,7 +4,7 @@ import stoppable from 'stoppable';
 import { liveness } from './middleware/health-check';
 import { htmlByDefault } from './middleware/html-by-default';
 import { permissionsPolicy } from './middleware/permissions-policy';
-import { preventClickjacking } from './middleware/prevent-clickjacking';
+import { CSPSources, preventClickjacking } from './middleware/prevent-clickjacking';
 import { preventMimeSniffing } from './middleware/prevent-mime-sniffing';
 import { noCacheByDefault } from './middleware/no-cache-by-default';
 import { IsReady, readiness } from './middleware/readiness';
@@ -17,6 +17,7 @@ export type LoggerOptions = Omit<_LoggerOptions, 'name'> & {
 
 export type ServerOptions = _ServerOptions & {
   bodyParser?: plugins.BodyParserOptions | false
+  frameAncestors?: CSPSources
   grace?: number
   isReady?: IsReady
   liveness?: string
@@ -82,7 +83,7 @@ export const createServer = (options: ServerOptions ) => {
   httpd.pre(htmlByDefault(httpd));
 
   httpd.pre(permissionsPolicy);
-  httpd.pre(preventClickjacking);
+  httpd.pre(preventClickjacking({ frameAncestors: options.frameAncestors }));
   httpd.pre(preventMimeSniffing);
   httpd.pre(noCacheByDefault);
 
@@ -115,6 +116,7 @@ export const restify = {
 export default restify;
 export * as errors from 'restify-errors';
 export { Router } from './lib/router';
-export type { IsReady };
+export { cspNone, cspSelf } from './middleware/prevent-clickjacking';
+export type { IsReady, CSPSources };
 export type { LogLevelString } from './lib/logger';
 export type { Next, Request, Response, Middleware } from './middleware/common';

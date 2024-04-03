@@ -1,11 +1,53 @@
-import { contentSecurityPolicy } from './content-security-policy';
+import { Sources as CSPSources, contentSecurityPolicy, none as cspNone, self as cspSelf } from './content-security-policy';
 
 import type { Middleware } from './common';
 
-export const preventClickjacking: Middleware = (req, res, next) => {
-  res.header('X-Frame-Options', 'DENY'); // Consider: SAMEORIGIN
+export type PreventClickJackingOptions = {
+  frameAncestors?: CSPSources
+};
 
-  contentSecurityPolicy(req, res, next);
+const id = <T>(v: T): T => v;
+
+export const preventClickjacking = ({
+  frameAncestors: _frameAncestors = cspNone // Consider: cspSelf
+}: PreventClickJackingOptions): Middleware => {
+  const frameAncestors = (
+    Array.isArray(_frameAncestors)
+      ? _frameAncestors
+      : [_frameAncestors]
+  ).filter(id);
+  const frameAncestor = (
+    frameAncestors.length > 1
+      ? 'multiple'
+      : frameAncestors[0]
+  ) || cspNone;
+  const frameOptions = (
+    frameAncestor === 'multiple'
+      ? null
+      : (
+        frameAncestor === cspSelf
+          ? 'SAMEORIGIN'
+          : 'DENY'
+      )
+  );
+  const cspMiddleware = contentSecurityPolicy({
+    frameAncestors: frameAncestors
+  });
+
+  return (req, res, next) => {
+    if (frameOptions !== null) {
+      res.header('X-Frame-Options', frameOptions);
+    }
+
+    cspMiddleware(req, res, next);
+  };
 };
 
 export default preventClickjacking;
+export {
+  cspNone,
+  cspSelf
+};
+export type {
+  CSPSources
+};
