@@ -188,7 +188,7 @@ mandatory prior to merging:
 [react-router]: https://reactrouter.com/
 [GitHub]: https://github.com/
 [GitHub Actions]: https://github.com/features/actions
-[install pnpm]: https://pnpm.js.org/en/installation
+[install pnpm]: https://pnpm.io/installation
 [Working on your project]: ./working-on-your-project
 [Chromatic]: https://www.chromatic.com/
 [log in to Chromatic]: https://www.chromatic.com/start
