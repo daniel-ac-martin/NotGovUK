@@ -94,6 +94,6 @@ See also: [Working on your project]
 [pull request]: https://github.com/daniel-ac-martin/NotGovUK/pulls
 [issue]: https://github.com/daniel-ac-martin/NotGovUK/issues
 [get in touch]: https://github.com/daniel-ac-martin/NotGovUK/issues/new
-[pnpm]: https://pnpm.js.org/en/installation
+[pnpm]: https://pnpm.io/installation
 [Storybook]: https://storybook.js.org/
 [Working on your project]: ./working-on-your-project
