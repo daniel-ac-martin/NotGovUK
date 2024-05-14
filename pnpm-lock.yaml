@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@apollo/client': 3.9.11
+      '@apollo/client': 3.10.3
       '@babel/core': 7.24.4
       '@babel/plugin-proposal-export-namespace-from': 7.18.9
       '@babel/preset-env': 7.24.4
@@ -48,7 +48,7 @@ importers:
       webpack-dev-middleware: 6.1.3
       webpack-hot-middleware: 2.26.1
     devDependencies:
-      '@apollo/client': 3.9.11_wcqkhtmu7mswc6yz4uyexck3ty
+      '@apollo/client': 3.10.3_wcqkhtmu7mswc6yz4uyexck3ty
       '@babel/core': 7.24.4
       '@babel/plugin-proposal-export-namespace-from': 7.18.9_@babel+core@7.24.4
       '@babel/preset-env': 7.24.4_@babel+core@7.24.4
@@ -166,7 +166,7 @@ importers:
 
   apps/govuk-template:
     specifiers:
-      '@apollo/client': 3.9.11
+      '@apollo/client': 3.10.3
       '@graphql-tools/schema': 9.0.19
       '@not-govuk/anchor-list': workspace:^0.8.6
       '@not-govuk/app-composer': workspace:^0.8.6
@@ -205,7 +205,7 @@ importers:
       webpack-dev-middleware: 6.1.3
       webpack-hot-middleware: 2.26.1
     devDependencies:
-      '@apollo/client': 3.9.11_dsr2gllpjkkwd53ut47thvcyku
+      '@apollo/client': 3.10.3_dsr2gllpjkkwd53ut47thvcyku
       '@graphql-tools/schema': 9.0.19_graphql@15.8.0
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
@@ -2159,8 +2159,8 @@ packages:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.25
 
-  /@apollo/client/3.9.11_dsr2gllpjkkwd53ut47thvcyku:
-    resolution: {integrity: sha512-H7e9m7cRcFO93tokwzqrsbnfKorkpV24xU30hFH5u2g6B+c1DMo/ouyF/YrBPdrTzqxQCjTUmds/FLmJ7626GA==}
+  /@apollo/client/3.10.3_dsr2gllpjkkwd53ut47thvcyku:
+    resolution: {integrity: sha512-4EIgZnFmRO1laWv3NCxlVIxcvimG63djuAXvyXhpQH3wkNMv9SykrasKRN08+z+cn/fVisBOLmkSRdyNyP9f4A==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
@@ -2188,7 +2188,7 @@ packages:
       prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
-      rehackt: 0.0.6_nhfnajythmqulrdwzj5xx6c5qy
+      rehackt: 0.1.0_nhfnajythmqulrdwzj5xx6c5qy
       response-iterator: 0.2.6
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
@@ -2198,8 +2198,8 @@ packages:
       - '@types/react'
     dev: true
 
-  /@apollo/client/3.9.11_wcqkhtmu7mswc6yz4uyexck3ty:
-    resolution: {integrity: sha512-H7e9m7cRcFO93tokwzqrsbnfKorkpV24xU30hFH5u2g6B+c1DMo/ouyF/YrBPdrTzqxQCjTUmds/FLmJ7626GA==}
+  /@apollo/client/3.10.3_wcqkhtmu7mswc6yz4uyexck3ty:
+    resolution: {integrity: sha512-4EIgZnFmRO1laWv3NCxlVIxcvimG63djuAXvyXhpQH3wkNMv9SykrasKRN08+z+cn/fVisBOLmkSRdyNyP9f4A==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
@@ -2226,7 +2226,7 @@ packages:
       prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
-      rehackt: 0.0.6_react@16.14.0
+      rehackt: 0.1.0_react@16.14.0
       response-iterator: 0.2.6
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
@@ -18035,8 +18035,8 @@ packages:
     dependencies:
       jsesc: 0.5.0
 
-  /rehackt/0.0.6_nhfnajythmqulrdwzj5xx6c5qy:
-    resolution: {integrity: sha512-l3WEzkt4ntlEc/IB3/mF6SRgNHA6zfQR7BlGOgBTOmx7IJJXojDASav+NsgXHFjHn+6RmwqsGPFgZpabWpeOdw==}
+  /rehackt/0.1.0_nhfnajythmqulrdwzj5xx6c5qy:
+    resolution: {integrity: sha512-7kRDOuLHB87D/JESKxQoRwv4DzbIdwkAGQ7p6QKGdVlY1IZheUnVhlk/4UZlNUVxdAXpyxikE3URsG067ybVzw==}
     peerDependencies:
       '@types/react': '*'
       react: '*'
@@ -18050,8 +18050,8 @@ packages:
       react: 16.14.0
     dev: true
 
-  /rehackt/0.0.6_react@16.14.0:
-    resolution: {integrity: sha512-l3WEzkt4ntlEc/IB3/mF6SRgNHA6zfQR7BlGOgBTOmx7IJJXojDASav+NsgXHFjHn+6RmwqsGPFgZpabWpeOdw==}
+  /rehackt/0.1.0_react@16.14.0:
+    resolution: {integrity: sha512-7kRDOuLHB87D/JESKxQoRwv4DzbIdwkAGQ7p6QKGdVlY1IZheUnVhlk/4UZlNUVxdAXpyxikE3URsG067ybVzw==}
     peerDependencies:
       '@types/react': '*'
       react: '*'
