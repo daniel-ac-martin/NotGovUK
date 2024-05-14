@@ -1803,7 +1803,7 @@ importers:
   lib/express-adapter:
     specifiers:
       '@not-govuk/restify': workspace:^0.8.6
-      '@types/express-serve-static-core': 4.17.43
+      '@types/express-serve-static-core': 4.19.0
       etag: ^1.8.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1813,7 +1813,7 @@ importers:
       etag: 1.8.1
     devDependencies:
       '@not-govuk/restify': link:../restify
-      '@types/express-serve-static-core': 4.17.43
+      '@types/express-serve-static-core': 4.19.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.1.2_67xnt3v64q2pgz6kguni4h37hu
@@ -8113,8 +8113,8 @@ packages:
   /@types/estree/1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
-  /@types/express-serve-static-core/4.17.43:
-    resolution: {integrity: sha512-oaYtiBirUOPQGSWNGPWnzyAFJ0BP3cwvN4oWZQY+zUBwpVIGsKUkpBpSztp74drYcjavs7SKFZ4DX1V2QeN8rg==}
+  /@types/express-serve-static-core/4.19.0:
+    resolution: {integrity: sha512-bGyep3JqPCRry1wq+O5n7oiBgGWmeIJXPjXXCo8EK0u8duZGSYar7cGqd3ML2JUsLGeB7fmc06KYo9fLGWqPvQ==}
     dependencies:
       '@types/node': 20.12.2
       '@types/qs': 6.9.7
@@ -8126,7 +8126,7 @@ packages:
     resolution: {integrity: sha512-Q4FmmuLGBG58btUnfS1c1r/NQdlp3DMfGDGig8WhfpA2YRUtEkxAjkZb0yvplJGYdF1fsQ81iMDcH24sSCNC/Q==}
     dependencies:
       '@types/body-parser': 1.19.2
-      '@types/express-serve-static-core': 4.17.43
+      '@types/express-serve-static-core': 4.19.0
       '@types/qs': 6.9.7
       '@types/serve-static': 1.15.1
     dev: true
