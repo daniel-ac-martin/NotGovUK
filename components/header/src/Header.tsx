@@ -46,6 +46,7 @@ const departmentMap = {
   'department-for-culture-media-sport': 'DCMS',
   'department-for-environment-food-rural-affairs': 'DEFRA',
   'department-for-work-pensions': 'DWP',
+  'foreign-commonwealth-development-office': 'FCDO',
   'foreign-commonwealth-office': 'FCO',
   'hm-revenue-customs': 'HMRC',
   'hm-treasury': 'HM Treasury',
@@ -63,8 +64,12 @@ const departmentText = (d: string) => (
         .split('-')
         .map(e => {
           switch (e) {
+            case 'and':
+              return '';
             case 'hm':
               return 'HM';
+            case 'for':
+              return '';
             case 'of':
               return 'o';
             case 'the':
