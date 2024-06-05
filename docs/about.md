@@ -13,7 +13,7 @@ enabling you to:
 4. document your project
 5. quickly set-up Continuous Integration (CI)
 6. work to common standards
-(See also: [Getting started])
+(See also: [Get started])
 
 > **Warning:** Whilst the _components_ are fairly mature, the NotGovUK
 > _framework_ is a work in progress and should currently only be used in
