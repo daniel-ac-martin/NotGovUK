@@ -1,2 +1,8 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/govuk/components/checkboxes";
+
+.govuk-checkboxes__label {
+  &::before {
+    background-color: govuk-colour("white");
+  }
+}
