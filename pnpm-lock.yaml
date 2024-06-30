@@ -121,7 +121,7 @@ importers:
       react-router: 5.3.4
       react-router-dom: 5.3.4
       serverless: 3.38.0
-      start-server-and-test: 2.0.3
+      start-server-and-test: 2.0.4
       ts-jest: 29.1.2
       typescript: 4.9.5
       webpack: 5.91.0
@@ -156,7 +156,7 @@ importers:
       react-router: 5.3.4_react@16.14.0
       react-router-dom: 5.3.4_react@16.14.0
       serverless: 3.38.0
-      start-server-and-test: 2.0.3
+      start-server-and-test: 2.0.4
       ts-jest: 29.1.2_67xnt3v64q2pgz6kguni4h37hu
       typescript: 4.9.5
       webpack: 5.91.0_webpack-cli@5.1.4
@@ -197,7 +197,7 @@ importers:
       react-router: 5.3.4
       react-router-dom: 5.3.4
       serverless: 3.38.0
-      start-server-and-test: 2.0.3
+      start-server-and-test: 2.0.4
       ts-jest: 29.1.2
       typescript: 4.9.5
       webpack: 5.91.0
@@ -236,7 +236,7 @@ importers:
       react-router: 5.3.4_react@16.14.0
       react-router-dom: 5.3.4_react@16.14.0
       serverless: 3.38.0
-      start-server-and-test: 2.0.3
+      start-server-and-test: 2.0.4
       ts-jest: 29.1.2_67xnt3v64q2pgz6kguni4h37hu
       typescript: 4.9.5
       webpack: 5.91.0_webpack-cli@5.1.4
@@ -8496,7 +8496,7 @@ packages:
     resolution: {integrity: sha512-3uT88kxg8lNzY8ay2ZjP44DKcRaTGztqeIvN2zHvhzIBH/uAPaL75aBtdNRKbA7xXoMbBt5kX0M00VKAnfOYlA==}
     dependencies:
       '@types/through': 0.0.30
-      rxjs: 7.8.0
+      rxjs: 7.8.1
 
   /@types/inquirer/9.0.7:
     resolution: {integrity: sha512-Q0zyBupO6NxGRZut/JdmqYKOnN95Eg5V8Csg3PGKkP+FnvsUZx1jAyK7fztIszxxMuoBA6E3KXWvdZVXIpx60g==}
@@ -9712,10 +9712,10 @@ packages:
       - debug
     dev: true
 
-  /axios/1.6.7_debug@4.3.4:
+  /axios/1.6.7_debug@4.3.5:
     resolution: {integrity: sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==}
     dependencies:
-      follow-redirects: 1.15.5_debug@4.3.4
+      follow-redirects: 1.15.5_debug@4.3.5
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -11510,6 +11510,18 @@ packages:
       supports-color: 8.1.1
     dev: true
 
+  /debug/4.3.5:
+    resolution: {integrity: sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: true
+
   /decamelize/1.2.0:
     resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
     engines: {node: '>=0.10.0'}
@@ -12933,16 +12945,6 @@ packages:
       inherits: 2.0.4
       readable-stream: 2.3.8
 
-  /follow-redirects/1.15.2:
-    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dev: false
-
   /follow-redirects/1.15.5:
     resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
     engines: {node: '>=4.0'}
@@ -12951,9 +12953,8 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: true
 
-  /follow-redirects/1.15.5_debug@4.3.4:
+  /follow-redirects/1.15.5_debug@4.3.5:
     resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
     engines: {node: '>=4.0'}
     peerDependencies:
@@ -12962,7 +12963,7 @@ packages:
       debug:
         optional: true
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.5
     dev: true
 
   /for-each/0.3.3:
@@ -14018,7 +14019,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.5
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -14216,7 +14217,7 @@ packages:
       mute-stream: 0.0.8
       ora: 5.4.1
       run-async: 2.4.1
-      rxjs: 7.8.0
+      rxjs: 7.8.1
       string-width: 4.2.3
       strip-ansi: 6.0.1
       through: 2.3.8
@@ -18690,6 +18691,7 @@ packages:
     resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==}
     dependencies:
       tslib: 2.6.2
+    dev: true
 
   /rxjs/7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
@@ -19398,19 +19400,19 @@ packages:
   /stackframe/1.3.4:
     resolution: {integrity: sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==}
 
-  /start-server-and-test/2.0.3:
-    resolution: {integrity: sha512-QsVObjfjFZKJE6CS6bSKNwWZCKBG6975/jKRPPGFfFh+yOQglSeGXiNWjzgQNXdphcBI9nXbyso9tPfX4YAUhg==}
+  /start-server-and-test/2.0.4:
+    resolution: {integrity: sha512-CKNeBTcP0hVqIlNismHMudb9q3lLdAjcVPO13/7gfI66fcJpeIb/o4NzQd1JK/CD+lfWVqr10ZH9Y14+OwlJuw==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
       arg: 5.0.2
       bluebird: 3.7.2
       check-more-types: 2.24.0
-      debug: 4.3.4
+      debug: 4.3.5
       execa: 5.1.1
       lazy-ass: 1.6.0
       ps-tree: 1.2.0
-      wait-on: 7.2.0_debug@4.3.4
+      wait-on: 7.2.0_debug@4.3.5
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -20664,12 +20666,12 @@ packages:
       xml-name-validator: 4.0.0
     dev: true
 
-  /wait-on/7.2.0_debug@4.3.4:
+  /wait-on/7.2.0_debug@4.3.5:
     resolution: {integrity: sha512-wCQcHkRazgjG5XoAq9jbTMLpNIjoSlZslrJ2+N9MxDsGEv1HnFoVjOCexL0ESva7Y9cu350j+DWADdk54s4AFQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
-      axios: 1.6.7_debug@4.3.4
+      axios: 1.6.7_debug@4.3.5
       joi: 17.12.1
       lodash: 4.17.21
       minimist: 1.2.8
