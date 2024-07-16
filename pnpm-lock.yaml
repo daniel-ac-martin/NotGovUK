@@ -113,7 +113,7 @@ importers:
       cypress: 10.11.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
-      node-hot-loader: 1.21.10
+      node-hot-loader: 1.21.11
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0
@@ -148,7 +148,7 @@ importers:
       cypress: 10.11.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
-      node-hot-loader: 1.21.10_webpack@5.91.0
+      node-hot-loader: 1.21.11_webpack@5.91.0
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -189,7 +189,7 @@ importers:
       graphql: 15.8.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
-      node-hot-loader: 1.21.10
+      node-hot-loader: 1.21.11
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0
@@ -228,7 +228,7 @@ importers:
       graphql: 15.8.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
-      node-hot-loader: 1.21.10_webpack@5.91.0
+      node-hot-loader: 1.21.11_webpack@5.91.0
       plop: 3.1.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -4714,8 +4714,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@babel/register/7.21.0_@babel+core@7.24.7:
-    resolution: {integrity: sha512-9nKsPmYDi5DidAqJaQooxIhsLJiNMkGr8ypQ8Uic7cIox7UCDsM7HuUGxdGT7mSDTYbqzIdsOWzfBton/YJrMw==}
+  /@babel/register/7.22.5_@babel+core@7.24.7:
+    resolution: {integrity: sha512-vV6pm/4CijSQ8Y47RH5SopXzursN35RQINfGJkmOlcpAtGuf94miFvIPhCKGQN7WGIcsgG1BHEX2KVdTYwTwUQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -4727,8 +4727,8 @@ packages:
       pirates: 4.0.5
       source-map-support: 0.5.21
 
-  /@babel/register/7.22.5:
-    resolution: {integrity: sha512-vV6pm/4CijSQ8Y47RH5SopXzursN35RQINfGJkmOlcpAtGuf94miFvIPhCKGQN7WGIcsgG1BHEX2KVdTYwTwUQ==}
+  /@babel/register/7.24.6:
+    resolution: {integrity: sha512-WSuFCc2wCqMeXkz/i3yfAAsxwWflEgbVkZzivgAmXl/MxrXeoYFZOOPllbC8R8WTF7u61wSRQtDVZ1879cdu6w==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -4736,7 +4736,7 @@ packages:
       clone-deep: 4.0.1
       find-cache-dir: 2.1.0
       make-dir: 2.1.0
-      pirates: 4.0.5
+      pirates: 4.0.6
       source-map-support: 0.5.21
     dev: true
 
@@ -7038,7 +7038,7 @@ packages:
       '@babel/preset-env': 7.24.7_@babel+core@7.24.7
       '@babel/preset-react': 7.24.7_@babel+core@7.24.7
       '@babel/preset-typescript': 7.24.7_@babel+core@7.24.7
-      '@babel/register': 7.21.0_@babel+core@7.24.7
+      '@babel/register': 7.22.5_@babel+core@7.24.7
       '@storybook/node-logger': 6.5.16
       '@storybook/semver': 7.3.2
       '@types/node': 16.18.13
@@ -7107,7 +7107,7 @@ packages:
       '@babel/preset-env': 7.24.7_@babel+core@7.24.7
       '@babel/preset-react': 7.24.7_@babel+core@7.24.7
       '@babel/preset-typescript': 7.24.7_@babel+core@7.24.7
-      '@babel/register': 7.21.0_@babel+core@7.24.7
+      '@babel/register': 7.22.5_@babel+core@7.24.7
       '@storybook/node-logger': 6.5.16
       '@storybook/semver': 7.3.2
       '@types/node': 16.18.13
@@ -16548,13 +16548,13 @@ packages:
       whatwg-url: 5.0.0
     dev: true
 
-  /node-hot-loader/1.21.10_webpack@5.91.0:
-    resolution: {integrity: sha512-47vOm64Y19jCAVX6ZSP7i2sj35cfTH0EiiogpWF5+MrE/uRmEIlVG8Pssbe67Du0nwslSn9nv9/uO20Go5Hkmw==}
+  /node-hot-loader/1.21.11_webpack@5.91.0:
+    resolution: {integrity: sha512-3c2meMNgPM1BVRC/8itsDTAkcRGuh9LLmwQDF04szLqvc18q08CUjAgIf9M8SdRUoxXVtBQ/zqz6mDyy5oEtOg==}
     hasBin: true
     peerDependencies:
       webpack: '>= 2.x'
     dependencies:
-      '@babel/register': 7.22.5
+      '@babel/register': 7.24.6
       require-from-string: 2.0.2
       source-map-support: 0.5.21
       webpack: 5.91.0_webpack-cli@5.1.4
@@ -17402,6 +17402,11 @@ packages:
   /pirates/4.0.5:
     resolution: {integrity: sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==}
     engines: {node: '>= 6'}
+
+  /pirates/4.0.6:
+    resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
+    engines: {node: '>= 6'}
+    dev: true
 
   /pkg-dir/3.0.0:
     resolution: {integrity: sha512-/E57AYkoeQ25qkxMj5PBOVgF8Kiu/h7cYS30Z5+R7WaiCCBfLq58ZI/dSeaEKb9WVJV5n/03QwrN3IeWIFllvw==}
