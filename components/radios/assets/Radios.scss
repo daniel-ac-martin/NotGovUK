@@ -1,2 +1,8 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/govuk/components/radios";
+
+.govuk-radios__label {
+  &::before {
+    background-color: govuk-colour("white");
+  }
+}
