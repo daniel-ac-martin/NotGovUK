@@ -10,5 +10,5 @@ export default {
   requestTimeout: 7000,
   screenshotsFolder: '.cypress/screenshots',
   videosFolder: '.cypress/videos',
-  videoUploadOnPasses: false
+  video: false
 };
