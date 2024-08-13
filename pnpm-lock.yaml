@@ -169,7 +169,7 @@ importers:
   apps/govuk-template:
     specifiers:
       '@apollo/client': 3.11.3
-      '@graphql-tools/schema': 9.0.19
+      '@graphql-tools/schema': 10.0.4
       '@not-govuk/anchor-list': workspace:^0.9.0
       '@not-govuk/app-composer': workspace:^0.9.0
       '@not-govuk/app-plop-pack': workspace:^0.9.0
@@ -208,7 +208,7 @@ importers:
       webpack-hot-middleware: 2.26.1
     devDependencies:
       '@apollo/client': 3.11.3_a2zdmktzi4a3f3bc6svfavgpbu
-      '@graphql-tools/schema': 9.0.19_graphql@15.9.0
+      '@graphql-tools/schema': 10.0.4_graphql@15.9.0
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
       '@not-govuk/app-plop-pack': link:../../lib/app-plop-pack
@@ -5801,34 +5801,39 @@ packages:
   /@gar/promisify/1.1.3:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
 
-  /@graphql-tools/merge/8.4.1_graphql@15.9.0:
-    resolution: {integrity: sha512-hssnPpZ818mxgl5+GfyOOSnnflAxiaTn1A1AojZcIbh4J52sS1Q0gSuBR5VrnUDjuxiqoCotpXdAQl+K+U6KLQ==}
+  /@graphql-tools/merge/9.0.5_graphql@15.9.0:
+    resolution: {integrity: sha512-WPUBPh9t9eX44kiIy9dV9Bi5S6B91c13X2AldAw0TS9R5cXj3RyHffbKZtIoj/nYLv/tsRSyk/L429ZSiyOriQ==}
+    engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-tools/utils': 9.2.1_graphql@15.9.0
+      '@graphql-tools/utils': 10.5.0_graphql@15.9.0
       graphql: 15.9.0
       tslib: 2.6.3
     dev: true
 
-  /@graphql-tools/schema/9.0.19_graphql@15.9.0:
-    resolution: {integrity: sha512-oBRPoNBtCkk0zbUsyP4GaIzCt8C0aCI4ycIRUL67KK5pOHljKLBBtGT+Jr6hkzA74C8Gco8bpZPe7aWFjiaK2w==}
+  /@graphql-tools/schema/10.0.4_graphql@15.9.0:
+    resolution: {integrity: sha512-HuIwqbKxPaJujox25Ra4qwz0uQzlpsaBOzO6CVfzB/MemZdd+Gib8AIvfhQArK0YIN40aDran/yi+E5Xf0mQww==}
+    engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-tools/merge': 8.4.1_graphql@15.9.0
-      '@graphql-tools/utils': 9.2.1_graphql@15.9.0
+      '@graphql-tools/merge': 9.0.5_graphql@15.9.0
+      '@graphql-tools/utils': 10.5.0_graphql@15.9.0
       graphql: 15.9.0
-      tslib: 2.5.0
+      tslib: 2.6.3
       value-or-promise: 1.0.12
     dev: true
 
-  /@graphql-tools/utils/9.2.1_graphql@15.9.0:
-    resolution: {integrity: sha512-WUw506Ql6xzmOORlriNrD6Ugx+HjVgYxt9KCXD9mHAak+eaXSwuGGPyE60hy9xaDEoXKBsG7SkG69ybitaVl6A==}
+  /@graphql-tools/utils/10.5.0_graphql@15.9.0:
+    resolution: {integrity: sha512-TtdmI5nKMl7QKWENudj7MnaE1skH9y7x2XuG//kHzIox9c6Q8Z2QiWoeD6EuDxCZ4nkRoQpn/YT7kT8FoaV/xQ==}
+    engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0_graphql@15.9.0
+      cross-inspect: 1.0.1
+      dset: 3.1.3
       graphql: 15.9.0
       tslib: 2.6.3
     dev: true
@@ -12351,6 +12356,13 @@ packages:
       - ts-node
     dev: true
 
+  /cross-inspect/1.0.1:
+    resolution: {integrity: sha512-Pcw1JTvZLSJH83iiGWt6fRcT+BjZlCDRVwYLbUcHzv/CRpB7r0MlSrGbIyQvVSNyGnbt7G4AXuyCiDR3POvZ1A==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      tslib: 2.6.3
+    dev: true
+
   /cross-spawn/6.0.5:
     resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
     engines: {node: '>=4.8'}
@@ -13063,6 +13075,11 @@ packages:
   /dotenv/8.6.0:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
+
+  /dset/3.1.3:
+    resolution: {integrity: sha512-20TuZZHCEZ2O71q9/+8BwKwZ0QtD9D8ObhrihJPr+vLLYlSuAU3/zL4cSlgbfeoGHTjCSJBa7NGcrF9/Bx/WJQ==}
+    engines: {node: '>=4'}
+    dev: true
 
   /dtrace-provider/0.8.8:
     resolution: {integrity: sha512-b7Z7cNtHPhH9EJhNNbbeqTcXB8LGFFZhq1PGgEvpeHlzd36bhbdTWoE/Ba/YguqpBSlAPKnARWhVlhunCMwfxg==}
@@ -21357,6 +21374,7 @@ packages:
 
   /tslib/2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
+    dev: false
 
   /tslib/2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
