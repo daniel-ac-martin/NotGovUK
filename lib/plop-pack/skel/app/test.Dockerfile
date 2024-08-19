@@ -1,4 +1,4 @@
-FROM cypress/included:13.13.2
+FROM cypress/included:13.13.3
 
 RUN mv /root/.cache /home/node/.cache && \
     mkdir -p /cypress && \
