@@ -30,7 +30,7 @@ export const AnchorList: FC<AnchorListProps> = ({
   const classes = classBuilder('penultimate-anchor-list', classBlock, classModifiers, className);
   const isActive = useActive();
   const processedItems = items.map(({ children, text, href, ...anchorAttrs }, i) => {
-    const active = isActive(href);
+    const active = isActive(href || '');
 
     return (
       <li key={i} className={classes('item', active ? 'active' : undefined)}>
