@@ -1,4 +1,5 @@
-import { Location as _Location, useLocation as _useLocation } from 'react-router';
+import { Location as _Location, UNSAFE_LocationContext as RRContext } from 'react-router';
+import { useContext } from 'react';
 import { parse as qsParse } from './query-string';
 
 export type Location = _Location & {
@@ -11,7 +12,15 @@ export const enhanceLocation = (location: _Location): Location => ({
 });
 
 export const useLocation = (): Location => {
-  const location = _useLocation();
+  const rrLocation = useContext(RRContext)?.location;
+  const location = (
+    rrLocation
+    ? {
+      ...rrLocation,
+      source: 'react-router'
+    }
+    : {}
+  );
 
   return enhanceLocation(location);
 };
