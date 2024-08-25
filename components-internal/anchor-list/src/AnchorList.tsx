@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentType, FC, HTMLProps, createElement as h } from 'react';
 import { AnchorProps, A } from '@not-govuk/anchor';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';

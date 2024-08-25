@@ -1,3 +1,5 @@
+'use client';
+
 import { AnchorHTMLAttributes, FC, ReactNode, createElement as h } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';

@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, Fragment, createElement as h } from 'react';
 import { queryString } from '@not-govuk/route-utils';
 import { NextPrevProps, PageList, PageListProps } from './PageList';

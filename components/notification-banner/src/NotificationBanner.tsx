@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, HTMLAttributes, ReactNode, createElement as h, useEffect, useRef } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 

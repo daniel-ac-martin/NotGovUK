@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, createElement as h } from 'react';
 import reactHelmetDefault, * as reactHelmetNamed from 'react-helmet-async';
 import { Page, PageProps } from './Page';

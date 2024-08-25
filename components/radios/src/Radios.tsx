@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, InputHTMLAttributes, ReactNode, createElement as h, useState } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';

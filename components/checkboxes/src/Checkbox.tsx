@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, Fragment, InputHTMLAttributes, ReactNode, createElement as h, useRef, useState } from 'react';
 import { ClassBuilder } from '@not-govuk/component-helpers';
 import { Hint } from '@not-govuk/hint';
