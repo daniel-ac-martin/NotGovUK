@@ -26,11 +26,13 @@
   "dependencies": {
     "@not-govuk/component-helpers": "workspace:^0.14.0",
     "@not-govuk/route-utils": "workspace:^0.14.0",
+    "next-js-active-route": "^1.0.1",
     "react-router-hash-link": "^2.4.3"
   },
   "peerDependencies": {
     "@not-govuk/docs-components": "^0.14.0",
     "@storybook/addon-docs": "^6.5.16",
+    "next": "^14.2.5",
     "react": "^16.14.0 || ^17.0.0 || ^18.0.0"
   },
   "peerDependenciesMeta": {
@@ -38,6 +40,9 @@
       "optional": true
     },
     "@storybook/addon-docs": {
+      "optional": true
+    },
+    "next": {
       "optional": true
     }
   },

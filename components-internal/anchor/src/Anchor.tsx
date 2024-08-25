@@ -1,7 +1,8 @@
 'use client';
 
 import { AnchorHTMLAttributes, FC, ReactNode, createElement as h } from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { HashLink as RRLink } from 'react-router-hash-link';
+import { NavLink as NextLink } from 'next-js-active-route';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { urlParse, useIsMounted, useLocation, useActive } from '@not-govuk/route-utils';
 
@@ -65,6 +66,7 @@ export const Anchor: FC<AnchorProps> = ({
     !isMounted && hashLink ||
     hashLink && url.hash === '#'
   );
+  const haveReactRouter = current.source === 'react-router';
 
   return (
     basicAnchor
@@ -78,14 +80,28 @@ export const Anchor: FC<AnchorProps> = ({
       </a>
     )
     : (
-      <HashLink
-        {...attrs}
-        aria-current={active ? 'page' : undefined}
-        className={classes()}
-        to={location}
-      >
-        {children}
-      </HashLink>
+      haveReactRouter
+      ? (
+        <RRLink
+          {...attrs}
+          aria-current={active ? 'page' : undefined}
+          className={classes()}
+          to={location}
+        >
+          {children}
+        </RRLink>
+      )
+      : (
+        <NextLink
+          {...attrs}
+          activeClassName="active"
+          className={classes()}
+          exact
+          href={href}
+        >
+          {children}
+        </NextLink>
+      )
     )
   );
 };
