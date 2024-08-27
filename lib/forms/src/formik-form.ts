@@ -9,7 +9,10 @@ type HTMLFormPropsMini = Omit<HTMLFormProps, 'onSubmit' | 'onReset'>;
 // It would be nice to replace this with the vanilla withFormik but there
 // appears to be some difference in the implementation.
 const withFormik = <Values, A>(options: FormikConfig<Values>) => (Component: ComponentType<A & FormikProps<Values>>): FC<A> => props => (
-  h(Formik, options, (formik: FormikProps<Values>) => h(Component, {...props, ...formik}))
+  h(Formik, {
+    ...options,
+    children: (formik: FormikProps<Values>) => h(Component, {...props, ...formik})
+  })
 );
 
 const wireUpForm = <Values>(Component: ComponentType<HTMLFormProps>): FC<HTMLFormPropsMini & FormikProps<Values>> => ({
