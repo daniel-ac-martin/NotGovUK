@@ -32,6 +32,10 @@
     @extend .govuk-header__logotype-crown-fallback-image;
   }
 
+  &__logotype-text {
+    margin-left: 0.2em;
+  }
+
   &__link {
     &--small {
       @include govuk-font(24);

@@ -132,7 +132,6 @@ export const Header: FC<HeaderProps> = ({
                   <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype-coat')} height="30" width="36" fallback={{ className: classes('logotype-coat-fallback-image') }} />
                 )
               }
-              &nbsp;
               <span className={classes('logotype-text')}>
                 {orgText}
               </span>
