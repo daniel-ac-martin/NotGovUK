@@ -1,4 +1,4 @@
-import { FC, createElement as h } from 'react';
+import { FC, Fragment, ReactNode, createElement as h } from 'react';
 import { HelmetServerState } from 'react-helmet-async';
 import { Hydration, HydrationData } from '@not-govuk/app-composer';
 
@@ -32,9 +32,9 @@ window.hydration = ${JSON.stringify(hydration)?.replace(/</g, '\\u003c')};
   return (
     <head>
       <meta charSet={charSet} />
-      {helmet.title.toComponent()}
-      {helmet.meta.toComponent()}
-      {helmet.link.toComponent()}
+      {helmet.title.toComponent() as any}
+      {helmet.meta.toComponent() as any}
+      {helmet.link.toComponent() as any}
       { stylesheets.map( v => (
         <link key={v} href={`${assetsPath}${v}`} rel="stylesheet" />
       ) ) }
