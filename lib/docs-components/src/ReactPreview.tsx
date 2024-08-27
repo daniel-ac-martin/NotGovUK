@@ -57,6 +57,7 @@ const renderToMarkup = (x: ReactNode) => renderToStaticMarkup(
 );
 
 export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
+  children?: ReactNode
   /** 'id' attribute to place on the base HTML element */
   id: string
   /** The React.js source-code of the children. */
