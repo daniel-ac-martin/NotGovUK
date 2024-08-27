@@ -1,7 +1,7 @@
 import { GraphQLSchema } from 'graphql';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
-import { ComponentType, Fragment, Suspense, createElement as h, lazy } from 'react';
+import { ComponentType, Fragment, ReactNode, Suspense, createElement as h, lazy } from 'react';
 import { Helmet, HelmetProvider, FilledContext } from 'react-helmet-async';
 import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
 import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
@@ -37,6 +37,7 @@ export type PageInfoSSR = PageInfo & {
 };
 
 type ApplicationPropsCommon = {
+  children?: ReactNode
   err?: ServerError
   pageTitle: string
   signInHRef?: string
@@ -67,6 +68,7 @@ type ApplicationSSR = ComponentType<ApplicationPropsSSR> & {
 export type Application = ComponentType<ApplicationProps>;
 
 export type PageProps = RouteComponentProps & {
+  children?: ReactNode
   routes: RouteInfo[]
   signInHRef?: string
   signOutHRef?: string
@@ -124,6 +126,7 @@ type Compose = {
 };
 
 type DataProviderProps = {
+  children?: ReactNode
   client?: ApolloClient<any>
 };
 
@@ -152,7 +155,7 @@ export const compose: Compose = options => {
       ? StaticRouter
       : BrowserRouter
   );
-  const UserInfoProvider: ComponentType<{}> = ({ children }) => (
+  const UserInfoProvider: ComponentType<{ children?: ReactNode }> = ({ children }) => (
     options.user
       ? h(
         UserInfoContext.Provider,
@@ -161,11 +164,6 @@ export const compose: Compose = options => {
         },
         children)
       : h(Fragment, {}, children)
-  );
-  const SuspenseOrFragment = (
-    "LoadingPage" in options
-      ? Suspense
-      : Fragment
   );
   const client = (
     options.graphQL
@@ -238,11 +236,6 @@ export const compose: Compose = options => {
         h(Component, fullProps)
       );
     };
-    const suspenseProps = (
-      "LoadingPage" in options
-        ? { fallback: h(withRouter(withPageWrap(options.LoadingPage))) }
-        : undefined
-    );
     const PageError = withPageWrap(options.ErrorPage);
 
     const switchOrError = (
@@ -284,9 +277,16 @@ export const compose: Compose = options => {
 
     const router = h(
       Router, options.routerProps,
-      h(UserInfoProvider, {}, h(
-        SuspenseOrFragment, suspenseProps,
-        switchOrError
+      h(UserInfoProvider, {}, (
+        "LoadingPage" in options
+        ? h(
+          Suspense, { fallback: h(withRouter(withPageWrap(options.LoadingPage))) },
+          switchOrError
+        )
+        : h(
+          Fragment, {},
+          switchOrError
+        )
       ))
     );
 
