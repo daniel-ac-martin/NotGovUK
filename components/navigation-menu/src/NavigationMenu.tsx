@@ -16,7 +16,6 @@ export type NavigationMenuProps = StandardProps & HTMLAttributes<HTMLElement> & 
 };
 
 export const NavigationMenu: FC<NavigationMenuProps> = ({
-  children,
   classBlock,
   classModifiers,
   className,

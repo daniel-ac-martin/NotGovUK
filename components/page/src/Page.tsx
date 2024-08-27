@@ -23,6 +23,8 @@ export type PageProps = (
     backHref?: string
     /** List of links */
     breadcrumbs?: Breadcrumb[]
+    /** The content that displays in the page. */
+    children?: ReactNode
     /** HRef for providing feedback on the service */
     feedbackHref?: string
     /** Content for the footer */

@@ -16,7 +16,6 @@ export type TextareaProps = StandardProps & TextareaHTMLAttributes<HTMLTextAreaE
 };
 
 export const Textarea: FC<TextareaProps> = ({
-  children,
   classBlock,
   classModifiers: _classModifiers = [],
   className,

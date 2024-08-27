@@ -1,4 +1,4 @@
-import { FC, createElement as h } from 'react';
+import { FC, ReactNode, createElement as h } from 'react';
 import reactDomServer from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { useHistory } from 'react-router-dom';
@@ -46,6 +46,7 @@ type Method = 'get' | 'post';
 
 export type FormProps<T> = StandardProps & {
   action: string
+  children?: ReactNode
   debug?: boolean
   initialValues?: T
   method: Method

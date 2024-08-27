@@ -19,7 +19,6 @@ export type AnchorListProps = StandardProps & {
 
 export const AnchorList: FC<AnchorListProps> = ({
   as: Component = 'ul',
-  children,
   classBlock,
   classModifiers,
   className,

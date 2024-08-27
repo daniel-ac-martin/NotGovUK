@@ -29,7 +29,6 @@ export type SelectProps = StandardProps & Omit<SelectHTMLAttributes<HTMLSelectEl
 };
 
 export const Select: FC<SelectProps> = ({
-  children,
   classBlock,
   classModifiers: _classModifiers = [],
   className,

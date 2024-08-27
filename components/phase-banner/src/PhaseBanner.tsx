@@ -1,10 +1,11 @@
-import { FC, HTMLProps, createElement as h } from 'react';
+import { FC, HTMLProps, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Tag } from '@not-govuk/tag';
 
 import '../assets/PhaseBanner.scss';
 
 export type PhaseBannerProps = StandardProps & HTMLProps<HTMLDivElement> & {
+  children?: ReactNode
   /** The phase the service is in */
   phase: string
 };

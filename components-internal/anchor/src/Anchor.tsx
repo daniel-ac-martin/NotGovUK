@@ -1,5 +1,5 @@
 import { Location } from 'history';
-import { AnchorHTMLAttributes, FC, createElement as h } from 'react';
+import { AnchorHTMLAttributes, FC, ReactNode, createElement as h } from 'react';
 import { match as Match } from 'react-router';
 import { NavHashLink } from 'react-router-hash-link';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
@@ -8,6 +8,7 @@ import { urlParse, useIsMounted, useLocation } from '@not-govuk/route-utils';
 import '../assets/Anchor.scss';
 
 export type AnchorProps = StandardProps & AnchorHTMLAttributes<HTMLAnchorElement> & {
+  children?: ReactNode
   /** Whether to force the link to be treated as external (useful for internal links that are NOT handled by the application) */
   forceExternal?: boolean
 };

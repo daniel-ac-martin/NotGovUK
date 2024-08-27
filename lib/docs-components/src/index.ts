@@ -1,4 +1,4 @@
-import { ComponentProps, FC, Fragment, ReactElement, createElement as h } from 'react';
+import { ComponentProps, FC, Fragment, ReactElement, ReactNode, createElement as h } from 'react';
 import { id } from '@not-govuk/component-helpers';
 import { ReactPreview } from './ReactPreview';
 import { useDocs } from './context';
@@ -25,6 +25,7 @@ export const Meta: FC<MetaProps> = (props) => {
 };
 
 export type PreviewProps = ComponentProps<typeof _Preview> & {
+  children?: ReactNode
   id?: string
 };
 
@@ -54,6 +55,7 @@ export const Preview: FC<PreviewProps> = (props) => (
 );
 
 export type StoryProps = ComponentProps<typeof _Story> & {
+  children?: ReactNode
 };
 
 export const Story: FC<StoryProps> = ({ children }) => (
@@ -61,6 +63,7 @@ export const Story: FC<StoryProps> = ({ children }) => (
 );
 
 export type AddContextProps = ComponentProps<typeof _AddContext> & {
+  children?: ReactNode
 };
 
 export const AddContext: FC<AddContextProps> = ({ children }) => (

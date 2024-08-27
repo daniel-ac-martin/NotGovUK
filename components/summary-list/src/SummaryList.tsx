@@ -10,7 +10,6 @@ export type SummaryListProps = SummaryListContainerProps & {
 };
 
 const SummaryListComponent: FC<SummaryListProps> = ({
-  children,
   classBlock = 'govuk-summary-list',
   items,
   ...props

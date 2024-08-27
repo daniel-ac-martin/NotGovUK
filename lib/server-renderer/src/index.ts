@@ -1,7 +1,6 @@
 import { GraphQLSchema } from 'graphql';
 import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
-import { html as beautifyHtml } from 'js-beautify';
 import { ApplicationProps, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
 import { htmlEnvelope } from './html-envelope';
 
@@ -199,11 +198,7 @@ export const reactRenderer: ReactRenderer = ({
       });
       const html = env.head + appRender + env.foot;
 
-      return beautifyHtml(html,
-        {
-          'indent_with_tabs': true
-        }
-      );
+      return html;
     };
 
     return {

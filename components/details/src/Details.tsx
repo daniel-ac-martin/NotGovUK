@@ -1,9 +1,10 @@
-import { FC, HTMLProps, createElement as h } from 'react';
+import { FC, HTMLProps, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/Details.scss';
 
 export type DetailsProps = StandardProps & HTMLProps<HTMLDetailsElement> & {
+  children?: ReactNode
   /** The summary of the content */
   summary: string
 };

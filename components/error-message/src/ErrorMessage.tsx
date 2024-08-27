@@ -1,10 +1,12 @@
-import { FC, HTMLAttributes, createElement as h } from 'react';
+import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { VisuallyHidden } from '@not-govuk/visually-hidden';
 
 import '../assets/ErrorMessage.scss';
 
-export type ErrorMessageProps = StandardProps & HTMLAttributes<HTMLParagraphElement>;
+export type ErrorMessageProps = StandardProps & HTMLAttributes<HTMLParagraphElement> & {
+  children?: ReactNode
+};
 
 export const ErrorMessage: FC<ErrorMessageProps> = ({ children, classBlock, classModifiers, className, ...attrs }) => {
   const classes = classBuilder('govuk-error-message', classBlock, classModifiers, className);

@@ -36,7 +36,6 @@ export type RadiosProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElem
 };
 
 export const Radios: FC<RadiosProps> = ({
-  children,
   classBlock,
   classModifiers,
   className,

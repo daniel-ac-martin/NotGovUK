@@ -1,9 +1,10 @@
-import { FC, Fragment, HTMLProps, createElement as h } from 'react';
+import { FC, Fragment, HTMLProps, ReactNode, createElement as h } from 'react';
 import { FormikProps } from 'formik';
 
 const prettyPrint = (obj: object) => JSON.stringify(obj, undefined, 2);
 
 export type FormProps = HTMLProps<HTMLFormElement> & FormikProps<any> & {
+  children?: ReactNode
   debug?: boolean
 };
 

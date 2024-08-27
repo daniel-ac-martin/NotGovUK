@@ -1,9 +1,11 @@
-import { FC, createElement as h } from 'react';
+import { FC, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/Panel.scss';
 
 export type PanelProps = StandardProps & {
+  /** The content that displays in the panel */
+  children?: ReactNode
   /** Heading of the panel */
   title?: string
 };
