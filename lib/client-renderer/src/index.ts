@@ -1,5 +1,5 @@
 import { ComponentType, createElement as h } from 'react';
-import { hydrate as originalHydrate, render as originalRender } from 'react-dom';
+import { hydrateRoot } from 'react-dom/client';
 import { ApplicationProps, ErrorPageProps, Hydration, PageProps, PageLoader, compose } from '@not-govuk/app-composer';
 
 export type HydrateOrRenderOptions = {
@@ -41,22 +41,8 @@ export const hydrateOrRender: HydrateOrRender = ({
     }),
     windowWithProps.hydration.data.props
   );
-  const root = document.getElementById(windowWithProps.hydration.id);
-
-  try {
-    originalHydrate(app, root);
-    console.info('Hydration complete.');
-  } catch (e) {
-    console.log(e);
-    console.warn('Hydration failed. Attempting to re-render...');
-    try {
-      originalRender(app, root);
-      console.info('Render complete.');
-    } catch (e) {
-      console.log(e);
-      console.warn('Render failed. Falling back to SSR...');
-    }
-  }
+  const container = document.getElementById(windowWithProps.hydration.id);
+  const root = hydrateRoot(container, app);
 
   const jsEnabledClass = 'js-enabled';
 
