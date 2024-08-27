@@ -15,7 +15,6 @@ export type FileUploadProps = Omit<InputProps, 'type'> & {
 };
 
 export const FileUpload: FC<FileUploadProps> = ({
-  children,
   classBlock = 'govuk-file-upload',
   classModifiers: _classModifiers = [],
   className,

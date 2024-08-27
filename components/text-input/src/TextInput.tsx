@@ -14,7 +14,6 @@ export type TextInputProps = InputProps & {
 };
 
 export const TextInput: FC<TextInputProps> = ({
-  children,
   classBlock,
   classModifiers: _classModifiers = [],
   className,

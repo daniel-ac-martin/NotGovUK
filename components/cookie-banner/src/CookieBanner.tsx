@@ -23,7 +23,6 @@ export type CookieBannerProps = StandardProps & HTMLAttributes<HTMLDivElement> &
 
 export const CookieBanner: FC<CookieBannerProps> = ({
   'aria-label': ariaLabel= 'Cookie banner',
-  children,
   classBlock,
   classModifiers,
   className,

@@ -8,6 +8,7 @@ import { Label } from '@not-govuk/label';
 import '../assets/FormGroup.scss';
 
 export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>, 'id' | 'label'> & {
+  children?: ReactNode
   error?: ReactNode
   errorId?: string
   fieldId?: string

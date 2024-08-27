@@ -11,7 +11,6 @@ export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'label'> & 
 };
 
 export const Radio: FC<RadioProps> = ({
-  children,
   classes,
   conditional,
   hint,

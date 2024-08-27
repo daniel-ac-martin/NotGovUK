@@ -4,7 +4,6 @@ import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 export type ItemEllipsisProps = StandardProps & HTMLAttributes<HTMLElement>;
 
 export const ItemEllipsis: FC<ItemEllipsisProps> = ({
-  children,
   classBlock,
   classModifiers = 'ellipses',
   className,

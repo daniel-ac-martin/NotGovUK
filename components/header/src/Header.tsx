@@ -84,7 +84,6 @@ const departmentText = (d: string) => (
 );
 
 export const Header: FC<HeaderProps> = ({
-  children,
   classBlock,
   classModifiers,
   className,

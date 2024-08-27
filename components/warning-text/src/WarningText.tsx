@@ -1,9 +1,10 @@
-import { FC, createElement as h } from 'react';
+import { FC, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/WarningText.scss';
 
 export type WarningTextProps = StandardProps & {
+  children?: ReactNode
   /** Hidden text to be read out by a screen-reader prior to the warning */
   assistiveText?: string
 };

@@ -37,7 +37,6 @@ export type CheckboxesProps = StandardProps & Omit<InputHTMLAttributes<HTMLInput
 };
 
 export const Checkboxes: FC<CheckboxesProps> = ({
-  children,
   classBlock,
   classModifiers,
   className,

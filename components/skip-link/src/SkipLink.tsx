@@ -1,9 +1,10 @@
-import { HTMLProps, FC, createElement as h } from 'react';
+import { HTMLProps, FC, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/SkipLink.scss';
 
 export type SkipLinkProps = StandardProps & Omit<HTMLProps<HTMLAnchorElement>, 'href'> & {
+  children?: ReactNode
   /** ID of the element to skip to */
   for: string
 };

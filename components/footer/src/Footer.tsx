@@ -1,4 +1,4 @@
-import { FC, Fragment, createElement as h } from 'react';
+import { FC, Fragment, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
@@ -22,6 +22,7 @@ export type NavMenu = {
 };
 
 export type FooterProps = StandardProps & {
+  children?: ReactNode
   /** Whether to add the standard Gov.UK content */
   govUK?: boolean
   /** Maximum width of the contents in px units (-1 for full width) */

@@ -22,7 +22,6 @@ export type TabsProps = StandardProps & {
 };
 
 export const Tabs: FC<TabsProps> = ({
-  children,
   classBlock,
   classModifiers,
   className,

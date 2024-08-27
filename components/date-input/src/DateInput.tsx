@@ -54,7 +54,6 @@ export type RawField<P, V> = FC<P> & WithFormat<V> & WithDeformat<V>
 
 export const DateInput: RawField<DateInputProps, DateInputValue> = ({
   autoComplete,
-  children,
   classBlock,
   classModifiers,
   className,

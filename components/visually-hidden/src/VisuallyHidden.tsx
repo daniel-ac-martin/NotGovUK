@@ -1,9 +1,11 @@
-import { FC, HTMLAttributes, createElement as h } from 'react';
+import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/VisuallyHidden.scss';
 
-export type VisuallyHiddenProps = StandardProps & HTMLAttributes<HTMLSpanElement>;
+export type VisuallyHiddenProps = StandardProps & HTMLAttributes<HTMLSpanElement> & {
+  children?: ReactNode
+};
 
 export const VisuallyHidden: FC<VisuallyHiddenProps> = ({ children, classBlock, classModifiers, className, ...attrs }) => {
   const classes = classBuilder('govuk-visually-hidden', classBlock, classModifiers, className);

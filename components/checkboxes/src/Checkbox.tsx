@@ -11,7 +11,6 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'label'>
 };
 
 export const Checkbox: FC<CheckboxProps> = ({
-  children,
   classes,
   conditional,
   hint,

@@ -1,9 +1,10 @@
-import { FC, HTMLAttributes, createElement as h } from 'react';
+import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/ButtonGroup.scss';
 
 export type ButtonGroupProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
+  children?: ReactNode
 };
 
 export const ButtonGroup: FC<ButtonGroupProps> = ({

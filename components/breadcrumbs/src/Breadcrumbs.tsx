@@ -10,7 +10,6 @@ export type BreadcrumbsProps = StandardProps & Pick<AnchorListProps, 'items'> & 
 };
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({
-  children,
   classBlock,
   classModifiers,
   className,

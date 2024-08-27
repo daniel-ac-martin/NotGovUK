@@ -4,6 +4,7 @@ import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import '../assets/FieldSet.scss';
 
 export type FieldSetProps = StandardProps & FieldsetHTMLAttributes<HTMLFieldSetElement> & {
+  children?: ReactNode
   legend: ReactNode
 };
 

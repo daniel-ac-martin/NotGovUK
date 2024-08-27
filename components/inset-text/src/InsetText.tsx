@@ -1,9 +1,10 @@
-import { FC, createElement as h } from 'react';
+import { FC, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/InsetText.scss';
 
 export type InsetTextProps = StandardProps & {
+  children?: ReactNode
 };
 
 export const InsetText: FC<InsetTextProps> = ({ children, classBlock, classModifiers, className, ...attrs }) => {

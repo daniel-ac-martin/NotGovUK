@@ -12,7 +12,6 @@ export type ErrorSummaryProps = StandardProps & Pick<AnchorListProps, 'items'> &
 };
 
 export const ErrorSummary: FC<ErrorSummaryProps> = ({
-  children,
   classBlock,
   classModifiers,
   className,

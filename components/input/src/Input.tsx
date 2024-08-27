@@ -13,7 +13,6 @@ export type InputProps = StandardProps & InputHTMLAttributes<HTMLInputElement> &
 };
 
 export const Input: FC<InputProps> = ({
-  children,
   classBlock,
   classModifiers,
   className,
