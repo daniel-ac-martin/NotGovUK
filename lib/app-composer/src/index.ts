@@ -2,7 +2,7 @@ import { GraphQLSchema } from 'graphql';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, Fragment, ReactNode, Suspense, createElement as h, lazy } from 'react';
-import { Helmet, HelmetProvider, FilledContext } from 'react-helmet-async';
+import { Helmet, HelmetProvider, HelmetServerState } from 'react-helmet-async';
 import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
 import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
 import { Route, RouteComponentProps, withRouter } from '@not-govuk/route-utils';
@@ -54,6 +54,10 @@ type ServerError = {
   message: string
 };
 
+export type HelmetDataContext = {
+  helmet: HelmetServerState
+}
+
 export type ApplicationPropsSSR = ApplicationPropsCommon & {
   pages: PageInfoSSR[]
 };
@@ -63,7 +67,7 @@ export type ApplicationProps = ApplicationPropsCSR | ApplicationPropsSSR;
 type ApplicationCSR = ComponentType<ApplicationPropsCSR>;
 type ApplicationSSR = ComponentType<ApplicationPropsSSR> & {
   extractDataCache: () => object
-  helmetContext: FilledContext
+  helmetContext: HelmetDataContext
 };
 export type Application = ComponentType<ApplicationProps>;
 
@@ -304,7 +308,7 @@ export const compose: Compose = options => {
 
   return Object.assign(App, {
     extractDataCache,
-    helmetContext: helmetContext as FilledContext
+    helmetContext: helmetContext as HelmetDataContext
   });
 };
 

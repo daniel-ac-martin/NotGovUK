@@ -1,5 +1,5 @@
 import { FC, Fragment, HTMLProps, ReactNode, createElement as h } from 'react';
-import { Helmet } from 'react-helmet-async';
+import reactHelmetDefault, * as reactHelmetNamed from 'react-helmet-async';
 import { BackLink } from '@not-govuk/back-link';
 import { Breadcrumb, Breadcrumbs } from '@not-govuk/breadcrumbs';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
@@ -11,6 +11,9 @@ import { SkipLink } from '@not-govuk/skip-link';
 import { WidthContainer } from '@not-govuk/width-container';
 
 import '../assets/Page.scss';
+
+const reactHelmet = reactHelmetDefault || reactHelmetNamed;
+const { Helmet } = reactHelmet;
 
 export type PageProps = (
   StandardProps &
