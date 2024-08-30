@@ -1,5 +1,5 @@
 import { FC, createElement as h } from 'react';
-import { Helmet } from 'react-helmet-async';
+import reactHelmetDefault, * as reactHelmetNamed from 'react-helmet-async';
 import { Page, PageProps } from './Page';
 
 import favicon from 'govuk-frontend/govuk/assets/images/favicon.ico';
@@ -11,6 +11,9 @@ import appleTouchIcon from 'govuk-frontend/govuk/assets/images/govuk-apple-touch
 import ogImage from 'govuk-frontend/govuk/assets/images/govuk-opengraph-image.png';
 
 import '../assets/GovUKPage.scss';
+
+const reactHelmet = reactHelmetDefault || reactHelmetNamed;
+const { Helmet } = reactHelmet;
 
 export type GovUKPageProps = Omit<PageProps, 'govUK'>;
 

@@ -1,10 +1,13 @@
 import { FC, ReactElement, ReactNode, createElement as h } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
+import reactHelmetDefault, * as reactHelmetNamed from 'react-helmet-async';
 import { MemoryRouter } from 'react-router';
 import { render as _render, RenderOptions } from '@testing-library/react';
 import userEventDefault from '@testing-library/user-event';
 
 import '@testing-library/jest-dom';
+
+const reactHelmet = reactHelmetDefault || reactHelmetNamed;
+const { HelmetProvider } = reactHelmet;
 
 const Providers: FC<{ children?: ReactNode, routerProps?: object }> = ({
   children,
