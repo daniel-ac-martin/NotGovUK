@@ -1,11 +1,11 @@
 import { GraphQLSchema } from 'graphql';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
-import { ComponentType, Fragment, ReactNode, Suspense, createElement as h, lazy } from 'react';
+import { ComponentType, FC, Fragment, ReactNode, Suspense, createElement as h, lazy } from 'react';
 import { Helmet, HelmetProvider, HelmetServerState } from 'react-helmet-async';
 import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
 import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
-import { Route, RouteComponentProps, withRouter } from '@not-govuk/route-utils';
+import { Route, RouteComponentProps, useLocation, withRouter } from '@not-govuk/route-utils';
 import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
 
 type DataCache = object;
@@ -240,12 +240,21 @@ export const compose: Compose = options => {
         h(Component, fullProps)
       );
     };
-    const PageError = withPageWrap(options.ErrorPage);
+    const PageError = withRouter(withPageWrap(options.ErrorPage));
+    const NotFoundPage: FC<{}> = () => {
+      const location = useLocation();
+
+      return h(PageError, {
+        internal: false,
+        title: 'Page not found',
+        message: `${location.pathname} does not exist.`
+      });
+    };
 
     const switchOrError = (
       props.err
         ? h(
-          withRouter(PageError),
+          PageError,
           {
             internal: String(props.err.statusCode).startsWith('5'),
             title: props.err.title,
@@ -257,22 +266,14 @@ export const compose: Compose = options => {
               ...routes.map((v, i) => h(
                 Route,
                 {
-                  component: withPageWrap(v.Component),
+                  children: h(withRouter(withPageWrap(v.Component))),
                   exact: true,
                   key: i,
                   path: v.href
                 }
               )),
               h(Route, {
-                component: props => h(
-                  PageError,
-                  {
-                    ...props,
-                    internal: false,
-                    title: 'Page not found',
-                    message: `${props.location.pathname} does not exist.`
-                  }
-                ),
+                children: h(NotFoundPage),
                 key: 'catch-all'
               })
           ]
@@ -284,7 +285,7 @@ export const compose: Compose = options => {
       h(UserInfoProvider, {}, (
         "LoadingPage" in options
         ? h(
-          Suspense, { fallback: h(withRouter(withPageWrap(options.LoadingPage))) },
+          Suspense, { fallback: h(withPageWrap(options.LoadingPage)) },
           switchOrError
         )
         : h(

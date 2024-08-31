@@ -1,7 +1,7 @@
 import { LocationState } from 'history';
 import { ComponentType, FC, createElement as h } from 'react';
-import { Route as _Route, RouteProps, RouteComponentProps as _RouteComponentProps, StaticContext, withRouter as _withRouter } from 'react-router';
-import { Location, enhanceLocation } from './location';
+import { RouteComponentProps as _RouteComponentProps, StaticContext, useHistory, useRouteMatch } from 'react-router';
+import { Location, useLocation } from './location';
 
 export interface RouteComponentProps<
   Params extends { [K in keyof Params]?: string } = {},
@@ -10,18 +10,16 @@ export interface RouteComponentProps<
     location: Location<object>;
   }
 
-const withEnhancements = (Component: ComponentType<RouteComponentProps | any>): FC<any> => (
-  ({ location, ...props }) => h(Component, {
+export const withRouter = (Component: ComponentType<RouteComponentProps | any>): ComponentType<any> => (props) => {
+  const match = useRouteMatch();
+  const location = useLocation();
+  const history = useHistory();
+
+  return h(Component, {
+    match,
+    location,
+    history,
     ...props,
-    location: enhanceLocation(location)
-  })
-);
-
-export const Route: FC<RouteProps> = ({ children, component, render, ...props }) => h(_Route, {
-  ...props,
-  children: children,
-  component: component && withEnhancements(component),
-  render: render
-});
-
-export const withRouter = (Component: ComponentType<RouteComponentProps | any>): ComponentType<any> => _withRouter(withEnhancements(Component));
+  });
+};
+export { Route, useRouteMatch } from 'react-router';
