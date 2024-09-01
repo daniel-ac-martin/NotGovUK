@@ -40,8 +40,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0
       react-helmet-async: 2.0.5
-      react-router: 5.3.4
-      react-router-dom: 5.3.4
+      react-router: 6.26.1
+      react-router-dom: 6.26.1
       ts-jest: 29.2.3
       typescript: 4.9.5
       webpack: 5.94.0
@@ -85,8 +85,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 2.0.5_react@16.14.0
-      react-router: 5.3.4_react@16.14.0
-      react-router-dom: 5.3.4_react@16.14.0
+      react-router: 6.26.1_react@16.14.0
+      react-router-dom: 6.26.1_wcqkhtmu7mswc6yz4uyexck3ty
       ts-jest: 29.2.3_emrc4okhxugh6ej24zdudb2ocy
       typescript: 4.9.5
       webpack: 5.94.0_webpack-cli@5.1.4
@@ -104,12 +104,11 @@ importers:
       '@not-govuk/components': workspace:^0.10.0
       '@not-govuk/docs-components': workspace:^0.10.0
       '@not-govuk/engine': workspace:^0.10.0
+      '@not-govuk/route-utils': workspace:^0.10.0
       '@not-govuk/server-renderer': workspace:^0.10.0
       '@not-govuk/webpack-config': workspace:^0.10.0
       '@types/react': 16.14.60
       '@types/react-dom': 16.9.24
-      '@types/react-router': 5.1.20
-      '@types/react-router-dom': 5.3.3
       '@types/webpack-env': 1.18.5
       bunyan: 1.8.15
       cypress: 13.13.3
@@ -120,8 +119,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0
       react-helmet-async: 2.0.5
-      react-router: 5.3.4
-      react-router-dom: 5.3.4
+      react-router: 6.26.1
+      react-router-dom: 6.26.1
       serverless: 3.39.0
       start-server-and-test: 2.0.5
       ts-jest: 29.2.3
@@ -139,12 +138,11 @@ importers:
       '@not-govuk/components': link:../../packages/components
       '@not-govuk/docs-components': link:../../lib/docs-components
       '@not-govuk/engine': link:../../lib/engine
+      '@not-govuk/route-utils': link:../../lib/route-utils
       '@not-govuk/server-renderer': link:../../lib/server-renderer
       '@not-govuk/webpack-config': link:../../lib/webpack-config
       '@types/react': 16.14.60
       '@types/react-dom': 16.9.24
-      '@types/react-router': 5.1.20
-      '@types/react-router-dom': 5.3.3
       '@types/webpack-env': 1.18.5
       bunyan: 1.8.15
       cypress: 13.13.3
@@ -155,8 +153,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 2.0.5_react@16.14.0
-      react-router: 5.3.4_react@16.14.0
-      react-router-dom: 5.3.4_react@16.14.0
+      react-router: 6.26.1_react@16.14.0
+      react-router-dom: 6.26.1_wcqkhtmu7mswc6yz4uyexck3ty
       serverless: 3.39.0
       start-server-and-test: 2.0.5
       ts-jest: 29.2.3_67xnt3v64q2pgz6kguni4h37hu
@@ -183,8 +181,6 @@ importers:
       '@not-govuk/webpack-config': workspace:^0.10.0
       '@types/react': 16.14.60
       '@types/react-dom': 16.9.24
-      '@types/react-router': 5.1.20
-      '@types/react-router-dom': 5.3.3
       '@types/webpack-env': 1.18.5
       bunyan: 1.8.15
       cypress: 13.13.3
@@ -196,8 +192,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0
       react-helmet-async: 2.0.5
-      react-router: 5.3.4
-      react-router-dom: 5.3.4
+      react-router: 6.26.1
+      react-router-dom: 6.26.1
       serverless: 3.39.0
       start-server-and-test: 2.0.5
       ts-jest: 29.2.3
@@ -222,8 +218,6 @@ importers:
       '@not-govuk/webpack-config': link:../../lib/webpack-config
       '@types/react': 16.14.60
       '@types/react-dom': 16.9.24
-      '@types/react-router': 5.1.20
-      '@types/react-router-dom': 5.3.3
       '@types/webpack-env': 1.18.5
       bunyan: 1.8.15
       cypress: 13.13.3
@@ -235,8 +229,8 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-helmet-async: 2.0.5_react@16.14.0
-      react-router: 5.3.4_react@16.14.0
-      react-router-dom: 5.3.4_react@16.14.0
+      react-router: 6.26.1_react@16.14.0
+      react-router-dom: 6.26.1_wcqkhtmu7mswc6yz4uyexck3ty
       serverless: 3.39.0
       start-server-and-test: 2.0.5
       ts-jest: 29.2.3_67xnt3v64q2pgz6kguni4h37hu
@@ -253,9 +247,6 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.10.0
       '@not-govuk/route-utils': workspace:^0.10.0
       '@types/react': 16.14.60
-      '@types/react-router': 5.1.20
-      '@types/react-router-hash-link': 2.4.9
-      history: ^4.10.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       react-router-hash-link: ^2.4.3
@@ -264,14 +255,11 @@ importers:
     dependencies:
       '@not-govuk/component-helpers': link:../../lib/component-helpers
       '@not-govuk/route-utils': link:../../lib/route-utils
-      history: 4.10.1
       react-router-hash-link: 2.4.3
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@types/react': 16.14.60
-      '@types/react-router': 5.1.20
-      '@types/react-router-hash-link': 2.4.9
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.3_67xnt3v64q2pgz6kguni4h37hu
@@ -1629,16 +1617,12 @@ importers:
     specifiers:
       '@not-govuk/route-utils': workspace:^0.10.0
       '@types/react': 16.14.60
-      '@types/react-router': 5.1.20
-      '@types/react-router-dom': 5.3.3
       graphql: 15.9.0
       typescript: 4.9.5
     dependencies:
       '@not-govuk/route-utils': link:../route-utils
     devDependencies:
       '@types/react': 16.14.60
-      '@types/react-router': 5.1.20
-      '@types/react-router-dom': 5.3.3
       graphql: 15.9.0
       typescript: 4.9.5
 
@@ -1693,7 +1677,6 @@ importers:
       '@testing-library/react': ^12.1.5
       '@testing-library/user-event': ^12.8.3
       '@types/react': 16.14.60
-      '@types/react-router': 5.1.20
       typescript: 4.9.5
     dependencies:
       '@testing-library/jest-dom': 5.17.0
@@ -1701,7 +1684,6 @@ importers:
       '@testing-library/user-event': 12.8.3
     devDependencies:
       '@types/react': 16.14.60
-      '@types/react-router': 5.1.20
       typescript: 4.9.5
 
   lib/consent-cookies:
@@ -1825,7 +1807,6 @@ importers:
       '@not-govuk/route-utils': workspace:^0.10.0
       '@types/react': 16.14.60
       '@types/react-dom': 16.9.24
-      '@types/react-router-dom': 5.3.3
       fast-deep-equal: ^3.1.3
       formik: ^2.4.6
       typescript: 4.9.5
@@ -1839,7 +1820,6 @@ importers:
     devDependencies:
       '@types/react': 16.14.60
       '@types/react-dom': 16.9.24
-      '@types/react-router-dom': 5.3.3
       typescript: 4.9.5
 
   lib/memoize:
@@ -1905,7 +1885,6 @@ importers:
   lib/route-utils:
     specifiers:
       '@types/history': 4.7.11
-      '@types/react-router': 5.1.20
       '@types/url-parse': 1.4.11
       history: 4.10.1
       jest: 29.7.0
@@ -1920,7 +1899,6 @@ importers:
       url-parse: 1.5.10
     devDependencies:
       '@types/history': 4.7.11
-      '@types/react-router': 5.1.20
       '@types/url-parse': 1.4.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -2078,8 +2056,6 @@ importers:
       '@types/node': 20.12.2
       '@types/react': 16.14.60
       '@types/react-dom': 16.9.24
-      '@types/react-router': 5.1.20
-      '@types/react-router-dom': 5.3.3
       govuk-frontend: 4.8.0
       typescript: 4.9.5
     dependencies:
@@ -2130,8 +2106,6 @@ importers:
       '@types/node': 20.12.2
       '@types/react': 16.14.60
       '@types/react-dom': 16.9.24
-      '@types/react-router': 5.1.20
-      '@types/react-router-dom': 5.3.3
       govuk-frontend: 4.8.0
       typescript: 4.9.5
 
@@ -6374,6 +6348,11 @@ packages:
     resolution: {integrity: sha512-2LuNTFBIO0m7kKIQvvPHN6UE63VjpmL9rnEEaOOaiSPbZK+zUOYIzBAWcED+3XYzhYsd/0mD57VdxAEqqV52CQ==}
     dev: false
 
+  /@remix-run/router/1.19.1:
+    resolution: {integrity: sha512-S45oynt/WH19bHbIXjtli6QmwNYvaz+vtnubvNpNDvUOoA/OWh6j1OikIP3G+v5GHdxyC6EXoChG3HgYGEUfcg==}
+    engines: {node: '>=14.0.0'}
+    dev: true
+
   /@serverless/dashboard-plugin/7.2.0_supports-color@8.1.1:
     resolution: {integrity: sha512-Gqzgef+KmrX1OxJW9aubrIN6AvPrtDARMv+NegMNEe+pfkZA/IMuZiSyYUaHgARokdw2/IALOysTLgdFJIrXvA==}
     engines: {node: '>=12.0'}
@@ -8863,7 +8842,7 @@ packages:
       react-docgen-typescript: 2.2.2_typescript@4.9.5
       tslib: 2.6.3
       typescript: 4.9.5
-      webpack: 5.94.0
+      webpack: 5.94.0_webpack-cli@5.1.4
     transitivePeerDependencies:
       - supports-color
 
@@ -9761,29 +9740,6 @@ packages:
     resolution: {integrity: sha512-Gcmq2JTDheyWn/1eteqyzzWKSqDjYU6KYsIvH7thb7CR5OYInAWOX+7WnKf6PaU/cbdOc4szJItcDEJO7UGmfA==}
     dependencies:
       '@types/react': 16.14.60
-
-  /@types/react-router-dom/5.3.3:
-    resolution: {integrity: sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==}
-    dependencies:
-      '@types/history': 4.7.11
-      '@types/react': 16.14.60
-      '@types/react-router': 5.1.20
-    dev: true
-
-  /@types/react-router-hash-link/2.4.9:
-    resolution: {integrity: sha512-zl/VMj+lfJZhvjOAQXIlBVPNKSK+/fRG8AUHhlP9++LhlA2ziLeTmbRxIMJI3PCiCTS+W/FosEoDRoNOGH0OzA==}
-    dependencies:
-      '@types/history': 4.7.11
-      '@types/react': 16.14.60
-      '@types/react-router-dom': 5.3.3
-    dev: true
-
-  /@types/react-router/5.1.20:
-    resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
-    dependencies:
-      '@types/history': 4.7.11
-      '@types/react': 16.14.60
-    dev: true
 
   /@types/react/16.14.60:
     resolution: {integrity: sha512-wIFmnczGsTcgwCBeIYOuy2mdXEiKZ5znU/jNOnMZPQyCcIxauMGWlX0TNG4lZ7NxRKj7YUIZRneJQSSdB2jKgg==}
@@ -12361,7 +12317,7 @@ packages:
       postcss-value-parser: 4.2.0
       schema-utils: 2.7.1
       semver: 6.3.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
 
   /css-loader/5.2.7_webpack@5.94.0:
     resolution: {integrity: sha512-Q7mOvpBNBG7YrVGMxRxcBJZFL75o+cH2abNASdibkj/fffYD8qWbInZrD0S9ccI6vZclF3DsHE7njGlLtaHbhg==}
@@ -13834,7 +13790,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
 
   /file-system-cache/1.1.0:
     resolution: {integrity: sha512-IzF5MBq+5CR0jXx5RxPe4BICl/oEhBSXKaL9fLhAXrIfIUS77Hr4vzrYyqYMHN6uTt+BOqi3fDCTjjEBCjERKw==}
@@ -14119,7 +14075,7 @@ packages:
       semver: 5.7.2
       tapable: 1.1.3
       typescript: 4.9.5
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
       worker-rpc: 0.1.1
     transitivePeerDependencies:
       - supports-color
@@ -14728,7 +14684,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.19.2
+      uglify-js: 3.19.3
 
   /has-ansi/2.0.0:
     resolution: {integrity: sha512-C8vBJ8DwUCx19vhm7urhTuUsr4/IyP6l4VzNQDv+ryHQObW3TTTp9yB68WpYgRe2bbaGuZ/se74IqFeVnMnLZg==}
@@ -14913,6 +14869,7 @@ packages:
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
       value-equal: 1.0.1
+    dev: false
 
   /hmac-drbg/1.0.1:
     resolution: {integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==}
@@ -15030,7 +14987,7 @@ packages:
       pretty-error: 2.1.2
       tapable: 1.1.3
       util.promisify: 1.0.0
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
 
   /html-webpack-plugin/5.5.0_webpack@5.94.0:
     resolution: {integrity: sha512-sy88PC2cRTVxvETRgUHFrL4No3UxvcH8G1NepGhqaTT+GXN2kTamqasot0inS5hXeg1cMbFDt27zzo9p35lZVw==}
@@ -15786,10 +15743,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-docker: 2.2.1
-
-  /isarray/0.0.1:
-    resolution: {integrity: sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==}
-    dev: true
 
   /isarray/1.0.0:
     resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
@@ -18284,12 +18237,6 @@ packages:
   /path-to-regexp/0.1.7:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
 
-  /path-to-regexp/1.8.0:
-    resolution: {integrity: sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==}
-    dependencies:
-      isarray: 0.0.1
-    dev: true
-
   /path-type/1.1.0:
     resolution: {integrity: sha512-S4eENJz1pkiQn9Znv33Q+deTOKmbl+jj1Fl+qiP/vYezj+S8x+J3Uo0ISrx/QoEvIlOaDWJhPaRd1flJ9HXZqg==}
     engines: {node: '>=0.10.0'}
@@ -18502,7 +18449,7 @@ packages:
       postcss: 7.0.39
       schema-utils: 3.3.0
       semver: 7.6.3
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
 
   /postcss-modules-extract-imports/2.0.0:
     resolution: {integrity: sha512-LaYLDNS4SG8Q5WAWqIJgdHPJrDDr/Lv775rMBFUbgjTz6j34lUznACHcdRWroPvXANP2Vj7yNK57vp9eFqzLWQ==}
@@ -18951,7 +18898,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
 
   /react-docgen-typescript/2.2.2:
     resolution: {integrity: sha512-tvg2ZtOpOi6QDwsb3GZhOjDkkX0h8Z2gipvTg6OVMUyoYoURhEiRNePT8NZItTVCDh39JJHnLdfCOkzoLbFnTg==}
@@ -19073,19 +19020,17 @@ packages:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
     engines: {node: '>=0.10.0'}
 
-  /react-router-dom/5.3.4_react@16.14.0:
-    resolution: {integrity: sha512-m4EqFMHv/Ih4kpcBCONHbkT68KoAeHN4p3lAGoNryfHi0dMy0kCzEZakiKRsvg5wHZ/JLrLW8o8KomWiz/qbYQ==}
+  /react-router-dom/6.26.1_wcqkhtmu7mswc6yz4uyexck3ty:
+    resolution: {integrity: sha512-veut7m41S1fLql4pLhxeSW3jlqs+4MtjRLj0xvuCEXsxusJCbs6I8yn9BxzzDX2XDgafrccY6hwjmd/bL54tFw==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
-      react: '>=15'
+      react: '>=16.8'
+      react-dom: '>=16.8'
     dependencies:
-      '@babel/runtime': 7.21.0
-      history: 4.10.1
-      loose-envify: 1.4.0
-      prop-types: 15.8.1
+      '@remix-run/router': 1.19.1
       react: 16.14.0
-      react-router: 5.3.4_react@16.14.0
-      tiny-invariant: 1.3.1
-      tiny-warning: 1.0.3
+      react-dom: 16.14.0_react@16.14.0
+      react-router: 6.26.1_react@16.14.0
     dev: true
 
   /react-router-hash-link/2.4.3:
@@ -19097,21 +19042,14 @@ packages:
       prop-types: 15.8.1
     dev: false
 
-  /react-router/5.3.4_react@16.14.0:
-    resolution: {integrity: sha512-Ys9K+ppnJah3QuaRiLxk+jDWOR1MekYQrlytiXxC1RyfbdsZkS5pvKAzCCr031xHixZwpnsYNT5xysdFHQaYsA==}
+  /react-router/6.26.1_react@16.14.0:
+    resolution: {integrity: sha512-kIwJveZNwp7teQRI5QmwWo39A5bXRyqpH0COKKmPnyD2vBvDwgFXSqDUYtt1h+FEyfnE8eXr7oe0MxRzVwCcvQ==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
-      react: '>=15'
+      react: '>=16.8'
     dependencies:
-      '@babel/runtime': 7.21.0
-      history: 4.10.1
-      hoist-non-react-statics: 3.3.2
-      loose-envify: 1.4.0
-      path-to-regexp: 1.8.0
-      prop-types: 15.8.1
+      '@remix-run/router': 1.19.1
       react: 16.14.0
-      react-is: 16.13.1
-      tiny-invariant: 1.3.1
-      tiny-warning: 1.0.3
     dev: true
 
   /react-sizeme/3.0.2:
@@ -19511,6 +19449,7 @@ packages:
 
   /resolve-pathname/3.0.0:
     resolution: {integrity: sha512-C7rARubxI8bXFNB/hqcp/4iUeIXJhJZvFPFPiSPRnhU5UPxzMFIl+2E6yY6c4k9giDJAhtV+enfA+G89N6Csng==}
+    dev: false
 
   /resolve-url-loader/5.0.0:
     resolution: {integrity: sha512-uZtduh8/8srhBoMx//5bwqjQ+rfYOUq8zC9NrMUGtjBiGTtFJM42s58/36+hTqeqINcnYe08Nj3LkK9lW4N8Xg==}
@@ -20652,7 +20591,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 2.7.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
 
   /style-loader/2.0.0_webpack@5.94.0:
     resolution: {integrity: sha512-Z0gYUJmzZ6ZdRUqpg1r8GsaFKypE+3xAzuFeMuoHgjc9KZv3wMyCRjQIWEbhoFSq7+7yoHXySDJyyWQaPajeiQ==}
@@ -20831,7 +20770,7 @@ packages:
       serialize-javascript: 5.0.1
       source-map: 0.6.1
       terser: 5.27.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
       webpack-sources: 1.4.3
     transitivePeerDependencies:
       - bluebird
@@ -20954,9 +20893,11 @@ packages:
 
   /tiny-invariant/1.3.1:
     resolution: {integrity: sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw==}
+    dev: false
 
   /tiny-warning/1.0.3:
     resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
+    dev: false
 
   /title-case/3.0.3:
     resolution: {integrity: sha512-e1zGYRvbffpcHIrnuqT0Dh+gEJtDaxDSoG4JAIpq4oDFyooziLBIiYQv0GBT4FUAnUop5uZ1hiIAj7oAF6sOCA==}
@@ -21273,8 +21214,8 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  /uglify-js/3.19.2:
-    resolution: {integrity: sha512-S8KA6DDI47nQXJSi2ctQ629YzwOVs+bQML6DAtvy0wgNdpi+0ySpQK0g2pxBq2xfF2z3YCscu7NNA8nXT9PlIQ==}
+  /uglify-js/3.19.3:
+    resolution: {integrity: sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true
@@ -21494,7 +21435,7 @@ packages:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
 
   /url-parse/1.5.10:
     resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
@@ -21615,6 +21556,7 @@ packages:
 
   /value-equal/1.0.1:
     resolution: {integrity: sha512-NOJ6JZCAWr0zlxZt+xqCHNTEKOsrks2HQd4MqhP1qy4z1SkbEP467eNx6TgDKXMvUOb+OENfJCZwM+16n7fRfw==}
+    dev: false
 
   /value-or-promise/1.0.12:
     resolution: {integrity: sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==}
@@ -21800,7 +21742,7 @@ packages:
       mime: 2.6.0
       mkdirp: 0.5.6
       range-parser: 1.2.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
       webpack-log: 2.0.0
 
   /webpack-dev-middleware/4.3.0_webpack@5.94.0:
@@ -21841,7 +21783,7 @@ packages:
     peerDependencies:
       webpack: ^2.0.0 || ^3.0.0 || ^4.0.0
     dependencies:
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@5.1.4
 
   /webpack-hot-middleware/2.26.1:
     resolution: {integrity: sha512-khZGfAeJx6I8K9zKohEWWYN6KDlVw2DHownoe+6Vtwj1LP9WFgegXnVMSkZ/dBEBtXFwrkkydsaPFlB7f8wU2A==}
@@ -21946,6 +21888,7 @@ packages:
       webpack-sources: 1.4.3
     transitivePeerDependencies:
       - supports-color
+    dev: false
 
   /webpack/4.46.0_webpack-cli@5.1.4:
     resolution: {integrity: sha512-6jJuJjg8znb/xRItk7bkT0+Q7AHCYjjFnvKIWQPkNIOyRqoCGvkOs0ipeQzrqz4l5FtN5ZI/ukEHroeX/o1/5Q==}
