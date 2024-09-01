@@ -8,7 +8,7 @@ const siteTitle = config.title;
 export const title = 'Home';
 const description = 'Our homepage';
 
-const Page: FC<PageProps> = props => (
+const Page: FC<PageProps> = () => (
   <Fragment>
     <Helmet>
       <title>{title} - {siteTitle}</title>

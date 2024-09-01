@@ -1,5 +1,5 @@
 import { FC, ReactNode, createElement as h } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { A } from '@not-govuk/link';
 
@@ -26,8 +26,9 @@ export const BackLink: FC<BackLinkProps> = ({
 }) => {
   const defaultClassBlock = 'govuk-back-link';
   const classes = classBuilder(defaultClassBlock, classBlock, classModifiers, className);
-  const history = useHistory();
+  const navigate = useNavigate();
   const text = _text || children || 'Back';
+  const goBack = () => navigate(-1);
 
   return href ? (
     <A {...attrs}
@@ -42,7 +43,7 @@ export const BackLink: FC<BackLinkProps> = ({
     <a {...attrs}
       className={classes()}
       href="#"
-      onClick={history.goBack}
+      onClick={goBack}
     >
       {text}
     </a>

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
+import { useLocation } from '@not-govuk/route-utils';
 
 const reduceToLookup = (acc: object, cur) => ({...acc, [cur.default.title]: cur});
 const buildLookup = v => v.reduce(reduceToLookup, {});
@@ -82,7 +83,8 @@ const internalLinks = buildLinks(internalComponents);
 export const title = 'Components';
 const description = 'The components provided in NotGovUK';
 
-const Page: FC<PageProps> = ({ location }) => {
+const Page: FC<PageProps> = () => {
+  const location = useLocation();
   const componentName = location.query[nameParam];
   const stories = subpages[componentName];
 

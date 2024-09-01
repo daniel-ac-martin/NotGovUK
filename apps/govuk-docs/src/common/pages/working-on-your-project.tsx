@@ -8,7 +8,7 @@ export const title = 'Working on your project';
 const description = 'How to work on your NotGovUK-based project';
 const section = 'Get started';
 
-const Page: FC<PageProps> = props => (
+const Page: FC<PageProps> = () => (
   <Fragment>
     <Helmet>
       <title>{title} - NotGovUK</title>

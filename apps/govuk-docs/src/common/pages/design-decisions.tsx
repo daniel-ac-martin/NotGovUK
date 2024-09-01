@@ -8,7 +8,7 @@ export const title = 'Design decisions';
 const description = 'The rationale behind the design decisions made in NotGovUK';
 const section = 'About NotGovUK';
 
-const Page: FC<PageProps> = props => (
+const Page: FC<PageProps> = () => (
   <Fragment>
     <Helmet>
       <title>{title} - NotGovUK</title>

@@ -7,7 +7,7 @@ import Markdown from '../../../../../docs/contributing.md';
 export const title = 'Contributing';
 const description = 'How to contribute to NotGovUK';
 
-const Page: FC<PageProps> = props => (
+const Page: FC<PageProps> = () => (
   <Fragment>
     <Helmet>
       <title>{title} - NotGovUK</title>

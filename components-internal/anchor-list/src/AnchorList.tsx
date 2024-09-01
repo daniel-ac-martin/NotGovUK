@@ -1,7 +1,7 @@
 import { ComponentType, FC, HTMLProps, createElement as h } from 'react';
-import { AnchorProps, A, isActive } from '@not-govuk/anchor';
+import { AnchorProps, A } from '@not-govuk/anchor';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { matchPath, urlParse, useLocation } from '@not-govuk/route-utils';
+import { useActive } from '@not-govuk/route-utils';
 
 import '../assets/AnchorList.scss';
 
@@ -26,12 +26,9 @@ export const AnchorList: FC<AnchorListProps> = ({
   ...attrs
 }) => {
   const classes = classBuilder('penultimate-anchor-list', classBlock, classModifiers, className);
-  const location = useLocation();
-  const matcher = matchPath(location);
+  const isActive = useActive();
   const processedItems = items.map(({ children, text, href, ...anchorAttrs }, i) => {
-    const url = urlParse(href);
-    const match = matcher(href);
-    const active = isActive(url.query)(match, location);
+    const active = isActive(href);
 
     return (
       <li key={i} className={classes('item', active ? 'active' : undefined)}>

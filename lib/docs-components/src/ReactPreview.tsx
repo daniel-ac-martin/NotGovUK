@@ -1,7 +1,7 @@
 import { FC, ReactNode, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
-import { StaticRouter } from 'react-router';
+import { StaticRouter } from 'react-router-dom/server';
 import { format } from 'prettier/standalone';
 import parserHtml from 'prettier/parser-html';
 import parserBabel from 'prettier/parser-babel';
@@ -52,7 +52,7 @@ const prettyJsxFromMemo = memoize(prettyJsx);
 
 const renderToMarkup = (x: ReactNode) => renderToStaticMarkup(
   h(HelmetProvider, {},
-    h(StaticRouter, {}, x)
+    h(StaticRouter, { location: ''}, x)
   )
 );
 

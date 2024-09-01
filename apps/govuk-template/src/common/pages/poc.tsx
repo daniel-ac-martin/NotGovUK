@@ -15,7 +15,7 @@ import {
   TextInput
 } from '@not-govuk/components';
 
-const Page: FC<PageProps> = props => (
+const Page: FC<PageProps> = () => (
   <Fragment>
     <h1><span className="caption">Caption</span> Typography</h1>
     <h2><span className="caption">Typography</span> Sub-heading</h2>

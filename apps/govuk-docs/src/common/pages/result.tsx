@@ -2,6 +2,7 @@ import { FC, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { A } from '@not-govuk/components';
+import { useLocation } from '@not-govuk/route-utils';
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
@@ -9,7 +10,8 @@ export const pageTitle = 'Result';
 const description = 'The result of filling in the Form component example';
 const section = 'Components';
 
-const Page: FC<PageProps> = ({ location }) => {
+const Page: FC<PageProps> = () => {
+  const location = useLocation();
   const data = {
     dob: '',
     fullName: '',

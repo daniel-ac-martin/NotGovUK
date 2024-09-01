@@ -40,5 +40,3 @@ export { default as Header } from '@not-govuk/header';
 
 export * from '@not-govuk/form';
 export * from '@not-govuk/page';
-
-export { default as Site } from './site';

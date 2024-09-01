@@ -1,11 +1,10 @@
 import { FC, ReactNode, createElement as h } from 'react';
 import reactDomServer from 'react-dom/server';
-import { StaticRouter } from 'react-router';
-import { useHistory } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom/server';
 import deepEqual from 'fast-deep-equal/es6';
 import { FormikHelpers } from 'formik';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { urlParse, useLocation } from '@not-govuk/route-utils';
+import { urlParse, useLocation, useNavigate } from '@not-govuk/route-utils';
 import FormikForm from './formik-form';
 import { Graph } from './graph';
 import { Completion, CompletionContext } from './completion';
@@ -65,7 +64,7 @@ export const Form: FC<FormProps<any>> = ({
   ...attrs
 }) => {
   const classes = classBuilder('penultimate-form', classBlock, classModifiers, className);
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const submittedValues = (
     method === 'get'
@@ -110,7 +109,7 @@ export const Form: FC<FormProps<any>> = ({
         !deepEqual(location.query, actionUrl.query) ||
         !deepEqual(location.state, state)
     ) {
-      history.push(url.toString(), state);
+      navigate(url.toString(), { state });
     }
   };
 
@@ -139,7 +138,7 @@ export const Form: FC<FormProps<any>> = ({
   //console.debug('Form: First pass rendering of form to discover graph...');
   register.openRegistration();
   renderToStaticMarkup(
-    h(StaticRouter, {},
+    h(StaticRouter, { location: '' },
       h(Registry, {
         children: formikForm,
         value: register

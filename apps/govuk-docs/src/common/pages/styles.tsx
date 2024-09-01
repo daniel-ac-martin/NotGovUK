@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
+import { useLocation } from '@not-govuk/route-utils';
 
 const reduceToLookup = (acc, cur) => ({...acc, [cur.default.title]: cur});
 const createSubpageStore = r => (
@@ -16,7 +17,8 @@ const subpages = createSubpageStore(require.context('../../../../../styles/', fa
 export const title = 'Styles';
 const description = 'The styles provided in NotGovUK';
 
-const Page: FC<PageProps> = ({ location }) => {
+const Page: FC<PageProps> = () => {
+  const location = useLocation();
   const nameParam = 'name';
   const subPageName = location.query[nameParam];
   const stories = subpages[subPageName];
