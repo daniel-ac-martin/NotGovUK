@@ -3,9 +3,9 @@ import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@ap
 import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, FC, Fragment, ReactNode, Suspense, createElement as h, lazy } from 'react';
 import { Helmet, HelmetProvider, HelmetServerState } from 'react-helmet-async';
-import { StaticRouter, StaticRouterProps, Switch } from 'react-router';
-import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
-import { Route, RouteComponentProps, useLocation, withRouter } from '@not-govuk/route-utils';
+import { BrowserRouter, BrowserRouterProps, Routes } from 'react-router-dom';
+import { StaticRouter, StaticRouterProps } from 'react-router-dom/server';
+import { Route, useLocation } from '@not-govuk/route-utils';
 import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
 
 type DataCache = object;
@@ -71,7 +71,7 @@ type ApplicationSSR = ComponentType<ApplicationPropsSSR> & {
 };
 export type Application = ComponentType<ApplicationProps>;
 
-export type PageProps = RouteComponentProps & {
+export type PageProps = {
   children?: ReactNode
   routes: RouteInfo[]
   signInHRef?: string
@@ -240,7 +240,7 @@ export const compose: Compose = options => {
         h(Component, fullProps)
       );
     };
-    const PageError = withRouter(withPageWrap(options.ErrorPage));
+    const PageError = withPageWrap(options.ErrorPage);
     const NotFoundPage: FC<{}> = () => {
       const location = useLocation();
 
@@ -261,20 +261,21 @@ export const compose: Compose = options => {
             message: props.err.message
           })
         : h(
-          Switch, {},
+          Routes, {},
           [
               ...routes.map((v, i) => h(
                 Route,
                 {
-                  children: h(withRouter(withPageWrap(v.Component))),
-                  exact: true,
+                  caseSensitive: true,
+                  element: h(withPageWrap(v.Component)),
                   key: i,
                   path: v.href
                 }
               )),
               h(Route, {
-                children: h(NotFoundPage),
-                key: 'catch-all'
+                element: h(NotFoundPage),
+                key: 'catch-all',
+                path: '*'
               })
           ]
         )
