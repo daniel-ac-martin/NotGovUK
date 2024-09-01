@@ -46,7 +46,7 @@ const components = Object.keys(subpagesComponents).sort().map(v => ({
 export const title = 'Sitemap';
 const description = 'Overview of NotGovUK';
 
-const Page: FC<PageProps> = ({}) => (
+const Page: FC<PageProps> = () => (
   <Fragment>
     <Helmet>
       <title>{title} - NotGovUK</title>

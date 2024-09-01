@@ -7,7 +7,7 @@ import Markdown from '../../../../../docs/get-started.md';
 export const title = 'Get started';
 const description = 'The following introductory guides will help you to get set up';
 
-const Page: FC<PageProps> = props => (
+const Page: FC<PageProps> = () => (
   <Fragment>
     <Helmet>
       <title>{title} - NotGovUK</title>

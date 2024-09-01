@@ -4,7 +4,7 @@ import { useLocation } from '@not-govuk/route-utils';
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
-const Page: FC<PageProps> = props => {
+const Page: FC<PageProps> = () => {
   const location = useLocation();
   const data = {
     name: '',

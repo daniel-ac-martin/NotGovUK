@@ -2,6 +2,9 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
+{{#if query}}
+import { useLocation } from '@not-govuk/route-utils';
+{{/if}}
 import config from '../config';
 
 const siteTitle = config.title;
@@ -10,12 +13,13 @@ export const title = '{{{ title }}}';
 const description = '{{{ description }}}'
 
 {{#if query}}
-const Page: FC<PageProps> = ({ location }) => {
+const Page: FC<PageProps> = () => {
+  const location = useLocation();
   const n = Number(location.query['n']) || 0;
 
   return (
 {{else}}
-const Page: FC<PageProps> = _ => (
+const Page: FC<PageProps> = () => (
 {{/if}}
   <Fragment>
     <Helmet>

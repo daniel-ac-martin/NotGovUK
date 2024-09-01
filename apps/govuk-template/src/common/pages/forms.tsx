@@ -19,7 +19,7 @@ const notFrench = (msg?: string) => (field: object) => (value: string) =>
 
 const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
 
-const Page: FC<PageProps> = props => {
+const Page: FC<PageProps> = () => {
   const location = useLocation();
 
   return (

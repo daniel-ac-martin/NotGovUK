@@ -6,7 +6,7 @@ import {
   StartButton
 } from '@not-govuk/components';
 
-const Page: FC<PageProps> = props => (
+const Page: FC<PageProps> = () => (
   <Fragment>
     <Helmet>
       <title>Home - NotGovUK</title>
