@@ -1,4 +1,3 @@
-import { createLocation } from 'history';
 import { urlParse } from '../src/url-parse';
 
 describe('urlParse', () => {

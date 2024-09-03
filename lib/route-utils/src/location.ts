@@ -1,18 +1,17 @@
-import { Location as _Location, LocationState } from 'history';
-import { useLocation as useRawLocation } from 'react-router';
+import { Location as _Location, useLocation as _useLocation } from 'react-router';
 import { parse as qsParse } from './query-string';
 
-export type Location<S = LocationState> = _Location<S> & {
+export type Location = _Location & {
   query: object
 };
 
-export const enhanceLocation = <S>(location: _Location<S>): Location<S> => ({
+export const enhanceLocation = (location: _Location): Location => ({
   ...location,
   query: qsParse(location.search)
 });
 
-export const useLocation = (): Location<object> => {
-  const location = useRawLocation();
+export const useLocation = (): Location => {
+  const location = _useLocation();
 
-  return enhanceLocation(location as _Location<object>);
+  return enhanceLocation(location);
 };
