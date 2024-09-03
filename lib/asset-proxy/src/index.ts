@@ -33,10 +33,12 @@ export const assetProxy = ({
   const proxyMiddleware = adaptCrudely(createProxyMiddleware({
     target: `http://localhost:${port + 1}`,
     changeOrigin: true,
-    onProxyReq: (proxyReq, _req, res) => {
-      const entrypoints = res.locals.webpack.devMiddleware.stats.toJson().assetsByChunkName;
+    on: {
+      proxyReq: (proxyReq, _req, res) => {
+        const entrypoints = res.locals.webpack.devMiddleware.stats.toJson().assetsByChunkName;
 
-      proxyReq.setHeader('X-Entrypoints', JSON.stringify(entrypoints));
+        proxyReq.setHeader('X-Entrypoints', JSON.stringify(entrypoints));
+      }
     }
   }));
   const close = httpd.close.bind(httpd);
