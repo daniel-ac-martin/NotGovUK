@@ -13,7 +13,7 @@ runs:
   steps:
 
     - name: Setup PNPM
-      uses: pnpm/action-setup@v3.0.0
+      uses: pnpm/action-setup@v4.0.0
       with:
         version: 7.33.6
         run_install: false
@@ -34,7 +34,7 @@ runs:
 
     - name: Pull dependencies
       if: ${{ !inputs.frozen-lockfile || inputs.frozen-lockfile == 'false' }}
-      uses: pnpm/action-setup@v3.0.0
+      uses: pnpm/action-setup@v4.0.0
       with:
         version: 7.33.6
         run_install: |
@@ -43,7 +43,7 @@ runs:
 
     - name: Pull dependencies (frozen lock-file)
       if: ${{ inputs.frozen-lockfile && inputs.frozen-lockfile != 'false' }}
-      uses: pnpm/action-setup@v3.0.0
+      uses: pnpm/action-setup@v4.0.0
       with:
         version: 7.33.6
         run_install: true
