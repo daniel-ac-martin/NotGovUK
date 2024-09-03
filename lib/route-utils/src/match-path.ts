@@ -1,11 +1,31 @@
-import { Location, createLocation } from 'history';
-import { PathMatch, matchPath as _matchPath } from 'react-router';
+import { Location, PathMatch, To, matchPath as _matchPath, parsePath } from 'react-router';
 import { useLocation } from './location';
 import { urlParse } from './url-parse';
 
+// Adapted from react-router
+// MIT License
+// Copyright(c) React Training LLC 2015 - 2019 Copyright(c) Remix Software Inc. 2020 - 2021 Copyright(c) Shopify Inc. 2022 -2023
+// https://github.com/remix-run/react-router/blob/9afac15d8cbe30b37d0f9e8b89c9f1e430dfe35a/packages/router/history.ts#L533
+function createLocation(
+  current: string | Location,
+  to: To,
+  state: any = null,
+  key?: string
+): Readonly<Location> {
+  let location: Readonly<Location> = {
+    pathname: typeof current === 'string' ? current : current.pathname,
+    search: '',
+    hash: '',
+    ...(typeof to === 'string' ? parsePath(to) : to),
+    state,
+    key: (to && (to as Location).key) || key
+  };
+  return location;
+}
+
 export const matchPath = (currentLocation: Location) => (href: string): PathMatch<any> => {
   // Inspired by: https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/modules/NavLink.js#L50
-  const targetLocation = createLocation(href, null, null, currentLocation);
+  const targetLocation = createLocation(currentLocation, href, null, null);
   // Regex taken from: https://github.com/pillarjs/path-to-regexp/blob/master/index.js#L202
   //const target = targetLocation.pathname?.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1");
   const target = targetLocation.pathname;
