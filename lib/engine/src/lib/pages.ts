@@ -4,7 +4,7 @@ import { PageModule, PageInfoSSR, PageLoader } from '@not-govuk/app-composer';
 import { Response } from '@not-govuk/server-renderer';
 import path from 'path';
 
-const pageExtensionPattern = /\.([jt]sx?|html)$/i
+const pageExtensionPattern = /\.([jt]sx?|mdx?|html)$/i
 
 const removePrecedingDotSlash = (s: string): string => (
   s.startsWith('./')
@@ -58,21 +58,18 @@ export const gatherPages = (pageLoader: PageLoader): Promise<PageInfoSSR[]> => P
     .keys()
     .map(async e => {
       const mod: PageModule = await pageLoader(e);
+      const title: string = mod.title || src2Title(e);
 
       return {
         Component: mod.default,
         href: src2Href(e),
         src: e,
-        title: (
-          typeof mod.default === 'string'
-            ? src2Title(e)
-            : mod.title
-        )
+        title
       };
     } )
 );
 
-const pageMiddleware = (title: string) => (req: Request, res: Response, next: Next) => {
+const pageMiddleware = (title: string) => (_req: Request, res: Response, next: Next) => {
   res.renderApp(200, title).finally(next);
 };
 
