@@ -1,6 +1,6 @@
 {
   "name": "@not-govuk/server-renderer",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "A Restify renderer of React applications using react-router.",
   "main": "src/index.ts",
   "publishConfig": {
@@ -19,7 +19,7 @@
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
   "license": "MIT",
   "dependencies": {
-    "@not-govuk/app-composer": "workspace:^0.12.0",
+    "@not-govuk/app-composer": "workspace:^0.12.1",
     "restify-errors": "^8.0.2"
   },
   "peerDependencies": {
@@ -27,7 +27,7 @@
     "react-dom": "^16.14.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@not-govuk/restify": "workspace:^0.12.0",
+    "@not-govuk/restify": "workspace:^0.12.1",
     "@types/node": "20.16.5",
     "@types/react": "16.14.60",
     "@types/react-dom": "16.9.24",
