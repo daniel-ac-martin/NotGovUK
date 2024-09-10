@@ -1,12 +1,18 @@
 'use client';
 
-import { AnchorHTMLAttributes, FC, ReactNode, createElement as h } from 'react';
+import { AnchorHTMLAttributes, ComponentType, FC, ReactNode, createElement as h } from 'react';
 import { HashLink as RRLink } from 'react-router-hash-link';
-import { NavLink as NextLink } from 'next-js-active-route';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { urlParse, useIsMounted, useLocation, useActive } from '@not-govuk/route-utils';
 
 import '../assets/Anchor.scss';
+
+let NextLink: ComponentType<any>;
+try {
+  NextLink = require('next-js-active-route')?.NavLink;
+} catch (_e) {
+  NextLink = undefined;
+}
 
 export type AnchorProps = StandardProps & AnchorHTMLAttributes<HTMLAnchorElement> & {
   children?: ReactNode
