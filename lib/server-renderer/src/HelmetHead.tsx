@@ -32,9 +32,9 @@ window.hydration = ${JSON.stringify(hydration)?.replace(/</g, '\\u003c')};
   return (
     <head>
       <meta charSet={charSet} />
-      {helmet.title.toComponent() as any}
-      {helmet.meta.toComponent() as any}
-      {helmet.link.toComponent() as any}
+      {helmet?.title.toComponent() as any}
+      {helmet?.meta.toComponent() as any}
+      {helmet?.link.toComponent() as any}
       { stylesheets.map( v => (
         <link key={v} href={`${assetsPath}${v}`} rel="stylesheet" />
       ) ) }
