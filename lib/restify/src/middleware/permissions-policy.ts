@@ -13,7 +13,7 @@ const ppObj = {
   'camera': 'self',
   'display-capture': 'self',
   'document-domain': 'self',
-  'encrypted-media ': 'self',
+  'encrypted-media': 'self',
   'execution-while-not-rendered': 'self',
   'execution-while-out-of-viewport': 'self',
   'fullscreen': 'self',
