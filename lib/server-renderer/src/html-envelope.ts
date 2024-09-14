@@ -38,19 +38,15 @@ export const htmlEnvelope: HtmlEnvelope = ({
   );
 
   return ({
-    head: `
-<!doctype html>
-<html ${helmet.htmlAttributes.toString()}>
+    head: `<!DOCTYPE html>
+<html ${helmet?.htmlAttributes.toString() || ''}>
   ${head}
-  <body ${helmet.bodyAttributes.toString()}>
-    <div id="${rootId}">
-`,
-    foot: `
-    </div>
+  <body ${helmet?.bodyAttributes.toString() || ''}>
+    <div id="${rootId}">`,
+    foot: `</div>
     ${scripts}
   </body>
-</html>
-`,
+</html>`,
   });
 };
 
