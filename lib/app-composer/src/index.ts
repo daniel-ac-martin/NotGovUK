@@ -283,17 +283,10 @@ export const compose: Compose = options => {
 
     const router = h(
       Router, options.routerProps,
-      h(UserInfoProvider, {}, switchOrError /* (
-        "LoadingPage" in options
-        ? h(
-          Suspense, { fallback: h(withPageWrap(options.LoadingPage)) },
-          switchOrError
-        )
-        : h(
-          Fragment, {},
-          switchOrError
-        )
-      ) */ )
+      h(UserInfoProvider, {}, h(
+        Suspense, { fallback: h(withPageWrap(options.LoadingPage)) },
+        switchOrError
+      ))
     );
 
     return h(
