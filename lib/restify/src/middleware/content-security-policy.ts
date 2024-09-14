@@ -33,7 +33,6 @@ const csp = ({
     'img-src': self, // Only load our own images (no hot-linking) - I think this is a good idea as it helps prevent tracking
     'manifest-src': self, // Only load our own manifests
     'media-src': self, // Only load our own media
-    'prefetch-src': self, // Only pre-fetch from ourselves
     'script-src': (
       process.env.NODE_ENV === 'development'
         ? [ self, `'nonce-${nonce}'`, unsafeEval ] // Looser policy for HMR in local-dev environment
