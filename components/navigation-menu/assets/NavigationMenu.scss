@@ -2,11 +2,11 @@
 @import "govuk-frontend/dist/govuk/core/_lists";
 
 .not-govuk-navigation-menu {
-  @include govuk-font(16);
   border-color: $govuk-link-colour;
   border-style: solid;
   border-width: 0;
   color: $govuk-link-colour;
+  @include govuk-font(16);
 
   $border-width: 4px;
 
@@ -20,14 +20,14 @@
     line-height: inherit;
 
     &__item {
-      @include govuk-responsive-padding(1, "top");
-      @include govuk-responsive-padding(0, "left");
-      @include govuk-responsive-padding(1, "bottom");
-      @include govuk-responsive-padding(0, "right");
       border-color: inherit;
       border-style: inherit;
       border-width: 0;
       color: inherit;
+      @include govuk-responsive-padding(1, "top");
+      @include govuk-responsive-padding(0, "left");
+      @include govuk-responsive-padding(1, "bottom");
+      @include govuk-responsive-padding(0, "right");
 
       &--active {
         border-left-width: $border-width;
@@ -59,13 +59,13 @@
 
       & > li,
       &__item {
+        display: inline-block;
+        font-weight: bold;
+        margin: 0;
         @include govuk-responsive-padding(2, "top");
         @include govuk-responsive-padding(3, "left");
         @include govuk-responsive-padding(2, "bottom");
         @include govuk-responsive-padding(3, "right");
-        display: inline-block;
-        font-weight: bold;
-        margin: 0;
 
         &--active {
           border-left-width: 0;

@@ -3,10 +3,10 @@
 
 .not-govuk-aside,
 aside {
+  border-top: 2px solid $govuk-brand-colour;
   @include govuk-font(16);
   @include govuk-responsive-padding(2, "top");
   @include govuk-responsive-margin(6, "bottom");
-  border-top: 2px solid $govuk-brand-colour;
 
   & a,
   & ol,
