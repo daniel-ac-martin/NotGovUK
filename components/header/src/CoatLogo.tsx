@@ -1,7 +1,7 @@
 import { FC, createElement as h } from 'react';
 import { LogoProps } from './LogoProps';
 
-export const CoatLogo: FC<LogoProps> = ({ fallback, ...props }) => (
+export const CoatLogo: FC<LogoProps> = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     enableBackground="new 0 0 86.088 86.088"
@@ -9,6 +9,7 @@ export const CoatLogo: FC<LogoProps> = ({ fallback, ...props }) => (
     viewBox="0 0 86.095 71.134"
     width="86.095"
     height="71.134"
+    role="img"
     {...props}
   >
     <g transform="translate(.0021394 -7.478)" fill="#fff">

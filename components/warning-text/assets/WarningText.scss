@@ -1,2 +1,10 @@
 @import "@not-govuk/sass-base";
-@import "govuk-frontend/govuk/components/warning-text/_index";
+@import "govuk-frontend/dist/govuk/components/warning-text";
+
+.govuk-warning-text {
+  &__icon {
+    $colour: if($govuk-text-colour == inherit, govuk-colour("black"), $govuk-text-colour);
+    border: 3px solid $colour !important;
+    background: $colour !important;
+  }
+}

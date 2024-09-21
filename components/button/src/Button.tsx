@@ -8,9 +8,7 @@ type CommonButtonProps = StandardProps & {
   children?: ReactNode
   start?: boolean
 };
-type AnchorButtonProps = CommonButtonProps & ComponentProps<typeof A> & {
-  disabled?: boolean
-};
+type AnchorButtonProps = CommonButtonProps & ComponentProps<typeof A>;
 type ButtonButtonProps = CommonButtonProps & ButtonHTMLAttributes<HTMLButtonElement>;
 export type ButtonProps = AnchorButtonProps | ButtonButtonProps;
 
@@ -27,14 +25,12 @@ export const AnchorButton: FC<AnchorButtonProps> = ({
   children,
   classBlock,
   classModifiers: _classModifiers = [],
-  disabled = false,
   draggable = 'false',
   role = 'button',
   start = false,
   ...attrs
 }) => {
   const classModifiers = [
-    disabled && 'disabled',
     start && 'start',
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
@@ -58,12 +54,11 @@ export const ButtonButton: FC<ButtonButtonProps> = ({
   classBlock,
   classModifiers: _classModifiers = [],
   className,
-  disabled,
+  disabled = false,
   start = false,
   ...attrs
 }) => {
   const classModifiers = [
-    disabled && 'disabled',
     start && 'start',
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
@@ -71,9 +66,9 @@ export const ButtonButton: FC<ButtonButtonProps> = ({
 
   return (
     <button
-      aria-disabled={disabled}
+      aria-disabled={!!disabled ? 'true' : undefined}
       data-module={defaultClassBlock}
-      disabled={disabled}
+      disabled={!!disabled}
       {...attrs}
       className={classes()}
     >

@@ -44,8 +44,8 @@ const PageListComponent: FC<PageListProps> = ({
   );
   const blockLevel = !children && (next || previous);
   const classes = classBuilder('govuk-pagination', classBlock, [...classModifiers, blockLevel ? 'block' : undefined], className);
-  const { labelText: prevLabelText, text: prevText = 'Previous', ...prevAttrs } = previous || {};
-  const { labelText: nextLabelText, text: nextText = 'Next', ...nextAttrs } = next || {};
+  const { labelText: prevLabelText, text: prevText = (<Fragment>Previous<VisuallyHidden> page</VisuallyHidden></Fragment>), ...prevAttrs } = previous || {};
+  const { labelText: nextLabelText, text: nextText = (<Fragment>Next<VisuallyHidden> page</VisuallyHidden></Fragment>), ...nextAttrs } = next || {};
   const prevArrow = (
     <svg className={classes('icon', 'prev')} xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
       <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
@@ -58,7 +58,7 @@ const PageListComponent: FC<PageListProps> = ({
   );
 
   return (
-    <nav {...attrs} className={classes()} role="navigation" aria-label={landmarkLabel}>
+    <nav {...attrs} className={classes()} aria-label={landmarkLabel}>
       { !previous ? null : (
         <div className={classes('prev')}>
           <A className={classes('link')} {...prevAttrs} rel="prev">
