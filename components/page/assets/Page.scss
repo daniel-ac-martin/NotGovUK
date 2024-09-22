@@ -1,10 +1,10 @@
 @import "@not-govuk/sass-base";
-@import "govuk-frontend/govuk/components/back-link/_index";
-@import "govuk-frontend/govuk/components/breadcrumbs/_index";
-@import "govuk-frontend/govuk/components/button/_index";
-@import "govuk-frontend/govuk/core/_links";
-@import "govuk-frontend/govuk/objects/_template";
-@import "govuk-frontend/govuk/objects/_main-wrapper";
+@import "govuk-frontend/dist/govuk/components/back-link";
+@import "govuk-frontend/dist/govuk/components/breadcrumbs";
+@import "govuk-frontend/dist/govuk/components/button";
+@import "govuk-frontend/dist/govuk/core/_links";
+@import "govuk-frontend/dist/govuk/objects/_template";
+@import "govuk-frontend/dist/govuk/objects/_main-wrapper";
 
 $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
 

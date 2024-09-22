@@ -1,10 +1,9 @@
-import { FC, createElement as h } from 'react';
+import { FC, Fragment, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
 import { CrownLogo } from './CrownLogo';
 import { CoatLogo } from './CoatLogo';
-import { TudorCrownLogo } from './TudorCrownLogo';
 
 import '../assets/Header.scss';
 
@@ -36,8 +35,6 @@ export type HeaderProps = StandardProps & {
   signOutHref?: string
   /** Sign out link text */
   signOutText?: string
-  /** Whether to use the tudor crown of King Charles III */
-  useTudorCrown?: boolean
 };
 
 const departmentMap = {
@@ -97,7 +94,6 @@ export const Header: FC<HeaderProps> = ({
   serviceName,
   signOutHref,
   signOutText = 'Sign out',
-  useTudorCrown = false,
   ...attrs
 }) => {
   const classes = classBuilder('govuk-header', classBlock, classModifiers, className);
@@ -111,39 +107,33 @@ export const Header: FC<HeaderProps> = ({
   }];
 
   return (
-    <header {...attrs} className={classes()} role="banner" data-module="govuk-header">
+    <header {...attrs} className={classes()} data-module="govuk-header">
       <WidthContainer maxWidth={maxContentsWidth} className={classes('container', department)}>
         <div className={classes('logo')}>
           <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
-            <span className={classes('logotype')}>
-              {
-                govUK
-                ? (
-                  useTudorCrown
-                  ? (
-                    <TudorCrownLogo aria-hidden="true" focusable="false" className={classes('logotype-crown')} height="30" width="32" fallback={{ className: classes('logotype-crown-fallback-image'), width: 32, height: 30 }} />
-                  )
-                  : (
-                    <CrownLogo aria-hidden="true" focusable="false" className={classes('logotype-crown')} height="30" width="36" fallback={{ className: classes('logotype-crown-fallback-image'), width: 36, height: 32 }} />
-                  )
-                )
-                : (
-                  <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype-coat')} height="30" width="36" fallback={{ className: classes('logotype-coat-fallback-image') }} />
-                )
-              }
-              <span className={classes('logotype-text')}>
-                {orgText}
-              </span>
-            </span>
+            {
+              govUK
+              ? (
+                <CrownLogo focusable="false" className={classes('logotype')} height="30" width="148" />
+              )
+              : (
+                <Fragment>
+                <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
+                <span className={classes('logotype-text')}>
+                  {orgText}
+                </span>
+                </Fragment>
+              )
+            }
           </A>
         </div>
         <div className={classes('content')}>
           { !serviceName ? null : (
-            <A href={serviceHref} classModifiers="service-name">{serviceName}</A>
+            <A href={serviceHref} className={classes('service-name')}>{serviceName}</A>
           ) }
           { !navLinks.length ? null : (
             <nav className={classes('navigation')} aria-label="Menu">
-              <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" aria-label="Show or hide menu" hidden>Menu</button>
+              <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" hidden>Menu</button>
               <ul id="navigation" className={classes('navigation-list')}>
                 { navLinks.map(({ active, text, ...linkAttrs }, i) => (
                   <li key={i} className={classes('navigation-item', active ? 'active' : undefined)}>

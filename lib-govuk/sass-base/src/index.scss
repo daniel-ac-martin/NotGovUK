@@ -11,7 +11,10 @@ $govuk-link-active-colour: inherit;
 // Set the asset path to be relative to the SCSS components
 $govuk-assets-path: '../../assets/';
 
-@import "govuk-frontend/govuk/_base";
+// Enable new organisation colours
+$govuk-new-organisation-colours: true;
+
+@import "govuk-frontend/dist/govuk/_base";
 
 // Dark mode variables
 $not-govuk-dark-mode-text-colour: #FFFFFF;
@@ -19,3 +22,7 @@ $not-govuk-dark-mode-secondary-text-colour: #999999;
 $not-govuk-dark-mode-background-colour: #333333;
 $not-govuk-dark-mode-footer-colour: #222222;
 $not-govuk-dark-mode-border-colour: #000000;
+
+.js-enabled {
+  @extend .govuk-frontend-supported !optional;
+}

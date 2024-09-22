@@ -1,12 +1,13 @@
 import { FC, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { VisuallyHidden } from '@not-govuk/visually-hidden';
 
 import '../assets/WarningText.scss';
 
 export type WarningTextProps = StandardProps & {
   children?: ReactNode
   /** Hidden text to be read out by a screen-reader prior to the warning */
-  assistiveText?: string
+  iconFallbackText?: string
 };
 
 export const WarningText: FC<WarningTextProps> = ({
@@ -14,7 +15,7 @@ export const WarningText: FC<WarningTextProps> = ({
   classBlock,
   classModifiers,
   className,
-  assistiveText = 'Warning',
+  iconFallbackText = 'Warning',
   ...attrs
 }) => {
   const classes = classBuilder('govuk-warning-text', classBlock, classModifiers, className);
@@ -23,7 +24,7 @@ export const WarningText: FC<WarningTextProps> = ({
     <div {...attrs} className={classes()}>
       <span className={classes('icon')} aria-hidden="true">!</span>
       <strong className={classes('text')}>
-        <span className={classes('assistive')}>{assistiveText}</span>
+        <VisuallyHidden>{iconFallbackText}</VisuallyHidden>
         {children}
       </strong>
     </div>

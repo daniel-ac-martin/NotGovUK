@@ -66,7 +66,6 @@ export const Page: FC<PageProps> = ({
   signOutHref,
   signOutText,
   title: _title,
-  useTudorCrown = false,
   ...attrs
 }) => {
   const classModifiers = (
@@ -87,8 +86,7 @@ export const Page: FC<PageProps> = ({
     serviceHref,
     serviceName,
     signOutHref,
-    signOutText,
-    useTudorCrown
+    signOutText
   };
   const footerProps = {
     govUK,
@@ -104,7 +102,6 @@ export const Page: FC<PageProps> = ({
       <Helmet>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </Helmet>
       <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
       <Header {...headerProps} className={classes('header')} />
@@ -131,7 +128,7 @@ export const Page: FC<PageProps> = ({
               <BackLink id="back-link" href={backHref} />
             ) )
           }
-          <main id={mainId} role="main" className={classes('main')}>
+          <main id={mainId} className={classes('main')}>
             {children}
           </main>
         </WidthContainer>

@@ -51,7 +51,7 @@ export const Footer: FC<FooterProps> = ({
   const A = (props: LinkProps) => h(Link, { classBlock: classes('link'), ...props });
 
   return (
-    <footer {...attrs} className={classes()} role="contentinfo">
+    <footer {...attrs} className={classes()}>
       <WidthContainer maxWidth={maxContentsWidth}>
         { !navigation ? null : (
           <Fragment>

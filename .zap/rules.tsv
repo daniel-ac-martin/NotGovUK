@@ -15,6 +15,8 @@
 10109	INFO	(Modern Web Application)
 # These are not real forms, and we replicate GDS
 10202	IGNORE	(Absence of Anti-CSRF Tokens)
+# These are not IP addresses
+2	OUTOFSCOPE	.*/public/images/.*\.svg
 # We don't control the headers on Netlify's CDN
 10021	OUTOFSCOPE	.*/public/.*
 10063	OUTOFSCOPE	.*/public/.*

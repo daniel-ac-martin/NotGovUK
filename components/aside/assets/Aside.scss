@@ -1,12 +1,12 @@
 @import "@not-govuk/sass-base";
-@import "govuk-frontend/govuk/core/_typography";
+@import "govuk-frontend/dist/govuk/core/_typography";
 
 .not-govuk-aside,
 aside {
+  border-top: 2px solid $govuk-brand-colour;
   @include govuk-font(16);
   @include govuk-responsive-padding(2, "top");
   @include govuk-responsive-margin(6, "bottom");
-  border-top: 2px solid $govuk-brand-colour;
 
   & a,
   & ol,
@@ -24,7 +24,7 @@ aside {
   }
 
   & .govuk-body-s {
-    @include govuk-font(14);
+    @include govuk-font(16);
   }
 
   h1 {
@@ -48,7 +48,10 @@ aside {
 @each $i, $v in $govuk-colours-organisations {
   .not-govuk-page--#{$i} .not-govuk-aside,
   .not-govuk-page--#{$i} aside {
-    border-color: map_get($v, "colour-websafe");
+    $contrast-safe: map_get($v, "contrast-safe");
+    $light-colour: map_get($v, "colour");
+    $colour: if($contrast-safe, $contrast-safe, $light-colour);
+    border-color: $colour;
   }
 }
 

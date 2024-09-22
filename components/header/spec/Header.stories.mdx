@@ -24,7 +24,7 @@ departmental colours.
 
 <Preview withToolbar>
   <Story name="Header">
-    <Header govUK useTudorCrown />
+    <Header govUK />
   </Story>
 </Preview>
 
@@ -71,7 +71,7 @@ Use the default GOV.UK header if your service is hosted on GOV.UK and has
 
 <Preview>
   <Story name="GOV.UK">
-    <Header govUK useTudorCrown />
+    <Header govUK />
   </Story>
 </Preview>
 
@@ -80,7 +80,7 @@ Use the default GOV.UK header if your service is hosted on GOV.UK and has
 
 <Preview>
   <Story name="Service name">
-    <Header govUK useTudorCrown
+    <Header govUK
       serviceName="Service name"
       serviceHref="#"
     />
@@ -95,7 +95,7 @@ contact or account management links.
 
 <Preview>
   <Story name="Navigation">
-    <Header govUK useTudorCrown
+    <Header govUK
       navigation={[
         { href: '#1', text: 'Navigation item 1', active: true },
         { href: '?2', text: 'Navigation item 2' },
@@ -145,12 +145,12 @@ If you are building an internal application you can supply the name of
 your department in order to use their colours.
 
 
-#### DCLG
+#### DBT
 
 <Preview>
-  <Story name="DCLG">
+  <Story name="DBT">
     <Header
-      department="department-for-communities-and-local-government"
+      department="department-for-business-trade"
     />
   </Story>
 </Preview>
@@ -228,6 +228,17 @@ your department in order to use their colours.
   <Story name="HM treasury">
     <Header
       department="hm-treasury"
+    />
+  </Story>
+</Preview>
+
+
+#### MHCLG
+
+<Preview>
+  <Story name="MHCLG">
+    <Header
+      department="ministry-for-housing-communities-local-government"
     />
   </Story>
 </Preview>

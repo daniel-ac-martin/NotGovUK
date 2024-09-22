@@ -1,19 +1,22 @@
 @import "@not-govuk/sass-base";
-@import "govuk-frontend/govuk/components/header/_index";
+@import "govuk-frontend/dist/govuk/components/header";
 
 .govuk-header {
   &__container {
     // Department colours
     @each $i, $v in $govuk-colours-organisations {
       &--#{$i} {
-        border-color: map_get($v, "colour-websafe") !important;
+        $contrast-safe: map_get($v, "contrast-safe");
+        $light-colour: map_get($v, "colour");
+        $colour: if($contrast-safe, $contrast-safe, $light-colour);
+        border-color: $colour !important;
 
         .govuk-header__navigation-item--active a,
         .govuk-header__navigation-item a.govuk-header__link--active {
           &:link,
           &:hover,
           &:visited {
-            color: map_get($v, "colour") !important;
+            color: $light-colour !important;
           }
 
           &:focus {
@@ -24,19 +27,20 @@
     }
   }
 
-  &__logotype-coat {
-    @extend .govuk-header__logotype-crown;
-  }
-
-  &__logotype-coat-fallback-image {
-    @extend .govuk-header__logotype-crown-fallback-image;
-  }
-
-  &__logotype-text {
-    margin-left: 0.2em;
+  &__logotype {
+    &--coat {
+      margin-right: 7px !important;
+      top: -1px !important;
+    }
   }
 
   &__link {
+    &--homepage {
+      // Must reinstate this to allow for text on non-GOV.UK pages
+      font-weight: $govuk-font-weight-bold;
+      line-height: 1;
+    }
+
     &--small {
       @include govuk-font(24);
 

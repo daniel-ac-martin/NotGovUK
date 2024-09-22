@@ -17,7 +17,22 @@ describe('Page', () => {
     it('is NOT GOV.UK branded', async () => expect(screen.queryByText('GOV.UK')).toBeNull());
   });
 
-  describe.only('when given all valid props', () => {
+  describe('when given valid govUK props', () => {
+    beforeEach(async () => {
+      render(h(Page, {
+        ...minimalProps,
+        govUK: true
+      }));
+    });
+
+    it('renders an element', async () => expect(screen.getAllByRole('generic')[0]).toBeInTheDocument());
+    it('renders a skip-link', async () => expect(screen.getAllByRole('link')[0]).toHaveTextContent('Skip to main content'));
+    it('renders a header', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
+    it('renders a footer', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
+    it('is GOV.UK branded', async () => expect(screen.queryByText('GOV.UK')).toBeInTheDocument());
+  });
+
+  describe('when given all valid props', () => {
     const props = {
       ...minimalProps,
       backHref: '/back',
@@ -45,7 +60,7 @@ describe('Page', () => {
           items: []
         }
       ],
-      govUK: true,
+      govUK: false,
       maxContentsWidth: 300,
       meta: [
         {
@@ -93,6 +108,7 @@ describe('Page', () => {
     it('renders a skip-link', async () => expect(screen.getAllByRole('link')[0]).toHaveTextContent('Skip to main content'));
     it('renders a header', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
     it('renders a footer', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
+    it('is NOT GOV.UK branded', async () => expect(screen.queryByText('GOV.UK')).toBeNull());
     it('contains the breadcrumbs', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Breadcrumb 2'));
     it('contains the footer content', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Footer content'));
     it('contains the footer navigation', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Footer navigation'));
