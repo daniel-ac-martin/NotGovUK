@@ -1,6 +1,6 @@
 {
   "name": "@not-govuk/next-example",
-  "version": "0.9.1",
+  "version": "0.14.0",
   "description": "A Next.js application with NotGovUK components.",
   "private": true,
   "scripts": {
@@ -15,10 +15,11 @@
     "test:unit": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@not-govuk/simple-components": "workspace:^0.9.1",
+    "@not-govuk/simple-components": "workspace:^0.14.0",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sass": "^1.79.3"
   },
   "devDependencies": {
     "@types/node": "^20",
