@@ -1,8 +1,9 @@
+import type { Errors } from '../completion';
 import { Node } from './node';
 import { PathItem } from './path';
 
 export type FormatFn = (v: any) => string;
-export type PreValidateFn = (v: any) => object;
+export type PreValidateFn = (v: any) => Errors | undefined;
 export type ValidateFn = (v: any) => string;
 
 export class FieldItem implements PathItem {
@@ -18,15 +19,15 @@ export class FieldItem implements PathItem {
 }
 
 export class FieldNode extends Node {
-  readonly tag: string;
+  //readonly tag: string;
   readonly name: string;
-  readonly preValidate: PreValidateFn;
+  readonly preValidate?: PreValidateFn;
   readonly validate: ValidateFn;
-  readonly format: FormatFn;
+  readonly format?: FormatFn;
 
   hasFocus: boolean;
 
-  constructor(name: string, format: FormatFn, validate: ValidateFn, preValidate: PreValidateFn) {
+  constructor(name: string, format: FormatFn | undefined, validate: ValidateFn, preValidate?: PreValidateFn) {
     super('field');
     this.name = name;
     this.format = format;
@@ -43,10 +44,10 @@ export class FieldNode extends Node {
     this.hasFocus = false;
   }
 
-  populateFromValues(values): void {
+  populateFromValues(_values: any): void {
   }
 
-  populateFromNext(next): void {
+  populateFromNext(next: string): void {
     this.hasFocus = this.name === next;
   }
 
@@ -54,7 +55,7 @@ export class FieldNode extends Node {
     return [this];
   }
 
-  traverse(values: any): Node[] {
+  traverse(_values: any): Node[] {
     return [this];
   }
 }

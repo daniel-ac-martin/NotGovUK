@@ -37,10 +37,10 @@ type Verify = StrategyVerifyCallbackReqUserInfo<AuthInfo>;
 
 const id = <T>(x: T): T => x;
 
-type Reducer<A, B> = (B, A) => B;
-const resourceToRoles: Reducer<object, string[]> = (acc, [x, y]) => ([
+type Reducer<A, B> = (acc: B, cur: A) => B;
+const resourceToRoles: Reducer<any[], string[]> = (acc, [x, y]) => ([
   ...acc,
-  ...(y.roles?.map(e => `${x}:${e}`) || [])
+  ...(y.roles?.map((e: string) => `${x}:${e}`) || [])
 ]);
 
 export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
@@ -72,7 +72,7 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
     passReqToCallback: true
   };
 
-  const authInfo = (accessToken: string, refreshToken: string, idToken: string, userinfo: object): AuthInfo => {
+  const authInfo = (accessToken?: string, refreshToken?: string, idToken?: string, userinfo: object = {}): AuthInfo => {
     const extractJWTClaims = (token?: string) => token && JSON.parse(
       base64url.decode(
         token.split('.')[1]
@@ -142,12 +142,12 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
   };
 
   const verify: Verify = (_req, tokenset, userinfo, done) => {
-    const user: AuthInfo = authInfo(tokenset.access_token, tokenset.refresh_token, tokenset.id_token, userinfo || {});
+    const user: AuthInfo = authInfo(tokenset.access_token, tokenset.refresh_token, tokenset.id_token, userinfo);
 
     if (user.username) {
       done(null, user);
     } else {
-      done(null, null);
+      done(null, null as any);
     }
   };
 
@@ -207,7 +207,7 @@ export const oidcAuth: AuthBagger<AuthOptionsOIDC> = async ({
           const newUser: AuthInfo = authInfo(tokenset.access_token, tokenset.refresh_token, tokenset.id_token, userinfo || {});
 
           if (newUser.username && newUser.accessTokenValid) {
-            req.login(newUser, (err) => {
+            req.login(newUser, (err: unknown) => {
               if (err) {
                 req.log.error('Failed to persist new access token');
                 done(null, null);

@@ -3,9 +3,7 @@ import passport, { Strategy } from 'passport';
 import { AuthBagger, Request } from './common';
 
 export type Done = (err: Error | null, user: any) => void;
-export type Serialize = (
-  ( (user: any, done: Done) => void) | ( (req: Request, user: any, done: Done) => void )
-);
+export type Serialize = (req: Request | any, user: any | Done, done: Done) => void;
 
 type PassportOptions = {
   callback: boolean

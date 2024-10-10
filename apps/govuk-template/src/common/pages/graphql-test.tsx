@@ -1,6 +1,12 @@
 import { useQuery, gql } from '@apollo/client';
 import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
+import { ErrorMessage } from '@not-govuk/components';
+
+type Book = {
+  title: string
+  author: string
+};
 
 const books = gql`
   { books {
@@ -22,15 +28,23 @@ const Page: FC<PageProps> = () => {
     <Fragment>
       <h1>GraphQL</h1>
       <h2>Books</h2>
-      <ul>
-        { data?.books?.map(
-            ({ author, title }, i) => (
-              <li key={i}>
-                <strong>{title}</strong> {author}
-              </li>
-            )
-        ) }
-      </ul>
+      { loading ? (
+        <p>Loading...</p>
+      ) : (
+        error ? (
+          <ErrorMessage>{error.message}</ErrorMessage>
+        ) : (
+          <ul>
+            {data?.books?.map(
+              ({ author, title }: Book, i: number) => (
+                <li key={i}>
+                  <strong>{title}</strong> {author}
+                </li>
+              )
+            )}
+          </ul>
+        )
+      ) }
     </Fragment>
   );
 };

@@ -1,3 +1,4 @@
+import type { AlphaLocale, MobilePhoneLocale, PostalCodeLocale } from 'validator';
 import validatorLib from 'validator';
 const {
   isAfter,
@@ -18,7 +19,7 @@ export interface IFieldContext {
   prettyName?: string
 };
 
-type ReadyValidatorFn = (field: IFieldContext) => (value: string) => string;
+type ReadyValidatorFn = (field: IFieldContext) => (value: string) => string | undefined;
 export type ReadyValidator = ReadyValidatorFn & {
   priority?: number
 };
@@ -53,13 +54,13 @@ const wordCount = (s: string): number => words(s).length;
 const readyValidator = (f: ReadyValidatorFn, priority: number = 0): ReadyValidator =>
   Object.assign(f, { priority: priority });
 
-const rawValidator = (customMsg: string, isValid: any, defaultMsg: string) => (
+const rawValidator = (customMsg: string | undefined, isValid: any, defaultMsg: string) => (
   isValid
     ? undefined
     : (customMsg || defaultMsg)
 );
 
-export const validator = (customMsg: string, value: string, isValid: any, defaultMsg: string) =>
+export const validator = (customMsg: string | undefined, value: string, isValid: any, defaultMsg: string) =>
   rawValidator(customMsg,
     !value || isValid,
     defaultMsg);
@@ -112,7 +113,7 @@ export const minWords = (min: number) => (msg?: string) => readyValidator(
   20
 );
 
-export const alpha = (locale?: string) => (msg?: string) => readyValidator(
+export const alpha = (locale?: AlphaLocale) => (msg?: string) => readyValidator(
   (field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isAlpha(value, locale),
@@ -120,7 +121,7 @@ export const alpha = (locale?: string) => (msg?: string) => readyValidator(
   20
 );
 
-export const alphanumeric = (locale?: string) => (msg?: string) => readyValidator(
+export const alphanumeric = (locale?: AlphaLocale) => (msg?: string) => readyValidator(
   (field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isAlphanumeric(value, locale),
@@ -209,7 +210,7 @@ export const after = (date: string) => (msg?: string) => readyValidator(
 );
 
 export const url = (msg?: string) => readyValidator(
-  (field: IFieldContext) => (value: string) =>
+  (_field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isURL(value),
               `Enter a real URL`),
@@ -217,23 +218,23 @@ export const url = (msg?: string) => readyValidator(
 );
 
 export const email = (msg?: string) => readyValidator(
-  (field: IFieldContext) => (value: string) =>
+  (_field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isEmail(value),
               `Enter a real e-mail address`),
   10
 );
 
-export const mobileNumber = (locale?: string) => (msg?: string) => readyValidator(
-  (field: IFieldContext) => (value: string) =>
+export const mobileNumber = (locale?: 'any' | MobilePhoneLocale | MobilePhoneLocale[]) => (msg?: string) => readyValidator(
+  (_field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isMobilePhone(value, locale),
               `Enter a real mobile phone number`),
   10
 );
 
-export const postalCode = (locale?: string) => (msg?: string) => readyValidator(
-  (field: IFieldContext) => (value: string) =>
+export const postalCode = (locale: 'any' | PostalCodeLocale) => (msg?: string) => readyValidator(
+  (_field: IFieldContext) => (value: string) =>
     validator(msg, value,
               value && isPostalCode(value, locale),
               `Enter a real postal code`),

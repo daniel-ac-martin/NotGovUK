@@ -1,9 +1,11 @@
+'use client';
+
 import { FC, Fragment, HTMLProps, ReactNode, createElement as h } from 'react';
-import reactHelmetDefault, * as reactHelmetNamed from 'react-helmet-async';
 import { BackLink } from '@not-govuk/back-link';
 import { Breadcrumb, Breadcrumbs } from '@not-govuk/breadcrumbs';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Footer, FooterProps, NavMenu } from '@not-govuk/footer';
+import { Head } from '@not-govuk/head';
 import { Header, HeaderProps } from '@not-govuk/header';
 import { A } from '@not-govuk/link';
 import { PhaseBanner, PhaseBannerProps } from '@not-govuk/phase-banner';
@@ -11,9 +13,6 @@ import { SkipLink } from '@not-govuk/skip-link';
 import { WidthContainer } from '@not-govuk/width-container';
 
 import '../assets/Page.scss';
-
-const reactHelmet = reactHelmetDefault || reactHelmetNamed;
-const { Helmet } = reactHelmet;
 
 export type PageProps = (
   StandardProps &
@@ -62,7 +61,7 @@ export const Page: FC<PageProps> = ({
   phase,
   phaseBannerContent,
   serviceHref,
-  serviceName: _serviceName,
+  serviceName,
   signOutHref,
   signOutText,
   title: _title,
@@ -70,12 +69,11 @@ export const Page: FC<PageProps> = ({
 }) => {
   const classModifiers = (
     Array.isArray(_classModifiers)
-    ? _classModifiers
-    : [_classModifiers]
+      ? _classModifiers
+      : [_classModifiers]
   );
-  const classes = classBuilder('not-govuk-page', classBlock, [ ...classModifiers, department ], className);
-  const serviceName = _serviceName || _title;
-  const title = _title || _serviceName || 'NotGovUK';
+  const classes = classBuilder('not-govuk-page', classBlock, [...classModifiers, department], className);
+  const title = _title || serviceName || 'NotGovUK';
   const headerProps = {
     department,
     govUK,
@@ -99,10 +97,10 @@ export const Page: FC<PageProps> = ({
 
   return (
     <div {...attrs} className={classes()}>
-      <Helmet>
+      <Head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-      </Helmet>
+      </Head>
       <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
       <Header {...headerProps} className={classes('header')} />
       <div className={classes('body')}>

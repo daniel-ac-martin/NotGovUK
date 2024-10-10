@@ -3,13 +3,13 @@ import { Path } from './path';
 import { FieldNode, isFieldNode } from './field';
 
 export class Graph extends Array<Node> {
-  constructor(...args) {
+  constructor(...args: any) {
     super(...args);
 
     Object.setPrototypeOf(this, Graph.prototype);
   }
 
-  toPath(values: any, next: string): Path {
+  toPath(values: any, _next?: string): Path {
     return (
       this
         .traverse(values)
@@ -25,12 +25,12 @@ export class Graph extends Array<Node> {
     );
   }
 
-  gatherFieldsAlongPath(values) {
+  gatherFieldsAlongPath(values: any): string[] {
     return (
       this
         .traverse(values)
         .filter(isFieldNode)
-        .map(e => isFieldNode(e) && e.name)
+        .map(e => e.name)
     );
   }
 

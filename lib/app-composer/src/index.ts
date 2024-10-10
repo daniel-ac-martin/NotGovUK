@@ -3,12 +3,12 @@ import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@ap
 import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, FC, Fragment, ReactNode, Suspense, createElement as h, lazy } from 'react';
 import { Helmet, HelmetProvider, HelmetServerState } from 'react-helmet-async';
-import { BrowserRouter, BrowserRouterProps, Routes } from 'react-router-dom';
+import { BrowserRouter, BrowserRouterProps, Route, Routes } from 'react-router-dom';
 import { StaticRouter, StaticRouterProps } from 'react-router-dom/server';
-import { Route, useLocation } from '@not-govuk/route-utils';
+import { useLocation } from '@not-govuk/route-utils';
 import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
 
-type DataCache = object;
+type DataCache = Record<string, any>;
 
 export type HydrationData = {
   props: ApplicationPropsCSR
@@ -18,7 +18,7 @@ export type HydrationData = {
 
 export type Hydration = {
   id: string
-  data: HydrationData
+  data?: HydrationData
 };
 
 export type RouteInfo = {
@@ -135,7 +135,7 @@ type DataProviderProps = {
 };
 
 const htmlPage = (html: string): Page => {
-  const HTMLPage = (_) => h(
+  const HTMLPage = (_: unknown) => h(
     'div',
     {
       dangerouslySetInnerHTML: { __html: html }
@@ -145,7 +145,7 @@ const htmlPage = (html: string): Page => {
   return HTMLPage;
 };
 
-const stringToComponentMod = v => (
+const stringToComponentMod = (v: any) => (
   typeof v.default === 'string'
   ? {
     default: htmlPage(v.default)
@@ -153,7 +153,7 @@ const stringToComponentMod = v => (
     : v
 );
 
-export const compose: Compose = options => {
+export const compose: Compose = (options: ComposeOptions) => {
   const Router = (
     "context" in options.routerProps
       ? StaticRouter
@@ -179,12 +179,12 @@ export const compose: Compose = options => {
               : new InMemoryCache()
           ),
           link: (
-            options.graphQL.schema
+            'schema' in options.graphQL
               ? new SchemaLink({
                 schema: options.graphQL.schema,
                 context: { auth: options.user }
               })
-              : createHttpLink(options.graphQL.endpoint)
+              : createHttpLink({ uri: options.graphQL.endpoint })
           )
         })
       )
@@ -201,14 +201,18 @@ export const compose: Compose = options => {
   const extractDataCache = () => client && client.extract();
   const helmetContext = {};
 
-  const App = props => {
+  const App: FC<ApplicationProps> = props => {
     const routes = props
       .pages
       .map(e => {
         const loaded = (
-          e.Component
+          'Component' in e && e.Component
             ? { default: e.Component }
-            : options.pageLoader(e.src)
+            : (
+              'pageLoader' in options
+                ? options.pageLoader(e.src)
+                : undefined
+            )
         );
         const loadedComponentMod = (
           loaded instanceof Promise
@@ -227,7 +231,7 @@ export const compose: Compose = options => {
           title: e.title
         };
       });
-    const withPageWrap = Component => componentProps => {
+    const withPageWrap = <T>(Component: ComponentType<T & PageProps>) => (componentProps: T) => {
       const fullProps = {
         routes,
         signInHRef: props.signInHRef,
@@ -282,9 +286,9 @@ export const compose: Compose = options => {
     );
 
     const router = h(
-      Router, options.routerProps,
+      Router, options.routerProps as any,
       h(UserInfoProvider, {}, h(
-        Suspense, { fallback: h(withPageWrap(options.LoadingPage)) },
+        Suspense, { fallback: h(withPageWrap((options as any).LoadingPage)) },
         switchOrError
       ))
     );
@@ -304,7 +308,7 @@ export const compose: Compose = options => {
   return Object.assign(App, {
     extractDataCache,
     helmetContext: helmetContext as HelmetDataContext
-  });
+  }) as any;
 };
 
 export { renderToStringWithData } from '@apollo/client/react/ssr';

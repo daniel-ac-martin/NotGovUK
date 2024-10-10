@@ -5,7 +5,7 @@ const keywords = [
   'src'
 ];
 
-const ppObj = {
+const ppObj: Record<string, string> = {
   'accelerometer': 'self',
   'ambient-light-sensor': 'self', // Unsupported in Chrome
   'attribution-reporting': 'self', // Unsupported in Chrome

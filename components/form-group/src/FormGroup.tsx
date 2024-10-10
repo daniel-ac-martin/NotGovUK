@@ -33,7 +33,7 @@ export const FormGroup: FC<FormGroupProps> = ({
   ...attrs
 }) => {
   const classModifiers = [
-    error && 'error',
+    error ? 'error' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder('govuk-form-group', classBlock, classModifiers, className);

@@ -10,17 +10,14 @@ export const title = 'Sitemap';
 const description = `Overview of ${siteTitle}`;
 
 const Page: FC<PageProps> = ({ routes }) => {
-  const compare = (a, b) => (
-    a.href > b.href
-           ? 1
-           : -1
+  const pages = (
+    routes
+      .map(e => ({
+        href: e.href,
+        text: e.title
+      }))
+      .sort((a, b) => a.href > b.href ? 1 : -1)
   );
-  const pages = routes
-    .map(e => ({
-      href: e.href,
-      text: e.title
-    }))
-    .sort(compare);
 
   return (
     <Fragment>

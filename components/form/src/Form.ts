@@ -57,12 +57,12 @@ export const Form: TForm = Object.assign(
 
 const defaultLanguage = 'en';
 const defaultCountry = 'GB';
-const defaultLocale = `${defaultLanguage}_${defaultCountry}`;
+const defaultLocale = `${defaultLanguage}-${defaultCountry}`;
 
-export const alpha = localAlpha(defaultLocale);
-export const alphanumeric = localAlphanumeric(defaultLocale);
-export const mobileNumber = localMobileNumber(defaultLocale);
-export const postcode = localPostalCode(defaultCountry);
+export const alpha = localAlpha(defaultLocale as any);
+export const alphanumeric = localAlphanumeric(defaultLocale as any);
+export const mobileNumber = localMobileNumber(defaultLocale as any);
+export const postcode = localPostalCode(defaultCountry as any);
 
 export default Form;
 export {

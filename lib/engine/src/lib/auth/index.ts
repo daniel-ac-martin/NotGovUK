@@ -1,4 +1,4 @@
-import { Apply, AuthBag, AuthMethod, Middleware, Promised } from './common';
+import { Apply, AuthBag, AuthMethod, Middleware, Promised, RequestFull } from './common';
 import { AuthOptionsBasic, basicAuth } from './basic';
 import { AuthOptionsDummy, dummyAuth } from './dummy';
 import { AuthOptionsHeaders, headersAuth } from './headers';
@@ -12,7 +12,7 @@ export type AuthOptions = AuthOptionsNone | AuthOptionsDummy | AuthOptionsHeader
 
 export type AuthTools = {
   apply: Apply
-  authenticate: Middleware
+  authenticate?: Middleware
   sessions: boolean
 };
 
@@ -56,7 +56,9 @@ const buildTools = async (options: Promised<AuthBag>): Promise<AuthTools> => {
             : [ signOutPath ]
         );
 
-        const siteWideAuth: Middleware = (req, res, next) => {
+        const siteWideAuth: Middleware = (_req, res, next) => {
+          const req = _req as RequestFull;
+
           if (req.isAuthenticated() || whitelist.includes(req.getPath())) {
             next();
           } else {

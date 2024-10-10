@@ -9,7 +9,7 @@ export type AuthOptionsHeaders = {
   rolesHeader?: string
 };
 
-const valueFromHeader = (header: string | string[]): string => (
+const valueFromHeader = (header?: string | string[]): string | undefined => (
   Array.isArray(header)
     ? header[0]
     : header
@@ -29,8 +29,8 @@ export const headersAuth: AuthBagger<AuthOptionsHeaders> = ({
       username && roles
         ? {
           username: username,
-          groups: groups.split(',') || [],
-          roles: roles.split(',') || []
+          groups: groups?.split(',') || [],
+          roles: roles?.split(',') || []
         }
         : undefined
     );
