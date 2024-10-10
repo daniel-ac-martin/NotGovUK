@@ -8,6 +8,7 @@ const nextConfig = {
     ...config,
     plugins: [
       ...config.plugins,
+      new webpack.NormalModuleReplacementPlugin(/^react-helmet-async$/, '@not-govuk\/VOID-react-helmet-async'),
       new webpack.NormalModuleReplacementPlugin(/^react-router$/, '@not-govuk\/VOID-react-router'),
       new webpack.NormalModuleReplacementPlugin(/^react-router-dom$/, '@not-govuk\/VOID-react-router-dom'),
     ]
