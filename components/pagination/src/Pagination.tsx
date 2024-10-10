@@ -90,6 +90,12 @@ export const Pagination: FC<PaginationProps> = ({
     totalPages = undefined,
     ...attrs
   } = {
+    backAndForth: undefined, // Added to satisfy TypeScript v5
+    nextText: undefined, // Added to satisfy TypeScript v5
+    pageParameter: undefined, // Added to satisfy TypeScript v5
+    previousText: undefined, // Added to satisfy TypeScript v5
+    query: undefined, // Added to satisfy TypeScript v5
+    totalPages: undefined, // Added to satisfy TypeScript v5
     ...rest,
     next: (
       'nextText' in rest
