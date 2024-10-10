@@ -1,6 +1,6 @@
 import { Middleware } from "./common";
 
-export const liveness: Middleware = (req, res, next) => {
+export const liveness: Middleware = (_req, res, _next) => {
   res.contentType = undefined;
   res.send('OK');
 };

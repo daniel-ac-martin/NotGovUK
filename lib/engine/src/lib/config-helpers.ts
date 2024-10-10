@@ -1,7 +1,7 @@
 type Pattern = RegExp | string;
 
 const parseBoolean = (pattern: Pattern) => (
-  (s: string): boolean => !!(
+  (s?: string): boolean => !!(
     s && s.match(pattern)
   )
 );

@@ -28,7 +28,7 @@ export const Tabs: FC<TabsProps> = ({
   const classes = classBuilder('govuk-tabs', classBlock, classModifiers, className);
   const initial = 0;
   const [ selected, setSelected ] = useState(initial);
-  const refs = items.map(() => useRef(null));
+  const refs = items.map(() => useRef<HTMLAnchorElement>(null));
   const select = (i: number) => (e: SyntheticEvent) => {
     e.preventDefault();
     i !== selected && setSelected(i);
@@ -41,7 +41,7 @@ export const Tabs: FC<TabsProps> = ({
         if (selected > 0) {
           const i = selected - 1;
           setSelected(i);
-          refs[i].current.focus();
+          refs[i].current?.focus();
         }
         break;
       case 'ArrowRight':
@@ -50,7 +50,7 @@ export const Tabs: FC<TabsProps> = ({
         if (selected < items.length - 1) {
           const i = selected + 1;
           setSelected(i);
-          refs[i]?.current.focus();
+          refs[i].current?.focus();
         }
         break;
     }

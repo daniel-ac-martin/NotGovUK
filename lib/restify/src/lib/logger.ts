@@ -1,6 +1,8 @@
 import Bunyan, { LoggerOptions } from 'bunyan';
 
-export const logger = (options: LoggerOptions) => new Bunyan(options);
+export type Logger = Bunyan;
+
+export const logger = (options: LoggerOptions): Logger => new Bunyan(options);
 
 export default logger;
 export type {

@@ -5,8 +5,10 @@ import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
 import { useLocation } from '@not-govuk/route-utils';
 
-const reduceToLookup = (acc: object, cur) => ({...acc, [cur.default.title]: cur});
-const buildLookup = v => v.reduce(reduceToLookup, {});
+type Subpages = Record<string, any>;
+
+const reduceToLookup = (acc: Subpages, cur: any): Subpages => ({ ...acc, [cur.default.title]: cur });
+const buildLookup = (v: any): Subpages => v.reduce(reduceToLookup, {});
 
 const mainStories = [
   require('../../../../../components/back-link/spec/BackLink.stories.mdx'),
@@ -74,7 +76,7 @@ const buildLink = (v: string) => ({
   text: v
 });
 
-const buildLinks = v => Object.keys(v).sort().map(buildLink);
+const buildLinks = (v: Subpages) => Object.keys(v).sort().map(buildLink);
 
 const mainLinks = buildLinks(mainComponents);
 const unofficialLinks = buildLinks(unofficialComponents);
@@ -85,7 +87,7 @@ const description = 'The components provided in NotGovUK';
 
 const Page: FC<PageProps> = () => {
   const location = useLocation();
-  const componentName = location.query[nameParam];
+  const componentName = location.query[nameParam] as unknown as string;
   const stories = subpages[componentName];
 
   return (

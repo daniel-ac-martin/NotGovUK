@@ -1,3 +1,4 @@
+/// <reference path='./restify-bunyan-logger.d.ts' />
 import _restify, { plugins, ServerOptions as _ServerOptions } from 'restify';
 import restifyBunyanLogger from 'restify-bunyan-logger';
 import stoppable from 'stoppable';
@@ -8,8 +9,12 @@ import { CSPSources, preventClickjacking } from './middleware/prevent-clickjacki
 import { preventMimeSniffing } from './middleware/prevent-mime-sniffing';
 import { noCacheByDefault } from './middleware/no-cache-by-default';
 import { IsReady, readiness } from './middleware/readiness';
-import { LoggerOptions as _LoggerOptions, logger } from './lib/logger';
-import { installServeAPI } from './lib/serve-api';
+import { Logger, LoggerOptions as _LoggerOptions, logger } from './lib/logger';
+import { Server as _Server, installServeAPI } from './lib/serve-api';
+
+export type Server = _Server & stoppable.WithStop & {
+  log: Logger
+};
 
 export type LoggerOptions = Omit<_LoggerOptions, 'name'> & {
   name?: string
@@ -29,9 +34,9 @@ export type ServerOptions = _ServerOptions & {
 
 const _createServer = _restify.createServer.bind(_restify);
 
-export const createServer = (options: ServerOptions ) => {
+export const createServer = (options: ServerOptions): Server => {
   if (options.name) {
-    process.title = options.name.replace(/[^\w]/gi, '').substr(0, 6);
+    process.title = options.name.replace(/[^\w]/gi, '').substring(0, 6);
   }
 
   const name = options.name || 'restify';
@@ -72,7 +77,7 @@ export const createServer = (options: ServerOptions ) => {
       ...options.formatters
     },
     log
-  });
+  }) as Server;
 
   httpd.log = log;
 

@@ -12,12 +12,12 @@ import {
   validator
 } from '@not-govuk/components';
 
-const notFrench = (msg?: string) => (field: object) => (value: string) =>
+const notFrench = (msg?: string) => (_field: object) => (value: string) =>
   validator(msg, value,
             value !== 'incorrect',
             `Choose an acceptable nationality`);
 
-const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
+const prettyPrint = (obj: object) => JSON.stringify(obj, undefined, 2);
 
 const Page: FC<PageProps> = () => {
   const location = useLocation();
@@ -63,7 +63,7 @@ const Page: FC<PageProps> = () => {
           <Form.Submit>Continue</Form.Submit>
         </Form.Page>
         <Form.Fork
-          if={v => v.sex === 'female'}
+          if={(v: any) => v.sex === 'female'}
           then={
             <Form.Page>
               <Form.TextInput

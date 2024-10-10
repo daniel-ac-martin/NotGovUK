@@ -3,17 +3,14 @@ import { PageProps } from '@not-govuk/app-composer';
 import { NavLink } from 'react-router-dom';
 
 export const PageWrap: FC<PageProps> = ({ routes, children }) => {
-  const compare = (a, b) => (
-    a.href > b.href
-    ? 1
-    : -1
+  const navigation = (
+    routes
+      .map(e => ({
+        href: e.href,
+        text: e.title
+      }))
+      .sort((a, b) => a.href > b.href ? 1 : -1)
   );
-  const navigation = routes
-    .map(e => ({
-      href: e.href,
-      text: e.title
-    }))
-    .sort(compare);
 
   return (
     <div id="page">

@@ -14,6 +14,8 @@ const selectThreshold = 8;
 type CommonProps = {
   /** Label */
   label: ReactNode
+  /** Name */
+  name: string
 };
 
 type Option = {
@@ -105,7 +107,7 @@ const isSingleOption = (v: FieldWithOptionsProps): v is FieldWithSingleOptionsPr
 export type FormFieldProps = FieldWithOptionsProps | FieldWithoutOptionsProps;
 
 const hasOptions = (v: FormFieldProps): v is FieldWithOptionsProps => (
-  !!v['options']
+  'options' in v
 );
 
 const hasNoOptions = (v: FormFieldProps): v is FieldWithoutOptionsProps => (

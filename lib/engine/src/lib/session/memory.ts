@@ -1,4 +1,4 @@
-import { customSession } from './custom';
+import { SessionData, customSession } from './custom';
 import { Session, SessionStore } from './common';
 
 // A simple in-memory session
@@ -11,10 +11,10 @@ export type SessionOptionsMemory = {
 };
 
 export const memorySession: Session<SessionOptionsMemory> = (_) => {
-  const store = {};
+  const store: Record<string, SessionData> = {};
 
-  const read = (id: string): object => store[id];
-  const write = (id: string, data: object): void => {
+  const read = (id: string): SessionData => store[id];
+  const write = (id: string, data: SessionData): void => {
     store[id] = data;
   }
 
@@ -23,6 +23,6 @@ export const memorySession: Session<SessionOptionsMemory> = (_) => {
     read,
     write
   });
-}
+};
 
 export default memorySession;

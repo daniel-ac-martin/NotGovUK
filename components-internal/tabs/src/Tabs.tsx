@@ -24,7 +24,7 @@ export const Tabs: FC<TabsProps> = ({
   const classes = classBuilder('penultimate-tabs', classBlock, classModifiers, className);
   const location = useLocation();
   const fragment = location.hash?.substring(1);
-  const fragmentSelected = items.reduce((acc: number, cur: TabItem, i: number) => (
+  const fragmentSelected = items.reduce((acc: number | undefined, cur: TabItem, i: number) => (
     cur.id === fragment
       ? i
       : acc
@@ -32,7 +32,7 @@ export const Tabs: FC<TabsProps> = ({
   const initial = fragmentSelected || 0;
   const [ selected, setSelected ] = useState(initial);
   const [ expanded, setExpanded ] = useState(fragmentSelected !== undefined);
-  const refs = items.map(() => useRef(null));
+  const refs = items.map(() => useRef<HTMLAnchorElement>(null));
   const select = (i: number) => (e: SyntheticEvent) => {
     e.preventDefault();
     if (i === selected) {
@@ -49,7 +49,7 @@ export const Tabs: FC<TabsProps> = ({
         if (selected > 0) {
           const i = selected - 1;
           setSelected(i);
-          refs[i].current.focus();
+          refs[i].current?.focus();
         }
         break;
       case 'ArrowRight':
@@ -57,7 +57,7 @@ export const Tabs: FC<TabsProps> = ({
         if (selected < items.length - 1) {
           const i = selected + 1;
           setSelected(i);
-          refs[i]?.current.focus();
+          refs[i].current?.focus();
         }
         break;
       case 'ArrowUp':

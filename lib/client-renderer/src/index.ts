@@ -31,18 +31,18 @@ export const hydrateOrRender: HydrateOrRender = ({
       ErrorPage,
       LoadingPage,
       PageWrap,
-      data: windowWithProps.hydration.data.cache,
+      data: windowWithProps.hydration?.data?.cache,
       graphQL: {
         endpoint: '/graphql'
       },
       pageLoader,
       routerProps,
-      user: windowWithProps.hydration.data.user
+      user: windowWithProps.hydration?.data?.user
     }),
-    windowWithProps.hydration.data.props
+    windowWithProps.hydration?.data?.props
   );
-  const container = document.getElementById(windowWithProps.hydration.id);
-  const root = hydrateRoot(container, app);
+  const container = document.getElementById(windowWithProps.hydration?.id || '');
+  const root = container && hydrateRoot(container, app);
 
   const jsEnabledClass = 'js-enabled';
 

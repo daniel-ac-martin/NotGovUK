@@ -12,7 +12,7 @@ export const isSessionOptionsCookie = (v: SessionOptions): v is SessionOptionsCo
 const isSessionOptionsCustom = (v: SessionOptions): v is SessionOptionsCustom => v.store === SessionStore.Custom;
 const isSessionOptionsMemory = (v: SessionOptions): v is SessionOptionsMemory => v.store === SessionStore.Memory;
 
-export const session = (options: SessionOptions): Middleware => (
+export const session = (options: SessionOptions): Middleware | undefined => (
   isSessionOptionsCustom(options) ? customSession(options)
     : isSessionOptionsMemory(options) ? memorySession(options)
     : undefined

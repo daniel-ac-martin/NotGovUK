@@ -28,8 +28,8 @@ export const Checkbox: FC<CheckboxProps> = ({
     return f && f(e);
   };
 
-  const onChange = withUpdate(_onChange);
-  const ref = useRef(null);
+  const onChange = _onChange && withUpdate(_onChange);
+  const ref = useRef<HTMLInputElement>(null);
   const conditionalId = `conditional-${id}`;
 
   const isChecked = () => ref.current?.checked;
@@ -44,8 +44,8 @@ export const Checkbox: FC<CheckboxProps> = ({
           type="checkbox"
           ref={ref}
           onChange={onChange}
-          aria-controls={conditional && conditionalId}
-          aria-expanded={conditional && !!isChecked()}
+          aria-controls={conditional ? conditionalId : undefined}
+          aria-expanded={conditional ? !!isChecked() : undefined}
         />
         <Label htmlFor={id} className={classes('label')}>{label}</Label>
         {hint && <Hint id={`${id}-hint`} className={classes('hint')}>{hint}</Hint>}

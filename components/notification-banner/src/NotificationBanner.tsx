@@ -32,7 +32,7 @@ export const NotificationBanner: FC<NotificationBannerProps> = ({
 }) => {
   const isSuccess = _type === 'success';
   const classModifiers = [
-    isSuccess && 'success',
+    isSuccess ? 'success' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder('govuk-notification-banner', classBlock, classModifiers, className);
@@ -50,17 +50,17 @@ export const NotificationBanner: FC<NotificationBannerProps> = ({
     (attrs.id || 'govuk-notification-banner') + '-title'
   );
   const autoFocus = role === 'alert' && !disableAutoFocus;
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (autoFocus) {
+    if (autoFocus && ref.current) {
       // Make the element focussable with JavaScript
       // See: https://github.com/alphagov/govuk-frontend/blob/e6351f64dc5e214e473d53f17e0948eb38a32608/src/govuk/components/notification-banner/notification-banner.mjs#L71
       if (!ref.current.getAttribute('tabindex')) {
         ref.current.setAttribute('tabindex', '-1')
 
         ref.current.addEventListener('blur', function () {
-          ref.current.removeAttribute('tabindex')
+          ref.current?.removeAttribute('tabindex')
         })
       }
 

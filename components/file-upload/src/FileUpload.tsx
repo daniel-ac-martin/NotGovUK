@@ -12,6 +12,8 @@ export type FileUploadProps = Omit<InputProps, 'type'> & {
   hint?: ReactNode
   /** Label */
   label: ReactNode
+  /** HTML name */
+  name: string
 };
 
 export const FileUpload: FC<FileUploadProps> = ({
@@ -25,7 +27,7 @@ export const FileUpload: FC<FileUploadProps> = ({
   ...attrs
 }) => {
   const classModifiers = [
-    error && 'error',
+    error ? 'error' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const id = _id || attrs.name;

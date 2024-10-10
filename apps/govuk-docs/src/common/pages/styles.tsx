@@ -5,8 +5,10 @@ import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
 import { useLocation } from '@not-govuk/route-utils';
 
-const reduceToLookup = (acc, cur) => ({...acc, [cur.default.title]: cur});
-const createSubpageStore = r => (
+type Subpages = Record<string, any>;
+
+const reduceToLookup = (acc: Subpages, cur: any): Subpages => ({ ...acc, [cur.default.title]: cur });
+const createSubpageStore = (r: __WebpackModuleApi.RequireContext) => (
   r
     .keys()
     .map(r)
@@ -20,7 +22,7 @@ const description = 'The styles provided in NotGovUK';
 const Page: FC<PageProps> = () => {
   const location = useLocation();
   const nameParam = 'name';
-  const subPageName = location.query[nameParam];
+  const subPageName = location.query[nameParam] as unknown as string;
   const stories = subpages[subPageName];
   const navItems = Object.keys(subpages).sort().map(v => ({
     href: `/styles?${nameParam}=${encodeURIComponent(subpages[v].default.title)}`,

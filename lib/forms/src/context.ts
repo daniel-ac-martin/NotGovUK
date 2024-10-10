@@ -1,5 +1,5 @@
 import { useFormikContext } from 'formik';
-import { useCompletionContext } from './completion';
+import { Values, useCompletionContext } from './completion';
 import { useRegistrationContext } from './registry';
 
 export const useForm = (): any => {
@@ -12,12 +12,12 @@ export const useForm = (): any => {
     completion,
     registry,
     updateScope: () => {
-      completion.updateScope(formik.values);
+      completion.updateScope(formik.values as Values);
     },
     update: () => {
       formik.validateForm()
         .then(errors => {
-          completion.update(formik.values, errors);
+          completion.update(formik.values as Values, errors);
           completion.getUnseenFields()
             .map(e => formik.setFieldTouched(e, false, false));
         });

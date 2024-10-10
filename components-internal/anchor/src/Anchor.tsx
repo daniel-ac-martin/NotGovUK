@@ -26,15 +26,15 @@ export const Anchor: FC<AnchorProps> = ({
   href,
   ...attrs
 }) => {
-  const active = useActive()(href);
+  const active = useActive()(href || '');
   const current = useLocation();
   const isMounted = useIsMounted();
   const classModifiers =[
-    active && 'active',
+    active ? 'active' : '',
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder('penultimate-anchor', classBlock, classModifiers, className);
-  const url = urlParse(href);
+  const url = urlParse(href || '');
   const unsupported = url.protocol !== '' && !supportedProtocols.includes(url.protocol);
   const noPath = url.pathname === '';
   const noSearch = url.search === '';

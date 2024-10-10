@@ -2,7 +2,7 @@ import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
 import { useLocation } from '@not-govuk/route-utils';
 
-const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
+const prettyPrint = (obj: object) => JSON.stringify(obj, undefined, 2);
 
 const Page: FC<PageProps> = () => {
   const location = useLocation();

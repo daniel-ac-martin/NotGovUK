@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import engine, { AuthMethod, Mode } from '@not-govuk/engine';
+import engine, { AuthMethod, Handler, Mode, SessionStore } from '@not-govuk/engine';
 import config from './config';
 import AppWrap from '../common/app-wrap';
 import ErrorPage from '../common/error-page';
@@ -29,7 +29,7 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
         || ( config.auth.method === AuthMethod.Headers && { method: AuthMethod.Headers, ...config.auth.headers } )
         || ( config.auth.method === AuthMethod.Basic && { method: AuthMethod.Basic, ...config.auth.basic } )
         || ( config.auth.method === AuthMethod.OIDC && { method: AuthMethod.OIDC, ...config.auth.oidc } )
-    ),
+    ) || undefined,
     cookies: {
       secret: config.cookies.secret,
       secure: config.cookies.secure
@@ -59,12 +59,16 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
     name: config.name,
     pageLoader,
     privacy: config.privacy,
+    session: config.session && (
+      ( config.session.store === SessionStore.Cookie && { store: SessionStore.Cookie } )
+        || ( config.session.store === SessionStore.Memory && { store: SessionStore.Memory } )
+    ) || undefined,
     ssrOnly: config.ssrOnly
   });
 
   const handler = (
     config.mode === Mode.Serverless
-      ? async (...args) => (await app)(...args)
+      ? app as Promise<Handler>
       : undefined
   );
 

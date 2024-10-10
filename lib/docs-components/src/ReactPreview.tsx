@@ -64,7 +64,7 @@ export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
   source?: string
 };
 
-export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, classModifiers, className, id, source, ...attrs }) => {
+export const ReactPreview: FC<ReactPreviewProps> = ({ children, classBlock, classModifiers, className, id, source = '', ...attrs }) => {
   const classes = classBuilder('penultimate-react-preview', classBlock, classModifiers, className);
   const markup = renderToMarkup(children);
   const html = prettyHtmlFromMemo(markup);

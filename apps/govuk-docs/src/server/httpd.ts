@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import engine, { Mode } from '@not-govuk/engine';
+import engine, { Handler, Mode } from '@not-govuk/engine';
 import config from './config';
 import AppWrap from '../common/app-wrap';
 import ErrorPage from '../common/error-page';
@@ -51,7 +51,7 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
 
   const handler = (
     config.mode === Mode.Serverless
-      ? async (...args) => (await app)(...args)
+      ? app as Promise<Handler>
       : undefined
   );
 

@@ -33,6 +33,8 @@ export type RadiosProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElem
   id?: string
   /** Label */
   label: ReactNode
+  /** HTML name */
+  name: string
   /** List of options to select from */
   options: OptionOrSeperator[]
 };
@@ -56,7 +58,7 @@ export const Radios: FC<RadiosProps> = ({
   const hintId = `${id}-hint`;
   const setState = useState({})[1];
   const forceUpdate = () => setState({});
-  const withUpdate = <A, B>(f: (a: A) => B) => (e: A): B => {
+  const withUpdate = <A, B>(f?: (a: A) => B) => (e: A): B | undefined => {
     forceUpdate();
     return f && f(e);
   };

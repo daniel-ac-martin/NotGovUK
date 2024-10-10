@@ -17,12 +17,12 @@ const id = <T>(v: T): T => v;
 
 const csp = ({
   frameAncestors: _frameAncestors
-}: CSPOptions, nonce: string) => {
+}: CSPOptions, nonce: string): Record<string, Sources> => {
   const frameAncestors = (
     Array.isArray(_frameAncestors)
       ? _frameAncestors
       : [_frameAncestors]
-  ).filter(id);
+  ).filter(id) as Source[];
 
   return {
     // Fetch directives

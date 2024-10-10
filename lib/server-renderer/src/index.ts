@@ -12,15 +12,18 @@ type Request = _Request & {
 
 type RenderApp = (code?: any, body?: any, headers?: any) => Promise<void>;
 
-export type Response = _Response & {
+type ResponseExtras = {
+  renderApp: RenderApp
+};
+type Response = _Response & Partial<ResponseExtras> & {
   html?: string
   locals?: any
-  renderApp?: RenderApp
 };
+export type ResponseFull = Response & ResponseExtras;
 
 type Body = string | Error;
 
-const statusToTitle = {
+const statusToTitle: Record<number, string> = {
   400: 'Bad request',
   401: 'Unauthorised',
   402: 'Payment required',
@@ -67,7 +70,7 @@ export type RestifyRenderer = {
 
 export type ReactRenderer = (options: RendererOptions) => RestifyRenderer;
 
-const contentTypeToCharSet = (contentType: string): string => {
+const contentTypeToCharSet = (contentType: string): string | undefined => {
   const matches = contentType.match(/charset=([^;]*)/);
 
   return (
@@ -103,7 +106,7 @@ export const reactRenderer: ReactRenderer = ({
       expiry: req.auth?.expiry?.toISOString()
     };
     const routerProps = {
-      location: req.url,
+      location: req.url || '',
       context: {
         statusCode: res.statusCode
       }
@@ -119,7 +122,7 @@ export const reactRenderer: ReactRenderer = ({
     );
     const reqProps = {
       err,
-      pageTitle: (err && err.title) || body?.toString()
+      pageTitle: (err && err.title) || body?.toString() || 'NotGovUK'
     };
     const appProps = {
       pages,
@@ -155,7 +158,7 @@ export const reactRenderer: ReactRenderer = ({
               ? header[0]
               : header
           );
-          fromHeader = JSON.parse(str);
+          fromHeader = JSON.parse(str || '');
         } catch (_e) {}
       }
 
@@ -187,7 +190,7 @@ export const reactRenderer: ReactRenderer = ({
               user
             }
         ),
-        nonce: res.nonce,
+        nonce: res.nonce || '',
         rootId,
         scripts: (
           ssrOnly
@@ -218,7 +221,7 @@ export const reactRenderer: ReactRenderer = ({
     return res.html;
   };
 
-  const renderApp = (req: Request): RenderApp => function(code, body, headers) {
+  const renderApp = (req: Request): RenderApp => function(this: Response, code, body, headers) {
     const res = this;
     const charSet = 'UTF-8';
 
