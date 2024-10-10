@@ -22,17 +22,13 @@ const config = {
     "^.+\\.jsx?$": 'babel-jest',
     "^.+\\.tsx?$": ['ts-jest', {
       isolatedModules: true,
-      tsconfig: path.resolve(__dirname, 'tsconfig.json'),
-      useESM: true
+      tsconfig: path.resolve(__dirname, 'tsconfig.jest.json'),
+      useESM: false
     }]
   },
   transformIgnorePatterns: [
     'node_modules/\.pnpm/(?!@)'
   ],
-  extensionsToTreatAsEsm: [
-    '.ts',
-    '.tsx'
-  ]
 };
 
 module.exports = config;
