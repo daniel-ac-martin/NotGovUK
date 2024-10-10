@@ -1,5 +1,4 @@
 import { FC, ReactNode, createElement as h } from 'react';
-import { classBuilder } from '@not-govuk/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 import { Input, InputProps } from '@not-govuk/input';
 
