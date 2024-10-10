@@ -4,13 +4,6 @@ import { useIsMounted, useLocation } from '@not-govuk/route-utils';
 
 import '../assets/Tabs.scss';
 
-const key = {
-  left: 37,
-  right: 39,
-  up: 38,
-  down: 40
-};
-
 type TabItem = {
   id: string,
   label: string,
@@ -50,8 +43,8 @@ export const Tabs: FC<TabsProps> = ({
     }
   };
   const keydown = (e: KeyboardEvent) => {
-    switch (e.keyCode) {
-      case key.left:
+    switch (e.key) {
+      case 'ArrowLeft':
         e.preventDefault();
         if (selected > 0) {
           const i = selected - 1;
@@ -59,7 +52,7 @@ export const Tabs: FC<TabsProps> = ({
           refs[i].current.focus();
         }
         break;
-      case key.right:
+      case 'ArrowRight':
         e.preventDefault();
         if (selected < items.length - 1) {
           const i = selected + 1;
@@ -67,11 +60,11 @@ export const Tabs: FC<TabsProps> = ({
           refs[i]?.current.focus();
         }
         break;
-      case key.up:
+      case 'ArrowUp':
         e.preventDefault();
         setExpanded(false);
         break;
-      case key.down:
+      case 'ArrowDown':
         e.preventDefault();
         setExpanded(true);
         break;

@@ -34,9 +34,9 @@ export const Tabs: FC<TabsProps> = ({
     i !== selected && setSelected(i);
   };
   const keydown = (e: KeyboardEvent) => {
-    switch (e.keyCode) {
-      case 37:
-      case 38:
+    switch (e.key) {
+      case 'ArrowLeft':
+      case 'ArrowUp':
         e.preventDefault();
         if (selected > 0) {
           const i = selected - 1;
@@ -44,8 +44,8 @@ export const Tabs: FC<TabsProps> = ({
           refs[i].current.focus();
         }
         break;
-      case 39:
-      case 40:
+      case 'ArrowRight':
+      case 'ArrowDown':
         e.preventDefault();
         if (selected < items.length - 1) {
           const i = selected + 1;
