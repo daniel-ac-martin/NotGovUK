@@ -1,9 +1,9 @@
 'use client';
 
 import { FC, ReactNode, createElement as h } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { A } from '@not-govuk/link';
+import { useNavigate } from '@not-govuk/route-utils';
 
 import '../assets/BackLink.scss';
 
