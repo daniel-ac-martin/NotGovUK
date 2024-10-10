@@ -1,10 +1,12 @@
+const title = 'Two';
+
 export default function Page() {
   return (
     <>
       <h1>
-        Two
+        {title}
       </h1>
-      <p>Two content</p>
+      <p>{title} content</p>
     </>
   );
 }
