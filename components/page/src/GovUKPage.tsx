@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, createElement as h } from 'react';
-import reactHelmetDefault, * as reactHelmetNamed from 'react-helmet-async';
+import { Head } from '@not-govuk/head';
 import { Page, PageProps } from './Page';
 
 import favicon from 'govuk-frontend/dist/govuk/assets/images/favicon.ico';
@@ -12,8 +12,6 @@ import ogImage from 'govuk-frontend/dist/govuk/assets/images/govuk-opengraph-ima
 
 import '../assets/GovUKPage.scss';
 
-const reactHelmet = reactHelmetDefault || reactHelmetNamed;
-const { Helmet } = reactHelmet;
 
 export type GovUKPageProps = Omit<PageProps, 'govUK'>;
 
@@ -23,14 +21,14 @@ export const GovUKPage: FC<GovUKPageProps> = ({ children, classModifiers, ...pro
     classModifiers={[ ...(Array.isArray(classModifiers) ? classModifiers : [classModifiers]), 'govuk' ]}
     govUK={true}
   >
-    <Helmet>
+    <Head>
       <meta name="theme-color" content="#0b0c0c" />
       <link rel="icon" sizes="48x48" href={favicon} />
       <link rel="icon" sizes="any" href={faviconSVG} type="image/svg+xml" />
       <link rel="mask-icon" href={maskIcon} color="#0b0c0c" />
       <link rel="apple-touch-icon" href={appleTouchIcon180} />
       <meta property="og:image" content={ogImage} />
-    </Helmet>
+    </Head>
     {children}
   </Page>
 );
