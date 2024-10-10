@@ -1,17 +1,24 @@
+/// <reference path='./bundler.d.ts' />
 'use client';
 
 import { FC, createElement as h } from 'react';
 import { Head } from '@not-govuk/head';
 import { Page, PageProps } from './Page';
+import { unwrapImage } from './types';
 
-import favicon from 'govuk-frontend/dist/govuk/assets/images/favicon.ico';
-import faviconSVG from 'govuk-frontend/dist/govuk/assets/images/favicon.svg';
-import maskIcon from 'govuk-frontend/dist/govuk/assets/images/govuk-icon-mask.svg';
-import appleTouchIcon180 from 'govuk-frontend/dist/govuk/assets/images/govuk-icon-180.png';
-import ogImage from 'govuk-frontend/dist/govuk/assets/images/govuk-opengraph-image.png';
+import iFavicon from 'govuk-frontend/dist/govuk/assets/images/favicon.ico';
+import iFaviconSVG from 'govuk-frontend/dist/govuk/assets/images/favicon.svg';
+import iMaskIcon from 'govuk-frontend/dist/govuk/assets/images/govuk-icon-mask.svg';
+import iAppleTouchIcon180 from 'govuk-frontend/dist/govuk/assets/images/govuk-icon-180.png';
+import iOGImage from 'govuk-frontend/dist/govuk/assets/images/govuk-opengraph-image.png';
+
+const favicon = unwrapImage(iFavicon);
+const faviconSVG = unwrapImage(iFaviconSVG);
+const maskIcon = unwrapImage(iMaskIcon);
+const appleTouchIcon180 = unwrapImage(iAppleTouchIcon180);
+const ogImage = unwrapImage(iOGImage);
 
 import '../assets/GovUKPage.scss';
-
 
 export type GovUKPageProps = Omit<PageProps, 'govUK'>;
 

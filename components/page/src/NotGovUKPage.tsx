@@ -1,18 +1,26 @@
+/// <reference path='./bundler.d.ts' />
 'use client';
 
 import { FC, createElement as h } from 'react';
 import { Head } from '@not-govuk/head';
 import { Page, PageProps } from './Page';
+import { unwrapImage } from './types';
 
-import favicon from '../assets/coat-favicon.ico';
-import appleTouchIcon180 from '../assets/coat-apple-touch-icon-180x180.png';
-import appleTouchIcon167 from '../assets/coat-apple-touch-icon-167x167.png';
-import appleTouchIcon152 from '../assets/coat-apple-touch-icon-152x152.png';
-import appleTouchIcon from '../assets/coat-apple-touch-icon.png';
-import ogImage from '../assets/coat-opengraph-image.png';
+import iFavicon from '../assets/coat-favicon.ico';
+import iAppleTouchIcon180 from '../assets/coat-apple-touch-icon-180x180.png';
+import iAppleTouchIcon167 from '../assets/coat-apple-touch-icon-167x167.png';
+import iAppleTouchIcon152 from '../assets/coat-apple-touch-icon-152x152.png';
+import iAppleTouchIcon from '../assets/coat-apple-touch-icon.png';
+import iOGImage from '../assets/coat-opengraph-image.png';
+
+const favicon = unwrapImage(iFavicon);
+const appleTouchIcon180 = unwrapImage(iAppleTouchIcon180);
+const appleTouchIcon167 = unwrapImage(iAppleTouchIcon167);
+const appleTouchIcon152 = unwrapImage(iAppleTouchIcon152);
+const appleTouchIcon = unwrapImage(iAppleTouchIcon);
+const ogImage = unwrapImage(iOGImage);
 
 import '../assets/NotGovUKPage.scss';
-
 
 export type NotGovUKPageProps = Omit<PageProps, 'govUK'>;
 
