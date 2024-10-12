@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: [ 'govuk-docs', 'govuk-template' ]
+        app: [ 'govuk-docs', 'govuk-template', 'next-example' ]
     steps:
 
       - name: Check out repository
@@ -94,7 +94,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: [ 'govuk-docs', 'govuk-template' ]
+        app: [ 'govuk-docs', 'govuk-template', 'next-example' ]
         browser: [ 'chromium', 'firefox', 'electron' ]
     steps:
 
