@@ -68,7 +68,7 @@ export const createServer = ({ entrypoints, port }: httpdOptions) => {
 
   const handler = (
     config.mode === Mode.Serverless
-      ? app as Promise<Handler>
+      ? async (event: object, context: object) => (await app as Handler)(event, context)
       : undefined
   );
 
