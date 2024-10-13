@@ -11,6 +11,8 @@ export type TextareaProps = StandardProps & TextareaHTMLAttributes<HTMLTextAreaE
   hint?: ReactNode
   /** Label */
   label: ReactNode
+  /** HTML name */
+  name: string
   /** Width of the field in characters (approximate) */
   width?: number
 };
@@ -28,7 +30,7 @@ export const Textarea: FC<TextareaProps> = ({
   ...attrs
 }) => {
   const classModifiers = [
-    error && 'error',
+    error ? 'error' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder('govuk-textarea', classBlock, classModifiers, className);
@@ -47,9 +49,11 @@ export const Textarea: FC<TextareaProps> = ({
   const maxWidth = width && (
     (((width >= 10) ? 4.76 : 1.76) + 1.81 * width) + 'ex'
   );
-  const style = maxWidth && {
-    maxWidth
-  };
+  const style = (
+    maxWidth === undefined ? undefined : {
+      maxWidth
+    }
+  );
 
   return (
     <FormGroup

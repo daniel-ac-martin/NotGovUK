@@ -4,13 +4,6 @@ import { useIsMounted, useLocation } from '@not-govuk/route-utils';
 
 import '../assets/Tabs.scss';
 
-const key = {
-  left: 37,
-  right: 39,
-  up: 38,
-  down: 40
-};
-
 type TabItem = {
   id: string,
   label: string,
@@ -31,7 +24,7 @@ export const Tabs: FC<TabsProps> = ({
   const classes = classBuilder('penultimate-tabs', classBlock, classModifiers, className);
   const location = useLocation();
   const fragment = location.hash?.substring(1);
-  const fragmentSelected = items.reduce((acc: number, cur: TabItem, i: number) => (
+  const fragmentSelected = items.reduce((acc: number | undefined, cur: TabItem, i: number) => (
     cur.id === fragment
       ? i
       : acc
@@ -39,7 +32,7 @@ export const Tabs: FC<TabsProps> = ({
   const initial = fragmentSelected || 0;
   const [ selected, setSelected ] = useState(initial);
   const [ expanded, setExpanded ] = useState(fragmentSelected !== undefined);
-  const refs = items.map(() => useRef(null));
+  const refs = items.map(() => useRef<HTMLAnchorElement>(null));
   const select = (i: number) => (e: SyntheticEvent) => {
     e.preventDefault();
     if (i === selected) {
@@ -50,28 +43,28 @@ export const Tabs: FC<TabsProps> = ({
     }
   };
   const keydown = (e: KeyboardEvent) => {
-    switch (e.keyCode) {
-      case key.left:
+    switch (e.key) {
+      case 'ArrowLeft':
         e.preventDefault();
         if (selected > 0) {
           const i = selected - 1;
           setSelected(i);
-          refs[i].current.focus();
+          refs[i].current?.focus();
         }
         break;
-      case key.right:
+      case 'ArrowRight':
         e.preventDefault();
         if (selected < items.length - 1) {
           const i = selected + 1;
           setSelected(i);
-          refs[i]?.current.focus();
+          refs[i].current?.focus();
         }
         break;
-      case key.up:
+      case 'ArrowUp':
         e.preventDefault();
         setExpanded(false);
         break;
-      case key.down:
+      case 'ArrowDown':
         e.preventDefault();
         setExpanded(true);
         break;

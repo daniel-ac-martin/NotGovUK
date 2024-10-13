@@ -18,7 +18,7 @@ export const Radio: FC<RadioProps> = ({
   label,
   ...attrs
 }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLInputElement>(null);
   const conditionalId = `conditional-${id}`;
 
   const isChecked = () => ref.current?.checked;
@@ -32,8 +32,8 @@ export const Radio: FC<RadioProps> = ({
           className={classes('input')}
           type="radio"
           ref={ref}
-          aria-controls={conditional && conditionalId}
-          aria-expanded={conditional && !!isChecked()}
+          aria-controls={conditional ? conditionalId : undefined}
+          aria-expanded={conditional ? !!isChecked() : undefined}
         />
         <Label htmlFor={id} className={classes('label')}>{label}</Label>
         {hint && <Hint id={`${id}-hint`} className={classes('hint')}>{hint}</Hint>}

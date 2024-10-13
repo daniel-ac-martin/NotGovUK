@@ -1,13 +1,13 @@
+import type { ComponentType } from 'react';
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
 import { createWriteStream } from 'fs';
 import { GraphQLSchema } from 'graphql';
-import { ComponentType } from 'react';
-import serverless from 'serverless-http';
-import restify, { CSPSources, IsReady, LogLevelString, LoggerOptions, Router, cspNone } from '@not-govuk/restify';
+import serverless, { Handler } from 'serverless-http';
+import restify, { CSPSources, IsReady, LogLevelString, LoggerOptions, Middleware, Router, Server, cspNone } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { consentCookies } from '@not-govuk/consent-cookies';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
-import { AuthMethod, AuthOptions, Request, auth } from './lib/auth';
+import { AuthMethod, AuthOptions, auth } from './lib/auth';
 import { gatherPages, pageRoutes } from './lib/pages';
 import { SessionStore, SessionOptions, cookie as sessionCookie, session } from './lib/session';
 
@@ -66,6 +66,15 @@ export type EngineOptions = {
   ssrOnly: boolean
 };
 
+export type Engine = Server | Handler;
+
+export const isServer = (v: Engine): v is Server => (
+  'log' in v
+);
+export const isHandler = (v: Engine): v is Handler => (
+  !isServer(v)
+);
+
 export const engine = async ({
   AppWrap,
   ErrorPage,
@@ -86,7 +95,7 @@ export const engine = async ({
   privacy,
   session: sessionOptions,
   ssrOnly
-}: EngineOptions) => {
+}: EngineOptions): Promise<Engine> => {
   const publicPath = assets.publicPath;
   const localAssetsPath = assets.localPath;
   const cookies = [];
@@ -187,7 +196,7 @@ export const engine = async ({
 
   // Serve static assets built by webpack
   const publicPaths = publicPath + '*';
-  const markFlushed = (req, res, next) => {
+  const markFlushed: Middleware = (_req, res: any, next) => {
     // This is a workaround for a bug that emerges when using serveStaticFiles with Restify's gzip plugin
     res._flushed = true;
     next();
@@ -208,9 +217,9 @@ export const engine = async ({
   // Serve GraphQL
   if (_graphQL && !ssrOnly) {
     const endpoint = '/graphql';
-    const graphQLOptions = (req: Request) => ({
+    const graphQLOptions = (req?: any) => ({
       schema: _graphQL.schema,
-      context: { auth: req.auth }
+      context: { auth: req?.auth }
     });
     const graphQL = new Router();
     const handler = [ graphqlRestify(graphQLOptions), markFlushed ];
@@ -230,7 +239,7 @@ export const engine = async ({
   switch (mode) {
     case Mode.Serverless:
       // Run under the Serverless framework
-      r = serverless(httpd);
+      r = serverless(httpd as unknown as Partial<serverless.FrameworkApplication>);
       break;
     case Mode.StaticGenerator:
     case Mode.Server:
@@ -260,4 +269,5 @@ export default engine;
 export { AuthMethod, SessionStore };
 export { Router, cspNone, cspSelf, errors } from '@not-govuk/restify';
 export { defaultsFalse, defaultsTrue } from './lib/config-helpers';
-export type { IsReady };
+export type { Handler, IsReady, Server };
+export type { Request } from './lib/auth';

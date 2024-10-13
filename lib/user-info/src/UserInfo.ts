@@ -17,7 +17,7 @@ export type UserInfo = {
 
 type Maybe<T> = T | void;
 
-export const UserInfoContext: Context<Maybe<UserInfo>> = createContext(undefined);
+export const UserInfoContext: Context<Maybe<UserInfo>> = createContext<Maybe<UserInfo>>(undefined);
 
 export const useUserInfo = (): Maybe<UserInfo> => (
   useContext(UserInfoContext)

@@ -32,6 +32,8 @@ export type CheckboxesProps = StandardProps & Omit<InputHTMLAttributes<HTMLInput
   id?: string
   /** Label */
   label: ReactNode
+  /** HTML name */
+  name: string
   /** List of options to select from */
   options: OptionOrSeperator[]
 };

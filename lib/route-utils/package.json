@@ -26,9 +26,20 @@
     "url-parse": "^1.5.10"
   },
   "peerDependencies": {
+    "next": "^14.2.5",
     "react-router-dom": "^6.26.2"
   },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    },
+    "react-router-dom": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@types/qs": "^6.9.16",
+    "@types/react": "^18.3.11",
     "@types/url-parse": "1.4.11",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
