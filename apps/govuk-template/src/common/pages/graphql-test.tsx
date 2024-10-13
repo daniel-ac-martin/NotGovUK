@@ -2,6 +2,7 @@ import { useQuery, gql } from '@apollo/client';
 import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
 import { ErrorMessage } from '@not-govuk/components';
+import { useIsMounted } from '@not-govuk/route-utils';
 
 type Book = {
   title: string
@@ -17,32 +18,31 @@ const books = gql`
 
 const Page: FC<PageProps> = () => {
   const { loading, error, data } = useQuery(books);
-  // console.log('loading:');
-  // console.log(loading);
-  // console.log('error:');
-  // console.log(error);
-  // console.log('data:');
-  // console.log(data);
+  const isMounted = useIsMounted();
 
   return (
     <Fragment>
       <h1>GraphQL</h1>
       <h2>Books</h2>
-      { loading ? (
-        <p>Loading...</p>
+      { data ? (
+        <ul>
+          {data.books?.map(
+            ({ author, title }: Book, i: number) => (
+              <li key={i}>
+                <strong>{title}</strong> {author}
+              </li>
+            )
+          )}
+        </ul>
       ) : (
-        error ? (
-          <ErrorMessage>{error.message}</ErrorMessage>
-        ) : (
-          <ul>
-            {data?.books?.map(
-              ({ author, title }: Book, i: number) => (
-                <li key={i}>
-                  <strong>{title}</strong> {author}
-                </li>
-              )
-            )}
-          </ul>
+        !isMounted ? null : (
+          loading ? (
+            <p>Loading...</p>
+          ) : (
+            !error ? null : (
+              <ErrorMessage>{error.message}</ErrorMessage>
+            )
+          )
         )
       ) }
     </Fragment>
