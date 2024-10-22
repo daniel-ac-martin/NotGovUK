@@ -1,5 +1,4 @@
-import base64url from 'base64url';
-import { BasicStrategy } from 'passport-http';
+import { BasicVerifyFunction, BasicStrategy } from 'passport-http';
 import { AuthBagger, AuthMethod, UserProfile } from './common';
 import { passportBag } from './passport';
 
@@ -20,7 +19,7 @@ export const basicAuth: AuthBagger<AuthOptionsBasic> = async ({
   roles = [],
   username
 }, privacy, fullSessions) => {
-  const verify = (suppliedUsername: string, suppliedPassword: string, done) => {
+  const verify: BasicVerifyFunction = (suppliedUsername, suppliedPassword, done) => {
     if (username === suppliedUsername && password === suppliedPassword) {
       const user: AuthInfo = {
         provider: 'basic',

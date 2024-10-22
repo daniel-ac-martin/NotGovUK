@@ -1,14 +1,14 @@
-import webpack from 'webpack';
+import webpack, { Configuration } from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import { adapt } from '@not-govuk/express-adapter';
 
 // Note: Inspired by https://github.com/cpeddecord/restify-webpack-middleware
-export const webpackMiddleware = webpackConfig => {
+export const webpackMiddleware = (webpackConfig: Configuration) => {
   const compiler = webpack(webpackConfig);
   const devOptions = {
     stats: webpackConfig.stats,
-    publicPath: webpackConfig.output.publicPath,
+    publicPath: webpackConfig.output?.publicPath,
     serverSideRender: true
   };
   const dev = webpackDevMiddleware(compiler, devOptions);

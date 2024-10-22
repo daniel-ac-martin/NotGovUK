@@ -1,5 +1,4 @@
 import { FC, ReactNode, createElement as h } from 'react';
-import { classBuilder } from '@not-govuk/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 import { Input, InputProps } from '@not-govuk/input';
 
@@ -12,6 +11,8 @@ export type FileUploadProps = Omit<InputProps, 'type'> & {
   hint?: ReactNode
   /** Label */
   label: ReactNode
+  /** HTML name */
+  name: string
 };
 
 export const FileUpload: FC<FileUploadProps> = ({
@@ -25,7 +26,7 @@ export const FileUpload: FC<FileUploadProps> = ({
   ...attrs
 }) => {
   const classModifiers = [
-    error && 'error',
+    error ? 'error' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const id = _id || attrs.name;

@@ -4,8 +4,10 @@ import { PageProps } from '@not-govuk/app-composer';
 import { A } from '@not-govuk/components';
 import { AnchorList } from '@not-govuk/anchor-list';
 
-const reduceToLookup = (acc: object, cur) => ({...acc, [cur.default.title]: cur});
-const createSubpageStore = r => (
+type Subpages = Record<string, any>;
+
+const reduceToLookup = (acc: Subpages, cur: any): Subpages => ({...acc, [cur.default.title]: cur});
+const createSubpageStore = (r: __WebpackModuleApi.RequireContext) => (
   r
     .keys()
     .map(r)

@@ -57,7 +57,7 @@ export const Footer: FC<FooterProps> = ({
           <Fragment>
             <div className={classes('navigation')}>
               { navigation.map(({ columns, width, title, items }, i) => (
-                <div key={i} className={classes('section', undefined, width && `govuk-grid-column-${width}`)}>
+                <div key={i} className={classes('section', undefined, !width ? undefined : `govuk-grid-column-${width}`)}>
                   <h2 className={classes('heading', undefined, 'govuk-heading-m')}>
                     {title}
                   </h2>

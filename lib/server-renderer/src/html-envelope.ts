@@ -34,7 +34,7 @@ export const htmlEnvelope: HtmlEnvelope = ({
         assetsPath,
         nonce,
         scripts: _scripts
-      } ))
+      }))
   );
 
   return ({

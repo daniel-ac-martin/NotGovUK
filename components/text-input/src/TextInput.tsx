@@ -11,6 +11,8 @@ export type TextInputProps = InputProps & {
   hint?: ReactNode
   /** Label */
   label: ReactNode
+  /** HTML name */
+  name: string
 };
 
 export const TextInput: FC<TextInputProps> = ({
@@ -24,7 +26,7 @@ export const TextInput: FC<TextInputProps> = ({
   ...attrs
 }) => {
   const classModifiers = [
-    error && 'error',
+    error ? 'error' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const id = _id || attrs.name;

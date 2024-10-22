@@ -1,3 +1,4 @@
+/// <reference path='./extract-arg-types.d.ts' />
 import { ComponentType, FC, createElement as h } from 'react';
 import { extractArgTypes } from '@storybook/react/dist/esm/client/docs/extractArgTypes';
 import { SimpleTable } from '@not-govuk/simple-table';

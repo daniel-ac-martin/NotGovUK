@@ -99,14 +99,19 @@ export const Form: FC<FormProps<any>> = ({
     const state = (
       method === 'post'
         ? formattedValues
-        : undefined
+        : null
+    );
+    const query = (
+      method === 'get'
+        ? { ...actionUrl.query, ...formattedValues }
+        : actionUrl.query
     );
 
     // Check that we have not already arrived
     // (Otherwise we end up in a loop.)
     if (
       ( location.pathname !== actionUrl.pathname && actionUrl.pathname !== '' ) ||
-        !deepEqual(location.query, actionUrl.query) ||
+        !deepEqual(location.query, query) ||
         !deepEqual(location.state, state)
     ) {
       navigate(url.toString(), { state });

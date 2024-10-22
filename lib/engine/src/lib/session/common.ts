@@ -17,3 +17,4 @@ export const cookie: Cookie = {
 };
 
 export type { Promised } from '../common';
+export type { RequestFull, ResponseFull } from '@not-govuk/consent-cookies';

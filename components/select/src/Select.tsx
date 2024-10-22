@@ -22,6 +22,8 @@ export type SelectProps = StandardProps & Omit<SelectHTMLAttributes<HTMLSelectEl
   id?: string
   /** Label */
   label: ReactNode
+  /** HTML name */
+  name: string
   /** List of options to select from */
   options: Option[]
   /** Width of the field in characters (approximate) */
@@ -61,10 +63,16 @@ export const Select: FC<SelectProps> = ({
   const maxWidth = width && (
     (((width >= 10) ? 4.76 : 1.76) + 1.81 * width) + 'ex'
   );
-  const style = maxWidth && {
-    maxWidth
-  };
-  const defaultValuePre = _defaultValue || options.reduce((acc, cur) => [...acc, cur.selected && cur.value], []).filter(x => x);
+  const style = (
+    maxWidth === undefined ? undefined : {
+      maxWidth
+    }
+  );
+  const defaultValuePre = _defaultValue || (
+    options
+      .filter((x) => x.selected)
+      .map(x => x.value)
+  );
   const defaultValue = (
     !Array.isArray(defaultValuePre)
     ? defaultValuePre
