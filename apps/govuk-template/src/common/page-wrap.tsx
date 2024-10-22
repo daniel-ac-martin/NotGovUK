@@ -8,7 +8,15 @@ import './app.scss';
 
 const siteTitle = config.title;
 
-export const PageWrap: FC<PageProps> = ({ routes, signInHRef, signOutHRef, children }) => {
+export const PageWrap: FC<PageProps> = ({ routes: _routes, signInHRef, signOutHRef, children }) => {
+  // We add an extra, non-existent, route in order to test unhappy path
+  const routes = [
+    ..._routes,
+    {
+      href: '/404',
+      title: '404'
+    }
+  ];
   const navigation = (
     routes
       .map(e => ({
