@@ -1,12 +1,15 @@
 import { ComponentType, createElement as h } from 'react';
 import { hydrateRoot } from 'react-dom/client';
-import { ApplicationProps, ErrorPageProps, Hydration, PageProps, PageLoader, compose } from '@not-govuk/app-composer';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { ApplicationProps, ErrorPageProps, Hydration, PageLoader, PageProps, compose } from '@not-govuk/app-composer';
 
 export type HydrateOrRenderOptions = {
   AppWrap: ComponentType<ApplicationProps>
   ErrorPage: ComponentType<ErrorPageProps>
   LoadingPage: ComponentType<PageProps>
   PageWrap: ComponentType<PageProps>
+  basename?: string
+  graphQL?: string
   pageLoader: PageLoader
 };
 
@@ -17,31 +20,51 @@ export const hydrateOrRender: HydrateOrRender = ({
   ErrorPage,
   LoadingPage,
   PageWrap,
+  basename = '/',
+  graphQL = '/graphql',
   pageLoader
 }) => {
   interface IWindowWithHydration extends Window {
     hydration?: Hydration
   };
 
-  const routerProps = {};
   const windowWithProps: IWindowWithHydration = window;
-  const app = h(
-    compose({
-      AppWrap,
-      ErrorPage,
-      LoadingPage,
-      PageWrap,
-      data: windowWithProps.hydration?.data?.cache,
-      graphQL: {
-        endpoint: '/graphql'
-      },
-      pageLoader,
-      routerProps,
-      user: windowWithProps.hydration?.data?.user
-    }),
-    windowWithProps.hydration?.data?.props
+  const appProps = windowWithProps.hydration?.data?.props;
+  const err = windowWithProps.hydration?.data?.err;
+  const data = windowWithProps.hydration?.data?.cache;
+  const user = windowWithProps.hydration?.data?.user;
+  const rootId: string = windowWithProps.hydration?.id || '';
+  const pages = (windowWithProps.hydration?.data?.pages || []).map(
+    ({ src, ...rest }) => ({
+      ...rest,
+      Component: pageLoader(src).default
+    })
   );
-  const container = document.getElementById(windowWithProps.hydration?.id || '');
+
+  const { RouterWrap, routes } = compose({
+    AppWrap,
+    ErrorPage,
+    LoadingPage,
+    PageWrap,
+    err,
+    data,
+    graphQL: {
+      endpoint: graphQL
+    },
+    pages,
+    user
+  });
+  const router = createBrowserRouter(routes, {
+    basename
+  });
+  const app = (
+      h(RouterWrap, appProps,
+        h(RouterProvider, {
+          router,
+          fallbackElement: h(LoadingPage, { ...appProps, routes: [] })
+        }))
+  );
+  const container = document.getElementById(rootId);
   const root = container && hydrateRoot(container, app);
 
   const jsEnabledClass = 'js-enabled';
