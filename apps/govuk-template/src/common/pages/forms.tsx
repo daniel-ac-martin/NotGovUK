@@ -12,6 +12,11 @@ import {
   validator
 } from '@not-govuk/components';
 
+import config from '../config';
+
+const siteTitle = config.title;
+export const title = 'Forms';
+
 const notFrench = (msg?: string) => (_field: object) => (value: string) =>
   validator(msg, value,
             value !== 'incorrect',
@@ -25,7 +30,7 @@ const Page: FC<PageProps> = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>Forms - NotGovUK</title>
+        <title>{title} - {siteTitle}</title>
       </Helmet>
       <Form action="/result" method="get">
         <Form.Page>
@@ -177,4 +182,3 @@ const Page: FC<PageProps> = () => {
 };
 
 export default Page;
-export const title = 'Forms';
