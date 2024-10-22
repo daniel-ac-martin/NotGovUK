@@ -200,13 +200,8 @@ export const reactRenderer: ReactRenderer = ({
         }
         : undefined
     );
-    const reqProps = {
-      pageTitle: (err && err.title) || body?.toString() || 'NotGovUK'
-    };
     const appProps = {
-      signInHRef,
-      signOutHRef,
-      ...reqProps
+      pageTitle: (err && err.title) || body?.toString() || 'NotGovUK'
     };
     const { RouterWrap, extractDataCache, helmetContext, routes } = compose({
       AppWrap,
@@ -218,6 +213,8 @@ export const reactRenderer: ReactRenderer = ({
       data,
       err,
       pages,
+      signInHRef,
+      signOutHRef,
       user: { ...user, accessToken: req.auth?.accessToken } // Add the access token separately, in order to keep it off the client
     });
     const basename = '/';
@@ -310,12 +307,14 @@ export const reactRenderer: ReactRenderer = ({
           ssrOnly
             ? undefined
             : {
+              cache: extractDataCache(),
               err,
               pages: pages.map(
                 ({ Component, ...rest }) => ({ ...rest })
               ),
               props: appProps,
-              cache: extractDataCache(),
+              signInHRef,
+              signOutHRef,
               user
             }
         ),

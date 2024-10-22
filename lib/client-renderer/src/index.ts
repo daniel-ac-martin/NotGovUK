@@ -29,11 +29,13 @@ export const hydrateOrRender: HydrateOrRender = ({
   };
 
   const windowWithProps: IWindowWithHydration = window;
+  const rootId: string = windowWithProps.hydration?.id || '';
   const appProps = windowWithProps.hydration?.data?.props;
   const err = windowWithProps.hydration?.data?.err;
   const data = windowWithProps.hydration?.data?.cache;
   const user = windowWithProps.hydration?.data?.user;
-  const rootId: string = windowWithProps.hydration?.id || '';
+  const signInHRef = windowWithProps.hydration?.data?.signInHRef;
+  const signOutHRef = windowWithProps.hydration?.data?.signOutHRef;
   const pages = (windowWithProps.hydration?.data?.pages || []).map(
     ({ src, ...rest }) => ({
       ...rest,
@@ -52,6 +54,8 @@ export const hydrateOrRender: HydrateOrRender = ({
       endpoint: graphQL
     },
     pages,
+    signInHRef,
+    signOutHRef,
     user
   });
   const router = createBrowserRouter(routes, {

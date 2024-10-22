@@ -10,10 +10,12 @@ import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
 type DataCache = Record<string, any>;
 
 export type HydrationData = {
+  cache?: DataCache
   err?: ServerError
   pages: PageInfoCSR[]
   props: ApplicationProps
-  cache?: DataCache
+  signInHRef?: string
+  signOutHRef?: string
   user?: UserInfo
 };
 
