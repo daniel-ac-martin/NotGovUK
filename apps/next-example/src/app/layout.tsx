@@ -19,51 +19,49 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <React.Suspense>
-          <NotGovUKPage
-            breadcrumbs={[
-              {
-                href: "/",
-                text: "Home"
-              },
-              {
-                href: "/one",
-                text: "One"
-              },
-              {
-                href: "/one/two",
-                text: "Two"
-              }
-            ]}
-            feedbackHref="/feedback"
-            navigation={[
-              {
-                href: "/one",
-                text: "One"
-              },
-              {
-                href: "/one/two",
-                text: "Two"
-              },
-              {
-                href: "/three",
-                text: "Three"
-              },
-              {
-                href: "/four",
-                text: "Four"
-              }
-            ]}
-            organisationHref="/"
-            organisationText="!GOV.UK"
-            phase="alpha"
-            serviceName="Next.js App"
-            serviceHref="/"
-            title="NotGovUK"
-          >
-            {children}
-          </NotGovUKPage>
-        </React.Suspense>
+        <NotGovUKPage
+          breadcrumbs={[
+            {
+              href: "/",
+              text: "Home"
+            },
+            {
+              href: "/one",
+              text: "One"
+            },
+            {
+              href: "/one/two",
+              text: "Two"
+            }
+          ]}
+          feedbackHref="/feedback"
+          navigation={[
+            {
+              href: "/one",
+              text: "One"
+            },
+            {
+              href: "/one/two",
+              text: "Two"
+            },
+            {
+              href: "/three",
+              text: "Three"
+            },
+            {
+              href: "/four",
+              text: "Four"
+            }
+          ]}
+          organisationHref="/"
+          organisationText="!GOV.UK"
+          phase="alpha"
+          serviceName="Next.js App"
+          serviceHref="/"
+          title="NotGovUK"
+        >
+          {children}
+        </NotGovUKPage>
       </body>
     </html>
   );
