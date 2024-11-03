@@ -36,6 +36,7 @@ let Link: FC<LinkProps> = ({
     href
   });
 };
+let needSuspense = false;
 
 // Replace dummy functions with react-router when it is available
 try {
@@ -114,6 +115,7 @@ try {
         scroll: !preventScrollReset
       });
     };
+    needSuspense = true;
   } catch (_e) {
     // We don't seem to have a router library so give up :-(
     // Should we throw an Error here?
@@ -137,6 +139,7 @@ export const enhanceLocation = (location: _Location): Location => ({
 export const useLocation = (): Location => enhanceLocation(_useLocation());
 
 export {
+  needSuspense,
   useNavigate,
   Link
 };
