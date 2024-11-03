@@ -70,24 +70,26 @@ try {
 
       return location;
     };
-    useNavigate = () => (to: To | number, options: NavigateOptions = {}) => {
+    useNavigate = () => {
       const router = useRouter();
 
-      if (typeof to === 'number') {
-        if (to === -1) {
-          router.back();
-        }
-      } else {
-        const nextOptions = {
-          scroll: !options.preventScrollReset
-        };
-
-        if (options.replace) {
-          router.replace(to, undefined, nextOptions);
+      return (to: To | number, options: NavigateOptions = {}) => {
+        if (typeof to === 'number') {
+          if (to === -1) {
+            router.back();
+          }
         } else {
-          router.push(to, undefined, nextOptions);
+          const nextOptions = {
+            scroll: !options.preventScrollReset
+          };
+
+          if (options.replace) {
+            router.replace(to, undefined, nextOptions);
+          } else {
+            router.push(to, undefined, nextOptions);
+          }
         }
-      }
+      };
     };
     Link = ({
       to,
