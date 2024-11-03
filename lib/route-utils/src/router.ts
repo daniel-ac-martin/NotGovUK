@@ -6,6 +6,10 @@ import { parse as qsParse } from './query-string';
 
 export type LinkProps = Omit<_LinkProps, 'relative' | 'reloadDocument' | 'state' | 'unstable_viewTransition'>
 
+declare var global: any;
+
+const isDev = global.process?.env?.NODE_ENV === 'development';
+
 // Set up dummy functions
 let _useLocation = (): _Location => ({
   state: undefined,
@@ -113,7 +117,9 @@ try {
   } catch (_e) {
     // We don't seem to have a router library so give up :-(
     // Should we throw an Error here?
-    console.warn('Unable to find router library; links will cause page loads and some functionality may break.');
+    if (isDev) {
+      console.warn('Unable to find router library; links will cause page loads and some functionality may break.');
+    }
   }
 }
 
