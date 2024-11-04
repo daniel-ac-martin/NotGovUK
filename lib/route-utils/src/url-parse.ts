@@ -1,5 +1,4 @@
 import parse from 'url-parse';
-import { parse as qsParse, stringify as qsStringify } from './query-string';
 
 type _ParsedURL = ReturnType<typeof parse>;
 
@@ -13,7 +12,8 @@ export const urlParse = (s: string): ParsedURL => {
     const oldSet = parsed.set.bind(parsed);
     const oldToString = parsed.toString.bind(parsed);
     const search = <unknown>parsed.query as string;
-    const query = qsParse(search);
+    const searchParams = new URLSearchParams(search);
+    const query = Object.fromEntries(searchParams);
     const toString = () => oldToString();
 
     const set = function(p: string, v: any) {
@@ -24,7 +24,7 @@ export const urlParse = (s: string): ParsedURL => {
       );
       const value = (
         p === 'query'
-          ? qsStringify(v)
+          ? (new URLSearchParams(v)).toString()
           : v
       );
 
@@ -36,6 +36,7 @@ export const urlParse = (s: string): ParsedURL => {
       query,
       set,
       search,
+      searchParams,
       toString
     };
   };
