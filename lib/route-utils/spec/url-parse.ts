@@ -11,6 +11,16 @@ describe('urlParse', () => {
     it('returns an object', () => expect(result).toBeInstanceOf(Object));
     it('with a set method', () => expect(result.set).toBeInstanceOf(Function));
     it('that takes at least two parameters', () => expect(result.set.length).toBeGreaterThanOrEqual(2));
+    it('with a protocol', () => expect(result.protocol).toEqual(''));
+    it('with a username', () => expect(result.username).toEqual(''));
+    it('with a password', () => expect(result.password).toEqual(''));
+    it('with a hostname', () => expect(result.hostname).toEqual(''));
+    it('with a port', () => expect(result.port).toEqual(''));
+    it('with a pathname', () => expect(result.pathname).toEqual(''));
+    it('with a (raw) search / query string', () => expect(result.search).toEqual(''));
+    it('with a (parsed) query object', () => expect(result.query).toEqual({}));
+    it('with a hash', () => expect(result.hash).toEqual(''));
+    it('with a toString() method', () => expect(result.toString()).toEqual(href));
 
     const pathname = '/foo';
 
