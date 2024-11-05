@@ -35,10 +35,10 @@ const AnchorInner: FC<AnchorProps> = ({
   ];
   const classes = classBuilder('penultimate-anchor', classBlock, classModifiers, className);
   const url = urlParse(href || '');
-  const unsupported = url?.protocol !== '' && !supportedProtocols.includes(url?.protocol || '');
-  const noPath = url?.pathname === '';
-  const noSearch = url?.search === '';
-  const noHash = url?.hash === '';
+  const unsupported = url.protocol !== '' && !supportedProtocols.includes(url.protocol || '');
+  const noPath = url.pathname === '';
+  const noSearch = url.search === '';
+  const noHash = url.hash === '';
   const hashLink = noPath && noSearch;
   const location = {
     pathname: (
@@ -60,7 +60,7 @@ const AnchorInner: FC<AnchorProps> = ({
   const basicAnchor = (
     forceExternal ||
     unsupported ||
-    url?.host ||
+    url.hostname ||
     !isMounted && hashLink ||
     hashLink && noHash
   );
