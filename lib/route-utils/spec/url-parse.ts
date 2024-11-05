@@ -1,4 +1,4 @@
-import { urlParse } from '../src/url-parse';
+import { URI, urlParse } from '../src/url-parse';
 
 describe('urlParse', () => {
   it('is a function', () => expect(urlParse).toBeInstanceOf(Function));
@@ -6,9 +6,9 @@ describe('urlParse', () => {
 
   describe('when given an empty href', () => {
     const href = '';
-    const result = urlParse(href) as URL;
+    const result = urlParse(href);
 
-    it('returns a URL', () => expect(result).toBeInstanceOf(URL));
+    it('returns a URI', () => expect(result).toBeInstanceOf(URI));
     it('with a protocol', () => expect(result.protocol).toEqual(''));
     it('with a username', () => expect(result.username).toEqual(''));
     it('with a password', () => expect(result.password).toEqual(''));
@@ -23,37 +23,37 @@ describe('urlParse', () => {
     const pathname = '/foo';
 
     describe('that when given a new pathname', () => {
-      const result2 = urlParse(href) as URL;
+      const result2 = urlParse(href);
       result2.pathname = pathname;
 
-      it('returns a URL', () => expect(result2).toBeInstanceOf(URL));
+      it('returns a URI', () => expect(result2).toBeInstanceOf(URI));
       it('with a toString() that reflects the change', () => expect(result2.toString()).toEqual(pathname));
     });
 
     const search = '?bar=baz';
 
     describe('that when given a new search string', () => {
-      const result2 = urlParse(href) as URL;
+      const result2 = urlParse(href);
       result2.search = search;
 
-      it('returns a URL', () => expect(result2).toBeInstanceOf(URL));
+      it('returns a URI', () => expect(result2).toBeInstanceOf(URI));
       it('with a toString() that reflects the change', () => expect(result2.toString()).toEqual(search));
     });
 
     describe('that when the search params are updated', () => {
-      const result2 = urlParse(href) as URL;
+      const result2 = urlParse(href);
       result2.searchParams.set('qux', 'quux');
 
-      it('returns a URL', () => expect(result2).toBeInstanceOf(URL));
+      it('returns a URI', () => expect(result2).toBeInstanceOf(URI));
       it('with a toString() that reflects the change', () => expect(result2.toString()).toEqual('?qux=quux'));
     });
   });
 
   describe('when given a full HTTP href', () => {
     const href = 'https://user:pass@www.example.com:8080/foo/bar?baz=qux#quux';
-    const result = urlParse(href) as URL;
+    const result = urlParse(href);
 
-    it('returns a URL', () => expect(result).toBeInstanceOf(URL));
+    it('returns a URI', () => expect(result).toBeInstanceOf(URI));
     it('with a protocol', () => expect(result.protocol).toEqual('https:'));
     it('with a username', () => expect(result.username).toEqual('user'));
     it('with a password', () => expect(result.password).toEqual('pass'));
@@ -68,9 +68,9 @@ describe('urlParse', () => {
 
   describe('when given a mailto href', () => {
     const href = 'mailto:user@example.com';
-    const result = urlParse(href) as URL;
+    const result = urlParse(href);
 
-    it('returns a URL', () => expect(result).toBeInstanceOf(URL));
+    it('returns a URI', () => expect(result).toBeInstanceOf(URI));
     it('with a protocol', () => expect(result.protocol).toEqual('mailto:'));
   });
 });
