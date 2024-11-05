@@ -231,8 +231,8 @@ export const useActive = () => {
   const isActive = (href: string): boolean => {
     const match = matcher(href);
     const queryMatch = includes(
-      urlParse(location.search).query,
-      urlParse(href).query
+      Object.fromEntries(location.searchParams.entries()),
+      Object.fromEntries(urlParse(href)?.searchParams.entries() || [])
     );
     const active = !!(match && queryMatch);
 

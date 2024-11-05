@@ -1,45 +1,68 @@
-import parse from 'url-parse';
+export const urlParse = (s: string): URL | null => {
+  let result;
+  try {
+    result = new URL(s);
+  } catch (_e) {
+    try {
+      const u = new URL(s, 'http://a');
+      let noPathname = u.pathname === '/' && s[0] !== '/';
+      let noHostname = true;
 
-type _ParsedURL = ReturnType<typeof parse>;
+      const proxy: URL = new Proxy(u, {
+        get: (target, prop, _receiver) => {
+          if (noHostname) {
+            switch (prop) {
+              case 'pathname':
+                return (
+                  noPathname
+                    ? ''
+                    : (target as any)[prop]
+                );
+              case 'href':
+                const targetHref = target.href;
+                const hash = (
+                  targetHref[targetHref.length - 1] === '#'
+                    ? '#'
+                    : proxy.hash
+                );
+                return proxy.pathname + proxy.search + hash;
+              case 'toString':
+                return function (this: URL): string { return this.href; };
+              case 'origin':
+              case 'protocol':
+              case 'username':
+              case 'password':
+              case 'host':
+              case 'hostname':
+              case 'port':
+                return '';
+              default:
+                return (target as any)[prop];
+            }
+          } else {
+            return (target as any)[prop];
+          }
+        },
+        set: (target, prop, value, _receiver) => {
+          switch (prop) {
+            case 'pathname':
+              noPathname = !value;
+              return (target as any)[prop] = value;
+            case 'host':
+            case 'hostname':
+              noHostname = !value;
+              return (target as any)[prop] = value;
+            default:
+              return (target as any)[prop] = value;
+          }
+        }
+      });
 
-type ParsedURL = _ParsedURL & {
-  query: object
-  search: string
-};
-
-export const urlParse = (s: string): ParsedURL => {
-  const wrap = (parsed: _ParsedURL) => {
-    const oldSet = parsed.set.bind(parsed);
-    const oldToString = parsed.toString.bind(parsed);
-    const search = <unknown>parsed.query as string;
-    const searchParams = new URLSearchParams(search);
-    const query = Object.fromEntries(searchParams);
-    const toString = () => oldToString();
-
-    const set = function(p: string, v: any) {
-      const part = (
-        p === 'search'
-          ? 'query'
-          : p
-      );
-      const value = (
-        p === 'query'
-          ? (new URLSearchParams(v)).toString()
-          : v
-      );
-
-      return wrap(oldSet(part as any, value));
+      result = proxy;
+    } catch (_e) {
+      result = null;
     }
+  }
 
-    return {
-      ...parsed,
-      query,
-      set,
-      search,
-      searchParams,
-      toString
-    };
-  };
-
-  return wrap(new parse(s, {}, false));
+  return result;
 };
