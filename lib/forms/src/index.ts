@@ -90,8 +90,8 @@ export const Form: FC<FormProps<any>> = ({
   const submit = (values: any) => {
     //console.debug('Form: Submitting...');
     const formattedValues = completion.formatFields(values) as Record<string, string>;
-    const actionUrl = urlParse(_action) as URL;
-    const actionQuery = Object.fromEntries(actionUrl?.searchParams.entries())
+    const actionUrl = urlParse(_action);
+    const actionQuery = Object.fromEntries(actionUrl.searchParams.entries())
     const state = (
       method === 'post'
         ? formattedValues
