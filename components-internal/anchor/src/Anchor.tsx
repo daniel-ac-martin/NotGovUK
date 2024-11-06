@@ -1,7 +1,8 @@
 'use client';
 
 import { AnchorHTMLAttributes, FC, Suspense, ReactNode, createElement as h } from 'react';
-import { StandardProps, classBuilder, useIsMounted } from '@not-govuk/component-helpers';
+import { useIsMounted } from '@not-govuk/client-component-helpers';
+import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, needSuspense, useLocation, useIsActive } from '@not-govuk/router';
 import { URI } from '@not-govuk/uri';
 

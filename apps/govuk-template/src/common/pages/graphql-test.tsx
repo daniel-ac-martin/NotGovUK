@@ -2,7 +2,7 @@ import { useQuery, gql } from '@apollo/client';
 import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
 import { ErrorMessage } from '@not-govuk/components';
-import { useIsMounted } from '@not-govuk/component-helpers';
+import { useIsMounted } from '@not-govuk/client-component-helpers';
 
 type Book = {
   title: string

@@ -1,10 +1,12 @@
+'use client';
+
 import { GraphQLSchema } from 'graphql';
 import { ApolloClient, ApolloProvider, InMemoryCache, NormalizedCacheObject, createHttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, FC, Fragment, ReactNode, Suspense, createElement as h, lazy } from 'react';
 import { Helmet, HelmetProvider, HelmetServerState } from 'react-helmet-async';
 import { ScrollRestoration, RouteObject, Outlet } from 'react-router-dom';
-import { useIsMounted } from '@not-govuk/component-helpers';
+import { useIsMounted } from '@not-govuk/client-component-helpers';
 import { useLocation } from '@not-govuk/router';
 import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
 

@@ -1,5 +1,6 @@
 import { FC, KeyboardEvent, ReactNode, SyntheticEvent, createElement as h, useRef, useState } from 'react';
-import { StandardProps, classBuilder, useIsMounted } from '@not-govuk/component-helpers';
+import { useIsMounted } from '@not-govuk/client-component-helpers';
+import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { useLocation } from '@not-govuk/router';
 
 import '../assets/Tabs.scss';
