@@ -59,6 +59,22 @@ describe('useActive', () => {
         it('returns false', () => expect(result).toEqual(false));
       });
 
+      describe('when given a relative href to the same resource', () => {
+        const href = '../to/resource?foo=bar#baz';
+        const result = isActive(href);
+
+        it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+        it('returns true', () => expect(result).toEqual(true));
+      });
+
+      describe('when given a relative href to a different resource', () => {
+        const href = '../to/other?foo=bar#baz';
+        const result = isActive(href);
+
+        it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+        it('returns false', () => expect(result).toEqual(false));
+      });
+
       describe('when given \'/\' as a href', () => {
         const href = '/';
         const result = isActive(href);
