@@ -35,8 +35,8 @@ export const useActive = () => {
       location.pathname === target.pathname
     );
     const queryMatch = includes(
-      Object.fromEntries(location.searchParams.entries()),
-      Object.fromEntries(target.searchParams.entries())
+      location.query,
+      target.query
     );
     const active = !!(pathMatch && queryMatch);
 

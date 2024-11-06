@@ -1,6 +1,11 @@
-import { parse as _parse, stringify } from 'qs';
+import { ParsedQs as Query, parse as _parse, stringify } from 'qs';
 
-export const parse = (s: string): object => _parse(s && s.replace && s.replace(/^\?/, ''));
+export const parse = (s: string): Query => _parse(
+  s && s[0] === '?'
+    ? s?.substring(1)
+    : s
+);
+
 export const queryString = (obj: object): string => '?' + stringify(obj);
 
-export { stringify };
+export type { Query };

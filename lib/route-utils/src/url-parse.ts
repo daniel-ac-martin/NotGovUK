@@ -1,10 +1,11 @@
-import { parse as qsParse, stringify as qsStringify } from './query-string';
+import { Query, parse as qsParse, queryString } from './query-string';
 
 export class URI extends Object {
   #url: URL;
   #proxy: URL;
   #noHostname = false;
   #noPathname = false;
+  #query: Query;
 
   constructor(uri: string, base?: string) {
     super();
@@ -83,6 +84,8 @@ export class URI extends Object {
         }
       }
     });
+
+    this.#query = qsParse(this.#url.search);
   }
 
   get href(): string {
@@ -135,11 +138,8 @@ export class URI extends Object {
     return this.#proxy.search;
   }
   set search(v: string) {
+    this.#query = qsParse(v);
     this.#proxy.search = v;
-  }
-
-  get searchParams(): URLSearchParams {
-    return this.#proxy.searchParams;
   }
 
   get hash(): string {
@@ -147,6 +147,14 @@ export class URI extends Object {
   }
   set hash(v: string) {
     this.#proxy.hash = v;
+  }
+
+  get query(): Query {
+    return this.#query;
+  }
+  set query(v: Query) {
+    this.#query = v;
+    this.#proxy.search = queryString(v);
   }
 
   toString(): string {
@@ -167,7 +175,7 @@ export class URI extends Object {
       port: this.port,
       pathname: this.pathname,
       search: this.search,
-      searchParams: this.searchParams,
+      query: this.query,
       hash: this.hash
     }).valueOf();
   }

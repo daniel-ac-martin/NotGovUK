@@ -16,7 +16,7 @@ describe('urlParse', () => {
     it('with a port', () => expect(result.port).toEqual(''));
     it('with a pathname', () => expect(result.pathname).toEqual(''));
     it('with a (raw) search / query string', () => expect(result.search).toEqual(''));
-    it('with a (parsed) query object', () => expect(Object.fromEntries(result.searchParams.entries())).toEqual({}));
+    it('with a (parsed) query object', () => expect(result.query).toEqual({}));
     it('with a hash', () => expect(result.hash).toEqual(''));
     it('with a toString() method', () => expect(result.toString()).toEqual(href));
 
@@ -40,9 +40,11 @@ describe('urlParse', () => {
       it('with a toString() that reflects the change', () => expect(result2.toString()).toEqual(search));
     });
 
-    describe('that when the search params are updated', () => {
+    const query = { qux: 'quux' };
+
+    describe('that when given a new query object', () => {
       const result2 = urlParse(href);
-      result2.searchParams.set('qux', 'quux');
+      result2.query = query;
 
       it('returns a URI', () => expect(result2).toBeInstanceOf(URI));
       it('with a toString() that reflects the change', () => expect(result2.toString()).toEqual('?qux=quux'));
@@ -61,7 +63,7 @@ describe('urlParse', () => {
     it('with a port', () => expect(result.port).toEqual('8080'));
     it('with a pathname', () => expect(result.pathname).toEqual('/foo/bar'));
     it('with a (raw) search / query string', () => expect(result.search).toEqual('?baz=qux'));
-    it('with a (parsed) query object', () => expect(Object.fromEntries(result.searchParams.entries())).toEqual({ baz: 'qux' }));
+    it('with a (parsed) query object', () => expect(result.query).toEqual({ baz: 'qux' }));
     it('with a hash', () => expect(result.hash).toEqual('#quux'));
     it('with a toString() method', () => expect(result.toString()).toEqual(href));
   });
