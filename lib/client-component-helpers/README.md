@@ -1,7 +1,7 @@
-NotGovUK - Component Helpers
-============================
+NotGovUK - Client Component Helpers
+===================================
 
-Helper functions for writing components.
+Helper functions for writing client components.
 
 
 Using this package
@@ -10,13 +10,13 @@ Using this package
 First install the package into your project:
 
 ```shell
-npm install -S @not-govuk/component-helpers
+npm install -S @not-govuk/client-component-helpers
 ```
 
 Then use it in your code as follows:
 
 ```js
-import componentHelpers from '@not-govuk/component-helpers';
+import clientComponentHelpers from '@not-govuk/client-component-helpers';
 
 // WRITEME
 
