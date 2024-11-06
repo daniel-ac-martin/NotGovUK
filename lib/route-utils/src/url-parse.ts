@@ -4,20 +4,31 @@ export class URI extends Object {
   #noHostname = false;
   #noPathname = false;
 
-  constructor(uri: string) {
+  constructor(uri: string, base?: string) {
     super();
 
     try {
-      this.#url = new URL(uri);
+      this.#url = new URL(uri, base);
     } catch (_e) {
+      const dummyOrigin = 'http://a';
+
+      this.#noHostname = true;
+
       try {
-        this.#url = new URL(uri, 'http://a');
+        const newBase = (
+          base
+            ? (
+              base[0] === '/'
+                ? dummyOrigin + base
+                : dummyOrigin + '/' + base
+            )
+            : dummyOrigin
+        );
+        this.#url = new URL(uri, newBase);
         this.#noPathname = this.#url.pathname === '/' && uri[0] !== '/';
-        this.#noHostname = true;
       } catch (_e) {
-        this.#url = new URL('', 'http://a');
+        this.#url = new URL('', dummyOrigin);
         this.#noPathname = true;
-        this.#noHostname = true;
       }
     }
 
@@ -160,6 +171,6 @@ export class URI extends Object {
   }
 }
 
-export const urlParse = (s: string): URI => {
-  return new URI(s);
+export const urlParse = (s: string, base?: string): URI => {
+  return new URI(s, base);
 };

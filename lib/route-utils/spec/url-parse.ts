@@ -2,7 +2,7 @@ import { URI, urlParse } from '../src/url-parse';
 
 describe('urlParse', () => {
   it('is a function', () => expect(urlParse).toBeInstanceOf(Function));
-  it('that takes one parameter', () => expect(urlParse).toHaveLength(1));
+  it('that takes two parameters', () => expect(urlParse).toHaveLength(2));
 
   describe('when given an empty href', () => {
     const href = '';
