@@ -1,3 +1,5 @@
+import { parse as qsParse, stringify as qsStringify } from './query-string';
+
 export class URI extends Object {
   #url: URL;
   #proxy: URL;

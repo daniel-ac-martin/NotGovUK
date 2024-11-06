@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import type { Location as _Location, NavigateFunction, NavigateOptions, To } from 'react-router';
 import type { LinkProps as _LinkProps } from 'react-router-dom';
 import { createElement as h } from 'react';
+import { parse as qsParse } from './query-string';
 
 export type LinkProps = Omit<_LinkProps, 'relative' | 'reloadDocument' | 'state' | 'unstable_viewTransition'>
 
@@ -130,18 +131,12 @@ type Query = { [Key: string]: Query }
 
 export type Location = _Location & {
   query: Query
-  searchParams: URLSearchParams
 };
 
-export const enhanceLocation = (location: _Location): Location => {
-  const searchParams = new URLSearchParams(location.search);
-
-  return ({
+export const enhanceLocation = (location: _Location): Location => ({
   ...location,
-  query: Object.fromEntries(searchParams) as unknown as Query,
-  searchParams: searchParams
-  });
-                                                                  };
+  query: qsParse(location.search) as Query
+});
 
 export const useLocation = (): Location => enhanceLocation(_useLocation());
 
