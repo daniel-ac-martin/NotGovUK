@@ -2,7 +2,7 @@ import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticHandlerContext, StaticRouterProvider, createStaticHandler, createStaticRouter } from 'react-router-dom/server';
 import { ApplicationProps, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
-import { urlParse } from '@not-govuk/route-utils';
+import { URI } from '@not-govuk/uri';
 import { htmlEnvelope } from './html-envelope';
 
 import type { GraphQLSchema } from 'graphql';
@@ -220,7 +220,7 @@ export const reactRenderer: ReactRenderer = ({
       return renderToStringWithData(app);
     };
     const renderWithoutData = (): string => {
-      const location = urlParse(req.url || '');
+      const location = URI.parse(req.url || '');
       const context: StaticHandlerContext = {
         actionData: {},
         actionHeaders: {},

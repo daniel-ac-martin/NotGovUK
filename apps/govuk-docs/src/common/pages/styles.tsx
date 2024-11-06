@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
-import { useLocation } from '@not-govuk/route-utils';
+import { useLocation } from '@not-govuk/router';
 
 type Subpages = Record<string, any>;
 

@@ -2,7 +2,7 @@ import { FC, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { A } from '@not-govuk/components';
-import { useLocation } from '@not-govuk/route-utils';
+import { useLocation } from '@not-govuk/router';
 
 const prettyPrint = (obj: object): string => JSON.stringify(obj, undefined, 2);
 

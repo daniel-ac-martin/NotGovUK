@@ -4,7 +4,8 @@ import { StaticRouter } from 'react-router-dom/server';
 import deepEqual from 'fast-deep-equal/es6';
 import { FormikHelpers } from 'formik';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { urlParse, useLocation, useNavigate } from '@not-govuk/route-utils';
+import { useLocation, useNavigate } from '@not-govuk/router';
+import { URI } from '@not-govuk/uri';
 import FormikForm from './formik-form';
 import { Graph } from './graph';
 import { Completion, CompletionContext } from './completion';
@@ -90,7 +91,7 @@ export const Form: FC<FormProps<any>> = ({
   const submit = (values: any) => {
     //console.debug('Form: Submitting...');
     const formattedValues = completion.formatFields(values) as Record<string, string>;
-    const actionUrl = urlParse(_action);
+    const actionUrl = URI.parse(_action);
     const actionQuery = actionUrl.query;
     const state = (
       method === 'post'

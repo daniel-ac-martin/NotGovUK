@@ -4,7 +4,8 @@ import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, FC, Fragment, ReactNode, Suspense, createElement as h, lazy } from 'react';
 import { Helmet, HelmetProvider, HelmetServerState } from 'react-helmet-async';
 import { ScrollRestoration, RouteObject, Outlet } from 'react-router-dom';
-import { useIsMounted, useLocation } from '@not-govuk/route-utils';
+import { useIsMounted } from '@not-govuk/component-helpers';
+import { useLocation } from '@not-govuk/router';
 import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
 
 type DataCache = Record<string, any>;

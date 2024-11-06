@@ -3,7 +3,7 @@
 import { ComponentType, FC, HTMLProps, Suspense, createElement as h } from 'react';
 import { AnchorProps, A } from '@not-govuk/anchor';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { needSuspense, useActive } from '@not-govuk/route-utils';
+import { needSuspense, useIsActive } from '@not-govuk/router';
 
 import '../assets/AnchorList.scss';
 
@@ -28,7 +28,7 @@ const AnchorListInner: FC<AnchorListProps> = ({
   ...attrs
 }) => {
   const classes = classBuilder('penultimate-anchor-list', classBlock, classModifiers, className);
-  const isActive = useActive();
+  const isActive = useIsActive();
   const processedItems = items.map(({ children, text, href, ...anchorAttrs }, i) => {
     const active = isActive(href || '');
 

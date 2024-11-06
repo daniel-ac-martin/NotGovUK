@@ -1,7 +1,7 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
-import { useLocation } from '@not-govuk/route-utils';
+import { useLocation } from '@not-govuk/router';
 
 import {
   Form,

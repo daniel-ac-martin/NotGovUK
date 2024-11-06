@@ -3,7 +3,7 @@
 import { FC, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { A } from '@not-govuk/link';
-import { useNavigate } from '@not-govuk/route-utils';
+import { useNavigate } from '@not-govuk/router';
 
 import '../assets/BackLink.scss';
 

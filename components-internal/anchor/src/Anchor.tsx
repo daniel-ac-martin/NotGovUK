@@ -1,8 +1,9 @@
 'use client';
 
 import { AnchorHTMLAttributes, FC, Suspense, ReactNode, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { Link, needSuspense, urlParse, useIsMounted, useLocation, useActive } from '@not-govuk/route-utils';
+import { StandardProps, classBuilder, useIsMounted } from '@not-govuk/component-helpers';
+import { Link, needSuspense, useLocation, useIsActive } from '@not-govuk/router';
+import { URI } from '@not-govuk/uri';
 
 import '../assets/Anchor.scss';
 
@@ -27,14 +28,14 @@ const AnchorInner: FC<AnchorProps> = ({
   ...attrs
 }) => {
   const isMounted = useIsMounted();
-  const active = useActive()(href || '');
+  const active = useIsActive()(href || '');
   const current = useLocation();
   const classModifiers = [
     active ? 'active' : '',
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder('penultimate-anchor', classBlock, classModifiers, className);
-  const url = urlParse(href || '');
+  const url = URI.parse(href || '');
   const unsupported = url.protocol !== '' && !supportedProtocols.includes(url.protocol || '');
   const noPath = url.pathname === '';
   const noSearch = url.search === '';
