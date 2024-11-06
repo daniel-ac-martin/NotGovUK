@@ -91,7 +91,7 @@ export const Form: FC<FormProps<any>> = ({
     //console.debug('Form: Submitting...');
     const formattedValues = completion.formatFields(values) as Record<string, string>;
     const actionUrl = urlParse(_action);
-    const actionQuery = Object.fromEntries(actionUrl.searchParams.entries())
+    const actionQuery = actionUrl.query;
     const state = (
       method === 'post'
         ? formattedValues
@@ -105,7 +105,7 @@ export const Form: FC<FormProps<any>> = ({
     const url = actionUrl;
 
     if (method === 'get') {
-      url.search = (new URLSearchParams(query)).toString();
+      url.query = query;
     }
 
     // Check that we have not already arrived
