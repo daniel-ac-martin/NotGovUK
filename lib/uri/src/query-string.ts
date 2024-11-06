@@ -1,6 +1,6 @@
-import { ParsedQs as Query, parse as _parse, stringify } from 'qs';
+import { ParsedQs as Query, parse, stringify } from 'qs';
 
-export const parse = (s: string): Query => _parse(
+export const qsParse = (s: string): Query => parse(
   s && s[0] === '?'
     ? s?.substring(1)
     : s

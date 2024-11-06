@@ -1,4 +1,4 @@
-import { Query, parse as qsParse, queryString } from './query-string';
+import { Query, qsParse, queryString } from './query-string';
 
 export class URI extends Object {
   #url: URL;
@@ -164,8 +164,8 @@ export class URI extends Object {
       hash: this.hash
     }).valueOf();
   }
-}
 
-export const urlParse = (s: string, base?: string): URI => {
-  return new URI(s, base);
-};
+  static parse(s: string, base?: string): URI {
+    return new URI(s, base);
+  }
+}

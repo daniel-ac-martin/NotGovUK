@@ -1,4 +1,4 @@
-import { useActive } from '../src/active';
+import { useIsActive } from '../src/is-active';
 
 jest.mock('../src/router', () => ({
   useLocation() {
@@ -16,12 +16,12 @@ jest.mock('../src/router', () => ({
   }
 }));
 
-describe('useActive', () => {
-  it('is a function', () => expect(useActive).toBeInstanceOf(Function));
-  it('that takes no parameters', () => expect(useActive).toHaveLength(0));
+describe('useIsActive', () => {
+  it('is a function', () => expect(useIsActive).toBeInstanceOf(Function));
+  it('that takes no parameters', () => expect(useIsActive).toHaveLength(0));
 
   describe('when called', () => {
-    const isActive = useActive();
+    const isActive = useIsActive();
 
     it('returns a function', () => expect(isActive).toBeInstanceOf(Function));
     it('that takes one parameter', () => expect(isActive).toHaveLength(1));

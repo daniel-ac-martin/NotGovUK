@@ -1,5 +1,5 @@
 import { useLocation } from './router';
-import { urlParse } from './url-parse';
+import { URI } from '@not-govuk/uri';
 
 const includes = (haystack: object, needle: object): boolean => {
   const subIncludes = (haystack: any, needle: any): boolean => (
@@ -25,11 +25,11 @@ const includes = (haystack: object, needle: object): boolean => {
   return subIncludes(haystack, needle);
 };
 
-export const useActive = () => {
+export const useIsActive = () => {
   const location = useLocation();
 
   const isActive = (href: string): boolean => {
-    const target = urlParse(href, location.pathname);
+    const target = URI.parse(href, location.pathname);
     const pathMatch = (
       target.pathname === '' ||
       location.pathname === target.pathname

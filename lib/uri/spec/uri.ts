@@ -1,12 +1,14 @@
-import { URI, urlParse } from '../src/url-parse';
+import { URI } from '../src/uri';
 
-describe('urlParse', () => {
-  it('is a function', () => expect(urlParse).toBeInstanceOf(Function));
-  it('that takes two parameters', () => expect(urlParse).toHaveLength(2));
+describe('URI.parse', () => {
+  const parse = URI.parse;
+
+  it('is a function', () => expect(parse).toBeInstanceOf(Function));
+  it('that takes two parameters', () => expect(parse).toHaveLength(2));
 
   describe('when given an empty href', () => {
     const href = '';
-    const result = urlParse(href);
+    const result = parse(href);
 
     it('returns a URI', () => expect(result).toBeInstanceOf(URI));
     it('with a protocol', () => expect(result.protocol).toEqual(''));
@@ -23,7 +25,7 @@ describe('urlParse', () => {
     const pathname = '/foo';
 
     describe('that when given a new pathname', () => {
-      const result2 = urlParse(href);
+      const result2 = parse(href);
       result2.pathname = pathname;
 
       it('returns a URI', () => expect(result2).toBeInstanceOf(URI));
@@ -33,7 +35,7 @@ describe('urlParse', () => {
     const search = '?bar=baz';
 
     describe('that when given a new search string', () => {
-      const result2 = urlParse(href);
+      const result2 = parse(href);
       result2.search = search;
 
       it('returns a URI', () => expect(result2).toBeInstanceOf(URI));
@@ -43,7 +45,7 @@ describe('urlParse', () => {
     const query = { qux: 'quux' };
 
     describe('that when given a new query object', () => {
-      const result2 = urlParse(href);
+      const result2 = parse(href);
       result2.query = query;
 
       it('returns a URI', () => expect(result2).toBeInstanceOf(URI));
@@ -53,7 +55,7 @@ describe('urlParse', () => {
 
   describe('when given a full HTTP href', () => {
     const href = 'https://user:pass@www.example.com:8080/foo/bar?baz=qux#quux';
-    const result = urlParse(href);
+    const result = parse(href);
 
     it('returns a URI', () => expect(result).toBeInstanceOf(URI));
     it('with a protocol', () => expect(result.protocol).toEqual('https:'));
@@ -70,7 +72,7 @@ describe('urlParse', () => {
 
   describe('when given a mailto href', () => {
     const href = 'mailto:user@example.com';
-    const result = urlParse(href);
+    const result = parse(href);
 
     it('returns a URI', () => expect(result).toBeInstanceOf(URI));
     it('with a protocol', () => expect(result.protocol).toEqual('mailto:'));

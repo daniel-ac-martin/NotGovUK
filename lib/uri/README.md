@@ -1,7 +1,8 @@
-Not Govuk - Route Utils
-=======================
+NotGovUK - URI
+==============
 
-Utility functions for components relating to routes and requests.
+A more forgiving alternative to JavaScript's standard URL class.
+Supports nested structures in the query-strings.
 
 
 Using this package
@@ -10,13 +11,13 @@ Using this package
 First install the package into your project:
 
 ```shell
-npm install -S @not-govuk/route-utils
+npm install -S @not-govuk/uri
 ```
 
 Then use it in your code as follows:
 
 ```js
-import routeUtils from '@not-govuk/route-utils';
+import { URI } from '@not-govuk/uri';
 
 // WRITEME
 

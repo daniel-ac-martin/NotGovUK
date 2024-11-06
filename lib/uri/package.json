@@ -1,7 +1,7 @@
 {
-  "name": "@not-govuk/route-utils",
+  "name": "@not-govuk/uri",
   "version": "0.14.0",
-  "description": "Utility functions for components relating to routes and requests.",
+  "description": "A more forgiving alternative to JavaScript's standard URL class.",
   "main": "src/index.ts",
   "publishConfig": {
     "main": "dist/index.js",
@@ -24,21 +24,8 @@
   "dependencies": {
     "qs": "^6.13.0"
   },
-  "peerDependencies": {
-    "next": "^14.2.5",
-    "react-router-dom": "^6.26.2"
-  },
-  "peerDependenciesMeta": {
-    "next": {
-      "optional": true
-    },
-    "react-router-dom": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@types/qs": "^6.9.16",
-    "@types/react": "^18.3.11",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "ts-jest": "29.2.5",
