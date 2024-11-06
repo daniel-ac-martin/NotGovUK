@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, Fragment, createElement as h } from 'react';
+import { queryString } from '@not-govuk/route-utils';
 import { NextPrevProps, PageList, PageListProps } from './PageList';
 import { EnhancedLinkProps } from './common';
 
@@ -59,7 +60,7 @@ const generateLinks = ({
 }) => Array.from(
   Array(totalPages),
   (_v, i): EnhancedLinkProps => ({
-    href: '?' + (new URLSearchParams({ ...query, [pageParameter]: i + 1 })).toString(),
+    href: queryString({ ...query, [pageParameter]: i + 1 }),
     labelText: `${i + 1} of ${totalPages}`
   })
 );
