@@ -2,10 +2,10 @@ import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticHandlerContext, StaticRouterProvider, createStaticHandler, createStaticRouter } from 'react-router-dom/server';
 import { ApplicationProps, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
+import { urlParse } from '@not-govuk/route-utils';
 import { htmlEnvelope } from './html-envelope';
 
 import type { GraphQLSchema } from 'graphql';
-import type { Path } from 'react-router';
 import type { Next, Request as _Request, Response as _Response } from '@not-govuk/restify';
 import type { TLSSocket } from 'node:tls';
 
@@ -77,33 +77,6 @@ export type RestifyRenderer = {
 };
 
 export type ReactRenderer = (options: RendererOptions) => RestifyRenderer;
-
-// Taken from react-router
-// MIT License
-// Copyright(c) React Training LLC 2015 - 2019 Copyright(c) Remix Software Inc. 2020 - 2021 Copyright(c) Shopify Inc. 2022 -2023
-function parsePath(path: string): Partial<Path> {
-  let parsedPath: Partial<Path> = {};
-
-  if (path) {
-    let hashIndex = path.indexOf("#");
-    if (hashIndex >= 0) {
-      parsedPath.hash = path.substr(hashIndex);
-      path = path.substr(0, hashIndex);
-    }
-
-    let searchIndex = path.indexOf("?");
-    if (searchIndex >= 0) {
-      parsedPath.search = path.substr(searchIndex);
-      path = path.substr(0, searchIndex);
-    }
-
-    if (path) {
-      parsedPath.pathname = path;
-    }
-  }
-
-  return parsedPath;
-}
 
 // Adapted from react-router
 // MIT License
@@ -247,7 +220,7 @@ export const reactRenderer: ReactRenderer = ({
       return renderToStringWithData(app);
     };
     const renderWithoutData = (): string => {
-      const location = parsePath(req.url || '',);
+      const location = urlParse(req.url || '');
       const context: StaticHandlerContext = {
         actionData: {},
         actionHeaders: {},
