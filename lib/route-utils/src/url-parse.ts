@@ -2,7 +2,6 @@ import { Query, parse as qsParse, queryString } from './query-string';
 
 export class URI extends Object {
   #url: URL;
-  #proxy: URL;
   #noHostname = false;
   #noPathname = false;
   #query: Query;
@@ -35,118 +34,104 @@ export class URI extends Object {
       }
     }
 
-    this.#proxy = new Proxy(this.#url, {
-      get: (target, prop, _receiver) => {
-        if (this.#noHostname) {
-          switch (prop) {
-            case 'pathname':
-              return (
-                this.#noPathname
-                  ? ''
-                  : (target as any)[prop]
-              );
-            case 'href':
-              const targetHref = target.href;
-              const hash = (
-                targetHref[targetHref.length - 1] === '#'
-                  ? '#'
-                  : this.#proxy.hash
-              );
-              return this.#proxy.pathname + this.#proxy.search + hash;
-            case 'toString':
-              return function (this: URL): string { return this.href; };
-            case 'origin':
-            case 'protocol':
-            case 'username':
-            case 'password':
-            case 'host':
-            case 'hostname':
-            case 'port':
-              return '';
-            default:
-              return (target as any)[prop];
-          }
-        } else {
-          return (target as any)[prop];
-        }
-      },
-      set: (target, prop, value, _receiver) => {
-        switch (prop) {
-          case 'pathname':
-            this.#noPathname = !value;
-            return (target as any)[prop] = value || true;
-          case 'host':
-          case 'hostname':
-            this.#noHostname = !value;
-            return (target as any)[prop] = value || true;
-          default:
-            return (target as any)[prop] = value || true;
-        }
-      }
-    });
-
     this.#query = qsParse(this.#url.search);
   }
 
   get href(): string {
-    return this.#proxy.href;
+    const targetHref = this.#url.href;
+    const hash = (
+      targetHref[targetHref.length - 1] === '#'
+        ? '#'
+        : this.#url.hash
+    );
+    return (
+      this.#noHostname
+        ? this.pathname + this.#url.search + hash
+        : targetHref
+    );
   }
 
   get protocol(): string {
-    return this.#proxy.protocol;
+    return (
+      this.#noHostname
+        ? ''
+        : this.#url.protocol
+    );
   }
   set protocol(v: string) {
-    this.#proxy.protocol = v;
+    this.#url.protocol = v;
   }
 
   get username(): string {
-    return this.#proxy.username;
+    return (
+      this.#noHostname
+        ? ''
+        : this.#url.username
+    );
   }
   set username(v: string) {
-    this.#proxy.username = v;
+    this.#url.username = v;
   }
 
   get password(): string {
-    return this.#proxy.password;
+    return (
+      this.#noHostname
+        ? ''
+        : this.#url.password
+    );
   }
   set password(v: string) {
-    this.#proxy.password = v;
+    this.#url.password = v;
   }
 
   get hostname(): string {
-    return this.#proxy.hostname;
+    return (
+      this.#noHostname
+        ? ''
+        : this.#url.hostname
+    );
   }
   set hostname(v: string) {
-    this.#proxy.hostname = v;
+    this.#noHostname = !v;
+    this.#url.hostname = v;
   }
 
   get port(): string {
-    return this.#proxy.port;
+    return (
+      this.#noHostname
+        ? ''
+        : this.#url.port
+    );
   }
   set port(v: string) {
-    this.#proxy.port = v;
+    this.#url.port = v;
   }
 
   get pathname(): string {
-    return this.#proxy.pathname;
+    return (
+      this.#noPathname
+        ? ''
+        : this.#url.pathname
+    );
   }
   set pathname(v: string) {
-    this.#proxy.pathname = v;
+    this.#noPathname = !v;
+    this.#url.pathname = v;
   }
 
   get search(): string {
-    return this.#proxy.search;
+    return this.#url.search;
   }
   set search(v: string) {
     this.#query = qsParse(v);
-    this.#proxy.search = v;
+    this.#url.search = v;
   }
 
   get hash(): string {
-    return this.#proxy.hash;
+    return this.#url.hash;
   }
   set hash(v: string) {
-    this.#proxy.hash = v;
+    this.#url.hash = v;
   }
 
   get query(): Query {
@@ -154,13 +139,13 @@ export class URI extends Object {
   }
   set query(v: Query) {
     this.#query = v;
-    this.#proxy.search = queryString(v);
+    this.#url.search = queryString(v);
   }
 
   toString(): string {
     return (
       this.#noHostname
-        ? this.#proxy.toString()
+        ? this.href
         : this.#url.toString()
     );
   }
