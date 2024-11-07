@@ -1,11 +1,13 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "minimumReleaseAge": "2 days",
   "packageRules": [
     {
-      "matchDatasources": ["npm"],
+      "matchDatasources": [
+        "npm"
+      ],
       "minimumReleaseAge": "3 days"
     },
     {
@@ -23,10 +25,8 @@
         "babel-jest",
         "jest",
         "jest-environment-jsdom",
-        "ts-jest"
-      ],
-      "matchPackagePatterns": [
-        "^@jest/"
+        "ts-jest",
+        "@jest/**"
       ],
       "groupName": "jest"
     },
@@ -65,12 +65,10 @@
     },
     {
       "matchPackageNames": [
-	"mdx-js",
-        "storybook"
-      ],
-      "matchPackagePatterns": [
-        "^@mdx-js/",
-        "^@storybook/"
+        "mdx-js",
+        "storybook",
+        "@mdx-js/**",
+        "@storybook/**"
       ],
       "groupName": "storybook"
     },
@@ -78,21 +76,21 @@
       "matchPackageNames": [
         "@testing-library/jest-dom",
         "@testing-library/react",
-        "@testing-library/user-event"
-      ],
-      "matchPackagePatterns": [
-        "^@testing-library/"
+        "@testing-library/user-event",
+        "@testing-library/**"
       ],
       "groupName": "testing-library"
     },
     {
-      "matchPackagePatterns": [
-        "^@types/webpack",
-        "^webpack"
-      ],
-      "groupName": "webpack"
+      "groupName": "webpack",
+      "matchPackageNames": [
+        "@types/webpack*",
+        "webpack*"
+      ]
     }
   ],
   "rangeStrategy": "bump",
-  "schedule": ["before 3am on Monday"]
+  "schedule": [
+    "before 3am on Monday"
+  ]
 }
