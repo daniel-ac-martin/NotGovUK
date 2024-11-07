@@ -7,4 +7,7 @@
 // they build sites and compose components.
 $govuk-global-styles: true; // FIXME: Disable this once no longer required.
 
-@import "govuk-frontend/dist/govuk";
+@import "govuk-frontend/dist/govuk/core/index";
+@import "govuk-frontend/dist/govuk/objects/index";
+@import "govuk-frontend/dist/govuk/utilities/index";
+@import "govuk-frontend/dist/govuk/overrides/index";
