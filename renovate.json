@@ -26,7 +26,7 @@
         "jest",
         "jest-environment-jsdom",
         "ts-jest",
-        "/^@jest//"
+        "@jest/**"
       ],
       "groupName": "jest"
     },
@@ -67,8 +67,8 @@
       "matchPackageNames": [
         "mdx-js",
         "storybook",
-        "/^@mdx-js//",
-        "/^@storybook//"
+        "@mdx-js/**",
+        "@storybook/**"
       ],
       "groupName": "storybook"
     },
@@ -77,15 +77,15 @@
         "@testing-library/jest-dom",
         "@testing-library/react",
         "@testing-library/user-event",
-        "/^@testing-library//"
+        "@testing-library/**"
       ],
       "groupName": "testing-library"
     },
     {
       "groupName": "webpack",
       "matchPackageNames": [
-        "/^@types/webpack/",
-        "/^webpack/"
+        "@types/webpack*",
+        "webpack*"
       ]
     }
   ],
