@@ -1965,7 +1965,7 @@ importers:
     specifiers:
       '@not-govuk/restify': workspace:^0.14.0
       '@types/etag': ^1.8.3
-      '@types/express-serve-static-core': 4.19.6
+      '@types/express-serve-static-core': 5.0.1
       etag: ^1.8.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1976,7 +1976,7 @@ importers:
     devDependencies:
       '@not-govuk/restify': link:../restify
       '@types/etag': 1.8.3
-      '@types/express-serve-static-core': 4.19.6
+      '@types/express-serve-static-core': 5.0.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -10001,6 +10001,15 @@ packages:
 
   /@types/express-serve-static-core/4.19.6:
     resolution: {integrity: sha512-N4LZ2xG7DatVqhCZzOGb1Yi5lMbXSZcmdLDe9EzSndPV2HpWYWzRbaerl2n27irrm94EPpprqa8KpskPT085+A==}
+    dependencies:
+      '@types/node': 20.17.6
+      '@types/qs': 6.9.17
+      '@types/range-parser': 1.2.4
+      '@types/send': 0.17.1
+    dev: true
+
+  /@types/express-serve-static-core/5.0.1:
+    resolution: {integrity: sha512-CRICJIl0N5cXDONAdlTv5ShATZ4HEwk6kDDIW2/w9qOWKg+NU/5F8wYRWCrONad0/UKkloNSmmyN/wX4rtpbVA==}
     dependencies:
       '@types/node': 20.17.6
       '@types/qs': 6.9.17
