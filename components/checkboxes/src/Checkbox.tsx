@@ -23,12 +23,12 @@ export const Checkbox: FC<CheckboxProps> = ({
 }) => {
   const setState = useState({})[1];
   const forceUpdate = () => setState({});
-  const withUpdate = <A, B>(f: (a: A) => B) => (e: A): B => {
+  const withUpdate = <A, B>(f?: (a: A) => B) => (e: A): B | undefined => {
     forceUpdate();
     return f && f(e);
   };
 
-  const onChange = _onChange && withUpdate(_onChange);
+  const onChange = withUpdate(_onChange);
   const ref = useRef<HTMLInputElement>(null);
   const conditionalId = `conditional-${id}`;
 
