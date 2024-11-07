@@ -1,3 +1,10 @@
+@import "govuk-frontend/dist/govuk/components/fieldset";
+@import "govuk-frontend/dist/govuk/components/hint";
+@import "govuk-frontend/dist/govuk/components/input";
+@import "govuk-frontend/dist/govuk/components/label";
+@import "govuk-frontend/dist/govuk/components/select";
+@import "govuk-frontend/dist/govuk/components/textarea";
+
 fieldset {
   @extend .govuk-fieldset;
 }
