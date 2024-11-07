@@ -1,4 +1,4 @@
-import { FC, createElement as h } from 'react';
+import React, { FC, ReactNode, createElement as h } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ const Root: FC<any> = props => (
   </div>
 );
 
-const decorator = storyFn => {
+const decorator = (storyFn: () => ReactNode) => {
   return h(Root, {}, storyFn());
 };
 

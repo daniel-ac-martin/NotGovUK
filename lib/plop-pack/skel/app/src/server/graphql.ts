@@ -1,5 +1,5 @@
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import { errors } from '@not-govuk/engine';
+import { Request, errors } from '@not-govuk/engine';
 
 // Some fake data
 const books = [
@@ -19,7 +19,7 @@ type Query { books: [Book] }
 type Book { title: String, author: String }
 `;
 
-const Redact = (roles: string[]) => (obj: object) => (key: string, role: string) => {
+const Redact = (roles: string[]) => (obj: Record<string, unknown>) => (key: string, role: string) => {
   if (!roles.includes(role)) {
     throw new errors.ForbiddenError(`You do not have permission to access the property '${key}' on this object.`);
   }
@@ -29,7 +29,7 @@ const Redact = (roles: string[]) => (obj: object) => (key: string, role: string)
 
 // The resolvers
 const resolvers = {
-  Query: { books: (root, args, context) => {
+  Query: { books: (_root: any, _args: any, context: Request) => {
     const redactor = Redact(context?.auth?.roles || []);
 
     try {

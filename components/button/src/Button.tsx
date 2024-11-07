@@ -13,7 +13,7 @@ type ButtonButtonProps = CommonButtonProps & ButtonHTMLAttributes<HTMLButtonElem
 export type ButtonProps = AnchorButtonProps | ButtonButtonProps;
 
 const isAnchorProps = (v: ButtonProps): v is AnchorButtonProps => (
-  v['href'] !== undefined
+  'href' in v
 );
 const isButtonProps = (v: ButtonProps): v is ButtonButtonProps => (
   !isAnchorProps(v)
@@ -31,7 +31,7 @@ export const AnchorButton: FC<AnchorButtonProps> = ({
   ...attrs
 }) => {
   const classModifiers = [
-    start && 'start',
+    start ? 'start' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
 
@@ -59,7 +59,7 @@ export const ButtonButton: FC<ButtonButtonProps> = ({
   ...attrs
 }) => {
   const classModifiers = [
-    start && 'start',
+    start ? 'start' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder(defaultClassBlock, classBlock, classModifiers, className);
@@ -113,6 +113,9 @@ export const Button: FC<ButtonProps> = ({
         {children}
       </ButtonButton>
     );
+  } else {
+    // This should be unreachable, but TypeScript requires it
+    return (<Fragment></Fragment>);
   }
 };
 

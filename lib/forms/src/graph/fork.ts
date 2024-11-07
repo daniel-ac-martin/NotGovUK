@@ -15,7 +15,7 @@ export class ForkItem implements PathItem {
 type Condition = (v: object) => boolean;
 
 export class ForkNode extends Node {
-  readonly tag: string;
+  // readonly tag: string;
   condition: Condition
   left: Graph;
   right: Graph;
@@ -38,11 +38,11 @@ export class ForkNode extends Node {
     this.active = false;
   }
 
-  populateFromValues(values): void {
+  populateFromValues(values: any): void {
     this.active = this.condition(values);
   }
 
-  populateFromNext(next): void {
+  populateFromNext(_next: string): void {
   }
 
   toArray(): Node[] {

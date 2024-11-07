@@ -45,18 +45,18 @@ export const consentCookies = ({
       return undefined;
     }
   };
-  const cookies = ([
+  const cookies: Cookie[] = ([
     consentCookie,
     provideSession ? sessionCookie : undefined,
     ..._cookies
-  ]).filter(id);
+  ]).filter(id) as Cookie[];
 
   return (req, res, next) => {
     const cookieData = cookie.parse(req.headers.cookie || '');
     const _consent = cookieData[consentCookie.name]
-    const consent = _consent || [];
-    const active = cookies
-      .filter(e => e.group === undefined || consent.includes(e.name))
+    const consent = _consent || '';
+    const active: Record<string, Cookie> = cookies
+      .filter(e => e.group === undefined || (consent).includes(e.name))
       .reduce(
         (acc, { name, ...cur }) => ({
           ...acc,
@@ -102,7 +102,7 @@ export const consentCookies = ({
 
         if (size > maxSize) {
           const overrun = size - maxSize;
-          this?.log.warn(`Attempting to set cookie, '${name}', which is ${overrun} bytes larger than allowed (4kiB) and likely to be rejected`);
+          console.warn(`Attempting to set cookie, '${name}', which is ${overrun} bytes larger than allowed (4kiB) and likely to be rejected`);
         }
 
         this.setHeader('Set-Cookie', cookie.serialize(name, content, {
@@ -133,4 +133,5 @@ export const consentCookies = ({
 };
 
 export default consentCookies;
-export type { Cookie, CookieOptions, Middleware, Request, Response } from './common';
+export type { Cookie, CookieOptions, Middleware, Request, RequestFull, Response, ResponseFull, WriteHead } from './common';
+export type { SessionData } from './sessions';

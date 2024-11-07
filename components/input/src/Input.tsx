@@ -23,10 +23,10 @@ export const Input: FC<InputProps> = ({
   ...attrs
 }) => {
   const classes = classBuilder('govuk-input', classBlock, classModifiers, className);
-  const maxWidth = width && (
+  const maxWidth = width === undefined ? undefined : (
     (((width >= 10) ? 4.76 : 1.76) + 1.81 * width) + 'ex'
   );
-  const style = maxWidth && {
+  const style = !maxWidth ? undefined : {
     maxWidth
   };
   const useWrapper = !!(prefix || suffix);

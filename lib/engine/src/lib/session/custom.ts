@@ -1,21 +1,18 @@
+import type { SessionData, WriteHead } from '@not-govuk/consent-cookies';
 import { randomUUID } from 'node:crypto';
-import { Promised, Session, SessionStore, cookie } from './common';
-
-import type { OutgoingHttpHeader, OutgoingHttpHeaders, ServerResponse } from 'http';
+import { Promised, RequestFull, ResponseFull, Session, SessionStore, cookie } from './common';
 
 export type SessionOptionsCustom = {
   store: SessionStore.Custom
-  read: (id: string) => Promised<object>
-  write: (id: string, data: object) => Promised<void>
+  read: (id: string) => Promised<SessionData>
+  write: (id: string, data: SessionData) => Promised<void>
 };
-
-type Headers = OutgoingHttpHeaders | OutgoingHttpHeader[];
-type WriteHead = (statusCode: number, statusMessage?: string | Headers, headers?: Headers) => ServerResponse;
 
 export const customSession: Session<SessionOptionsCustom> = ({
   read,
   write
-}) => async (req, res) => {
+}) => async (_req, res) => {
+  const req = _req as RequestFull;
   // Look for an existing session
   const id: string = String(req.cookies[cookie.name]);
   const currentSessionData = (
@@ -32,12 +29,12 @@ export const customSession: Session<SessionOptionsCustom> = ({
 
   // Make session data available on the request
   let modified = false;
-  const handler = {
-    get(target, prop, receiver) {
+  const handler: ConstructorParameters<typeof Proxy<SessionData>>[1] = {
+    get(target, prop: string, receiver) {
       const sub = target[prop];
       return (
         typeof sub === 'object' && sub !== null
-          ? new Proxy(target[prop], handler)
+          ? new Proxy(sub, handler)
           : Reflect.get(target, prop, receiver)
       );
     },
@@ -52,11 +49,13 @@ export const customSession: Session<SessionOptionsCustom> = ({
       return Reflect.set(target, prop, receiver);
     }
   };
-  req.session = new Proxy(sessionData, handler);
+  req.session = new Proxy<SessionData>(sessionData, handler);
 
   // Write the session before we send headers
-  const _writeHead: WriteHead = res.writeHead.bind(res);
-  const writeHead: WriteHead = function (statusCode, statusMessage, headers) {
+  const _writeHead = res.writeHead.bind(res);
+  const writeHead: WriteHead = function (...args) {
+    const that = this as ResponseFull;
+
     if (modified) {
       const newId = (
         newSession
@@ -67,14 +66,15 @@ export const customSession: Session<SessionOptionsCustom> = ({
       write(newId, sessionData);
 
       if(newSession) {
-        this.setCookie(cookie.name, newId);
+        that.setCookie(cookie.name, newId);
       }
     }
 
-    return _writeHead(statusCode, statusMessage, headers);
+    return _writeHead(...args);
   };
 
-  res.writeHead = writeHead;
+  res.writeHead = writeHead as any;
 };
 
 export default customSession;
+export { SessionData };

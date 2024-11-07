@@ -1,5 +1,7 @@
+'use client';
+
 import { FC, Fragment, createElement as h } from 'react';
-import { queryString } from '@not-govuk/route-utils';
+import { queryString } from '@not-govuk/uri';
 import { NextPrevProps, PageList, PageListProps } from './PageList';
 import { EnhancedLinkProps } from './common';
 
@@ -45,7 +47,7 @@ export type PaginationProps = Omit<PageListProps, 'children' | 'next' | 'previou
   BackForthProps | NumberedProps
 );
 
-const string2Href = e => (
+const string2Href = (e?: string | NextPrevProps | EnhancedLinkProps) => (
   typeof e === 'string'
   ? { href: e }
   : e
@@ -54,7 +56,7 @@ const string2Href = e => (
 const generateLinks = ({
   pageParameter = 'page',
   query = {},
-  totalPages
+  totalPages = 0
 }) => Array.from(
   Array(totalPages),
   (_v, i): EnhancedLinkProps => ({
@@ -88,6 +90,12 @@ export const Pagination: FC<PaginationProps> = ({
     totalPages = undefined,
     ...attrs
   } = {
+    backAndForth: undefined, // Added to satisfy TypeScript v5
+    nextText: undefined, // Added to satisfy TypeScript v5
+    pageParameter: undefined, // Added to satisfy TypeScript v5
+    previousText: undefined, // Added to satisfy TypeScript v5
+    query: undefined, // Added to satisfy TypeScript v5
+    totalPages: undefined, // Added to satisfy TypeScript v5
     ...rest,
     next: (
       'nextText' in rest
@@ -127,11 +135,11 @@ export const Pagination: FC<PaginationProps> = ({
       : {
         labelText: (
           totalPages !== undefined
-          ? `${currentPage - 1} of ${totalPages}`
+          ? `${currentIndex} of ${totalPages}`
           : undefined
         ),
-        ...(links && links[currentIndex - 1]),
-        ..._previous
+        ...(links && links[currentIndex - 1] as object),
+        ...(_previous as object)
       }
     )
   );
@@ -139,12 +147,12 @@ export const Pagination: FC<PaginationProps> = ({
     currentIndex === undefined
     ? _next
     : (
-      currentPage >= totalPages
+      currentIndex >= (totalPages || 0) - 1
       ? undefined
       : {
-        labelText: `${currentPage + 1} of ${totalPages}`,
-        ...(links && links[currentIndex + 1]),
-        ..._next
+        labelText: `${currentIndex + 2} of ${totalPages}`,
+        ...(links && links[currentIndex + 1] as object),
+        ...(_next as object)
       }
     )
   );
@@ -152,8 +160,8 @@ export const Pagination: FC<PaginationProps> = ({
 
   const createLink = (n: number) => {
     const i = n - 1;
-    const link = links[i];
-    const {children, labelText, ...attrs} = link || {};
+    const link = links && links[i];
+    const {children, labelText, ...attrs} = (link as EnhancedLinkProps) || {};
 
     return (
       link === undefined ? null : (
@@ -162,36 +170,39 @@ export const Pagination: FC<PaginationProps> = ({
     );
   };
 
+  const current = currentPage || 0;
+  const total = totalPages || 0;
+
   return (
     <PageList
       classBlock={classBlock}
       classModifiers={classModifiers}
       className={className}
       landmarkLabel={landmarkLabel}
-      previous={previous}
-      next={next}
+      previous={previous as NextPrevProps}
+      next={next as NextPrevProps}
       {...attrs}
     >
-      {links === undefined || backAndForth ? null : ([
+      {links === undefined || backAndForth ? undefined : ([
         createLink(1),
-        (currentPage - adjacentPages <= 2 ? null : (
+        (current - adjacentPages <= 2 ? null : (
           <PageList.Ellipsis key={2} />
         )),
 
         ...(Array.from(Array(2 * adjacentPages + 1), (_v, i) => {
-          const n = currentPage - adjacentPages + i;
+          const n = current - adjacentPages + i;
 
           return (
-            1 < n && n < totalPages
+            1 < n && n < total
             ? createLink(n)
             : null
           );
         })),
 
-        (currentPage + adjacentPages >= totalPages - 1 ? null : (
-          <PageList.Ellipsis key={totalPages - 1} />
+        (current + adjacentPages >= total - 1 ? null : (
+          <PageList.Ellipsis key={total - 1} />
         )),
-        createLink(totalPages)
+        createLink(total)
       ])}
     </PageList>
   );

@@ -1,10 +1,18 @@
-import { GraphQLSchema } from 'graphql';
 import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
+import { StaticHandlerContext, StaticRouterProvider, createStaticHandler, createStaticRouter } from 'react-router-dom/server';
 import { ApplicationProps, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
+import { URI } from '@not-govuk/uri';
 import { htmlEnvelope } from './html-envelope';
 
+import type { GraphQLSchema } from 'graphql';
 import type { Next, Request as _Request, Response as _Response } from '@not-govuk/restify';
+import type { TLSSocket } from 'node:tls';
+
+type NodeRequest = globalThis.Request;
+const NodeRequest = globalThis.Request;
+
+type Router = ReturnType<typeof createStaticRouter>
 
 type Request = _Request & {
   auth?: any
@@ -12,15 +20,18 @@ type Request = _Request & {
 
 type RenderApp = (code?: any, body?: any, headers?: any) => Promise<void>;
 
-export type Response = _Response & {
+type ResponseExtras = {
+  renderApp: RenderApp
+};
+type Response = _Response & Partial<ResponseExtras> & {
   html?: string
   locals?: any
-  renderApp?: RenderApp
 };
+export type ResponseFull = Response & ResponseExtras;
 
 type Body = string | Error;
 
-const statusToTitle = {
+const statusToTitle: Record<number, string> = {
   400: 'Bad request',
   401: 'Unauthorised',
   402: 'Payment required',
@@ -67,7 +78,58 @@ export type RestifyRenderer = {
 
 export type ReactRenderer = (options: RendererOptions) => RestifyRenderer;
 
-const contentTypeToCharSet = (contentType: string): string => {
+// Adapted from react-router
+// MIT License
+// Copyright(c) React Training LLC 2015 - 2019 Copyright(c) Remix Software Inc. 2020 - 2021 Copyright(c) Shopify Inc. 2022 -2023
+function createFetchRequest(
+  req: Request,
+  res: Response
+): NodeRequest {
+  let protocol = (
+    (req.socket as TLSSocket).encrypted
+      ? 'https'
+      : 'http'
+  );
+  let origin = protocol + '://' + req.header('host');
+  let url = new URL(req.url || '/', origin);
+
+  let controller: AbortController | null = new AbortController();
+  let headers = new Headers();
+
+  for (let [key, values] of Object.entries(req.headers)) {
+    if (values) {
+      if (Array.isArray(values)) {
+        for (let value of values) {
+          headers.append(key, value);
+        }
+      } else {
+        headers.set(key, values);
+      }
+    }
+  }
+
+  let init: RequestInit = {
+    method: req.method,
+    headers,
+    signal: controller.signal,
+  };
+
+  if (req.method !== 'GET' && req.method !== 'HEAD') {
+    init.body = req.body;
+    (init as { duplex: 'half' }).duplex = 'half';
+  }
+
+  // Abort action/loaders once we can no longer write a response iff we have
+  // not yet sent a response (i.e., `close` without `finish`)
+  // `finish` -> done rendering the response
+  // `close` -> response can no longer be written to
+  res.on('finish', () => (controller = null));
+  res.on('close', () => controller?.abort());
+
+  return new NodeRequest(url.href, init);
+}
+
+const contentTypeToCharSet = (contentType: string): string | undefined => {
   const matches = contentType.match(/charset=([^;]*)/);
 
   return (
@@ -102,12 +164,6 @@ export const reactRenderer: ReactRenderer = ({
       username: req.auth?.username,
       expiry: req.auth?.expiry?.toISOString()
     };
-    const routerProps = {
-      location: req.url,
-      context: {
-        statusCode: res.statusCode
-      }
-    };
     const err = (
       body instanceof Error
         ? {
@@ -117,33 +173,80 @@ export const reactRenderer: ReactRenderer = ({
         }
         : undefined
     );
-    const reqProps = {
-      err,
-      pageTitle: (err && err.title) || body?.toString()
-    };
     const appProps = {
-      pages,
-      signInHRef,
-      signOutHRef,
-      ...reqProps
+      pageTitle: (err && err.title) || body?.toString() || 'NotGovUK'
     };
-    const App = compose({
+    const { RouterWrap, extractDataCache, helmetContext, routes } = compose({
       AppWrap,
       ErrorPage,
       PageWrap,
       graphQL: graphQL && {
         schema: graphQL.schema
       },
-      routerProps,
       data,
+      err,
+      pages,
+      signInHRef,
+      signOutHRef,
       user: { ...user, accessToken: req.auth?.accessToken } // Add the access token separately, in order to keep it off the client
     });
-    const app = h(App, appProps)
+    const basename = '/';
+    const { query, dataRoutes } = createStaticHandler(routes, { basename });
 
-    const render = (): Promise<string> => renderToStringWithData(app);
+    const nonce = res.nonce || '';
+    const createApp = (router: Router, context: StaticHandlerContext) => (
+      h(RouterWrap, appProps,
+        h(StaticRouterProvider, {
+          context,
+          hydrate: false, // Would this interfere with our own hydration? - Seems to break hydration due to inserting a <script>
+          nonce,
+          router
+        }))
+    );
+    const render = async (): Promise<string> => {
+      const fetchRequest = createFetchRequest(req, res);
+      const context = await query(fetchRequest, { requestContext: {
+        location: req.url || '',
+        statusCode: res.statusCode
+      } });
+
+      if (context instanceof Response) {
+        throw context;
+      }
+
+      const router = createStaticRouter(dataRoutes, context);
+      const app = createApp(router, context);
+
+      return renderToStringWithData(app);
+    };
+    const renderWithoutData = (): string => {
+      const location = URI.parse(req.url || '');
+      const context: StaticHandlerContext = {
+        actionData: {},
+        actionHeaders: {},
+        activeDeferreds: null,
+        basename,
+        errors: null,
+        loaderData: {},
+        loaderHeaders: {},
+        location: {
+          pathname: location.pathname || '/',
+          search: location.search || '',
+          hash: location.hash || '',
+          state: null,
+          key: 'default'
+        },
+        matches: [],
+        statusCode: res.statusCode
+      };
+      const router = createStaticRouter(dataRoutes, context);
+      const app = createApp(router, context);
+
+      return renderToString(app);
+    };
 
     const renderToHtml = (appRender?: string): string => {
-      appRender = appRender || renderToString(app);
+      appRender = appRender || renderWithoutData();
 
       let fromHeader = undefined;
 
@@ -155,7 +258,7 @@ export const reactRenderer: ReactRenderer = ({
               ? header[0]
               : header
           );
-          fromHeader = JSON.parse(str);
+          fromHeader = JSON.parse(str || '');
         } catch (_e) {}
       }
 
@@ -172,22 +275,23 @@ export const reactRenderer: ReactRenderer = ({
       const env = htmlEnvelope({
         assetsPath,
         charSet,
-        helmet: App.helmetContext.helmet,
+        helmet: helmetContext.helmet,
         hydrationData: (
           ssrOnly
             ? undefined
             : {
-              props: {
-                ...appProps,
-                pages: appProps.pages.map(
-                  ({ Component, ...rest }) => ({ ...rest })
-                )
-              },
-              cache: App.extractDataCache(),
+              cache: extractDataCache(),
+              err,
+              pages: pages.map(
+                ({ Component, ...rest }) => ({ ...rest })
+              ),
+              props: appProps,
+              signInHRef,
+              signOutHRef,
               user
             }
         ),
-        nonce: res.nonce,
+        nonce,
         rootId,
         scripts: (
           ssrOnly
@@ -218,7 +322,7 @@ export const reactRenderer: ReactRenderer = ({
     return res.html;
   };
 
-  const renderApp = (req: Request): RenderApp => function(code, body, headers) {
+  const renderApp = (req: Request): RenderApp => function(this: Response, code, body, headers) {
     const res = this;
     const charSet = 'UTF-8';
 

@@ -1,6 +1,6 @@
 import { PathItem } from './path';
 
-export type NodeFn = (Node) => any
+export type NodeFn = (n: Node) => any
 
 export abstract class Node {
   readonly tag: string
@@ -12,7 +12,7 @@ export abstract class Node {
   abstract toPathItem(): PathItem;
   abstract depopulate(): void;
   abstract populateFromValues(values: any): void;
-  abstract populateFromNext(next: string): void;
+  abstract populateFromNext(next?: string): void;
   abstract toArray(): Node[];
   abstract traverse(values: any): Node[];
 

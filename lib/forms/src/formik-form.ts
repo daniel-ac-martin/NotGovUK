@@ -1,5 +1,5 @@
 import { ComponentType, FC, HTMLProps, createElement as h } from 'react';
-import { Formik, FormikConfig, FormikProps } from 'formik';
+import { Formik, FormikConfig, FormikProps, FormikValues } from 'formik';
 import { useForm } from './context';
 import { Form as RawForm } from './form';
 
@@ -8,10 +8,10 @@ type HTMLFormPropsMini = Omit<HTMLFormProps, 'onSubmit' | 'onReset'>;
 
 // It would be nice to replace this with the vanilla withFormik but there
 // appears to be some difference in the implementation.
-const withFormik = <Values, A>(options: FormikConfig<Values>) => (Component: ComponentType<A & FormikProps<Values>>): FC<A> => props => (
+const withFormik = <A>(options: FormikConfig<FormikValues>) => (Component: ComponentType<A & FormikProps<FormikValues>>): FC<A> => props => (
   h(Formik, {
     ...options,
-    children: (formik: FormikProps<Values>) => h(Component, {...props, ...formik})
+    children: (formik: FormikProps<FormikValues>) => h(Component, {...props, ...formik})
   })
 );
 
@@ -21,7 +21,7 @@ const wireUpForm = <Values>(Component: ComponentType<HTMLFormProps>): FC<HTMLFor
   ...props
 }) => {
   const { update, updateScope } = useForm();
-  const onSubmit = event => {
+  const onSubmit = (event: any) => {
     updateScope();
     const r = handleSubmit(event);
     update();
@@ -35,7 +35,7 @@ const wireUpForm = <Values>(Component: ComponentType<HTMLFormProps>): FC<HTMLFor
   });
 };
 
-const withFormikForm = <Values>(Component: ComponentType<HTMLFormProps>): FC<HTMLFormPropsMini & FormikConfig<Values>> => ({
+const withFormikForm = (Component: ComponentType<HTMLFormProps>): FC<HTMLFormPropsMini & FormikConfig<FormikValues>> => ({
   component,
   enableReinitialize,
   initialErrors,
@@ -54,7 +54,7 @@ const withFormikForm = <Values>(Component: ComponentType<HTMLFormProps>): FC<HTM
   validationSchema,
   ...props
 }) => {
-  const formikConfig: FormikConfig<Values> = {
+  const formikConfig: FormikConfig<FormikValues> = {
     onSubmit,
     initialErrors,
     initialTouched,
@@ -65,6 +65,6 @@ const withFormikForm = <Values>(Component: ComponentType<HTMLFormProps>): FC<HTM
   return h(withFormik(formikConfig)(wireUpForm(Component)), props);
 };
 
-export const FormikForm: ComponentType<HTMLFormPropsMini & FormikConfig<any>> = withFormikForm(RawForm);
+export const FormikForm: ComponentType<HTMLFormPropsMini & FormikConfig<any>> = withFormikForm(RawForm as any);
 
 export default FormikForm;

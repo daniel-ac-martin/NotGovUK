@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: [ 'govuk-docs', 'govuk-template' ]
+        app: [ 'govuk-docs', 'govuk-template', 'next-example' ]
     steps:
 
       - name: Check out repository
@@ -94,7 +94,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: [ 'govuk-docs', 'govuk-template' ]
+        app: [ 'govuk-docs', 'govuk-template', 'next-example' ]
         browser: [ 'chromium', 'firefox', 'electron' ]
     steps:
 
@@ -119,4 +119,4 @@ jobs:
           browser: ${{ matrix.browser }}
           cypress-project-id: ${{ secrets.CYPRESS_PROJECT_ID }}
           cypress-record-key: ${{ secrets.CYPRESS_RECORD_KEY }}
-          node: ${{ matrix.node }}
+          node: 20

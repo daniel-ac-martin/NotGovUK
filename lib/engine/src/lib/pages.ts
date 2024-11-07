@@ -1,8 +1,7 @@
-import { Request, Next } from 'restify';
-import { Router } from '@not-govuk/restify';
+import type { ResponseFull } from '@not-govuk/server-renderer';
+import { Middleware, Router } from '@not-govuk/restify';
 import { PageModule, PageInfoSSR, PageLoader } from '@not-govuk/app-composer';
-import { Response } from '@not-govuk/server-renderer';
-import path from 'path';
+import path from 'node:path';
 
 const pageExtensionPattern = /\.([jt]sx?|mdx?|html)$/i
 
@@ -44,8 +43,8 @@ const src2Title = (page: string): string => (
     page
       .split('/')
       .pop()
-      .split('.')
-      .shift()
+      ?.split('.')
+      .shift() || ''
   )
 );
 
@@ -69,7 +68,8 @@ export const gatherPages = (pageLoader: PageLoader): Promise<PageInfoSSR[]> => P
     } )
 );
 
-const pageMiddleware = (title: string) => (_req: Request, res: Response, next: Next) => {
+const pageMiddleware = (title: string): Middleware => (_req, _res, next) => {
+  const res = _res as ResponseFull;
   res.renderApp(200, title).finally(next);
 };
 

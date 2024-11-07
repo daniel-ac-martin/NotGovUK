@@ -1,0 +1,35 @@
+{
+  "name": "@not-govuk/next-example",
+  "version": "0.14.0",
+  "description": "A Next.js application with NotGovUK components.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "npm run test:unit",
+    "test:ci": "npm test && npm run test:functional:ci",
+    "test:functional": "cypress run ${CYPRESS_PROJECT_ID:+--record ${CYPRESS_FLAGS}}",
+    "test:functional:ci": "start-server-and-test 'start' 'http-get://localhost:3000/' test:functional",
+    "test:unit": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "@not-govuk/simple-components": "workspace:^0.14.0",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.16.5",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.0",
+    "cypress": "13.14.2",
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
+    "sass": "^1.79.3",
+    "start-server-and-test": "2.0.8",
+    "ts-jest": "29.2.5",
+    "typescript": "^5"
+  }
+}

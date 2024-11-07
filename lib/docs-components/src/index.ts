@@ -41,7 +41,7 @@ const DocsPreview: FC<PreviewProps> = ({ children, id: _id }) => {
   const name = (
     stories.length
       ? `${stories[0]}-example`
-      : undefined
+      : 'example'
   );
 
   return h(ReactPreview, {

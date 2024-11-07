@@ -1,25 +1,26 @@
 import { Request } from 'restify';
 import {
   Router,
-  Server as RestifyServer,
+  Server as _Server,
   installServe
 } from './router';
 
-function forAPI(req: Request): boolean {
-  const reducer = (acc, v) => acc || req.path().startsWith(v);
-
-  return this.apiPaths.reduce(reducer, false);
+export type Server = _Server & {
+  apiPaths: string[]
+  forAPI: (req: Request) => boolean
+  serveAPI: (path: string, router: Router) => void
 }
 
-function serveAPI(path: string, router: Router): void {
+function forAPI(this: Server, req: Request): boolean {
+  return this.apiPaths.reduce(
+    (acc, v) => acc || req.path().startsWith(v),
+    false
+  );
+}
+
+function serveAPI(this: Server, path: string, router: Router): void {
   this.apiPaths.push(path);
   this.serve(path, router);
-}
-
-export type Server = RestifyServer & {
-  apiPaths?: string[]
-  forAPI?: (req: Request) => boolean
-  serveAPI?: (path: string, router: Router) => void
 }
 
 export const installServeAPI = (httpd: Server): void => {

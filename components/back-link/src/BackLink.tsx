@@ -1,7 +1,9 @@
+'use client';
+
 import { FC, ReactNode, createElement as h } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { A } from '@not-govuk/link';
+import { useNavigate } from '@not-govuk/router';
 
 import '../assets/BackLink.scss';
 
@@ -28,7 +30,7 @@ export const BackLink: FC<BackLinkProps> = ({
   const classes = classBuilder(defaultClassBlock, classBlock, classModifiers, className);
   const navigate = useNavigate();
   const text = _text || children || 'Back';
-  const goBack = () => navigate(-1);
+  const goBack = () => navigate && navigate(-1);
 
   return href ? (
     <A {...attrs}

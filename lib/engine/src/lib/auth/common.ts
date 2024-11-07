@@ -30,19 +30,21 @@ export type UserProfile = {
 
 type Callback = (err: any) => void;
 
-export type Request = _Request & {
-  auth?: UserProfile
-  isAuthenticated?: () => boolean
+type RequestExtras = {
+  auth: UserProfile
+  isAuthenticated: () => boolean
   login(user: UserProfile, done: Callback): void;
   login(user: UserProfile, options: LogInOptions, done: Callback): void
   logout(options: LogOutOptions, done: Callback): void
   logout(done: Callback): void
 };
+export type Request = _Request & Partial<RequestExtras>;
+export type RequestFull = Request & RequestExtras;
 
 export type Apply = (httpd: Server, siteWide?: boolean) => Server;
 export type Middleware = (req: Request, res: Response, next: Next) => void;
 
-type UserExtractor = (req: _Request) => UserProfile;
+type UserExtractor = (req: _Request) => UserProfile | undefined;
 
 export type AuthBag = {
   apply?: Apply

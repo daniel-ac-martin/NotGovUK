@@ -1,24 +1,30 @@
+'use client';
+
 import { GraphQLSchema } from 'graphql';
-import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
+import { ApolloClient, ApolloProvider, InMemoryCache, NormalizedCacheObject, createHttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
 import { ComponentType, FC, Fragment, ReactNode, Suspense, createElement as h, lazy } from 'react';
 import { Helmet, HelmetProvider, HelmetServerState } from 'react-helmet-async';
-import { BrowserRouter, BrowserRouterProps, Routes } from 'react-router-dom';
-import { StaticRouter, StaticRouterProps } from 'react-router-dom/server';
-import { Route, useLocation } from '@not-govuk/route-utils';
+import { ScrollRestoration, RouteObject, Outlet } from 'react-router-dom';
+import { useIsMounted } from '@not-govuk/client-component-helpers';
+import { useLocation } from '@not-govuk/router';
 import { UserInfo, UserInfoContext } from '@not-govuk/user-info';
 
-type DataCache = object;
+type DataCache = Record<string, any>;
 
 export type HydrationData = {
-  props: ApplicationPropsCSR
   cache?: DataCache
+  err?: ServerError
+  pages: PageInfoCSR[]
+  props: ApplicationProps
+  signInHRef?: string
+  signOutHRef?: string
   user?: UserInfo
 };
 
 export type Hydration = {
   id: string
-  data: HydrationData
+  data?: HydrationData
 };
 
 export type RouteInfo = {
@@ -26,26 +32,24 @@ export type RouteInfo = {
   title: string
 };
 
-export type PageInfo = RouteInfo & {
+export type PageInfoCSR = RouteInfo & {
   src: string
 };
 
 type SSRComponent = Page | string;
+type CSRComponent = Promise<SSRComponent>;
 
-export type PageInfoSSR = PageInfo & {
-  Component: SSRComponent
+export type PageInfoSSR = PageInfoCSR & {
+  Component: SSRComponent;
 };
 
-type ApplicationPropsCommon = {
+export type PageInfo = RouteInfo & {
+  Component: SSRComponent | CSRComponent;
+};
+
+export type ApplicationProps = {
   children?: ReactNode
-  err?: ServerError
   pageTitle: string
-  signInHRef?: string
-  signOutHRef?: string
-};
-
-export type ApplicationPropsCSR = ApplicationPropsCommon & {
-  pages: PageInfo[]
 };
 
 type ServerError = {
@@ -58,17 +62,6 @@ export type HelmetDataContext = {
   helmet: HelmetServerState
 }
 
-export type ApplicationPropsSSR = ApplicationPropsCommon & {
-  pages: PageInfoSSR[]
-};
-
-export type ApplicationProps = ApplicationPropsCSR | ApplicationPropsSSR;
-
-type ApplicationCSR = ComponentType<ApplicationPropsCSR>;
-type ApplicationSSR = ComponentType<ApplicationPropsSSR> & {
-  extractDataCache: () => object
-  helmetContext: HelmetDataContext
-};
 export type Application = ComponentType<ApplicationProps>;
 
 export type PageProps = {
@@ -100,13 +93,16 @@ type ComposeOptionsCommon = {
   ErrorPage: ErrorPage
   PageWrap: Page
   data?: DataCache
+  err?: ServerError
+  pages: PageInfo[]
+  signInHRef?: string
+  signOutHRef?: string
 };
 
 type ComposeOptionsSSR = ComposeOptionsCommon & {
   graphQL?: {
     schema: GraphQLSchema
   }
-  routerProps: StaticRouterProps
   user?: UserInfo & {
     accessToken?: string
   }
@@ -117,16 +113,23 @@ type ComposeOptionsCSR = ComposeOptionsCommon & {
   graphQL?: {
     endpoint: string,
   }
-  pageLoader: PageLoader
-  routerProps: BrowserRouterProps
   user?: UserInfo
 };
 
 export type ComposeOptions = ComposeOptionsCSR | ComposeOptionsSSR;
 
+type ComposeResultCommon = {
+  RouterWrap: Application
+  routes: RouteObject[]
+};
+type ComposeResultSSR = ComposeResultCommon & {
+  extractDataCache: () => NormalizedCacheObject | undefined
+  helmetContext: HelmetDataContext
+};
+
 type Compose = {
-  (options: ComposeOptionsCSR): ApplicationCSR;
-  (options: ComposeOptionsSSR): ApplicationSSR;
+  (options: ComposeOptionsCSR): ComposeResultCommon;
+  (options: ComposeOptionsSSR): ComposeResultSSR;
 };
 
 type DataProviderProps = {
@@ -135,37 +138,25 @@ type DataProviderProps = {
 };
 
 const htmlPage = (html: string): Page => {
-  const HTMLPage = (_) => h(
-    'div',
-    {
-      dangerouslySetInnerHTML: { __html: html }
-    }
-  );
+  const HTMLPage = (_: unknown) => h('div', {
+    dangerouslySetInnerHTML: { __html: html }
+  });
 
   return HTMLPage;
 };
 
-const stringToComponentMod = v => (
-  typeof v.default === 'string'
-  ? {
-    default: htmlPage(v.default)
-  }
+export const stringToComponentMod = (v: any) => (
+  typeof v === 'string'
+    ? htmlPage(v)
     : v
 );
 
-export const compose: Compose = options => {
-  const Router = (
-    "context" in options.routerProps
-      ? StaticRouter
-      : BrowserRouter
-  );
+export const compose: Compose = (options: ComposeOptions) => {
   const UserInfoProvider: ComponentType<{ children?: ReactNode }> = ({ children }) => (
     options.user
-      ? h(
-        UserInfoContext.Provider,
-        {
-          value: options.user
-        },
+      ? h(UserInfoContext.Provider, {
+        value: options.user
+      },
         children)
       : h(Fragment, {}, children)
   );
@@ -179,12 +170,12 @@ export const compose: Compose = options => {
               : new InMemoryCache()
           ),
           link: (
-            options.graphQL.schema
+            'schema' in options.graphQL
               ? new SchemaLink({
                 schema: options.graphQL.schema,
                 context: { auth: options.user }
               })
-              : createHttpLink(options.graphQL.endpoint)
+              : createHttpLink({ uri: options.graphQL.endpoint })
           )
         })
       )
@@ -201,110 +192,97 @@ export const compose: Compose = options => {
   const extractDataCache = () => client && client.extract();
   const helmetContext = {};
 
-  const App = props => {
-    const routes = props
-      .pages
-      .map(e => {
-        const loaded = (
-          e.Component
-            ? { default: e.Component }
-            : options.pageLoader(e.src)
-        );
-        const loadedComponentMod = (
-          loaded instanceof Promise
-            ? loaded.then(stringToComponentMod)
-            : stringToComponentMod(loaded)
-        );
-        const Component = (
-          loadedComponentMod instanceof Promise
-            ? lazy(() => loadedComponentMod)
-            : loadedComponentMod.default
-        );
-
-        return {
-          Component,
-          href: decodeURI(e.href),
-          title: e.title
-        };
-      });
-    const withPageWrap = Component => componentProps => {
-      const fullProps = {
-        routes,
-        signInHRef: props.signInHRef,
-        signOutHRef: props.signOutHRef,
-        ...componentProps
-      };
-
-      return h(
-        options.PageWrap, fullProps,
-        h(Component, fullProps)
-      );
-    };
-    const PageError = withPageWrap(options.ErrorPage);
-    const NotFoundPage: FC<{}> = () => {
-      const location = useLocation();
-
-      return h(PageError, {
-        internal: false,
-        title: 'Page not found',
-        message: `${location.pathname} does not exist.`
-      });
+  const pages = options
+    .pages
+    .map(({ href, ...rest }) => ({
+      ...rest,
+      href: decodeURI(href)
+    }));
+  const routes: RouteInfo[] = pages.map(({ href, title }) => ({ href, title }));
+  const withPageWrap = <T>(Component: ComponentType<T & PageProps>) => (componentProps: T) => {
+    const fullProps = {
+      routes,
+      signInHRef: options.signInHRef,
+      signOutHRef: options.signOutHRef,
+      ...componentProps
     };
 
-    const switchOrError = (
-      props.err
-        ? h(
-          PageError,
-          {
-            internal: String(props.err.statusCode).startsWith('5'),
-            title: props.err.title,
-            message: props.err.message
+    return h(options.PageWrap, fullProps, [
+      h(Component, { key: 0, ...fullProps }),
+      h(ScrollRestoration, { key: 1 })
+    ]);
+  };
+  const PageError = withPageWrap(options.ErrorPage);
+  const NotFoundPage: FC<{}> = () => {
+    const location = useLocation();
+
+    return h(PageError, {
+      internal: false,
+      title: 'Page not found',
+      message: `${location.pathname} does not exist.`
+    });
+  };
+  const LoadingPage = (
+    'LoadingPage' in options
+      ? withPageWrap(options.LoadingPage)
+      : undefined
+  );
+  const Layout: FC<{}> = () => {
+    const isMounted = useIsMounted(); // Must replicate the server on first render, but allow client to recover on subsequent navigation
+
+    return (
+      h(Suspense, { fallback: LoadingPage && h(LoadingPage) },
+        options.err && !isMounted && options.err.statusCode !== 404 // We can handle 404's via the router
+          ? h(PageError, {
+            internal: String(options.err.statusCode).startsWith('5'),
+            title: options.err.title,
+            message: options.err.message
           })
-        : h(
-          Routes, {},
-          [
-              ...routes.map((v, i) => h(
-                Route,
-                {
-                  caseSensitive: true,
-                  element: h(withPageWrap(v.Component)),
-                  key: i,
-                  path: v.href
-                }
-              )),
-              h(Route, {
-                element: h(NotFoundPage),
-                key: 'catch-all',
-                path: '*'
-              })
-          ]
-        )
-    );
-
-    const router = h(
-      Router, options.routerProps,
-      h(UserInfoProvider, {}, h(
-        Suspense, { fallback: h(withPageWrap(options.LoadingPage)) },
-        switchOrError
-      ))
-    );
-
-    return h(
-      options.AppWrap, props,
-      h(
-        HelmetProvider, { context: helmetContext },
-        [
-          h(Helmet, { key: 0, htmlAttributes: { lang: 'en' }}),
-          h(DataProvider, { key: 1, client }, router)
-        ]
+          : h(Outlet)
       )
     );
   };
+  const routeObjects: RouteObject[] = [{
+    element: h(Layout, {}),
+    children: [
+      ...pages.map(({ Component, href }) => {
+        const Page = (
+          Component instanceof Promise
+            ? lazy(() => Component.then(stringToComponentMod))
+            : stringToComponentMod(Component)
+        );
 
-  return Object.assign(App, {
+        return ({
+          caseSensitive: true,
+          element: h(withPageWrap(Page)),
+          path: href
+        });
+      }),
+      {
+        element: h(NotFoundPage),
+        path: '*'
+      }
+    ]
+  }];
+
+  const RouterWrap: FC<ApplicationProps> = ({ children, ...props }) => h(
+    options.AppWrap, props,
+    h(HelmetProvider, { context: helmetContext }, [
+      h(Helmet, { key: 0, htmlAttributes: { lang: 'en' } }),
+      h(DataProvider, { key: 1, client },
+        h(UserInfoProvider, {},
+          children
+        )
+      )
+    ])
+  );
+
+  return {
+    RouterWrap,
     extractDataCache,
-    helmetContext: helmetContext as HelmetDataContext
-  });
+    helmetContext: helmetContext as HelmetDataContext,
+    routes: routeObjects
+  };
 };
 
 export { renderToStringWithData } from '@apollo/client/react/ssr';

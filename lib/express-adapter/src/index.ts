@@ -1,7 +1,7 @@
 import etag from 'etag';
 
 import type { Request as _Request, Response, NextFunction } from 'express-serve-static-core';
-import type { Middleware as RestifyMiddleware } from '@not-govuk/restify';
+import type { Middleware as RestifyMiddleware, Response as RestifyResponse } from '@not-govuk/restify';
 
 type Callback = () => void;
 
@@ -21,7 +21,7 @@ const isAsync = (x: ExpressMiddleware): x is ExpressMiddlewareAsync => (
 
 export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req, res, next) => {
   const expressSession: unknown = (
-    !req['session']
+    !('session' in req && req.session)
       ? undefined
       : new Proxy(req['session'], {
         get(target, prop, receiver) {
@@ -36,7 +36,7 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
         }
       })
   );
-  const expressReq: unknown = new Proxy(req, {
+  const expressReq: Request = new Proxy(req, {
     get(target, prop, receiver) {
       switch (prop) {
         case 'session':
@@ -45,15 +45,16 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
 
       return Reflect.get(target, prop, receiver);
     }
-  });
-  const expressRes: unknown = new Proxy(res, {
+  }) as unknown as Request;
+  const expressRes: Response = new Proxy<RestifyResponse>(res, {
     get(target, prop, receiver) {
       switch (prop) {
         case 'end':
-          return (chunk, encoding, callback) => {
+          // FIXME: stream.end() supports multiple signatures, we should probably handle this
+          return (chunk: any, encoding: BufferEncoding, cb?: () => void) => {
             (target as any)._flushed = true; // This is a workaround for a bug that emerges when using Restify's gzip plugin
             return target.end(chunk, encoding, () => {
-              callback && callback();
+              cb && cb();
               return next(false);
             });
           }
@@ -68,7 +69,7 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
             return target.redirect(code, uri, next);
           }
         case 'send':
-          return (content) => {
+          return (content: any) => {
             target.statusCode = target.statusCode || 200;
 
             target.setHeader('Cache-Control', 'private, no-cache');
@@ -86,14 +87,14 @@ export const adapt = (middleware: ExpressMiddleware): RestifyMiddleware => (req,
 
       return Reflect.get(target, prop, receiver);
     }
-  });
+  }) as unknown as Response;
 
   expressRes['locals'] = expressRes['locals'] || {};
 
   if (isAsync(middleware)) {
-    middleware(expressReq as Request, expressRes as Response, next);
+    middleware(expressReq, expressRes, next);
   } else {
-    return middleware(expressReq as Request, expressRes as Response, next);
+    return middleware(expressReq, expressRes, next);
   }
 };
 

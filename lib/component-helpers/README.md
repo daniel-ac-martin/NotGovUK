@@ -1,5 +1,5 @@
-Not Govuk - Component Helpers
-=============================
+NotGovUK - Component Helpers
+============================
 
 Helper functions for writing components.
 

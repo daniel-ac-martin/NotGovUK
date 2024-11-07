@@ -1,6 +1,8 @@
+'use client';
+
 import { FC, KeyboardEvent, ReactNode, SyntheticEvent, createElement as h, useRef, useState } from 'react';
+import { useIsMounted } from '@not-govuk/client-component-helpers';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { useIsMounted } from '@not-govuk/route-utils';
 
 import '../assets/Tabs.scss';
 
@@ -26,29 +28,29 @@ export const Tabs: FC<TabsProps> = ({
   const classes = classBuilder('govuk-tabs', classBlock, classModifiers, className);
   const initial = 0;
   const [ selected, setSelected ] = useState(initial);
-  const refs = items.map(() => useRef(null));
+  const refs = items.map(() => useRef<HTMLAnchorElement>(null));
   const select = (i: number) => (e: SyntheticEvent) => {
     e.preventDefault();
     i !== selected && setSelected(i);
   };
   const keydown = (e: KeyboardEvent) => {
-    switch (e.keyCode) {
-      case 37:
-      case 38:
+    switch (e.key) {
+      case 'ArrowLeft':
+      case 'ArrowUp':
         e.preventDefault();
         if (selected > 0) {
           const i = selected - 1;
           setSelected(i);
-          refs[i].current.focus();
+          refs[i].current?.focus();
         }
         break;
-      case 39:
-      case 40:
+      case 'ArrowRight':
+      case 'ArrowDown':
         e.preventDefault();
         if (selected < items.length - 1) {
           const i = selected + 1;
           setSelected(i);
-          refs[i]?.current.focus();
+          refs[i].current?.focus();
         }
         break;
     }

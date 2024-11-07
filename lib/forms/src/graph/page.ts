@@ -13,7 +13,7 @@ export class PageItem implements PathItem {
 }
 
 export class PageNode extends Node {
-  readonly tag: string;
+  //readonly tag: string;
   contents: Graph;
 
   active: boolean;
@@ -34,12 +34,12 @@ export class PageNode extends Node {
     this.active = true;
   }
 
-  populateFromValues(values): void {
+  populateFromValues(values: any): void {
     this.fields = this.contents.gatherFieldsAlongPath(values);
   }
 
-  populateFromNext(next): void {
-    this.active = this.fields.includes(next);
+  populateFromNext(next: string): void {
+    this.active = this.fields?.includes(next) || false;
   }
 
   toArray(): Node[] {

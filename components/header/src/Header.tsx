@@ -37,7 +37,7 @@ export type HeaderProps = StandardProps & {
   signOutText?: string
 };
 
-const departmentMap = {
+const departmentMap: Record<string, string> = {
   'home-office': 'Home Office',
   'department-for-communities-and-local-government': 'DCLG',
   'department-for-culture-media-sport': 'DCMS',
@@ -53,7 +53,7 @@ const departmentMap = {
   'wales-office': 'Wales Office'
 };
 
-const departmentText = (d: string) => (
+const departmentText = (d?: string) => (
   !d ? null
   : (
     departmentMap[d] || (

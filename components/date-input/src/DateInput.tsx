@@ -21,10 +21,10 @@ export type DateInputPreValidateError = {
 export type DateInputError = ReactNode | DateInputPreValidateError;
 
 export const isPreValidateError = (v: DateInputError): v is DateInputPreValidateError => (
-  typeof v === 'object' && (
-    v['day'] ||
-    v['month'] ||
-    v['year']
+  !!v && typeof v === 'object' && (
+    'day' in v ||
+    'month' in v ||
+    'year' in v
   )
 );
 
@@ -39,6 +39,8 @@ export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputE
   id?: string
   /** Label */
   label: ReactNode
+  /** HTML name */
+  name: string
   /** Value for controlled fields */
   value?: DateInputValue
 };
@@ -89,7 +91,7 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
       }
     }
   );
-  const partValue = v => (
+  const partValue = (v: any) => (
     v == null
     ? ''
     : v
@@ -181,7 +183,7 @@ DateInput.format = (v: DateInputValue): string => {
 
     return `${yyyy}-${mm}-${dd}`;
   } else {
-    return undefined;
+    return '';
   }
 };
 
@@ -195,7 +197,11 @@ DateInput.deformat = (v: string): DateInputValue => {
       day: unpad(arr[2]),
       month: unpad(arr[1]),
       year: arr[0]
-    } : undefined
+    } : {
+      day: '',
+      month: '',
+      year: ''
+    }
   );
 };
 

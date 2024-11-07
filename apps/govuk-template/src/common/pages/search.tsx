@@ -1,7 +1,7 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { PageProps } from '@not-govuk/app-composer';
 import { Form } from '@not-govuk/components';
-import { useLocation } from '@not-govuk/route-utils';
+import { useLocation } from '@not-govuk/router';
 
 const prettyPrint = (obj: object) => JSON.stringify(obj, undefined, 2);
 

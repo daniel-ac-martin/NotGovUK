@@ -119,12 +119,12 @@ export class Router {
   }
 };
 
-function serve(path: string, router: Router): void {
+function serve(this: Server, path: string, router: Router): void {
   router.apply(this, path);
 }
 
 export type Server = RestifyServer & {
-  serve?: (path: string, router: Router) => void
+  serve: (path: string, router: Router) => void
 }
 
 export const installServe = (httpd: Server): void => {

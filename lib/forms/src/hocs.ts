@@ -1,3 +1,4 @@
+import type { Errors } from './completion';
 import { ComponentType, FC, createElement as h } from 'react';
 import { useField } from 'formik';
 import { useFormikContext } from 'formik';
@@ -44,8 +45,8 @@ export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyV
   validators.sort((l, r) => r.priority - l.priority);
 
   const preValidate = preValidators && (
-    v => {
-      const r = {};
+    (v: Record<string, unknown>): Errors | undefined => {
+      const r: Errors = {};
 
       Object.keys(preValidators)
         .map(k => {
@@ -64,7 +65,7 @@ export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyV
     }
   );
   const validate = validators && (
-    v => validators
+    (v: any) => validators
       .map(f => f({ name, prettyName })(toString(v)))
       .filter(id)[0]
   );
@@ -78,8 +79,8 @@ export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyV
   //console.debug(`Form.Field: Rendering '${props.name}', with state:`);
   //console.debug(state)
 
-  return h(Component, {
-    name,
+  return h(Component as any, {
+    //name,
     ...props,
     ...field,
     error: meta.error && meta.touched && meta.error,

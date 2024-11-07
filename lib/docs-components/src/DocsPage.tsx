@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { DocsContext } from './context';
 
-export type StoriesModule = object & {
+export type StoriesModule = Record<string, any> & {
   default: {
     includeStories: string[]
     parameters: {

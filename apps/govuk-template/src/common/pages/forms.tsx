@@ -1,7 +1,7 @@
 import { FC, Fragment, createElement as h } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
-import { useLocation } from '@not-govuk/route-utils';
+import { useLocation } from '@not-govuk/router';
 
 import {
   Form,
@@ -12,12 +12,17 @@ import {
   validator
 } from '@not-govuk/components';
 
-const notFrench = (msg?: string) => (field: object) => (value: string) =>
+import config from '../config';
+
+const siteTitle = config.title;
+export const title = 'Forms';
+
+const notFrench = (msg?: string) => (_field: object) => (value: string) =>
   validator(msg, value,
             value !== 'incorrect',
             `Choose an acceptable nationality`);
 
-const prettyPrint = obj => JSON.stringify(obj, undefined, 2);
+const prettyPrint = (obj: object) => JSON.stringify(obj, undefined, 2);
 
 const Page: FC<PageProps> = () => {
   const location = useLocation();
@@ -25,7 +30,7 @@ const Page: FC<PageProps> = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>Forms - NotGovUK</title>
+        <title>{title} - {siteTitle}</title>
       </Helmet>
       <Form action="/result" method="get">
         <Form.Page>
@@ -63,7 +68,7 @@ const Page: FC<PageProps> = () => {
           <Form.Submit>Continue</Form.Submit>
         </Form.Page>
         <Form.Fork
-          if={v => v.sex === 'female'}
+          if={(v: any) => v.sex === 'female'}
           then={
             <Form.Page>
               <Form.TextInput
@@ -177,4 +182,3 @@ const Page: FC<PageProps> = () => {
 };
 
 export default Page;
-export const title = 'Forms';

@@ -4,22 +4,20 @@ import { PageProps } from '@not-govuk/app-composer';
 import { AnchorList } from '@not-govuk/anchor-list';
 import config from '../config';
 
-export const title = 'Sitemap';
 const siteTitle = config.title;
+
+export const title = 'Sitemap';
 const description = `Overview of ${siteTitle}`;
 
 const Page: FC<PageProps> = ({ routes }) => {
-  const compare = (a, b) => (
-    a.href > b.href
-           ? 1
-           : -1
+  const pages = (
+    routes
+      .map(e => ({
+        href: e.href,
+        text: e.title
+      }))
+      .sort((a, b) => a.href > b.href ? 1 : -1)
   );
-  const pages = routes
-    .map(e => ({
-      href: e.href,
-      text: e.title
-    }))
-    .sort(compare);
 
   return (
     <Fragment>

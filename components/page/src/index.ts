@@ -1,6 +1,9 @@
 import Page from './Page';
 
 export default Page;
-export * from './GovUKPage';
-export * from './NotGovUKPage';
+export { GovUKPage } from './GovUKPage';
+export { NotGovUKPage } from './NotGovUKPage';
 export * from './Page';
+
+export type { GovUKPageProps } from './GovUKPage';
+export type { NotGovUKPageProps } from './NotGovUKPage';
