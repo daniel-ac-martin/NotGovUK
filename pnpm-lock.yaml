@@ -29,6 +29,7 @@ importers:
       '@storybook/react': 6.5.16
       '@storybook/theming': 6.5.16
       '@types/jest': 29.5.13
+      '@types/react': ^18.3.11
       '@types/webpack-env': 1.18.5
       babel-jest: 29.7.0
       babel-plugin-transform-class-properties: 6.24.1
@@ -49,7 +50,7 @@ importers:
       webpack-dev-middleware: 6.1.3
       webpack-hot-middleware: 2.26.1
     devDependencies:
-      '@apollo/client': 3.11.8_nnrd3gsncyragczmpvfhocinkq
+      '@apollo/client': 3.11.8_dg2on6edyqsutt23tuy6g53g5a
       '@babel/core': 7.25.2
       '@babel/plugin-proposal-export-namespace-from': 7.18.9_@babel+core@7.25.2
       '@babel/preset-env': 7.25.4_@babel+core@7.25.2
@@ -74,6 +75,7 @@ importers:
       '@storybook/react': 6.5.16_ayjvsvzpj3uymychkpddu2irgu
       '@storybook/theming': 6.5.16_nnrd3gsncyragczmpvfhocinkq
       '@types/jest': 29.5.13
+      '@types/react': 18.3.11
       '@types/webpack-env': 1.18.5
       babel-jest: 29.7.0_@babel+core@7.25.2
       babel-plugin-transform-class-properties: 6.24.1
@@ -104,10 +106,10 @@ importers:
       '@not-govuk/components': workspace:^0.14.0
       '@not-govuk/docs-components': workspace:^0.14.0
       '@not-govuk/engine': workspace:^0.14.0
-      '@not-govuk/route-utils': workspace:^0.14.0
+      '@not-govuk/router': workspace:^0.14.0
       '@not-govuk/server-renderer': workspace:^0.14.0
       '@not-govuk/webpack-config': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       '@types/webpack-env': 1.18.5
       bunyan: 1.8.15
@@ -138,10 +140,10 @@ importers:
       '@not-govuk/components': link:../../packages/components
       '@not-govuk/docs-components': link:../../lib/docs-components
       '@not-govuk/engine': link:../../lib/engine
-      '@not-govuk/route-utils': link:../../lib/route-utils
+      '@not-govuk/router': link:../../lib/router
       '@not-govuk/server-renderer': link:../../lib/server-renderer
       '@not-govuk/webpack-config': link:../../lib/webpack-config
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       '@types/webpack-env': 1.18.5
       bunyan: 1.8.15
@@ -172,14 +174,15 @@ importers:
       '@not-govuk/app-composer': workspace:^0.14.0
       '@not-govuk/app-plop-pack': workspace:^0.14.0
       '@not-govuk/asset-proxy': workspace:^0.14.0
+      '@not-govuk/client-component-helpers': workspace:^0.14.0
       '@not-govuk/client-renderer': workspace:^0.14.0
       '@not-govuk/components': workspace:^0.14.0
       '@not-govuk/engine': workspace:^0.14.0
-      '@not-govuk/route-utils': workspace:^0.14.0
+      '@not-govuk/router': workspace:^0.14.0
       '@not-govuk/server-renderer': workspace:^0.14.0
       '@not-govuk/user-info': workspace:^0.14.0
       '@not-govuk/webpack-config': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       '@types/webpack-env': 1.18.5
       bunyan: 1.8.15
@@ -203,20 +206,21 @@ importers:
       webpack-dev-middleware: 6.1.3
       webpack-hot-middleware: 2.26.1
     devDependencies:
-      '@apollo/client': 3.11.8_e5m6n2nmkj4uj4n6ulh7z2njpy
+      '@apollo/client': 3.11.8_iqgaek6t6rr5npxwlxdn4sybpy
       '@graphql-tools/schema': 10.0.6_graphql@15.9.0
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
       '@not-govuk/app-composer': link:../../lib/app-composer
       '@not-govuk/app-plop-pack': link:../../lib/app-plop-pack
       '@not-govuk/asset-proxy': link:../../lib/asset-proxy
+      '@not-govuk/client-component-helpers': link:../../lib/client-component-helpers
       '@not-govuk/client-renderer': link:../../lib/client-renderer
       '@not-govuk/components': link:../../packages/components
       '@not-govuk/engine': link:../../lib/engine
-      '@not-govuk/route-utils': link:../../lib/route-utils
+      '@not-govuk/router': link:../../lib/router
       '@not-govuk/server-renderer': link:../../lib/server-renderer
       '@not-govuk/user-info': link:../../lib/user-info
       '@not-govuk/webpack-config': link:../../lib/webpack-config
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       '@types/webpack-env': 1.18.5
       bunyan: 1.8.15
@@ -240,26 +244,61 @@ importers:
       webpack-dev-middleware: 6.1.3_webpack@5.94.0
       webpack-hot-middleware: 2.26.1
 
+  apps/next-example:
+    specifiers:
+      '@not-govuk/simple-components': workspace:^0.14.0
+      '@types/node': 20.16.5
+      '@types/react': 18.3.11
+      '@types/react-dom': 18.3.0
+      cypress: 13.14.2
+      jest: 29.7.0
+      jest-environment-jsdom: 29.7.0
+      next: 14.2.5
+      react: 18.3.1
+      react-dom: 18.3.1
+      sass: ^1.79.3
+      start-server-and-test: 2.0.8
+      ts-jest: 29.2.5
+      typescript: ^5
+    dependencies:
+      '@not-govuk/simple-components': link:../../lib-govuk/simple-components
+      next: 14.2.5_tskmq6ak2bbhpj4dhefuayxc3a
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+    devDependencies:
+      '@types/node': 20.16.5
+      '@types/react': 18.3.11
+      '@types/react-dom': 18.3.0
+      cypress: 13.14.2
+      jest: 29.7.0_@types+node@20.16.5
+      jest-environment-jsdom: 29.7.0
+      sass: 1.80.6
+      start-server-and-test: 2.0.8
+      ts-jest: 29.2.5_erljds5soyc3uc6knqx7u5zlbu
+      typescript: 5.6.3
+
   components-internal/anchor:
     specifiers:
       '@mdx-js/react': 1.6.22
+      '@not-govuk/client-component-helpers': workspace:^0.14.0
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
-      '@not-govuk/route-utils': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@not-govuk/router': workspace:^0.14.0
+      '@not-govuk/uri': workspace:^0.14.0
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
-      react-router-hash-link: ^2.4.3
       ts-jest: 29.2.5
       typescript: 4.9.5
     dependencies:
+      '@not-govuk/client-component-helpers': link:../../lib/client-component-helpers
       '@not-govuk/component-helpers': link:../../lib/component-helpers
-      '@not-govuk/route-utils': link:../../lib/route-utils
-      react-router-hash-link: 2.4.3
+      '@not-govuk/router': link:../../lib/router
+      '@not-govuk/uri': link:../../lib/uri
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -271,8 +310,8 @@ importers:
       '@not-govuk/anchor': workspace:^0.14.0
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
-      '@not-govuk/route-utils': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@not-govuk/router': workspace:^0.14.0
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
@@ -280,11 +319,11 @@ importers:
     dependencies:
       '@not-govuk/anchor': link:../anchor
       '@not-govuk/component-helpers': link:../../lib/component-helpers
-      '@not-govuk/route-utils': link:../../lib/route-utils
+      '@not-govuk/router': link:../../lib/router
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -295,7 +334,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
@@ -305,7 +344,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -314,21 +353,23 @@ importers:
   components-internal/tabs:
     specifiers:
       '@mdx-js/react': 1.6.22
+      '@not-govuk/client-component-helpers': workspace:^0.14.0
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
-      '@not-govuk/route-utils': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@not-govuk/router': workspace:^0.14.0
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
       typescript: 4.9.5
     dependencies:
+      '@not-govuk/client-component-helpers': link:../../lib/client-component-helpers
       '@not-govuk/component-helpers': link:../../lib/component-helpers
-      '@not-govuk/route-utils': link:../../lib/route-utils
+      '@not-govuk/router': link:../../lib/router
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -341,7 +382,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -355,7 +396,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -368,8 +409,9 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/link': workspace:^0.14.0
       '@not-govuk/panel': workspace:^0.14.0
+      '@not-govuk/router': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -378,13 +420,14 @@ importers:
     dependencies:
       '@not-govuk/component-helpers': link:../../lib/component-helpers
       '@not-govuk/link': link:../link
+      '@not-govuk/router': link:../../lib/router
       '@not-govuk/sass-base': link:../../lib-govuk/sass-base
       govuk-frontend: 5.6.0
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/panel': link:../panel
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -398,7 +441,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/panel': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -413,7 +456,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/panel': link:../panel
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -430,7 +473,7 @@ importers:
       '@not-govuk/panel': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -448,7 +491,7 @@ importers:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/panel': link:../panel
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -462,7 +505,7 @@ importers:
       '@not-govuk/link': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -477,7 +520,7 @@ importers:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/link': link:../link
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -493,7 +536,7 @@ importers:
       '@not-govuk/label': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/text-input': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -510,7 +553,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/text-input': link:../text-input
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -527,7 +570,7 @@ importers:
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
       '@not-govuk/width-container': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -545,7 +588,7 @@ importers:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/link': link:../link
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -560,7 +603,7 @@ importers:
       '@not-govuk/input': workspace:^0.14.0
       '@not-govuk/label': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -576,7 +619,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -588,7 +631,7 @@ importers:
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -601,7 +644,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -614,7 +657,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/visually-hidden': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -628,7 +671,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -645,7 +688,7 @@ importers:
       '@not-govuk/page': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/text-input': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -663,7 +706,7 @@ importers:
       '@not-govuk/date-input': link:../date-input
       '@not-govuk/page': link:../page
       '@not-govuk/text-input': link:../text-input
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -678,7 +721,7 @@ importers:
       '@not-govuk/label': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/visually-hidden': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -694,7 +737,7 @@ importers:
       '@not-govuk/input': link:../input
       '@not-govuk/label': link:../label
       '@not-govuk/visually-hidden': link:../visually-hidden
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -703,19 +746,17 @@ importers:
   components/file-upload:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/form-group': workspace:^0.14.0
       '@not-govuk/input': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
       typescript: 4.9.5
     dependencies:
-      '@not-govuk/component-helpers': link:../../lib/component-helpers
       '@not-govuk/form-group': link:../form-group
       '@not-govuk/input': link:../input
       '@not-govuk/sass-base': link:../../lib-govuk/sass-base
@@ -723,7 +764,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -737,7 +778,7 @@ importers:
       '@not-govuk/link': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/width-container': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -752,7 +793,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -773,7 +814,7 @@ importers:
       '@not-govuk/tag': workspace:^0.14.0
       '@not-govuk/text-input': workspace:^0.14.0
       '@not-govuk/textarea': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
@@ -793,7 +834,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -810,7 +851,7 @@ importers:
       '@not-govuk/tag': workspace:^0.14.0
       '@not-govuk/text-input': workspace:^0.14.0
       '@not-govuk/textarea': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
@@ -826,7 +867,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -843,7 +884,7 @@ importers:
       '@not-govuk/label': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -861,7 +902,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -875,7 +916,7 @@ importers:
       '@not-govuk/link': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/width-container': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -890,7 +931,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -903,7 +944,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -917,7 +958,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -930,7 +971,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -944,7 +985,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -956,7 +997,7 @@ importers:
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -969,7 +1010,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -982,7 +1023,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -996,7 +1037,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1010,7 +1051,7 @@ importers:
       '@not-govuk/panel': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1025,7 +1066,7 @@ importers:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/panel': link:../panel
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1040,7 +1081,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1056,7 +1097,7 @@ importers:
       '@not-govuk/anchor': link:../../components-internal/anchor
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1069,7 +1110,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1083,7 +1124,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1099,6 +1140,7 @@ importers:
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/footer': workspace:^0.14.0
+      '@not-govuk/head': workspace:^0.14.0
       '@not-govuk/header': workspace:^0.14.0
       '@not-govuk/link': workspace:^0.14.0
       '@not-govuk/phase-banner': workspace:^0.14.0
@@ -1106,7 +1148,7 @@ importers:
       '@not-govuk/skip-link': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
       '@not-govuk/width-container': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1117,6 +1159,7 @@ importers:
       '@not-govuk/breadcrumbs': link:../breadcrumbs
       '@not-govuk/component-helpers': link:../../lib/component-helpers
       '@not-govuk/footer': link:../footer
+      '@not-govuk/head': link:../../lib/head
       '@not-govuk/header': link:../header
       '@not-govuk/link': link:../link
       '@not-govuk/phase-banner': link:../phase-banner
@@ -1130,7 +1173,7 @@ importers:
       '@not-govuk/button': link:../button
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1142,10 +1185,10 @@ importers:
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/link': workspace:^0.14.0
-      '@not-govuk/route-utils': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
+      '@not-govuk/uri': workspace:^0.14.0
       '@not-govuk/visually-hidden': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1154,14 +1197,14 @@ importers:
     dependencies:
       '@not-govuk/component-helpers': link:../../lib/component-helpers
       '@not-govuk/link': link:../link
-      '@not-govuk/route-utils': link:../../lib/route-utils
       '@not-govuk/sass-base': link:../../lib-govuk/sass-base
+      '@not-govuk/uri': link:../../lib/uri
       '@not-govuk/visually-hidden': link:../visually-hidden
       govuk-frontend: 5.6.0
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1175,7 +1218,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1190,7 +1233,7 @@ importers:
       '@not-govuk/button': link:../button
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1203,7 +1246,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1217,7 +1260,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1233,7 +1276,7 @@ importers:
       '@not-govuk/label': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/text-input': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1250,7 +1293,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/text-input': link:../text-input
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1263,7 +1306,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/form-group': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1277,7 +1320,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1289,7 +1332,7 @@ importers:
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1302,7 +1345,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1317,7 +1360,7 @@ importers:
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
       '@not-govuk/visually-hidden': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1333,7 +1376,7 @@ importers:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
       '@not-govuk/visually-hidden': link:../visually-hidden
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1349,7 +1392,7 @@ importers:
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/summary-card': workspace:^0.14.0
       '@not-govuk/visually-hidden': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1366,7 +1409,7 @@ importers:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/summary-card': link:../summary-card
       '@not-govuk/visually-hidden': link:../visually-hidden
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1379,7 +1422,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/simple-table': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1393,7 +1436,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1402,21 +1445,21 @@ importers:
   components/tabs:
     specifiers:
       '@mdx-js/react': 1.6.22
+      '@not-govuk/client-component-helpers': workspace:^0.14.0
       '@not-govuk/component-helpers': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
-      '@not-govuk/route-utils': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/table': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
       typescript: 4.9.5
     dependencies:
+      '@not-govuk/client-component-helpers': link:../../lib/client-component-helpers
       '@not-govuk/component-helpers': link:../../lib/component-helpers
-      '@not-govuk/route-utils': link:../../lib/route-utils
       '@not-govuk/sass-base': link:../../lib-govuk/sass-base
       govuk-frontend: 5.6.0
     devDependencies:
@@ -1424,7 +1467,7 @@ importers:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/table': link:../table
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1437,7 +1480,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/table': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1451,7 +1494,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/table': link:../table
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1463,7 +1506,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/form-group': workspace:^0.14.0
       '@not-govuk/input': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
@@ -1474,7 +1517,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1487,7 +1530,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/form-group': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1501,7 +1544,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1514,7 +1557,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1528,7 +1571,7 @@ importers:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1541,7 +1584,7 @@ importers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/visually-hidden': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1555,7 +1598,7 @@ importers:
     devDependencies:
       '@mdx-js/react': 1.6.22
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1569,7 +1612,7 @@ importers:
       '@not-govuk/panel': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
       '@not-govuk/tag': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       govuk-frontend: 5.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1584,7 +1627,7 @@ importers:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@not-govuk/panel': link:../panel
       '@not-govuk/tag': link:../tag
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1615,16 +1658,109 @@ importers:
     dependencies:
       govuk-frontend: 5.6.0
 
+  lib-govuk/simple-components:
+    specifiers:
+      '@not-govuk/aside': workspace:^0.14.0
+      '@not-govuk/back-link': workspace:^0.14.0
+      '@not-govuk/breadcrumbs': workspace:^0.14.0
+      '@not-govuk/button': workspace:^0.14.0
+      '@not-govuk/checkboxes': workspace:^0.14.0
+      '@not-govuk/cookie-banner': workspace:^0.14.0
+      '@not-govuk/date-input': workspace:^0.14.0
+      '@not-govuk/details': workspace:^0.14.0
+      '@not-govuk/error-message': workspace:^0.14.0
+      '@not-govuk/error-summary': workspace:^0.14.0
+      '@not-govuk/fieldset': workspace:^0.14.0
+      '@not-govuk/file-upload': workspace:^0.14.0
+      '@not-govuk/footer': workspace:^0.14.0
+      '@not-govuk/form-field': workspace:^0.14.0
+      '@not-govuk/form-group': workspace:^0.14.0
+      '@not-govuk/header': workspace:^0.14.0
+      '@not-govuk/hint': workspace:^0.14.0
+      '@not-govuk/input': workspace:^0.14.0
+      '@not-govuk/inset-text': workspace:^0.14.0
+      '@not-govuk/label': workspace:^0.14.0
+      '@not-govuk/link': workspace:^0.14.0
+      '@not-govuk/navigation-menu': workspace:^0.14.0
+      '@not-govuk/notification-banner': workspace:^0.14.0
+      '@not-govuk/page': workspace:^0.14.0
+      '@not-govuk/pagination': workspace:^0.14.0
+      '@not-govuk/panel': workspace:^0.14.0
+      '@not-govuk/phase-banner': workspace:^0.14.0
+      '@not-govuk/radios': workspace:^0.14.0
+      '@not-govuk/sass-base': workspace:^0.14.0
+      '@not-govuk/select': workspace:^0.14.0
+      '@not-govuk/skip-link': workspace:^0.14.0
+      '@not-govuk/summary-card': workspace:^0.14.0
+      '@not-govuk/summary-list': workspace:^0.14.0
+      '@not-govuk/table': workspace:^0.14.0
+      '@not-govuk/tabs': workspace:^0.14.0
+      '@not-govuk/tag': workspace:^0.14.0
+      '@not-govuk/text-input': workspace:^0.14.0
+      '@not-govuk/textarea': workspace:^0.14.0
+      '@not-govuk/warning-text': workspace:^0.14.0
+      jest: 29.7.0
+      jest-environment-jsdom: 29.7.0
+      ts-jest: 29.2.5
+      typescript: 4.9.5
+    dependencies:
+      '@not-govuk/aside': link:../../components/aside
+      '@not-govuk/back-link': link:../../components/back-link
+      '@not-govuk/breadcrumbs': link:../../components/breadcrumbs
+      '@not-govuk/button': link:../../components/button
+      '@not-govuk/checkboxes': link:../../components/checkboxes
+      '@not-govuk/cookie-banner': link:../../components/cookie-banner
+      '@not-govuk/date-input': link:../../components/date-input
+      '@not-govuk/details': link:../../components/details
+      '@not-govuk/error-message': link:../../components/error-message
+      '@not-govuk/error-summary': link:../../components/error-summary
+      '@not-govuk/fieldset': link:../../components/fieldset
+      '@not-govuk/file-upload': link:../../components/file-upload
+      '@not-govuk/footer': link:../../components/footer
+      '@not-govuk/form-field': link:../../components/form-field
+      '@not-govuk/form-group': link:../../components/form-group
+      '@not-govuk/header': link:../../components/header
+      '@not-govuk/hint': link:../../components/hint
+      '@not-govuk/input': link:../../components/input
+      '@not-govuk/inset-text': link:../../components/inset-text
+      '@not-govuk/label': link:../../components/label
+      '@not-govuk/link': link:../../components/link
+      '@not-govuk/navigation-menu': link:../../components/navigation-menu
+      '@not-govuk/notification-banner': link:../../components/notification-banner
+      '@not-govuk/page': link:../../components/page
+      '@not-govuk/pagination': link:../../components/pagination
+      '@not-govuk/panel': link:../../components/panel
+      '@not-govuk/phase-banner': link:../../components/phase-banner
+      '@not-govuk/radios': link:../../components/radios
+      '@not-govuk/sass-base': link:../sass-base
+      '@not-govuk/select': link:../../components/select
+      '@not-govuk/skip-link': link:../../components/skip-link
+      '@not-govuk/summary-card': link:../../components/summary-card
+      '@not-govuk/summary-list': link:../../components/summary-list
+      '@not-govuk/table': link:../../components/table
+      '@not-govuk/tabs': link:../../components/tabs
+      '@not-govuk/tag': link:../../components/tag
+      '@not-govuk/text-input': link:../../components/text-input
+      '@not-govuk/textarea': link:../../components/textarea
+      '@not-govuk/warning-text': link:../../components/warning-text
+    devDependencies:
+      jest: 29.7.0
+      jest-environment-jsdom: 29.7.0
+      ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
+      typescript: 4.9.5
+
   lib/app-composer:
     specifiers:
-      '@not-govuk/route-utils': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@not-govuk/client-component-helpers': workspace:^0.14.0
+      '@not-govuk/router': workspace:^0.14.0
+      '@types/react': 18.3.11
       graphql: 15.9.0
       typescript: 4.9.5
     dependencies:
-      '@not-govuk/route-utils': link:../route-utils
+      '@not-govuk/client-component-helpers': link:../client-component-helpers
+      '@not-govuk/router': link:../router
     devDependencies:
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       graphql: 15.9.0
       typescript: 4.9.5
 
@@ -1654,16 +1790,24 @@ importers:
       '@types/webpack-hot-middleware': 2.25.9
       typescript: 4.9.5
 
+  lib/client-component-helpers:
+    specifiers:
+      '@types/react': ^18.3.11
+      typescript: 4.9.5
+    devDependencies:
+      '@types/react': 18.3.11
+      typescript: 4.9.5
+
   lib/client-renderer:
     specifiers:
       '@not-govuk/app-composer': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       typescript: 4.9.5
     dependencies:
       '@not-govuk/app-composer': link:../app-composer
     devDependencies:
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       typescript: 4.9.5
 
@@ -1679,15 +1823,15 @@ importers:
       '@testing-library/jest-dom': ^6.5.0
       '@testing-library/react': ^16.0.1
       '@testing-library/user-event': ^14.5.2
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       typescript: 4.9.5
     dependencies:
       '@testing-library/dom': 10.4.0
       '@testing-library/jest-dom': 6.5.0
-      '@testing-library/react': 16.0.1_fw2whghrr2qeqangbsx4xcqadu
+      '@testing-library/react': 16.0.1_unzs5k4dsbiln5acpxiw7ah4nu
       '@testing-library/user-event': 14.5.2_eboxt5b3qr45gcxzx7wxppt6li
     devDependencies:
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       typescript: 4.9.5
 
   lib/consent-cookies:
@@ -1731,7 +1875,10 @@ importers:
       '@not-govuk/simple-table': workspace:^0.14.0
       '@not-govuk/tabs-internal': workspace:^0.14.0
       '@storybook/react': 6.5.16
-      '@types/react': 18.3.8
+      '@types/prettier': ^2
+      '@types/prismjs': ^1
+      '@types/react': 18.3.11
+      '@types/react-dom': 18.3.0
       prettier: ^2.8.8
       prismjs: ^1.29.0
       prismjs-github: ^1.0.0
@@ -1746,7 +1893,10 @@ importers:
       prismjs: 1.29.0
       prismjs-github: 1.0.0
     devDependencies:
-      '@types/react': 18.3.8
+      '@types/prettier': 2.7.3
+      '@types/prismjs': 1.26.5
+      '@types/react': 18.3.11
+      '@types/react-dom': 18.3.0
       typescript: 4.9.5
 
   lib/engine:
@@ -1758,6 +1908,8 @@ importers:
       '@not-govuk/server-renderer': workspace:^0.14.0
       '@types/node': 20.16.5
       '@types/passport': 1.0.16
+      '@types/passport-http': ^0.3.11
+      '@types/react': 18.3.11
       '@types/restify': 8.5.12
       apollo-server-restify: ^1.3.6
       base64url: ^3.0.1
@@ -1782,6 +1934,8 @@ importers:
       '@not-govuk/app-composer': link:../app-composer
       '@types/node': 20.16.5
       '@types/passport': 1.0.16
+      '@types/passport-http': 0.3.11
+      '@types/react': 18.3.11
       '@types/restify': 8.5.12
       graphql: 15.9.0
       typescript: 4.9.5
@@ -1789,6 +1943,7 @@ importers:
   lib/express-adapter:
     specifiers:
       '@not-govuk/restify': workspace:^0.14.0
+      '@types/etag': ^1.8.3
       '@types/express-serve-static-core': 4.19.5
       etag: ^1.8.1
       jest: 29.7.0
@@ -1799,6 +1954,7 @@ importers:
       etag: 1.8.1
     devDependencies:
       '@not-govuk/restify': link:../restify
+      '@types/etag': 1.8.3
       '@types/express-serve-static-core': 4.19.5
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1808,22 +1964,40 @@ importers:
   lib/forms:
     specifiers:
       '@not-govuk/component-helpers': workspace:^0.14.0
-      '@not-govuk/route-utils': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@not-govuk/router': workspace:^0.14.0
+      '@not-govuk/uri': workspace:^0.14.0
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
+      '@types/validator': ^13.12.2
       fast-deep-equal: ^3.1.3
       formik: ^2.4.6
       typescript: 4.9.5
       validator: ^13.12.0
     dependencies:
       '@not-govuk/component-helpers': link:../component-helpers
-      '@not-govuk/route-utils': link:../route-utils
+      '@not-govuk/router': link:../router
+      '@not-govuk/uri': link:../uri
       fast-deep-equal: 3.1.3
       formik: 2.4.6
       validator: 13.12.0
     devDependencies:
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
+      '@types/validator': 13.12.2
+      typescript: 4.9.5
+
+  lib/head:
+    specifiers:
+      '@types/react': ^18.3.11
+      jest: 29.5.0
+      jest-environment-jsdom: 29.5.0
+      ts-jest: 29.1.0
+      typescript: 4.9.5
+    devDependencies:
+      '@types/react': 18.3.11
+      jest: 29.5.0
+      jest-environment-jsdom: 29.5.0
+      ts-jest: 29.1.0_doipufordlnvh5g4adbwayvyvy
       typescript: 4.9.5
 
   lib/memoize:
@@ -1869,6 +2043,8 @@ importers:
     specifiers:
       '@types/bunyan': 1.8.11
       '@types/restify': 8.5.12
+      '@types/restify-errors': ^4.3.9
+      '@types/stoppable': ^1.1.3
       bunyan: ^1.8.15
       restify: 11.1.0
       restify-bunyan-logger: ^2.0.7
@@ -1884,22 +2060,22 @@ importers:
     devDependencies:
       '@types/bunyan': 1.8.11
       '@types/restify': 8.5.12
+      '@types/restify-errors': 4.3.9
+      '@types/stoppable': 1.1.3
       typescript: 4.9.5
 
-  lib/route-utils:
+  lib/router:
     specifiers:
-      '@types/url-parse': 1.4.11
+      '@not-govuk/uri': workspace:^0.14.0
+      '@types/react': ^18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
-      qs: ^6.13.0
       ts-jest: 29.2.5
       typescript: 4.9.5
-      url-parse: ^1.5.10
     dependencies:
-      qs: 6.13.0
-      url-parse: 1.5.10
+      '@not-govuk/uri': link:../uri
     devDependencies:
-      '@types/url-parse': 1.4.11
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -1909,8 +2085,9 @@ importers:
     specifiers:
       '@not-govuk/app-composer': workspace:^0.14.0
       '@not-govuk/restify': workspace:^0.14.0
+      '@not-govuk/uri': workspace:^0.14.0
       '@types/node': 20.16.5
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       graphql: 15.9.0
       react-helmet-async: 2.0.5
@@ -1918,11 +2095,12 @@ importers:
       typescript: 4.9.5
     dependencies:
       '@not-govuk/app-composer': link:../app-composer
+      '@not-govuk/uri': link:../uri
       restify-errors: 8.0.2
     devDependencies:
       '@not-govuk/restify': link:../restify
       '@types/node': 20.16.5
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       graphql: 15.9.0
       react-helmet-async: 2.0.5
@@ -1936,17 +2114,34 @@ importers:
       '@not-govuk/webpack-config': link:../webpack-config
       '@storybook/node-logger': 6.5.16
 
+  lib/uri:
+    specifiers:
+      '@types/qs': ^6.9.16
+      jest: 29.7.0
+      jest-environment-jsdom: 29.7.0
+      qs: ^6.13.0
+      ts-jest: 29.2.5
+      typescript: 4.9.5
+    dependencies:
+      qs: 6.13.0
+    devDependencies:
+      '@types/qs': 6.9.17
+      jest: 29.7.0
+      jest-environment-jsdom: 29.7.0
+      ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
+      typescript: 4.9.5
+
   lib/user-info:
     specifiers:
       '@not-govuk/component-test-helpers': workspace:^0.14.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
       typescript: 4.9.5
     devDependencies:
       '@not-govuk/component-test-helpers': link:../component-test-helpers
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -2010,101 +2205,25 @@ importers:
 
   packages/components:
     specifiers:
-      '@not-govuk/aside': workspace:^0.14.0
-      '@not-govuk/back-link': workspace:^0.14.0
-      '@not-govuk/breadcrumbs': workspace:^0.14.0
-      '@not-govuk/button': workspace:^0.14.0
-      '@not-govuk/checkboxes': workspace:^0.14.0
       '@not-govuk/component-test-helpers': workspace:^0.14.0
-      '@not-govuk/cookie-banner': workspace:^0.14.0
-      '@not-govuk/date-input': workspace:^0.14.0
-      '@not-govuk/details': workspace:^0.14.0
-      '@not-govuk/error-message': workspace:^0.14.0
-      '@not-govuk/error-summary': workspace:^0.14.0
-      '@not-govuk/fieldset': workspace:^0.14.0
-      '@not-govuk/file-upload': workspace:^0.14.0
-      '@not-govuk/footer': workspace:^0.14.0
       '@not-govuk/form': workspace:^0.14.0
-      '@not-govuk/form-field': workspace:^0.14.0
-      '@not-govuk/form-group': workspace:^0.14.0
       '@not-govuk/forms': workspace:^0.14.0
-      '@not-govuk/header': workspace:^0.14.0
-      '@not-govuk/hint': workspace:^0.14.0
-      '@not-govuk/input': workspace:^0.14.0
-      '@not-govuk/inset-text': workspace:^0.14.0
-      '@not-govuk/label': workspace:^0.14.0
-      '@not-govuk/link': workspace:^0.14.0
-      '@not-govuk/navigation-menu': workspace:^0.14.0
-      '@not-govuk/notification-banner': workspace:^0.14.0
-      '@not-govuk/page': workspace:^0.14.0
-      '@not-govuk/pagination': workspace:^0.14.0
-      '@not-govuk/panel': workspace:^0.14.0
-      '@not-govuk/phase-banner': workspace:^0.14.0
-      '@not-govuk/radios': workspace:^0.14.0
-      '@not-govuk/route-utils': workspace:^0.14.0
       '@not-govuk/sass-base': workspace:^0.14.0
-      '@not-govuk/select': workspace:^0.14.0
-      '@not-govuk/skip-link': workspace:^0.14.0
-      '@not-govuk/summary-card': workspace:^0.14.0
-      '@not-govuk/summary-list': workspace:^0.14.0
-      '@not-govuk/table': workspace:^0.14.0
-      '@not-govuk/tabs': workspace:^0.14.0
-      '@not-govuk/tag': workspace:^0.14.0
-      '@not-govuk/text-input': workspace:^0.14.0
-      '@not-govuk/textarea': workspace:^0.14.0
-      '@not-govuk/warning-text': workspace:^0.14.0
+      '@not-govuk/simple-components': workspace:^0.14.0
       '@types/node': 20.16.5
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       govuk-frontend: 5.6.0
       typescript: 4.9.5
     dependencies:
-      '@not-govuk/aside': link:../../components/aside
-      '@not-govuk/back-link': link:../../components/back-link
-      '@not-govuk/breadcrumbs': link:../../components/breadcrumbs
-      '@not-govuk/button': link:../../components/button
-      '@not-govuk/checkboxes': link:../../components/checkboxes
-      '@not-govuk/cookie-banner': link:../../components/cookie-banner
-      '@not-govuk/date-input': link:../../components/date-input
-      '@not-govuk/details': link:../../components/details
-      '@not-govuk/error-message': link:../../components/error-message
-      '@not-govuk/error-summary': link:../../components/error-summary
-      '@not-govuk/fieldset': link:../../components/fieldset
-      '@not-govuk/file-upload': link:../../components/file-upload
-      '@not-govuk/footer': link:../../components/footer
       '@not-govuk/form': link:../../components/form
-      '@not-govuk/form-field': link:../../components/form-field
-      '@not-govuk/form-group': link:../../components/form-group
       '@not-govuk/forms': link:../../lib/forms
-      '@not-govuk/header': link:../../components/header
-      '@not-govuk/hint': link:../../components/hint
-      '@not-govuk/input': link:../../components/input
-      '@not-govuk/inset-text': link:../../components/inset-text
-      '@not-govuk/label': link:../../components/label
-      '@not-govuk/link': link:../../components/link
-      '@not-govuk/navigation-menu': link:../../components/navigation-menu
-      '@not-govuk/notification-banner': link:../../components/notification-banner
-      '@not-govuk/page': link:../../components/page
-      '@not-govuk/pagination': link:../../components/pagination
-      '@not-govuk/panel': link:../../components/panel
-      '@not-govuk/phase-banner': link:../../components/phase-banner
-      '@not-govuk/radios': link:../../components/radios
-      '@not-govuk/route-utils': link:../../lib/route-utils
       '@not-govuk/sass-base': link:../../lib-govuk/sass-base
-      '@not-govuk/select': link:../../components/select
-      '@not-govuk/skip-link': link:../../components/skip-link
-      '@not-govuk/summary-card': link:../../components/summary-card
-      '@not-govuk/summary-list': link:../../components/summary-list
-      '@not-govuk/table': link:../../components/table
-      '@not-govuk/tabs': link:../../components/tabs
-      '@not-govuk/tag': link:../../components/tag
-      '@not-govuk/text-input': link:../../components/text-input
-      '@not-govuk/textarea': link:../../components/textarea
-      '@not-govuk/warning-text': link:../../components/warning-text
+      '@not-govuk/simple-components': link:../../lib-govuk/simple-components
     devDependencies:
       '@not-govuk/component-test-helpers': link:../../lib/component-test-helpers
       '@types/node': 20.16.5
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
       govuk-frontend: 5.6.0
       typescript: 4.9.5
@@ -2129,7 +2248,45 @@ packages:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.25
 
-  /@apollo/client/3.11.8_e5m6n2nmkj4uj4n6ulh7z2njpy:
+  /@apollo/client/3.11.8_dg2on6edyqsutt23tuy6g53g5a:
+    resolution: {integrity: sha512-CgG1wbtMjsV2pRGe/eYITmV5B8lXUCYljB2gB/6jWTFQcrvirUVvKg7qtFdjYkQSFbIffU1IDyxgeaN81eTjbA==}
+    peerDependencies:
+      graphql: ^15.0.0 || ^16.0.0
+      graphql-ws: ^5.5.5
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0
+      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
+    peerDependenciesMeta:
+      graphql-ws:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      subscriptions-transport-ws:
+        optional: true
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0
+      '@wry/caches': 1.0.1
+      '@wry/equality': 0.5.7
+      '@wry/trie': 0.5.0
+      graphql-tag: 2.12.6
+      hoist-non-react-statics: 3.3.2
+      optimism: 0.18.0
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      rehackt: 0.1.0_xhljovrzeltpan7qvnzgcocgfa
+      response-iterator: 0.2.6
+      symbol-observable: 4.0.0
+      ts-invariant: 0.10.3
+      tslib: 2.6.3
+      zen-observable-ts: 1.2.5
+    transitivePeerDependencies:
+      - '@types/react'
+    dev: true
+
+  /@apollo/client/3.11.8_iqgaek6t6rr5npxwlxdn4sybpy:
     resolution: {integrity: sha512-CgG1wbtMjsV2pRGe/eYITmV5B8lXUCYljB2gB/6jWTFQcrvirUVvKg7qtFdjYkQSFbIffU1IDyxgeaN81eTjbA==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
@@ -2158,45 +2315,7 @@ packages:
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
-      rehackt: 0.1.0_yaxnkdwimwz6xfkjep7bossl2e
-      response-iterator: 0.2.6
-      symbol-observable: 4.0.0
-      ts-invariant: 0.10.3
-      tslib: 2.6.3
-      zen-observable-ts: 1.2.5
-    transitivePeerDependencies:
-      - '@types/react'
-    dev: true
-
-  /@apollo/client/3.11.8_nnrd3gsncyragczmpvfhocinkq:
-    resolution: {integrity: sha512-CgG1wbtMjsV2pRGe/eYITmV5B8lXUCYljB2gB/6jWTFQcrvirUVvKg7qtFdjYkQSFbIffU1IDyxgeaN81eTjbA==}
-    peerDependencies:
-      graphql: ^15.0.0 || ^16.0.0
-      graphql-ws: ^5.5.5
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0
-      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
-    peerDependenciesMeta:
-      graphql-ws:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-      subscriptions-transport-ws:
-        optional: true
-    dependencies:
-      '@graphql-typed-document-node/core': 3.2.0
-      '@wry/caches': 1.0.1
-      '@wry/equality': 0.5.7
-      '@wry/trie': 0.5.0
-      graphql-tag: 2.12.6
-      hoist-non-react-statics: 3.3.2
-      optimism: 0.18.0
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1_react@18.3.1
-      rehackt: 0.1.0_react@18.3.1
+      rehackt: 0.1.0_xhljovrzeltpan7qvnzgcocgfa
       response-iterator: 0.2.6
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
@@ -5431,7 +5550,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/parser': 7.25.3
+      '@babel/parser': 7.25.6
       '@babel/types': 7.25.2
 
   /@babel/traverse/7.25.3:
@@ -5440,7 +5559,7 @@ packages:
     dependencies:
       '@babel/code-frame': 7.24.7
       '@babel/generator': 7.25.0
-      '@babel/parser': 7.25.3
+      '@babel/parser': 7.25.6
       '@babel/template': 7.25.0
       '@babel/types': 7.25.2
       debug: 4.3.7
@@ -6206,6 +6325,91 @@ packages:
       lodash: 4.17.21
     dev: false
 
+  /@next/env/14.2.5:
+    resolution: {integrity: sha512-/zZGkrTOsraVfYjGP8uM0p6r0BDT6xWpkjdVbcz66PJVSpwXX3yNiRycxAuDfBKGWBrZBXRuK/YVlkNgxHGwmA==}
+    dev: false
+
+  /@next/swc-darwin-arm64/14.2.5:
+    resolution: {integrity: sha512-/9zVxJ+K9lrzSGli1///ujyRfon/ZneeZ+v4ptpiPoOU+GKZnm8Wj8ELWU1Pm7GHltYRBklmXMTUqM/DqQ99FQ==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@next/swc-darwin-x64/14.2.5:
+    resolution: {integrity: sha512-vXHOPCwfDe9qLDuq7U1OYM2wUY+KQ4Ex6ozwsKxp26BlJ6XXbHleOUldenM67JRyBfVjv371oneEvYd3H2gNSA==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@next/swc-linux-arm64-gnu/14.2.5:
+    resolution: {integrity: sha512-vlhB8wI+lj8q1ExFW8lbWutA4M2ZazQNvMWuEDqZcuJJc78iUnLdPPunBPX8rC4IgT6lIx/adB+Cwrl99MzNaA==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@next/swc-linux-arm64-musl/14.2.5:
+    resolution: {integrity: sha512-NpDB9NUR2t0hXzJJwQSGu1IAOYybsfeB+LxpGsXrRIb7QOrYmidJz3shzY8cM6+rO4Aojuef0N/PEaX18pi9OA==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@next/swc-linux-x64-gnu/14.2.5:
+    resolution: {integrity: sha512-8XFikMSxWleYNryWIjiCX+gU201YS+erTUidKdyOVYi5qUQo/gRxv/3N1oZFCgqpesN6FPeqGM72Zve+nReVXQ==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@next/swc-linux-x64-musl/14.2.5:
+    resolution: {integrity: sha512-6QLwi7RaYiQDcRDSU/os40r5o06b5ue7Jsk5JgdRBGGp8l37RZEh9JsLSM8QF0YDsgcosSeHjglgqi25+m04IQ==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@next/swc-win32-arm64-msvc/14.2.5:
+    resolution: {integrity: sha512-1GpG2VhbspO+aYoMOQPQiqc/tG3LzmsdBH0LhnDS3JrtDx2QmzXe0B6mSZZiN3Bq7IOMXxv1nlsjzoS1+9mzZw==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@next/swc-win32-ia32-msvc/14.2.5:
+    resolution: {integrity: sha512-Igh9ZlxwvCDsu6438FXlQTHlRno4gFpJzqPjSIBZooD22tKeI4fE/YMRoHVJHmrQ2P5YL1DoZ0qaOKkbeFWeMg==}
+    engines: {node: '>= 10'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@next/swc-win32-x64-msvc/14.2.5:
+    resolution: {integrity: sha512-tEQ7oinq1/CjSG9uSTerca3v4AZ+dFa+4Yu6ihaG8Ud8ddqLQgFGcnwYls13H5X5CPDPZJdYxyeMui6muOLd4g==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -6241,6 +6445,135 @@ packages:
     dependencies:
       mkdirp: 1.0.4
       rimraf: 3.0.2
+
+  /@parcel/watcher-android-arm64/2.5.0:
+    resolution: {integrity: sha512-qlX4eS28bUcQCdribHkg/herLe+0A9RyYC+mm2PXpncit8z5b3nSqGVzMNR3CmtAOgRutiZ02eIJJgP/b1iEFQ==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-darwin-arm64/2.5.0:
+    resolution: {integrity: sha512-hyZ3TANnzGfLpRA2s/4U1kbw2ZI4qGxaRJbBH2DCSREFfubMswheh8TeiC1sGZ3z2jUf3s37P0BBlrD3sjVTUw==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-darwin-x64/2.5.0:
+    resolution: {integrity: sha512-9rhlwd78saKf18fT869/poydQK8YqlU26TMiNg7AIu7eBp9adqbJZqmdFOsbZ5cnLp5XvRo9wcFmNHgHdWaGYA==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-freebsd-x64/2.5.0:
+    resolution: {integrity: sha512-syvfhZzyM8kErg3VF0xpV8dixJ+RzbUaaGaeb7uDuz0D3FK97/mZ5AJQ3XNnDsXX7KkFNtyQyFrXZzQIcN49Tw==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-linux-arm-glibc/2.5.0:
+    resolution: {integrity: sha512-0VQY1K35DQET3dVYWpOaPFecqOT9dbuCfzjxoQyif1Wc574t3kOSkKevULddcR9znz1TcklCE7Ht6NIxjvTqLA==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-linux-arm-musl/2.5.0:
+    resolution: {integrity: sha512-6uHywSIzz8+vi2lAzFeltnYbdHsDm3iIB57d4g5oaB9vKwjb6N6dRIgZMujw4nm5r6v9/BQH0noq6DzHrqr2pA==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-linux-arm64-glibc/2.5.0:
+    resolution: {integrity: sha512-BfNjXwZKxBy4WibDb/LDCriWSKLz+jJRL3cM/DllnHH5QUyoiUNEp3GmL80ZqxeumoADfCCP19+qiYiC8gUBjA==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-linux-arm64-musl/2.5.0:
+    resolution: {integrity: sha512-S1qARKOphxfiBEkwLUbHjCY9BWPdWnW9j7f7Hb2jPplu8UZ3nes7zpPOW9bkLbHRvWM0WDTsjdOTUgW0xLBN1Q==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-linux-x64-glibc/2.5.0:
+    resolution: {integrity: sha512-d9AOkusyXARkFD66S6zlGXyzx5RvY+chTP9Jp0ypSTC9d4lzyRs9ovGf/80VCxjKddcUvnsGwCHWuF2EoPgWjw==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-linux-x64-musl/2.5.0:
+    resolution: {integrity: sha512-iqOC+GoTDoFyk/VYSFHwjHhYrk8bljW6zOhPuhi5t9ulqiYq1togGJB5e3PwYVFFfeVgc6pbz3JdQyDoBszVaA==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-win32-arm64/2.5.0:
+    resolution: {integrity: sha512-twtft1d+JRNkM5YbmexfcH/N4znDtjgysFaV9zvZmmJezQsKpkfLYJ+JFV3uygugK6AtIM2oADPkB2AdhBrNig==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-win32-ia32/2.5.0:
+    resolution: {integrity: sha512-+rgpsNRKwo8A53elqbbHXdOMtY/tAtTzManTWShB5Kk54N8Q9mzNWV7tV+IbGueCbcj826MfWGU3mprWtuf1TA==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher-win32-x64/2.5.0:
+    resolution: {integrity: sha512-lPrxve92zEHdgeff3aiu4gDOIt4u7sJYha6wbdEZDCDUhtjTsOMiaJzG5lMY4GkWH8p0fMmO2Ppq5G5XXG+DQw==}
+    engines: {node: '>= 10.0.0'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    optional: true
+
+  /@parcel/watcher/2.5.0:
+    resolution: {integrity: sha512-i0GV1yJnm2n3Yq1qw6QrUrd/LI9bE8WEBOTtOkpCXHHdyN3TAGgqAK/DAT05z4fq2x04cARXt2pDmjWjL92iTQ==}
+    engines: {node: '>= 10.0.0'}
+    requiresBuild: true
+    dependencies:
+      detect-libc: 1.0.3
+      is-glob: 4.0.3
+      micromatch: 4.0.8
+      node-addon-api: 7.1.1
+    optionalDependencies:
+      '@parcel/watcher-android-arm64': 2.5.0
+      '@parcel/watcher-darwin-arm64': 2.5.0
+      '@parcel/watcher-darwin-x64': 2.5.0
+      '@parcel/watcher-freebsd-x64': 2.5.0
+      '@parcel/watcher-linux-arm-glibc': 2.5.0
+      '@parcel/watcher-linux-arm-musl': 2.5.0
+      '@parcel/watcher-linux-arm64-glibc': 2.5.0
+      '@parcel/watcher-linux-arm64-musl': 2.5.0
+      '@parcel/watcher-linux-x64-glibc': 2.5.0
+      '@parcel/watcher-linux-x64-musl': 2.5.0
+      '@parcel/watcher-win32-arm64': 2.5.0
+      '@parcel/watcher-win32-ia32': 2.5.0
+      '@parcel/watcher-win32-x64': 2.5.0
+    optional: true
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.10_3itt6o2ktzdwbwfo3mvw3mnjsu:
     resolution: {integrity: sha512-j0Ya0hCFZPd4x40qLzbhGsh9TMtdb+CJQiso+WxLOPNasohq9cc5SNUcwsZaRH6++Xh91Xkm/xHCkuIiIu0LUA==}
@@ -7870,7 +8203,7 @@ packages:
       '@storybook/core-events': 6.5.16
       '@storybook/csf': 0.0.2--canary.4566f4d.1
       '@storybook/store': 6.5.16
-      '@types/qs': 6.9.7
+      '@types/qs': 6.9.17
       '@types/webpack-env': 1.18.5
       core-js: 3.29.0
       fast-deep-equal: 3.1.3
@@ -7898,7 +8231,7 @@ packages:
       '@storybook/core-events': 6.5.16
       '@storybook/csf': 0.0.2--canary.4566f4d.1
       '@storybook/store': 6.5.16_nnrd3gsncyragczmpvfhocinkq
-      '@types/qs': 6.9.7
+      '@types/qs': 6.9.17
       '@types/webpack-env': 1.18.5
       core-js: 3.29.0
       fast-deep-equal: 3.1.3
@@ -9347,6 +9680,13 @@ packages:
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
     dev: false
 
+  /@swc/helpers/0.5.5:
+    resolution: {integrity: sha512-KGYxvIOXcceOAbEk4bi/dVLEK9z8sZ0uBB3Il5b1rhfClSpcX0yfRO0KmTkqR2cnQDymwLB+25ZyMzICg/cm/A==}
+    dependencies:
+      '@swc/counter': 0.1.3
+      tslib: 2.6.3
+    dev: false
+
   /@swc/types/0.1.12:
     resolution: {integrity: sha512-wBJA+SdtkbFhHjTMYH+dEH1y4VpfGdAc2Kw/LK09i9bXd/K6j6PkDcFCEzb6iVfZMkPRrl/q0e3toqTAJdkIVA==}
     dependencies:
@@ -9387,7 +9727,7 @@ packages:
       redent: 3.0.0
     dev: false
 
-  /@testing-library/react/16.0.1_fw2whghrr2qeqangbsx4xcqadu:
+  /@testing-library/react/16.0.1_unzs5k4dsbiln5acpxiw7ah4nu:
     resolution: {integrity: sha512-dSmwJVtJXmku+iocRhWOUFbrERC76TX2Mnf0ATODz8brzAZrMBbzLwQixlBSanZxR6LddK3eiwpSFZgDET1URg==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -9404,7 +9744,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.25.6
       '@testing-library/dom': 10.4.0
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
     dev: false
 
   /@testing-library/user-event/14.5.2_eboxt5b3qr45gcxzx7wxppt6li:
@@ -9483,7 +9823,7 @@ packages:
   /@types/connect/3.4.38:
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
     dependencies:
-      '@types/node': 18.17.13
+      '@types/node': 20.16.5
     dev: true
 
   /@types/cookie/0.6.0:
@@ -9500,6 +9840,12 @@ packages:
   /@types/estree/1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
+  /@types/etag/1.8.3:
+    resolution: {integrity: sha512-QYHv9Yeh1ZYSMPQOoxY4XC4F1r+xRUiAriB303F4G6uBsT3KKX60DjiogvVv+2VISVDuJhcIzMdbjT+Bm938QQ==}
+    dependencies:
+      '@types/node': 20.16.5
+    dev: true
+
   /@types/express-serve-static-core/4.19.5:
     resolution: {integrity: sha512-y6W03tvrACO72aijJ5uF02FRq5cgDR9lUxddQ8vyF+GvmjJQqbzDcJngEjURc+ZsG31VI3hODNZJ2URj86pzmg==}
     dependencies:
@@ -9514,7 +9860,7 @@ packages:
     dependencies:
       '@types/body-parser': 1.19.2
       '@types/express-serve-static-core': 4.19.5
-      '@types/qs': 6.9.7
+      '@types/qs': 6.9.17
       '@types/serve-static': 1.15.1
     dev: true
 
@@ -9553,7 +9899,7 @@ packages:
   /@types/hoist-non-react-statics/3.3.5:
     resolution: {integrity: sha512-SbcrWzkKBw2cdwRTwQAswfpB9g9LJWfjtUeW/jvNwbhC8cpmmNYVePa+ncbUe0rGTQ7G3Ff6mYUN2VMfLVr+Sg==}
     dependencies:
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       hoist-non-react-statics: 3.3.2
     dev: false
 
@@ -9659,16 +10005,6 @@ packages:
   /@types/node/16.18.13:
     resolution: {integrity: sha512-l0/3XZ153UTlNOnZK8xSNoJlQda9/WnYgiTdcKKPJSZjdjI9MU+A9oMXOesAWLSnqAaaJhj3qfQsU07Dr8OUwg==}
 
-  /@types/node/18.17.13:
-    resolution: {integrity: sha512-SlLPDDe6YQl1JnQQy4hgsuJeo5q5c1TBU4be4jeBLXsqpjoDbfb0HesSfhMwnaxfSJ4txtfzJzW5/x/43fkkfQ==}
-    dev: true
-
-  /@types/node/18.19.17:
-    resolution: {integrity: sha512-SzyGKgwPzuWp2SHhlpXKzCX0pIOfcI4V2eF37nNBJOhwlegQ83omtVQ1XxZpDE06V/d6AQvfQdPfnw0tRC//Ng==}
-    dependencies:
-      undici-types: 5.26.5
-    dev: true
-
   /@types/node/20.16.5:
     resolution: {integrity: sha512-VwYCweNo3ERajwy0IUlqqcyZ8/A7Zwa9ZP3MnENWcB11AejO+tLy3pu850goUW2FC/IJMdZUfKpX/yxL1gymCA==}
     dependencies:
@@ -9686,20 +10022,39 @@ packages:
   /@types/parse5/5.0.3:
     resolution: {integrity: sha512-kUNnecmtkunAoQ3CnjmMkzNU/gtxG8guhi+Fk2U/kOpIKjIMKnXGp4IJCgQJrXSgMsWYimYG4TGjz/UzbGEBTw==}
 
+  /@types/passport-http/0.3.11:
+    resolution: {integrity: sha512-FO0rDRYtuha9m2ZgRx5+jrgrrkAnUzgzdItFI0dwKBC6k9pArK677Gtan67u6+Qah2nXVP3M1uZ5p90SpBT5Zg==}
+    dependencies:
+      '@types/express': 4.17.17
+      '@types/passport': 1.0.16
+    dev: true
+
   /@types/passport/1.0.16:
     resolution: {integrity: sha512-FD0qD5hbPWQzaM0wHUnJ/T0BBCJBxCeemtnCwc/ThhTg3x9jfrAcRUmj5Dopza+MfFS9acTe3wk7rcVnRIp/0A==}
     dependencies:
       '@types/express': 4.17.17
     dev: true
 
+  /@types/prettier/2.7.3:
+    resolution: {integrity: sha512-+68kP9yzs4LMp7VNh8gdzMSPZFL44MLGqiHWvttYJe+6qnuVr4Ek9wSBQoveqY/r+LwjCcU29kNVkidwim+kYA==}
+    dev: true
+
   /@types/pretty-hrtime/1.0.1:
     resolution: {integrity: sha512-VjID5MJb1eGKthz2qUerWT8+R4b9N+CHvGCzg9fn4kWZgaF9AhdYikQio3R7wV8YY1NsQKPaCwKz1Yff+aHNUQ==}
+
+  /@types/prismjs/1.26.5:
+    resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
+    dev: true
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
+  /@types/qs/6.9.17:
+    resolution: {integrity: sha512-rX4/bPcfmvxHDv0XjfJELTTr+iB+tn032nPILqHm5wbthUUUuVtNGGqzhya9XUxjTP8Fpr0qYgSZZKxGY++svQ==}
+
   /@types/qs/6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
+    dev: true
 
   /@types/range-parser/1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
@@ -9708,11 +10063,11 @@ packages:
   /@types/react-dom/18.3.0:
     resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
     dependencies:
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
     dev: true
 
-  /@types/react/18.3.8:
-    resolution: {integrity: sha512-syBUrW3/XpnW4WJ41Pft+I+aPoDVbrBVQGEnbD7NijDGlVC+8gV/XKRY+7vMDlfPpbwYt0l1vd/Sj8bJGMbs9Q==}
+  /@types/react/18.3.11:
+    resolution: {integrity: sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==}
     dependencies:
       '@types/prop-types': 15.7.5
       csstype: 3.1.1
@@ -9721,6 +10076,12 @@ packages:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
       '@types/node': 20.16.5
+    dev: true
+
+  /@types/restify-errors/4.3.9:
+    resolution: {integrity: sha512-teX1EyJITW0KlPL41W32kbK6sg0JZ8J6bkupSb/rEwxgkEgK/YazRN6q+gDdoreyH/ssLE6E8mMTsDFqWRwbGQ==}
+    dependencies:
+      '@types/verror': 1.10.10
     dev: true
 
   /@types/restify/8.5.12:
@@ -9767,6 +10128,12 @@ packages:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
     dev: true
 
+  /@types/stoppable/1.1.3:
+    resolution: {integrity: sha512-7wGKIBJGE4ZxFjk9NkjAxZMLlIXroETqP1FJCdoSvKmEznwmBxQFmTB1dsCkAvVcNemuSZM5qkkd9HE/NL2JTw==}
+    dependencies:
+      '@types/node': 20.16.5
+    dev: true
+
   /@types/tapable/1.0.8:
     resolution: {integrity: sha512-ipixuVrh2OdNmauvtT51o3d8z12p6LtFW9in7U79der/kwejjdNchQC5UMn5u/KxNoM7VHHOs/l8KS8uHxhODQ==}
 
@@ -9787,8 +10154,12 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
 
-  /@types/url-parse/1.4.11:
-    resolution: {integrity: sha512-FKvKIqRaykZtd4n47LbK/W/5fhQQ1X7cxxzG9A48h0BGN+S04NH7ervcCjM8tyR0lyGru83FAHSmw2ObgKoESg==}
+  /@types/validator/13.12.2:
+    resolution: {integrity: sha512-6SlHBzUW8Jhf3liqrGGXyTJSIFe4nqlJ5A5KaMZ2l/vbM3Wh3KSybots/wfWVzNLK4D1NZluDlSQIbIEPx6oyA==}
+    dev: true
+
+  /@types/verror/1.10.10:
+    resolution: {integrity: sha512-l4MM0Jppn18hb9xmM6wwD1uTdShpf9Pn80aXTStnK1C94gtPvJcV2FrDmbOQUAQfJ1cKZHktkQUDwEqaAKXMMg==}
     dev: true
 
   /@types/webpack-env/1.18.5:
@@ -9827,7 +10198,7 @@ packages:
   /@types/webpack/5.28.5:
     resolution: {integrity: sha512-wR87cgvxj3p6D0Crt1r5avwqffqPXUkNlnQ1mjU93G7gCuFjufZR4I6j8cz5g1F1tTYpfOOFvly+cmIQwL9wvw==}
     dependencies:
-      '@types/node': 18.17.13
+      '@types/node': 20.16.5
       tapable: 2.2.1
       webpack: 5.94.0
     transitivePeerDependencies:
@@ -11277,7 +11648,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001642
+      caniuse-lite: 1.0.30001655
       electron-to-chromium: 1.4.828
       node-releases: 2.0.14
       update-browserslist-db: 1.1.0_browserslist@4.23.2
@@ -11375,6 +11746,13 @@ packages:
       moment: 2.30.1
       mv: 2.1.1
       safe-json-stringify: 1.2.0
+
+  /busboy/1.6.0:
+    resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
+    engines: {node: '>=10.16.0'}
+    dependencies:
+      streamsearch: 1.1.0
+    dev: false
 
   /bytes/3.0.0:
     resolution: {integrity: sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw==}
@@ -11530,9 +11908,6 @@ packages:
   /camelcase/6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
-
-  /caniuse-lite/1.0.30001642:
-    resolution: {integrity: sha512-3XQ0DoRgLijXJErLSl+bLnJ+Et4KqV1PY6JJBGAFlsNsz31zeAIncyeZfLCabHK/jtSh+671RM9YMldxjUPZtA==}
 
   /caniuse-lite/1.0.30001655:
     resolution: {integrity: sha512-jRGVy3iSGO5Uutn2owlb5gR6qsGngTw9ZTb4ali9f3glshcNmJ2noam4Mo9zia5P9Dk3jNNydy7vQjuE5dQmfg==}
@@ -11695,6 +12070,12 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
+  /chokidar/4.0.1:
+    resolution: {integrity: sha512-n8enUVCED/KVRQlab1hr3MVpcVMvxtZjmEa956u+4YijlmQED223XMSYj2tLuKvr4jcCTzNNMpQDUer72MMmzA==}
+    engines: {node: '>= 14.16.0'}
+    dependencies:
+      readdirp: 4.0.2
+
   /chownr/1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
 
@@ -11856,6 +12237,10 @@ packages:
   /cli-width/4.1.0:
     resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
     engines: {node: '>= 12'}
+
+  /client-only/0.0.1:
+    resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+    dev: false
 
   /cliui/7.0.4:
     resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
@@ -12245,6 +12630,25 @@ packages:
       - ts-node
     dev: true
 
+  /create-jest/29.7.0_@types+node@20.16.5:
+    resolution: {integrity: sha512-Adz2bdH0Vq3F53KEMJOoftQFutWCukm6J24wbPWRO4k1kMY7gS7ds/uoJkNuV8wDCtWWnuwGcJwpWcih+zEW1Q==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+    dependencies:
+      '@jest/types': 29.6.3
+      chalk: 4.1.2
+      exit: 0.1.2
+      graceful-fs: 4.2.11
+      jest-config: 29.7.0_@types+node@20.16.5
+      jest-util: 29.7.0
+      prompts: 2.4.2
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - supports-color
+      - ts-node
+    dev: true
+
   /cross-inspect/1.0.1:
     resolution: {integrity: sha512-Pcw1JTvZLSJH83iiGWt6fRcT+BjZlCDRVwYLbUcHzv/CRpB7r0MlSrGbIyQvVSNyGnbt7G4AXuyCiDR3POvZ1A==}
     engines: {node: '>=16.0.0'}
@@ -12446,7 +12850,7 @@ packages:
       commander: 6.2.1
       common-tags: 1.8.2
       dayjs: 1.11.12
-      debug: 4.3.6_supports-color@8.1.1
+      debug: 4.3.7_supports-color@8.1.1
       enquirer: 2.4.1
       eventemitter2: 6.4.7
       execa: 4.1.0
@@ -12558,19 +12962,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-
-  /debug/4.3.6_supports-color@8.1.1:
-    resolution: {integrity: sha512-O/09Bd4Z1fBrU4VzkhFqVgpPzaGbw6Sm9FEkBT1A/YBXQFGuuSxa1dN2nxgxS34JmKXqYx8CZAwEVoJFImUXIg==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 2.1.2
-      supports-color: 8.1.1
-    dev: true
 
   /debug/4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
@@ -12844,6 +13235,12 @@ packages:
   /detect-file/1.0.0:
     resolution: {integrity: sha512-DtCOLG98P007x7wiiOmfI0fi3eIKyWiLTGJ2MDnVi/E04lWGbf+JzrRHMm0rgIIZJGtHpKpbVgLWHrv8xXpc3Q==}
     engines: {node: '>=0.10.0'}
+
+  /detect-libc/1.0.3:
+    resolution: {integrity: sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==}
+    engines: {node: '>=0.10'}
+    hasBin: true
+    optional: true
 
   /detect-newline/3.1.0:
     resolution: {integrity: sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==}
@@ -13424,7 +13821,7 @@ packages:
     dev: true
 
   /event-stream/3.3.4:
-    resolution: {integrity: sha1-SrTJoPWlTbkzi0w02Gv86PSzVXE=}
+    resolution: {integrity: sha512-QHpkERcGsR0T7Qm3HNJSyXKEEj8AHNxkY3PK8TS2KJvQ7NiSHe3DDpwVKKtoYprL/AreyzFBeIkBIWChAqn60g==}
     dependencies:
       duplexer: 0.1.2
       from: 0.1.7
@@ -15164,7 +15561,6 @@ packages:
 
   /immutable/4.2.4:
     resolution: {integrity: sha512-WDxL3Hheb1JkRN3sQkyujNlL/xRjAo3rJtaU5xeufUauG66JdMr32bLj4gF+vWl84DIA3Zxw7tiAjneYzRRw+w==}
-    dev: false
 
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -15925,6 +16321,34 @@ packages:
       - ts-node
     dev: true
 
+  /jest-cli/29.7.0_@types+node@20.16.5:
+    resolution: {integrity: sha512-OVVobw2IubN/GSYsxETi+gOe7Ka59EFMR/twOU3Jb2GnKKeMGJB5SGUUrEz3SFVmJASUdZUzy83sLNNQ2gZslg==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/core': 29.7.0
+      '@jest/test-result': 29.7.0
+      '@jest/types': 29.6.3
+      chalk: 4.1.2
+      create-jest: 29.7.0_@types+node@20.16.5
+      exit: 0.1.2
+      import-local: 3.1.0
+      jest-config: 29.7.0_@types+node@20.16.5
+      jest-util: 29.7.0
+      jest-validate: 29.7.0
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - supports-color
+      - ts-node
+    dev: true
+
   /jest-config/29.7.0:
     resolution: {integrity: sha512-uXbpfeQ7R6TZBqI3/TxCU4q4ttk3u0PJeC+E0zbfSoSjq6bJ7buBPxzQPL0ifrkY4DNu4JUdk0ImlBUYi840eQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -16032,6 +16456,29 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
+  /jest-environment-jsdom/29.5.0:
+    resolution: {integrity: sha512-/KG8yEK4aN8ak56yFVdqFDzKNHgF4BAymCx2LbPNPsUshUlfAl0eX402Xm1pt+eoG9SLZEUVifqXtX8SK74KCw==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    peerDependencies:
+      canvas: ^2.5.0
+    peerDependenciesMeta:
+      canvas:
+        optional: true
+    dependencies:
+      '@jest/environment': 29.7.0
+      '@jest/fake-timers': 29.7.0
+      '@jest/types': 29.6.3
+      '@types/jsdom': 20.0.1
+      '@types/node': 20.16.5
+      jest-mock: 29.7.0
+      jest-util: 29.7.0
+      jsdom: 20.0.3
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: true
+
   /jest-environment-jsdom/29.7.0:
     resolution: {integrity: sha512-k9iQbsf9OyOfdzWH8HDmrRT0gSIcX+FLNW7IQq94tFX0gynPwqDTW0Ho6iMVNjGz/nb+l/vW3dWM2bbLLpkbXA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -16045,7 +16492,7 @@ packages:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
       '@types/jsdom': 20.0.1
-      '@types/node': 18.19.17
+      '@types/node': 20.16.5
       jest-mock: 29.7.0
       jest-util: 29.7.0
       jsdom: 20.0.3
@@ -16374,6 +16821,27 @@ packages:
       supports-color: 8.1.1
     dev: true
 
+  /jest/29.5.0:
+    resolution: {integrity: sha512-juMg3he2uru1QoXX078zTa7pO85QyB9xajZc6bU+d9yEGwrKX6+vGmJQ3UdVZsvTEUARIdObzH68QItim6OSSQ==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/core': 29.7.0
+      '@jest/types': 29.6.3
+      import-local: 3.1.0
+      jest-cli: 29.7.0
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - supports-color
+      - ts-node
+    dev: true
+
   /jest/29.7.0:
     resolution: {integrity: sha512-NIy3oAFp9shda19hy4HK0HRTWKtPJmGdnvywu01nOqNC2vZg+Z+fvJDxpMQA88eb2I9EcafcdjYgsDthnYTvGw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -16388,6 +16856,27 @@ packages:
       '@jest/types': 29.6.3
       import-local: 3.1.0
       jest-cli: 29.7.0
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - supports-color
+      - ts-node
+    dev: true
+
+  /jest/29.7.0_@types+node@20.16.5:
+    resolution: {integrity: sha512-NIy3oAFp9shda19hy4HK0HRTWKtPJmGdnvywu01nOqNC2vZg+Z+fvJDxpMQA88eb2I9EcafcdjYgsDthnYTvGw==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/core': 29.7.0
+      '@jest/types': 29.6.3
+      import-local: 3.1.0
+      jest-cli: 29.7.0_@types+node@20.16.5
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -17445,6 +17934,49 @@ packages:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: true
 
+  /next/14.2.5_tskmq6ak2bbhpj4dhefuayxc3a:
+    resolution: {integrity: sha512-0f8aRfBVL+mpzfBjYfQuLWh2WyAwtJXCRfkPF4UJ5qd2YwrHczsrSzXU4tRMV0OAxR8ZJZWPFn6uhSC56UTsLA==}
+    engines: {node: '>=18.17.0'}
+    hasBin: true
+    peerDependencies:
+      '@opentelemetry/api': ^1.1.0
+      '@playwright/test': ^1.41.2
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      sass: ^1.3.0
+    peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
+      '@playwright/test':
+        optional: true
+      sass:
+        optional: true
+    dependencies:
+      '@next/env': 14.2.5
+      '@swc/helpers': 0.5.5
+      busboy: 1.6.0
+      caniuse-lite: 1.0.30001655
+      graceful-fs: 4.2.11
+      postcss: 8.4.31
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      sass: 1.80.6
+      styled-jsx: 5.1.1_react@18.3.1
+    optionalDependencies:
+      '@next/swc-darwin-arm64': 14.2.5
+      '@next/swc-darwin-x64': 14.2.5
+      '@next/swc-linux-arm64-gnu': 14.2.5
+      '@next/swc-linux-arm64-musl': 14.2.5
+      '@next/swc-linux-x64-gnu': 14.2.5
+      '@next/swc-linux-x64-musl': 14.2.5
+      '@next/swc-win32-arm64-msvc': 14.2.5
+      '@next/swc-win32-ia32-msvc': 14.2.5
+      '@next/swc-win32-x64-msvc': 14.2.5
+    transitivePeerDependencies:
+      - '@babel/core'
+      - babel-plugin-macros
+    dev: false
+
   /nice-try/1.0.5:
     resolution: {integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==}
     dev: true
@@ -17458,6 +17990,10 @@ packages:
   /node-abort-controller/3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
     dev: false
+
+  /node-addon-api/7.1.1:
+    resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
+    optional: true
 
   /node-dir/0.1.17:
     resolution: {integrity: sha512-tmPX422rYgofd4epzrNoOXiE8XFZYOcCq1vD7MAXCDO+O+zndlA2ztdKKMa+EeuBG5tHETpr4ml4RGgpqDCCAg==}
@@ -18208,7 +18744,7 @@ packages:
     dev: true
 
   /pause-stream/0.0.11:
-    resolution: {integrity: sha1-/lo0sMvOErWqaitAPuLnO2AvFEU=}
+    resolution: {integrity: sha512-e3FBlXLmN/D1S+zHzanP4E/4Z60oFAa3O051qt1pxa7DEJWKAyil6upYVXCWadEnuoqa4Pkc9oUx9zsxYeRv8A==}
     dependencies:
       through: 2.3.8
     dev: true
@@ -18489,6 +19025,15 @@ packages:
       source-map-js: 1.0.2
     dev: false
 
+  /postcss/8.4.31:
+    resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.0.1
+      source-map-js: 1.0.2
+    dev: false
+
   /postcss/8.4.35:
     resolution: {integrity: sha512-u5U8qYpBCpN13BsiEB0CbR1Hhh4Gc0zLFuedrHJKMctHCHAGrMdG0PRM/KErzAL3CU6/eckEtmHNB3x6e3c0vA==}
     engines: {node: ^10 || ^12 || >=14}
@@ -18756,6 +19301,7 @@ packages:
 
   /querystringify/2.2.0:
     resolution: {integrity: sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==}
+    dev: true
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -18845,7 +19391,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
-    dev: true
 
   /react-element-to-jsx-string/14.3.4:
     resolution: {integrity: sha512-t4ZwvV6vwNxzujDQ+37bspnLwA4JlgUPWhLjBJWsNIDceAf6ZKUTCjdm08cN6WeZ5pTMKiCJkmAYnpmR4Bm+dg==}
@@ -18938,15 +19483,6 @@ packages:
       react-router: 6.26.2_react@18.3.1
     dev: true
 
-  /react-router-hash-link/2.4.3:
-    resolution: {integrity: sha512-NU7GWc265m92xh/aYD79Vr1W+zAIXDWp3L2YZOYP4rCqPnJ6LI6vh3+rKgkidtYijozHclaEQTAHaAaMWPVI4A==}
-    peerDependencies:
-      react: '>=15'
-      react-router-dom: '>=4'
-    dependencies:
-      prop-types: 15.8.1
-    dev: false
-
   /react-router/6.26.2_react@18.3.1:
     resolution: {integrity: sha512-tvN1iuT03kHgOFnLPfLJ8V95eijteveqdOSk+srqfePtQvqCExB8eHOYnlilbOcyJyKnYkr1vJvf7YqotAJu1A==}
     engines: {node: '>=14.0.0'}
@@ -18984,7 +19520,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: true
 
   /read-pkg-up/1.0.1:
     resolution: {integrity: sha512-WD9MTlNtI55IwYUS27iHh9tK3YoIVhxis8yKhLpTqWtml739uXc9NWTpxoHkfZf3+DkCCsXox94/VWZniuZm6A==}
@@ -19078,6 +19613,10 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
+
+  /readdirp/4.0.2:
+    resolution: {integrity: sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==}
+    engines: {node: '>= 14.16.0'}
 
   /real-require/0.2.0:
     resolution: {integrity: sha512-57frrGM/OCTLqLOAh0mhVA9VBMHd+9U7Zb2THMGdBUoZVOtGbJzjxsYGDJ3A9AYYCP4hn6y1TVbaOfzWtm5GFg==}
@@ -19181,7 +19720,7 @@ packages:
     dependencies:
       jsesc: 0.5.0
 
-  /rehackt/0.1.0_react@18.3.1:
+  /rehackt/0.1.0_xhljovrzeltpan7qvnzgcocgfa:
     resolution: {integrity: sha512-7kRDOuLHB87D/JESKxQoRwv4DzbIdwkAGQ7p6QKGdVlY1IZheUnVhlk/4UZlNUVxdAXpyxikE3URsG067ybVzw==}
     peerDependencies:
       '@types/react': '*'
@@ -19192,21 +19731,7 @@ packages:
       react:
         optional: true
     dependencies:
-      react: 18.3.1
-    dev: true
-
-  /rehackt/0.1.0_yaxnkdwimwz6xfkjep7bossl2e:
-    resolution: {integrity: sha512-7kRDOuLHB87D/JESKxQoRwv4DzbIdwkAGQ7p6QKGdVlY1IZheUnVhlk/4UZlNUVxdAXpyxikE3URsG067ybVzw==}
-    peerDependencies:
-      '@types/react': '*'
-      react: '*'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
-    dependencies:
-      '@types/react': 18.3.8
+      '@types/react': 18.3.11
       react: 18.3.1
     dev: true
 
@@ -19835,6 +20360,17 @@ packages:
       sass-embedded: 1.79.3
     dev: false
 
+  /sass/1.80.6:
+    resolution: {integrity: sha512-ccZgdHNiBF1NHBsWvacvT5rju3y1d/Eu+8Ex6c21nHp2lZGLBEtuwc415QfiI1PJa1TpCo3iXwwSRjRpn2Ckjg==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 4.0.1
+      immutable: 4.2.4
+      source-map-js: 1.0.2
+    optionalDependencies:
+      '@parcel/watcher': 2.5.0
+
   /sax/1.2.1:
     resolution: {integrity: sha512-8I2a3LovHTOpm7NV5yOyO8IHqgVsfK4+UuySrXU8YXkSRX7k6hCV9b3HrkKCr3nMpgj+0bmocaJJWpvp1oc7ZA==}
     dev: true
@@ -19850,7 +20386,6 @@ packages:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
     dependencies:
       loose-envify: 1.4.0
-    dev: true
 
   /schema-utils/1.0.0:
     resolution: {integrity: sha512-i27Mic4KovM/lnGsy8whRCHhc7VicJajAjTrYg11K9zfZXnYIt4k5F+kZkwjnrhKzLic/HLU4j11mjsz2G/75g==}
@@ -20551,6 +21086,11 @@ packages:
     resolution: {integrity: sha512-DHZQPNxvjU2qdQlGcpitn8pkJHQVTqdshtgXaLz6Vc5VCAognbGuuwGS5ugeqGVnyw8j4h89QcV8cwm0D1+V0A==}
     dev: false
 
+  /streamsearch/1.1.0:
+    resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
+    engines: {node: '>=10.0.0'}
+    dev: false
+
   /string-length/4.0.2:
     resolution: {integrity: sha512-+l6rNN5fYHNhZZy41RXsYptCjA2Igmq4EG7kZAYFQI1E1VTXarr6ZPXBg6eq7Y6eK4FEhY6AJlyuFIb/v/S0VQ==}
     engines: {node: '>=10'}
@@ -20735,6 +21275,23 @@ packages:
     resolution: {integrity: sha512-CzFnRRXhzWIdItT3OmF8SQfWyahHhjq3HwcMNCNLn+N7klOOqPjMeG/4JSu77D7ypZdGvSzvkrbyeTMizz2VrA==}
     dependencies:
       inline-style-parser: 0.1.1
+
+  /styled-jsx/5.1.1_react@18.3.1:
+    resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}
+    engines: {node: '>= 12.0.0'}
+    peerDependencies:
+      '@babel/core': '*'
+      babel-plugin-macros: '*'
+      react: '>= 16.8.0 || 17.x.x || ^18.0.0-0'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      babel-plugin-macros:
+        optional: true
+    dependencies:
+      client-only: 0.0.1
+      react: 18.3.1
+    dev: false
 
   /superagent/7.1.6_supports-color@8.1.1:
     resolution: {integrity: sha512-gZkVCQR1gy/oUXr+kxJMLDjla434KmSOKbx5iGD30Ql+AkJQ/YlPKECJy2nhqOsHLjGHzoDTXNSjhnvWhzKk7g==}
@@ -21161,6 +21718,39 @@ packages:
       tslib: 2.6.3
     dev: true
 
+  /ts-jest/29.1.0_doipufordlnvh5g4adbwayvyvy:
+    resolution: {integrity: sha512-ZhNr7Z4PcYa+JjMl62ir+zPiNJfXJN6E8hSLnaUKhOgqcn8vb3e537cpkd0FuAfRK3sR1LSqM1MOhliXNgOFPA==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+    peerDependencies:
+      '@babel/core': '>=7.0.0-beta.0 <8'
+      '@jest/types': ^29.0.0
+      babel-jest: ^29.0.0
+      esbuild: '*'
+      jest: ^29.0.0
+      typescript: '>=4.3 <6'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@jest/types':
+        optional: true
+      babel-jest:
+        optional: true
+      esbuild:
+        optional: true
+    dependencies:
+      bs-logger: 0.2.6
+      fast-json-stable-stringify: 2.1.0
+      jest: 29.5.0
+      jest-util: 29.7.0
+      json5: 2.2.3
+      lodash.memoize: 4.1.2
+      make-error: 1.3.6
+      semver: 7.6.3
+      typescript: 4.9.5
+      yargs-parser: 21.1.1
+    dev: true
+
   /ts-jest/29.2.5_67xnt3v64q2pgz6kguni4h37hu:
     resolution: {integrity: sha512-KD8zB2aAZrcKIdGk4OwpJggeLcH1FgrICqDSROWqlnJXGCXK4Mn6FcdK2B6670Xr73lHMG1kHw8R87A0ecZ+vA==}
     engines: {node: ^14.15.0 || ^16.10.0 || ^18.0.0 || >=20.0.0}
@@ -21234,6 +21824,43 @@ packages:
       make-error: 1.3.6
       semver: 7.6.3
       typescript: 4.9.5
+      yargs-parser: 21.1.1
+    dev: true
+
+  /ts-jest/29.2.5_erljds5soyc3uc6knqx7u5zlbu:
+    resolution: {integrity: sha512-KD8zB2aAZrcKIdGk4OwpJggeLcH1FgrICqDSROWqlnJXGCXK4Mn6FcdK2B6670Xr73lHMG1kHw8R87A0ecZ+vA==}
+    engines: {node: ^14.15.0 || ^16.10.0 || ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@babel/core': '>=7.0.0-beta.0 <8'
+      '@jest/transform': ^29.0.0
+      '@jest/types': ^29.0.0
+      babel-jest: ^29.0.0
+      esbuild: '*'
+      jest: ^29.0.0
+      typescript: '>=4.3 <6'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@jest/transform':
+        optional: true
+      '@jest/types':
+        optional: true
+      babel-jest:
+        optional: true
+      esbuild:
+        optional: true
+    dependencies:
+      bs-logger: 0.2.6
+      ejs: 3.1.10
+      fast-json-stable-stringify: 2.1.0
+      jest: 29.7.0_@types+node@20.16.5
+      jest-util: 29.7.0
+      json5: 2.2.3
+      lodash.memoize: 4.1.2
+      make-error: 1.3.6
+      semver: 7.6.3
+      typescript: 5.6.3
       yargs-parser: 21.1.1
     dev: true
 
@@ -21338,6 +21965,12 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
+  /typescript/5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
+
   /uglify-js/3.19.3:
     resolution: {integrity: sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ==}
     engines: {node: '>=0.8.0'}
@@ -21367,10 +22000,6 @@ packages:
   /underscore/1.13.6:
     resolution: {integrity: sha512-+A5Sja4HP1M08MaXya7p5LvjuM7K6q/2EaC0+iovj/wOcMsTzMvDFbasi/oSapiwOlt252IqsKqPjCl7huKS0A==}
     dev: false
-
-  /undici-types/5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-    dev: true
 
   /undici-types/6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
@@ -21580,6 +22209,7 @@ packages:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
+    dev: true
 
   /url/0.10.3:
     resolution: {integrity: sha512-hzSUW2q06EqL1gKM/a+obYHLIO6ct2hwPuviqTTOcfFVc61UbfJ2Q32+uGL/HCPxKqrdGB5QUwIe7UqlDgwsOQ==}
