@@ -12,7 +12,8 @@
     "test:ci": "npm test && npm run test:functional:ci",
     "test:functional": "cypress run ${CYPRESS_PROJECT_ID:+--record ${CYPRESS_FLAGS}}",
     "test:functional:ci": "start-server-and-test 'start' 'http-get://localhost:3000/' test:functional",
-    "test:unit": "jest --passWithNoTests"
+    "test:unit": "jest --passWithNoTests",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "@not-govuk/simple-components": "workspace:^0.14.0",
