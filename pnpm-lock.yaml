@@ -47,7 +47,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.96.1
       webpack-cli: 5.1.4
-      webpack-dev-middleware: 6.1.3
+      webpack-dev-middleware: 7.4.2
       webpack-hot-middleware: 2.26.1
     devDependencies:
       '@apollo/client': 3.11.9_vsw25juzkyj7spaf6wjn5upvjq
@@ -93,7 +93,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.96.1_webpack-cli@5.1.4
       webpack-cli: 5.1.4_webpack@5.96.1
-      webpack-dev-middleware: 6.1.3_webpack@5.96.1
+      webpack-dev-middleware: 7.4.2_webpack@5.96.1
       webpack-hot-middleware: 2.26.1
 
   apps/govuk-docs:
@@ -129,7 +129,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.96.1
       webpack-cli: 5.1.4
-      webpack-dev-middleware: 6.1.3
+      webpack-dev-middleware: 7.4.2
       webpack-hot-middleware: 2.26.1
     devDependencies:
       '@not-govuk/anchor-list': link:../../components-internal/anchor-list
@@ -163,7 +163,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.96.1_webpack-cli@5.1.4
       webpack-cli: 5.1.4_webpack@5.96.1
-      webpack-dev-middleware: 6.1.3_webpack@5.96.1
+      webpack-dev-middleware: 7.4.2_webpack@5.96.1
       webpack-hot-middleware: 2.26.1
 
   apps/govuk-template:
@@ -203,7 +203,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.96.1
       webpack-cli: 5.1.4
-      webpack-dev-middleware: 6.1.3
+      webpack-dev-middleware: 7.4.2
       webpack-hot-middleware: 2.26.1
     devDependencies:
       '@apollo/client': 3.11.9_pa3gullttjju2hvnggb5g42c3e
@@ -241,7 +241,7 @@ importers:
       typescript: 4.9.5
       webpack: 5.96.1_webpack-cli@5.1.4
       webpack-cli: 5.1.4_webpack@5.96.1
-      webpack-dev-middleware: 6.1.3_webpack@5.96.1
+      webpack-dev-middleware: 7.4.2_webpack@5.96.1
       webpack-hot-middleware: 2.26.1
 
   apps/next-example:
@@ -6566,6 +6566,37 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+
+  /@jsonjoy.com/base64/1.1.2_tslib@2.6.3:
+    resolution: {integrity: sha512-q6XAnWQDIMA3+FTiOYajoYqySkO+JSat0ytXGSuRdq9uXE7o92gzuQwQM14xaCRlBLGq3v5miDGC4vkVTn54xA==}
+    engines: {node: '>=10.0'}
+    peerDependencies:
+      tslib: '2'
+    dependencies:
+      tslib: 2.6.3
+    dev: true
+
+  /@jsonjoy.com/json-pack/1.1.0_tslib@2.6.3:
+    resolution: {integrity: sha512-zlQONA+msXPPwHWZMKFVS78ewFczIll5lXiVPwFPCZUsrOKdxc2AvxU1HoNBmMRhqDZUR9HkC3UOm+6pME6Xsg==}
+    engines: {node: '>=10.0'}
+    peerDependencies:
+      tslib: '2'
+    dependencies:
+      '@jsonjoy.com/base64': 1.1.2_tslib@2.6.3
+      '@jsonjoy.com/util': 1.5.0_tslib@2.6.3
+      hyperdyperid: 1.2.0
+      thingies: 1.21.0_tslib@2.6.3
+      tslib: 2.6.3
+    dev: true
+
+  /@jsonjoy.com/util/1.5.0_tslib@2.6.3:
+    resolution: {integrity: sha512-ojoNsrIuPI9g6o8UxhraZQSyF2ByJanAY4cTFbc8Mf2AXEF4aQRGY1dJxyJpuyav8r9FGflEt/Ff3u5Nt6YMPA==}
+    engines: {node: '>=10.0'}
+    peerDependencies:
+      tslib: '2'
+    dependencies:
+      tslib: 2.6.3
+    dev: true
 
   /@kwsites/file-exists/1.1.1_supports-color@8.1.1:
     resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
@@ -15803,6 +15834,11 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
 
+  /hyperdyperid/1.2.0:
+    resolution: {integrity: sha512-Y93lCzHYgGWdrJ66yIktxiaGULYc6oGiABxhcO5AufBeOyoIdZF7bIfLaOrbM0iGIOXQQgxxRrFEnb+Y6w1n4A==}
+    engines: {node: '>=10.18'}
+    dev: true
+
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
@@ -17788,6 +17824,16 @@ packages:
     engines: {node: '>= 4.0.0'}
     dependencies:
       fs-monkey: 1.0.3
+
+  /memfs/4.14.0:
+    resolution: {integrity: sha512-JUeY0F/fQZgIod31Ja1eJgiSxLn7BfQlCnqhwXFBzFHEw63OdLK7VJUJ7bnzNsWgCyoUP5tEp1VRY8rDaYzqOA==}
+    engines: {node: '>= 4.0.0'}
+    dependencies:
+      '@jsonjoy.com/json-pack': 1.1.0_tslib@2.6.3
+      '@jsonjoy.com/util': 1.5.0_tslib@2.6.3
+      tree-dump: 1.0.2_tslib@2.6.3
+      tslib: 2.6.3
+    dev: true
 
   /memoizee/0.4.15:
     resolution: {integrity: sha512-UBWmJpLZd5STPm7PMUlOw/TSy972M+z8gcyQ5veOnSDRREz/0bmpyTfKt3/51DhEBqCZQn1udM/5flcSPYhkdQ==}
@@ -21833,6 +21879,15 @@ packages:
       glob: 7.2.3
       minimatch: 3.1.2
 
+  /thingies/1.21.0_tslib@2.6.3:
+    resolution: {integrity: sha512-hsqsJsFMsV+aD4s3CWKk85ep/3I9XzYV/IXaSouJMYIoDlgyi11cBhsqYe9/geRfB0YIikBQg6raRaM+nIMP9g==}
+    engines: {node: '>=10.18'}
+    peerDependencies:
+      tslib: ^2
+    dependencies:
+      tslib: 2.6.3
+    dev: true
+
   /thread-stream/2.3.0:
     resolution: {integrity: sha512-kaDqm1DET9pp3NXwR8382WHbnpXnRkN9xGN9dQt3B2+dmXiW8X1SOwmFOxAErEQ47ObhZ96J6yhZNXuyCOL7KA==}
     dependencies:
@@ -22000,6 +22055,15 @@ packages:
 
   /traverse/0.6.7:
     resolution: {integrity: sha512-/y956gpUo9ZNCb99YjxG7OaslxZWHfCHAUUfshwqOXmxUIvqLjVO581BT+gM59+QV9tFe6/CGG53tsA1Y7RSdg==}
+    dev: true
+
+  /tree-dump/1.0.2_tslib@2.6.3:
+    resolution: {integrity: sha512-dpev9ABuLWdEubk+cIaI9cHwRNNDjkBBLXTwI4UCUFdQ5xXKqNXoK4FEciw/vxf+NQ7Cb7sGUyeUtORvHIdRXQ==}
+    engines: {node: '>=10.0'}
+    peerDependencies:
+      tslib: '2'
+    dependencies:
+      tslib: 2.6.3
     dev: true
 
   /tree-kill/1.2.2:
@@ -22807,18 +22871,19 @@ packages:
       webpack: 5.96.1_webpack-cli@5.1.4
     dev: true
 
-  /webpack-dev-middleware/6.1.3_webpack@5.96.1:
-    resolution: {integrity: sha512-A4ChP0Qj8oGociTs6UdlRUGANIGrCDL3y+pmQMc+dSsraXHCatFpmMey4mYELA+juqwUqwQsUgJJISXl1KWmiw==}
-    engines: {node: '>= 14.15.0'}
+  /webpack-dev-middleware/7.4.2_webpack@5.96.1:
+    resolution: {integrity: sha512-xOO8n6eggxnwYpy1NlzUKpvrjfJTvae5/D6WOK0S2LSo7vjmo5gCM1DbLUmFqrMTJP+W/0YZNctm7jasWvLuBA==}
+    engines: {node: '>= 18.12.0'}
     peerDependencies:
       webpack: ^5.0.0
     peerDependenciesMeta:
       webpack:
         optional: true
     dependencies:
-      colorette: 2.0.19
-      memfs: 3.4.13
+      colorette: 2.0.20
+      memfs: 4.14.0
       mime-types: 2.1.35
+      on-finished: 2.4.1
       range-parser: 1.2.1
       schema-utils: 4.0.0
       webpack: 5.96.1_webpack-cli@5.1.4
