@@ -1,7 +1,7 @@
 service: govuk-template
 provider:
   name: aws
-  runtime: nodejs20.x
+  runtime: nodejs22.x
   environment:
     MODE: serverless
     NODE_ENV: production
