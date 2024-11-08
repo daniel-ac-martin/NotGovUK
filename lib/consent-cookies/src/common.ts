@@ -1,8 +1,8 @@
-import type { CookieSerializeOptions } from 'cookie';
+import type { SerializeOptions } from 'cookie';
 import type { NextFunction } from 'connect';
 import type { IncomingMessage as _Request, ServerResponse as _Response } from 'node:http';
 
-export type CookieOptions = Omit<CookieSerializeOptions, 'encode'>;
+export type CookieOptions = Omit<SerializeOptions, 'encode'>;
 
 export type SetCookie = (this: Response, name: string, value: any, options?: Omit<CookieOptions, 'httpOnly'>) => void;
 export type SetCookieConsent = (this: ResponseFull, value: string[]) => void;
