@@ -132,8 +132,11 @@ npm run create:deployment
 Then answer the prompts. In particular, you will need to choose where you want
 to deploy. In most cases the defaults for the other questions should be fine.
 
+This will generate some new files that you can commit and push to your
+repository.
+
 Depending on the deployment target you chose, you will need to set up some
-secrets in GitHub.
+secrets in GitHub, before the deployments will succeed.
 
 
 #### [Heroku]
@@ -142,12 +145,12 @@ secrets in GitHub.
 2. Create a new site by following the [Heroku documentation]
    If you have set up the [Heroku CLI tool], you should be able to do this with
    `heroku create`.
-3. Create a new secret in GitHub called `HEROKU_EMAIL` with the value of the
-   e-mail address that you log in to Heroku with.
-4. Create a new secret in GitHub called `HEROKU_API_KEY` with the value of your API key as found here:
-   https://dashboard.heroku.com/account
-5. Create a new secret in GitHub called `HEROKU_APP_NAME_DOCS` with the name you
-   chose for your app in Heroku.
+3. Create a new repository secret in GitHub Actions called `HEROKU_EMAIL` with
+   the value of the e-mail address that you log in to Heroku with.
+4. Create a new repository secret in GitHub Actions called `HEROKU_API_KEY` with
+   the value of your API key as found here: https://dashboard.heroku.com/account
+5. Create a new repository secret in GitHub Actions called `HEROKU_APP_NAME_DOCS`
+   with the name you chose for your app in Heroku.
 
 
 #### [Netlify]
@@ -163,11 +166,11 @@ secrets in GitHub.
    ```
    You can safely ignore the ssh key and webhook as we will be building
    on GitHub Actions instead of Netlify.
-3. Create a new secret in GitHub called `NETLIFY_SITE_ID_DOCS` by following
-   the information here:
+3. Create a new repository secret in GitHub Actions called `NETLIFY_SITE_ID_DOCS`
+   by following the information here:
    https://docs.netlify.com/cli/get-started/#link-with-an-environment-variable
-4. Create a new secret in GitHub called `NETLIFY_AUTH_TOKEN` by following
-   the information here:
+4. Create a new repository secret in GitHub Actions called `NETLIFY_AUTH_TOKEN`
+   by following the information here:
    https://docs.netlify.com/cli/get-started/#obtain-a-token-in-the-netlify-ui
 
 
