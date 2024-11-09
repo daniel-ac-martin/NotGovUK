@@ -21,7 +21,9 @@ sources := $(wildcard \
 	$(source_dir)/.gitignore \
 	$(source_dir)/.jest/*/* \
 	$(source_dir)/.npm/* \
-	$(source_dir)/.storybook/* \
+	$(source_dir)/.storybook/decorators.tsx \
+	$(source_dir)/.storybook/manager.ts \
+	$(source_dir)/.storybook/preview.ts \
 	$(source_dir)/apps/README.md \
 	$(source_dir)/babel.config.js \
 	$(source_dir)/cypress.config.mjs \
@@ -42,7 +44,6 @@ docs_target_dir = $(target_dir)/apps/docs
 docs_sources := $(wildcard \
 	$(docs_source_dir)/src/mdx.d.ts \
 	$(docs_source_dir)/src/common/page-wrap.tsx \
-	$(docs_source_dir)/src/common/pages/components.tsx \
 	$(docs_source_dir)/src/common/pages/contributing.tsx \
 	$(docs_source_dir)/src/common/pages/get-started.tsx \
 	$(docs_source_dir)/src/common/pages/working-on-your-project.tsx \
