@@ -3,55 +3,18 @@ import { Helmet } from 'react-helmet-async';
 import { PageProps } from '@not-govuk/app-composer';
 import { A } from '@not-govuk/components';
 import { AnchorList } from '@not-govuk/anchor-list';
+import { componentLinks, styleLinks } from '../stories';
+import config from '../config';
 
-type Subpages = Record<string, any>;
-
-const reduceToLookup = (acc: Subpages, cur: any): Subpages => ({...acc, [cur.default.title]: cur});
-const createSubpageStore = (r: __WebpackModuleApi.RequireContext) => (
-  r
-    .keys()
-    .map(r)
-    .reduce(reduceToLookup, {})
-);
-const storiesComponents = [
-  require('../../../../../components/aside/spec/Aside.stories.mdx'),
-  require('../../../../../components/back-link/spec/BackLink.stories.mdx'),
-  require('../../../../../components/breadcrumbs/spec/Breadcrumbs.stories.mdx'),
-  require('../../../../../components/details/spec/Details.stories.mdx'),
-  require('../../../../../components/footer/spec/Footer.stories.mdx'),
-  require('../../../../../components/form/spec/Form.stories.mdx'),
-  require('../../../../../components/header/spec/Header.stories.mdx'),
-  require('../../../../../components/inset-text/spec/InsetText.stories.mdx'),
-  require('../../../../../components/link/spec/Link.stories.mdx'),
-  require('../../../../../components/navigation-menu/spec/NavigationMenu.stories.mdx'),
-  require('../../../../../components/page/spec/Page.stories.mdx'),
-  require('../../../../../components/panel/spec/Panel.stories.mdx'),
-  require('../../../../../components/phase-banner/spec/PhaseBanner.stories.mdx'),
-  require('../../../../../components/skip-link/spec/SkipLink.stories.mdx'),
-  require('../../../../../components/table/spec/Table.stories.mdx'),
-  require('../../../../../components/tabs/spec/Tabs.stories.mdx'),
-  require('../../../../../components/tag/spec/Tag.stories.mdx'),
-  require('../../../../../components/warning-text/spec/WarningText.stories.mdx'),
-  require('../../../../../components/width-container/spec/WidthContainer.stories.mdx')
-];
-const subpagesStyles = createSubpageStore(require.context('../../../../../styles/', false, /^\.\/[^\/]+\.stories\.mdx$/));
-const subpagesComponents = storiesComponents.reduce(reduceToLookup, {})
-const styles = Object.keys(subpagesStyles).sort().map(v => ({
-  href: `/styles?name=${encodeURIComponent(subpagesStyles[v].default.title)}`,
-  text: v
-}));
-const components = Object.keys(subpagesComponents).sort().map(v => ({
-  href: `/components?name=${encodeURIComponent(subpagesComponents[v].default.title)}`,
-  text: v
-}));
+const siteTitle = config.title;
 
 export const title = 'Sitemap';
-const description = 'Overview of NotGovUK';
+const description = `Overview of ${siteTitle}`;
 
 const Page: FC<PageProps> = () => (
   <Fragment>
     <Helmet>
-      <title>{title} - NotGovUK</title>
+      <title>{title} - {siteTitle}</title>
       <meta name="description" content={description} />
       <meta name="og:title" content={title} />
       <meta name="og:description" content={description} />
@@ -66,9 +29,9 @@ const Page: FC<PageProps> = () => (
       { href: '/working-on-your-project', text: 'Working on your project' }
     ]} />
     <h2><A href="/styles">Styles</A></h2>
-    <AnchorList classBlock="govuk-list" items={styles} />
+    <AnchorList classBlock="govuk-list" items={styleLinks} />
     <h2><A href="/components">Components</A></h2>
-    <AnchorList classBlock="govuk-list" items={components} />
+    <AnchorList classBlock="govuk-list" items={componentLinks} />
     <h2><A href="/contributing">Contributing</A></h2>
   </Fragment>
 );
