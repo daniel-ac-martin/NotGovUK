@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/components/header";
 
@@ -6,8 +7,8 @@
     // Department colours
     @each $i, $v in $govuk-colours-organisations {
       &--#{$i} {
-        $contrast-safe: map_get($v, "contrast-safe");
-        $light-colour: map_get($v, "colour");
+        $contrast-safe: map.get($v, "contrast-safe");
+        $light-colour: map.get($v, "colour");
         $colour: if($contrast-safe, $contrast-safe, $light-colour);
         border-color: $colour !important;
 
