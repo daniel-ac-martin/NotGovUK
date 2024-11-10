@@ -11,7 +11,7 @@
     "pnpm": "pnpm",
     "pnpm:all": "npm run pnpm -- -r",
     "pnpm:apps": "npm run pnpm:all -- --filter './apps/**'",
-    "pnpm:libs": "npm run pnpm:all -- --filter './components/**' --filter './components-internal/**' --filter './lib/**' --filter './lib-govuk/**' --filter './packages/**'",
+    "pnpm:libs": "npm run pnpm:all -- --filter './components/**' --filter './components-internal/**' --filter './lib/**' --filter './lib-govuk/**'",
     "all:build": "npm run pnpm:all -- run build",
     "all:clean": "npm run pnpm:all -- run clean",
     "all:publish": "npm run libs:publish",
