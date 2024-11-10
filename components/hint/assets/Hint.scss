@@ -1,2 +1,7 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/components/hint";
+
+// Global override
+.hint {
+  @extend .govuk-hint;
+}
