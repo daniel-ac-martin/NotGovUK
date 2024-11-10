@@ -60,7 +60,7 @@ aside {
 .not-govuk-page--hm-passport-office aside,
 .not-govuk-page--hmpo .not-govuk-aside,
 .not-govuk-page--hmpo aside {
-  $home-office: map-get($govuk-colours-organisations, "home-office");
+  $home-office: map.get($govuk-colours-organisations, "home-office");
 
   border-color: map.get($home-office, "colour-websafe");
 }
