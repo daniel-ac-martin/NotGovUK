@@ -21,3 +21,43 @@
     }
   }
 }
+
+// Global override
+select {
+  @extend .govuk-select;
+
+  &.govuk-select--error {
+    @extend .govuk-select--error;
+  }
+}
+
+@include govuk-media-query($from: 'tablet') {
+  select {
+    width: auto;
+  }
+}
+
+option,
+select {
+  background-color: govuk-colour('white');
+  color: $govuk-text-colour;
+}
+
+option[disabled],
+option:nth-child(even)[disabled] {
+  color: govuk-colour('mid-grey');
+}
+
+select[multiple] {
+  height: auto;
+  padding: 0;
+}
+
+select[multiple] > option {
+  padding: 0.3125em;
+}
+
+option:nth-child(even) {
+  background-color: govuk-colour('light-grey');
+  color: $govuk-text-colour;
+}

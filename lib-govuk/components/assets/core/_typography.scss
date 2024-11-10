@@ -1,3 +1,5 @@
+@import "govuk-frontend/dist/govuk/core/typography";
+
 h1 {
   @extend .govuk-heading-xl;
   color: inherit;
@@ -31,4 +33,19 @@ h4, h5, h6, h7 {
   .caption {
     color: $not-govuk-dark-mode-secondary-text-colour;
   }
+}
+
+p {
+  @extend .govuk-body;
+  max-width: 38em;
+}
+
+// Lead paragraph
+p.lead {
+  @extend .govuk-body-lead;
+}
+
+// Small paragraph
+p.small {
+  @extend .govuk-body-s;
 }

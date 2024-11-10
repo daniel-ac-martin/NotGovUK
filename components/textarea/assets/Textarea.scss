@@ -1,2 +1,13 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/components/textarea";
+
+// Global override
+textarea {
+  @extend .govuk-textarea;
+  background-color: govuk-colour('white');
+  color: $govuk-text-colour;
+
+  &.govuk-textarea--error {
+    @extend .govuk-textarea--error;
+  }
+}

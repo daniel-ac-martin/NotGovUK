@@ -4,7 +4,7 @@ inputs:
   node:
     description: The version of Node.js to use.
     required: false
-    default: 12
+    default: 22
 runs:
   using: composite
   steps:
@@ -12,7 +12,7 @@ runs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node }}
+        node-version: ${{ inputs.node }}
         cache: 'npm'
 
     - name: Cache Cypress.io

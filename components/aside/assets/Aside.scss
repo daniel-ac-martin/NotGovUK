@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/core/_typography";
 
@@ -48,8 +49,8 @@ aside {
 @each $i, $v in $govuk-colours-organisations {
   .not-govuk-page--#{$i} .not-govuk-aside,
   .not-govuk-page--#{$i} aside {
-    $contrast-safe: map_get($v, "contrast-safe");
-    $light-colour: map_get($v, "colour");
+    $contrast-safe: map.get($v, "contrast-safe");
+    $light-colour: map.get($v, "colour");
     $colour: if($contrast-safe, $contrast-safe, $light-colour);
     border-color: $colour;
   }
@@ -59,7 +60,7 @@ aside {
 .not-govuk-page--hm-passport-office aside,
 .not-govuk-page--hmpo .not-govuk-aside,
 .not-govuk-page--hmpo aside {
-  $home-office: map-get($govuk-colours-organisations, "home-office");
+  $home-office: map.get($govuk-colours-organisations, "home-office");
 
-  border-color: map_get($home-office, "colour-websafe");
+  border-color: map.get($home-office, "colour-websafe");
 }

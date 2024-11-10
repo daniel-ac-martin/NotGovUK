@@ -30,3 +30,12 @@
     }
   }
 }
+
+// Global override
+fieldset {
+  @extend .govuk-fieldset;
+
+  legend {
+    @extend .govuk-fieldset__legend;
+  }
+}

@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '14', '16', '18' ]
+        node: [ '18', '20', '22' ]
     steps:
 
       - name: Check out repository
@@ -34,7 +34,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
         with:
-          node: 16
+          node: 22
 
       - name: Build
         uses: ./.github/actions/build-app
@@ -63,7 +63,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
         with:
-          node: 16
+          node: 22
 
       - name: Download build directory
         uses: actions/download-artifact@v4

@@ -27,3 +27,8 @@
     margin-bottom: govuk-spacing(1);
   }
 }
+
+// Global override
+label {
+  @extend .govuk-label;
+}

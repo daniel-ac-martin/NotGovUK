@@ -4,42 +4,30 @@ import { PageProps } from '@not-govuk/app-composer';
 import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
 import { useLocation } from '@not-govuk/router';
+import { nameParam, styles as subpages, styleLinks } from '../stories';
+import config from '../config';
 
-type Subpages = Record<string, any>;
-
-const reduceToLookup = (acc: Subpages, cur: any): Subpages => ({ ...acc, [cur.default.title]: cur });
-const createSubpageStore = (r: __WebpackModuleApi.RequireContext) => (
-  r
-    .keys()
-    .map(r)
-    .reduce(reduceToLookup, {})
-);
-const subpages = createSubpageStore(require.context('../../../../../styles/', false, /^\.\/[^\/]+\.stories\.mdx$/));
+const siteTitle = config.title;
 
 export const title = 'Styles';
-const description = 'The styles provided in NotGovUK';
+const description = `The styles provided in ${siteTitle}`;
 
 const Page: FC<PageProps> = () => {
   const location = useLocation();
-  const nameParam = 'name';
   const subPageName = location.query[nameParam] as unknown as string;
   const stories = subpages[subPageName];
-  const navItems = Object.keys(subpages).sort().map(v => ({
-    href: `/styles?${nameParam}=${encodeURIComponent(subpages[v].default.title)}`,
-    text: v
-  }));
 
   return (
     <div className="govuk-grid-row">
       <Helmet>
-        <title>{title} - NotGovUK</title>
+        <title>{title} - {siteTitle}</title>
         <meta name="description" content={description} />
         <meta name="og:title" content={title} />
         <meta name="og:description" content={description} />
         <meta name="og:article:section" content={title} />
       </Helmet>
       <div className="govuk-grid-column-one-quarter">
-        <NavigationMenu items={navItems} />
+        <NavigationMenu items={styleLinks} />
       </div>
       <div className="govuk-grid-column-three-quarters">
         {
