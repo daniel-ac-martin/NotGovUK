@@ -1,15 +1,36 @@
 Getting Started
 ===============
 
-In order to consume these components you will require a system that
-utilised a bundler (such as [Webpack]) that can process imported assets
-such as images, fonts and [Sass] files. [Create React App] may be able to
-do this but does not provide Server-Side Rendering (SSR). You will also
-need to ensure that you provide an instance of [react-router].
+In order to consume these components you will require a system that utilises a
+bundler (such as [Webpack]) that can process imported assets such as images,
+fonts and [Sass] files. [Create React App] may be able to do this but does not
+provide Server-Side Rendering (SSR). You will also need to ensure that you
+provide an instance of a _router_, such as [react-router].
 
-As such, we suggest that you use our specially designed tech stack for
-this purpose. You can start a brand new project or prototype using the
-following steps.
+In most cases you will want to use these components in some sort of
+framework. The main options are as follows:
+
+- [Remix]
+- [Next.js]
+  (Isomorphic rendering, but oriented towards search engine optimisation.)
+- [Create React App] (CRA)
+  (Client-side rendering only.)
+- Our NotGovUK framework
+  (Experimental. See below.)
+
+## Using the components in another framework
+
+To just use the NotGovUK components in a 3rd party framework (such as Remix or
+CRA), please see the instructions on the [Components] page.
+
+## Using the NotGovUK framework
+
+The NotGovUK framework is still experimental and so you should not use it in
+production unless it has specific features that you require and that are not
+available in competing frameworks such as [Remix]. (In the future we may look to
+replace parts of our framework with Remix.) One such example, may be our support
+for building 'child' design systems. You can start a brand new project or
+prototype using the following steps.
 
 
 ### 1. Set up your repository
@@ -189,6 +210,9 @@ mandatory prior to merging:
 [Sass]: https://sass-lang.com/
 [Create React App]: https://create-react-app.dev/
 [react-router]: https://reactrouter.com/
+[Next.js]: https://nextjs.org/
+[Remix]: https://remix.run/
+[Components]: ./components
 [GitHub]: https://github.com/
 [GitHub Actions]: https://github.com/features/actions
 [install pnpm]: https://pnpm.io/installation

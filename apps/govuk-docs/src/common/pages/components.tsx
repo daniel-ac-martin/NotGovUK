@@ -5,6 +5,7 @@ import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
 import { useLocation } from '@not-govuk/router';
 import { internalComponentLinks, mainComponentLinks, nameParam, components as subpages, unofficialComponentLinks  } from '../stories';
+import Markdown from '../../../../../docs/components.md';
 import config from '../config';
 
 const siteTitle = config.title;
@@ -44,15 +45,7 @@ const Page: FC<PageProps> = () => {
             subPageName ? (
               null // should be a 404!
             ) : (
-              <Fragment>
-                <h1>{title}</h1>
-                <p>
-                  Components are reusable parts of the user interface that have been made to support a variety of applications.
-                </p>
-                <p>
-                  Individual components can be used in multiple different patterns and contexts. For example, the text input component can be used to ask for an email address, a National Insurance number or someone’s name.
-                </p>
-              </Fragment>
+              <Markdown />
             )
           )
         }

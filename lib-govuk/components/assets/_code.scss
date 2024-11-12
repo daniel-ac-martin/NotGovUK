@@ -6,3 +6,10 @@ code {
   color: #d13118;
   background-color: #f3f2f1;
 }
+
+pre {
+  > code {
+    display: block;
+    padding: 1em;
+  }
+}
