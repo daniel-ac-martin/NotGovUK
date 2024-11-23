@@ -3,9 +3,23 @@
   "version": "0.15.0",
   "description": "A React component for altering the contents of the HTML head tag, that works across multiple frameworks.",
   "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./dummy": "./src/dummy.ts"
+  },
   "publishConfig": {
     "main": "dist/index.js",
-    "typings": "dist/index.d.ts"
+    "typings": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./dummy": {
+        "default": "./dist/dummy.js",
+        "types": "./dist/dummy.d.ts"
+      }
+    }
   },
   "files": [
     "/dist"
