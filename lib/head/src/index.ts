@@ -1,14 +1,9 @@
-import type { FC, PropsWithChildren } from 'react';
+import type { HeadComponent } from './common';
 
-declare var global: any;
-
-const isDev = global.process?.env?.NODE_ENV === 'development';
-
-export type HeadProps = {
-};
+const isDev = globalThis.process?.env?.NODE_ENV === 'development';
 
 // Set up dummy component
-let Head: FC<PropsWithChildren<HeadProps>> = (_) => null;
+let Head: HeadComponent = (_) => null;
 
 // Replace dummy functions with react-helmet-async when it is available
 try {
@@ -23,3 +18,4 @@ try {
 
 export { Head };
 export default Head;
+export type { HeadProps } from './common';

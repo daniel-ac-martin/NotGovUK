@@ -3,9 +3,23 @@
   "version": "0.15.0",
   "description": "An abstraction layer over the routers from react-router and Next.js.",
   "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./remix": "./src/remix.ts"
+  },
   "publishConfig": {
     "main": "dist/index.js",
-    "typings": "dist/index.d.ts"
+    "typings": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./remix": {
+        "default": "./dist/remix.js",
+        "types": "./dist/remix.d.ts"
+      }
+    }
   },
   "files": [
     "/dist"
@@ -25,10 +39,14 @@
     "@not-govuk/uri": "workspace:^0.15.0"
   },
   "peerDependencies": {
+    "@remix-run/react": "^2.14.0",
     "next": "^15.0.3",
     "react-router-dom": "^6.28.0"
   },
   "peerDependenciesMeta": {
+    "@remix-run/react": {
+      "optional": true
+    },
     "next": {
       "optional": true
     },
@@ -37,6 +55,7 @@
     }
   },
   "devDependencies": {
+    "@remix-run/react": "^2.14.0",
     "@types/react": "^18.3.12",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
