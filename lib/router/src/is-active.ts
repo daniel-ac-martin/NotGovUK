@@ -1,4 +1,4 @@
-import { useLocation } from './router';
+import type { LocationFunction } from './common';
 import { URI } from '@not-govuk/uri';
 
 const includes = (haystack: object, needle: object): boolean => {
@@ -25,7 +25,9 @@ const includes = (haystack: object, needle: object): boolean => {
   return subIncludes(haystack, needle);
 };
 
-export const useIsActive = () => {
+export type UseIsActive = () => (href: string) => boolean;
+
+export const makeUseIsActive = (useLocation: LocationFunction): UseIsActive => () => {
   const location = useLocation();
 
   const isActive = (href: string): boolean => {
