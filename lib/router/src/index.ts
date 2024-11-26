@@ -52,6 +52,7 @@ try {
   try {
     const { usePathname, useRouter, useSearchParams } = require('next/navigation');
     const _Link = require('next/link');
+    console.warn('Deprecated import; please import @not-govuk/router from @not-govuk/router/next when using Next.js.');
     _useLocation = () => {
       const pathname = usePathname();
       const searchParams = useSearchParams();
