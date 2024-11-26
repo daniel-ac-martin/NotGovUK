@@ -28,7 +28,7 @@ let Link: FC<LinkProps> = ({
   const href = (
     typeof to === 'string'
       ? to
-      : ( to.pathname || '' ) + ( to.search || '' ) + ( to.hash || '' )
+      : (to.pathname || '') + (to.search || '') + (to.hash || '')
   );
 
   return h('a', {
@@ -52,6 +52,7 @@ try {
   try {
     const { usePathname, useRouter, useSearchParams } = require('next/navigation');
     const _Link = require('next/link');
+    console.warn('Deprecated import; please import @not-govuk/router from @not-govuk/router/next when using Next.js.');
     _useLocation = () => {
       const pathname = usePathname();
       const searchParams = useSearchParams();
@@ -79,14 +80,19 @@ try {
             router.back();
           }
         } else {
+          const href = (
+            to === 'string'
+              ? to
+              : to.toString()
+          );
           const nextOptions = {
             scroll: !options.preventScrollReset
           };
 
           if (options.replace) {
-            router.replace(to, undefined, nextOptions);
+            router.replace(href, nextOptions);
           } else {
-            router.push(to, undefined, nextOptions);
+            router.push(href, nextOptions);
           }
         }
       };
