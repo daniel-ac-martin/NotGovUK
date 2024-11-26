@@ -27,6 +27,7 @@
 # These are HTML errors
 10202	OUTOFSCOPE	.*/public/.*\.bundle\.js
 # We don't control the vendors code
-10003	OUTOFSCOPE	.*/public/js/vendors\..*\.bundle\.js # False positive? Remove in future?
 10110	OUTOFSCOPE	.*/public/js/vendors\..*\.bundle\.js
 90022	OUTOFSCOPE	.*/public/js/vendors\..*\.bundle\.js
+# False positive? Remove in future?
+10003	OUTOFSCOPE	.*/public/js/vendors\..*\.bundle\.js
