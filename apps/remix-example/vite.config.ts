@@ -1,7 +1,6 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 //import tsconfigPaths from "vite-tsconfig-paths"; // Users probably don't need to comment this out.
-import { resolve } from "node:path"; // End-users probably don't need this line
 
 declare module "@remix-run/node" {
   interface Future {
@@ -32,17 +31,11 @@ export default defineConfig({
     }),
     //tsconfigPaths(), // End-users probably don't need to comment this out.
   ],
-  esbuild: {
-    supported: {
-      'top-level-await': true
-    },
-  },
   resolve: {
     alias: {
       '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
       '@not-govuk/head': '@not-govuk/head/dummy',
       '@not-govuk/router': '@not-govuk/router/remix',
-      '@remix-run/react': resolve(__dirname, './node_modules/@remix-run/react') // End-users probably don't need this line
     }
   }
 });
