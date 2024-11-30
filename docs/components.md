@@ -87,23 +87,96 @@ You can then import the components.
 import { Panel } from '@not-govuk/components';
 ```
 
+You can also override some global styles by importing `@not-govuk/components` into your SASS. e.g. `app/style.scss`
+
+```scss
+@import "@not-govuk/components";
+```
+
+You should also alter your `vite.config.js` to modify some of the modules to versions that are designed to work under Remix, and to silence some warnings.
+
+```js
+[...]
+
+export default defineConfig({
+  // ADD THE FOLLOWING LINES
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+        quietDeps: true, // Works around issues with govuk-frontend
+        silenceDeprecations: ['import'] // This is required until govuk-frontend moves to using modules
+      }
+    }
+  },
+  resolve: {
+    alias: {
+      '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
+      '@not-govuk/head': '@not-govuk/head/dummy',
+      '@not-govuk/router': '@not-govuk/router/remix',
+    }
+  }
+  [...]
+});
+```
+
+#### Limitations on Remix
+
+- You will need to manage your own `<head>` including the favicon.
+
+**See:** [Example Remix application using NotGovUK components]
 
 ### Using the components in Next.js applications
 
-You should import the components from the `@not-govuk/simple-components` package, which you should install with NPM.
+You should import the components from the `@not-govuk/simple-components` package, which you should install with NPM. You should also install `sass`.
 
 ```shell
-$ npm install @not-govuk/simple-components
+$ npm install @not-govuk/simple-components sass
 ```
 
-You can then import the components.
+You can then import the components in your application.
 
 ```jsx
 import { Panel } from '@not-govuk/simple-components';
 ```
 
-Note that, you will not be able to make use of the [Form] framework, as this does not currently support Next.js.
+You should also alter your `next.config.js` to modify some of the modules to versions that are designed to work under Next.js.
+
+```js
+import webpack from 'webpack';
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // This allows us to handle next-example, the same way we do standard apps, in CI
+  distDir: 'dist',
+  webpack: (config, _options) => ({
+    ...config,
+    plugins: [
+      ...config.plugins,
+      new webpack.NormalModuleReplacementPlugin(/^@not-govuk\/head$/, '@not-govuk\/head\/dummy'),    // ADD THIS LINE
+      new webpack.NormalModuleReplacementPlugin(/^@not-govuk\/router$/, '@not-govuk\/router\/next'), // ADD THIS LINE
+    ]
+  })
+};
+
+export default nextConfig;
+```
+
+
+#### Pre-requisites on Next.js
+
+Your application will need to make use of Next.js' the newer '_App router_'.
+
+
+#### Limitations on Next.js
+
+- You will not be able to make use of the [Form] framework, as this does not currently support Next.js.
+- You will need to manage your own `<head>` including the favicon.
+
+**See:** [Example Next.js application using NotGovUK components]
 
 
 [Getting started]: https://not-gov.uk/get-started
 [Form]: https://not-gov.uk/components?name=Form
+[Example Remix application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/remix-example
+[Example Next.js application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/next-example
