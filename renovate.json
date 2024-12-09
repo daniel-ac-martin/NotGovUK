@@ -94,6 +94,12 @@
         "@types/webpack*",
         "webpack*"
       ]
+    },
+    {
+      "groupName": "zap",
+      "matchPackageNames": [
+        "zaproxy/**"
+      ]
     }
   ],
   "rangeStrategy": "bump",
