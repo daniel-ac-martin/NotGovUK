@@ -22,6 +22,7 @@ export type LoggerOptions = Omit<_LoggerOptions, 'name'> & {
 
 export type ServerOptions = _ServerOptions & {
   bodyParser?: plugins.BodyParserOptions | false
+  formAction?: CSPSources
   frameAncestors?: CSPSources
   grace?: number
   isReady?: IsReady
@@ -88,7 +89,7 @@ export const createServer = (options: ServerOptions): Server => {
   httpd.pre(htmlByDefault(httpd));
 
   httpd.pre(permissionsPolicy);
-  httpd.pre(preventClickjacking({ frameAncestors: options.frameAncestors }));
+  httpd.pre(preventClickjacking({ formAction: options.formAction, frameAncestors: options.frameAncestors }));
   httpd.pre(preventMimeSniffing);
   httpd.pre(noCacheByDefault);
 

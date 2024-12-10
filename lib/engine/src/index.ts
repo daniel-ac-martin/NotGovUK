@@ -3,7 +3,7 @@ import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
 import { createWriteStream } from 'fs';
 import { GraphQLSchema } from 'graphql';
 import serverless, { Handler } from 'serverless-http';
-import restify, { CSPSources, IsReady, LogLevelString, LoggerOptions, Middleware, Router, Server, cspNone } from '@not-govuk/restify';
+import restify, { CSPSources, IsReady, LogLevelString, LoggerOptions, Middleware, Router, Server, cspNone, cspSelf } from '@not-govuk/restify';
 import { PageLoader } from '@not-govuk/app-composer';
 import { consentCookies } from '@not-govuk/consent-cookies';
 import { ApplicationProps, ErrorPageProps, PageProps, reactRenderer } from '@not-govuk/server-renderer';
@@ -45,6 +45,7 @@ export type EngineOptions = {
     secure?: boolean
   }
   env: NodeEnv
+  formAction?: CSPSources
   frameAncestors?: CSPSources
   graphQL?: {
     schema: GraphQLSchema
@@ -84,6 +85,7 @@ export const engine = async ({
   auth: authOptions,
   cookies: cookieOptions,
   env,
+  formAction = cspSelf,
   frameAncestors = cspNone,
   graphQL: _graphQL,
   httpd: { host, port },
@@ -150,6 +152,7 @@ export const engine = async ({
       'application/xhtml+xml; q=0.2': formatHTML,
       'text/html; q=0.2': formatHTML
     },
+    formAction,
     frameAncestors,
     isReady,
     logger
