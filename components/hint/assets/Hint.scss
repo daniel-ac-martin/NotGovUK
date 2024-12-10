@@ -1,5 +1,12 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/components/hint/index";
+@import "govuk-frontend/dist/govuk/utilities/_visually-hidden";
+
+.govuk-hint {
+  &--hidden {
+    @extend .govuk-visually-hidden;
+  }
+}
 
 // Global override
 .hint {
