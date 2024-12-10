@@ -31,6 +31,7 @@ module.exports = {
     '../components/radios/spec/*.stories.@(js|mdx)',
     '../components/select/spec/*.stories.@(js|mdx)',
     '../components/skip-link/spec/*.stories.@(js|mdx)',
+    '../components/standalone-input/spec/*.stories.@(js|mdx)',
     '../components/table/spec/*.stories.@(js|mdx)',
     '../components/tabs/spec/*.stories.@(js|mdx)',
     '../components/tag/spec/*.stories.@(js|mdx)',

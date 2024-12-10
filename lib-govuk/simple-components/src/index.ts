@@ -26,6 +26,7 @@ export { default as PhaseBanner } from '@not-govuk/phase-banner';
 export { default as Radios } from '@not-govuk/radios';
 export { default as Select } from '@not-govuk/select';
 export { default as SkipLink } from '@not-govuk/skip-link';
+export { default as StandaloneInput } from '@not-govuk/standalone-input';
 export { default as SummaryCard } from '@not-govuk/summary-card';
 export { default as SummaryList } from '@not-govuk/summary-list';
 export { default as Tag } from '@not-govuk/tag';

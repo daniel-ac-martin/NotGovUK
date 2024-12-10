@@ -14,6 +14,7 @@ import {
   Field,
   Radios,
   Select,
+  StandaloneInput,
   TextInput,
   Textarea
 } from './fields';
@@ -30,6 +31,7 @@ type TForm = ComponentType<FormProps> & {
   Radios: ComponentType<any>
   Select: ComponentType<any>
   Submit: ComponentType<any>
+  StandaloneInput: ComponentType<any>
   TextInput: ComponentType<any>
   Textarea: ComponentType<any>
 };
@@ -49,6 +51,7 @@ export const Form: TForm = Object.assign(
     Page,
     Radios,
     Select,
+    StandaloneInput,
     Submit,
     TextInput,
     Textarea

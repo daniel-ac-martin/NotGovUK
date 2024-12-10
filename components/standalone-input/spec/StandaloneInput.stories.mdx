@@ -1,0 +1,110 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
+import { Tag } from '@not-govuk/tag';
+import { StandaloneInput } from '../src/StandaloneInput';
+import readMe from '../README.md';
+
+<Meta
+  title="Standalone input"
+  component={ StandaloneInput }
+  parameters={ {
+    chromatic: { viewports: [640, 480] },
+    description: 'A single-line, form field with a submit button.',
+    jest: ['StandaloneInput'],
+    notes: readMe
+  } }
+/>
+
+# Standalone input
+
+<p><Tag text="Unofficial" /> <Tag text="Experimental" /></p>
+
+A single-line, form field with a submit button.
+
+(Created to support the [Search box component] but may have other uses.)
+
+<Preview withToolbar>
+  <Story name="StandaloneInput">
+    <StandaloneInput
+      label="Your message"
+      name="message"
+      button="Send"
+    />
+  </Story>
+</Preview>
+
+<Props of={ StandaloneInput } />
+
+
+## Stories
+### Standard
+
+A standard Standalone input.
+
+<Preview>
+  <Story name="Standard">
+    <StandaloneInput name="message" label="Message" />
+  </Story>
+</Preview>
+
+
+### Hint
+
+If you provide a hint, it will be displayed instead of the label.
+
+<Preview>
+  <Story name="Hint">
+    <StandaloneInput name="message" label="Message" hint="What do you want to say?" />
+  </Story>
+</Preview>
+
+
+### Custom submit button text
+
+The text of the submit button is visually hidden, but can be customised for screen-readers.
+
+<Preview>
+  <Story name="Custom button">
+    <StandaloneInput name="message" label="Message" button="Send" />
+  </Story>
+</Preview>
+
+
+### Fixed width
+
+<Preview>
+  <Story name="Fixed width">
+    <StandaloneInput name="message" label="Message" width="10" />
+  </Story>
+</Preview>
+
+
+### Fluid width
+
+<Preview>
+  <Story name="Fluid width">
+    <StandaloneInput name="message" label="Message" className="govuk-!-width-one-half" />
+  </Story>
+</Preview>
+
+
+### Error
+
+Currently errors are visually hidden, so it is best to avoid them. They will however be accessible to screen-readers, and the field will still be highlighted in red.
+
+<Preview>
+  <Story name="Error">
+    <StandaloneInput name="message" label="Message" error="Something went wrong" />
+  </Story>
+</Preview>
+
+
+### Disabled
+
+<Preview>
+  <Story name="Disabled">
+    <StandaloneInput name="message" label="Message" disabled />
+  </Story>
+</Preview>
+
+
+[Search box component]: /components?name=Search%20box
