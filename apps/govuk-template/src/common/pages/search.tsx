@@ -10,12 +10,9 @@ const Page: FC<PageProps> = () => {
 
   return (
     <Fragment>
+      <h1>Search</h1>
       <Form action="?" method="get" initialValues={{ q: location.query['q'] }}>
-        <Form.TextInput
-          name="q"
-          label={<h2>Search</h2>}
-        />
-        <Form.Submit>Search</Form.Submit>
+        <Form.SearchBox name="q" className="govuk-!-width-two-thirds" />
       </Form>
       <div className="width-one-half" style={{ float: 'left' }}>
         <h2>Result</h2>
