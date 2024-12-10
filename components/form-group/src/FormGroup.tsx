@@ -1,7 +1,7 @@
 import { FC, Fragment, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { ErrorMessage } from '@not-govuk/error-message';
-import { FieldSet, FieldSetProps } from '@not-govuk/fieldset';
+import { FieldSet } from '@not-govuk/fieldset';
 import { Hint } from '@not-govuk/hint';
 import { Label } from '@not-govuk/label';
 
@@ -16,6 +16,7 @@ export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>
   hintId?: string
   id: string
   label: ReactNode
+  standalone?: boolean
 };
 
 export const FormGroup: FC<FormGroupProps> = ({
@@ -30,10 +31,12 @@ export const FormGroup: FC<FormGroupProps> = ({
   hintId: _hintId,
   id,
   label,
+  standalone = false,
   ...attrs
 }) => {
   const classModifiers = [
     error ? 'error' : undefined,
+    standalone ? 'standalone' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder('govuk-form-group', classBlock, classModifiers, className);
@@ -49,8 +52,8 @@ export const FormGroup: FC<FormGroupProps> = ({
 
   const children = (
     <Fragment>
-      { !hint ? null : <Hint id={hintId}>{hint}</Hint> }
-      { !error ? null : <ErrorMessage id={errorId}>{error}</ErrorMessage>}
+      { !hint ? null : <Hint id={hintId} hidden={standalone}>{hint}</Hint> }
+      { !error ? null : <ErrorMessage id={errorId} hidden={standalone}>{error}</ErrorMessage> }
       {_children}
     </Fragment>
   );
@@ -59,7 +62,7 @@ export const FormGroup: FC<FormGroupProps> = ({
     <div id={id} {...attrs} className={classes()}>
       { fieldId ? (
           <Fragment>
-            <Label htmlFor={fieldId}>{label}</Label>
+            <Label htmlFor={fieldId} hidden={standalone}>{label}</Label>
             {children}
           </Fragment>
         ) : (

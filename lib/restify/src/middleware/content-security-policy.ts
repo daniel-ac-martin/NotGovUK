@@ -1,10 +1,10 @@
 import { Middleware } from './common';
 
-
 export type Source = '\'none\'' | '\'self\'' | string
 export type Sources = Source | Source[]
 
 export type CSPOptions = {
+  formAction?: Sources
   frameAncestors?: Sources
 };
 
@@ -16,8 +16,14 @@ export const unsafeInline: Source = "'unsafe-inline'";
 const id = <T>(v: T): T => v;
 
 const csp = ({
+  formAction: _formAction,
   frameAncestors: _frameAncestors
 }: CSPOptions, nonce: string): Record<string, Sources> => {
+  const formAction = (
+    Array.isArray(_formAction)
+      ? _formAction
+      : [_formAction]
+  ).filter(id) as Source[];
   const frameAncestors = (
     Array.isArray(_frameAncestors)
       ? _frameAncestors
@@ -40,7 +46,7 @@ const csp = ({
     ),
     'style-src': [ self, unsafeInline ], // Only load our own CSS, but allow inline styles
     // Navigation directives
-    'form-action': self, // Form submissions must come back to us
+    'form-action': formAction.length && formAction || self, // Form submissions must come back to us
     'frame-ancestors': frameAncestors.length && frameAncestors || none // Pages cannot be shown inside frames at all. Consider: self
   };
 };

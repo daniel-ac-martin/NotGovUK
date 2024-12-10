@@ -1,2 +1,11 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/objects/_form-group";
+
+.govuk-form-group {
+  &--standalone {
+    &.govuk-form-group--error {
+      padding-left: 0;
+      border-left-width: 0;
+    }
+  }
+}

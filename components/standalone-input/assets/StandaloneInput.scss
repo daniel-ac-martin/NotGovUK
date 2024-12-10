@@ -1,0 +1,43 @@
+@import "@not-govuk/sass-base";
+
+.not-govuk-standalone-input {
+  display: flex;
+  width: 100%;
+
+  &__input {
+    display: flex;
+    flex: 0 1 auto;
+
+    &.govuk-input {
+      border-right-width: 0;
+
+      &:focus {
+        border-right-width: 2px;
+        margin-right: -2px;
+        z-index: 2;
+      }
+    }
+  }
+
+  &__button {
+    $button-shadow-size: $govuk-border-width-form-element;
+
+    display: flex;
+    flex: 0 0 auto;
+    margin-bottom: 0;
+
+    &.govuk-button {
+      margin-bottom: $button-shadow-size;
+    }
+  }
+
+  &--fixed-width {
+    .not-govuk-standalone-input__input {
+      &.govuk-input {
+        &:focus {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

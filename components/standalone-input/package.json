@@ -1,12 +1,12 @@
 {
-  "name": "@not-govuk/form",
+  "name": "@not-govuk/standalone-input",
   "version": "0.15.1",
-  "description": "A component to collect information from the user.",
-  "main": "src/Form.ts",
-  "sass": "assets/Form.scss",
+  "description": "A single-line, form field with a submit button.",
+  "main": "src/StandaloneInput.tsx",
+  "sass": "assets/StandaloneInput.scss",
   "publishConfig": {
-    "main": "dist/Form.js",
-    "typings": "dist/Form.d.ts"
+    "main": "dist/StandaloneInput.js",
+    "typings": "dist/StandaloneInput.d.ts"
   },
   "files": [
     "/assets",
@@ -25,17 +25,10 @@
   ],
   "dependencies": {
     "@not-govuk/button": "workspace:^0.15.1",
-    "@not-govuk/checkboxes": "workspace:^0.15.1",
     "@not-govuk/component-helpers": "workspace:^0.15.1",
-    "@not-govuk/date-input": "workspace:^0.15.1",
-    "@not-govuk/form-field": "workspace:^0.15.1",
-    "@not-govuk/forms": "workspace:^0.15.1",
-    "@not-govuk/radios": "workspace:^0.15.1",
-    "@not-govuk/search-box": "workspace:^0.15.1",
-    "@not-govuk/select": "workspace:^0.15.1",
-    "@not-govuk/standalone-input": "workspace:^0.15.1",
-    "@not-govuk/text-input": "workspace:^0.15.1",
-    "@not-govuk/textarea": "workspace:^0.15.1"
+    "@not-govuk/form-group": "workspace:^0.15.1",
+    "@not-govuk/input": "workspace:^0.15.1",
+    "@not-govuk/sass-base": "workspace:^0.15.1"
   },
   "peerDependencies": {
     "@not-govuk/docs-components": "^0.15.1",
