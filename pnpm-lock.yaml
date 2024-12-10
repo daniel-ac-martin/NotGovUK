@@ -8,7 +8,7 @@ importers:
       '@babel/core': 7.26.0
       '@babel/plugin-proposal-export-namespace-from': 7.18.9
       '@babel/preset-env': 7.26.0
-      '@babel/preset-react': 7.25.9
+      '@babel/preset-react': 7.26.3
       '@babel/preset-typescript': 7.26.0
       '@mdx-js/react': 1.6.22
       '@not-govuk/components': workspace:^0.15.1
@@ -54,7 +54,7 @@ importers:
       '@babel/core': 7.26.0
       '@babel/plugin-proposal-export-namespace-from': 7.18.9_@babel+core@7.26.0
       '@babel/preset-env': 7.26.0_@babel+core@7.26.0
-      '@babel/preset-react': 7.25.9_@babel+core@7.26.0
+      '@babel/preset-react': 7.26.3_@babel+core@7.26.0
       '@babel/preset-typescript': 7.26.0_@babel+core@7.26.0
       '@mdx-js/react': 1.6.22_react@18.3.1
       '@not-govuk/components': link:lib-govuk/components
@@ -2236,7 +2236,7 @@ importers:
       '@babel/plugin-transform-export-namespace-from': ^7.25.9
       '@babel/plugin-transform-private-methods': ^7.25.9
       '@babel/preset-env': ^7.26.0
-      '@babel/preset-react': ^7.25.9
+      '@babel/preset-react': ^7.26.3
       '@babel/preset-typescript': ^7.26.0
       '@mdx-js/loader': ^1.6.22
       '@storybook/react-docgen-typescript-plugin': ^1.0.1
@@ -2263,7 +2263,7 @@ importers:
       '@babel/plugin-transform-export-namespace-from': 7.25.9_@babel+core@7.26.0
       '@babel/plugin-transform-private-methods': 7.25.9_@babel+core@7.26.0
       '@babel/preset-env': 7.26.0_@babel+core@7.26.0
-      '@babel/preset-react': 7.25.9_@babel+core@7.26.0
+      '@babel/preset-react': 7.26.3_@babel+core@7.26.0
       '@babel/preset-typescript': 7.26.0_@babel+core@7.26.0
       '@mdx-js/loader': 1.6.22
       '@storybook/react-docgen-typescript-plugin': 1.0.1
@@ -3737,7 +3737,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.25.9
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.25.9_@babel+core@7.12.9
 
@@ -4834,6 +4834,23 @@ packages:
 
   /@babel/preset-react/7.25.9_@babel+core@7.26.0:
     resolution: {integrity: sha512-D3to0uSPiWE7rBrdIICCd0tJSIGpLaaGptna2+w7Pft5xMqLpA1sz99DK5TZ1TjGbdQ/VI1eCSZ06dv3lT4JOw==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.26.0
+      '@babel/helper-plugin-utils': 7.25.9
+      '@babel/helper-validator-option': 7.25.9
+      '@babel/plugin-transform-react-display-name': 7.25.9_@babel+core@7.26.0
+      '@babel/plugin-transform-react-jsx': 7.25.9_@babel+core@7.26.0
+      '@babel/plugin-transform-react-jsx-development': 7.25.9_@babel+core@7.26.0
+      '@babel/plugin-transform-react-pure-annotations': 7.25.9_@babel+core@7.26.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@babel/preset-react/7.26.3_@babel+core@7.26.0:
+    resolution: {integrity: sha512-Nl03d6T9ky516DGK2YMxrTqvnpUW63TnJMOMonj+Zae0JiPC5BC9xPMSL6L8fiSpA5vP88qfygavVQvnLp+6Cw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -8570,7 +8587,7 @@ packages:
       '@babel/plugin-transform-shorthand-properties': 7.25.9_@babel+core@7.26.0
       '@babel/plugin-transform-spread': 7.25.9_@babel+core@7.26.0
       '@babel/preset-env': 7.26.0_@babel+core@7.26.0
-      '@babel/preset-react': 7.25.9_@babel+core@7.26.0
+      '@babel/preset-react': 7.26.3_@babel+core@7.26.0
       '@babel/preset-typescript': 7.26.0_@babel+core@7.26.0
       '@babel/register': 7.25.9_@babel+core@7.26.0
       '@storybook/node-logger': 6.5.16
@@ -8639,7 +8656,7 @@ packages:
       '@babel/plugin-transform-shorthand-properties': 7.25.9_@babel+core@7.26.0
       '@babel/plugin-transform-spread': 7.25.9_@babel+core@7.26.0
       '@babel/preset-env': 7.26.0_@babel+core@7.26.0
-      '@babel/preset-react': 7.25.9_@babel+core@7.26.0
+      '@babel/preset-react': 7.26.3_@babel+core@7.26.0
       '@babel/preset-typescript': 7.26.0_@babel+core@7.26.0
       '@babel/register': 7.25.9_@babel+core@7.26.0
       '@storybook/node-logger': 6.5.16
@@ -8986,7 +9003,7 @@ packages:
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-template-literals': 7.25.9_@babel+core@7.26.0
-      '@babel/preset-react': 7.25.9_@babel+core@7.26.0
+      '@babel/preset-react': 7.26.3_@babel+core@7.26.0
       '@storybook/addons': 6.5.16
       '@storybook/core-client': 6.5.16_zbeh2op7o6vcpwow43ygl5jcty
       '@storybook/core-common': 6.5.16_typescript@4.9.5
@@ -9042,7 +9059,7 @@ packages:
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-template-literals': 7.25.9_@babel+core@7.26.0
-      '@babel/preset-react': 7.25.9_@babel+core@7.26.0
+      '@babel/preset-react': 7.26.3_@babel+core@7.26.0
       '@storybook/addons': 6.5.16_nnrd3gsncyragczmpvfhocinkq
       '@storybook/core-client': 6.5.16_564xj544uld623kqhvkxcrgfoi
       '@storybook/core-common': 6.5.16_x7gg5uvf64t6rjzca4wucfcb4e
@@ -9100,7 +9117,7 @@ packages:
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-template-literals': 7.25.9_@babel+core@7.26.0
-      '@babel/preset-react': 7.25.9_@babel+core@7.26.0
+      '@babel/preset-react': 7.26.3_@babel+core@7.26.0
       '@storybook/addons': 6.5.16_nnrd3gsncyragczmpvfhocinkq
       '@storybook/core-client': 6.5.16_wtsxo6ekbz7y46zktha55lg2qm
       '@storybook/core-common': 6.5.16_x7gg5uvf64t6rjzca4wucfcb4e
