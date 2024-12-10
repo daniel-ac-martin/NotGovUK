@@ -1,0 +1,70 @@
+@use "sass:color";
+@import "@not-govuk/sass-base";
+
+// Inspired by the Search component in the GDS Component Guide:
+// - https://components.publishing.service.gov.uk/component-guide/search
+// - https://github.com/alphagov/govuk_publishing_components/blob/4496b318c0407ca84633cd7dd7928f329d0a375f/app/assets/stylesheets/govuk_publishing_components/components/_search.scss
+// - https://frontend.design-system.service.gov.uk/
+
+.not-govuk-search-box {
+  .not-govuk-standalone-input__button {
+    margin-bottom: 0;
+    background-color: govuk-colour("blue");
+    color: govuk-colour("white");
+    box-shadow: none;
+    border: 0;
+    cursor: pointer;
+    border-radius: 0;
+    outline: 2px solid rgba(0,0,0,0);
+    outline-offset: 0;
+    position: relative;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    text-indent: -5000px;
+    overflow: hidden;
+
+    &:hover {
+      background-color: color.adjust(govuk-colour("blue"), $lightness: 5%);
+    }
+
+    &.govuk-button:focus {
+      border: $govuk-border-width-form-element solid $govuk-focus-colour;
+      outline: $govuk-focus-width solid transparent;
+      box-shadow: inset 0 0 0 1px $govuk-focus-colour;
+    }
+
+    &.govuk-button:focus:not(:active):not(:hover) {
+      border-color: $govuk-focus-colour;
+      color: $govuk-focus-text-colour;
+      background-color: $govuk-focus-colour;
+      box-shadow: none;
+      border-bottom: 2px solid $govuk-focus-text-colour;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.5);
+  }
+
+  &--hods {
+    .not-govuk-standalone-input__button {
+      background-color: govuk-colour("light-grey");
+      color: govuk-colour("black");
+      border: 2px solid govuk-colour("black");
+      width: 40px;
+      height: 40px;
+
+      &:hover {
+        background-color: color.adjust(govuk-colour("light-grey"), $lightness: 5%);
+      }
+    }
+  }
+}

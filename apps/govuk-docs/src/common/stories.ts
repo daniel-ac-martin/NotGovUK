@@ -47,6 +47,7 @@ const unofficialStories = [
   require('../../../../components/form-field/spec/FormField.stories.mdx'),
   require('../../../../components/navigation-menu/spec/NavigationMenu.stories.mdx'),
   require('../../../../components/page/spec/Page.stories.mdx'),
+  require('../../../../components/search-box/spec/SearchBox.stories.mdx'),
   require('../../../../components/standalone-input/spec/StandaloneInput.stories.mdx')
 ];
 const internalStories = [

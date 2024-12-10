@@ -29,6 +29,7 @@ module.exports = {
     '../components/panel/spec/*.stories.@(js|mdx)',
     '../components/phase-banner/spec/*.stories.@(js|mdx)',
     '../components/radios/spec/*.stories.@(js|mdx)',
+    '../components/search-box/spec/*.stories.@(js|mdx)',
     '../components/select/spec/*.stories.@(js|mdx)',
     '../components/skip-link/spec/*.stories.@(js|mdx)',
     '../components/standalone-input/spec/*.stories.@(js|mdx)',

@@ -24,6 +24,7 @@ export { default as Pagination } from '@not-govuk/pagination';
 export { default as Panel } from '@not-govuk/panel';
 export { default as PhaseBanner } from '@not-govuk/phase-banner';
 export { default as Radios } from '@not-govuk/radios';
+export { default as SearchBox } from '@not-govuk/search-box';
 export { default as Select } from '@not-govuk/select';
 export { default as SkipLink } from '@not-govuk/skip-link';
 export { default as StandaloneInput } from '@not-govuk/standalone-input';
