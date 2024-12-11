@@ -124,7 +124,7 @@ importers:
       react-router: 6.28.0
       react-router-dom: 6.28.0
       serverless: 3.39.0
-      start-server-and-test: 2.0.8
+      start-server-and-test: 2.0.9
       ts-jest: 29.2.5
       typescript: 4.9.5
       webpack: 5.97.1
@@ -158,7 +158,7 @@ importers:
       react-router: 6.28.0_react@18.3.1
       react-router-dom: 6.28.0_nnrd3gsncyragczmpvfhocinkq
       serverless: 3.39.0
-      start-server-and-test: 2.0.8
+      start-server-and-test: 2.0.9
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
       typescript: 4.9.5
       webpack: 5.97.1_webpack-cli@5.1.4
@@ -198,7 +198,7 @@ importers:
       react-router: 6.28.0
       react-router-dom: 6.28.0
       serverless: 3.39.0
-      start-server-and-test: 2.0.8
+      start-server-and-test: 2.0.9
       ts-jest: 29.2.5
       typescript: 4.9.5
       webpack: 5.97.1
@@ -236,7 +236,7 @@ importers:
       react-router: 6.28.0_react@18.3.1
       react-router-dom: 6.28.0_nnrd3gsncyragczmpvfhocinkq
       serverless: 3.39.0
-      start-server-and-test: 2.0.8
+      start-server-and-test: 2.0.9
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
       typescript: 4.9.5
       webpack: 5.97.1_webpack-cli@5.1.4
@@ -257,7 +257,7 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       sass: ^1.82.0
-      start-server-and-test: 2.0.8
+      start-server-and-test: 2.0.9
       ts-jest: 29.2.5
       typescript: ^5
     dependencies:
@@ -273,7 +273,7 @@ importers:
       jest: 29.7.0_@types+node@22.10.1
       jest-environment-jsdom: 29.7.0
       sass: 1.82.0
-      start-server-and-test: 2.0.8
+      start-server-and-test: 2.0.9
       ts-jest: 29.2.5_7tzdje3fj44vzmbciw44xp3pru
       typescript: 5.7.2
 
@@ -302,7 +302,7 @@ importers:
       postcss: ^8.4.49
       react: ^18.3.1
       react-dom: ^18.3.1
-      start-server-and-test: 2.0.8
+      start-server-and-test: 2.0.9
       typescript: ^5.1.6
       vite: ^5.4.11
     dependencies:
@@ -330,7 +330,7 @@ importers:
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       postcss: 8.4.49
-      start-server-and-test: 2.0.8
+      start-server-and-test: 2.0.9
       typescript: 5.7.2
       vite: 5.4.11
 
@@ -11626,10 +11626,10 @@ packages:
       - debug
     dev: true
 
-  /axios/1.7.9_debug@4.3.7:
+  /axios/1.7.9_debug@4.4.0:
     resolution: {integrity: sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==}
     dependencies:
-      follow-redirects: 1.15.9_debug@4.3.7
+      follow-redirects: 1.15.9_debug@4.4.0
       form-data: 4.0.1
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -13578,18 +13578,6 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /debug/4.3.7:
-    resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 2.1.3
-    dev: true
-
   /debug/4.4.0:
     resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
     engines: {node: '>=6.0'}
@@ -15517,18 +15505,6 @@ packages:
         optional: true
     dev: true
 
-  /follow-redirects/1.15.9_debug@4.3.7:
-    resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dependencies:
-      debug: 4.3.7
-    dev: true
-
   /follow-redirects/1.15.9_debug@4.4.0:
     resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
     engines: {node: '>=4.0'}
@@ -15539,7 +15515,6 @@ packages:
         optional: true
     dependencies:
       debug: 4.4.0
-    dev: false
 
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
@@ -23195,19 +23170,19 @@ packages:
   /stackframe/1.3.4:
     resolution: {integrity: sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==}
 
-  /start-server-and-test/2.0.8:
-    resolution: {integrity: sha512-v2fV6NV2F7tL1ocwfI4Wpait+IKjRbT5l3ZZ+ZikXdMLmxYsS8ynGAsCQAUVXkVyGyS+UibsRnvgHkMvJIvCsw==}
+  /start-server-and-test/2.0.9:
+    resolution: {integrity: sha512-DDceIvc4wdpr+z3Aqkot2QMho8TcUBh5qH0wEHDpEexBTzlheOcmh53d3dExABY4J5C7qS2UbSXqRWLtxpbWIQ==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
       arg: 5.0.2
       bluebird: 3.7.2
       check-more-types: 2.24.0
-      debug: 4.3.7
+      debug: 4.4.0
       execa: 5.1.1
       lazy-ass: 1.6.0
       ps-tree: 1.2.0
-      wait-on: 8.0.1_debug@4.3.7
+      wait-on: 8.0.1_debug@4.4.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -24893,12 +24868,12 @@ packages:
       xml-name-validator: 4.0.0
     dev: true
 
-  /wait-on/8.0.1_debug@4.3.7:
+  /wait-on/8.0.1_debug@4.4.0:
     resolution: {integrity: sha512-1wWQOyR2LVVtaqrcIL2+OM+x7bkpmzVROa0Nf6FryXkS+er5Sa1kzFGjzZRqLnHa3n1rACFLeTwUqE1ETL9Mig==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
-      axios: 1.7.9_debug@4.3.7
+      axios: 1.7.9_debug@4.4.0
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8
