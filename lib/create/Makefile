@@ -34,7 +34,7 @@ sources := $(wildcard \
 	$(source_dir)/docs/working-on-your-project.md \
 	$(source_dir)/jest.config*.js \
 	$(source_dir)/lib/README.md \
-	$(source_dir)/pnpm-lock.yaml \
+	$(source_dir)/pnpm-lock-committed.yaml \
 	$(source_dir)/pnpm-workspace.yaml \
 	$(source_dir)/tsconfig*.json \
 )
