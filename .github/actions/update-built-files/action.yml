@@ -19,6 +19,7 @@ runs:
       shell: bash
       if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}', inputs.baseline-branch) }}
       run: |
+        git pull
         cp pnpm-lock.yaml pnpm-lock-committed.yaml
         git add pnpm-lock-committed.yaml
         git commit -m "[skip ci] Update built files" && git push || true
