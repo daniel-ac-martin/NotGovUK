@@ -41,8 +41,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       react-helmet-async: 2.0.5
-      react-router: 6.28.0
-      react-router-dom: 6.28.0
+      react-router: 6.28.1
+      react-router-dom: 6.28.1
       ts-jest: 29.2.5
       typescript: 4.9.5
       webpack: 5.97.1
@@ -87,8 +87,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-helmet-async: 2.0.5_react@18.3.1
-      react-router: 6.28.0_react@18.3.1
-      react-router-dom: 6.28.0_nnrd3gsncyragczmpvfhocinkq
+      react-router: 6.28.1_react@18.3.1
+      react-router-dom: 6.28.1_nnrd3gsncyragczmpvfhocinkq
       ts-jest: 29.2.5_6kfvmrt7ij3gnanyewksvnvoum
       typescript: 4.9.5
       webpack: 5.97.1_webpack-cli@5.1.4
@@ -121,8 +121,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       react-helmet-async: 2.0.5
-      react-router: 6.28.0
-      react-router-dom: 6.28.0
+      react-router: 6.28.1
+      react-router-dom: 6.28.1
       serverless: 3.39.0
       start-server-and-test: 2.0.9
       ts-jest: 29.2.5
@@ -155,8 +155,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-helmet-async: 2.0.5_react@18.3.1
-      react-router: 6.28.0_react@18.3.1
-      react-router-dom: 6.28.0_nnrd3gsncyragczmpvfhocinkq
+      react-router: 6.28.1_react@18.3.1
+      react-router-dom: 6.28.1_nnrd3gsncyragczmpvfhocinkq
       serverless: 3.39.0
       start-server-and-test: 2.0.9
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -195,8 +195,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       react-helmet-async: 2.0.5
-      react-router: 6.28.0
-      react-router-dom: 6.28.0
+      react-router: 6.28.1
+      react-router-dom: 6.28.1
       serverless: 3.39.0
       start-server-and-test: 2.0.9
       ts-jest: 29.2.5
@@ -233,8 +233,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-helmet-async: 2.0.5_react@18.3.1
-      react-router: 6.28.0_react@18.3.1
-      react-router-dom: 6.28.0_nnrd3gsncyragczmpvfhocinkq
+      react-router: 6.28.1_react@18.3.1
+      react-router-dom: 6.28.1_nnrd3gsncyragczmpvfhocinkq
       serverless: 3.39.0
       start-server-and-test: 2.0.9
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -21738,6 +21738,19 @@ packages:
       react-dom: 18.3.1_react@18.3.1
       react-router: 6.28.0_react@18.3.1
 
+  /react-router-dom/6.28.1_nnrd3gsncyragczmpvfhocinkq:
+    resolution: {integrity: sha512-YraE27C/RdjcZwl5UCqF/ffXnZDxpJdk9Q6jw38SZHjXs7NNdpViq2l2c7fO7+4uWaEfcwfGCv3RSg4e1By/fQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.21.0
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      react-router: 6.28.1_react@18.3.1
+    dev: true
+
   /react-router/6.28.0:
     resolution: {integrity: sha512-HrYdIFqdrnhDw0PqG/AKjAqEqM7AvxCz0DQ4h2W8k6nqmc5uRBYDag0SBxx9iYz5G8gnuNVLzUe13wl9eAsXXg==}
     engines: {node: '>=14.0.0'}
@@ -21755,6 +21768,16 @@ packages:
     dependencies:
       '@remix-run/router': 1.21.0
       react: 18.3.1
+
+  /react-router/6.28.1_react@18.3.1:
+    resolution: {integrity: sha512-2omQTA3rkMljmrvvo6WtewGdVh45SpL9hGiCI9uUrwGGfNFDIvGK4gYJsKlJoNVi6AQZcopSCballL+QGOm7fA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.21.0
+      react: 18.3.1
+    dev: true
 
   /react-sizeme/3.0.2:
     resolution: {integrity: sha512-xOIAOqqSSmKlKFJLO3inBQBdymzDuXx4iuwkNcJmC96jeiOg5ojByvL+g3MW9LPEsojLbC6pf68zOfobK8IPlw==}
