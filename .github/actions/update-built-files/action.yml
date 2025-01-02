@@ -21,5 +21,4 @@ runs:
       run: |
         cp pnpm-lock.yaml pnpm-lock-committed.yaml
         git add pnpm-lock-committed.yaml
-        git commit -m "[skip ci] Update built files"
-        git push
+        git commit -m "[skip ci] Update built files" && git push || true
