@@ -191,7 +191,12 @@ export const reactRenderer: ReactRenderer = ({
       user: { ...user, accessToken: req.auth?.accessToken } // Add the access token separately, in order to keep it off the client
     });
     const basename = '/';
-    const { query, dataRoutes } = createStaticHandler(routes, { basename });
+    const { query, dataRoutes } = createStaticHandler(routes, {
+      basename,
+      future: {
+        v7_relativeSplatPath: true
+      }
+    });
 
     const nonce = res.nonce || '';
     const createApp = (router: Router, context: StaticHandlerContext) => (
