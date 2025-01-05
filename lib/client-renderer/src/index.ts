@@ -59,11 +59,17 @@ export const hydrateOrRender: HydrateOrRender = ({
     user
   });
   const router = createBrowserRouter(routes, {
-    basename
+    basename,
+    future: {
+      v7_relativeSplatPath: true
+    }
   });
   const app = (
       h(RouterWrap, appProps,
         h(RouterProvider, {
+          future: {
+            v7_startTransition: true
+          },
           router,
           fallbackElement: h(LoadingPage, { ...appProps, routes: [] })
         }))
