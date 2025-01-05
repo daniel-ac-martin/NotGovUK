@@ -24,7 +24,8 @@
     text-indent: -5000px;
     overflow: hidden;
 
-    &:hover {
+    &:hover,
+    &[disabled]:hover {
       background-color: color.adjust(govuk-colour("blue"), $lightness: 5%);
     }
 
@@ -64,6 +65,7 @@
 
       &:hover {
         background-color: color.adjust(govuk-colour("light-grey"), $lightness: 5%);
+        color: govuk-colour("black");
       }
     }
   }
