@@ -21,7 +21,8 @@ sed -i -E "s/\"@(${name})\/([^\"]*)\":([^\"]*)\"[^:]+\"/\"@\1\/\2\":\3\"^${versi
   {apps,components,components-internal,lib,lib-govuk}/*/package.json
 
 # Stage modified files
- git add \
-   {lib,lib-govuk}/*/skel/*/package.json* \
-   {apps,components,components-internal,lib,lib-govuk}/*/package.json
- git add -f pnpm-lock.yaml
+cp pnpm-lock.yaml pnpm-lock-committed.yaml
+git add \
+  {lib,lib-govuk}/*/skel/*/package.json* \
+  {apps,components,components-internal,lib,lib-govuk}/*/package.json \
+  pnpm-lock-committed.yaml
