@@ -28,7 +28,7 @@ export const isPreValidateError = (v: DateInputError): v is DateInputPreValidate
   )
 );
 
-export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'label'> & {
+export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'label' | 'value' | 'defaultValue'> & {
   /** Initial value of the field */
   defaultValue?: DateInputValue,
   /** Error message */
