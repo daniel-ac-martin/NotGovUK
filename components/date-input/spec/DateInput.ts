@@ -74,26 +74,4 @@ describe('DateInput', () => {
     it('has a month value', async () => expect(screen.getByLabelText('Month')).toHaveDisplayValue('12'));
     it('has a year value', async () => expect(screen.getByLabelText('Year')).toHaveDisplayValue('2024'));
   });
-
-  describe('when given a value prop', () => {
-    const props = {
-      ...minimalProps,
-      hint: 'The day you were born',
-      value: {
-        day: '06',
-        month: '12',
-        year: '2024'
-      },
-      onChange: jest.fn()
-    };
-    beforeEach(async () => {
-      render(h(DateInput, props));
-    });
-
-    it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
-    it('contains the label', async () => expect(screen.getByRole('group')).toHaveTextContent('My date'));
-    it('has a day value', async () => expect(screen.getByLabelText('Day')).toHaveDisplayValue('06'));
-    it('has a month value', async () => expect(screen.getByLabelText('Month')).toHaveDisplayValue('12'));
-    it('has a year value', async () => expect(screen.getByLabelText('Year')).toHaveDisplayValue('2024'));
-  });
 });
