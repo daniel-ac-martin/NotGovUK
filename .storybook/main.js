@@ -30,6 +30,7 @@ module.exports = {
     '../components/phase-banner/spec/*.stories.@(js|mdx)',
     '../components/radios/spec/*.stories.@(js|mdx)',
     '../components/search-box/spec/*.stories.@(js|mdx)',
+    '../components/service-navigation/spec/*.stories.@(js|mdx)',
     '../components/select/spec/*.stories.@(js|mdx)',
     '../components/skip-link/spec/*.stories.@(js|mdx)',
     '../components/standalone-input/spec/*.stories.@(js|mdx)',
