@@ -7,7 +7,7 @@ import { htmlByDefault } from './middleware/html-by-default';
 import { permissionsPolicy } from './middleware/permissions-policy';
 import { CSPSources, preventClickjacking } from './middleware/prevent-clickjacking';
 import { preventMimeSniffing } from './middleware/prevent-mime-sniffing';
-import { noCacheByDefault } from './middleware/no-cache-by-default';
+import { privateByDefault } from './middleware/private-by-default';
 import { IsReady, readiness } from './middleware/readiness';
 import { Logger, LoggerOptions as _LoggerOptions, logger } from './lib/logger';
 import { Server as _Server, installServeAPI } from './lib/serve-api';
@@ -91,7 +91,7 @@ export const createServer = (options: ServerOptions): Server => {
   httpd.pre(permissionsPolicy);
   httpd.pre(preventClickjacking({ formAction: options.formAction, frameAncestors: options.frameAncestors }));
   httpd.pre(preventMimeSniffing);
-  httpd.pre(noCacheByDefault);
+  httpd.pre(privateByDefault);
 
   httpd.pre(restify.plugins.acceptParser(httpd.acceptable.filter(v => acceptable.includes(v))));
   (options.bodyParser !== false) && httpd.pre(restify.plugins.bodyParser(Object.assign({ mapParams: false }, options.bodyParser)));

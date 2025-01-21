@@ -1,12 +1,16 @@
 import type { Middleware, WriteHead } from "./common";
 
-export const noCacheByDefault: Middleware = (_req, res, next) => {
+export const privateByDefault: Middleware = (_req, res, next) => {
   const _writeHead = res.writeHead.bind(res);
   const writeHead: WriteHead = function (...args) {
     if (!this.getHeader('Cache-Control')) {
       this.cache('no-cache, no-store, must-revalidate, private');
       this.header('Pragma', 'no-cache');
       this.header('Expires', '0');
+
+      this.header('Cross-Origin-Embedder-Policy', 'require-corp');
+      this.header('Cross-Origin-Resource-Policy', 'same-origin');
+      this.header('Cross-Origin-Opener-Policy', 'same-origin');
     }
 
     return _writeHead(...args);
@@ -17,4 +21,4 @@ export const noCacheByDefault: Middleware = (_req, res, next) => {
   next();
 };
 
-export default noCacheByDefault;
+export default privateByDefault;
