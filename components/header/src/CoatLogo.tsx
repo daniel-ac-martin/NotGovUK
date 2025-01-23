@@ -10,6 +10,7 @@ export const CoatLogo: FC<LogoProps> = (props) => (
     width="86.095"
     height="71.134"
     role="img"
+    data-testid="coatLogo"
     {...props}
   >
     <g transform="translate(.0021394 -7.478)" fill="#fff">

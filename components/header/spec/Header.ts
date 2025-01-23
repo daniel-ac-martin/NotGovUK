@@ -51,4 +51,47 @@ describe('Header', () => {
     it('contains the navigation links', async () => expect(screen.getByRole('banner')).toHaveTextContent('Navigation item 2'));
     it('contains the sign-out link', async () => expect(screen.getByRole('banner')).toHaveTextContent('Log out'));
   });
+
+  describe('header logo behaviour', () => {
+    it('displays the crown logo', async () => {
+      const props = {
+        govUK: true
+      };
+      render(h(Header, props, 'Child'));
+
+      expect(screen.getByTestId('crownLogo')).toBeInTheDocument()
+    })
+
+    it('displays the crown logo even if a logo prop is provided', async () => {
+      const props = {
+        govUK: true,
+        logo: h('div', { 'data-testid': 'custom-logo' })
+      };
+      render(h(Header, props, 'Child'));
+
+      expect(screen.getByTestId('crownLogo')).toBeInTheDocument()
+      expect(screen.queryByTestId('custom-logo')).not.toBeInTheDocument()
+    })
+
+    it('displays the coat logo', () => {
+      const props = {
+        govUK: false
+      };
+
+      render(h(Header, props, 'Child'));
+
+      expect(screen.getByTestId('coatLogo')).toBeInTheDocument()
+    })
+
+    it('displays a custom ReactNode', () => {
+      const props = {
+        govUK: false,
+        logo: h('div', { 'data-testid': 'custom-logo'})
+      };
+
+      render(h(Header, props, 'Child'));
+
+      expect(screen.getByTestId('custom-logo')).toBeInTheDocument()
+    })
+  })
 });
