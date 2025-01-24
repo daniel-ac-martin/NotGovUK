@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
 import { Header } from '../src/Header';
 import readMe from '../README.md';
@@ -283,6 +284,28 @@ your department in order to use their colours.
   <Story name="Wales office">
     <Header
       department="wales-office"
+    />
+  </Story>
+</Preview>
+
+#### Remove the logo
+
+<Preview>
+  <Story name="Remove the logo">
+    <Header
+      department="department-for-work-pensions"
+      logo={<Fragment></Fragment>}
+    />
+  </Story>
+</Preview>
+
+#### Customise the logo
+
+<Preview>
+  <Story name="Customise the logo">
+    <Header
+      department="department-for-work-pensions"
+      logo={<div>HEY!</div>}
     />
   </Story>
 </Preview>

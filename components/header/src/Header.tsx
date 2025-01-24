@@ -1,4 +1,4 @@
-import { FC, Fragment, createElement as h } from 'react';
+import { FC, Fragment, createElement as h, ReactNode } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
@@ -35,6 +35,8 @@ export type HeaderProps = StandardProps & {
   signOutHref?: string
   /** Sign out link text */
   signOutText?: string
+  /** Logo ReactNode */
+  logo?: ReactNode 
 };
 
 const departmentMap: Record<string, string> = {
@@ -94,6 +96,7 @@ export const Header: FC<HeaderProps> = ({
   serviceName,
   signOutHref,
   signOutText = 'Sign out',
+  logo,
   ...attrs
 }) => {
   const classes = classBuilder('govuk-header', classBlock, classModifiers, className);
@@ -105,6 +108,8 @@ export const Header: FC<HeaderProps> = ({
     text: signOutText,
     forceExternal: true
   }];
+
+  const headerLogo = logo || <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
 
   return (
     <header {...attrs} className={classes()} data-module="govuk-header">
@@ -118,7 +123,7 @@ export const Header: FC<HeaderProps> = ({
               )
               : (
                 <Fragment>
-                <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
+                {headerLogo}
                 <span className={classes('logotype-text')}>
                   {orgText}
                 </span>
