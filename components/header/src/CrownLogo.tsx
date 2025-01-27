@@ -9,7 +9,6 @@ export const CrownLogo: FC<LogoProps> = (props) => (
     width="148"
     role="img"
     aria-label="GOV.UK"
-    data-testid="crownLogo"
     {...props}
   >
     <title>GOV.UK</title>

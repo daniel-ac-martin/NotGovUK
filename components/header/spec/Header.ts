@@ -2,11 +2,30 @@ import { createElement as h } from 'react';
 import { render, screen } from '@not-govuk/component-test-helpers';
 import Header from '../src/Header';
 
+jest.mock('../src/CrownLogo', () => ({
+  CrownLogo: () =>  h('svg', {
+    'data-testid': 'crownLogo',
+    children: h('title', {
+      children: 'GOV.UK'
+    })
+  })
+}))
+
+jest.mock('../src/CoatLogo', () => ({
+  CoatLogo: () => h('svg', {
+    'data-testid': 'coatLogo'
+  })
+}))
+
 describe('Header', () => {
   describe('when given valid props', () => {
     beforeEach(async () => {
       render(h(Header, {}));
     });
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
 
     it('renders an element', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
     it('is NOT GOV.UK branded', async () => expect(screen.getByRole('banner')).not.toHaveTextContent('GOV.UK'));

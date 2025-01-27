@@ -109,7 +109,7 @@ export const Header: FC<HeaderProps> = ({
     forceExternal: true
   }];
 
-  const headerLogo = logo || <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
+  const _logo = logo || <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
 
   return (
     <header {...attrs} className={classes()} data-module="govuk-header">
@@ -123,7 +123,7 @@ export const Header: FC<HeaderProps> = ({
               )
               : (
                 <Fragment>
-                {headerLogo}
+                {_logo}
                 <span className={classes('logotype-text')}>
                   {orgText}
                 </span>
