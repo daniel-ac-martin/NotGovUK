@@ -1,4 +1,4 @@
-import { FC, Fragment, createElement as h, ReactNode } from 'react';
+import { FC, Fragment, createElement as h, ReactNode, isValidElement } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
@@ -35,8 +35,8 @@ export type HeaderProps = StandardProps & {
   signOutHref?: string
   /** Sign out link text */
   signOutText?: string
-  /** Logo ReactNode */
-  logo?: ReactNode 
+  /** Logo ReactNode or null */
+  logo?: ReactNode | null
 };
 
 const departmentMap: Record<string, string> = {
@@ -96,7 +96,7 @@ export const Header: FC<HeaderProps> = ({
   serviceName,
   signOutHref,
   signOutText = 'Sign out',
-  logo,
+  logo: _logo,
   ...attrs
 }) => {
   const classes = classBuilder('govuk-header', classBlock, classModifiers, className);
@@ -109,7 +109,12 @@ export const Header: FC<HeaderProps> = ({
     forceExternal: true
   }];
 
-  const _logo = logo || <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
+  // Use the CoatLogo by default, or the ReactNode / null from the `logo` prop
+  let headerLogo: ReactNode | null | undefined = <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
+
+  if (_logo === null || isValidElement(_logo)) {
+    headerLogo = _logo
+  }
 
   return (
     <header {...attrs} className={classes()} data-module="govuk-header">
@@ -123,10 +128,10 @@ export const Header: FC<HeaderProps> = ({
               )
               : (
                 <Fragment>
-                {_logo}
-                <span className={classes('logotype-text')}>
-                  {orgText}
-                </span>
+                  {headerLogo}
+                  <span className={classes('logotype-text')}>
+                    {orgText}
+                  </span>
                 </Fragment>
               )
             }

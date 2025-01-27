@@ -112,5 +112,18 @@ describe('Header', () => {
 
       expect(screen.getByTestId('custom-logo')).toBeInTheDocument()
     })
+
+    it('displays no logo', () => {
+      const props = {
+        govUK: false,
+        logo: null
+      };
+
+      render(h(Header, props, 'Child'));
+
+      expect(screen.queryByTestId('custom-logo')).not.toBeInTheDocument()
+      expect(screen.queryByTestId('coatLogo')).not.toBeInTheDocument()
+      expect(screen.queryByTestId('crownLogo')).not.toBeInTheDocument()
+    })
   })
 });
