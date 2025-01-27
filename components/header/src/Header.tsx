@@ -109,9 +109,12 @@ export const Header: FC<HeaderProps> = ({
     forceExternal: true
   }];
 
-  // Use the CoatLogo by default, or the ReactNode / null from the `logo` prop
-  let headerLogo: ReactNode | null | undefined = <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
+  // Use the CrownLogo or CoatLogo by default.
+  const crownLogo: ReactNode = <CrownLogo focusable="false" className={classes('logotype')} height="30" width="148" />
+  const coatLogo: ReactNode = <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
+  let headerLogo: ReactNode | null | undefined = govUK ? crownLogo : coatLogo
 
+  // If the logo prop is null or a valid ReactNode, use that instead of the default CrownLogo or CoatLogo component
   if (_logo === null || isValidElement(_logo)) {
     headerLogo = _logo
   }
@@ -123,9 +126,7 @@ export const Header: FC<HeaderProps> = ({
           <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
             {
               govUK
-              ? (
-                <CrownLogo focusable="false" className={classes('logotype')} height="30" width="148" />
-              )
+              ? headerLogo
               : (
                 <Fragment>
                   {headerLogo}

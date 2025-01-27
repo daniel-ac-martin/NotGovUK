@@ -81,15 +81,15 @@ describe('Header', () => {
       expect(screen.getByTestId('crownLogo')).toBeInTheDocument()
     })
 
-    it('displays the crown logo even if a logo prop is provided', async () => {
+    it('displays the custom logo if the govUK prop is true and logo prop is provided', async () => {
       const props = {
         govUK: true,
         logo: h('div', { 'data-testid': 'custom-logo' })
       };
       render(h(Header, props, 'Child'));
 
-      expect(screen.getByTestId('crownLogo')).toBeInTheDocument()
-      expect(screen.queryByTestId('custom-logo')).not.toBeInTheDocument()
+      expect(screen.getByTestId('custom-logo')).toBeInTheDocument()
+      expect(screen.queryByTestId('crownLogo')).not.toBeInTheDocument()
     })
 
     it('displays the coat logo', () => {
