@@ -301,11 +301,26 @@ your department in order to use their colours.
 
 #### Customise the logo
 
+
+##### GovUK Header
+
 <Preview>
-  <Story name="Customise the logo">
+  <Story name="GovUK Header with custom logo">
     <Header
-      department="department-for-work-pensions"
-      logo={<div>HEY!</div>}
+      govUK={true}
+      logo={<span>Logo</span>}
     />
   </Story>
 </Preview>
+
+##### NotGovUK Header
+
+<Preview>
+  <Story name="NotGovUK Header with custom logo">
+    <Header
+      department="department-for-work-pensions"
+      logo={<span>Logo</span>}
+    />
+  </Story>
+</Preview>
+
