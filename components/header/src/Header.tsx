@@ -1,4 +1,4 @@
-import { FC, Fragment, createElement as h } from 'react';
+import { FC, Fragment, createElement as h, ReactNode, isValidElement } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
@@ -35,6 +35,8 @@ export type HeaderProps = StandardProps & {
   signOutHref?: string
   /** Sign out link text */
   signOutText?: string
+  /** Custom logo, use null to remove */
+  logo?: ReactNode
 };
 
 const departmentMap: Record<string, string> = {
@@ -94,6 +96,7 @@ export const Header: FC<HeaderProps> = ({
   serviceName,
   signOutHref,
   signOutText = 'Sign out',
+  logo: _logo,
   ...attrs
 }) => {
   const classes = classBuilder('govuk-header', classBlock, classModifiers, className);
@@ -106,6 +109,15 @@ export const Header: FC<HeaderProps> = ({
     forceExternal: true
   }];
 
+  // Use the CrownLogo or CoatLogo by default.
+  const crownLogo: ReactNode = <CrownLogo focusable="false" className={classes('logotype')} height="30" width="148" />
+  const coatLogo: ReactNode = <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
+  const logo = (
+    _logo !== undefined
+    ? _logo
+    : (govUK ? crownLogo : coatLogo)
+  );
+
   return (
     <header {...attrs} className={classes()} data-module="govuk-header">
       <WidthContainer maxWidth={maxContentsWidth} className={classes('container', department)}>
@@ -113,15 +125,13 @@ export const Header: FC<HeaderProps> = ({
           <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
             {
               govUK
-              ? (
-                <CrownLogo focusable="false" className={classes('logotype')} height="30" width="148" />
-              )
+              ? logo
               : (
                 <Fragment>
-                <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
-                <span className={classes('logotype-text')}>
-                  {orgText}
-                </span>
+                  {logo}
+                  <span className={classes('logotype-text')}>
+                    {orgText}
+                  </span>
                 </Fragment>
               )
             }
