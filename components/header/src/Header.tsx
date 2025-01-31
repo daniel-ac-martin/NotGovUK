@@ -125,7 +125,7 @@ export const Header: FC<HeaderProps> = ({
           <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
             {
               govUK
-              ? headerLogo
+              ? logo
               : (
                 <Fragment>
                   {logo}
