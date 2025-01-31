@@ -128,7 +128,7 @@ export const Header: FC<HeaderProps> = ({
               ? headerLogo
               : (
                 <Fragment>
-                  {headerLogo}
+                  {logo}
                   <span className={classes('logotype-text')}>
                     {orgText}
                   </span>
