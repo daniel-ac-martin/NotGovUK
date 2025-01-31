@@ -35,8 +35,8 @@ export type HeaderProps = StandardProps & {
   signOutHref?: string
   /** Sign out link text */
   signOutText?: string
-  /** Logo ReactNode or null */
-  logo?: ReactNode | null
+  /** Custom logo, use null to remove */
+  logo?: ReactNode
 };
 
 const departmentMap: Record<string, string> = {
