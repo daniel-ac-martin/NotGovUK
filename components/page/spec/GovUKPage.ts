@@ -13,5 +13,6 @@ describe('GovUKPage', () => {
     it('renders a header', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
     it('renders a footer', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
     it('is GOV.UK branded', async () => expect(screen.getByText('GOV.UK')).toBeInTheDocument());
+    it('contains the logo', async () => expect(screen.getByRole('img')).toHaveTextContent('GOV.UK'));
   });
 });

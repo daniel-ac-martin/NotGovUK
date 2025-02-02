@@ -52,6 +52,7 @@ export const Page: FC<PageProps> = ({
   footerContent,
   footerNavigation,
   govUK,
+  logo,
   maxContentsWidth,
   meta,
   metaTitle,
@@ -77,6 +78,7 @@ export const Page: FC<PageProps> = ({
   const headerProps = {
     department,
     govUK,
+    logo,
     maxContentsWidth,
     navigation,
     organisationHref,
