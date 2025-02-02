@@ -41,8 +41,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       react-helmet-async: 2.0.5
-      react-router: 6.28.2
-      react-router-dom: 6.28.2
+      react-router: 6.29.0
+      react-router-dom: 6.29.0
       ts-jest: 29.2.5
       typescript: 4.9.5
       webpack: 5.97.1
@@ -87,8 +87,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-helmet-async: 2.0.5_react@18.3.1
-      react-router: 6.28.2_react@18.3.1
-      react-router-dom: 6.28.2_nnrd3gsncyragczmpvfhocinkq
+      react-router: 6.29.0_react@18.3.1
+      react-router-dom: 6.29.0_nnrd3gsncyragczmpvfhocinkq
       ts-jest: 29.2.5_55mhqc3jwjh7l2fif5v7odpxwu
       typescript: 4.9.5
       webpack: 5.97.1_webpack-cli@5.1.4
@@ -121,8 +121,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       react-helmet-async: 2.0.5
-      react-router: 6.28.2
-      react-router-dom: 6.28.2
+      react-router: 6.29.0
+      react-router-dom: 6.29.0
       serverless: 3.40.0
       start-server-and-test: 2.0.10
       ts-jest: 29.2.5
@@ -155,8 +155,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-helmet-async: 2.0.5_react@18.3.1
-      react-router: 6.28.2_react@18.3.1
-      react-router-dom: 6.28.2_nnrd3gsncyragczmpvfhocinkq
+      react-router: 6.29.0_react@18.3.1
+      react-router-dom: 6.29.0_nnrd3gsncyragczmpvfhocinkq
       serverless: 3.40.0
       start-server-and-test: 2.0.10
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -195,8 +195,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       react-helmet-async: 2.0.5
-      react-router: 6.28.2
-      react-router-dom: 6.28.2
+      react-router: 6.29.0
+      react-router-dom: 6.29.0
       serverless: 3.40.0
       start-server-and-test: 2.0.10
       ts-jest: 29.2.5
@@ -233,8 +233,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-helmet-async: 2.0.5_react@18.3.1
-      react-router: 6.28.2_react@18.3.1
-      react-router-dom: 6.28.2_nnrd3gsncyragczmpvfhocinkq
+      react-router: 6.29.0_react@18.3.1
+      react-router-dom: 6.29.0_nnrd3gsncyragczmpvfhocinkq
       serverless: 3.40.0
       start-server-and-test: 2.0.10
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -7040,11 +7040,6 @@ packages:
       typescript: 4.9.5
     dev: true
 
-  /@remix-run/router/1.21.1:
-    resolution: {integrity: sha512-KeBYSwohb8g4/wCcnksvKTYlg69O62sQeLynn2YE+5z7JWEj95if27kclW9QqbrlsQ2DINI8fjbV3zyuKfwjKg==}
-    engines: {node: '>=14.0.0'}
-    dev: true
-
   /@remix-run/router/1.22.0:
     resolution: {integrity: sha512-MBOl8MeOzpK0HQQQshKB7pABXbmyHizdTpqnrIseTbsv0nAepwC2ENZa1aaBExNQcpLoXmWthhak8SABLzvGPw==}
     engines: {node: '>=14.0.0'}
@@ -12555,7 +12550,7 @@ packages:
     dependencies:
       call-bind-apply-helpers: 1.0.1
       es-define-property: 1.0.1
-      get-intrinsic: 1.2.6
+      get-intrinsic: 1.2.5
       set-function-length: 1.2.2
 
   /call-bound/1.0.3:
@@ -14150,6 +14145,14 @@ packages:
     dependencies:
       nan: 2.22.0
     optional: true
+
+  /dunder-proto/1.0.0:
+    resolution: {integrity: sha512-9+Sj30DIu+4KvHqMfLUGLFYL2PkURSYMVXJyXe92nFRvlYq5hBjLEhblKB+vkd/WVlUYMWigiY07T91Fkk0+4A==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind-apply-helpers: 1.0.1
+      es-errors: 1.3.0
+      gopd: 1.2.0
 
   /dunder-proto/1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -16011,6 +16014,19 @@ packages:
   /get-east-asian-width/1.3.0:
     resolution: {integrity: sha512-vpeMIQKxczTD/0s2CdEWHcb0eeJe6TFjxb+J5xgX7hScxqrGuyjmv4c1D4A/gelKfyox0gJJwIHF+fLjeaM8kQ==}
     engines: {node: '>=18'}
+
+  /get-intrinsic/1.2.5:
+    resolution: {integrity: sha512-Y4+pKa7XeRUPWFNvOOYHkRYrfzW07oraURSvjDmRVOJ748OrVmeXtpE4+GCEHncjCjkTxPNRt8kEbxDhsn6VTg==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind-apply-helpers: 1.0.1
+      dunder-proto: 1.0.0
+      es-define-property: 1.0.1
+      es-errors: 1.3.0
+      function-bind: 1.1.2
+      gopd: 1.2.0
+      has-symbols: 1.1.0
+      hasown: 2.0.2
 
   /get-intrinsic/1.2.6:
     resolution: {integrity: sha512-qxsEs+9A+u85HhllWJJFicJfPDhRmjzoYdl64aMWW9yRIJmSyxdn8IEkuIM530/7T+lv0TIHd8L6Q/ra0tEoeA==}
@@ -21617,19 +21633,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom/6.28.2_nnrd3gsncyragczmpvfhocinkq:
-    resolution: {integrity: sha512-O81EWqNJWqvlN/a7eTudAdQm0TbI7hw+WIi7OwwMcTn5JMyZ0ibTFNGz+t+Lju0df4LcqowCegcrK22lB1q9Kw==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-      react-dom: '>=16.8'
-    dependencies:
-      '@remix-run/router': 1.21.1
-      react: 18.3.1
-      react-dom: 18.3.1_react@18.3.1
-      react-router: 6.28.2_react@18.3.1
-    dev: true
-
   /react-router-dom/6.29.0:
     resolution: {integrity: sha512-pkEbJPATRJ2iotK+wUwHfy0xs2T59YPEN8BQxVCPeBZvK7kfPESRc/nyxzdcxR17hXgUPYx2whMwl+eo9cUdnQ==}
     engines: {node: '>=14.0.0'}
@@ -21652,16 +21655,6 @@ packages:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-router: 6.29.0_react@18.3.1
-
-  /react-router/6.28.2_react@18.3.1:
-    resolution: {integrity: sha512-BgFY7+wEGVjHCiqaj2XiUBQ1kkzfg6UoKYwEe0wv+FF+HNPCxtS/MVPvLAPH++EsuCMReZl9RYVGqcHLk5ms3A==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-    dependencies:
-      '@remix-run/router': 1.21.1
-      react: 18.3.1
-    dev: true
 
   /react-router/6.29.0:
     resolution: {integrity: sha512-DXZJoE0q+KyeVw75Ck6GkPxFak63C4fGqZGNijnWgzB/HzSP1ZfTlBj5COaGWwhrMQ/R8bXiq5Ooy4KG+ReyjQ==}
@@ -22966,7 +22959,7 @@ packages:
       define-data-property: 1.1.4
       es-errors: 1.3.0
       function-bind: 1.1.2
-      get-intrinsic: 1.2.6
+      get-intrinsic: 1.2.5
       gopd: 1.2.0
       has-property-descriptors: 1.0.2
 
