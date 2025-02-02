@@ -195,6 +195,64 @@ A page suitable for dashboards. This is achieved by providing the `dark` classMo
 </Preview>
 
 
+### Custom logo
+
+A custom logo, for the page's header, can be provided, via the `logo` prop.
+
+<Preview>
+  <Story name="Custom logo">
+    <NotGovUKPage
+      logo={<span>Logo</span>}
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span className="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+### No logo
+
+The logo can be removed from the page's header by passing `null` to the `logo` prop.
+
+<Preview>
+  <Story name="No logo">
+    <NotGovUKPage
+      logo={null}
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span className="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
 ### Department colours
 
 If you are building an internal application you can supply the name of
