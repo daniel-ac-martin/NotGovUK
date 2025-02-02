@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
 import { Header } from '../src/Header';
 import readMe from '../README.md';
@@ -135,6 +134,32 @@ A header that does _NOT_ restrict the width on wide screens.
   <Story name="Full width">
     <Header
       maxContentsWidth={-1}
+    />
+  </Story>
+</Preview>
+
+
+### Custom logo
+
+A custom logo can be provided, via the `logo` prop.
+
+<Preview>
+  <Story name="Custom logo">
+    <Header
+      logo={<span>Logo</span>}
+    />
+  </Story>
+</Preview>
+
+
+### No logo
+
+The logo can be removed entirely by passing `null` to the `logo` prop.
+
+<Preview>
+  <Story name="No logo">
+    <Header
+      logo={null}
     />
   </Story>
 </Preview>
@@ -287,40 +312,3 @@ your department in order to use their colours.
     />
   </Story>
 </Preview>
-
-#### Remove the logo
-
-<Preview>
-  <Story name="Remove the logo">
-    <Header
-      department="department-for-work-pensions"
-      logo={null}
-    />
-  </Story>
-</Preview>
-
-#### Customise the logo
-
-
-##### GovUK Header
-
-<Preview>
-  <Story name="GovUK Header with custom logo">
-    <Header
-      govUK={true}
-      logo={<span>Logo</span>}
-    />
-  </Story>
-</Preview>
-
-##### NotGovUK Header
-
-<Preview>
-  <Story name="NotGovUK Header with custom logo">
-    <Header
-      department="department-for-work-pensions"
-      logo={<span>Logo</span>}
-    />
-  </Story>
-</Preview>
-

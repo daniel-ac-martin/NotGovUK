@@ -1,4 +1,4 @@
-import { FC, Fragment, createElement as h, ReactNode, isValidElement } from 'react';
+import { FC, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
@@ -109,13 +109,18 @@ export const Header: FC<HeaderProps> = ({
     forceExternal: true
   }];
 
-  // Use the CrownLogo or CoatLogo by default.
-  const crownLogo: ReactNode = <CrownLogo focusable="false" className={classes('logotype')} height="30" width="148" />
-  const coatLogo: ReactNode = <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
   const logo = (
     _logo !== undefined
     ? _logo
-    : (govUK ? crownLogo : coatLogo)
+    : (
+      govUK
+      ? (
+        <CrownLogo focusable="false" className={classes('logotype')} height="30" width="148" />
+      )
+      : (
+        <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
+      )
+    )
   );
 
   return (
@@ -123,18 +128,10 @@ export const Header: FC<HeaderProps> = ({
       <WidthContainer maxWidth={maxContentsWidth} className={classes('container', department)}>
         <div className={classes('logo')}>
           <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
-            {
-              govUK
-              ? logo
-              : (
-                <Fragment>
-                  {logo}
-                  <span className={classes('logotype-text')}>
-                    {orgText}
-                  </span>
-                </Fragment>
-              )
-            }
+            {logo}
+            {govUK ? null : (
+              <span className={classes('logotype-text')}>{orgText}</span>
+            )}
           </A>
         </div>
         <div className={classes('content')}>

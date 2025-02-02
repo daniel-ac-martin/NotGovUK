@@ -2,39 +2,32 @@ import { createElement as h } from 'react';
 import { render, screen } from '@not-govuk/component-test-helpers';
 import Header from '../src/Header';
 
-jest.mock('../src/CrownLogo', () => ({
-  CrownLogo: () =>  h('svg', {
-    'data-testid': 'crownLogo',
-    children: h('title', {
-      children: 'GOV.UK'
-    })
-  })
-}))
-
-jest.mock('../src/CoatLogo', () => ({
-  CoatLogo: () => h('svg', {
-    'data-testid': 'coatLogo'
-  })
-}))
-
 describe('Header', () => {
   describe('when given valid props', () => {
     beforeEach(async () => {
       render(h(Header, {}));
     });
 
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
     it('renders an element', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
     it('is NOT GOV.UK branded', async () => expect(screen.getByRole('banner')).not.toHaveTextContent('GOV.UK'));
+    it('does NOT contain the sign-out link', async () => expect(screen.getByRole('banner')).not.toHaveTextContent('Sign out'));
+  });
+
+  describe('when given minimal govUK props', () => {
+    beforeEach(async () => {
+      render(h(Header, { govUK: true }));
+    });
+
+    it('renders an element', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
+    it('is GOV.UK branded', async () => expect(screen.getByRole('banner')).toHaveTextContent('GOV.UK'));
+    it('contains the logo', async () => expect(screen.getByRole('img')).toHaveTextContent('GOV.UK'));
     it('does NOT contain the sign-out link', async () => expect(screen.getByRole('banner')).not.toHaveTextContent('Sign out'));
   });
 
   describe('when given all valid props', () => {
     const props = {
       govUK: true,
+      logo: null,
       maxContentsWidth: 300,
       navigation: [
         {
@@ -65,65 +58,9 @@ describe('Header', () => {
     });
 
     it('renders an element', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
-    it('is GOV.UK branded', async () => expect(screen.getByRole('banner')).toHaveTextContent('GOV.UK'));
+    it('does NOT contain a logo', async () => expect(screen.queryByRole('img')).not.toBeInTheDocument());
     it('contains the service name', async () => expect(screen.getByRole('banner')).toHaveTextContent('Service name'));
     it('contains the navigation links', async () => expect(screen.getByRole('banner')).toHaveTextContent('Navigation item 2'));
     it('contains the sign-out link', async () => expect(screen.getByRole('banner')).toHaveTextContent('Log out'));
   });
-
-  describe('header logo behaviour', () => {
-    it('displays the crown logo', async () => {
-      const props = {
-        govUK: true
-      };
-      render(h(Header, props, 'Child'));
-
-      expect(screen.getByTestId('crownLogo')).toBeInTheDocument()
-    })
-
-    it('displays the custom logo if the govUK prop is true and logo prop is provided', async () => {
-      const props = {
-        govUK: true,
-        logo: h('div', { 'data-testid': 'custom-logo' })
-      };
-      render(h(Header, props, 'Child'));
-
-      expect(screen.getByTestId('custom-logo')).toBeInTheDocument()
-      expect(screen.queryByTestId('crownLogo')).not.toBeInTheDocument()
-    })
-
-    it('displays the coat logo', () => {
-      const props = {
-        govUK: false
-      };
-
-      render(h(Header, props, 'Child'));
-
-      expect(screen.getByTestId('coatLogo')).toBeInTheDocument()
-    })
-
-    it('displays a custom ReactNode', () => {
-      const props = {
-        govUK: false,
-        logo: h('div', { 'data-testid': 'custom-logo'})
-      };
-
-      render(h(Header, props, 'Child'));
-
-      expect(screen.getByTestId('custom-logo')).toBeInTheDocument()
-    })
-
-    it('displays no logo', () => {
-      const props = {
-        govUK: false,
-        logo: null
-      };
-
-      render(h(Header, props, 'Child'));
-
-      expect(screen.queryByTestId('custom-logo')).not.toBeInTheDocument()
-      expect(screen.queryByTestId('coatLogo')).not.toBeInTheDocument()
-      expect(screen.queryByTestId('crownLogo')).not.toBeInTheDocument()
-    })
-  })
 });
