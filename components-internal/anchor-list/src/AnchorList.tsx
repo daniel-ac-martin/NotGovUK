@@ -12,11 +12,16 @@ export type Anchor = AnchorProps & {
   text?: string
 };
 
+export type Item = Anchor & {
+  /** Subitems */
+  items?: Item[]
+};
+
 export type AnchorListProps = StandardProps & {
   /** List component to use  */
   as?: ComponentType<HTMLProps<HTMLOListElement | HTMLUListElement>> | 'ol' | 'ul'
   /** List of links to choose from */
-  items: Anchor[]
+  items: Item[]
 };
 
 const AnchorListInner: FC<AnchorListProps> = ({
@@ -29,19 +34,24 @@ const AnchorListInner: FC<AnchorListProps> = ({
 }) => {
   const classes = classBuilder('penultimate-anchor-list', classBlock, classModifiers, className);
   const isActive = useIsActive();
-  const processedItems = items.map(({ children, text, href, ...anchorAttrs }, i) => {
-    const active = isActive(href || '');
+  const processItem = ({ children, text, href, items, ...anchorAttrs }: Item, i: number) => {
+    const active = isActive(href || '', false);
 
     return (
       <li key={i} className={classes('item', active ? 'active' : undefined)}>
         <A {...anchorAttrs} classBlock={classes('link')} href={href}>{children || text}</A>
+        { !(active && items) ? null : (
+          <Component className={classes('subitems')}>
+            {items.map(processItem)}
+          </Component>
+        ) }
       </li>
     );
-  });
+  };
 
   return (
     <Component {...attrs} className={classes()}>
-      {processedItems}
+      {items.map(processItem)}
     </Component>
   );
 };

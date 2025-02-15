@@ -49,6 +49,29 @@ A standard Navigation menu.
 </Preview>
 
 
+### Sub-items
+
+You can provide a hierarchy of links.
+
+<Preview>
+  <Story name="Sub-items">
+    <NavigationMenu items={[
+      { href: '/', text: 'Inactive 1' },
+      { href: '/components', text: 'Active', items: [
+        { href: '/components?name=Back%20link', text: 'Inactive 1' },
+        { href: '/components?name=Navigation%20menu', text: 'Active' },
+        { href: '/components?name=Button', text: 'Inactive 2' }
+      ] },
+      { href: '/#main-content', text: 'Inactive 2', items: [
+        { href: '/?id=1', text: 'One' },
+        { href: '/?id=2', text: 'Two' },
+        { href: '/?id=3', text: 'Three' }
+      ] }
+    ]} />
+  </Story>
+</Preview>
+
+
 ### Horizontal
 
 <p><Tag text="Deprecated" /></p>

@@ -1,21 +1,19 @@
 import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
-import { AnchorList } from '@not-govuk/anchor-list';
+import { AnchorList, Anchor } from '@not-govuk/anchor-list';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { A, LinkProps } from '@not-govuk/link';
+import { A } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
 
 import '../assets/ServiceNavigation.scss';
 
-export type Anchor = LinkProps & {
-  /** Text of the link */
-  text: string
-};
+export type { Anchor } from '@not-govuk/anchor-list';
+export type Item = Anchor;
 
 export type ServiceNavigationProps = StandardProps & HTMLAttributes<HTMLElement> & {
   /** Elements to be injected at the end of the service header container */
   end?: ReactNode
   /** List of links to choose from */
-  items?: Anchor[]
+  items?: Item[]
   /** The text of the mobile navigation menu toggle */
   menuButtonText?: string
   /** The screen reader label for the mobile navigation menu toggle */
