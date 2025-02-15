@@ -33,10 +33,27 @@ describe('makeUseIsActive', () => {
       describe('the returned function', () => {
         describe('when given the current href', () => {
           const href = '/path/to/resource?foo=bar#baz';
-          const result = isActive(href);
 
-          it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
-          it('returns true', () => expect(result).toEqual(true));
+          describe('without the \'exact\' parameter', () => {
+            const result = isActive(href);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns true', () => expect(result).toEqual(true));
+          });
+
+          describe('with \'true\' as the \'exact\' parameter', () => {
+            const result = isActive(href, true);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns true', () => expect(result).toEqual(true));
+          });
+
+          describe('with \'false\' as the \'exact\' parameter', () => {
+            const result = isActive(href, false);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns true', () => expect(result).toEqual(true));
+          });
         });
 
         describe('when given the current href without hash', () => {
@@ -57,10 +74,52 @@ describe('makeUseIsActive', () => {
 
         describe('when given a different href', () => {
           const href = '/path/to/other?foo=bar#baz';
-          const result = isActive(href);
 
-          it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
-          it('returns false', () => expect(result).toEqual(false));
+          describe('without the \'exact\' parameter', () => {
+            const result = isActive(href);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns false', () => expect(result).toEqual(false));
+          });
+
+          describe('with \'true\' as the \'exact\' parameter', () => {
+            const result = isActive(href, true);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns false', () => expect(result).toEqual(false));
+          });
+
+          describe('with \'false\' as the \'exact\' parameter', () => {
+            const result = isActive(href, false);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns false', () => expect(result).toEqual(false));
+          });
+        });
+
+        describe('when given a href to a sub-page', () => {
+          const href = '/path/to/resource/sub?foo=bar#baz';
+
+          describe('without the \'exact\' parameter', () => {
+            const result = isActive(href);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns false', () => expect(result).toEqual(false));
+          });
+
+          describe('with \'true\' as the \'exact\' parameter', () => {
+            const result = isActive(href, true);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns false', () => expect(result).toEqual(false));
+          });
+
+          describe('with \'false\' as the \'exact\' parameter', () => {
+            const result = isActive(href, false);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns true', () => expect(result).toEqual(true));
+          });
         });
 
         describe('when given a relative href to the same resource', () => {

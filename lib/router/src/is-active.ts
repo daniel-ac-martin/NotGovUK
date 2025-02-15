@@ -25,13 +25,22 @@ const includes = (haystack: object, needle: object): boolean => {
   return subIncludes(haystack, needle);
 };
 
-export type UseIsActive = () => (href: string) => boolean;
+export type UseIsActive = () => (href: string, exact?: boolean) => boolean;
 
 export const makeUseIsActive = (useLocation: LocationFunction): UseIsActive => () => {
   const location = useLocation();
 
-  const isActive = (href: string): boolean => {
+  const isActive = (href: string, exact: boolean = true): boolean => {
     const target = URI.parse(href, location.pathname);
+    const dir = (
+      location.pathname.endsWith('/')
+        ? location.pathname
+        : location.pathname + '/'
+    );
+    const pathStart = (
+      target.pathname === '' ||
+      target.pathname.startsWith(dir)
+    );
     const pathMatch = (
       target.pathname === '' ||
       location.pathname === target.pathname
@@ -40,7 +49,12 @@ export const makeUseIsActive = (useLocation: LocationFunction): UseIsActive => (
       location.query,
       target.query
     );
-    const active = !!(pathMatch && queryMatch);
+    const activeExact = !!(pathMatch && queryMatch);
+    const active = (
+      exact
+        ? activeExact
+        : !!(activeExact || ( pathStart && queryMatch) )
+    );
 
     return active;
   };
