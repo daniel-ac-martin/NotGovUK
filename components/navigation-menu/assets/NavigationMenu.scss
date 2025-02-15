@@ -19,21 +19,58 @@
     font-size: inherit;
     line-height: inherit;
 
+    &__subitems {
+      @extend .govuk-list;
+      border-color: inherit;
+      border-style: inherit;
+      border-width: 0;
+      color: inherit;
+      font-size: inherit; /* GDS are removing support for 14px */
+      line-height: inherit;
+      margin-bottom: 0;
+      /* font-size: 0.875rem; */
+      /* line-height: 1.4285714286; */
+      /* @include govuk-font(14); */
+      @include govuk-responsive-margin(2, "top");
+      @include govuk-responsive-padding(4, "left");
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+
     &__item {
       border-color: inherit;
       border-style: inherit;
       border-width: 0;
       color: inherit;
-      @include govuk-responsive-padding(1, "top");
       @include govuk-responsive-padding(0, "left");
       @include govuk-responsive-padding(1, "bottom");
       @include govuk-responsive-padding(0, "right");
 
       &--active {
-        border-left-width: $border-width;
         font-weight: bold;
+      }
+
+      &::before {
+        content: '— ';
+        color: govuk-colour('dark-grey');
+        font-weight: normal;
+        margin-left: -18px;
+      }
+    }
+
+    > .not-govuk-navigation-menu__list__item {
+      @include govuk-responsive-padding(1, "top");
+
+      &--active {
+        border-left-width: $border-width;
         margin-left: -14px;
         padding-left: 10px;
+      }
+
+      &::before {
+        content: none;
       }
     }
 

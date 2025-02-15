@@ -1,18 +1,14 @@
 import { FC, HTMLAttributes, createElement as h } from 'react';
-import { AnchorProps } from '@not-govuk/anchor';
-import { AnchorList } from '@not-govuk/anchor-list';
+import { AnchorList, Item } from '@not-govuk/anchor-list';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/NavigationMenu.scss';
 
-export type Anchor = AnchorProps & {
-  /** Text of the link */
-  text: string
-};
+export type Anchor = Item
 
 export type NavigationMenuProps = StandardProps & HTMLAttributes<HTMLElement> & {
   /** List of links to choose from */
-  items: Anchor[]
+  items: Item[]
 };
 
 export const NavigationMenu: FC<NavigationMenuProps> = ({
@@ -32,3 +28,4 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
 };
 
 export default NavigationMenu;
+export type { Item } from '@not-govuk/anchor-list';
