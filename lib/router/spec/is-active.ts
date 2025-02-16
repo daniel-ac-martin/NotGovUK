@@ -118,6 +118,31 @@ describe('makeUseIsActive', () => {
             const result = isActive(href, false);
 
             it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns false', () => expect(result).toEqual(false));
+          });
+        });
+
+        describe('when given a href to a parent page', () => {
+          const href = '/path/to/?foo=bar#baz';
+
+          describe('without the \'exact\' parameter', () => {
+            const result = isActive(href);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns false', () => expect(result).toEqual(false));
+          });
+
+          describe('with \'true\' as the \'exact\' parameter', () => {
+            const result = isActive(href, true);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
+            it('returns false', () => expect(result).toEqual(false));
+          });
+
+          describe('with \'false\' as the \'exact\' parameter', () => {
+            const result = isActive(href, false);
+
+            it('returns a boolean', () => expect(typeof result).toEqual('boolean'));
             it('returns true', () => expect(result).toEqual(true));
           });
         });
