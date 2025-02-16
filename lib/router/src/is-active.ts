@@ -33,13 +33,13 @@ export const makeUseIsActive = (useLocation: LocationFunction): UseIsActive => (
   const isActive = (href: string, exact: boolean = true): boolean => {
     const target = URI.parse(href, location.pathname);
     const dir = (
-      location.pathname.endsWith('/')
-        ? location.pathname
-        : location.pathname + '/'
+      target.pathname.endsWith('/')
+        ? target.pathname
+        : target.pathname + '/'
     );
     const pathStart = (
       target.pathname === '' ||
-      target.pathname.startsWith(dir)
+      location.pathname.startsWith(dir)
     );
     const pathMatch = (
       target.pathname === '' ||
