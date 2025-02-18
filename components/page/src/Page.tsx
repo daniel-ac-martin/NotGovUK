@@ -23,7 +23,7 @@ export type PageProps = (
   {
     /** Location for the Back link */
     backHref?: string
-    /** List of links */
+    /** List of links to parent pages */
     breadcrumbs?: Breadcrumb[]
     /** The content that displays in the page. */
     children?: ReactNode
