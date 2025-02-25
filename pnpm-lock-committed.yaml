@@ -291,7 +291,7 @@ importers:
       autoprefixer: ^10.4.20
       cypress: 14.0.3
       eslint: ^9.20.1
-      eslint-import-resolver-typescript: ^3.8.0
+      eslint-import-resolver-typescript: ^3.8.3
       eslint-plugin-import: ^2.31.0
       eslint-plugin-jsx-a11y: ^6.10.2
       eslint-plugin-react: ^7.37.4
@@ -322,8 +322,8 @@ importers:
       autoprefixer: 10.4.20_postcss@8.5.2
       cypress: 14.0.3
       eslint: 9.20.1
-      eslint-import-resolver-typescript: 3.8.0_rdprjk3suyljb3eelzcejj2jjq
-      eslint-plugin-import: 2.31.0_iuuj32gofnm2qunhhkrmlhzyw4
+      eslint-import-resolver-typescript: 3.8.3_rdprjk3suyljb3eelzcejj2jjq
+      eslint-plugin-import: 2.31.0_awy6v3y4mvdur3nmsm3vnnstua
       eslint-plugin-jsx-a11y: 6.10.2_eslint@9.20.1
       eslint-plugin-react: 7.37.4_eslint@9.20.1
       eslint-plugin-react-hooks: 5.1.0_eslint@9.20.1
@@ -15095,8 +15095,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-import-resolver-typescript/3.8.0_rdprjk3suyljb3eelzcejj2jjq:
-    resolution: {integrity: sha512-fItUrP/+xwpavWgadrn6lsvcMe80s08xIVFXkUXvhR4cZD2ga96kRF/z/iFGDI7ZDnvtlaZ0wGic7Tw+DhgVnA==}
+  /eslint-import-resolver-typescript/3.8.3_rdprjk3suyljb3eelzcejj2jjq:
+    resolution: {integrity: sha512-A0bu4Ks2QqDWNpeEgTQMPTngaMhuDu4yv6xpftBMAf+1ziXnpx+eSR1WRfoPTe2BAiAjHFZ7kSNx1fvr5g5pmQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '*'
@@ -15112,16 +15112,16 @@ packages:
       debug: 4.4.0
       enhanced-resolve: 5.17.1
       eslint: 9.20.1
-      eslint-plugin-import: 2.31.0_iuuj32gofnm2qunhhkrmlhzyw4
+      eslint-plugin-import: 2.31.0_awy6v3y4mvdur3nmsm3vnnstua
       get-tsconfig: 4.10.0
       is-bun-module: 1.3.0
       stable-hash: 0.0.4
-      tinyglobby: 0.2.10
+      tinyglobby: 0.2.12
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /eslint-module-utils/2.12.0_iixdm4yqpg5myieztyg5j7cxd4:
+  /eslint-module-utils/2.12.0_wjo6dqci5otub3athgdsfhnyym:
     resolution: {integrity: sha512-wALZ0HFoytlyh/1+4wuZ9FJCD/leWHQzzrxJ8+rebyReSLk7LApMyd3WJaLVoN+D5+WIdJyDK1c6JnE65V4Zyg==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -15146,12 +15146,12 @@ packages:
       debug: 3.2.7
       eslint: 9.20.1
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.8.0_rdprjk3suyljb3eelzcejj2jjq
+      eslint-import-resolver-typescript: 3.8.3_rdprjk3suyljb3eelzcejj2jjq
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /eslint-plugin-import/2.31.0_iuuj32gofnm2qunhhkrmlhzyw4:
+  /eslint-plugin-import/2.31.0_awy6v3y4mvdur3nmsm3vnnstua:
     resolution: {integrity: sha512-ixmkI62Rbc2/w8Vfxyh1jQRTdRTF52VxwRVHl/ykPAmqG+Nb7/kNn+byLP0LxPgI7zWA16Jt82SybJInmMia3A==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -15171,7 +15171,7 @@ packages:
       doctrine: 2.1.0
       eslint: 9.20.1
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0_iixdm4yqpg5myieztyg5j7cxd4
+      eslint-module-utils: 2.12.0_wjo6dqci5otub3athgdsfhnyym
       hasown: 2.0.2
       is-core-module: 2.15.1
       is-glob: 4.0.3
@@ -24609,8 +24609,8 @@ packages:
     resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
     dev: false
 
-  /tinyglobby/0.2.10:
-    resolution: {integrity: sha512-Zc+8eJlFMvgatPZTl6A9L/yht8QqdmUNtURHaKZLmKBE12hNPSrqNkUp2cs3M/UKmNVVAMFQYSjYIVHDjW5zew==}
+  /tinyglobby/0.2.12:
+    resolution: {integrity: sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==}
     engines: {node: '>=12.0.0'}
     dependencies:
       fdir: 6.4.3_picomatch@4.0.2
