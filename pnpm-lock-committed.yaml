@@ -41,8 +41,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       react-helmet-async: 2.0.5
-      react-router: 6.29.0
-      react-router-dom: 6.29.0
+      react-router: 6.30.0
+      react-router-dom: 6.30.0
       ts-jest: 29.2.5
       typescript: 4.9.5
       webpack: 5.98.0
@@ -87,8 +87,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-helmet-async: 2.0.5_react@18.3.1
-      react-router: 6.29.0_react@18.3.1
-      react-router-dom: 6.29.0_nnrd3gsncyragczmpvfhocinkq
+      react-router: 6.30.0_react@18.3.1
+      react-router-dom: 6.30.0_nnrd3gsncyragczmpvfhocinkq
       ts-jest: 29.2.5_o2vnjpwp2yfkitllu7wpwtbhqq
       typescript: 4.9.5
       webpack: 5.98.0_webpack-cli@5.1.4
@@ -121,8 +121,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       react-helmet-async: 2.0.5
-      react-router: 6.29.0
-      react-router-dom: 6.29.0
+      react-router: 6.30.0
+      react-router-dom: 6.30.0
       serverless: 3.40.0
       start-server-and-test: 2.0.10
       ts-jest: 29.2.5
@@ -155,8 +155,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-helmet-async: 2.0.5_react@18.3.1
-      react-router: 6.29.0_react@18.3.1
-      react-router-dom: 6.29.0_nnrd3gsncyragczmpvfhocinkq
+      react-router: 6.30.0_react@18.3.1
+      react-router-dom: 6.30.0_nnrd3gsncyragczmpvfhocinkq
       serverless: 3.40.0
       start-server-and-test: 2.0.10
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -195,8 +195,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1
       react-helmet-async: 2.0.5
-      react-router: 6.29.0
-      react-router-dom: 6.29.0
+      react-router: 6.30.0
+      react-router-dom: 6.30.0
       serverless: 3.40.0
       start-server-and-test: 2.0.10
       ts-jest: 29.2.5
@@ -233,8 +233,8 @@ importers:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
       react-helmet-async: 2.0.5_react@18.3.1
-      react-router: 6.29.0_react@18.3.1
-      react-router-dom: 6.29.0_nnrd3gsncyragczmpvfhocinkq
+      react-router: 6.30.0_react@18.3.1
+      react-router-dom: 6.30.0_nnrd3gsncyragczmpvfhocinkq
       serverless: 3.40.0
       start-server-and-test: 2.0.10
       ts-jest: 29.2.5_67xnt3v64q2pgz6kguni4h37hu
@@ -7053,6 +7053,11 @@ packages:
   /@remix-run/router/1.22.0:
     resolution: {integrity: sha512-MBOl8MeOzpK0HQQQshKB7pABXbmyHizdTpqnrIseTbsv0nAepwC2ENZa1aaBExNQcpLoXmWthhak8SABLzvGPw==}
     engines: {node: '>=14.0.0'}
+
+  /@remix-run/router/1.23.0:
+    resolution: {integrity: sha512-O3rHJzAQKamUz1fvE0Qaw0xSFqsA/yafi2iqeE0pvdFtCO1viYx8QL6f3Ln/aCCTLxs68SLf0KPM9eSeM8yBnA==}
+    engines: {node: '>=14.0.0'}
+    dev: true
 
   /@remix-run/serve/2.15.3_typescript@5.7.2:
     resolution: {integrity: sha512-7P0FWeNu1NEaSJpL2Xn8fZbr4zxkrOR6Qg03p7iYbipcQ1L0zr9Nxe5KKG4m9n8EyRWWxDV2L+wXHI7Ul9HiMw==}
@@ -21679,6 +21684,19 @@ packages:
       react-dom: 18.3.1_react@18.3.1
       react-router: 6.29.0_react@18.3.1
 
+  /react-router-dom/6.30.0_nnrd3gsncyragczmpvfhocinkq:
+    resolution: {integrity: sha512-x30B78HV5tFk8ex0ITwzC9TTZMua4jGyA9IUlH1JLQYQTFyxr/ZxwOJq7evg1JX1qGVUcvhsmQSKdPncQrjTgA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.23.0
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      react-router: 6.30.0_react@18.3.1
+    dev: true
+
   /react-router/6.29.0:
     resolution: {integrity: sha512-DXZJoE0q+KyeVw75Ck6GkPxFak63C4fGqZGNijnWgzB/HzSP1ZfTlBj5COaGWwhrMQ/R8bXiq5Ooy4KG+ReyjQ==}
     engines: {node: '>=14.0.0'}
@@ -21696,6 +21714,16 @@ packages:
     dependencies:
       '@remix-run/router': 1.22.0
       react: 18.3.1
+
+  /react-router/6.30.0_react@18.3.1:
+    resolution: {integrity: sha512-D3X8FyH9nBcTSHGdEKurK7r8OYE1kKFn3d/CF+CoxbSHkxU7o37+Uh7eAHRXr6k2tSExXYO++07PeXJtA/dEhQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.23.0
+      react: 18.3.1
+    dev: true
 
   /react-sizeme/3.0.2:
     resolution: {integrity: sha512-xOIAOqqSSmKlKFJLO3inBQBdymzDuXx4iuwkNcJmC96jeiOg5ojByvL+g3MW9LPEsojLbC6pf68zOfobK8IPlw==}
