@@ -62,6 +62,35 @@ Never use the table component to layout content on a page. Instead, use the [gri
 
 Use the `<caption>` element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.
 
+To use a custom caption, supply your element to the prop. (Supplying a string will receive standard styling with the `govuk-table__caption--m` class.)
+
+<Preview>
+  <Story name="Captions">
+    <Table
+      caption={<caption className="govuk-table__caption govuk-table__caption--l">Months and rates</caption>}
+      keys={['month', 'rate']}
+      headings={{
+        month: 'Month you apply',
+        rate: 'Rate for vehicles'
+      }}
+      data={[
+        {
+          month: 'January',
+          rate: '£95'
+        },
+        {
+          month: 'February',
+          rate: '£55'
+        },
+        {
+          month: 'March',
+          rate: '£125'
+        },
+      ]}
+    />
+  </Story>
+</Preview>
+
 
 ## Stories
 ### Standard
