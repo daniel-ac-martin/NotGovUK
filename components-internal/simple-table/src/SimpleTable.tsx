@@ -1,20 +1,37 @@
-import { FC, createElement as h } from 'react';
+import { ReactNode, FC, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/SimpleTable.scss';
 
 export type SimpleTableProps<T> = StandardProps & {
-  caption?: string
+  caption?: string | ReactNode
   data: T[]
   headings: T
   keys: (keyof T)[]
 };
 
-export const SimpleTable: FC<SimpleTableProps<any>> = ({ caption, classBlock, classModifiers, className, data, headings, keys, ...attrs }) => {
+export const SimpleTable: FC<SimpleTableProps<any>> = ({
+  caption: _caption,
+  classBlock,
+  classModifiers,
+  className,
+  data,
+  headings,
+  keys,
+  ...attrs
+}) => {
   const classes = classBuilder('penultimate-simple-table', classBlock, classModifiers, className);
+  const caption = (
+    typeof _caption !== 'string'
+      ? _caption
+      : _caption && (
+        <caption className={classes('caption')}>{_caption}</caption>
+      )
+  );
+
   return (
     <table {...attrs} className={classes()}>
-      {caption && (<caption className={classes('caption')}>{caption}</caption>)}
+      {caption}
       <thead className={classes('head')}>
         <tr className={classes('row')}>
           {keys.map((k, i) => (
