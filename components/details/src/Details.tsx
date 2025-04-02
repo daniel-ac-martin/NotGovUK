@@ -21,7 +21,11 @@ export const Details: FC<DetailsProps> = ({
 
   return (
     <details {...attrs} className={classes()}>
-      <summary className={classes('summary')}>{summary}</summary>
+      <summary className={classes('summary')}>
+        <span className={classes('summary-text')}>
+          {summary}
+        </span>
+      </summary>
       <div className={classes('text')}>
         {children}
       </div>
