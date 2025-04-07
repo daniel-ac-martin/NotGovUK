@@ -84,7 +84,9 @@ $ npm install @not-govuk/components
 You can then import the components.
 
 ```jsx
-import { Panel } from '@not-govuk/components';
+import components from '@not-govuk/components';
+
+const Panel = components.Panel;
 ```
 
 You can also override some global styles by importing `@not-govuk/components` into your SASS. e.g. `app/style.scss`
@@ -123,6 +125,7 @@ export default defineConfig({
 #### Limitations on Remix
 
 - You will need to manage your own `<head>` including the favicon.
+- It's not currently possible to do a named import, as Remix uses Vite, which is stricter than Webpack.
 
 **See:** [Example Remix application using NotGovUK components]
 
