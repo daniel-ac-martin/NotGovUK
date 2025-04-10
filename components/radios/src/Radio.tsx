@@ -13,6 +13,7 @@ export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'label'> & 
 export const Radio: FC<RadioProps> = ({
   classes,
   conditional,
+  defaultChecked,
   hint,
   id,
   label,
@@ -21,7 +22,11 @@ export const Radio: FC<RadioProps> = ({
   const ref = useRef<HTMLInputElement>(null);
   const conditionalId = `conditional-${id}`;
 
-  const isChecked = () => ref.current?.checked;
+  const isChecked = () => (
+    ref.current === null
+      ? defaultChecked
+      : ref.current.checked
+  );
 
   return (
     <Fragment>
@@ -30,6 +35,7 @@ export const Radio: FC<RadioProps> = ({
           {...attrs}
           id={id}
           className={classes('input')}
+          defaultChecked={defaultChecked}
           type="radio"
           ref={ref}
           aria-controls={conditional ? conditionalId : undefined}

@@ -15,6 +15,7 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'label'>
 export const Checkbox: FC<CheckboxProps> = ({
   classes,
   conditional,
+  defaultChecked,
   hint,
   id,
   label,
@@ -32,7 +33,11 @@ export const Checkbox: FC<CheckboxProps> = ({
   const ref = useRef<HTMLInputElement>(null);
   const conditionalId = `conditional-${id}`;
 
-  const isChecked = () => ref.current?.checked;
+  const isChecked = () => (
+    ref.current === null
+      ? defaultChecked
+      : ref.current.checked
+  );
 
   return (
     <Fragment>
@@ -41,6 +46,7 @@ export const Checkbox: FC<CheckboxProps> = ({
           {...attrs}
           id={id}
           className={classes('input')}
+          defaultChecked={defaultChecked}
           type="checkbox"
           ref={ref}
           onChange={onChange}
