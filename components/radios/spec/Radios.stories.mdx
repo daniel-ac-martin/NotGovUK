@@ -338,49 +338,118 @@ users return to the screen multiple times.
 
 ### Error messages
 
-Display an error message if none of the radios are selected.
+Display an error message if the user has not:
+
+- selected any radios
+- answered a conditionally revealed question
 
 Error messages should be styled like this:
 
 <Preview>
   <Story name="Errors">
     <Radios
-      classModifiers="inline"
-      error="Select yes if you have changed your name "
-      hint="This includes changing your last name or spelling your name differently."
-      label={<h1 className="govuk-heading-l">Have you changed your name?</h1>}
-      name="changed-name"
+      error="Select the country where you live"
+      label={<h1 className="govuk-heading-l">Where do you live?</h1>}
+      name="where-do-you-live"
       options={[
-        { value: 'yes', label: 'Yes' },
-        { value: 'no', label: 'No' }
+        { value: 'england', label: 'England' },
+        { value: 'scotland', label: 'Scotland' },
+        { value: 'wales', label: 'Wales' },
+        { value: 'northern-ireland', label: 'Northern Ireland' }
       ]}
     />
   </Story>
 </Preview>
 
-Make sure errors follow the guidance in error message and have specific error
-messages for specific error states.
+Make sure errors follow the guidance in the [Error message component] and have
+specific error messages for specific error states.
 
 
-#### If nothing is selected and the options are ‘yes’ and ‘no’
+#### If it’s a ‘yes’ or ‘no’ question
 
-Say ‘Select yes if [whatever it is is true]’.
-For example, ‘Select yes if Sarah normally lives with you’.
-
-
-#### If nothing is selected and the question has options in it
-
-Say ‘Select if [whatever it is]’.
-For example, ‘Select if you are employed or self-employed’.
+Say ‘Select yes if [whatever it is is true]’. For example, ‘Select yes if Sarah
+normally lives with you’.
 
 
-#### If nothing is selected and the question does not have options in it
+#### If there are two options which are not ‘yes’ and ‘no’
 
-Say ‘Select [whatever it is]’.
-For example, ‘Select the day of the week you pay your rent’.
+Say ‘Select if [whatever it is]’. For example, ‘Select if you are employed or
+self-employed’.
+
+
+#### If there are more than two options
+
+Say ‘Select [whatever it is]’. For example, ‘Select the day of the week you pay
+your rent’.
+
+
+#### If it’s a conditionally revealed question
+
+Include an [Error message component] that is clearly related to the initial
+question.
+
+<Preview>
+  <Story name="ContentError">
+    <Radios
+      defaultValue="email"
+      label={<h1 className="govuk-heading-l">How would you prefer to be contacted?</h1>}
+      name="how-contacted-error"
+      options={[
+        {
+          value: 'email',
+          label: 'Email',
+          conditional: (
+            <TextInput
+              autoComplete="email"
+              className="govuk-!-width-one-third"
+              error="Email address cannot be blank"
+              id="contact-by-email"
+              label="Email address"
+              name="contact-by-email"
+              spellCheck={false}
+              type="email"
+            />
+          )
+        },
+        {
+          value: 'phone',
+          label: 'Phone',
+          conditional: (
+            <TextInput
+              autoComplete="tel"
+              className="govuk-!-width-one-third"
+              id="contact-by-phone"
+              label="Phone number"
+              name="contact-by-phone"
+              spellCheck={false}
+              type="tel"
+            />
+          )
+        },
+        {
+          value: 'text message',
+          label: 'Text message',
+          conditional: (
+            <TextInput
+              autoComplete="tel"
+              className="govuk-!-width-one-third"
+              id="contact-by-text"
+              label="Mobile phone number"
+              name="contact-by-text"
+              spellCheck={false}
+              type="tel"
+            />
+          )
+        }
+      ]}
+      hint="Select one option."
+    />
+  </Story>
+</Preview>
 
 
 [one question per page]: https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page
 [why and how to set legends as headings]: https://design-system.service.gov.uk/get-started/labels-legends-headings
 [WCAG 2.1 success criterion 4.1.2 Name, Role, Value]: https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html
 [learn more about how conditionally revealed questions should be used in services]: https://github.com/alphagov/govuk-design-system-backlog/issues/37
+[Error message component]: ?name=Error%20message
