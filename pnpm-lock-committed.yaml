@@ -1956,12 +1956,12 @@ importers:
       '@not-govuk/restify': workspace:^0.15.12
       '@types/webpack': 5.28.5
       '@types/webpack-hot-middleware': 2.25.9
-      http-proxy-middleware: ^3.0.3
+      http-proxy-middleware: ^3.0.5
       typescript: 4.9.5
     dependencies:
       '@not-govuk/express-adapter': link:../express-adapter
       '@not-govuk/restify': link:../restify
-      http-proxy-middleware: 3.0.3
+      http-proxy-middleware: 3.0.5
     devDependencies:
       '@types/webpack': 5.28.5
       '@types/webpack-hot-middleware': 2.25.9
@@ -17276,8 +17276,8 @@ packages:
       - supports-color
     dev: true
 
-  /http-proxy-middleware/3.0.3:
-    resolution: {integrity: sha512-usY0HG5nyDUwtqpiZdETNbmKtw3QQ1jwYFZ9wi5iHzX2BcILwQKtYDJPo7XHTsu5Z0B2Hj3W9NNnbd+AjFWjqg==}
+  /http-proxy-middleware/3.0.5:
+    resolution: {integrity: sha512-GLZZm1X38BPY4lkXA01jhwxvDoOkkXqjgVyUzVxiEK4iuRu03PZoYHhHRwxnfhQMDuaxi3vVri0YgSro/1oWqg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@types/http-proxy': 1.17.15
