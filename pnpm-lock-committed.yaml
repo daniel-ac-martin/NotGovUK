@@ -113,7 +113,7 @@ importers:
       '@types/react-dom': 18.3.6
       '@types/webpack-env': 1.18.8
       bunyan: 1.8.15
-      cypress: 14.3.0
+      cypress: 14.3.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       node-hot-loader: 1.21.11
@@ -147,7 +147,7 @@ importers:
       '@types/react-dom': 18.3.6_@types+react@18.3.20
       '@types/webpack-env': 1.18.8
       bunyan: 1.8.15
-      cypress: 14.3.0
+      cypress: 14.3.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       node-hot-loader: 1.21.11_webpack@5.99.6
@@ -186,7 +186,7 @@ importers:
       '@types/react-dom': 18.3.6
       '@types/webpack-env': 1.18.8
       bunyan: 1.8.15
-      cypress: 14.3.0
+      cypress: 14.3.1
       graphql: 15.10.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -224,7 +224,7 @@ importers:
       '@types/react-dom': 18.3.6_@types+react@18.3.20
       '@types/webpack-env': 1.18.8
       bunyan: 1.8.15
-      cypress: 14.3.0
+      cypress: 14.3.1
       graphql: 15.10.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -250,7 +250,7 @@ importers:
       '@types/node': 22.14.1
       '@types/react': 18.3.20
       '@types/react-dom': 18.3.6
-      cypress: 14.3.0
+      cypress: 14.3.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       next: 15.3.1
@@ -269,7 +269,7 @@ importers:
       '@types/node': 22.14.1
       '@types/react': 18.3.20
       '@types/react-dom': 18.3.6_@types+react@18.3.20
-      cypress: 14.3.0
+      cypress: 14.3.1
       jest: 29.7.0_@types+node@22.14.1
       jest-environment-jsdom: 29.7.0
       sass: 1.86.3
@@ -289,7 +289,7 @@ importers:
       '@typescript-eslint/eslint-plugin': ^8.31.0
       '@typescript-eslint/parser': ^8.31.0
       autoprefixer: ^10.4.21
-      cypress: 14.3.0
+      cypress: 14.3.1
       eslint: ^9.25.1
       eslint-import-resolver-typescript: ^3.10.0
       eslint-plugin-import: ^2.31.0
@@ -320,7 +320,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 8.31.0_hwu4q3fygzkvwor3mwcfm6ghxe
       '@typescript-eslint/parser': 8.31.0_h5s4pa2bqig6lrmxieywp24oua
       autoprefixer: 10.4.21_postcss@8.5.3
-      cypress: 14.3.0
+      cypress: 14.3.1
       eslint: 9.25.1
       eslint-import-resolver-typescript: 3.10.0_oysxnfzanwxnlo7e7u5ezqr7du
       eslint-plugin-import: 2.31.0_qaouqzh5tyulxsi3upmvwkve6i
@@ -10308,7 +10308,7 @@ packages:
     resolution: {integrity: sha512-Q0zyBupO6NxGRZut/JdmqYKOnN95Eg5V8Csg3PGKkP+FnvsUZx1jAyK7fztIszxxMuoBA6E3KXWvdZVXIpx60g==}
     dependencies:
       '@types/through': 0.0.33
-      rxjs: 7.8.1
+      rxjs: 7.8.2
 
   /@types/is-function/1.0.3:
     resolution: {integrity: sha512-/CLhCW79JUeLKznI6mbVieGbl4QU5Hfn+6udw1YHZoofASjbQ5zaP5LzAUZYDpRYEjS4/P+DhEgyJ/PQmGGTWw==}
@@ -13760,8 +13760,8 @@ packages:
   /cyclist/1.0.2:
     resolution: {integrity: sha512-0sVXIohTfLqVIW3kb/0n6IiWF3Ifj5nm2XaSrLq2DI6fKIGa2fYAZdk917rUneaeLVpYfFcyXE2ft0fe3remsA==}
 
-  /cypress/14.3.0:
-    resolution: {integrity: sha512-rRfPl9Z0/CczuYybBEoLbDVuT1OGkhYaJ0+urRCshgiDRz6QnoA0KQIQnPx7MJ3zy+VCsbUU1pV74n+6cbJEdg==}
+  /cypress/14.3.1:
+    resolution: {integrity: sha512-/2q06qvHMK3PNiadnRW1Je0lJ43gAFPQJUAK2zIxjr22kugtWxVQznTBLVu1AvRH+RP3oWZhCdWqiEi+0NuqCg==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     requiresBuild: true
@@ -17202,7 +17202,7 @@ packages:
       mute-stream: 1.0.0
       ora: 5.4.1
       run-async: 3.0.0
-      rxjs: 7.8.1
+      rxjs: 7.8.2
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 6.2.0
@@ -22561,11 +22561,6 @@ packages:
     resolution: {integrity: sha512-ntymy489o0/QQplUDnpYAYUsO50K9SBrIVaKCWDOJzYJts0f9WH9RFJkyagebkw5+y1oi00R7ynNW/d12GBumg==}
     dependencies:
       aproba: 1.2.0
-
-  /rxjs/7.8.1:
-    resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
-    dependencies:
-      tslib: 2.8.1
 
   /rxjs/7.8.2:
     resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
