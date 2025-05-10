@@ -50,11 +50,12 @@ export const Footer: FC<FooterProps> = ({
   navigation,
   ...attrs
 }) => {
-  const classModifiers = [
-    department,
-    ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
-  ];
-  const classes = classBuilder('govuk-footer', classBlock, classModifiers, className);
+  const classModifiers = (
+    Array.isArray(_classModifiers)
+      ? _classModifiers
+      : [_classModifiers]
+  );
+  const classes = classBuilder('govuk-footer', classBlock, [...classModifiers, department], className);
   const A = (props: LinkProps) => h(Link, { classBlock: classes('link'), ...props });
 
   return (
