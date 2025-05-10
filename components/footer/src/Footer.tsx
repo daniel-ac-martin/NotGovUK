@@ -23,6 +23,8 @@ export type NavMenu = {
 
 export type FooterProps = StandardProps & {
   children?: ReactNode
+  /** Department branding to use (e.g. home-office) */
+  department?: string
   /** Whether to add the standard Gov.UK content */
   govUK?: boolean
   /** Maximum width of the contents in px units (-1 for full width) */
@@ -38,8 +40,9 @@ export type FooterProps = StandardProps & {
 export const Footer: FC<FooterProps> = ({
   children,
   classBlock,
-  classModifiers,
+  classModifiers: _classModifiers = [],
   className,
+  department,
   govUK = false,
   maxContentsWidth,
   meta,
@@ -47,6 +50,10 @@ export const Footer: FC<FooterProps> = ({
   navigation,
   ...attrs
 }) => {
+  const classModifiers = [
+    department,
+    ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
+  ];
   const classes = classBuilder('govuk-footer', classBlock, classModifiers, className);
   const A = (props: LinkProps) => h(Link, { classBlock: classes('link'), ...props });
 
