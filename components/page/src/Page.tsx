@@ -89,6 +89,7 @@ export const Page: FC<PageProps> = ({
     signOutText
   };
   const footerProps = {
+    department,
     govUK,
     maxContentsWidth,
     meta,
