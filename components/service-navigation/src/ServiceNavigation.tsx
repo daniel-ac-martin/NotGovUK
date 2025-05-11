@@ -28,6 +28,10 @@ export type ServiceNavigationProps = StandardProps & HTMLAttributes<HTMLElement>
   serviceHref?: string
   /** Service link text */
   serviceName?: string
+  /** Sign out link URL */
+  signOutHref?: string
+  /** Sign out link text */
+  signOutText?: string
   /** Elements to be injected at the start of the service header container */
   start?: ReactNode
 };
@@ -38,7 +42,7 @@ export const ServiceNavigation: FC<ServiceNavigationProps> = ({
   classModifiers,
   className,
   end = null,
-  items = [],
+  items: _items = [],
   maxContentsWidth,
   menuButtonText = 'Menu',
   menuButtonLabel,
@@ -46,11 +50,18 @@ export const ServiceNavigation: FC<ServiceNavigationProps> = ({
   navigationId = 'navigation',
   serviceHref,
   serviceName,
+  signOutHref,
+  signOutText = 'Sign out',
   start = null,
   ...attrs
 }) => {
   const classes = classBuilder('govuk-service-navigation', classBlock, classModifiers, className);
   const navigationLabel = _navigationLabel || menuButtonText;
+  const items = !signOutHref ? _items : [..._items, {
+    href: signOutHref,
+    text: signOutText,
+    forceExternal: true
+  }];
 
   const serviceLink = !serviceName ? null : (
     <span className={classes('service-name')}>
