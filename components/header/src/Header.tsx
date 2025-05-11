@@ -142,23 +142,25 @@ export const Header: FC<HeaderProps> = ({
             )}
           </A>
         </div>
-        <div className={classes('content')}>
-          { !serviceName ? null : (
-            <A href={serviceHref} className={classes('service-name')}>{serviceName}</A>
-          ) }
-          { !navLinks.length ? null : (
-            <nav className={classes('navigation')} aria-label="Menu">
-              <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" hidden>Menu</button>
-              <ul id="navigation" className={classes('navigation-list')}>
-                { navLinks.map(({ active, text, ...linkAttrs }, i) => (
-                  <li key={i} className={classes('navigation-item', active ? 'active' : undefined)}>
-                    <A {...linkAttrs}>{text}</A>
-                  </li>
-                )) }
-              </ul>
-            </nav>
-          ) }
-        </div>
+        {!(serviceName || navLinks.length) ? null : (
+          <div className={classes('content')}>
+            {!serviceName ? null : (
+              <A href={serviceHref} className={classes('service-name')}>{serviceName}</A>
+            )}
+            {!navLinks.length ? null : (
+              <nav className={classes('navigation')} aria-label="Menu">
+                <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" hidden>Menu</button>
+                <ul id="navigation" className={classes('navigation-list')}>
+                  {navLinks.map(({ active, text, ...linkAttrs }, i) => (
+                    <li key={i} className={classes('navigation-item', active ? 'active' : undefined)}>
+                      <A {...linkAttrs}>{text}</A>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+          </div>
+        )}
       </WidthContainer>
     </header>
   );
