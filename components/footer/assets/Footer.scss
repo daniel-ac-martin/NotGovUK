@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:map";
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/components/footer/index";
 
@@ -9,9 +11,50 @@
   ol, ul, p {
     font-size: inherit;
   }
+
+  // Department colours
+  @each $i, $v in $govuk-colours-organisations {
+    &--#{$i} {
+      $contrast-safe: map.get($v, "contrast-safe");
+      $light-colour: map.get($v, "colour");
+      $colour: if($contrast-safe, $contrast-safe, $light-colour);
+      border-color: $colour !important;
+    }
+  }
 }
 
 .not-govuk-page--dark .govuk-footer {
   background-color: $not-govuk-dark-mode-footer-colour;
-  border-color: $not-govuk-dark-mode-border-colour;
+}
+
+.govuk-template--rebranded {
+  .govuk-footer {
+    // Department colours
+    @each $i, $v in $govuk-colours-organisations {
+      &--#{$i} {
+        $contrast-safe: map.get($v, "contrast-safe");
+        $light-colour: map.get($v, "colour");
+        $colour: if($contrast-safe, $contrast-safe, $light-colour);
+
+        $background-colour: color.change($colour, $lightness: 97.3%, $chroma: 2.2, $space: lch);
+
+        background-color: $background-colour !important;
+      }
+    }
+  }
+
+  &.not-govuk-page--dark .govuk-footer {
+    // Department colours
+    @each $i, $v in $govuk-colours-organisations {
+      &--#{$i} {
+        $contrast-safe: map.get($v, "contrast-safe");
+        $light-colour: map.get($v, "colour");
+        $colour: if($contrast-safe, $contrast-safe, $light-colour);
+
+        $background-colour: color.change($colour, $lightness: 15%, $chroma: 25, $space: lch);
+
+        background-color: $background-colour !important;
+      }
+    }
+  }
 }

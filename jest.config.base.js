@@ -21,7 +21,6 @@ const config = {
   transform: {
     "^.+\\.jsx?$": 'babel-jest',
     "^.+\\.tsx?$": ['ts-jest', {
-      isolatedModules: true,
       tsconfig: path.resolve(__dirname, 'tsconfig.jest.json'),
       useESM: false
     }]

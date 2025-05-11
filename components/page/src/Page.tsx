@@ -9,6 +9,7 @@ import { Head } from '@not-govuk/head';
 import { Header, HeaderProps } from '@not-govuk/header';
 import { A } from '@not-govuk/link';
 import { PhaseBanner, PhaseBannerProps } from '@not-govuk/phase-banner';
+import { ServiceNavigation } from '@not-govuk/service-navigation';
 import { SkipLink } from '@not-govuk/skip-link';
 import { WidthContainer } from '@not-govuk/width-container';
 
@@ -35,6 +36,8 @@ export type PageProps = (
     footerNavigation?: NavMenu[]
     /** Content for the phase-banner */
     phaseBannerContent?: ReactNode
+    /** If true, use the redesigned styles */
+    rebrand?: boolean
     /** Title of the HTML page (can be overridden via Helmet  */
     title?: string
   }
@@ -46,7 +49,7 @@ export const Page: FC<PageProps> = ({
   children,
   classBlock,
   classModifiers: _classModifiers,
-  className,
+  className: _className,
   department,
   feedbackHref,
   footerContent,
@@ -61,6 +64,7 @@ export const Page: FC<PageProps> = ({
   organisationText,
   phase,
   phaseBannerContent,
+  rebrand = false,
   serviceHref,
   serviceName,
   signOutHref,
@@ -73,28 +77,36 @@ export const Page: FC<PageProps> = ({
       ? _classModifiers
       : [_classModifiers]
   );
-  const classes = classBuilder('not-govuk-page', classBlock, [...classModifiers, department], className);
+  const className = _className || '';
+  const classes = classBuilder('not-govuk-page', classBlock, [...classModifiers, department], className + (rebrand ? ' govuk-template--rebranded' : ''));
   const title = _title || serviceName || 'NotGovUK';
   const headerProps = {
     department,
     govUK,
     logo,
     maxContentsWidth,
-    navigation,
     organisationHref,
     organisationText,
+    rebrand
+  };
+  const navigationProps = {
+    maxContentsWidth,
+    items: navigation,
     serviceHref,
     serviceName,
     signOutHref,
     signOutText
   };
   const footerProps = {
+    department,
     govUK,
     maxContentsWidth,
     meta,
     metaTitle,
-    navigation: footerNavigation
+    navigation: footerNavigation,
+    rebrand
   };
+  const showNavigation = navigation?.length || serviceName;
   const mainId = 'main-content';
 
   return (
@@ -104,7 +116,10 @@ export const Page: FC<PageProps> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </Head>
       <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
-      <Header {...headerProps} className={classes('header')} />
+      <Header {...headerProps} className={classes('header')} classModifiers={showNavigation ? 'full-width-border' : undefined} />
+      { !showNavigation ? null : (
+        <ServiceNavigation {...navigationProps} className={classes('navigation')} />
+      ) }
       <div className={classes('body')}>
         <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
           { !phase ? null : (

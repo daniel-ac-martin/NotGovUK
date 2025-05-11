@@ -3,6 +3,7 @@ import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
 import { CrownLogo } from './CrownLogo';
+import { CrownLogoOld } from './CrownLogoOld';
 import { CoatLogo } from './CoatLogo';
 
 import '../assets/Header.scss';
@@ -27,6 +28,8 @@ export type HeaderProps = StandardProps & {
   organisationHref?: string
   /** Organisation link text */
   organisationText?: string
+  /** If true, use the redesigned header and new GOV.UK logotype */
+  rebrand?: boolean
   /** Service link URL */
   serviceHref?: string
   /** Service link text */
@@ -84,7 +87,7 @@ const departmentText = (d?: string) => (
 
 export const Header: FC<HeaderProps> = ({
   classBlock,
-  classModifiers,
+  classModifiers: _classModifiers = [],
   className,
   department,
   govUK = false,
@@ -92,6 +95,7 @@ export const Header: FC<HeaderProps> = ({
   navigation = [],
   organisationHref,
   organisationText,
+  rebrand = false,
   serviceHref = '/',
   serviceName,
   signOutHref,
@@ -99,7 +103,12 @@ export const Header: FC<HeaderProps> = ({
   logo: _logo,
   ...attrs
 }) => {
-  const classes = classBuilder('govuk-header', classBlock, classModifiers, className);
+  const classModifiers = (
+    Array.isArray(_classModifiers)
+    ? _classModifiers
+    : [_classModifiers]
+  );
+  const classes = classBuilder('govuk-header', classBlock, [...classModifiers, department], className);
   const A = (props: LinkProps) => h(Link, { classBlock: classes('link'), ...props });
   const orgHref = organisationHref || ( govUK ? 'https://www.gov.uk/' : '/' );
   const orgText = organisationText || ( govUK ? 'GOV.UK' : departmentText(department) );
@@ -115,7 +124,11 @@ export const Header: FC<HeaderProps> = ({
     : (
       govUK
       ? (
-        <CrownLogo focusable="false" className={classes('logotype')} height="30" width="148" />
+        rebrand ? (
+          <CrownLogo focusable="false" className={classes('logotype')} height="30" width="162" />
+        ) : (
+          <CrownLogoOld focusable="false" className={classes('logotype')} height="30" width="148" />
+        )
       )
       : (
         <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
@@ -125,7 +138,7 @@ export const Header: FC<HeaderProps> = ({
 
   return (
     <header {...attrs} className={classes()} data-module="govuk-header">
-      <WidthContainer maxWidth={maxContentsWidth} className={classes('container', department)}>
+      <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
         <div className={classes('logo')}>
           <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
             {logo}
@@ -134,23 +147,25 @@ export const Header: FC<HeaderProps> = ({
             )}
           </A>
         </div>
-        <div className={classes('content')}>
-          { !serviceName ? null : (
-            <A href={serviceHref} className={classes('service-name')}>{serviceName}</A>
-          ) }
-          { !navLinks.length ? null : (
-            <nav className={classes('navigation')} aria-label="Menu">
-              <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" hidden>Menu</button>
-              <ul id="navigation" className={classes('navigation-list')}>
-                { navLinks.map(({ active, text, ...linkAttrs }, i) => (
-                  <li key={i} className={classes('navigation-item', active ? 'active' : undefined)}>
-                    <A {...linkAttrs}>{text}</A>
-                  </li>
-                )) }
-              </ul>
-            </nav>
-          ) }
-        </div>
+        {!(serviceName || navLinks.length) ? null : (
+          <div className={classes('content')}>
+            {!serviceName ? null : (
+              <A href={serviceHref} className={classes('service-name')}>{serviceName}</A>
+            )}
+            {!navLinks.length ? null : (
+              <nav className={classes('navigation')} aria-label="Menu">
+                <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" hidden>Menu</button>
+                <ul id="navigation" className={classes('navigation-list')}>
+                  {navLinks.map(({ active, text, ...linkAttrs }, i) => (
+                    <li key={i} className={classes('navigation-item', active ? 'active' : undefined)}>
+                      <A {...linkAttrs}>{text}</A>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+          </div>
+        )}
       </WidthContainer>
     </header>
   );

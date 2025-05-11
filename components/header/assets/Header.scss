@@ -2,14 +2,41 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/components/header/index";
 
-.govuk-header {
-  &__container {
+.govuk-template--rebranded {
+  .govuk-header {
     // Department colours
     @each $i, $v in $govuk-colours-organisations {
       &--#{$i} {
         $contrast-safe: map.get($v, "contrast-safe");
         $light-colour: map.get($v, "colour");
         $colour: if($contrast-safe, $contrast-safe, $light-colour);
+        background-color: $colour !important;
+
+        .govuk-header__link {
+          &--homepage {
+            &:not(:focus) {
+              background-color: $colour !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.govuk-header {
+  // Department colours
+  @each $i, $v in $govuk-colours-organisations {
+    &--#{$i} {
+      $contrast-safe: map.get($v, "contrast-safe");
+      $light-colour: map.get($v, "colour");
+      $colour: if($contrast-safe, $contrast-safe, $light-colour);
+
+      &.govuk-header--full-width-border {
+        border-color: $colour !important;
+      }
+
+      .govuk-header__container {
         border-color: $colour !important;
 
         .govuk-header__navigation-item--active a,

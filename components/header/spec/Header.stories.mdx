@@ -1,4 +1,5 @@
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
+import { Tag } from '@not-govuk/tag';
 import { Header } from '../src/Header';
 import readMe from '../README.md';
 
@@ -76,6 +77,21 @@ Use the default GOV.UK header if your service is hosted on GOV.UK and has
 </Preview>
 
 
+### Re-branded GOV.UK header
+
+The default header for public facing websites on GOV.UK, after 25th June 2025.
+
+Add the `rebrand` prop, and ensure that a parent element, such as `<html>`, has the `govuk-template--rebranded` class.
+
+<Preview>
+  <Story name="Re-branded GOV.UK">
+    <div className="govuk-template--rebranded">
+      <Header govUK rebrand />
+    </div>
+  </Story>
+</Preview>
+
+
 ### Header with service name
 
 <Preview>
@@ -90,8 +106,12 @@ Use the default GOV.UK header if your service is hosted on GOV.UK and has
 
 ### Header with service name and navigation
 
+<p><Tag text="Deprecated" /></p>
+
 Use the header with navigation if you need to include basic navigation,
 contact or account management links.
+
+You should now use the [Service navigation] component instead.
 
 <Preview>
   <Story name="Navigation">
@@ -112,8 +132,12 @@ contact or account management links.
 
 ### Header with service name and sign-out link
 
+<p><Tag text="Deprecated" /></p>
+
 A sign-out link can be provided and added to the end of the list of
 navigation links.
+
+You should now use the [Service navigation] component instead.
 
 <Preview>
   <Story name="Sign out">
@@ -312,3 +336,6 @@ your department in order to use their colours.
     />
   </Story>
 </Preview>
+
+
+[Service navigation]: ?name=Service%20navigation

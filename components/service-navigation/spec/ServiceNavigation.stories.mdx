@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs';
 import { Header } from '@not-govuk/header';
+import { Tag } from '@not-govuk/tag';
 import { ServiceNavigation } from '../src/ServiceNavigation';
 import readMe from '../README.md';
 
@@ -39,6 +40,32 @@ Service navigation helps users understand that they’re using your service and 
 </Preview>
 
 <Props of={ ServiceNavigation } />
+
+
+## Rebrand
+
+After 25th June 2025, you should use the rebranded version of this component, by ensuring that a parent element, such as `<html>`, has the `govuk-template--rebranded` class.
+
+<Preview>
+  <Story name="Rebrand">
+    <div className="govuk-template--rebranded">
+      <ServiceNavigation items={[
+        {
+          href: "/styles",
+          text: "Navigation item 1"
+        },
+        {
+          href: "#active",
+          text: "Navigation item 2",
+        },
+        {
+          href: "/contributing",
+          text: "Navigation item 3"
+        }
+      ]} />
+    </div>
+  </Story>
+</Preview>
 
 
 ## When to use this component
@@ -125,6 +152,24 @@ Show navigation links to let users navigate to different parts of your service a
 </Preview>
 
 See when and how to show navigation links in the [Help users navigate a service pattern].
+
+
+### Showing service name and sign-out link
+
+<p><Tag text="Unofficial" /></p>
+
+A sign-out link can be provided and added to the end of the list of
+navigation links.
+
+<Preview>
+  <Story name="Sign out">
+    <ServiceNavigation
+      serviceName="Service name"
+      serviceHref="#"
+      signOutHref="?sign-out#sign-out"
+    />
+  </Story>
+</Preview>
 
 
 [Help users to navigate a service pattern]: https://design-system.service.gov.uk/patterns/navigate-a-service/
