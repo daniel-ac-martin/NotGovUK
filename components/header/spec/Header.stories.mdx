@@ -76,6 +76,21 @@ Use the default GOV.UK header if your service is hosted on GOV.UK and has
 </Preview>
 
 
+### Re-branded GOV.UK header
+
+The default header for public facing websites on GOV.UK, after 25th June 2025.
+
+Add the `rebrand` prop, and ensure that a parent element, such as `<html>`, has the `govuk-template--rebranded` class.
+
+<Preview>
+  <Story name="Re-branded GOV.UK">
+    <div className="govuk-template--rebranded">
+      <Header govUK rebrand />
+    </div>
+  </Story>
+</Preview>
+
+
 ### Header with service name
 
 <Preview>

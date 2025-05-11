@@ -117,6 +117,39 @@ A page suitable for being hosted on GOV.UK.
   </Story>
 </Preview>
 
+
+### Re-branded GOV.UK
+
+A page suitable for being hosted on GOV.UK, after 25th June 2025.
+
+Simply add the `rebrand` prop.
+
+<Preview>
+  <Story name="GovUK rebrand">
+    <GovUKPage
+      maxContentsWidth="690"
+      rebrand
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span className="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </GovUKPage>
+  </Story>
+</Preview>
+
+
 ### Full width
 
 A page that does _NOT_ restrict the width on wide screens.
@@ -171,6 +204,56 @@ A page suitable for dashboards. This is achieved by providing the `dark` classMo
       organisationHref="#"
       organisationText="HMPO"
       phase="Alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span className="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+          <StartButton href="#" />
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p><a href="#">NotGovUK</a> can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+### Dark mode rebrand
+
+<p><Tag text="Experimental" /></p>
+
+A preview of dark mode, post-rebrand.
+
+<Preview>
+  <Story name="Dark mode rebrand">
+    <NotGovUKPage
+      breadcrumbs={[
+        { href: '', text: 'Home' },
+        { href: '', text: 'Passports, travel and living abroad' },
+        { href: '', text: 'Travel abroad' },
+      ]}
+      classModifiers="dark"
+      department="home-office"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      organisationText="HMPO"
+      phase="Alpha"
+      rebrand
       serviceName="My service"
       serviceHref="#"
     >
@@ -273,6 +356,46 @@ your department in order to use their colours.
       ]}
       organisationHref="#"
       phase="Alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span className="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  </Story>
+</Preview>
+
+
+#### DBT rebrand
+
+This is a preview, for post-rebrand.
+
+<Preview>
+  <Story name="DBT rebrand">
+    <NotGovUKPage
+      department="department-for-business-trade"
+      maxContentsWidth="690"
+      meta={[
+        { href: "#", text: "Help" },
+        { href: "#", text: "Accessibility statement" },
+        { href: "#", text: "Contact" },
+      ]}
+      organisationHref="#"
+      phase="Alpha"
+      rebrand
       serviceName="My service"
       serviceHref="#"
     >
