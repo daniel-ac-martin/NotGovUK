@@ -14,6 +14,8 @@ export type ServiceNavigationProps = StandardProps & HTMLAttributes<HTMLElement>
   end?: ReactNode
   /** List of links to choose from */
   items?: Item[]
+  /** Maximum width of the contents in px units (-1 for full width) */
+  maxContentsWidth?: number
   /** The text of the mobile navigation menu toggle */
   menuButtonText?: string
   /** The screen reader label for the mobile navigation menu toggle */
@@ -37,6 +39,7 @@ export const ServiceNavigation: FC<ServiceNavigationProps> = ({
   className,
   end = null,
   items = [],
+  maxContentsWidth,
   menuButtonText = 'Menu',
   menuButtonLabel,
   navigationLabel: _navigationLabel,
@@ -65,7 +68,7 @@ export const ServiceNavigation: FC<ServiceNavigationProps> = ({
     </nav>
   );
   const inner = (
-    <WidthContainer>
+    <WidthContainer maxWidth={maxContentsWidth}>
       {start}
       <div className={classes('container')}>
         {serviceLink}
