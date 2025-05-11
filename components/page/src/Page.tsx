@@ -9,6 +9,7 @@ import { Head } from '@not-govuk/head';
 import { Header, HeaderProps } from '@not-govuk/header';
 import { A } from '@not-govuk/link';
 import { PhaseBanner, PhaseBannerProps } from '@not-govuk/phase-banner';
+import { ServiceNavigation } from '@not-govuk/service-navigation';
 import { SkipLink } from '@not-govuk/skip-link';
 import { WidthContainer } from '@not-govuk/width-container';
 
@@ -84,10 +85,13 @@ export const Page: FC<PageProps> = ({
     govUK,
     logo,
     maxContentsWidth,
-    navigation,
     organisationHref,
     organisationText,
-    rebrand,
+    rebrand
+  };
+  const navigationProps = {
+    maxContentsWidth,
+    items: navigation,
     serviceHref,
     serviceName,
     signOutHref,
@@ -102,6 +106,7 @@ export const Page: FC<PageProps> = ({
     navigation: footerNavigation,
     rebrand
   };
+  const showNavigation = navigation?.length || serviceName;
   const mainId = 'main-content';
 
   return (
@@ -111,7 +116,10 @@ export const Page: FC<PageProps> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </Head>
       <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
-      <Header {...headerProps} className={classes('header')} />
+      <Header {...headerProps} className={classes('header')} classModifiers={showNavigation ? 'full-width-border' : undefined} />
+      { !showNavigation ? null : (
+        <ServiceNavigation {...navigationProps} className={classes('navigation')} />
+      ) }
       <div className={classes('body')}>
         <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
           { !phase ? null : (

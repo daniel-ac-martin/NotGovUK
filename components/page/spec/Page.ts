@@ -120,9 +120,9 @@ describe('Page', () => {
     it('contains the organisation text', async () => expect(screen.getByRole('banner')).toHaveTextContent('Organisation text'));
     it('contains the phase', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('gamma'));
     it('contains the phase banner content', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Phase banner content'));
-    it('contains the service name', async () => expect(screen.getByRole('banner')).toHaveTextContent('Service name'));
-    it('contains the navigation links', async () => expect(screen.getByRole('banner')).toHaveTextContent('Navigation item 2'));
-    it('contains the sign-out link', async () => expect(screen.getByRole('banner')).toHaveTextContent('Log out'));
+    it('contains the service name', async () => expect(screen.getByRole('region')).toHaveTextContent('Service name'));
+    it('contains the navigation links', async () => expect(screen.getByRole('navigation')).toHaveTextContent('Navigation item 2'));
+    it('contains the sign-out link', async () => expect(screen.getByRole('navigation')).toHaveTextContent('Log out'));
     it('includes the children provided', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Child'));
   });
 });
