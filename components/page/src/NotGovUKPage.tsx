@@ -24,14 +24,15 @@ import '../assets/NotGovUKPage.scss';
 
 export type NotGovUKPageProps = Omit<PageProps, 'govUK'>;
 
-export const NotGovUKPage: FC<NotGovUKPageProps> = ({ children, classModifiers, ...props }) => (
+export const NotGovUKPage: FC<NotGovUKPageProps> = ({ children, classModifiers, rebrand = false, ...props }) => (
   <Page
     {...props}
     classModifiers={[ ...(Array.isArray(classModifiers) ? classModifiers : [classModifiers]), 'not-govuk' ]}
     govUK={false}
+    rebrand={rebrand}
   >
     <Head>
-      <meta name="theme-color" content="#0b0c0c" />
+      <meta name="theme-color" content={ rebrand ? '#1d70b8' : '#0b0c0c' } />
       <link rel="shortcut icon" sizes="16x16 32x32 48x48" href={favicon} type="image/x-icon" />
       <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon180} />
       <link rel="apple-touch-icon" sizes="167x167" href={appleTouchIcon167} />

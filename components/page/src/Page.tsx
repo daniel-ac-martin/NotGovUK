@@ -35,6 +35,8 @@ export type PageProps = (
     footerNavigation?: NavMenu[]
     /** Content for the phase-banner */
     phaseBannerContent?: ReactNode
+    /** If true, use the redesigned styles */
+    rebrand?: boolean
     /** Title of the HTML page (can be overridden via Helmet  */
     title?: string
   }
@@ -46,7 +48,7 @@ export const Page: FC<PageProps> = ({
   children,
   classBlock,
   classModifiers: _classModifiers,
-  className,
+  className: _className,
   department,
   feedbackHref,
   footerContent,
@@ -61,6 +63,7 @@ export const Page: FC<PageProps> = ({
   organisationText,
   phase,
   phaseBannerContent,
+  rebrand = false,
   serviceHref,
   serviceName,
   signOutHref,
@@ -73,7 +76,8 @@ export const Page: FC<PageProps> = ({
       ? _classModifiers
       : [_classModifiers]
   );
-  const classes = classBuilder('not-govuk-page', classBlock, [...classModifiers, department], className);
+  const className = _className || '';
+  const classes = classBuilder('not-govuk-page', classBlock, [...classModifiers, department], className + (rebrand ? ' govuk-template--rebranded' : ''));
   const title = _title || serviceName || 'NotGovUK';
   const headerProps = {
     department,
@@ -83,6 +87,7 @@ export const Page: FC<PageProps> = ({
     navigation,
     organisationHref,
     organisationText,
+    rebrand,
     serviceHref,
     serviceName,
     signOutHref,
@@ -94,7 +99,8 @@ export const Page: FC<PageProps> = ({
     maxContentsWidth,
     meta,
     metaTitle,
-    navigation: footerNavigation
+    navigation: footerNavigation,
+    rebrand
   };
   const mainId = 'main-content';
 
