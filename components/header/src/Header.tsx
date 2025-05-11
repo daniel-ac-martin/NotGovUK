@@ -87,7 +87,7 @@ const departmentText = (d?: string) => (
 
 export const Header: FC<HeaderProps> = ({
   classBlock,
-  classModifiers,
+  classModifiers: _classModifiers = [],
   className,
   department,
   govUK = false,
@@ -103,7 +103,12 @@ export const Header: FC<HeaderProps> = ({
   logo: _logo,
   ...attrs
 }) => {
-  const classes = classBuilder('govuk-header', classBlock, classModifiers, className);
+  const classModifiers = (
+    Array.isArray(_classModifiers)
+    ? _classModifiers
+    : [_classModifiers]
+  );
+  const classes = classBuilder('govuk-header', classBlock, [...classModifiers, department], className);
   const A = (props: LinkProps) => h(Link, { classBlock: classes('link'), ...props });
   const orgHref = organisationHref || ( govUK ? 'https://www.gov.uk/' : '/' );
   const orgText = organisationText || ( govUK ? 'GOV.UK' : departmentText(department) );
@@ -133,7 +138,7 @@ export const Header: FC<HeaderProps> = ({
 
   return (
     <header {...attrs} className={classes()} data-module="govuk-header">
-      <WidthContainer maxWidth={maxContentsWidth} className={classes('container', department)}>
+      <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
         <div className={classes('logo')}>
           <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
             {logo}
