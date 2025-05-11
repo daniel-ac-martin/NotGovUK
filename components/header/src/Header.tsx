@@ -3,6 +3,7 @@ import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
 import { CrownLogo } from './CrownLogo';
+import { CrownLogoOld } from './CrownLogoOld';
 import { CoatLogo } from './CoatLogo';
 
 import '../assets/Header.scss';
@@ -27,6 +28,8 @@ export type HeaderProps = StandardProps & {
   organisationHref?: string
   /** Organisation link text */
   organisationText?: string
+  /** If true, use the redesigned header and new GOV.UK logotype */
+  rebrand?: boolean
   /** Service link URL */
   serviceHref?: string
   /** Service link text */
@@ -92,6 +95,7 @@ export const Header: FC<HeaderProps> = ({
   navigation = [],
   organisationHref,
   organisationText,
+  rebrand = false,
   serviceHref = '/',
   serviceName,
   signOutHref,
@@ -115,7 +119,11 @@ export const Header: FC<HeaderProps> = ({
     : (
       govUK
       ? (
-        <CrownLogo focusable="false" className={classes('logotype')} height="30" width="148" />
+        rebrand ? (
+          <CrownLogo focusable="false" className={classes('logotype')} height="30" width="162" />
+        ) : (
+          <CrownLogoOld focusable="false" className={classes('logotype')} height="30" width="148" />
+        )
       )
       : (
         <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
