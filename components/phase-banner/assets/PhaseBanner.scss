@@ -5,6 +5,11 @@
   &__tag {
     @extend .govuk-phase-banner__content__tag;
   }
+  &__content {
+    p {
+      max-width: none;
+    }
+  }
 }
 
 .not-govuk-page--dark .govuk-phase-banner {
