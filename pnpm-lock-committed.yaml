@@ -11,11 +11,11 @@ importers:
       '@babel/preset-react': 7.27.1
       '@babel/preset-typescript': 7.27.1
       '@mdx-js/react': 1.6.22
-      '@not-govuk/components': workspace:^0.16.0
-      '@not-govuk/docs-components': workspace:^0.16.0
-      '@not-govuk/plop-pack': workspace:^0.16.0
-      '@not-govuk/storybook-preset': workspace:^0.16.0
-      '@not-govuk/user-info': workspace:^0.16.0
+      '@not-govuk/components': workspace:^0.16.1
+      '@not-govuk/docs-components': workspace:^0.16.1
+      '@not-govuk/plop-pack': workspace:^0.16.1
+      '@not-govuk/storybook-preset': workspace:^0.16.1
+      '@not-govuk/user-info': workspace:^0.16.1
       '@storybook/addon-a11y': 6.5.16
       '@storybook/addon-actions': 6.5.16
       '@storybook/addon-docs': 6.5.16
@@ -98,17 +98,17 @@ importers:
 
   apps/govuk-docs:
     specifiers:
-      '@not-govuk/anchor-list': workspace:^0.16.0
-      '@not-govuk/app-composer': workspace:^0.16.0
-      '@not-govuk/app-plop-pack': workspace:^0.16.0
-      '@not-govuk/asset-proxy': workspace:^0.16.0
-      '@not-govuk/client-renderer': workspace:^0.16.0
-      '@not-govuk/components': workspace:^0.16.0
-      '@not-govuk/docs-components': workspace:^0.16.0
-      '@not-govuk/engine': workspace:^0.16.0
-      '@not-govuk/router': workspace:^0.16.0
-      '@not-govuk/server-renderer': workspace:^0.16.0
-      '@not-govuk/webpack-config': workspace:^0.16.0
+      '@not-govuk/anchor-list': workspace:^0.16.1
+      '@not-govuk/app-composer': workspace:^0.16.1
+      '@not-govuk/app-plop-pack': workspace:^0.16.1
+      '@not-govuk/asset-proxy': workspace:^0.16.1
+      '@not-govuk/client-renderer': workspace:^0.16.1
+      '@not-govuk/components': workspace:^0.16.1
+      '@not-govuk/docs-components': workspace:^0.16.1
+      '@not-govuk/engine': workspace:^0.16.1
+      '@not-govuk/router': workspace:^0.16.1
+      '@not-govuk/server-renderer': workspace:^0.16.1
+      '@not-govuk/webpack-config': workspace:^0.16.1
       '@types/react': 18.3.21
       '@types/react-dom': 18.3.7
       '@types/webpack-env': 1.18.8
@@ -170,18 +170,18 @@ importers:
     specifiers:
       '@apollo/client': 3.13.8
       '@graphql-tools/schema': 10.0.23
-      '@not-govuk/anchor-list': workspace:^0.16.0
-      '@not-govuk/app-composer': workspace:^0.16.0
-      '@not-govuk/app-plop-pack': workspace:^0.16.0
-      '@not-govuk/asset-proxy': workspace:^0.16.0
-      '@not-govuk/client-component-helpers': workspace:^0.16.0
-      '@not-govuk/client-renderer': workspace:^0.16.0
-      '@not-govuk/components': workspace:^0.16.0
-      '@not-govuk/engine': workspace:^0.16.0
-      '@not-govuk/router': workspace:^0.16.0
-      '@not-govuk/server-renderer': workspace:^0.16.0
-      '@not-govuk/user-info': workspace:^0.16.0
-      '@not-govuk/webpack-config': workspace:^0.16.0
+      '@not-govuk/anchor-list': workspace:^0.16.1
+      '@not-govuk/app-composer': workspace:^0.16.1
+      '@not-govuk/app-plop-pack': workspace:^0.16.1
+      '@not-govuk/asset-proxy': workspace:^0.16.1
+      '@not-govuk/client-component-helpers': workspace:^0.16.1
+      '@not-govuk/client-renderer': workspace:^0.16.1
+      '@not-govuk/components': workspace:^0.16.1
+      '@not-govuk/engine': workspace:^0.16.1
+      '@not-govuk/router': workspace:^0.16.1
+      '@not-govuk/server-renderer': workspace:^0.16.1
+      '@not-govuk/user-info': workspace:^0.16.1
+      '@not-govuk/webpack-config': workspace:^0.16.1
       '@types/react': 18.3.21
       '@types/react-dom': 18.3.7
       '@types/webpack-env': 1.18.8
@@ -246,7 +246,7 @@ importers:
 
   apps/next-example:
     specifiers:
-      '@not-govuk/simple-components': workspace:^0.16.0
+      '@not-govuk/simple-components': workspace:^0.16.1
       '@types/node': 22.15.19
       '@types/react': 18.3.21
       '@types/react-dom': 18.3.7
@@ -279,7 +279,7 @@ importers:
 
   apps/remix-example:
     specifiers:
-      '@not-govuk/components': workspace:^0.16.0
+      '@not-govuk/components': workspace:^0.16.1
       '@remix-run/dev': ^2.16.6
       '@remix-run/node': ^2.16.6
       '@remix-run/react': ^2.16.6
@@ -337,11 +337,11 @@ importers:
   components-internal/anchor:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/client-component-helpers': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/router': workspace:^0.16.0
-      '@not-govuk/uri': workspace:^0.16.0
+      '@not-govuk/client-component-helpers': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/router': workspace:^0.16.1
+      '@not-govuk/uri': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -364,10 +364,10 @@ importers:
   components-internal/anchor-list:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/anchor': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/router': workspace:^0.16.0
+      '@not-govuk/anchor': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/router': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -389,8 +389,8 @@ importers:
   components-internal/simple-table:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -410,10 +410,10 @@ importers:
   components-internal/tabs:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/client-component-helpers': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/router': workspace:^0.16.0
+      '@not-govuk/client-component-helpers': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/router': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -435,10 +435,10 @@ importers:
   components/aside:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -462,12 +462,12 @@ importers:
   components/back-link:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/panel': workspace:^0.16.0
-      '@not-govuk/router': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/panel': workspace:^0.16.1
+      '@not-govuk/router': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -493,11 +493,11 @@ importers:
   components/breadcrumbs:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/anchor-list': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/panel': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
+      '@not-govuk/anchor-list': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/panel': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -523,13 +523,13 @@ importers:
     specifiers:
       '@jest/globals': 29.7.0
       '@mdx-js/react': 1.6.22
-      '@not-govuk/button-group': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/panel': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/button-group': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/panel': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -557,11 +557,11 @@ importers:
   components/button-group:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -586,13 +586,13 @@ importers:
   components/checkboxes:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/form-group': workspace:^0.16.0
-      '@not-govuk/hint': workspace:^0.16.0
-      '@not-govuk/label': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/text-input': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/form-group': workspace:^0.16.1
+      '@not-govuk/hint': workspace:^0.16.1
+      '@not-govuk/label': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/text-input': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -619,14 +619,14 @@ importers:
   components/cookie-banner:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/button': workspace:^0.16.0
-      '@not-govuk/button-group': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
-      '@not-govuk/width-container': workspace:^0.16.0
+      '@not-govuk/button': workspace:^0.16.1
+      '@not-govuk/button-group': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
+      '@not-govuk/width-container': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -654,12 +654,12 @@ importers:
   components/date-input:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/form-group': workspace:^0.16.0
-      '@not-govuk/input': workspace:^0.16.0
-      '@not-govuk/label': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/form-group': workspace:^0.16.1
+      '@not-govuk/input': workspace:^0.16.1
+      '@not-govuk/label': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -685,9 +685,9 @@ importers:
   components/details:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -710,10 +710,10 @@ importers:
   components/error-message:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/visually-hidden': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/visually-hidden': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -737,14 +737,14 @@ importers:
   components/error-summary:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/anchor-list': workspace:^0.16.0
-      '@not-govuk/checkboxes': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/date-input': workspace:^0.16.0
-      '@not-govuk/page': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/text-input': workspace:^0.16.0
+      '@not-govuk/anchor-list': workspace:^0.16.1
+      '@not-govuk/checkboxes': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/date-input': workspace:^0.16.1
+      '@not-govuk/page': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/text-input': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -772,12 +772,12 @@ importers:
   components/fieldset:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/input': workspace:^0.16.0
-      '@not-govuk/label': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/visually-hidden': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/input': workspace:^0.16.1
+      '@not-govuk/label': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/visually-hidden': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -803,10 +803,10 @@ importers:
   components/file-upload:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/form-group': workspace:^0.16.0
-      '@not-govuk/input': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/form-group': workspace:^0.16.1
+      '@not-govuk/input': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -830,11 +830,11 @@ importers:
   components/footer:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/width-container': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/width-container': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -859,20 +859,20 @@ importers:
   components/form:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/button': workspace:^0.16.0
-      '@not-govuk/checkboxes': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/date-input': workspace:^0.16.0
-      '@not-govuk/form-field': workspace:^0.16.0
-      '@not-govuk/forms': workspace:^0.16.0
-      '@not-govuk/radios': workspace:^0.16.0
-      '@not-govuk/search-box': workspace:^0.16.0
-      '@not-govuk/select': workspace:^0.16.0
-      '@not-govuk/standalone-input': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
-      '@not-govuk/text-input': workspace:^0.16.0
-      '@not-govuk/textarea': workspace:^0.16.0
+      '@not-govuk/button': workspace:^0.16.1
+      '@not-govuk/checkboxes': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/date-input': workspace:^0.16.1
+      '@not-govuk/form-field': workspace:^0.16.1
+      '@not-govuk/forms': workspace:^0.16.1
+      '@not-govuk/radios': workspace:^0.16.1
+      '@not-govuk/search-box': workspace:^0.16.1
+      '@not-govuk/select': workspace:^0.16.1
+      '@not-govuk/standalone-input': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
+      '@not-govuk/text-input': workspace:^0.16.1
+      '@not-govuk/textarea': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -904,14 +904,14 @@ importers:
   components/form-field:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/checkboxes': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/date-input': workspace:^0.16.0
-      '@not-govuk/radios': workspace:^0.16.0
-      '@not-govuk/select': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
-      '@not-govuk/text-input': workspace:^0.16.0
-      '@not-govuk/textarea': workspace:^0.16.0
+      '@not-govuk/checkboxes': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/date-input': workspace:^0.16.1
+      '@not-govuk/radios': workspace:^0.16.1
+      '@not-govuk/select': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
+      '@not-govuk/text-input': workspace:^0.16.1
+      '@not-govuk/textarea': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -937,14 +937,14 @@ importers:
   components/form-group:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/error-message': workspace:^0.16.0
-      '@not-govuk/fieldset': workspace:^0.16.0
-      '@not-govuk/hint': workspace:^0.16.0
-      '@not-govuk/label': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/error-message': workspace:^0.16.1
+      '@not-govuk/fieldset': workspace:^0.16.1
+      '@not-govuk/hint': workspace:^0.16.1
+      '@not-govuk/label': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -972,12 +972,12 @@ importers:
   components/header:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
-      '@not-govuk/width-container': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
+      '@not-govuk/width-container': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1003,10 +1003,10 @@ importers:
   components/hint:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1030,10 +1030,10 @@ importers:
   components/input:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1057,9 +1057,9 @@ importers:
   components/inset-text:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1082,10 +1082,10 @@ importers:
   components/label:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1109,11 +1109,11 @@ importers:
   components/link:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/anchor': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/panel': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/anchor': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/panel': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1138,11 +1138,11 @@ importers:
   components/navigation-menu:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/anchor-list': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/anchor-list': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1167,10 +1167,10 @@ importers:
   components/notification-banner:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1194,22 +1194,22 @@ importers:
   components/page:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/aside': workspace:^0.16.0
-      '@not-govuk/back-link': workspace:^0.16.0
-      '@not-govuk/breadcrumbs': workspace:^0.16.0
-      '@not-govuk/button': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/footer': workspace:^0.16.0
-      '@not-govuk/head': workspace:^0.16.0
-      '@not-govuk/header': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/phase-banner': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/service-navigation': workspace:^0.16.0
-      '@not-govuk/skip-link': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
-      '@not-govuk/width-container': workspace:^0.16.0
+      '@not-govuk/aside': workspace:^0.16.1
+      '@not-govuk/back-link': workspace:^0.16.1
+      '@not-govuk/breadcrumbs': workspace:^0.16.1
+      '@not-govuk/button': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/footer': workspace:^0.16.1
+      '@not-govuk/head': workspace:^0.16.1
+      '@not-govuk/header': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/phase-banner': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/service-navigation': workspace:^0.16.1
+      '@not-govuk/skip-link': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
+      '@not-govuk/width-container': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1245,12 +1245,12 @@ importers:
   components/pagination:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/uri': workspace:^0.16.0
-      '@not-govuk/visually-hidden': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/uri': workspace:^0.16.1
+      '@not-govuk/visually-hidden': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1276,11 +1276,11 @@ importers:
   components/panel:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/button': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/button': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1305,10 +1305,10 @@ importers:
   components/phase-banner:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1332,13 +1332,13 @@ importers:
   components/radios:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/form-group': workspace:^0.16.0
-      '@not-govuk/hint': workspace:^0.16.0
-      '@not-govuk/label': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/text-input': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/form-group': workspace:^0.16.1
+      '@not-govuk/hint': workspace:^0.16.1
+      '@not-govuk/label': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/text-input': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1365,11 +1365,11 @@ importers:
   components/search-box:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/standalone-input': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/standalone-input': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1392,10 +1392,10 @@ importers:
   components/select:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/form-group': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/form-group': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1419,14 +1419,14 @@ importers:
   components/service-navigation:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/anchor-list': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/header': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
-      '@not-govuk/width-container': workspace:^0.16.0
+      '@not-govuk/anchor-list': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/header': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
+      '@not-govuk/width-container': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1454,9 +1454,9 @@ importers:
   components/skip-link:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1479,13 +1479,13 @@ importers:
   components/standalone-input:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/button': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/form-group': workspace:^0.16.0
-      '@not-govuk/input': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/button': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/form-group': workspace:^0.16.1
+      '@not-govuk/input': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1510,12 +1510,12 @@ importers:
   components/summary-card:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/anchor-list': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
-      '@not-govuk/visually-hidden': workspace:^0.16.0
+      '@not-govuk/anchor-list': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
+      '@not-govuk/visually-hidden': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1541,13 +1541,13 @@ importers:
   components/summary-list:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/anchor-list': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/summary-card': workspace:^0.16.0
-      '@not-govuk/visually-hidden': workspace:^0.16.0
+      '@not-govuk/anchor-list': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/summary-card': workspace:^0.16.1
+      '@not-govuk/visually-hidden': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1574,10 +1574,10 @@ importers:
   components/table:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/simple-table': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/simple-table': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1601,12 +1601,12 @@ importers:
   components/tabs:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/client-component-helpers': workspace:^0.16.0
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/table': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/client-component-helpers': workspace:^0.16.1
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/table': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1632,10 +1632,10 @@ importers:
   components/tag:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/table': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/table': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1659,9 +1659,9 @@ importers:
   components/text-input:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/form-group': workspace:^0.16.0
-      '@not-govuk/input': workspace:^0.16.0
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/form-group': workspace:^0.16.1
+      '@not-govuk/input': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1682,10 +1682,10 @@ importers:
   components/textarea:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/form-group': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/form-group': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1709,10 +1709,10 @@ importers:
   components/visually-hidden:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1736,10 +1736,10 @@ importers:
   components/warning-text:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/visually-hidden': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/visually-hidden': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1763,11 +1763,11 @@ importers:
   components/width-container:
     specifiers:
       '@mdx-js/react': 1.6.22
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
-      '@not-govuk/panel': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
+      '@not-govuk/panel': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
       '@types/react': 18.3.21
       govuk-frontend: 5.10.1
       jest: 29.7.0
@@ -1791,9 +1791,9 @@ importers:
 
   lib-govuk/components:
     specifiers:
-      '@not-govuk/form': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/simple-components': workspace:^0.16.0
+      '@not-govuk/form': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/simple-components': workspace:^0.16.1
       govuk-frontend: 5.10.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -1812,9 +1812,9 @@ importers:
 
   lib-govuk/create:
     specifiers:
-      '@not-govuk/create-internal': workspace:^0.16.0
-      '@not-govuk/plop-pack': workspace:^0.16.0
-      '@not-govuk/plop-pack-internal': workspace:^0.16.0
+      '@not-govuk/create-internal': workspace:^0.16.1
+      '@not-govuk/plop-pack': workspace:^0.16.1
+      '@not-govuk/plop-pack-internal': workspace:^0.16.1
       plop: 4.0.1
     dependencies:
       '@not-govuk/create-internal': link:../../lib/create
@@ -1825,7 +1825,7 @@ importers:
 
   lib-govuk/plop-pack:
     specifiers:
-      '@not-govuk/plop-pack-internal': workspace:^0.16.0
+      '@not-govuk/plop-pack-internal': workspace:^0.16.1
     dependencies:
       '@not-govuk/plop-pack-internal': link:../../lib/plop-pack
 
@@ -1837,48 +1837,48 @@ importers:
 
   lib-govuk/simple-components:
     specifiers:
-      '@not-govuk/aside': workspace:^0.16.0
-      '@not-govuk/back-link': workspace:^0.16.0
-      '@not-govuk/breadcrumbs': workspace:^0.16.0
-      '@not-govuk/button': workspace:^0.16.0
-      '@not-govuk/checkboxes': workspace:^0.16.0
-      '@not-govuk/cookie-banner': workspace:^0.16.0
-      '@not-govuk/date-input': workspace:^0.16.0
-      '@not-govuk/details': workspace:^0.16.0
-      '@not-govuk/error-message': workspace:^0.16.0
-      '@not-govuk/error-summary': workspace:^0.16.0
-      '@not-govuk/fieldset': workspace:^0.16.0
-      '@not-govuk/file-upload': workspace:^0.16.0
-      '@not-govuk/footer': workspace:^0.16.0
-      '@not-govuk/form-field': workspace:^0.16.0
-      '@not-govuk/form-group': workspace:^0.16.0
-      '@not-govuk/header': workspace:^0.16.0
-      '@not-govuk/hint': workspace:^0.16.0
-      '@not-govuk/input': workspace:^0.16.0
-      '@not-govuk/inset-text': workspace:^0.16.0
-      '@not-govuk/label': workspace:^0.16.0
-      '@not-govuk/link': workspace:^0.16.0
-      '@not-govuk/navigation-menu': workspace:^0.16.0
-      '@not-govuk/notification-banner': workspace:^0.16.0
-      '@not-govuk/page': workspace:^0.16.0
-      '@not-govuk/pagination': workspace:^0.16.0
-      '@not-govuk/panel': workspace:^0.16.0
-      '@not-govuk/phase-banner': workspace:^0.16.0
-      '@not-govuk/radios': workspace:^0.16.0
-      '@not-govuk/sass-base': workspace:^0.16.0
-      '@not-govuk/search-box': workspace:^0.16.0
-      '@not-govuk/select': workspace:^0.16.0
-      '@not-govuk/service-navigation': workspace:^0.16.0
-      '@not-govuk/skip-link': workspace:^0.16.0
-      '@not-govuk/standalone-input': workspace:^0.16.0
-      '@not-govuk/summary-card': workspace:^0.16.0
-      '@not-govuk/summary-list': workspace:^0.16.0
-      '@not-govuk/table': workspace:^0.16.0
-      '@not-govuk/tabs': workspace:^0.16.0
-      '@not-govuk/tag': workspace:^0.16.0
-      '@not-govuk/text-input': workspace:^0.16.0
-      '@not-govuk/textarea': workspace:^0.16.0
-      '@not-govuk/warning-text': workspace:^0.16.0
+      '@not-govuk/aside': workspace:^0.16.1
+      '@not-govuk/back-link': workspace:^0.16.1
+      '@not-govuk/breadcrumbs': workspace:^0.16.1
+      '@not-govuk/button': workspace:^0.16.1
+      '@not-govuk/checkboxes': workspace:^0.16.1
+      '@not-govuk/cookie-banner': workspace:^0.16.1
+      '@not-govuk/date-input': workspace:^0.16.1
+      '@not-govuk/details': workspace:^0.16.1
+      '@not-govuk/error-message': workspace:^0.16.1
+      '@not-govuk/error-summary': workspace:^0.16.1
+      '@not-govuk/fieldset': workspace:^0.16.1
+      '@not-govuk/file-upload': workspace:^0.16.1
+      '@not-govuk/footer': workspace:^0.16.1
+      '@not-govuk/form-field': workspace:^0.16.1
+      '@not-govuk/form-group': workspace:^0.16.1
+      '@not-govuk/header': workspace:^0.16.1
+      '@not-govuk/hint': workspace:^0.16.1
+      '@not-govuk/input': workspace:^0.16.1
+      '@not-govuk/inset-text': workspace:^0.16.1
+      '@not-govuk/label': workspace:^0.16.1
+      '@not-govuk/link': workspace:^0.16.1
+      '@not-govuk/navigation-menu': workspace:^0.16.1
+      '@not-govuk/notification-banner': workspace:^0.16.1
+      '@not-govuk/page': workspace:^0.16.1
+      '@not-govuk/pagination': workspace:^0.16.1
+      '@not-govuk/panel': workspace:^0.16.1
+      '@not-govuk/phase-banner': workspace:^0.16.1
+      '@not-govuk/radios': workspace:^0.16.1
+      '@not-govuk/sass-base': workspace:^0.16.1
+      '@not-govuk/search-box': workspace:^0.16.1
+      '@not-govuk/select': workspace:^0.16.1
+      '@not-govuk/service-navigation': workspace:^0.16.1
+      '@not-govuk/skip-link': workspace:^0.16.1
+      '@not-govuk/standalone-input': workspace:^0.16.1
+      '@not-govuk/summary-card': workspace:^0.16.1
+      '@not-govuk/summary-list': workspace:^0.16.1
+      '@not-govuk/table': workspace:^0.16.1
+      '@not-govuk/tabs': workspace:^0.16.1
+      '@not-govuk/tag': workspace:^0.16.1
+      '@not-govuk/text-input': workspace:^0.16.1
+      '@not-govuk/textarea': workspace:^0.16.1
+      '@not-govuk/warning-text': workspace:^0.16.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.3.4
@@ -1934,8 +1934,8 @@ importers:
 
   lib/app-composer:
     specifiers:
-      '@not-govuk/client-component-helpers': workspace:^0.16.0
-      '@not-govuk/router': workspace:^0.16.0
+      '@not-govuk/client-component-helpers': workspace:^0.16.1
+      '@not-govuk/router': workspace:^0.16.1
       '@types/react': 18.3.21
       graphql: 15.10.1
       typescript: 4.9.5
@@ -1949,7 +1949,7 @@ importers:
 
   lib/app-plop-pack:
     specifiers:
-      '@not-govuk/plop-pack-internal': workspace:^0.16.0
+      '@not-govuk/plop-pack-internal': workspace:^0.16.1
       plop: 4.0.1
     dependencies:
       '@not-govuk/plop-pack-internal': link:../plop-pack
@@ -1958,8 +1958,8 @@ importers:
 
   lib/asset-proxy:
     specifiers:
-      '@not-govuk/express-adapter': workspace:^0.16.0
-      '@not-govuk/restify': workspace:^0.16.0
+      '@not-govuk/express-adapter': workspace:^0.16.1
+      '@not-govuk/restify': workspace:^0.16.1
       '@types/webpack': 5.28.5
       '@types/webpack-hot-middleware': 2.25.9
       http-proxy-middleware: ^3.0.5
@@ -1983,7 +1983,7 @@ importers:
 
   lib/client-renderer:
     specifiers:
-      '@not-govuk/app-composer': workspace:^0.16.0
+      '@not-govuk/app-composer': workspace:^0.16.1
       '@types/react': 18.3.21
       '@types/react-dom': 18.3.7
       typescript: 4.9.5
@@ -2042,7 +2042,7 @@ importers:
 
   lib/create:
     specifiers:
-      '@not-govuk/plop-pack-internal': workspace:^0.16.0
+      '@not-govuk/plop-pack-internal': workspace:^0.16.1
       plop: 4.0.1
       shelljs: ^0.10.0
     dependencies:
@@ -2053,10 +2053,10 @@ importers:
 
   lib/docs-components:
     specifiers:
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/memoize': workspace:^0.16.0
-      '@not-govuk/simple-table': workspace:^0.16.0
-      '@not-govuk/tabs-internal': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/memoize': workspace:^0.16.1
+      '@not-govuk/simple-table': workspace:^0.16.1
+      '@not-govuk/tabs-internal': workspace:^0.16.1
       '@storybook/react': 6.5.16
       '@types/prettier': ^2.7.3
       '@types/prismjs': ^1.26.5
@@ -2084,11 +2084,11 @@ importers:
 
   lib/engine:
     specifiers:
-      '@not-govuk/app-composer': workspace:^0.16.0
-      '@not-govuk/consent-cookies': workspace:^0.16.0
-      '@not-govuk/express-adapter': workspace:^0.16.0
-      '@not-govuk/restify': workspace:^0.16.0
-      '@not-govuk/server-renderer': workspace:^0.16.0
+      '@not-govuk/app-composer': workspace:^0.16.1
+      '@not-govuk/consent-cookies': workspace:^0.16.1
+      '@not-govuk/express-adapter': workspace:^0.16.1
+      '@not-govuk/restify': workspace:^0.16.1
+      '@not-govuk/server-renderer': workspace:^0.16.1
       '@types/node': 22.15.19
       '@types/passport': 1.0.17
       '@types/passport-http': ^0.3.11
@@ -2125,7 +2125,7 @@ importers:
 
   lib/express-adapter:
     specifiers:
-      '@not-govuk/restify': workspace:^0.16.0
+      '@not-govuk/restify': workspace:^0.16.1
       '@types/etag': ^1.8.3
       '@types/express-serve-static-core': 5.0.6
       etag: ^1.8.1
@@ -2146,9 +2146,9 @@ importers:
 
   lib/forms:
     specifiers:
-      '@not-govuk/component-helpers': workspace:^0.16.0
-      '@not-govuk/router': workspace:^0.16.0
-      '@not-govuk/uri': workspace:^0.16.0
+      '@not-govuk/component-helpers': workspace:^0.16.1
+      '@not-govuk/router': workspace:^0.16.1
+      '@not-govuk/uri': workspace:^0.16.1
       '@types/react': 18.3.21
       '@types/react-dom': 18.3.7
       '@types/validator': ^13.15.0
@@ -2249,7 +2249,7 @@ importers:
 
   lib/router:
     specifiers:
-      '@not-govuk/uri': workspace:^0.16.0
+      '@not-govuk/uri': workspace:^0.16.1
       '@remix-run/react': ^2.16.6
       '@types/react': ^18.3.21
       jest: 29.7.0
@@ -2270,9 +2270,9 @@ importers:
 
   lib/server-renderer:
     specifiers:
-      '@not-govuk/app-composer': workspace:^0.16.0
-      '@not-govuk/restify': workspace:^0.16.0
-      '@not-govuk/uri': workspace:^0.16.0
+      '@not-govuk/app-composer': workspace:^0.16.1
+      '@not-govuk/restify': workspace:^0.16.1
+      '@not-govuk/uri': workspace:^0.16.1
       '@types/node': 22.15.19
       '@types/react': 18.3.21
       '@types/react-dom': 18.3.7
@@ -2295,7 +2295,7 @@ importers:
 
   lib/storybook-preset:
     specifiers:
-      '@not-govuk/webpack-config': workspace:^0.16.0
+      '@not-govuk/webpack-config': workspace:^0.16.1
       '@storybook/node-logger': 6.5.16
     dependencies:
       '@not-govuk/webpack-config': link:../webpack-config
@@ -2320,7 +2320,7 @@ importers:
 
   lib/user-info:
     specifiers:
-      '@not-govuk/component-test-helpers': workspace:^0.16.0
+      '@not-govuk/component-test-helpers': workspace:^0.16.1
       '@types/react': 18.3.21
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -6187,8 +6187,8 @@ packages:
     engines: {node: '>=18.18'}
     dev: true
 
-  /@img/sharp-darwin-arm64/0.34.1:
-    resolution: {integrity: sha512-pn44xgBtgpEbZsu+lWf2KNb6OAf70X68k+yk69Ic2Xz11zHR/w24/U49XT7AeRwJ0Px+mhALhU5LPci1Aymk7A==}
+  /@img/sharp-darwin-arm64/0.34.2:
+    resolution: {integrity: sha512-OfXHZPppddivUJnqyKoi5YVeHRkkNE2zUFT2gbpKxp/JZCFYEYubnMg+gOp6lWfasPrTS+KPosKqdI+ELYVDtg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm64]
     os: [darwin]
@@ -6197,8 +6197,8 @@ packages:
       '@img/sharp-libvips-darwin-arm64': 1.1.0
     optional: true
 
-  /@img/sharp-darwin-x64/0.34.1:
-    resolution: {integrity: sha512-VfuYgG2r8BpYiOUN+BfYeFo69nP/MIwAtSJ7/Zpxc5QF3KS22z8Pvg3FkrSFJBPNQ7mmcUcYQFBmEQp7eu1F8Q==}
+  /@img/sharp-darwin-x64/0.34.2:
+    resolution: {integrity: sha512-dYvWqmjU9VxqXmjEtjmvHnGqF8GrVjM2Epj9rJ6BUIXvk8slvNDJbhGFvIoXzkDhrJC2jUxNLz/GUjjvSzfw+g==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [darwin]
@@ -6270,8 +6270,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@img/sharp-linux-arm/0.34.1:
-    resolution: {integrity: sha512-anKiszvACti2sGy9CirTlNyk7BjjZPiML1jt2ZkTdcvpLU1YH6CXwRAZCA2UmRXnhiIftXQ7+Oh62Ji25W72jA==}
+  /@img/sharp-linux-arm/0.34.2:
+    resolution: {integrity: sha512-0DZzkvuEOqQUP9mo2kjjKNok5AmnOr1jB2XYjkaoNRwpAYMDzRmAqUIa1nRi58S2WswqSfPOWLNOr0FDT3H5RQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm]
     os: [linux]
@@ -6280,8 +6280,8 @@ packages:
       '@img/sharp-libvips-linux-arm': 1.1.0
     optional: true
 
-  /@img/sharp-linux-arm64/0.34.1:
-    resolution: {integrity: sha512-kX2c+vbvaXC6vly1RDf/IWNXxrlxLNpBVWkdpRq5Ka7OOKj6nr66etKy2IENf6FtOgklkg9ZdGpEu9kwdlcwOQ==}
+  /@img/sharp-linux-arm64/0.34.2:
+    resolution: {integrity: sha512-D8n8wgWmPDakc83LORcfJepdOSN6MvWNzzz2ux0MnIbOqdieRZwVYY32zxVx+IFUT8er5KPcyU3XXsn+GzG/0Q==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm64]
     os: [linux]
@@ -6290,8 +6290,8 @@ packages:
       '@img/sharp-libvips-linux-arm64': 1.1.0
     optional: true
 
-  /@img/sharp-linux-s390x/0.34.1:
-    resolution: {integrity: sha512-7s0KX2tI9mZI2buRipKIw2X1ufdTeaRgwmRabt5bi9chYfhur+/C1OXg3TKg/eag1W+6CCWLVmSauV1owmRPxA==}
+  /@img/sharp-linux-s390x/0.34.2:
+    resolution: {integrity: sha512-EGZ1xwhBI7dNISwxjChqBGELCWMGDvmxZXKjQRuqMrakhO8QoMgqCrdjnAqJq/CScxfRn+Bb7suXBElKQpPDiw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [s390x]
     os: [linux]
@@ -6300,8 +6300,8 @@ packages:
       '@img/sharp-libvips-linux-s390x': 1.1.0
     optional: true
 
-  /@img/sharp-linux-x64/0.34.1:
-    resolution: {integrity: sha512-wExv7SH9nmoBW3Wr2gvQopX1k8q2g5V5Iag8Zk6AVENsjwd+3adjwxtp3Dcu2QhOXr8W9NusBU6XcQUohBZ5MA==}
+  /@img/sharp-linux-x64/0.34.2:
+    resolution: {integrity: sha512-sD7J+h5nFLMMmOXYH4DD9UtSNBD05tWSSdWAcEyzqW8Cn5UxXvsHAxmxSesYUsTOBmUnjtxghKDl15EvfqLFbQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [linux]
@@ -6310,8 +6310,8 @@ packages:
       '@img/sharp-libvips-linux-x64': 1.1.0
     optional: true
 
-  /@img/sharp-linuxmusl-arm64/0.34.1:
-    resolution: {integrity: sha512-DfvyxzHxw4WGdPiTF0SOHnm11Xv4aQexvqhRDAoD00MzHekAj9a/jADXeXYCDFH/DzYruwHbXU7uz+H+nWmSOQ==}
+  /@img/sharp-linuxmusl-arm64/0.34.2:
+    resolution: {integrity: sha512-NEE2vQ6wcxYav1/A22OOxoSOGiKnNmDzCYFOZ949xFmrWZOVII1Bp3NqVVpvj+3UeHMFyN5eP/V5hzViQ5CZNA==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm64]
     os: [linux]
@@ -6320,8 +6320,8 @@ packages:
       '@img/sharp-libvips-linuxmusl-arm64': 1.1.0
     optional: true
 
-  /@img/sharp-linuxmusl-x64/0.34.1:
-    resolution: {integrity: sha512-pax/kTR407vNb9qaSIiWVnQplPcGU8LRIJpDT5o8PdAx5aAA7AS3X9PS8Isw1/WfqgQorPotjrZL3Pqh6C5EBg==}
+  /@img/sharp-linuxmusl-x64/0.34.2:
+    resolution: {integrity: sha512-DOYMrDm5E6/8bm/yQLCWyuDJwUnlevR8xtF8bs+gjZ7cyUNYXiSf/E8Kp0Ss5xasIaXSHzb888V1BE4i1hFhAA==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [linux]
@@ -6330,8 +6330,8 @@ packages:
       '@img/sharp-libvips-linuxmusl-x64': 1.1.0
     optional: true
 
-  /@img/sharp-wasm32/0.34.1:
-    resolution: {integrity: sha512-YDybQnYrLQfEpzGOQe7OKcyLUCML4YOXl428gOOzBgN6Gw0rv8dpsJ7PqTHxBnXnwXr8S1mYFSLSa727tpz0xg==}
+  /@img/sharp-wasm32/0.34.2:
+    resolution: {integrity: sha512-/VI4mdlJ9zkaq53MbIG6rZY+QRN3MLbR6usYlgITEzi4Rpx5S6LFKsycOQjkOGmqTNmkIdLjEvooFKwww6OpdQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [wasm32]
     requiresBuild: true
@@ -6339,16 +6339,24 @@ packages:
       '@emnapi/runtime': 1.4.3
     optional: true
 
-  /@img/sharp-win32-ia32/0.34.1:
-    resolution: {integrity: sha512-WKf/NAZITnonBf3U1LfdjoMgNO5JYRSlhovhRhMxXVdvWYveM4kM3L8m35onYIdh75cOMCo1BexgVQcCDzyoWw==}
+  /@img/sharp-win32-arm64/0.34.2:
+    resolution: {integrity: sha512-cfP/r9FdS63VA5k0xiqaNaEoGxBg9k7uE+RQGzuK9fHt7jib4zAVVseR9LsE4gJcNWgT6APKMNnCcnyOtmSEUQ==}
+    engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    optional: true
+
+  /@img/sharp-win32-ia32/0.34.2:
+    resolution: {integrity: sha512-QLjGGvAbj0X/FXl8n1WbtQ6iVBpWU7JO94u/P2M4a8CFYsvQi4GW2mRy/JqkRx0qpBzaOdKJKw8uc930EX2AHw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@img/sharp-win32-x64/0.34.1:
-    resolution: {integrity: sha512-hw1iIAHpNE8q3uMIRCgGOeDoz9KtFNarFLQclLxr/LK1VBkj8nby18RjFvr6aP7USRYAjTZW6yisnBWMX571Tw==}
+  /@img/sharp-win32-x64/0.34.2:
+    resolution: {integrity: sha512-aUdT6zEYtDKCaxkofmmJDJYGCf0+pJg3eU9/oBuqvEeoB9dKI6ZLc/1iLJCTuJQDO4ptntAlkUmHgGjyuobZbw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [win32]
@@ -6795,8 +6803,8 @@ packages:
       call-me-maybe: 1.0.2
       glob-to-regexp: 0.3.0
 
-  /@napi-rs/wasm-runtime/0.2.9:
-    resolution: {integrity: sha512-OKRBiajrrxB9ATokgEQoG87Z25c67pCpYcCwmXYX8PBftC9pBfN18gnm/fh1wurSLEKIAt+QRFLFCQISrb66Jg==}
+  /@napi-rs/wasm-runtime/0.2.10:
+    resolution: {integrity: sha512-bCsCyeZEwVErsGmyPNSzwfwFn4OdxBj0mmv6hOFucB/k81Ojdu68RbZdxYsRQUPc9l6SU5F/cG+bXgWs3oUgsQ==}
     requiresBuild: true
     dependencies:
       '@emnapi/core': 1.4.3
@@ -6911,7 +6919,7 @@ packages:
     resolution: {integrity: sha512-8KG5RD0GVP4ydEzRn/I4BNDuxDtqVbOdm8675T49OIG/NGhaK0pjPX7ZcDlvKYbA+ulvVK3ztfcF4uBdOxuJbQ==}
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.7.1
+      semver: 7.7.2
 
   /@npmcli/fs/3.1.1:
     resolution: {integrity: sha512-q9CRWjpHCMIh5sVyefoD1cA7PkvILqCZsnSOEUUivORLjxCO/Irmue2DprETiNgEqktDBZaM1Bi+jrarx1XdCg==}
@@ -7629,7 +7637,7 @@ packages:
       node-dir: 0.1.17
       node-fetch: 2.7.0
       open: 7.4.2
-      semver: 7.7.1
+      semver: 7.6.3
       simple-git: 3.27.0_supports-color@8.1.1
       timers-ext: 0.1.8
       type: 2.7.3
@@ -11110,7 +11118,7 @@ packages:
     cpu: [wasm32]
     requiresBuild: true
     dependencies:
-      '@napi-rs/wasm-runtime': 0.2.9
+      '@napi-rs/wasm-runtime': 0.2.10
     dev: true
     optional: true
 
@@ -13943,7 +13951,7 @@ packages:
       postcss-modules-values: 4.0.0_postcss@8.5.3
       postcss-value-parser: 4.2.0
       schema-utils: 3.3.0
-      semver: 7.7.1
+      semver: 7.7.2
       webpack: 5.99.8_webpack-cli@5.1.4
     dev: true
 
@@ -14479,8 +14487,8 @@ packages:
     hasBin: true
     optional: true
 
-  /detect-libc/2.0.3:
-    resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
+  /detect-libc/2.0.4:
+    resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
     engines: {node: '>=8'}
     optional: true
 
@@ -16296,7 +16304,7 @@ packages:
       memfs: 3.5.3
       minimatch: 3.1.2
       schema-utils: 2.7.0
-      semver: 7.7.1
+      semver: 7.7.2
       tapable: 1.1.3
       typescript: 4.9.5
       webpack: 5.99.8_webpack-cli@5.1.4
@@ -16327,7 +16335,7 @@ packages:
       memfs: 3.5.3
       minimatch: 3.1.2
       schema-utils: 2.7.0
-      semver: 7.7.1
+      semver: 7.7.2
       tapable: 1.1.3
       typescript: 4.9.5
       webpack: 4.47.0_webpack-cli@5.1.4
@@ -18174,7 +18182,7 @@ packages:
       '@babel/parser': 7.27.1
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.2
-      semver: 7.7.1
+      semver: 7.7.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -19450,7 +19458,7 @@ packages:
     resolution: {integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.7.1
+      semver: 7.6.3
 
   /make-error/1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
@@ -20461,7 +20469,7 @@ packages:
       '@next/swc-linux-x64-musl': 15.3.2
       '@next/swc-win32-arm64-msvc': 15.3.2
       '@next/swc-win32-x64-msvc': 15.3.2
-      sharp: 0.34.1
+      sharp: 0.34.2
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
@@ -20507,7 +20515,7 @@ packages:
       '@next/swc-linux-x64-musl': 15.3.2
       '@next/swc-win32-arm64-msvc': 15.3.2
       '@next/swc-win32-x64-msvc': 15.3.2
-      sharp: 0.34.1
+      sharp: 0.34.2
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
@@ -20701,7 +20709,7 @@ packages:
       fs2: 0.3.15
       memoizee: 0.4.17
       node-fetch: 2.7.0
-      semver: 7.7.1
+      semver: 7.6.3
       type: 2.7.3
       validate-npm-package-name: 3.0.0
     transitivePeerDependencies:
@@ -21638,7 +21646,7 @@ packages:
       loader-utils: 2.0.4
       postcss: 7.0.39
       schema-utils: 3.3.0
-      semver: 7.7.1
+      semver: 7.7.2
       webpack: 4.47.0_webpack-cli@5.1.4
 
   /postcss-modules-extract-imports/2.0.0:
@@ -23379,7 +23387,6 @@ packages:
     resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
     engines: {node: '>=10'}
     hasBin: true
-    dev: true
 
   /send/0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
@@ -23604,17 +23611,17 @@ packages:
     resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
     dev: true
 
-  /sharp/0.34.1:
-    resolution: {integrity: sha512-1j0w61+eVxu7DawFJtnfYcvSv6qPFvfTaqzTQ2BLknVhHTwGS8sc63ZBF4rzkWMBVKybo4S5OBtDdZahh2A1xg==}
+  /sharp/0.34.2:
+    resolution: {integrity: sha512-lszvBmB9QURERtyKT2bNmsgxXK0ShJrL/fvqlonCo7e6xBF8nT8xU6pW+PMIbLsz0RxQk3rgH9kd8UmvOzlMJg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     requiresBuild: true
     dependencies:
       color: 4.2.3
-      detect-libc: 2.0.3
-      semver: 7.7.1
+      detect-libc: 2.0.4
+      semver: 7.7.2
     optionalDependencies:
-      '@img/sharp-darwin-arm64': 0.34.1
-      '@img/sharp-darwin-x64': 0.34.1
+      '@img/sharp-darwin-arm64': 0.34.2
+      '@img/sharp-darwin-x64': 0.34.2
       '@img/sharp-libvips-darwin-arm64': 1.1.0
       '@img/sharp-libvips-darwin-x64': 1.1.0
       '@img/sharp-libvips-linux-arm': 1.1.0
@@ -23624,15 +23631,16 @@ packages:
       '@img/sharp-libvips-linux-x64': 1.1.0
       '@img/sharp-libvips-linuxmusl-arm64': 1.1.0
       '@img/sharp-libvips-linuxmusl-x64': 1.1.0
-      '@img/sharp-linux-arm': 0.34.1
-      '@img/sharp-linux-arm64': 0.34.1
-      '@img/sharp-linux-s390x': 0.34.1
-      '@img/sharp-linux-x64': 0.34.1
-      '@img/sharp-linuxmusl-arm64': 0.34.1
-      '@img/sharp-linuxmusl-x64': 0.34.1
-      '@img/sharp-wasm32': 0.34.1
-      '@img/sharp-win32-ia32': 0.34.1
-      '@img/sharp-win32-x64': 0.34.1
+      '@img/sharp-linux-arm': 0.34.2
+      '@img/sharp-linux-arm64': 0.34.2
+      '@img/sharp-linux-s390x': 0.34.2
+      '@img/sharp-linux-x64': 0.34.2
+      '@img/sharp-linuxmusl-arm64': 0.34.2
+      '@img/sharp-linuxmusl-x64': 0.34.2
+      '@img/sharp-wasm32': 0.34.2
+      '@img/sharp-win32-arm64': 0.34.2
+      '@img/sharp-win32-ia32': 0.34.2
+      '@img/sharp-win32-x64': 0.34.2
     optional: true
 
   /shebang-command/1.2.0:
@@ -24427,7 +24435,7 @@ packages:
       mime: 2.6.0
       qs: 6.14.0
       readable-stream: 3.6.2
-      semver: 7.7.1
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
     dev: true
