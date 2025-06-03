@@ -291,7 +291,7 @@ importers:
       autoprefixer: ^10.4.21
       cypress: 14.4.0
       eslint: ^9.27.0
-      eslint-import-resolver-typescript: ^4.4.1
+      eslint-import-resolver-typescript: ^4.4.2
       eslint-plugin-import: ^2.31.0
       eslint-plugin-jsx-a11y: ^6.10.2
       eslint-plugin-react: ^7.37.5
@@ -322,8 +322,8 @@ importers:
       autoprefixer: 10.4.21_postcss@8.5.3
       cypress: 14.4.0
       eslint: 9.27.0
-      eslint-import-resolver-typescript: 4.4.1_haoacowmr2w2eciycmwuvl6seu
-      eslint-plugin-import: 2.31.0_67h3ucsotl72ko2sjuxpnxze6u
+      eslint-import-resolver-typescript: 4.4.2_haoacowmr2w2eciycmwuvl6seu
+      eslint-plugin-import: 2.31.0_tjmutulm2ghsj2k4x6y7ftdjlu
       eslint-plugin-jsx-a11y: 6.10.2_eslint@9.27.0
       eslint-plugin-react: 7.37.5_eslint@9.27.0
       eslint-plugin-react-hooks: 5.2.0_eslint@9.27.0
@@ -3547,7 +3547,7 @@ packages:
       '@babel/helper-optimise-call-expression': 7.27.1
       '@babel/helper-replace-supers': 7.27.1_@babel+core@7.27.4
       '@babel/helper-skip-transparent-expression-wrappers': 7.27.1
-      '@babel/traverse': 7.27.3
+      '@babel/traverse': 7.27.1
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -5074,7 +5074,6 @@ packages:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@babel/traverse/7.27.3:
     resolution: {integrity: sha512-lId/IfN/Ye1CIu8xG7oKBHXd2iNb2aW1ilPszzGcJug6M8RCKfVNcYhpI5+bMvFYjK7lXIM0R+a+6r8xhHp2FQ==}
@@ -15250,8 +15249,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-import-resolver-typescript/4.4.1_haoacowmr2w2eciycmwuvl6seu:
-    resolution: {integrity: sha512-KHQnjMAn/Hbs1AcMs2YfJTeNoWsaOoMRvJUKr77Y2dv7jNOaT8/IJYlvfN/ZIwTxUsv2B6amwv7u9bt2Vl9lZg==}
+  /eslint-import-resolver-typescript/4.4.2_haoacowmr2w2eciycmwuvl6seu:
+    resolution: {integrity: sha512-GdSOy0PwLYpQCrmnEQujvA+X0NKrdnVCICEbZq1zlmjjD12NHOHCN9MYyrGFR9ydCs4wJwHEV9tts44ajSlGeA==}
     engines: {node: ^16.17.0 || >=18.6.0}
     peerDependencies:
       eslint: '*'
@@ -15266,7 +15265,7 @@ packages:
       debug: 4.4.1
       eslint: 9.27.0
       eslint-import-context: 0.1.6_unrs-resolver@1.7.2
-      eslint-plugin-import: 2.31.0_67h3ucsotl72ko2sjuxpnxze6u
+      eslint-plugin-import: 2.31.0_tjmutulm2ghsj2k4x6y7ftdjlu
       get-tsconfig: 4.10.1
       is-bun-module: 2.0.0
       stable-hash: 0.0.5
@@ -15276,7 +15275,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils/2.12.0_v3rt5ggnjljquuxr3zmrytp3ii:
+  /eslint-module-utils/2.12.0_ccwtyl6dy3ulrww37d6hgsy2fi:
     resolution: {integrity: sha512-wALZ0HFoytlyh/1+4wuZ9FJCD/leWHQzzrxJ8+rebyReSLk7LApMyd3WJaLVoN+D5+WIdJyDK1c6JnE65V4Zyg==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -15301,12 +15300,12 @@ packages:
       debug: 3.2.7
       eslint: 9.27.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 4.4.1_haoacowmr2w2eciycmwuvl6seu
+      eslint-import-resolver-typescript: 4.4.2_haoacowmr2w2eciycmwuvl6seu
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /eslint-plugin-import/2.31.0_67h3ucsotl72ko2sjuxpnxze6u:
+  /eslint-plugin-import/2.31.0_tjmutulm2ghsj2k4x6y7ftdjlu:
     resolution: {integrity: sha512-ixmkI62Rbc2/w8Vfxyh1jQRTdRTF52VxwRVHl/ykPAmqG+Nb7/kNn+byLP0LxPgI7zWA16Jt82SybJInmMia3A==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -15326,7 +15325,7 @@ packages:
       doctrine: 2.1.0
       eslint: 9.27.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0_v3rt5ggnjljquuxr3zmrytp3ii
+      eslint-module-utils: 2.12.0_ccwtyl6dy3ulrww37d6hgsy2fi
       hasown: 2.0.2
       is-core-module: 2.15.1
       is-glob: 4.0.3
