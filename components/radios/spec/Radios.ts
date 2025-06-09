@@ -67,4 +67,26 @@ describe('Radios', () => {
     it('renders the 4th option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional Four'));
     it.skip('renders the 4th option\'s conditional as invisible', async () => expect(screen.getByText('Conditional Four')).not.toBeVisible());
   });
+
+  describe('when given a ReactNode as a label option', () => {
+      const props = {
+        label: 'Which types of waste do you transport?',
+        name: 'waste',
+        options: [
+          { value: 'carcasses', label: h('b', { children: 'Waste from animal carcasses' }), conditional: 'Conditional One' },
+          { value: 'mines', label: 'Waste from mines or quarries', conditional: 'Conditional Two', selected: true },
+          { value: 'farm', label: 'Farm or agricultural waste', conditional: 'Conditional Three' },
+          'or',
+          { value: 'abroad', label: 'None of the above', hint: 'I am NOT a waste carrier', exclusive: true }
+        ],
+        error: 'Select an option',
+        hint: 'Select all that apply.'
+      };
+
+      beforeEach(async () => {
+        render(h(Radios, props));
+      });
+
+      it('renders the 1st option', async () => expect(screen.getByRole('group')).toHaveTextContent('Waste from animal carcasses'));
+    });
 });
