@@ -11,7 +11,7 @@ export type Option = {
   conditional?: ReactNode
   disabled?: boolean
   hint?: string
-  label: string | ReactNode
+  label: ReactNode
   selected?: boolean
   value: string
 };

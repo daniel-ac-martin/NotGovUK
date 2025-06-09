@@ -10,7 +10,7 @@ export type Option = {
   disabled?: boolean
   exclusive?: boolean
   hint?: string
-  label: string | ReactNode
+  label: ReactNode
   selected?: boolean
   value: string
 };

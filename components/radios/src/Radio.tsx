@@ -7,7 +7,7 @@ export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'label'> & 
   classes: ClassBuilder
   conditional?: ReactNode
   hint?: string
-  label: string | ReactNode
+  label: ReactNode
 };
 
 export const Radio: FC<RadioProps> = ({
