@@ -12,23 +12,27 @@ export type SummaryListItemProps = StandardProps & HTMLAttributes<HTMLDivElement
   children: ReactNode
   /** Actions available for the item */
   actions?: Action | Action[]
+  /** Indicates that one of the summary list items has actions */
+  noActions?: boolean
 };
 
 export const SummaryListItem: FC<SummaryListItemProps> = ({
   actions: _actions = [],
   children,
   classBlock,
-  classModifiers,
+  classModifiers = [],
   className,
   name,
   ...attrs
 }) => {
   const classes = classBuilder('govuk-summary-list', classBlock);
+
   const actions = (
     Array.isArray(_actions)
     ? _actions
     : [ _actions ]
   );
+
   const { children: firstActionChildren, text: firstActionText, ...firstActionProps } = actions[0] || {};
 
   return (
