@@ -9,7 +9,7 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'label'>
   classes: ClassBuilder
   conditional?: ReactNode
   hint?: string
-  label: string
+  label: ReactNode
 };
 
 export const Checkbox: FC<CheckboxProps> = ({
