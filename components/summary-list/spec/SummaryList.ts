@@ -51,5 +51,43 @@ describe('SummaryList', () => {
     it('links to the href of the 1st action', async () => expect(screen.getAllByRole('link')[0]).toHaveAttribute('href', '/a'));
     it('links to the href of the 2nd action', async () => expect(screen.getAllByRole('link')[1]).toHaveAttribute('href', '/b'));
     it('links to the href of the 3rd action', async () => expect(screen.getAllByRole('link')[2]).toHaveAttribute('href', '/c'));
+    it('has the govuk-summary-list__row class on the first row', async () => {
+      const row = screen.getByText('Item A')
+      const container = row.parentElement
+      expect(container?.className).toBe('govuk-summary-list__row')
+    });
+  });
+
+  describe('when given some props with no actions', () => {
+    const props = {
+      ...minimalProps,
+      items: [
+        { name: 'Item A', children: 'One' },
+        { name: 'Item B', actions: [ { href: '/b', text: 'Change B' } ], children: 'Two' },
+        { name: 'Item C', actions: [ { href: '/c', text: 'Change C' } ], children: 'Three' },
+      ]
+    };
+
+    beforeEach(async () => {
+      render(h(SummaryList, props));
+    });
+
+    it('has the govuk-summary-list__row--no-actions class on the first row', async () => {
+      const row = screen.getByText('Item A')
+      const container = row.parentElement
+      expect(container?.className).toBe('govuk-summary-list__row govuk-summary-list__row--no-actions')
+    });
+
+    it('has the govuk-summary-list__row class only on the second row', async () => {
+      const row = screen.getByText('Item B')
+      const container = row.parentElement
+      expect(container?.className).toBe('govuk-summary-list__row')
+    });
+
+    it('has the govuk-summary-list__row class only on the third row', async () => {
+      const row = screen.getByText('Item C')
+      const container = row.parentElement
+      expect(container?.className).toBe('govuk-summary-list__row')
+    });
   });
 });
