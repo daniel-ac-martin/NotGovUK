@@ -18,7 +18,7 @@ jobs:
           node: 22
 
       - name: Push Storybook to Chromatic
-        uses: chromaui/action@v12
+        uses: chromaui/action@v13
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
