@@ -11,9 +11,18 @@ export type SummaryListProps = SummaryListContainerProps & {
 
 const SummaryListComponent: FC<SummaryListProps> = ({
   classBlock = 'govuk-summary-list',
-  items,
+  items: _items,
   ...props
 }) => {
+  const items = _items.map((item) => {
+    if (!Array.isArray(item.actions)) {
+      typeof item.classModifiers === 'string' ? item.classModifiers = [item.classModifiers] : item.classModifiers = [];
+      item.classModifiers.push('no-actions');
+    }
+
+    return item
+  })
+
   return (
     <SummaryListContainer {...props} classBlock={classBlock}>
       {items.map((itemProps, i: number) => (
