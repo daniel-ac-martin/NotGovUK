@@ -1,4 +1,4 @@
-import { FC, KeyboardEvent, ReactNode, SyntheticEvent, createElement as h, useRef, useState } from 'react';
+import { FC, HTMLAttributes, KeyboardEvent, ReactNode, SyntheticEvent, createElement as h, useRef, useState } from 'react';
 import { useIsMounted } from '@not-govuk/client-component-helpers';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { useLocation } from '@not-govuk/router';
@@ -11,7 +11,7 @@ type TabItem = {
   content: ReactNode
 };
 
-export type TabsProps = StandardProps & {
+export type TabsProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   items: TabItem[]
 };
 
