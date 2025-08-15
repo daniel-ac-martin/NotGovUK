@@ -1,13 +1,13 @@
 'use client';
 
-import { FC, ReactNode, createElement as h } from 'react';
+import { ComponentProps, FC, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { A } from '@not-govuk/link';
 import { useNavigate } from '@not-govuk/router';
 
 import '../assets/BackLink.scss';
 
-export type BackLinkProps = StandardProps & {
+export type BackLinkProps = ComponentProps<typeof A> & {
   children?: ReactNode
   /** The location to link to */
   href?: string

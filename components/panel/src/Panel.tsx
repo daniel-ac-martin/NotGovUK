@@ -1,9 +1,9 @@
-import { FC, ReactNode, createElement as h } from 'react';
+import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/Panel.scss';
 
-export type PanelProps = StandardProps & {
+export type PanelProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** The content that displays in the panel */
   children?: ReactNode
   /** Heading of the panel */

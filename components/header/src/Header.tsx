@@ -1,4 +1,4 @@
-import { FC, ReactNode, createElement as h } from 'react';
+import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
@@ -15,7 +15,7 @@ export type NavigationLink = LinkProps & {
   text: string
 };
 
-export type HeaderProps = StandardProps & {
+export type HeaderProps = StandardProps & HTMLAttributes<HTMLElement> & {
   /** Department branding to use (e.g. home-office) */
   department?: string
   /** Whether to add the standard Gov.UK content */

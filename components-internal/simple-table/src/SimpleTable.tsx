@@ -1,9 +1,9 @@
-import { ReactNode, FC, createElement as h } from 'react';
+import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 
 import '../assets/SimpleTable.scss';
 
-export type SimpleTableProps<T> = StandardProps & {
+export type SimpleTableProps<T> = StandardProps & HTMLAttributes<HTMLTableElement> & {
   caption?: string | ReactNode
   data: T[]
   headings: T

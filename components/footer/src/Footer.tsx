@@ -1,4 +1,4 @@
-import { FC, Fragment, ReactNode, createElement as h } from 'react';
+import { FC, Fragment, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Link, LinkProps } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
@@ -23,7 +23,7 @@ export type NavMenu = {
   title: string
 };
 
-export type FooterProps = StandardProps & {
+export type FooterProps = StandardProps & HTMLAttributes<HTMLElement> & {
   children?: ReactNode
   /** Department branding to use (e.g. home-office) */
   department?: string
