@@ -122,6 +122,8 @@ export default defineConfig({
 });
 ```
 
+You should ensure that you set the `js-enabled` class on an element that encompasses all of your components (such as your `<body` element or the Page component), when and only when client-side JavaScript executes. Otherwise some components will not render correctly.
+
 #### Limitations on Remix
 
 - You will need to manage your own `<head>` including the favicon.
@@ -164,6 +166,8 @@ const nextConfig = {
 
 export default nextConfig;
 ```
+
+You should ensure that you set the `js-enabled` class on an element that encompasses all of your components (such as your `<body` element or the Page component), when and only when client-side JavaScript executes. Otherwise some components will not render correctly.
 
 
 #### Pre-requisites on Next.js
