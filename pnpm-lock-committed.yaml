@@ -2353,7 +2353,7 @@ importers:
       fork-ts-checker-webpack-plugin: ^9.1.0
       html-loader: ^5.1.0
       ignore-loader: ^0.1.2
-      mini-css-extract-plugin: ^2.9.2
+      mini-css-extract-plugin: ^2.9.4
       node-loader: ^2.1.0
       resolve-url-loader: ^5.0.0
       sass-embedded: 1.90.0
@@ -2380,7 +2380,7 @@ importers:
       fork-ts-checker-webpack-plugin: 9.1.0
       html-loader: 5.1.0
       ignore-loader: 0.1.2
-      mini-css-extract-plugin: 2.9.2
+      mini-css-extract-plugin: 2.9.4
       node-loader: 2.1.0
       resolve-url-loader: 5.0.0
       sass-embedded: 1.90.0
@@ -20397,13 +20397,13 @@ packages:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
 
-  /mini-css-extract-plugin/2.9.2:
-    resolution: {integrity: sha512-GJuACcS//jtq4kCtd5ii/M0SZf7OZRH+BxdqXZHaJfb8TJiVl+NgQRPwiYt2EuqeSkNydn/7vP+bcE27C5mb9w==}
+  /mini-css-extract-plugin/2.9.4:
+    resolution: {integrity: sha512-ZWYT7ln73Hptxqxk2DxPU9MmapXRhxkJD6tkSR04dnQxm8BGu2hzgKLugK5yySD97u/8yy7Ma7E76k9ZdvtjkQ==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      schema-utils: 4.2.0
+      schema-utils: 4.3.2
       tapable: 2.2.1
     dev: false
 
@@ -23576,6 +23576,7 @@ packages:
       ajv: 8.17.1
       ajv-formats: 2.1.1
       ajv-keywords: 5.1.0_ajv@8.17.1
+    dev: true
 
   /schema-utils/4.3.2:
     resolution: {integrity: sha512-Gn/JaSk/Mt9gYubxTtSn/QCV4em9mpAPiR1rqy/Ocu19u/G9J5WWdNoUT4SiV6mFC3y6cxyFcFwdzPM3FgxGAQ==}
