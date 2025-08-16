@@ -49,14 +49,17 @@ describe('SummaryList', () => {
     it('contains the text of the 2nd action', async () => expect(screen.getAllByRole('link')[1]).toHaveTextContent('Change C'));
     it('links to the href of the 1st action', async () => expect(screen.getAllByRole('link')[0]).toHaveAttribute('href', '/b'));
     it('links to the href of the 2nd action', async () => expect(screen.getAllByRole('link')[1]).toHaveAttribute('href', '/c'));
-    it('adds the no-actions class modifier to the 1st item', async () => {
-      expect(screen.getByText('Item A').closest('div')).toHaveClass('govuk-summary-list__row govuk-summary-list__row--no-actions');
-    })
-    it('does not add the no-actions class modifier to the 2nd item', async () => {
-      expect(screen.getByText('Item A').closest('div')).toHaveClass('govuk-summary-list__row');
-    })
-    it('does not add the no-actions class modifier to the 3rd item', async () => {
-      expect(screen.getByText('Item A').closest('div')).toHaveClass('govuk-summary-list__row');
-    })
+    it('adds the no-actions class to the 1st item', async () => (
+      expect(screen.getByText('Item A').closest('div'))
+        .toHaveClass('govuk-summary-list__row--no-actions')
+    ));
+    it('does NOT add the no-actions class to the 2nd item', async () => (
+      expect(screen.getByText('Item B').closest('div'))
+        .not.toHaveClass('govuk-summary-list__row--no-actions')
+    ));
+    it('does NOT add the no-actions class to the 3rd item', async () => (
+      expect(screen.getByText('Item C').closest('div'))
+        .not.toHaveClass('govuk-summary-list__row--no-actions')
+    ));
   });
 });
