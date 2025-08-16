@@ -51,5 +51,35 @@ describe('SummaryList', () => {
     it('links to the href of the 1st action', async () => expect(screen.getAllByRole('link')[0]).toHaveAttribute('href', '/a'));
     it('links to the href of the 2nd action', async () => expect(screen.getAllByRole('link')[1]).toHaveAttribute('href', '/b'));
     it('links to the href of the 3rd action', async () => expect(screen.getAllByRole('link')[2]).toHaveAttribute('href', '/c'));
+    it('renders 3 links', async () => expect(screen.queryAllByRole('link')).toHaveLength(3));
+    it('does not add the no-actions class modifier to the 1st item', async () => {
+      expect(screen.getByText('Item A').closest('div')).toHaveClass('govuk-summary-list__row');
+    })
   });
+
+  describe('when given no actions', () => {
+    const props = {
+      ...minimalProps,
+      items: [
+        { name: 'Item A', children: 'One' },
+        { name: 'Item B', children: 'Two' },
+        { name: 'Item C', children: 'Three' },
+      ]
+    };
+
+    beforeEach(async () => {
+      render(h(SummaryList, props));
+    });
+
+    it('contains the name of the 1st item', async () => expect(screen.getByText('Item A')).toBeInTheDocument());
+    it('contains the name of the 2nd item', async () => expect(screen.getByText('Item B')).toBeInTheDocument());
+    it('contains the name of the 3rd item', async () => expect(screen.getByText('Item C')).toBeInTheDocument());
+    it('contains the value of the 1st item', async () => expect(screen.getByText('One')).toBeInTheDocument());
+    it('contains the value of the 2nd item', async () => expect(screen.getByText('Two')).toBeInTheDocument());
+    it('contains the value of the 3rd item', async () => expect(screen.getByText('Three')).toBeInTheDocument());
+    it('does not render any links', async () => expect(screen.queryAllByRole('link')).toHaveLength(0));
+    it('adds the no-actions class modifier to the 1st item', async () => {
+      expect(screen.getByText('Item A').closest('div')).toHaveClass('govuk-summary-list__row govuk-summary-list__row--no-actions');
+    })
+  })
 });
