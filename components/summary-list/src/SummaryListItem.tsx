@@ -44,7 +44,7 @@ export const SummaryListItem: FC<SummaryListItemProps> = ({
         { actions.length === 1 ? (
             <A {...firstActionProps}>{firstActionChildren || firstActionText}</A>
           ) : (
-            <AnchorList items={actions} classBlock={classes('list')} />
+            <AnchorList items={actions} classBlock={classes('actions-list')} />
           )
         }
         </dd>
