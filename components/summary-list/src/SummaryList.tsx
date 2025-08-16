@@ -14,14 +14,28 @@ const SummaryListComponent: FC<SummaryListProps> = ({
   items: _items,
   ...props
 }) => {
-  const items = _items.map((item) => {
-    if (!Array.isArray(item.actions)) {
-      typeof item.classModifiers === 'string' ? item.classModifiers = [item.classModifiers] : item.classModifiers = [];
-      item.classModifiers.push('no-actions');
-    }
-
-    return item
-  })
+  const reducer = (acc: boolean, cur: SummaryListItemProps) => acc || !!cur.actions;
+  const hasActions = _items.reduce(reducer, false);
+  const items = (
+    !hasActions
+    ? _items
+    : _items.map(({ actions, classModifiers, ...rest }) => ({
+      actions,
+      ...rest,
+      classModifiers: (
+        actions !== undefined
+        ? classModifiers
+        : [
+          'no-actions',
+          ...(
+            Array.isArray(classModifiers)
+            ? classModifiers
+            : [classModifiers]
+          )
+        ]
+      )
+    }))
+  );
 
   return (
     <SummaryListContainer {...props} classBlock={classBlock}>

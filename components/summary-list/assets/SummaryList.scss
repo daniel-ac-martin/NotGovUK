@@ -1,2 +1,26 @@
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/components/summary-list/index";
+
+.govuk-summary-list {
+  &__actions-list {
+    &__item {
+      @extend .govuk-summary-list__actions-list-item;
+    }
+
+    &__link {
+      @extend .govuk-link;
+    }
+  }
+}
+
+.govuk-summary-card {
+  &__actions {
+    &__item {
+      @extend .govuk-summary-card__action;
+    }
+
+    &__link {
+      @extend .govuk-link;
+    }
+  }
+}
