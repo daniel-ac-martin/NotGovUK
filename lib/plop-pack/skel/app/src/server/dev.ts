@@ -2,7 +2,7 @@ import type { Server } from '@not-govuk/engine';
 import { assetProxy } from '@not-govuk/asset-proxy';
 import config from './config';
 import { createServer } from './httpd';
-import webpackConfig from '../../webpack.config';
+import webpackConfig from '../../webpack.config.mjs';
 
 const getEntrypoints = () => {
   try {
@@ -83,7 +83,7 @@ if (module.hot) {
   module.hot.accept([
     '@not-govuk/asset-proxy',
     './config',
-    '../../webpack.config'
+    '../../webpack.config.mjs'
   ], restart);
 
   module.hot.accept([

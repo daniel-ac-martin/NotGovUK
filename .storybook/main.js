@@ -68,6 +68,9 @@ module.exports = {
     builder: 'webpack5',
     disableTelemetry: true
   },
+  features: {
+    previewMdx2: true
+  },
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.(stories|story)\.[tj]sx?$/,
