@@ -1,0 +1,22 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './ButtonGroup.stories';
+
+<Meta of={Stories} />
+
+# Button group
+
+<p><Tag text="Internal" /></p>
+
+A component for grouping buttons and links on a single line.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Button group.
+
+<Canvas of={Stories.Standard} />

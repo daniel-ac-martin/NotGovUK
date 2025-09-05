@@ -1,0 +1,41 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import * as Stories from './InsetText.stories';
+
+<Meta of={Stories} />
+
+# Inset text
+
+A block of text that is inset.
+
+<Primary />
+<Controls />
+
+
+## When to use this component
+
+Use the inset text component to differentiate a block of text from the content that surrounds it, for example:
+  - quotes
+  - examples
+  - additional information about the page
+
+
+## When not to use this component
+
+Some users do not notice inset text if it’s used on complex pages or near to other visually prominent elements. For this reason, avoid using inset text as a way of highlighting very important information that users need to see.
+
+If you need to draw attention to very important content, like legal information, use the [warning text component] instead.
+
+
+## How it works
+
+Use inset text very sparingly - it’s less effective if it’s overused.
+
+
+## Stories
+### Standard
+
+A standard Inset text.
+
+<Canvas of={Stories.Standard} />
+
+[warning text component]: https://design-system.service.gov.uk/components/warning-text/

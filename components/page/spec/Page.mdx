@@ -1,0 +1,161 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './Page.stories';
+
+<Meta of={Stories} />
+
+# Page
+
+<p><Tag text="Unofficial" /></p>
+
+A fully branded page with content sandwiched between the header and footer.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Page.
+
+<Canvas of={Stories.Standard} />
+
+
+### GOV.UK
+
+A page suitable for being hosted on GOV.UK.
+
+<Canvas of={Stories.GovUK} />
+
+
+### Re-branded GOV.UK
+
+A page suitable for being hosted on GOV.UK, after 25th June 2025.
+
+Simply add the `rebrand` prop.
+
+<Canvas of={Stories.GovUKRebrand} />
+
+
+### Full width
+
+A page that does _NOT_ restrict the width on wide screens.
+
+<Canvas of={Stories.FullWidth} />
+
+
+### Dark mode
+
+<p><Tag text="Experimental" /></p>
+
+A page suitable for dashboards. This is achieved by providing the `dark` classModifier.
+
+<Canvas of={Stories.DarkMode} />
+
+
+### Dark mode rebrand
+
+<p><Tag text="Experimental" /></p>
+
+A preview of dark mode, post-rebrand.
+
+<Canvas of={Stories.DarkModeRebrand} />
+
+
+### Custom logo
+
+A custom logo, for the page's header, can be provided, via the `logo` prop.
+
+<Canvas of={Stories.CustomLogo} />
+
+
+### No logo
+
+The logo can be removed from the page's header by passing `null` to the `logo` prop.
+
+<Canvas of={Stories.NoLogo} />
+
+
+### Department colours
+
+If you are building an internal application you can supply the name of
+your department in order to use their colours.
+
+
+#### DBT
+
+<Canvas of={Stories.DBT} />
+
+
+#### DBT rebrand
+
+This is a preview, for post-rebrand.
+
+<Canvas of={Stories.DBTRebrand} />
+
+
+#### DCMS
+
+<Canvas of={Stories.DCMS} />
+
+
+#### DEFRA
+
+<Canvas of={Stories.DEFRA} />
+
+
+#### DWP
+
+<Canvas of={Stories.DWP} />
+
+
+#### FCO
+
+<Canvas of={Stories.FCO} />
+
+
+#### Home Office
+
+<Canvas of={Stories.HomeOffice} />
+
+
+#### HMRC
+
+<Canvas of={Stories.HMRC} />
+
+
+#### HM Treasury
+
+<Canvas of={Stories.HMTreasury} />
+
+
+#### MHCLG
+
+<Canvas of={Stories.MHCLG} />
+
+
+#### MoJ
+
+<Canvas of={Stories.MoJ} />
+
+
+#### Office of the leader of the House of lords
+
+<Canvas of={Stories.OfficeOfTheLeaderOfTheHouseOfLords} />
+
+
+#### Scotland office
+
+<Canvas of={Stories.ScotlandOffice} />
+
+
+#### Wales office
+
+<Canvas of={Stories.WalesOffice} />
+
+### All the trimmings
+
+A page with lots of customisation.
+
+<Canvas of={Stories.Custom} />

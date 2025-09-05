@@ -1,0 +1,35 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import * as Stories from './WarningText.stories';
+
+<Meta of={Stories} />
+
+# Warning text
+
+A component to warn the user of something important.
+
+<Primary />
+<Controls />
+
+
+## When to use this component
+
+Use the warning text component when you need to warn users about something important, such as legal consequences of an action, or lack of action, that they might take.
+
+
+## How it works
+
+You might need to rewrite the hidden, assistive, text (‘Warning’ in the example) to make it appropriate for your context.
+
+## Stories
+### Standard
+
+A standard Warning text.
+
+<Canvas of={Stories.Standard} />
+
+
+### Custom assistive text
+
+Warning text with custom hidden text for users of screen-readers.
+
+<Canvas of={Stories.CustomAssistive} />

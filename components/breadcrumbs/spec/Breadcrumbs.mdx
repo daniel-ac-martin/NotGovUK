@@ -1,0 +1,49 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import * as Stories from './Breadcrumbs.stories';
+
+<Meta of={Stories} />
+
+# Breadcrumbs
+
+The breadcrumbs component helps users to understand where they are within a website’s structure and move between levels.
+
+<Primary />
+<Controls />
+
+
+## When to use this component
+
+Use the breadcrumbs component when you need to help users understand and move between the multiple levels of a website.
+
+
+## When not to use this component
+
+Do not use the breadcrumbs component on websites with a flat structure, or to show progress through a linear journey or transaction.
+
+If you’re using other navigational elements on the page, such as a sidebar, consider whether your users need the additional support of breadcrumbs.
+
+
+## How it works
+
+The breadcrumbs component should include the user’s current page, which should be visually different from the other links in the breadcrumb.
+
+<Canvas of={Stories.Standard} />
+
+
+### Collapsing breadcrumbs on mobile devices
+
+If you have long breadcrumbs you can configure the component to only show the first and last items on mobile devices.
+
+<Canvas of={Stories.Collapsing} />
+
+
+### Breadcrumbs on dark backgrounds
+
+Use the `govuk-breadcrumbs--inverse` modifier class to show white links and arrows on dark backgrounds – for example, in headers, custom components, and patterns with darker backgrounds.
+
+Make sure all users can see the breadcrumbs – the background colour [must have a contrast ratio of at least 4.5:1] with white.
+
+<Canvas of={Stories.DarkBackgrounds} />
+
+
+[must have a contrast ratio of at least 4.5:1]: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html

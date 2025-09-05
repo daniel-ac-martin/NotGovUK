@@ -1,0 +1,22 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './Hint.stories';
+
+<Meta of={Stories} />
+
+# Hint
+
+<p><Tag text="Internal" /></p>
+
+Hint text for a form field.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Hint.
+
+<Canvas of={Stories.Standard} />

@@ -1,0 +1,192 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import * as Stories from './DateInput.stories';
+
+<Meta of={Stories} />
+
+# Date input
+
+Use the date input component to help users enter a memorable date or one they
+can easily look up.
+
+<Primary />
+<Controls />
+
+
+## When to use this component
+
+Use the date input component when you’re asking users for a date they’ll already
+know, or can look up without using a calendar.
+
+
+## When not to use this component
+
+Do not use the date input component if users are unlikely to know the exact date
+of the event you’re asking about.
+
+Read more about how to ask users for dates.
+
+
+## How it works
+
+The date input component consists of 3 fields to let users enter a day, month
+and year.
+
+The 3 date fields are grouped together in a `<fieldset>` with a `<legend>` that
+describes them, as shown in the examples on this page. This is usually a
+question, like ‘What is your date of birth?’.
+
+If you’re asking [one question per page], you can set the contents of the
+`<legend>` as the page heading. This is good practice as it means that users of
+screen readers will only hear the contents once.
+
+Read more about [why and how to set legends as headings].
+
+<Canvas of={Stories.Standard} />
+
+Never automatically tab users between the fields of the date input because this
+can be confusing and may clash with normal keyboard controls.
+
+
+### If you’re asking more than one question on the page
+
+If you’re asking more than one question on the page, do not set the contents of
+the `<label>` as the page heading. Read more about [asking multiple questions on
+question pages].
+
+<Canvas of={Stories.NoHeading} />
+
+
+### Use the autocomplete attribute for a date of birth
+
+Use the autocomplete attribute on the date input component when you’re asking
+for a date of birth. This lets browsers autofill the information on a user’s
+behalf if they’ve entered it previously.
+
+To do this, set the autocomplete prop to `bday`. See how to do this in the code
+snippet in the following example.
+
+<Canvas of={Stories.Autocomplete} />
+
+If you are working in production you’ll need to do this to meet [WCAG 2.1 Level
+AA].
+
+You will not normally need to use the `autoComplete` attribute in prototypes, as
+users will not generally be using their own devices.
+
+
+### Error messages
+
+Error messages should be styled like this:
+
+<Canvas of={Stories.Errors} />
+
+If you’re highlighting just one field - either the day, month or year - only style the field that has an error. The error message must say which field has an error, like this:
+
+<Canvas of={Stories.SubErrors} />
+
+
+Make sure errors follow the guidance in error message and have specific error
+messages for specific error states.
+
+If there’s more than one error, show the highest priority error message. In order of priority, show error messages about:
+
+- missing or incomplete information
+- information that cannot be correct (for example, the number ‘13’ in the month field)
+- information that fails validation for another reason
+
+
+#### If nothing is entered
+
+Say ‘Enter [whatever it is]’.
+
+For example, ‘Enter your date of birth’.
+
+
+#### If an incomplete date is entered and you know what is missing
+
+Say ‘[whatever it is] must include a [whatever is missing]’.
+
+For example, ‘Date of birth must include a month’ or ‘Date of birth must include a day and month’.
+
+
+#### If an incomplete date is entered and you do not know what is missing
+
+Say ‘Enter [whatever it is] and include a day, month and year’.
+
+For example, ‘Enter your date of birth and include a day, month and year’.
+
+
+#### If the date entered is not a real one
+
+Say ‘Enter a real [whatever it is]’.
+
+For example, ‘Enter a real date of birth’.
+
+
+#### If the date is in the future when it needs to be in the past
+
+Say ‘[whatever it is] must be in the past’.
+
+For example, ‘Date of birth must be in the past’.
+
+
+#### If the date is in the future when it needs to be today or in the past
+
+Say ‘[whatever it is] must be today or in the past’.
+
+For example, ‘Date of birth must be today or in the past’.
+
+
+#### If the date is in the past when it needs to be in the future
+
+Say ‘[whatever it is] must be in the future’.
+
+For example, ‘The date your course ends must be in the future’.
+
+
+#### If the date is in the past when it needs to be today or in the future
+
+Say ‘[whatever it is] must be today or in the future’.
+
+For example, ‘The date your course ends must be today or in the future’.
+
+
+#### If the date must be the same as or after another date
+
+Say ‘[whatever it is] must be the same as or after [date and optional description]’.
+
+For example, ‘The date your course ends must be the same as or after 1 September 2017 when you started the course’.
+
+
+#### If the date must be after another date
+
+Say ‘[whatever it is] must be after [date and optional description]’.
+
+For example, ‘The day your course ends must be after 1 September 2017’.
+
+
+#### If the date must be the same as or before another date
+
+Say ‘[whatever it is] must be the same as or before [date and optional description]’.
+
+For example, ‘The date of Gordon’s last exam must be the same as or before 31 August 2017 when they left school’.
+
+
+#### If the date must be before another date
+
+Say ‘[whatever it is] must be before [date and optional description]’.
+
+For example, ‘The date of Gordon’s last exam must be the same as or before 31 August 2017’.
+
+
+#### If the date must be between two dates
+
+Say ‘[whatever it is] must be between [date] and [date and optional description]’.
+
+For example, ‘The date your contract started must be between 1 September 2017 and 30 September 2017 when you were self-employed’.
+
+
+[one question per page]: https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page
+[why and how to set legends as headings]: https://design-system.service.gov.uk/get-started/labels-legends-headings
+[asking multiple questions on question pages]: https://design-system.service.gov.uk/patterns/question-pages/#asking-multiple-questions-on-a-page
+[WCAG 2.1 Level AA]: https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html

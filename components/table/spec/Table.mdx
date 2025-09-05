@@ -1,0 +1,51 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import * as Stories from './Table.stories';
+
+<Meta of={Stories} />
+
+# Table
+
+Use the table component to make information easier to compare and scan for users.
+
+<Primary />
+<Controls />
+
+
+## When to use this component
+
+Use the table component to let users compare information in rows and columns.
+
+
+## When not to use this component
+
+Never use the table component to layout content on a page. Instead, use the [grid system].
+
+
+## How it works
+### Table captions
+
+Use the `<caption>` element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.
+
+To use a custom caption, supply your element to the prop. (Supplying a string will receive standard styling with the `govuk-table__caption--m` class.)
+
+<Canvas of={Stories.Captions} />
+
+
+## Stories
+### Standard
+
+A standard Table.
+
+<Canvas of={Stories.Standard} />
+
+
+### Numbers in a table
+
+IMPLEMENT ME.
+
+
+### Custom column widths
+
+IMPLEMENT ME.
+
+[grid system]: https://design-system.service.gov.uk/styles/layout#grid-system

@@ -1,0 +1,27 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './Label.stories';
+
+<Meta of={Stories} />
+
+# Label
+
+<p><Tag text="Internal" /></p>
+
+A label for a form field.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Label.
+
+<Canvas of={Stories.Standard} />
+
+
+### In-line
+
+<Canvas of={Stories.Inline} />

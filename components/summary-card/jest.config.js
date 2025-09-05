@@ -8,7 +8,7 @@ const config = {
     '<rootDir>/src/**.{ts,tsx}',
   ],
   testMatch: [
-    '<rootDir>/spec/**.{ts,tsx}'
+    '<rootDir>/spec/**/{!(*.stories),}.{ts,tsx}'
   ]
 };
 
