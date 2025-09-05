@@ -454,7 +454,7 @@ export const Cards: Story = {
                   )
                 }
               ],
-              children: 'Part time \u2013 less than 30 hours a week'
+              children: 'Part time – less than 30 hours a week'
             }
           ]}
         />

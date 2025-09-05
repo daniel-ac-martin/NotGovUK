@@ -13,7 +13,7 @@ const meta = {
   component: FormField,
   args: {
     name: 'name',
-    hint: 'The name you\\u2019ll use on promotional material.'
+    hint: 'The name you’ll use on promotional material.'
   }
 } satisfies Meta<typeof FormField>;
 

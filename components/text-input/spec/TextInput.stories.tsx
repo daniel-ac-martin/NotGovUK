@@ -97,7 +97,7 @@ export const FluidWidth: Story = {
 };
 
 export const Hints: Story = {
-  args: { hint: 'The name you\\u2019ll use on promotional material.' },
+  args: { hint: 'The name you’ll use on promotional material.' },
   render: ({ ...props }) => (
     <TextInput
       {...props}
@@ -139,7 +139,7 @@ export const PrefixAndSuffix: Story = {
   args: {
     name: 'cost-per-item',
     width: 5,
-    prefix: '\\xA3',
+    prefix: '£',
     suffix: 'per item'
   },
   render: ({ ...props }) => (
@@ -156,7 +156,7 @@ export const PrefixAndSuffix: Story = {
 };
 
 export const Prefix: Story = {
-  args: { name: 'cost', width: 5, prefix: '\\xA3' },
+  args: { name: 'cost', width: 5, prefix: '£' },
   render: ({ ...props }) => (
     <TextInput
       {...props}
@@ -198,7 +198,7 @@ export const Spellcheck: Story = {
 
 export const Errors: Story = {
   args: {
-    hint: 'The name you\\u2019ll use on promotional material.',
+    hint: 'The name you’ll use on promotional material.',
     error: 'Enter an event name'
   },
   render: ({ ...props }) => (
@@ -215,7 +215,7 @@ export const ErrorsWithPrefixAndSuffix: Story = {
   args: {
     name: 'cost-per-item',
     width: 5,
-    prefix: '\\xA3',
+    prefix: '£',
     suffix: 'per item',
     error: 'Enter a cost per item, in pounds'
   },

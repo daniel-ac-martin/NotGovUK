@@ -32,7 +32,7 @@ export const FixedWidth: Story = {
 };
 
 export const PrefixAndSuffix: Story = {
-  args: { prefix: '\\xA3', suffix: 'per item' },
+  args: { prefix: '£', suffix: 'per item' },
   name: 'Prefix and suffix'
 };
 

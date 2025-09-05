@@ -22,7 +22,7 @@ export const Primary: Story = {
   args: {},
   render: ({ ...props }) => (
     <PhaseBanner {...props}>
-      This is a new service \u2013 your <a href="#">feedback</a> will help us to
+      This is a new service – your <a href="#">feedback</a> will help us to
       improve it.
     </PhaseBanner>
   )
@@ -32,7 +32,7 @@ export const Alpha: Story = {
   args: {},
   render: ({ ...props }) => (
     <PhaseBanner {...props}>
-      This is a new service \u2013 your <a href="#">feedback</a> will help us to
+      This is a new service – your <a href="#">feedback</a> will help us to
       improve it.
     </PhaseBanner>
   )
@@ -42,7 +42,7 @@ export const Beta: Story = {
   args: { phase: 'Beta' },
   render: ({ ...props }) => (
     <PhaseBanner {...props}>
-      This is a new service \u2013 your <a href="#">feedback</a> will help us to
+      This is a new service – your <a href="#">feedback</a> will help us to
       improve it.
     </PhaseBanner>
   )
