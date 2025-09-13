@@ -21,9 +21,9 @@ for f in "${components_dir}"/*/spec/*.stories.mdx; do
     # Create new stories file
     echo -n "  Stories: ${stories}"
     ${script_dir}/mdx-to-stories/mdx-to-stories.mjs "${f}" > "${stories}"
-    sed -i -E 's/\\\\\\\\xA3/£/g' "${stories}"
-    sed -i -E 's/\\\\\\\\u2019/’/g' "${stories}"
-    sed -i -E 's/\\\\u2013/–/g' "${stories}"
+    sed -i -E 's/\\xA3/£/g' "${stories}"
+    sed -i -E 's/\\u2019/’/g' "${stories}"
+    sed -i -E 's/\\u2013/–/g' "${stories}"
     echo " WRITTEN"
 
     # Create new documentation file
