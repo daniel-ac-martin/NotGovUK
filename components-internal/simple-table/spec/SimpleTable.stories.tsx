@@ -25,17 +25,17 @@ export const Primary: Story = {
       }}
       data={[
         {
-          cost: '\xA37.99',
+          cost: '£7.99',
           qty: '4',
           name: 'Blu-ray disk'
         },
         {
-          cost: '\xA30.85',
+          cost: '£0.85',
           qty: '10',
           name: 'Pencil'
         },
         {
-          cost: '\xA321.45',
+          cost: '£21.45',
           qty: '1',
           name: 'Text book'
         }
@@ -57,17 +57,17 @@ export const Standard: Story = {
       }}
       data={[
         {
-          cost: '\xA37.99',
+          cost: '£7.99',
           qty: '4',
           name: 'Blu-ray disk'
         },
         {
-          cost: '\xA30.85',
+          cost: '£0.85',
           qty: '10',
           name: 'Pencil'
         },
         {
-          cost: '\xA321.45',
+          cost: '£21.45',
           qty: '1',
           name: 'Text book'
         }

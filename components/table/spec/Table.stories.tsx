@@ -30,15 +30,15 @@ export const Primary: Story = {
       }}
       data={[
         {
-          amount: '\xA3109.80 per week',
+          amount: '£109.80 per week',
           date: 'First 6 weeks'
         },
         {
-          amount: '\xA3109.80 per week',
+          amount: '£109.80 per week',
           date: 'Next 33 weeks'
         },
         {
-          amount: '\xA34,282.20',
+          amount: '£4,282.20',
           date: 'Total estimated pay'
         }
       ]}
@@ -64,15 +64,15 @@ export const Captions: Story = {
       data={[
         {
           month: 'January',
-          rate: '\xA395'
+          rate: '£95'
         },
         {
           month: 'February',
-          rate: '\xA355'
+          rate: '£55'
         },
         {
           month: 'March',
-          rate: '\xA3125'
+          rate: '£125'
         }
       ]}
     />
@@ -91,15 +91,15 @@ export const Standard: Story = {
       }}
       data={[
         {
-          amount: '\xA3109.80 per week',
+          amount: '£109.80 per week',
           date: 'First 6 weeks'
         },
         {
-          amount: '\xA3109.80 per week',
+          amount: '£109.80 per week',
           date: 'Next 33 weeks'
         },
         {
-          amount: '\xA34,282.20',
+          amount: '£4,282.20',
           date: 'Total estimated pay'
         }
       ]}

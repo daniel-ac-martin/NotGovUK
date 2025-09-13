@@ -21,7 +21,7 @@ export const Primary: Story = {
   args: {},
   render: ({ ...props }) => (
     <WarningText {...props}>
-      <p>You can be fined up to \xA35,000 if you do not register.</p>
+      <p>You can be fined up to £5,000 if you do not register.</p>
     </WarningText>
   )
 };
@@ -30,7 +30,7 @@ export const Standard: Story = {
   args: {},
   render: ({ ...props }) => (
     <WarningText {...props}>
-      <p>You can be fined up to \xA35,000 if you do not register.</p>
+      <p>You can be fined up to £5,000 if you do not register.</p>
     </WarningText>
   )
 };
