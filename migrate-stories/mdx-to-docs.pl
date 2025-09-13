@@ -27,6 +27,7 @@ sub name2Id {
 print <<END;
 import { Canvas, Controls, Meta, Primary } from '\@storybook/addon-docs/blocks';
 import * as Stories from './${component}.stories';
+export const meta = Stories.default;
 END
 
 while (<>) {
