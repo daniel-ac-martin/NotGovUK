@@ -9,5 +9,6 @@ export const useIsActive: UseIsActive = makeUseIsActive(useLocation);
 
 export {
   Link,
-  useNavigate
+  useNavigate,
+  useParams
 } from '@remix-run/react';

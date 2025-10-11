@@ -87,3 +87,5 @@ export const Link: FC<LinkProps> = ({
     scroll: !preventScrollReset
   });
 };
+
+export { useParams } from 'next';

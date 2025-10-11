@@ -6,6 +6,7 @@ export type Location = _Location & {
 };
 
 export type LocationFunction = () => Location;
+export type ParamsFunction = () => Record<string, string | undefined>;
 
 export type {
   NavigateFunction,
