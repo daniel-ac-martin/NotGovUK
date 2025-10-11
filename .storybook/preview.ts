@@ -1,31 +1,36 @@
+import type { StorybookConfig } from "@storybook/react-vite";
 import { createElement as h } from 'react';
-import { withA11y } from '@storybook/addon-a11y';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
-import { withTests } from '@storybook/addon-jest';
-import { addDecorator, addParameters } from '@storybook/react';
+// import { withTests } from '@storybook/addon-jest';
 import globalDecorator from './decorators';
-import jestResults from '../.jest-results.json';
+// import jestResults from '../.jest-results.json';
 
 // FIXME: Temporary hack to get CSS
 import '@not-govuk/components/assets/index.scss';
 
-addParameters({
-  docs: {
-    container: DocsContainer,
-    page: DocsPage
-  }
-});
+export const preview: Preview = {
+  decorators: [
+    globalDecorator,
+    // withTests({
+    //   results: jestResults,
+    //   filesExt: '((\\.specs?)|(\\.tests?))?(\\.(mjs|[jt]sx?))?$'
+    // })
+  ],
+  parameters: {
+    a11y: {
+      context: "#storybook-root",
+      config: {},
+      options: {},
+      manual: true,
+    },
+    docs: {
+      container: DocsContainer,
+      page: DocsPage
+    }
+  },
+  tags: [
+    'autodocs'
+  ]
+};
 
-// global decorators
-addDecorator(globalDecorator);
-
-// accessibility add-on
-addDecorator(withA11y as any);
-
-// jest add-on
-addDecorator(
-  withTests({
-    results: jestResults,
-    filesExt: '((\\.specs?)|(\\.tests?))?(\\.(mjs|[jt]sx?))?$'
-  })
-);
+export default preview;
