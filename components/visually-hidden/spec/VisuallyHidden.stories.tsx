@@ -21,17 +21,17 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {},
   render: ({ ...props }) => (
-    <p>
+    <>
       <VisuallyHidden {...props} /> Something went wrong
-    </p>
+    </>
   )
 };
 
 export const Standard: Story = {
   args: {},
   render: ({ ...props }) => (
-    <p>
+    <>
       <VisuallyHidden {...props} /> Something went wrong
-    </p>
+    </>
   )
 };
