@@ -9,7 +9,7 @@ const meta = {
       viewports: [640, 480]
     },
     description:
-      'A component to tell the user about something they need to know about, but that\u2019s not directly related to the page content.'
+      'A component to tell the user about something they need to know about, but that’s not directly related to the page content.'
   },
   component: NotificationBanner,
   args: {
@@ -55,7 +55,7 @@ export const Success: Story = {
         Training outcome recorded and trainee withdrawn
       </h3>
       <p className="govuk-body">
-        Contact <a className="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there\u2019s a problem.
+        Contact <a className="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.
       </p>
     </NotificationBanner>
   )
