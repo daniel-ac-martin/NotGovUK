@@ -47,10 +47,10 @@ export const NoHeading: Story = {
 };
 
 export const FixedWidth: Story = {
-  args: { name: 'width-20', label: '20 character width', width: '20' },
+  args: {},
   render: ({ ...props }) => (
     <>
-      <TextInput {...props} />
+      <TextInput {...props} label="20 character width" name="width-20" width="20" />
       <TextInput label="10 character width" name="width-10" width="10" />
       <TextInput label="5 character width" name="width-5" width="5" />
       <TextInput label="4 character width" name="width-4" width="4" />
@@ -62,10 +62,14 @@ export const FixedWidth: Story = {
 };
 
 export const FluidWidth: Story = {
-  args: { name: 'full', label: 'Full width', className: 'govuk-!-width-full' },
+  args: {},
   render: ({ ...props }) => (
     <>
-      <TextInput {...props} />
+      <TextInput {...props}
+        label="Full width"
+        name="full"
+        className="govuk-!-width-full"
+      />
       <TextInput
         label="Three-quarters width"
         name="three-quarters"
