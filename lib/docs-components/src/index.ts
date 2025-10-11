@@ -4,72 +4,82 @@ import { ReactPreview } from './ReactPreview';
 import { useDocs } from './context';
 
 import type {
-  AddContext as _AddContext,
   Meta as _Meta,
-  Preview as _Preview,
-  Story as _Story
+  Canvas as _Canvas
 } from '@storybook/addon-docs/blocks';
 
 export type MetaProps = ComponentProps<typeof _Meta> & {
   title?: string
+  of?: Record<string, object>
 };
 
-export const Meta: FC<MetaProps> = (props) => {
+export const Meta: FC<MetaProps> = ({
+  title,
+  of: _of
+}) => {
   const ctx = useDocs();
-  const { decorators, title } = props;
+  const { default: meta, ...stories } = _of || {};
 
-  ctx.title = title;
-  ctx.decorators = decorators;
+  ctx.title = title || meta?.title;
+  ctx.description = meta?.parameters?.description;
+  ctx.component = meta?.component;
+  ctx.args = meta?.args;
+  ctx.meta = meta;
+  ctx.stories = stories;
 
   return null;
 };
 
-export type PreviewProps = ComponentProps<typeof _Preview> & {
+const NullComponent: FC<any> = (_) => null;
+
+export type CanvasProps = ComponentProps<typeof _Canvas> & {
   children?: ReactNode
-  id?: string
+  of?: object
 };
 
-const DocsPreview: FC<PreviewProps> = ({ children, id: _id }) => {
-  const { storySource } = useDocs() as any;
-  const childArray = Array.isArray(children) ? children : [children];
-  const stories = childArray
-    .map((e: ReactElement) => e.props && e.props.name)
-    .filter(id);
-  const source = stories
-    .map(e => storySource[e])
-    .join('\n');
-  const name = (
-    stories.length
-      ? `${stories[0]}-example`
-      : 'example'
+export const Canvas: FC<CanvasProps> = ({ of: _of }) => {
+  const ctx = useDocs();
+  const stories = ctx.stories || {};
+  const meta = ctx.meta || {};
+  const Component = ctx.component || NullComponent;
+  const originalSource = _of.parameters?.docs?.source?.originalSource;
+  const regex = /^.*\srender:.*?<(.*)>.*?$/s;
+  const source = (
+    originalSource?.match(regex)
+      ? originalSource.replace(regex, '<$1>').replace(' {...props}', '')
+      : undefined
   );
+  const StoryFn = _of.render || meta.render || (
+    (args: object) => h(Component, args)
+  );
+  const args = {
+    ...( meta.args || {} ),
+    ...( _of.args || {} ),
+  };
+  const children = StoryFn(args);
+  const name = _of.name || (
+    Object.entries(stories)
+      .filter(([_, v]) => v === _of)
+      .map(([i, _]) => i)[0]
+  );
+  const id = name.replace(/\s+/, '-').toLowerCase() + '-example';
 
   return h(ReactPreview, {
-    id: _id || name,
+    children,
+    id,
     source
-  }, children);
+  });
 };
 
-export const Preview: FC<PreviewProps> = (props) => (
-  h(DocsPreview, props)
-);
+export const Primary: FC<Omit<CanvasProps, 'of'>> = (props) => {
+  const { stories } = useDocs();
 
-export type StoryProps = ComponentProps<typeof _Story> & {
-  children?: ReactNode
+  return h(Canvas, {
+    ...props,
+    of: stories['Primary']
+  });
 };
-
-export const Story: FC<StoryProps> = ({ children }) => (
-  h(Fragment, {}, children)
-);
-
-export type AddContextProps = ComponentProps<typeof _AddContext> & {
-  children?: ReactNode
-};
-
-export const AddContext: FC<AddContextProps> = ({ children }) => (
-  h(Fragment, {}, children)
-);
 
 export * from './DocsPage';
-export * from './Props';
+export * from './Controls';
 export * from './context';
