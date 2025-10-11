@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./dummy": "./src/dummy.ts",
     "./next": "./src/next.ts",
     "./remix": "./src/remix.ts"
   },
@@ -15,6 +16,10 @@
       ".": {
         "default": "./dist/index.js",
         "types": "./dist/index.d.ts"
+      },
+      "./dummy": {
+        "default": "./dist/dummy.js",
+        "types": "./dist/dummy.d.ts"
       },
       "./next": {
         "default": "./dist/next.js",
