@@ -6,12 +6,19 @@ import { Checkbox } from './Checkbox';
 import '../assets/Checkboxes.scss';
 
 export type Option = {
+  /** Content to render only when the option is selected */
   conditional?: ReactNode
+  /** Whether the the option is disabled */
   disabled?: boolean
+  /** Whether the option can only be selected on its own */
   exclusive?: boolean
+  /** Hint for the option */
   hint?: string
+  /** Label for the option */
   label: ReactNode
+  /** Whether the option is selected */
   selected?: boolean
+  /** Value of the option */
   value: string
 };
 
