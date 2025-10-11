@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, createElement as h } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router';
 
 const Root: FC<any> = props => (
   <div id="story-root" className="js-enabled" {...props} style={{

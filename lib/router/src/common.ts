@@ -1,5 +1,4 @@
-import type { Location as _Location } from 'react-router';
-import type { LinkProps as _LinkProps } from 'react-router-dom';
+import type { LinkProps as _LinkProps, Location as _Location } from 'react-router';
 import type { Query } from '@not-govuk/uri';
 
 export type Location = _Location & {

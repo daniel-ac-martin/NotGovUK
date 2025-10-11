@@ -1,6 +1,6 @@
 import { FC, ReactNode, createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom/server';
+import { StaticRouter } from 'react-router';
 import deepEqual from 'fast-deep-equal/es6';
 import { FormikHelpers } from 'formik';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
