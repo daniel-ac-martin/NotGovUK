@@ -164,7 +164,7 @@ export const NoneError: Story = {
     name: 'contact',
     hint: undefined,
     error:
-      'Select countries you will be travelling to, or select \\u201CNo, I will not be travelling to any of these countries\\u201D'
+      'Select countries you will be travelling to, or select “No, I will not be travelling to any of these countries”'
   },
   render: ({ ...props }) => (
     <Checkboxes
