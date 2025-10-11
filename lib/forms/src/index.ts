@@ -176,4 +176,4 @@ export const Form: FC<FormProps<any>> = ({
 };
 
 export default Form;
-export type { FieldProps, RawField } from './hocs';
+export type { ControlProps, FieldProps, RawField } from './hocs';

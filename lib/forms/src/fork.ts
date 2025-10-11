@@ -46,4 +46,6 @@ export const Fork: FC<any> = props => {
   }
 };
 
+Fork.displayName = 'Form.Fork';
+
 export default Fork;
