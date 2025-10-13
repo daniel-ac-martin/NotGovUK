@@ -1,16 +1,16 @@
 import type { FC } from 'react';
-import type { LinkProps as _LinkProps, Location as _Location } from 'react-router';
-import type { NavigateFunction, ParamsFunction } from './common';
-import { createElement as h } from 'react';
-import { UseIsActive, makeUseIsActive } from './is-active';
-import { UseLocation, makeUseLocation } from './location';
+import type { LinkProps, UseNavigate, UseParams } from './common';
+import type { UseIsActive } from './is-active';
+import type { UseLocation, _UseLocation } from './location';
 
-export type LinkProps = Omit<_LinkProps, 'relative' | 'reloadDocument' | 'state' | 'unstable_viewTransition'>
+import { createElement as h } from 'react';
+import { makeUseIsActive } from './is-active';
+import { makeUseLocation } from './location';
 
 export const needSuspense = false;
 
 // Set up dummy functions
-const _useLocation = (): _Location => ({
+const _useLocation: _UseLocation = () => ({
   state: undefined,
   key: '',
   pathname: '',
@@ -19,8 +19,8 @@ const _useLocation = (): _Location => ({
 });
 export const useLocation: UseLocation = makeUseLocation(_useLocation);
 export const useIsActive: UseIsActive = makeUseIsActive(useLocation);
-export const useNavigate = (): NavigateFunction => () => undefined;
-export const useParams = (): ParamsFunction => () => ({});
+export const useNavigate: UseNavigate = () => () => undefined;
+export const useParams: UseParams = () => ({});
 export const Link: FC<LinkProps> = ({
   to,
   preventScrollReset,
@@ -37,4 +37,8 @@ export const Link: FC<LinkProps> = ({
     ...attrs,
     href
   });
+};
+
+export type {
+  LinkProps
 };

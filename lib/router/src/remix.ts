@@ -1,6 +1,9 @@
+import type { UseIsActive } from './is-active';
+import type { UseLocation } from './location';
+
 import { useLocation as _useLocation } from '@remix-run/react';
-import { UseIsActive, makeUseIsActive } from './is-active';
-import { UseLocation, makeUseLocation } from './location';
+import { makeUseIsActive } from './is-active';
+import { makeUseLocation } from './location';
 
 export const needSuspense = false;
 
@@ -12,3 +15,4 @@ export {
   useNavigate,
   useParams
 } from '@remix-run/react';
+export type { LinkProps } from './dummy';
