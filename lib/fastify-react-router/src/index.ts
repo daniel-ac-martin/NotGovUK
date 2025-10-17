@@ -63,6 +63,7 @@ const fastifyReactRouterPlugin: FastifyPluginCallback<FastifyReactRouterPluginOp
   } else {
     const viteDevServer = await createViteServer({
       server: { middlewareMode: true },
+      customLogger: fastify.log
     });
 
     serverBuild = () => viteDevServer.ssrLoadModule(
