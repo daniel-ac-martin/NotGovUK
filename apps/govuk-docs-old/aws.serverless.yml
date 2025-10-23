@@ -1,0 +1,22 @@
+service: govuk-docs
+provider:
+  name: aws
+  runtime: nodejs22.x
+  environment:
+    MODE: serverless
+    NODE_ENV: production
+package:
+  excludeDevDependencies: false
+  patterns:
+    - '!./**'
+    - dist/**
+functions:
+  server:
+    handler: dist/server/index.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+      - http:
+          path: /{any+}
+          method: ANY
