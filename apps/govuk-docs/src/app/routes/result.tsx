@@ -1,16 +1,25 @@
-import { FC, createElement as h } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { PageProps } from '@not-govuk/app-composer';
+import type { Route } from "./+types/result";
 import { A } from '@not-govuk/components';
 import { useLocation } from '@not-govuk/router';
+import { siteTitle } from '../config';
 
-const prettyPrint = (obj: object): string => JSON.stringify(obj, undefined, 2);
-
-export const pageTitle = 'Result';
+export const title = 'Result';
 const description = 'The result of filling in the Form component example';
 const section = 'Components';
 
-const Page: FC<PageProps> = () => {
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: `${title} - ${siteTitle}` },
+    { name: 'description', content: description },
+    { name: 'og:title', content: title },
+    { name: 'og:description', content: description },
+    { name: 'og:article:section', content: section },
+  ];
+}
+
+const prettyPrint = (obj: object): string => JSON.stringify(obj, undefined, 2);
+
+export default function Result() {
   const location = useLocation();
   const data = {
     dob: '',
@@ -45,20 +54,13 @@ const Page: FC<PageProps> = () => {
 
   return (
     <div className="govuk-grid-row">
-      <Helmet>
-        <title>{pageTitle} - NotGovUK</title>
-        <meta name="description" content={description} />
-        <meta name="og:title" content={pageTitle} />
-        <meta name="og:description" content={description} />
-        <meta name="og:article:section" content={section} />
-      </Helmet>
       <div className="govuk-grid-column-two-thirds">
         <h1>Form complete</h1>
         <p>
           Hello {user}!
         </p>
         <p>
-          Please fill out the <A href="/components?name=Form">examples of the `Form` component</A> to alter this page.
+          Please fill out the <A href="/components/form">examples of the `Form` component</A> to alter this page.
         </p>
       </div>
       <div className="govuk-grid-column-two-thirds">
@@ -78,6 +80,4 @@ const Page: FC<PageProps> = () => {
       </div>
     </div>
   );
-};
-
-export default Page;
+}

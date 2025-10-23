@@ -1,1 +1,24 @@
-../../lib/plop-pack/skel/app/tsconfig.json
+{
+  "extends": "../../tsconfig.vite.json",
+  "compilerOptions": {
+    "rootDirs": [".", ".react-router/types"],
+    "outDir": "dist",
+    "paths": {
+      "~/*": ["./src/app/*"]
+    }
+  },
+  "include": [
+    "src",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*",
+    "../../components-internal/*/src",
+    "../../components/*/src",
+    "../../lib-govuk/*/src",
+    "../../lib/*/src"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
+}

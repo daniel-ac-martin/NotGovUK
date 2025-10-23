@@ -1,55 +1,87 @@
-NotGovUK - Documentation website
-================================
+# Welcome to React Router!
 
-NotGovUK documentation website.
+A modern, production-ready template for building full-stack React applications using React Router.
 
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
-Welcome to your new isomorphic React application
-------------------------------------------------
+## Features
 
-To get started simply run `npm install` followed by:
+- 🚀 Server-side rendering
+- ⚡️ Hot Module Replacement (HMR)
+- 📦 Asset bundling and optimization
+- 🔄 Data loading and mutations
+- 🔒 TypeScript by default
+- 🎉 TailwindCSS for styling
+- 📖 [React Router docs](https://reactrouter.com/)
 
-```shell
+## Getting Started
+
+### Installation
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+### Development
+
+Start the development server with HMR:
+
+```bash
 npm run dev
 ```
 
-Then visit http://localhost:8080 .
+Your application will be available at `http://localhost:5173`.
 
-The website design can be modified in the `src/common/page-wrap.tsx`
-file and individual pages can be added, removed and modified in the
-`src/common/pages/` directory.
+## Building for Production
 
-Should you wish, the meta-data for the HTML can be modified in the
-`src/server/template.tsx` file.
+Create a production build:
 
+```bash
+npm run build
+```
 
-How it works
-------------
+## Deployment
 
-An HTTP server is started that serves Server-Side Rendered (SSR) React
-pages as well as static assets built by webpack. The pages are defined
-by files in the `src/common/pages/` directory (similar to [Next.js]) and
-are wrapped by an application, allowing you to provide a uniform look
-and feel to your website.
+### Docker Deployment
 
-The pages served link to a JavaScript 'bundle' built by webpack that
-'hydrates' the website once it is loaded, allowing for an enhanced user
-experience on clients that can support it.
+To build and run using Docker:
 
+```bash
+docker build -t my-app .
 
-Notable files and directories
------------------------------
+# Run the container
+docker run -p 3000:3000 my-app
+```
 
-- `dist/`: Directory containing compiled versions of source code and assets.
-- `src/client/`: Source code that is only run on the client.
-- `src/client/index.ts`: The entry-point for the client-side bundle.
-- `src/common/`: Source code that is run on both the client and the server.
-- `src/common/page-wrap.tsx`: The React component that wraps the pages and accepts a `routes` array via its props that can be used for building in navigation.
-- `src/common/page-loader.ts`: Boiler-plate for dynamically importing the pages. You shouldn't need to modify this unless you change the location of the pages.
-- `src/common/pages/`: Directory containing the pages available on your website.
-- `src/common/pages/index.tsx`: The 'home page' for your website.
-- `src/server/`: Source code that is only run on the server.
-- `src/server/config.ts`: Configuration for the server.
-- `src/server/index.ts`: The entry-point for the server.
-- `src/server/template.tsx`: The HTML wrapper served by the HTTP server.
-- `webpack.config.js`: The webpack config file used to build the static assets including the bundle.
+The containerized application can be deployed to any platform that supports Docker, including:
+
+- AWS ECS
+- Google Cloud Run
+- Azure Container Apps
+- Digital Ocean App Platform
+- Fly.io
+- Railway
+
+### DIY Deployment
+
+If you're familiar with deploying Node applications, the built-in app server is production-ready.
+
+Make sure to deploy the output of `npm run build`
+
+```
+├── package.json
+├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
+├── build/
+│   ├── client/    # Static assets
+│   └── server/    # Server-side code
+```
+
+## Styling
+
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+
+---
+
+Built with ❤️ using React Router.

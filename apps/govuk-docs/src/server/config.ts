@@ -1,16 +1,16 @@
-import { Mode, NodeEnv, defaultsTrue, defaultsFalse } from '@not-govuk/engine';
-import commonConfig from '../common/config';
+import { Mode, NodeEnv, defaultsTrue, defaultsFalse } from '@not-govuk/fastify';
 
 const env = process.env.NODE_ENV as NodeEnv;
 const devMode = env === NodeEnv.Development;
 
+// FIXME: Clean up!
 const serverConfig = {
-  ...commonConfig,
   cookies: {
     secret: process.env.COOKIES_SECRET || 'changeme',
     secure: ( devMode ? defaultsFalse : defaultsTrue )(process.env.COOKIES_SECURE)
   },
-  env: process.env.NODE_ENV as NodeEnv,
+  devMode,
+  env,
   logger: {
     destination: process.env.LOG_DESTINATION,
     level: process.env.LOG_LEVEL || 'info'
