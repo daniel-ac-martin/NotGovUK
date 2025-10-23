@@ -22,10 +22,8 @@ import fastifyReactRouter from '@not-govuk/fastify-react-router';
 const httpd = Fastify({});
 
 await httpd.register(fastifyReactRouter, {
-  build: {
-    assets: join(import.meta.dirname, 'path', 'to', 'build', 'of', 'client'),
-    server: await import('path/to/build/of/server/index.js'),
-  }
+  assets: join(import.meta.dirname, 'path', 'to', 'build', 'of', 'client'),
+  serverBuild: await import('path/to/build/of/server/index.js')
 });
 
 await httpd.listen({ port: 8080 });
@@ -34,8 +32,21 @@ await httpd.listen({ port: 8080 });
 It is expected that you will have built the referenced files with
 `react-router build`.
 
-**Note:**: If you do not provide a build then the plugin will instead execute
-`vite-dev-server` in an attempt to generate files it can serve.
+
+### Dev server
+
+You can use the `/dev` entrypoint for a dev server.
+
+```js
+import Fastify from '@not-govuk/fastify';
+import fastifyReactRouterDev from '@not-govuk/fastify-react-router/dev';
+
+const httpd = Fastify({});
+
+await httpd.register(fastifyReactRouterDev);
+
+await httpd.listen({ port: 8080 });
+```
 
 
 Working on this package

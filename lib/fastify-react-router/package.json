@@ -3,9 +3,28 @@
   "version": "0.16.3",
   "description": "Fastify plugin for React Router.",
   "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./dev": "./src/dev.ts"
+  },
   "publishConfig": {
     "main": "dist/index.js",
-    "typings": "dist/index.d.ts"
+    "module": "dist/index.mjs",
+    "typings": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "default": "./dist/index.mjs",
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./dev": {
+        "default": "./dist/dev.mjs",
+        "import": "./dist/dev.mjs",
+        "require": "./dist/dev.js",
+        "types": "./dist/dev.d.ts"
+      }
+    }
   },
   "files": [
     "/dist"
@@ -13,7 +32,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
