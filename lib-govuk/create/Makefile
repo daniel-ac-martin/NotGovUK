@@ -63,7 +63,7 @@ $(plopfile): $(source_dir)/plopfile.mjs
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
 
-$(docs_target_dir)/src/common/page-wrap.tsx: $(source_dir)/apps/govuk-docs/src/common/page-wrap.tsx
+$(docs_target_dir)/src/common/page-wrap.tsx: $(source_dir)/apps/govuk-docs-old/src/common/page-wrap.tsx
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
 
