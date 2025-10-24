@@ -43,7 +43,7 @@ export const Canvas: FC<CanvasProps> = ({ of: _of }) => {
   const meta = ctx.meta || {};
   const Component = ctx.component || NullComponent;
   const originalSource = _of.parameters?.docs?.source?.originalSource;
-  const regex = /^.*\srender:.*?<(.*)>.*?$/s;
+  const regex = /^.*?\srender:[^<]*<(.*)>[^>]*$/s;
   const source = (
     originalSource?.match(regex)
       ? originalSource.replace(regex, '<$1>').replace(' {...props}', '')
