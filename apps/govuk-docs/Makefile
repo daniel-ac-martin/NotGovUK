@@ -56,21 +56,22 @@ docker-run:
 
 aws-lambda: pkg/aws-lambda/govuk-docs.zip
 
-pkg/aws-lambda/govuk-docs.zip: dist/server/index.js
+pkg/aws-lambda/%.zip: aws-lambda-entry.js package.json dist/server/index.js
 	mkdir -p '$(@D)'
-	zip -rv '$(@)' '$(<D)/..'
+	zip -rv '$(@)' 'dist'
+	zip -v '$(@)' 'package.json'
+	cp '$(<)' '$(@D)/$(basename $(@F)).js'
+	zip -mvj '$(@)' '$(@D)/$(basename $(@F)).js'
 
 netlify: pkg/netlify/functions/govuk-docs.zip pkg/netlify/publish/_redirects
 
 pkg/netlify/functions/%.zip: pkg/aws-lambda/%.zip
 	mkdir -p '$(@D)'
 	cp -a '$(<)' '$(@)'
-	printf "import { handler } from './dist/server/index.js';\nprocess.env['MODE'] = 'serverless';\nprocess.env['NODE_ENV'] = 'production';\nexport default handler;" > 'pkg/netlify/$(basename $(@F)).js'
-	zip -mvj '$(@)' 'pkg/netlify/$(basename $(@F)).js'
 
 pkg/netlify/publish/_redirects: dist/server/index.js
 	mkdir -p '$(@D)'
-	cp -a 'dist/app/client/' 'pkg/netlify/publish/public'
+	cp -a 'dist/app/client/'* '$(@D)'
 	echo '/* /.netlify/functions/govuk-docs/:splat 200' > '$(@)'
 
 deploy: docker-push
