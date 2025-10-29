@@ -17,6 +17,7 @@ import type {
 import { createRequestHandler } from 'react-router';
 import {
   createReadableStreamFromReadable,
+  readableStreamToString,
   writeReadableStreamToWritable
 } from '@react-router/node';
 
@@ -32,6 +33,7 @@ export type GetLoadContextFunction = (
 export type Options = {
   getLoadContext?: GetLoadContextFunction
   mode?: string
+  stream?: boolean
 };
 
 const safeMethods = new Set(['GET', 'HEAD']);
@@ -42,7 +44,8 @@ export const addHandler = (
   serverBuild: ServerBuild | (() => Promise<ServerBuild>),
   {
     getLoadContext,
-    mode = process.env.NODE_ENV
+    mode = process.env.NODE_ENV,
+    stream = false
   }: Options
 ) => {
   const handleAppRequest = createRequestHandler(serverBuild, mode);
@@ -55,7 +58,7 @@ export const addHandler = (
     const context = await getLoadContext?.(req, reply);
     const appResponse = await handleAppRequest(appRequest, context);
 
-    await sendAppResponse(reply, appResponse);
+    await sendAppResponse(reply, appResponse, stream);
   };
 
   // Catch everything that is not covered by an API route
@@ -102,7 +105,7 @@ const createFetchRequest = ({
   return new Request(url.href, init);
 };
 
-const sendAppResponse = async (reply: FastifyReply, res: Response): Promise<void> => {
+const sendAppResponse = async (reply: FastifyReply, res: Response, stream: boolean = false): Promise<void> => {
   reply.code(res.status);
 
   res.headers.forEach((v, i) => (
@@ -114,7 +117,12 @@ const sendAppResponse = async (reply: FastifyReply, res: Response): Promise<void
   }
 
   if (res.body) {
-    await writeReadableStreamToWritable(res.body, reply.raw);
+    if (stream) {
+      await writeReadableStreamToWritable(res.body, reply.raw);
+    } else {
+      const str: string = await readableStreamToString(res.body);
+      reply.send(str);
+    }
   } else {
     reply.send();
   }
