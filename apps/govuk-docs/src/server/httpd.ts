@@ -1,12 +1,12 @@
-import type { FastifyInstance, RouteHandlerMethod } from '@not-govuk/fastify';
+import type { FastifyInstance, IsFunction, OnClose } from '@not-govuk/fastify';
+
 import { Fastify, Mode } from '@not-govuk/fastify';
 import config from './config';
 
 type Server = FastifyInstance;
 
-const readiness: RouteHandlerMethod = async (_req, reply) => {
-  reply.send(true);
-};
+const isReady: IsFunction = async () => true;
+const onClose: OnClose = async () => undefined;
 
 export const reactRouterOptions = {
   stream: config.mode === Mode.Server
@@ -15,7 +15,8 @@ export const reactRouterOptions = {
 export const createServer = (): Server => {
   const httpd = Fastify({
     dev: config.devMode,
-    readiness
+    isReady,
+    onClose
   });
 
   return httpd;
