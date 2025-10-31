@@ -48,8 +48,8 @@ export const Fastify = ({
     });
   }
 
-  httpd.get('/healthz', probeHandler);
-  httpd.get('/readiness', probeHandler);
+  httpd.get('/healthz', liveness);
+  httpd.get('/readiness', readiness);
 
   const signalListeners = closeWithGrace(async ({ signal, err }) => {
     if (err) {
