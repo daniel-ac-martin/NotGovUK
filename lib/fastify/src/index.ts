@@ -51,7 +51,7 @@ export const Fastify = ({
   httpd.get('/healthz', probeHandler);
   httpd.get('/readiness', probeHandler);
 
-  closeWithGrace(async ({ signal, err }) => {
+  const signalListeners = closeWithGrace(async ({ signal, err }) => {
     if (err) {
       httpd.log.error({ err }, 'server shutting down due to error...')
     } else {
@@ -59,6 +59,10 @@ export const Fastify = ({
     }
 
     await httpd.close()
+  });
+
+  (httpd as any).onClose(async (fastify: any) => {
+    signalListeners.uninstall();
   });
 
   return httpd;
