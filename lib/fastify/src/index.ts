@@ -1,5 +1,6 @@
 import type { FastifyInstance, FastifyServerOptions, RouteHandlerMethod } from 'fastify';
 
+import closeWithGrace from 'close-with-grace';
 import _Fastify from 'fastify';
 
 export type FastifyOptions = FastifyServerOptions & {
@@ -47,6 +48,16 @@ export const Fastify = ({
 
   httpd.get('/healthz', probeHandler);
   httpd.get('/readiness', probeHandler);
+
+  closeWithGrace(async ({ signal, err }) => {
+    if (err) {
+      httpd.log.error({ err }, 'server shutting down due to error...')
+    } else {
+      httpd.log.info(`${signal} received; server shutting down...`)
+    }
+
+    await httpd.close()
+  });
 
   return httpd;
 };
