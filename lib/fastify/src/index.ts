@@ -1,23 +1,34 @@
-import type { FastifyInstance, FastifyServerOptions, RouteHandlerMethod } from 'fastify';
+import type { FastifyInstance, FastifyServerOptions, onCloseAsyncHookHandler, RouteHandlerMethod } from 'fastify';
 
 import closeWithGrace from 'close-with-grace';
 import _Fastify from 'fastify';
 
+export type IsFunction = (() => Promise<boolean>) | (() => boolean);
+export type OnClose = (() => Promise<void>) | (() => void);
 export type FastifyOptions = FastifyServerOptions & {
   dev?: boolean
-  liveness?: RouteHandlerMethod
-  readiness?: RouteHandlerMethod
+  isLive?: IsFunction
+  isReady?: IsFunction
+  onClose?: OnClose
 };
 
-const probeHandler: RouteHandlerMethod = async (_req, reply) => {
-  return true;
+const is: IsFunction = () => true;
+
+const probeHandler = (isFn: IsFunction): RouteHandlerMethod => async (_req, reply) => {
+  if (await isFn()) {
+    return 'OK';
+  } else {
+    reply.statusCode = 503;
+    return 'Service Unavailable';
+  }
 };
 
 export const Fastify = ({
   dev = false,
-  liveness = probeHandler,
-  readiness = probeHandler,
+  isLive = is,
+  isReady = is,
   logger,
+  onClose,
   ...options
 }: FastifyOptions): FastifyInstance => {
   const isTTY = process.stdout.isTTY;
@@ -48,8 +59,14 @@ export const Fastify = ({
     });
   }
 
-  httpd.get('/healthz', liveness);
-  httpd.get('/readiness', readiness);
+  httpd.get('/healthz', probeHandler(isLive));
+  httpd.get('/readiness', probeHandler(isReady));
+
+  if (onClose) {
+    httpd.addHook('onClose', async (_fastify) => {
+      await onClose();
+    });
+  }
 
   const signalListeners = closeWithGrace(async ({ signal, err }) => {
     if (err) {
@@ -61,7 +78,7 @@ export const Fastify = ({
     await httpd.close()
   });
 
-  (httpd as any).onClose(async (fastify: any) => {
+  httpd.addHook('onClose', async (_fastify) => {
     signalListeners.uninstall();
   });
 
