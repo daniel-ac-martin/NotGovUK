@@ -20,15 +20,17 @@ export const Fastify = ({
   logger,
   ...options
 }: FastifyOptions): FastifyInstance => {
+  const isTTY = process.stdout.isTTY;
+  const devLogger = {
+    transport: {
+      target: '@not-govuk/fastify-dev-logger'
+    }
+  };
   const httpd = _Fastify({
     logger: logger || (
-      !dev
+      !(dev && isTTY)
         ? true
-        : {
-          transport: {
-            target: '@not-govuk/fastify-dev-logger'
-          }
-        }
+        : devLogger
     ),
     ...options
   });
