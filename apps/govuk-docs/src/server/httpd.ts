@@ -18,9 +18,5 @@ export const createServer = (): Server => {
     readiness
   });
 
-  httpd.addHook('onClose', async (fastify) => {
-    fastify.log.info('Shutting down...');
-  });
-
   return httpd;
 };

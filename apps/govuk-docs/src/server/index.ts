@@ -31,7 +31,3 @@ if (config.mode === Mode.Server) {
     port: config.httpd.port
   });
 }
-
-['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach(signal => (
-  process.on(signal, async () => await httpd.close())
-));
