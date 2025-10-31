@@ -16,10 +16,9 @@ import type {
 
 import { createRequestHandler } from 'react-router';
 import {
-  createReadableStreamFromReadable,
-  readableStreamToString,
-  writeReadableStreamToWritable
-} from '@react-router/node';
+  createRequest,
+  sendResponse
+} from './fetch';
 
 type MaybePromise<T> = T | Promise<T>;
 
@@ -36,7 +35,6 @@ export type Options = {
   stream?: boolean
 };
 
-const safeMethods = new Set(['GET', 'HEAD']);
 const allowedMethods = new Set(['GET', 'HEAD', 'POST']);
 
 export const addHandler = (
@@ -54,78 +52,16 @@ export const addHandler = (
       return reply.callNotFound();
     }
 
-    const appRequest = createFetchRequest(req);
+    const appRequest = createRequest(req);
     const context = await getLoadContext?.(req, reply);
     const appResponse = await handleAppRequest(appRequest, context);
 
-    await sendAppResponse(reply, appResponse, stream);
+    await sendResponse(reply, appResponse, stream);
   };
 
   // Catch everything that is not covered by an API route
   // => 404s will be rendered as HTML
   fastify.setNotFoundHandler(handler);
-};
-
-type EnhancedRequestInit = RequestInit & {
-  duplex?: 'half'
-};
-
-type SimpleHeaders = Record<string, string>;
-
-const createFetchRequest = ({
-  headers: _headers,
-  host,
-  method,
-  originalUrl,
-  protocol,
-  raw
-}: FastifyRequest): Request => {
-  const url = new URL(`${protocol}://${host}${originalUrl}`);
-  const headers = new Headers(_headers as SimpleHeaders);
-  const controller = new AbortController();
-  const baseInit: RequestInit = {
-    method,
-    headers,
-    signal: controller.signal,
-  };
-  const init: EnhancedRequestInit = (
-    safeMethods.has(method)
-    ? baseInit
-      : {
-        ...baseInit,
-        body: createReadableStreamFromReadable(raw),
-        duplex: 'half'
-      }
-  )
-
-  let finished = false;
-  raw.on('finish', () => { finished = true; });
-  raw.on('close', () => !finished && controller.abort());
-
-  return new Request(url.href, init);
-};
-
-const sendAppResponse = async (reply: FastifyReply, res: Response, stream: boolean = false): Promise<void> => {
-  reply.code(res.status);
-
-  res.headers.forEach((v, i) => (
-    reply.header(i, v)
-  ));
-
-  if (res.headers.get('Content-Type')?.match(/text\/event-stream/i)) {
-    reply.raw.flushHeaders?.();
-  }
-
-  if (res.body) {
-    if (stream) {
-      await writeReadableStreamToWritable(res.body, reply.raw);
-    } else {
-      const str: string = await readableStreamToString(res.body);
-      reply.send(str);
-    }
-  } else {
-    reply.send();
-  }
 };
 
 export type { ServerBuild };
