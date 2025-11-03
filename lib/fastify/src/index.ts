@@ -1,13 +1,14 @@
 import type { FastifyInstance, FastifyServerOptions, onCloseAsyncHookHandler, RouteHandlerMethod } from 'fastify';
+import type { FastifyHardenOptions } from '@not-govuk/fastify-harden';
 
 import closeWithGrace from 'close-with-grace';
 import _Fastify from 'fastify';
+import fastifyHarden from '@not-govuk/fastify-harden';
 import { NodeEnv } from './config-helpers';
 
 export type IsFunction = (() => Promise<boolean>) | (() => boolean);
 export type OnClose = (() => Promise<void>) | (() => void);
-export type FastifyOptions = FastifyServerOptions & {
-  dev?: boolean
+export type FastifyOptions = FastifyServerOptions & FastifyHardenOptions & {
   isLive?: IsFunction
   isReady?: IsFunction
   onClose?: OnClose
@@ -25,11 +26,13 @@ const probeHandler = (isFn: IsFunction): RouteHandlerMethod => async (_req, repl
 };
 
 export const Fastify = ({
+  contentSecurityPolicy,
   dev = process.env.NODE_ENV === NodeEnv.Development,
   isLive = is,
   isReady = is,
   logger,
   onClose,
+  permissionsPolicy,
   ...options
 }: FastifyOptions): FastifyInstance => {
   const isTTY = process.stdout.isTTY;
@@ -47,18 +50,11 @@ export const Fastify = ({
     ...options
   });
 
-  // Censor internal server errors in Production
-  if (!dev) {
-    httpd.setErrorHandler((error, req, reply) => {
-      const statusCode = error && error.statusCode
-
-      if ( !statusCode || statusCode === 500 ) {
-        error.message = 'An unexpected error occurred.';
-      }
-
-      reply.send(error);
-    });
-  }
+  httpd.register(fastifyHarden, {
+    contentSecurityPolicy,
+    dev,
+    permissionsPolicy
+  });
 
   httpd.get('/healthz', probeHandler(isLive));
   httpd.get('/readiness', probeHandler(isReady));
