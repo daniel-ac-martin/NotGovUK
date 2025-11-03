@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import {
-  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  isRouteErrorResponse,
+  useRouteLoaderData
 } from 'react-router';
 import type { Route } from './+types/root';
 import { A, NotGovUKPage } from '@not-govuk/components';
@@ -15,7 +16,14 @@ import './app.scss';
 export const links: Route.LinksFunction = () => [
 ];
 
+export const loader = async ({ context }: Route.LoaderArgs) => ({
+  nonce: context?.nonce
+});
+
 export function Layout({ children }: { children: React.ReactNode }) {
+  const data = useRouteLoaderData('root');
+  const nonce = data?.nonce;
+
   return (
     <html lang="en">
       <head>
@@ -61,8 +69,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         >
           {children}
         </NotGovUKPage>
-        <ScrollRestoration />
-        <Scripts />
+        <ScrollRestoration nonce={nonce} />
+        <Scripts nonce={nonce} />
       </body>
     </html>
   );
