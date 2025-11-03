@@ -2,6 +2,7 @@ import type { FastifyInstance, FastifyServerOptions, onCloseAsyncHookHandler, Ro
 
 import closeWithGrace from 'close-with-grace';
 import _Fastify from 'fastify';
+import { NodeEnv } from './config-helpers';
 
 export type IsFunction = (() => Promise<boolean>) | (() => boolean);
 export type OnClose = (() => Promise<void>) | (() => void);
@@ -24,7 +25,7 @@ const probeHandler = (isFn: IsFunction): RouteHandlerMethod => async (_req, repl
 };
 
 export const Fastify = ({
-  dev = false,
+  dev = process.env.NODE_ENV === NodeEnv.Development,
   isLive = is,
   isReady = is,
   logger,
