@@ -4,7 +4,6 @@
 import type {
   FastifyInstance,
   FastifyRequest,
-  FastifyReply,
   RouteHandlerMethod
 } from 'fastify';
 import type {
@@ -13,6 +12,7 @@ import type {
   UNSAFE_MiddlewareEnabled as MiddlewareEnabled,
   RouterContextProvider
 } from 'react-router';
+import type { FastifyReply } from '@not-govuk/fastify-harden';
 
 import { createRequestHandler } from 'react-router';
 import {
@@ -47,14 +47,14 @@ export const addHandler = (
   }: Options
 ) => {
   const handleAppRequest = createRequestHandler(serverBuild, mode);
-  const handler: RouteHandlerMethod = async (req, reply): Promise<void> => {
+  const handler: RouteHandlerMethod = async (req, reply: FastifyReply): Promise<void> => {
     if (!allowedMethods.has(req.method)) {
       return reply.callNotFound();
     }
 
     const appRequest = createRequest(req);
     const context = await getLoadContext?.(req, reply);
-    const appResponse = await handleAppRequest(appRequest, context);
+    const appResponse = await handleAppRequest(appRequest, { ...context, nonce: reply.cspNonce });
 
     await sendResponse(reply, appResponse, stream);
   };
