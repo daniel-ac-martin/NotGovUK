@@ -11,7 +11,7 @@ import type {
   AppLoadContext,
   ServerBuild,
   UNSAFE_MiddlewareEnabled as MiddlewareEnabled,
-  unstable_RouterContextProvider as RouterContextProvider
+  RouterContextProvider
 } from 'react-router';
 
 import { createRequestHandler } from 'react-router';
