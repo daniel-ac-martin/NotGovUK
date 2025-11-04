@@ -1,6 +1,6 @@
 import { PassThrough } from "node:stream";
 
-import type { AppLoadContext, EntryContext } from "react-router";
+import type { AppLoadContext, EntryContext, RouterContextProvider } from "react-router";
 import { createReadableStreamFromReadable } from "@react-router/node";
 import { ServerRouter } from "react-router";
 import { isbot } from "isbot";
@@ -9,16 +9,23 @@ import { renderToPipeableStream } from "react-dom/server";
 
 export const streamTimeout = 5_000;
 
+type LoadContext = AppLoadContext & RouterContextProvider;
+
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   routerContext: EntryContext,
-  loadContext: AppLoadContext,
+  loadContext: LoadContext,
+  //loadContext: AppLoadContext,
   // If you have middleware enabled:
   // loadContext: RouterContextProvider
 ) {
-  const nonce = loadContext?.nonce as string | undefined;
+  const nonce = (
+    loadContext?.get
+    ? loadContext.get('CSP_NONCE')
+    : loadContext?.nonce as string | undefined
+  );
 
   return new Promise((resolve, reject) => {
     let shellRendered = false;
