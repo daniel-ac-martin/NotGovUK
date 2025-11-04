@@ -34,3 +34,4 @@ export type {
   FastifyReactRouterPluginOptions as FastifyReactRouterOptions
 };
 export type { GetLoadContextFunction } from './common';
+export { nonceContext } from './common';
