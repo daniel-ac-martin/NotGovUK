@@ -14,6 +14,8 @@ export type FastifyOptions = FastifyServerOptions & FastifyHardenOptions & {
   onClose?: OnClose
 };
 
+type FastifyLogger = FastifyServerOptions['logger'];
+
 const is: IsFunction = () => true;
 
 const probeHandler = (isFn: IsFunction): RouteHandlerMethod => async (_req, reply) => {
@@ -36,7 +38,27 @@ export const Fastify = ({
   ...options
 }: FastifyOptions): FastifyInstance => {
   const isTTY = process.stdout.isTTY;
-  const devLogger = {
+  const stdLogger: FastifyLogger = {
+    level: 'info',
+    serializers: {
+      req: (req) => ({
+        method: req.method,
+        url: req.url,
+        version: req.headers && req.headers['accept-version']?.toString(),
+        host: req.host,
+        remoteAddress: req.ip,
+        remotePort: req.socket?.remotePort,
+        userAgent: req.headers && req.headers['user-agent']
+      }),
+      res: (reply) => ({
+        statusCode: reply.statusCode,
+        contentLength: (typeof reply.getHeaders === 'function') && reply.getHeaders()['content-length']
+      })
+    }
+  };
+  const devLogger: FastifyLogger = {
+    ...stdLogger,
+    level: 'debug',
     transport: {
       target: '@not-govuk/fastify-dev-logger'
     }
@@ -44,7 +66,7 @@ export const Fastify = ({
   const httpd = _Fastify({
     logger: logger || (
       !(dev && isTTY)
-        ? true
+        ? stdLogger
         : devLogger
     ),
     ...options
