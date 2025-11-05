@@ -13,6 +13,11 @@ startTransition(() => {
     document,
     <StrictMode>
       <RemixBrowser />
-    </StrictMode>
+    </StrictMode>,
+    {
+      onRecoverableError: (error, errorInfo) => {
+        console.warn(error, 'Component Stack:', errorInfo.componentStack);
+      }
+    }
   );
 });
