@@ -27,6 +27,16 @@ const probeHandler = (isFn: IsFunction): RouteHandlerMethod => async (_req, repl
   }
 };
 
+const parseForwarded = (hdr: undefined | string | string[]): undefined | string => {
+  const str = (
+    Array.isArray(hdr)
+      ? hdr[0]
+      : hdr
+  );
+
+  return str?.split(',')[0]?.trim();
+};
+
 export const Fastify = ({
   contentSecurityPolicy,
   dev = process.env.NODE_ENV === NodeEnv.Development,
@@ -46,7 +56,11 @@ export const Fastify = ({
         url: req.url,
         version: req.headers && req.headers['accept-version']?.toString(),
         host: req.host,
-        remoteAddress: req.ip,
+        remoteAddress: (
+          req.ip === '127.0.0.1'
+            ? parseForwarded(req.headers['x-forwarded-for']) || req.ip
+            : req.ip
+        ),
         remotePort: req.socket?.remotePort,
         userAgent: req.headers && req.headers['user-agent']
       }),
