@@ -8,7 +8,6 @@
   "scripts": {
     "start": "node .",
     "start:test": "COOKIES_SECURE=no node .",
-    "start-old": "react-router-serve ./build/server/index.js",
     "test": "npm run test:unit",
     "test:ci": "npm test && npm run test:functional:ci",
     "test:functional": "cypress run ${CYPRESS_PROJECT_ID:+--record ${CYPRESS_FLAGS}}",
@@ -17,10 +16,8 @@
     "build": "npm run build:app && npm run build:server",
     "build:app": "react-router build",
     "build:server": "vite -c vite.config.server.ts build",
-    "build:server-old": "tsc -p tsconfig.server.json",
     "clean": "rm -rf dist/ pkg/ node_modules/.vite/ node_modules/.vite-temp/ .react-router/",
     "dev": "NODE_ENV=development bun --watch ./src/server/dev.ts",
-    "dev-old": "react-router dev",
     "cypress": "cypress open",
     "typecheck": "react-router typegen && tsc"
   },
@@ -57,7 +54,6 @@
     "start-server-and-test": "2.0.13",
     "ts-jest": "29.4.1",
     "typescript": "5.9.3",
-    "vite": "^6.3.3",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite": "^6.3.3"
   }
 }
