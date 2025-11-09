@@ -1,0 +1,22 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
+
+import { {{{properCase name}}} } from '../src/{{{properCase name}}}';
+
+const meta = {
+  title: '{{{name}}}',
+  component: {{{properCase name}}},
+  parameters: {
+    chromatic: { viewports: [768, 360] },
+    description: '{{{description}}}'
+  },
+  args: {
+  }
+} satisfies Meta<typeof {{{properCase name}}}>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Primary: Story = {
+  args: {
+  }
+};

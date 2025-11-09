@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": ["node", "vite/client"],
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "noEmit": true
+  },
+  "include": [
+    "*/*/src/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "*/*/dist",
+    "*/*/build",
+    "*/*/node_modules"
+  ]
+}

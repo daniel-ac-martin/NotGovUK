@@ -8,11 +8,17 @@ import { Radio } from './Radio';
 import '../assets/Radios.scss';
 
 export type Option = {
+  /** Content to render only when the option is selected */
   conditional?: ReactNode
+  /** Whether the the option is disabled */
   disabled?: boolean
+  /** Hint for the option */
   hint?: string
+  /** Label for the option */
   label: ReactNode
+  /** Whether the option is selected */
   selected?: boolean
+  /** Value of the option */
   value: string
 };
 

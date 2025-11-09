@@ -1,18 +1,17 @@
 import type { FC } from 'react';
-import type { Location as _Location } from 'react-router';
-import type { LinkProps as _LinkProps } from 'react-router-dom';
-import type { NavigateFunction, NavigateOptions, To } from './common';
+import type { LinkProps, NavigateFunction, NavigateOptions, To, UseNavigate } from './common';
+import type { UseIsActive } from './is-active';
+import type { UseLocation, _UseLocation } from './location';
+
 import { createElement as h } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import _Link from 'next/link';
-import { UseIsActive, makeUseIsActive } from './is-active';
-import { UseLocation, makeUseLocation } from './location';
-
-export type LinkProps = Omit<_LinkProps, 'relative' | 'reloadDocument' | 'state' | 'unstable_viewTransition'>
+import { makeUseIsActive } from './is-active';
+import { makeUseLocation } from './location';
 
 export const needSuspense = true;
 
-const _useLocation = () => {
+const _useLocation: _UseLocation = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const search = (
@@ -34,10 +33,9 @@ const _useLocation = () => {
 export const useLocation: UseLocation = makeUseLocation(_useLocation);
 export const useIsActive: UseIsActive = makeUseIsActive(useLocation);
 
-export const useNavigate: NavigateFunction = () => {
+export const useNavigate: UseNavigate = () => {
   const router = useRouter();
-
-  return (to: To | number, options: NavigateOptions = {}) => {
+  const navigate: NavigateFunction = (to: To | number, options: NavigateOptions = {}) => {
     if (typeof to === 'number') {
       if (to === -1) {
         router.back();
@@ -59,10 +57,21 @@ export const useNavigate: NavigateFunction = () => {
       }
     }
   };
+
+  return navigate;
 };
+
+const prefetchMap: Map<LinkProps['prefetch'], boolean | null> = new Map([
+  [ undefined, null ], // We retain Next.js' default behaviour
+  [ 'none', false ],
+  [ 'intent', true ],
+  [ 'render', true ],
+  [ 'viewport', true ]
+]);
 
 export const Link: FC<LinkProps> = ({
   to,
+  prefetch: _prefetch,
   preventScrollReset,
   replace,
   ...attrs
@@ -79,11 +88,18 @@ export const Link: FC<LinkProps> = ({
         )
       }
   );
+  const prefetch = prefetchMap.get(_prefetch);
 
   return h(_Link, {
     ...attrs,
     href,
+    prefetch,
     replace,
     scroll: !preventScrollReset
   });
+};
+
+export { useParams } from 'next/navigation';
+export type {
+  LinkProps
 };

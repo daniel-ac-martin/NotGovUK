@@ -1,5 +1,5 @@
 import type { Errors } from './completion';
-import { ComponentType, FC, createElement as h } from 'react';
+import { ComponentType, FC, ReactNode, createElement as h } from 'react';
 import { useField } from 'formik';
 import { useFormikContext } from 'formik';
 import { FieldNode, FormatFn } from './graph';
@@ -13,8 +13,17 @@ export type FieldProps = {
   validators?: any[]
 };
 
-type MyControlProps = {
+export type ControlProps = {
   disabled?: boolean
+};
+
+type RawControlProps = {
+  disabled?: boolean
+};
+
+type RawFieldProps = RawControlProps & {
+  error?: unknown
+  value?: unknown
 };
 
 export type RawField<A> = ComponentType<A> & {
@@ -31,74 +40,87 @@ const toString = (v: any): string => (
     : String(v)
 );
 
-export const withField = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & FieldProps & MyControlProps> => ({
-  name,
-  prettyName,
-  validators: _validators,
-  ...props
-}) => {
-  const validators = [
-    ...(_validators || []),
-    ...(implicitValidators || [])
-  ];
+export const withField = <A extends RawFieldProps, B extends A & FieldProps>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<B> => {
+  const FormComponent: FC<B> = ({
+    name,
+    prettyName,
+    validators: _validators,
+    ...props
+  }) => {
+    const validators = [
+      ...(_validators || []),
+      ...(implicitValidators || [])
+    ];
 
-  validators.sort((l, r) => r.priority - l.priority);
+    validators.sort((l, r) => r.priority - l.priority);
 
-  const preValidate = preValidators && (
-    (v: Record<string, unknown>): Errors | undefined => {
-      const r: Errors = {};
+    const preValidate = preValidators && (
+      (v: Record<string, unknown>): Errors | undefined => {
+        const r: Errors = {};
 
-      Object.keys(preValidators)
-        .map(k => {
-          const error = preValidators[k]
-            .map(f => f({ name: k })(v && toString(v[k])))
-            .filter(id)[0];
+        Object.keys(preValidators)
+          .map(k => {
+            const error = preValidators[k]
+              .map(f => f({ name: k })(v && toString(v[k])))
+              .filter(id)[0];
 
-          if (error) {
-            r[k] = error;
-          }
+            if (error) {
+              r[k] = error;
+            }
 
-          return true;
-        });
+            return true;
+          });
 
-      return Object.keys(r).length ? r : undefined;
-    }
-  );
-  const validate = validators && (
-    (v: any) => validators
-      .map(f => f({ name, prettyName })(toString(v)))
-      .filter(id)[0]
-  );
-  const [field, meta] = useField(name);
-  const form = useForm();
-  const node: FieldNode = new FieldNode(name, Component.format, validate, preValidate);
+        return Object.keys(r).length ? r : undefined;
+      }
+    );
+    const validate = validators && (
+      (v: any) => validators
+        .map(f => f({ name, prettyName })(toString(v)))
+        .filter(id)[0]
+    );
+    const [field, meta] = useField(name);
+    const form = useForm();
+    const node: FieldNode = new FieldNode(name, Component.format, validate, preValidate);
 
-  form.registry.register(node);
+    form.registry.register(node);
 
-  const state = form.completion.pop();
-  //console.debug(`Form.Field: Rendering '${props.name}', with state:`);
-  //console.debug(state)
+    const state = form.completion.pop();
+    //console.debug(`Form.Field: Rendering '${props.name}', with state:`);
+    //console.debug(state)
 
-  return h(Component as any, {
-    //name,
-    ...props,
-    ...field,
-    error: meta.error && meta.touched && meta.error,
-    value: field.value === null ? '' : field.value
-  } as any);
+    return h(Component as any, {
+      //name,
+      ...props,
+      ...field,
+      error: meta.error && meta.touched && meta.error,
+      value: field.value === null ? '' : field.value
+    } as any);
+  };
+
+  FormComponent.displayName = Component.displayName;
+
+  return FormComponent;
 };
 
-export const withControl = <A extends MyControlProps>(Component: ComponentType<A>): FC<A> => props => {
-  const { isSubmitting } = useFormikContext();
-  const disabled = isSubmitting || props.disabled;
+export const withControl = <A extends RawControlProps, B extends A & ControlProps>(Component: ComponentType<A>): FC<B> => {
+  const FormComponent: FC<B> = (props) => {
+    const { isSubmitting } = useFormikContext();
+    const disabled = isSubmitting || props.disabled;
 
-  return h(Component, {
-    ...props,
-    disabled: disabled
-  });
+    return h(Component, {
+      ...props,
+      disabled: disabled
+    });
+  };
+  const name = Component.displayName || 'Anonymous';
+
+  FormComponent.displayName = 'Form.' + name;
+
+  return FormComponent;
 };
 
-export const withForm = <A>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<A & FieldProps & MyControlProps> => (
+export const withForm = <A extends RawFieldProps, B extends A & FieldProps & ControlProps>(Component: RawField<A>, implicitValidators?: ReadyValidator[], preValidators?: IPreValidators): FC<B> => (
   withControl(
     withField(Component, implicitValidators, preValidators)
   )

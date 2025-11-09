@@ -1,0 +1,45 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './WidthContainer.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Width container
+
+<p><Tag text="Pseudo-component" /></p>
+
+A simple container to limit the width of its contents.
+
+This is used by the page components to control the width of the page
+contents. Users will not typically need to use this.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Width container with the width inherited from
+[govuk-frontend].
+
+<Canvas of={Stories.Standard} />
+
+
+### Custom width
+
+A Width container with a custom width set in pixels.
+
+<Canvas of={Stories.Custom} />
+
+
+### Full width
+
+A Width container which does not limit the width of its contents. This
+is useful for some internal systems such as dashboards.
+
+<Canvas of={Stories.Full} />
+
+
+[govuk-frontend]: https://frontend.design-system.service.gov.uk/

@@ -1,0 +1,66 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import * as Stories from './Footer.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Footer
+
+The footer provides copyright, licensing and other information about your service and department.
+
+<Primary />
+<Controls />
+
+
+## When to use this component
+
+Use the footer at the bottom of every page of your service.
+
+
+## How it works
+
+You can add links to:
+
+- your department’s page on GOV.UK
+- other language options
+- terms and conditions
+- privacy policy
+
+
+## Stories
+### Standard
+
+A standard Footer.
+
+<Canvas of={Stories.Standard} />
+
+
+### GOV.UK footer
+
+The default footer for public facing websites on GOV.UK.
+
+<Canvas of={Stories.GOVUK} />
+
+### Re-branded GOV.UK footer
+
+The default footer for public facing websites on GOV.UK, after 25th June 2025.
+
+Add the `rebrand` prop, and ensure that a parent element, such as `<html>`, has the `govuk-template--rebranded` class.
+
+<Canvas of={Stories.RebrandedGOVUK} />
+
+### Footer with secondary navigation
+
+<Canvas of={Stories.Navigation} />
+
+
+### Footer with links to meta information
+
+You can also include links to meta information about a site, like cookies and contact details in the footer, like this:
+
+<Canvas of={Stories.MetaLinks} />
+
+
+### Footer with secondary navigation and links to meta information
+
+<Canvas of={Stories.NavAndMeta} />

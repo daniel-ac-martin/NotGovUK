@@ -1,0 +1,23 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './VisuallyHidden.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Visually hidden
+
+<p><Tag text="Internal" /></p>
+
+Invisible text that can be read by software such as screen-readers.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Visually hidden.
+
+<Canvas of={Stories.Standard} />

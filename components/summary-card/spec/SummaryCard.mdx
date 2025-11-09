@@ -1,0 +1,29 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './SummaryCard.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Summary card
+
+<p><Tag text="Internal" /></p>
+
+A component to split multiple summary lists.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Summary card.
+
+<Canvas of={Stories.Standard} />
+
+### Actions
+
+A summary card with a list of actions.
+
+<Canvas of={Stories.Actions} />

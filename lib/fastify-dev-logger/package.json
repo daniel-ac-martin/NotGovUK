@@ -1,0 +1,27 @@
+{
+  "name": "@not-govuk/fastify-dev-logger",
+  "version": "0.16.3",
+  "description": "A Pino transport for pretty printing Fastify logs in dev environments.",
+  "type": "module",
+  "main": "src/index.js",
+  "typings": "src/index.d.ts",
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "build": "true",
+    "clean": "true"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "pino-pretty": "^13.1.1"
+  },
+  "devDependencies": {
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
+    "pino": "^10.0.0",
+    "ts-jest": "29.4.1"
+  }
+}

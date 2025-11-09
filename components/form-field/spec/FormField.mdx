@@ -1,0 +1,94 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './FormField.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Form field
+
+<p><Tag text="Unofficial" /></p>
+
+A component for colecting a piece of data from the user. The type of form field
+that is rendered will depend on the props that are supplied to it. For example,
+providing a few options will cause it to render as some radio buttons.
+
+> **Note:** To use this as part of the wider forms framework, you should instead
+>           import the `Form` component and replace `FormField` in the examples
+>           below with `Form.Field`.
+
+<Primary />
+<Controls />
+
+
+## How it works
+
+With minimal props it will render as a simple text field.
+
+<Canvas of={Stories.Standard} />
+
+
+### Multi-line
+
+By adding a `rows` prop that is greater than `1` we get a textarea of that size.
+
+<Canvas of={Stories.Multiline} />
+
+
+### Dates
+
+It's also possible to force a certain rendering mode by using the `type` prop.
+The most common use for this is to ask for dates by setting it to `date`.
+
+<Canvas of={Stories.Date} />
+
+
+#### Date picker
+
+If you prefer, you can still use the browser's native, date-picker by setting
+the `type` props to `native-date`.
+
+<Canvas of={Stories.Datepicker} />
+
+
+### Selecting from options
+
+If you want the user to only answer from a list of options just provide an
+`options` prop.
+
+
+#### A single choice from few options
+
+Providing very few option will give you radios.
+
+<Canvas of={Stories.Singlechoicefew} />
+
+
+#### A single choice from more options
+
+Providing more options will give you small radios.
+
+<Canvas of={Stories.Singlechoicesome} />
+
+
+#### A single choice from more options
+
+Providing lots of options will give you a select box. (Note that these do not
+test well with users!)
+
+<Canvas of={Stories.Singlechoicemany} />
+
+
+#### Multiple choices
+
+If you want the user to be able to select multiple options just add the
+`multiple` prop.
+
+<Canvas of={Stories.Multiplechoicesome} />
+
+#### Multiple choices from many options
+
+If you provide a lot of options you will get a muilt-select box. (Note that
+these do not test well with users!)
+
+<Canvas of={Stories.Multiplechoicemany} />

@@ -1,0 +1,39 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './Form.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Form
+
+<p><Tag text="Unofficial" />{' '}<Tag text="Experimental" /></p>
+
+A component to collect information from the user.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Form.
+
+<Canvas of={Stories.Standard} />
+
+
+### Steps
+
+Break up your form into steps, using `Form.Page`, to make it less overwhelming for the user.
+
+<Canvas of={Stories.Steps} />
+
+
+### Forks
+
+Split your form's journey based on user input, using `Form.Fork`, to avoid requesting information you don't need.
+
+The example below will send the user down a different path depending on their sex.
+
+<Canvas of={Stories.Forks} />

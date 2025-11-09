@@ -1,6 +1,7 @@
 import { ComponentType, createElement as h } from 'react';
+import { flushSync } from 'react-dom';
 import { hydrateRoot } from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router';
 import { ApplicationProps, ErrorPageProps, Hydration, PageLoader, PageProps, compose } from '@not-govuk/app-composer';
 
 export type HydrateOrRenderOptions = {
@@ -67,11 +68,9 @@ export const hydrateOrRender: HydrateOrRender = ({
   const app = (
       h(RouterWrap, appProps,
         h(RouterProvider, {
-          future: {
-            v7_startTransition: true
-          },
           router,
-          fallbackElement: h(LoadingPage, { ...appProps, routes: [] })
+          flushSync: flushSync as any,
+          //fallbackElement: h(LoadingPage, { ...appProps, routes: [] })
         }))
   );
   const container = document.getElementById(rootId);

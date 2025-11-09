@@ -1,0 +1,24 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './Aside.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Aside
+
+<p><Tag text="Unofficial" /></p>
+
+A component for displaying indirectly related content.
+
+<Primary />
+
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Aside.
+
+<Canvas of={Stories.Primary} />

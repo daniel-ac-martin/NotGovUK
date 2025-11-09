@@ -1,0 +1,215 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import * as Stories from './Checkboxes.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Checkboxes
+
+Let users select one or more options by using the checkboxes component.
+
+<Primary />
+<Controls />
+
+
+## When to use this component
+
+Use the checkboxes component when you need to help users:
+
+- select multiple options from a list
+- toggle a single option on or off
+
+
+## When not to use this component
+
+Do not use the checkboxes component if users can only choose one option from a
+selection. In this case, use the radios component.
+
+
+## How it works
+
+Checkboxes are grouped together in a `<fieldset>` with a `<legend>` that
+describes them, as shown in the examples on this page. This is usually a
+question, like ‘How would you like to be contacted?’.
+
+If you are asking just one question per page as recommended, you can set the
+contents of the `<legend>` as the page heading. This is good practice as it
+means that users of screen readers will only hear the contents once.
+
+Read more about why and how to set legends as headings.
+
+Always position checkboxes to the left of their labels. This makes them easier
+to find, especially for users of screen magnifiers.
+
+Unlike with radios, users can select multiple options from a list of checkboxes.
+Do not assume that users will know how many options they can select based on the
+visual difference between radios and checkboxes alone.
+
+If needed, add a hint explaining this, for example, ‘Select all that apply’.
+
+Do not pre-select checkbox options as this makes it more likely that users will:
+
+- not realise they’ve missed a question
+- submit the wrong answer
+
+Order checkbox options alphabetically by default.
+
+In some cases, it can be helpful to order them from most-to-least common
+options. For example, you could order options for ‘What is your nationality?’
+based on population size.
+
+Group checkboxes together in a `<fieldset>` with a `<legend>` that describes
+them, as shown in the examples on this page. This is usually a question, like
+‘How would you like to be contacted?’.
+
+
+### If you’re asking one question on the page
+
+If you’re asking just [one question per page] as recommended, you can set the
+contents of the `<legend>` as the page heading. This is good practice as it
+means that users of screen readers will only hear the contents once.
+
+Read more about [why and how to set legends as headings].
+
+<Canvas of={Stories.Standard} />
+
+
+### If you’re asking more than one question on the page
+
+If you’re asking more than one question on the page, do not set the contents of
+the `<legend>` as the page heading. Read more about [asking multiple questions
+on question pages].
+
+<Canvas of={Stories.NoHeading} />
+
+
+### Checkbox items with hints
+
+You can add hints to checkbox items to provide additional information about the
+options.
+
+<Canvas of={Stories.Hints} />
+
+
+### Add an option for ‘none’
+
+#### IMPLEMENT ME!
+
+When ‘none’ would be a valid answer, give users the option to check a box to say
+none of the other options apply to them — without this option, users would have
+to leave all of the boxes unchecked. Giving users this option also makes sure
+they do not skip the question by accident.
+
+Remember to [start by asking one question per page]. You might be able to remove
+the need for a ‘none’ option by asking the user a better question or filtering
+them out with a ‘filter question’ beforehand. The GOV.UK Service Manual has
+guidance on [designing good questions].
+
+Show the ‘none’ option last. Separate it from the other options using a divider.
+The text is usually the word ‘or’.
+
+Write a label that repeats the key part of the question.
+
+For example, for the question ‘Will you be travelling to any of these
+countries?’, say ‘No, I will not be travelling to any of these countries.’
+
+To enable some JavaScript that unchecks all other checkboxes when the user
+clicks ‘None’, add the `exclusive` behaviour to the ‘none’ checkbox.
+
+<Canvas of={Stories.None} />
+
+If JavaScript is unavailable, and a user selects both the ‘none’ checkbox and
+another checkbox, display an error message.
+
+<Canvas of={Stories.NoneError} />
+
+
+### Conditionally revealing a related question
+
+You can ask the user a related question when they select a particular checkbox,
+so they only see the question when it’s relevant to them.
+
+This might make 2 related questions easier to answer by grouping them on the
+same page. For example, you could reveal a phone number input when the user
+selects the ‘Contact me by phone’ option.
+
+<Canvas of={Stories.Content} />
+
+Keep it simple - if you need to add a lot of content, consider showing it on the
+next page in the process instead.
+
+You should only conditionally reveal questions - do not show or hide anything
+that is not a question.
+
+
+#### Known issues
+
+Users are not always notified when a conditionally revealed question is shown or
+hidden. This fails [WCAG 2.1 success criterion 4.1.2 Name, Role, Value].
+
+However, we found that screen reader users did not have difficulty answering a
+conditionally revealed question - as long as it’s kept simple. It confused our
+test users when we conditionally revealed complicated questions to them.
+
+We’ll keep looking for opportunities to [learn more about how conditionally
+revealed questions should be used in services].
+
+
+### Smaller checkboxes
+
+Use standard-sized checkboxes in nearly all cases. However, smaller versions
+work well on pages where it’s helpful to make them less visually prominent.
+
+For example, on a page of search results, the primary user need is to see the
+results. Using smaller checkboxes lets users see and change search filters
+without distracting them from the main content.
+
+<Canvas of={Stories.Small} />
+
+Small checkboxes can work well on information dense screens in services designed
+for repeat use, like caseworking systems.
+
+In services like these, the risk that they will not be noticed is lower because
+users return to the screen multiple times.
+
+
+### Error messages
+
+Error messages should be styled like this:
+
+<Canvas of={Stories.Errors} />
+
+Make sure errors follow the guidance in error message and have specific error
+messages for specific error states.
+
+
+#### If nothing is selected and the question has options in it
+
+Say ‘Select if [whatever it is]’.
+
+For example, ‘Select if you are British, Irish or a citizen of a different
+country’.
+
+
+#### If nothing is selected and the question does not have options in it
+
+Say ‘Select [whatever it is]’.
+
+For example, ‘Select your nationality or nationalities’.
+
+
+#### If users check both a ‘none’ checkbox and another checkbox
+
+Say ‘Select [option label text] or select “[none of the above label text]”’
+
+For example, ‘Select countries you will be travelling to, or select “No, I will
+not be travelling to any of these countries”’
+
+
+[one question per page]: https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page
+[why and how to set legends as headings]: https://design-system.service.gov.uk/get-started/labels-legends-headings
+[start by asking one question per page]: https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page
+[designing good questions]: https://www.gov.uk/service-manual/design/designing-good-questions
+[asking multiple questions on question pages]: https://design-system.service.gov.uk/patterns/question-pages/#asking-multiple-questions-on-a-page
+[WCAG 2.1 success criterion 4.1.2 Name, Role, Value]: https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html
+[learn more about how conditionally revealed questions should be used in services]: https://github.com/alphagov/govuk-design-system-backlog/issues/37

@@ -34,4 +34,6 @@ export const Page: FC<any> = props => {
   }
 };
 
+Page.displayName = 'Form.Page';
+
 export default Page;

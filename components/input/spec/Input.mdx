@@ -1,0 +1,137 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './Input.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Input
+
+<p><Tag text="Internal" /></p>
+
+A component to allow users to enter a small, single piece of data.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Input.
+
+<Canvas of={Stories.Standard} />
+
+
+### Fixed width
+
+An Input with fixed width.
+
+<Canvas of={Stories.FixedWidth} />
+
+
+### Prefix and suffix
+
+An Input with a prefix and a suffix.
+
+<Canvas of={Stories.PrefixAndSuffix} />
+
+
+### E-mail
+
+<Canvas of={Stories.InputEmail} />
+
+
+### Password
+
+<Canvas of={Stories.InputPassword} />
+
+
+### Number
+
+<Canvas of={Stories.InputNumber} />
+
+
+### Colour
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputColour} />
+
+
+### Date
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputDate} />
+
+
+### Datetime local
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputDatetimeLocal} />
+
+
+### Time
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputTime} />
+
+
+### File
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputFile} />
+
+
+### Month
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputMonth} />
+
+
+### Week
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputWeek} />
+
+
+### Range
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputRange} />
+
+
+### Search
+
+<Canvas of={Stories.InputSearch} />
+
+
+### Tel
+
+<Canvas of={Stories.InputTel} />
+
+
+### URL
+
+<Canvas of={Stories.InputURL} />
+
+
+### Checkbox
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputCheckbox} />
+
+
+### Radio
+
+<p><Tag text="Unofficial" /></p>
+
+<Canvas of={Stories.InputRadio} />

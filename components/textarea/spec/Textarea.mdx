@@ -1,0 +1,110 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import * as Stories from './Textarea.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Textarea
+
+<Primary />
+<Controls />
+
+
+## When to use this component
+
+Use the textarea component when you need to let users enter an amount of text that’s longer than a single line.
+
+
+## When not to use this component
+
+Users can find open-ended questions difficult to answer. It might be better to break up one complex question into a series of simple ones, for example where users can select from options using radios.
+
+
+### If you need to ask an open question
+
+Do not use the textarea component if you need to let users enter shorter answers no longer than a single line, such as a phone number or name. In this case, you should use the text input component.
+
+
+## How it works
+
+You must label textareas. Placeholder text is not a suitable substitute for a
+label, as it disappears when users click inside the textarea.
+
+Labels must be aligned above the textarea they refer to. They should be short,
+direct and written in sentence case. Do not use colons at the end of labels.
+
+<Canvas of={Stories.Standard} />
+
+
+### Use appropriately-sized textareas
+
+Make the height of a textarea proportional to the amount of text you expect users to enter. You can set the height of a textarea by by specifying the `rows` attribute.
+
+<Canvas of={Stories.Sized} />
+
+
+### Do not disable copy and paste
+
+Users will often need to copy and paste information into a textarea, so do not stop them from doing this.
+
+
+### If you’re asking more than one question on the page
+
+If you’re asking more than one question on the page, do not set the contents of
+the `<label>` as the page heading. Read more about [asking multiple questions on
+question pages].
+
+<Canvas of={Stories.NoHeading} />
+
+
+### Limiting the number of characters
+
+If there’s a good reason to limit the number of characters users can enter, you can use the character count component.
+
+
+### Error messages
+
+Error messages should be styled like this:
+
+<Canvas of={Stories.Errors} />
+
+Make sure errors follow the guidance in error message and have specific error messages for specific error states.
+
+
+#### If the input is empty
+
+Say ‘Enter [whatever it is]’.
+For example, ‘Enter summary’.
+
+
+#### If the input is too long
+
+Say ‘[whatever it is] must be [number] characters or fewer’.
+For example, ‘Summary must be 400 characters or fewer’.
+
+
+#### If the input is too short
+
+Say ‘[whatever it is] must be [number] characters or more’.
+For example, ‘Summary must be 10 characters or more’.
+
+
+#### If the input is too long or too short
+
+Say ‘[whatever it is] must be between [number] and [number] characters’.
+For example, ‘Summary must be between 10 and 400 characters’.
+
+
+#### If the input uses characters that are not allowed and you know what the characters are
+
+Say ‘[whatever it is] must not include [characters]’.
+For example, ‘Summary must not include è and £’.
+
+
+#### If the input uses characters that are not allowed and you do not know what the characters are
+
+Say ‘[whatever it is] must only include [list of allowed characters]’.
+For example, ‘Summary must only include letters a to z, hyphens, spaces and apostrophes.
+
+
+[asking multiple questions on question pages]: https://design-system.service.gov.uk/patterns/question-pages/#asking-multiple-questions-on-a-page

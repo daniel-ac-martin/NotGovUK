@@ -1,0 +1,39 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './NavigationMenu.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Navigation menu
+
+<p><Tag text="Unofficial" /></p>
+
+A component that provides users with a list of pages to choose from.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Navigation menu.
+
+<Canvas of={Stories.Standard} />
+
+
+### Sub-items
+
+You can provide a hierarchy of links.
+
+<Canvas of={Stories.Subitems} />
+
+
+### Horizontal
+
+<p><Tag text="Deprecated" /></p>
+
+A horizontal Navigation menu that can be used as alternative to the main navigation menu.
+
+<Canvas of={Stories.Horizontal} />

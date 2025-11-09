@@ -1,0 +1,37 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './FormGroup.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Form group
+
+<p><Tag text="Internal" /></p>
+
+A group of form fields.
+
+<Primary />
+<Controls />
+
+
+## Stories
+### Standard
+
+A standard Form group.
+
+<Canvas of={Stories.Standard} />
+
+
+### Label
+
+A Form group with just a label instead of a fieldset and legend.
+
+<Canvas of={Stories.Label} />
+
+
+### Error
+
+A Form group with a validation error.
+
+<Canvas of={Stories.Error} />

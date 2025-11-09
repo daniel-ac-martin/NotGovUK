@@ -1,19 +1,18 @@
-import { FC, createElement as h } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { ComponentType, FC, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { Head } from '@not-govuk/head';
 import { DocsContext } from './context';
 
-export type StoriesModule = Record<string, any> & {
-  default: {
-    includeStories: string[]
-    parameters: {
+export type StoriesModule = Record<string, unknown> & {
+  default: ComponentType<unknown>
+  meta?: {
+    component?: ComponentType<unknown>
+    includeStories?: string[]
+    parameters?: {
       description?: string
-      docs: {
-        page: () => JSX.Element
-      }
       image?: string
     }
-    title: string
+    title?: string
   }
 };
 
@@ -31,47 +30,51 @@ export const DocsPage: FC<DocsPageProps> = ({
   ...attrs
 }) => {
   const classes = classBuilder('penultimate-docs-page', classBlock, classModifiers, className);
-  const title = stories.default.title;
-  const { description, image } = stories.default.parameters;
-  const content = stories.default.parameters.docs.page();
-
-  const storyNamesToSources = (acc: object, cur: string) => {
-    const story = stories[cur];
-    const name = story.storyName;
-    const source = story.parameters.storySource.source;
-
-    return { ...acc, [name]: source };
-  };
-
+  const componentName = stories.meta?.component?.displayName;
+  const plainName = componentName && (
+    componentName
+      .charAt(0)
+      .toUpperCase() +
+    componentName
+      .replace(/([A-Z])/g, ' $1')
+      .trim()
+      .slice(1)
+      .toLowerCase()
+  );
+  const title = stories.meta?.title || plainName;
+  const { description, image } = stories.meta?.parameters || {};
+  const Content = stories.default;
   const contextValue = {
-    storySource: stories.default.includeStories.reduce(storyNamesToSources, {})
+    args: {},
+    meta: {},
+    stories: {}
   };
 
   return (
     <div {...attrs} className={classes()}>
       <DocsContext.Provider value={contextValue}>
-        {content}
+        <Content />
       </DocsContext.Provider>
       { !title ? null : (
-        <Helmet>
+        <Head>
           <title>{title}{ !siteName ? '' : ` - ${siteName}`}</title>
           <meta name="og:title" content={title} />
-        </Helmet>
+        </Head>
       ) }
       { !description ? null : (
-        <Helmet>
+        <Head>
           <meta name="description" content={description} />
           <meta name="og:description" content={description} />
-        </Helmet>
+        </Head>
       ) }
       { !image ? null : (
-        <Helmet>
+        <Head>
           <meta name="og:image" content={image} />
-        </Helmet>
+        </Head>
       ) }
-      <Helmet>
+      <Head>
         <meta name="og:type" content="article" />
-      </Helmet>
+      </Head>
     </div>
   );
 };

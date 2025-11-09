@@ -1,0 +1,44 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
+import * as Stories from './Panel.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Panel
+
+The panel component is a visible container used on confirmation or results pages to highlight important content.
+
+<Primary />
+<Controls />
+
+
+## When to use this component
+
+Use the panel component to display important information when a transaction has been  completed.
+
+In most cases, the panel component is used on [confirmation pages], to tell the user they have successfully completed the transaction.
+
+
+## When not to use this component
+
+Never use the panel component to highlight important information within body content.
+
+## Stories
+### Standard
+
+A standard Panel.
+
+<Canvas of={Stories.Standard} />
+
+
+### Interruption card
+
+<Tag>Unofficial</Tag>
+
+Can be used to as an alert that interrupts the user flow with important information and must be acknowledged before continuing.
+
+<Canvas of={Stories.Interruption} />
+
+
+[confirmation pages]: https://design-system.service.gov.uk/patterns/confirmation-pages

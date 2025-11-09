@@ -1,0 +1,35 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import * as Stories from './AnchorList.stories';
+export const meta = Stories.default;
+
+<Meta of={Stories} />
+
+# Anchor list
+
+A list of anchors. Items that contain links to the current page are
+marked as active. Useful for navigation menus.
+
+<Primary />
+<Controls />
+
+
+## How it works
+
+An item whose link is for the current page will have a an `active` BEM
+class modifier put on it allowing you to style it in your CSS / SASS
+code.
+
+
+## Stories
+### Standard
+
+A standard Anchor list. In this case the default `<ul>` list is used.
+
+<Canvas of={Stories.Standard} />
+
+
+### Ordered list
+
+By passing the `as` prop it is possible to use an ordered `<ol>` list instead.
+
+<Canvas of={Stories.Ordered} />

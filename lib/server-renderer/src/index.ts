@@ -1,6 +1,6 @@
 import { ComponentType, createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticHandlerContext, StaticRouterProvider, createStaticHandler, createStaticRouter } from 'react-router-dom/server';
+import { StaticHandlerContext, StaticRouterProvider, createStaticHandler, createStaticRouter } from 'react-router';
 import { ApplicationProps, ErrorPageProps, PageProps, PageInfoSSR, UserInfo, compose, renderToStringWithData } from '@not-govuk/app-composer';
 import { URI } from '@not-govuk/uri';
 import { htmlEnvelope } from './html-envelope';
@@ -229,7 +229,6 @@ export const reactRenderer: ReactRenderer = ({
       const context: StaticHandlerContext = {
         actionData: {},
         actionHeaders: {},
-        activeDeferreds: null,
         basename,
         errors: null,
         loaderData: {},

@@ -24,14 +24,14 @@ distclean: clean docker-clean
 
 deps: node-deps
 
-node-deps: node_modules/.bin/webpack
+node-deps: node_modules/.bin/react-router
 
 node_modules/%: package.json
 	pnpm install
 
 build: dist/server/index.js
 
-dist/%: node_modules/.bin/webpack
+dist/%: node_modules/.bin/react-router
 	npm run build
 
 docker: build
@@ -51,23 +51,27 @@ docker-push: docker
 	docker tag $(DOCKER_IMAGE) '$(DOCKER_REPO):$(major_version)' && docker push '$(DOCKER_REPO):$(major_version)'
 	docker tag $(DOCKER_IMAGE) '$(DOCKER_REPO):latest' && docker push '$(DOCKER_REPO):latest'
 
+docker-run:
+	docker run --name=docs -p '8080:8080' '$(DOCKER_IMAGE)'
+
 aws-lambda: pkg/aws-lambda/govuk-docs.zip
 
-pkg/aws-lambda/govuk-docs.zip: dist/server/index.js aws.serverless.yml
-	npm run package:aws-lambda
+pkg/aws-lambda/%.zip: aws-lambda-entry.js package.json dist/server/index.js
+	mkdir -p '$(@D)'
+	zip -rv '$(@)' 'dist'
+	zip -v '$(@)' 'package.json'
+	cp '$(<)' '$(@D)/$(basename $(@F)).js'
+	zip -mvj '$(@)' '$(@D)/$(basename $(@F)).js'
 
 netlify: pkg/netlify/functions/govuk-docs.zip pkg/netlify/publish/_redirects
 
 pkg/netlify/functions/%.zip: pkg/aws-lambda/%.zip
 	mkdir -p '$(@D)'
 	cp -a '$(<)' '$(@)'
-	echo "process.env['MODE'] = 'serverless'; process.env['NODE_ENV'] = 'production'; module.exports = require('./dist/server/index.js');" > 'pkg/netlify/$(basename $(@F)).js'
-	zip -mvj '$(@)' 'pkg/netlify/$(basename $(@F)).js'
 
 pkg/netlify/publish/_redirects: dist/server/index.js
 	mkdir -p '$(@D)'
-	cp -a 'dist/public/' 'pkg/netlify/publish/public'
-	rm -f 'pkg/netlify/publish/public/entrypoints.json'
+	cp -a 'dist/app/client/'* '$(@D)'
 	echo '/* /.netlify/functions/govuk-docs/:splat 200' > '$(@)'
 
 deploy: docker-push

@@ -1,13 +1,20 @@
-import { Context, createContext, useContext } from 'react';
+import type { Meta } from '@storybook/react';
+
+import { ComponentType, Context, createContext, useContext } from 'react';
 
 export type DocsContextValue = {
-  storySource: object
-  decorators?: any[]
+  args: object
+  component?: ComponentType<unknown>
+  description?: string
+  meta: Meta
+  stories: Record<string, object>
   title?: string
 };
 
 const defaultValue: DocsContextValue = {
-  storySource: {}
+  args: {},
+  meta: {},
+  stories: {}
 };
 
 export const DocsContext = createContext(defaultValue);
