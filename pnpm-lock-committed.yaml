@@ -2099,8 +2099,8 @@ importers:
     specifiers:
       '@not-govuk/fastify-dev-logger': workspace:^0.16.3
       '@not-govuk/fastify-harden': workspace:^0.16.3
-      close-with-grace: ^2.3.0
-      fastify: ^5.6.1
+      close-with-grace: 2.3.0
+      fastify: 5.6.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
@@ -2109,7 +2109,7 @@ importers:
       '@not-govuk/fastify-dev-logger': link:../fastify-dev-logger
       '@not-govuk/fastify-harden': link:../fastify-harden
       close-with-grace: 2.3.0
-      fastify: 5.6.2
+      fastify: 5.6.1
     devDependencies:
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -2133,16 +2133,16 @@ importers:
 
   lib/fastify-harden:
     specifiers:
-      fastify: ^5.6.1
-      fastify-plugin: ^5.0.1
+      fastify: 5.6.1
+      fastify-plugin: 5.0.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5
       typescript: 5.9.3
     dependencies:
-      fastify: 5.6.2
-      fastify-plugin: 5.1.0
+      fastify-plugin: 5.0.1
     devDependencies:
+      fastify: 5.6.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       ts-jest: 29.2.5_p2l723askb4mwtytbayecowzii
@@ -2150,12 +2150,12 @@ importers:
 
   lib/fastify-react-router:
     specifiers:
-      '@fastify/middie': ^9.0.3
-      '@fastify/static': ^8.2.0
+      '@fastify/middie': 9.0.3
+      '@fastify/static': 8.2.0
       '@not-govuk/fastify-harden': workspace:^0.16.3
-      '@react-router/node': ^7.9.2
-      fastify: ^5.6.1
-      fastify-plugin: ^5.0.1
+      '@react-router/node': 7.9.2
+      fastify: 5.6.1
+      fastify-plugin: 5.0.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       react-router: 7.9.5
@@ -2164,12 +2164,12 @@ importers:
       typescript: 5.9.3
     dependencies:
       '@fastify/middie': 9.0.3
-      '@fastify/static': 8.3.0
-      '@react-router/node': 7.9.5_plqsqrtlg75ilbq355hnkvpstu
-      fastify-plugin: 5.1.0
+      '@fastify/static': 8.2.0
+      '@react-router/node': 7.9.2_plqsqrtlg75ilbq355hnkvpstu
+      fastify-plugin: 5.0.1
     devDependencies:
       '@not-govuk/fastify-harden': link:../fastify-harden
-      fastify: 5.6.2
+      fastify: 5.6.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       react-router: 7.9.5
@@ -5725,7 +5725,7 @@ packages:
     resolution: {integrity: sha512-7OYovKXp9UKYeVMcjcFLMcSpoMkmcZmfnG+eAvtdiatN35W7c+r9y1dRfpA+pfFVNuHGGqI3W+vDTmjvcfLcMA==}
     dependencies:
       '@fastify/error': 4.2.0
-      fastify-plugin: 5.1.0
+      fastify-plugin: 5.0.1
       path-to-regexp: 8.3.0
       reusify: 1.0.4
     dev: false
@@ -5746,13 +5746,13 @@ packages:
       mime: 3.0.0
     dev: false
 
-  /@fastify/static/8.3.0:
-    resolution: {integrity: sha512-yKxviR5PH1OKNnisIzZKmgZSus0r2OZb8qCSbqmw34aolT4g3UlzYfeBRym+HJ1J471CR8e2ldNub4PubD1coA==}
+  /@fastify/static/8.2.0:
+    resolution: {integrity: sha512-PejC/DtT7p1yo3p+W7LiUtLMsV8fEvxAK15sozHy9t8kwo5r0uLYmhV/inURmGz1SkHZFz/8CNtHLPyhKcx4SQ==}
     dependencies:
       '@fastify/accept-negotiator': 2.0.1
       '@fastify/send': 4.1.0
       content-disposition: 0.5.4
-      fastify-plugin: 5.1.0
+      fastify-plugin: 5.0.1
       fastq: 1.17.1
       glob: 11.0.3
     dev: false
@@ -6989,6 +6989,21 @@ packages:
       express: 4.21.2
       react-router: 7.9.5_nnrd3gsncyragczmpvfhocinkq
       typescript: 5.9.3
+
+  /@react-router/node/7.9.2_plqsqrtlg75ilbq355hnkvpstu:
+    resolution: {integrity: sha512-mGqpEXVWs1XmwpJdbESE2fzvS3a43EdMCuiL2U3Nmm1IuGdSjc60gQK/IeKWjNGdgj1pZEyyQK17fYXPqjp5Uw==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react-router: 7.9.2
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@mjackson/node-fetch-server': 0.2.0
+      react-router: 7.9.5
+      typescript: 5.9.3
+    dev: false
 
   /@react-router/node/7.9.5_plqsqrtlg75ilbq355hnkvpstu:
     resolution: {integrity: sha512-3mDd32mXh3gEkG0cLPnUaoLkY1pApsTPqn7O1j+P8aLf997uYz5lYDjt33vtMhaotlRM0x+5JziAKtz/76YBpQ==}
@@ -13188,12 +13203,12 @@ packages:
     engines: {node: '>= 4.9.1'}
     dev: true
 
-  /fastify-plugin/5.1.0:
-    resolution: {integrity: sha512-FAIDA8eovSt5qcDgcBvDuX/v0Cjz0ohGhENZ/wpc3y+oZCY2afZ9Baqql3g/lC+OHRnciQol4ww7tuthOb9idw==}
+  /fastify-plugin/5.0.1:
+    resolution: {integrity: sha512-HCxs+YnRaWzCl+cWRYFnHmeRFyR5GVnJTAaCJQiYzQSDwK9MgJdyAsuL3nh0EWRCYMgQ5MeziymvmAhUHYHDUQ==}
     dev: false
 
-  /fastify/5.6.2:
-    resolution: {integrity: sha512-dPugdGnsvYkBlENLhCgX8yhyGCsCPrpA8lFWbTNU428l+YOnLgYHR69hzV8HWPC79n536EqzqQtvhtdaCE0dKg==}
+  /fastify/5.6.1:
+    resolution: {integrity: sha512-WjjlOciBF0K8pDUPZoGPhqhKrQJ02I8DKaDIfO51EL0kbSMwQFl85cRwhOvmSDWoukNOdTo27gLN549pLCcH7Q==}
     dependencies:
       '@fastify/ajv-compiler': 4.0.5
       '@fastify/error': 4.2.0
@@ -13204,7 +13219,7 @@ packages:
       fast-json-stringify: 6.1.1
       find-my-way: 9.3.0
       light-my-request: 6.6.0
-      pino: 10.1.0
+      pino: 9.14.0
       process-warning: 5.0.0
       rfdc: 1.4.1
       secure-json-parse: 4.1.0
@@ -18278,6 +18293,7 @@ packages:
       safe-stable-stringify: 2.5.0
       sonic-boom: 4.2.0
       thread-stream: 3.1.0
+    dev: true
 
   /pino/8.21.0:
     resolution: {integrity: sha512-ip4qdzjkAyDDZklUaZkcRFb2iA118H9SgRh8yzTkSQK8HilsOJF7rSY8HoW5+I0M46AZgX/pxbprf2vvzQCE0Q==}
@@ -18295,6 +18311,22 @@ packages:
       sonic-boom: 3.8.1
       thread-stream: 2.7.0
     dev: false
+
+  /pino/9.14.0:
+    resolution: {integrity: sha512-8OEwKp5juEvb/MjpIc4hjqfgCNysrS94RIOMXYvpYCdm/jglrKEiAYmiumbmGhCvs+IcInsphYDFwqrjr7398w==}
+    hasBin: true
+    dependencies:
+      '@pinojs/redact': 0.4.0
+      atomic-sleep: 1.0.0
+      on-exit-leak-free: 2.1.2
+      pino-abstract-transport: 2.0.0
+      pino-std-serializers: 7.0.0
+      process-warning: 5.0.0
+      quick-format-unescaped: 4.0.4
+      real-require: 0.2.0
+      safe-stable-stringify: 2.5.0
+      sonic-boom: 4.2.0
+      thread-stream: 3.1.0
 
   /pirates/4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
@@ -18853,7 +18885,6 @@ packages:
     dependencies:
       cookie: 1.0.2
       set-cookie-parser: 2.7.1
-    dev: true
 
   /react-router/7.9.5_nnrd3gsncyragczmpvfhocinkq:
     resolution: {integrity: sha512-JmxqrnBZ6E9hWmf02jzNn9Jm3UqyeimyiwzD69NjxGySG6lIz/1LVPsoTCwN7NBX2XjCEa1LIX5EMz1j2b6u6A==}
