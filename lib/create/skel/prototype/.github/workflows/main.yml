@@ -44,7 +44,7 @@ jobs:
         uses: ./.github/actions/build-app
 
       - name: Save build directory
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: 'build'
           path: "dist"
@@ -71,7 +71,7 @@ jobs:
           node: ${{ matrix.node }}
 
       - name: Download build directory
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: 'build'
           path: "dist"
