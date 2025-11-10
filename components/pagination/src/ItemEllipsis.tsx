@@ -5,7 +5,7 @@ export type ItemEllipsisProps = StandardProps & HTMLAttributes<HTMLElement>;
 
 export const ItemEllipsis: FC<ItemEllipsisProps> = ({
   classBlock,
-  classModifiers = 'ellipses',
+  classModifiers = 'ellipsis',
   className,
   ...attrs
 }) => {
