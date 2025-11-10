@@ -103,7 +103,7 @@ importers:
       '@types/react': 18.3.26
       '@types/react-dom': 18.3.7
       bun: ^1.3.1
-      cypress: 14.5.4
+      cypress: 15.6.0
       isbot: ^5.1.32
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -139,7 +139,7 @@ importers:
       '@types/react': 18.3.26
       '@types/react-dom': 18.3.7_@types+react@18.3.26
       bun: 1.3.2
-      cypress: 14.5.4
+      cypress: 15.6.0
       jest: 29.7.0_@types+node@24.10.0
       jest-environment-jsdom: 29.7.0
       start-server-and-test: 2.1.2
@@ -164,7 +164,7 @@ importers:
       '@types/react-dom': 18.3.7
       '@types/webpack-env': 1.18.8
       bunyan: 1.8.15
-      cypress: 14.5.4
+      cypress: 15.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       node-hot-loader: 1.23.0
@@ -197,7 +197,7 @@ importers:
       '@types/react-dom': 18.3.7_@types+react@18.3.26
       '@types/webpack-env': 1.18.8
       bunyan: 1.8.15
-      cypress: 14.5.4
+      cypress: 15.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       node-hot-loader: 1.23.0_webpack@5.99.9
@@ -235,7 +235,7 @@ importers:
       '@types/react-dom': 18.3.7
       '@types/webpack-env': 1.18.8
       bunyan: 1.8.15
-      cypress: 14.5.4
+      cypress: 15.6.0
       graphql: 15.10.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -272,7 +272,7 @@ importers:
       '@types/react-dom': 18.3.7_@types+react@18.3.26
       '@types/webpack-env': 1.18.8
       bunyan: 1.8.15
-      cypress: 14.5.4
+      cypress: 15.6.0
       graphql: 15.10.1
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
@@ -297,7 +297,7 @@ importers:
       '@types/node': 24.10.0
       '@types/react': 18.3.26
       '@types/react-dom': 18.3.7
-      cypress: 14.5.4
+      cypress: 15.6.0
       jest: 29.7.0
       jest-environment-jsdom: 29.7.0
       next: 15.5.6
@@ -316,7 +316,7 @@ importers:
       '@types/node': 24.10.0
       '@types/react': 18.3.26
       '@types/react-dom': 18.3.7_@types+react@18.3.26
-      cypress: 14.5.4
+      cypress: 15.6.0
       jest: 29.7.0_@types+node@24.10.0
       jest-environment-jsdom: 29.7.0
       sass: 1.93.3
@@ -336,7 +336,7 @@ importers:
       '@typescript-eslint/eslint-plugin': ^8.46.3
       '@typescript-eslint/parser': ^8.46.3
       autoprefixer: ^10.4.21
-      cypress: 14.5.4
+      cypress: 15.6.0
       eslint: ^9.39.1
       eslint-import-resolver-typescript: ^4.4.4
       eslint-plugin-import: ^2.32.0
@@ -367,7 +367,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 8.46.3_ryashqptutbwafvie3apdzffge
       '@typescript-eslint/parser': 8.46.3_ohw7ybem3stexzc2ktgcr2xgzi
       autoprefixer: 10.4.21_postcss@8.5.6
-      cypress: 14.5.4
+      cypress: 15.6.0
       eslint: 9.39.1
       eslint-import-resolver-typescript: 4.4.4_w6ul7b6dlaojoqqselpkqcyfb4
       eslint-plugin-import: 2.32.0_yeazxu4qrxpmbvwj7rr6irnpey
@@ -9015,6 +9015,10 @@ packages:
     dependencies:
       '@types/node': 24.10.0
 
+  /@types/tmp/0.2.6:
+    resolution: {integrity: sha512-chhaNf2oKHlRkDGt+tiKE2Z5aJ6qalm7Z9rlLdBwmOiAAf09YQvvoLXjWK4HWPF1xU/fqvMgfNfpVoBscA/tKA==}
+    dev: true
+
   /@types/tough-cookie/4.0.5:
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
     dev: true
@@ -11568,9 +11572,9 @@ packages:
       stream-transform: 3.3.3
     dev: false
 
-  /cypress/14.5.4:
-    resolution: {integrity: sha512-0Dhm4qc9VatOcI1GiFGVt8osgpPdqJLHzRwcAB5MSD/CAAts3oybvPUPawHyvJZUd8osADqZe/xzMsZ8sDTjXw==}
-    engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
+  /cypress/15.6.0:
+    resolution: {integrity: sha512-Vqo66GG1vpxZ7H1oDX9umfmzA3nF7Wy80QAc3VjwPREO5zTY4d1xfQFNPpOWleQl9vpdmR2z1liliOcYlRX6rQ==}
+    engines: {node: ^20.1.0 || ^22.0.0 || >=24.0.0}
     hasBin: true
     requiresBuild: true
     dependencies:
@@ -11578,20 +11582,20 @@ packages:
       '@cypress/xvfb': 1.2.4_supports-color@8.1.1
       '@types/sinonjs__fake-timers': 8.1.1
       '@types/sizzle': 2.3.9
+      '@types/tmp': 0.2.6
       arch: 2.2.0
       blob-util: 2.0.2
       bluebird: 3.7.2
       buffer: 5.7.1
       cachedir: 2.4.0
       chalk: 4.1.2
-      check-more-types: 2.24.0
       ci-info: 4.1.0
       cli-cursor: 3.1.0
       cli-table3: 0.6.1
       commander: 6.2.1
       common-tags: 1.8.2
       dayjs: 1.11.13
-      debug: 4.4.1_supports-color@8.1.1
+      debug: 4.4.3_supports-color@8.1.1
       enquirer: 2.4.1
       eventemitter2: 6.4.7
       execa: 4.1.0
@@ -11599,10 +11603,8 @@ packages:
       extract-zip: 2.0.1_supports-color@8.1.1
       figures: 3.2.0
       fs-extra: 9.1.0
-      getos: 3.2.1
       hasha: 5.2.2
       is-installed-globally: 0.4.0
-      lazy-ass: 1.6.0
       listr2: 3.14.0_enquirer@2.4.1
       lodash: 4.17.21
       log-symbols: 4.1.0
@@ -11612,9 +11614,10 @@ packages:
       process: 0.11.10
       proxy-from-env: 1.0.0
       request-progress: 3.0.0
-      semver: 7.7.2
+      semver: 7.7.3
       supports-color: 8.1.1
-      tmp: 0.2.3
+      systeminformation: 5.27.7
+      tmp: 0.2.5
       tree-kill: 1.2.2
       untildify: 4.0.0
       yauzl: 2.10.0
@@ -11745,19 +11748,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.3
-
-  /debug/4.4.1_supports-color@8.1.1:
-    resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 2.1.3
-      supports-color: 8.1.1
-    dev: true
 
   /debug/4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -13872,12 +13862,6 @@ packages:
       resolve-pkg-maps: 1.0.0
     dev: true
 
-  /getos/3.2.1:
-    resolution: {integrity: sha512-U56CfOK17OKgTVqozZjUKNdkfEv6jk5WISBJ8SHoagjE6L69zOwl3Z+O8myjY9MEW3i2HPWQBt/LTbCgcC973Q==}
-    dependencies:
-      async: 3.2.6
-    dev: true
-
   /getpass/0.1.7:
     resolution: {integrity: sha512-0fzj9JxOLfJ+XGLhR8ze3unN0KZCgZwiSSDz168VERjK8Wl8kVSdcu2kspd4s4wtAa1y/qrVRiAA0WclVsu0ng==}
     dependencies:
@@ -15518,7 +15502,7 @@ packages:
       jest-util: 29.7.0
       natural-compare: 1.4.0
       pretty-format: 29.7.0
-      semver: 7.7.2
+      semver: 7.7.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -20734,6 +20718,13 @@ packages:
     engines: {node: '>=16.0.0'}
     dev: false
 
+  /systeminformation/5.27.7:
+    resolution: {integrity: sha512-saaqOoVEEFaux4v0K8Q7caiauRwjXC4XbD2eH60dxHXbpKxQ8kH9Rf7Jh+nryKpOUSEFxtCdBlSUx0/lO6rwRg==}
+    engines: {node: '>=8.0.0'}
+    os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
+    hasBin: true
+    dev: true
+
   /tapable/2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -20923,8 +20914,8 @@ packages:
       os-tmpdir: 1.0.2
     dev: true
 
-  /tmp/0.2.3:
-    resolution: {integrity: sha512-nZD7m9iCPC5g0pYmcaxogYKggSfLsdxl8of3Q/oIbqCqLLIO9IAF0GWjX1z9NZRHPiXv8Wex4yDCaZsgEw0Y8w==}
+  /tmp/0.2.5:
+    resolution: {integrity: sha512-voyz6MApa1rQGUxT3E+BK7/ROe8itEx7vD8/HEvt4xwXucvQ5G5oeEiHkmHZJuBO21RpOf+YYm9MOivj709jow==}
     engines: {node: '>=14.14'}
     dev: true
 
