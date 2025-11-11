@@ -1,12 +1,12 @@
 packages:
-  - 'apps/**'
-  - 'components/**'
-  - 'components-internal/**'
-  - 'lib/**'
-  - 'lib-govuk/**'
+  - apps/**
+  - components/**
+  - components-internal/**
+  - lib/**
+  - lib-govuk/**
 dedupePeerDependents: true          # Default
-resolutionMode: 'highest'           # Default in v9
+resolutionMode: highest             # Default
 resolvePeersFromWorkspaceRoot: true # Default
 autoInstallPeers: false             # Needed to avoid build errors
 onlyBuiltDependencies:
-- cypress                           # Required in v10
+  - cypress                         # Required in v10
