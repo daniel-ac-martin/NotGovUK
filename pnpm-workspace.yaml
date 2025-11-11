@@ -4,3 +4,7 @@ packages:
   - 'components-internal/**'
   - 'lib/**'
   - 'lib-govuk/**'
+dedupePeerDependents: true          # Default
+resolutionMode: 'highest'           # Default in v9
+resolvePeersFromWorkspaceRoot: true # Default
+autoInstallPeers: false             # Needed to avoid build errors
