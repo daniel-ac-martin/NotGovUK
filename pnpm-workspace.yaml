@@ -8,3 +8,5 @@ dedupePeerDependents: true          # Default
 resolutionMode: 'highest'           # Default in v9
 resolvePeersFromWorkspaceRoot: true # Default
 autoInstallPeers: false             # Needed to avoid build errors
+onlyBuiltDependencies:
+- cypress                           # Required in v10
