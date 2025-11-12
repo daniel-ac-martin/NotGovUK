@@ -7,17 +7,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "test": "npm run test:unit",
     "test:ci": "npm test && npm run test:functional:ci",
     "test:functional": "cypress run ${CYPRESS_PROJECT_ID:+--record ${CYPRESS_FLAGS}}",
     "test:functional:ci": "start-server-and-test 'start' 'http-get://localhost:3000/' test:functional",
     "test:unit": "jest --passWithNoTests",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist/ .next/"
   },
   "dependencies": {
+    "@not-govuk/head": "workspace:^0.16.3",
+    "@not-govuk/router": "workspace:^0.16.3",
     "@not-govuk/simple-components": "workspace:^0.16.3",
-    "next": "15.5.6",
+    "next": "16.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
@@ -28,7 +29,7 @@
     "cypress": "15.6.0",
     "jest": "30.2.0",
     "jest-environment-jsdom": "30.2.0",
-    "sass": "^1.93.3",
+    "sass-embedded": "^1.93.3",
     "start-server-and-test": "2.1.2",
     "ts-jest": "29.4.5",
     "typescript": "5.9.3"

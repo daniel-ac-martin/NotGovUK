@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import React from "react";
 import { NotGovUKPage } from '@not-govuk/simple-components';
 import { AddBodyClass } from '../components/AddBodyClass';
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
