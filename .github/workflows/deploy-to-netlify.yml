@@ -84,6 +84,7 @@ jobs:
           smoke: true
 
       - name: Scan service for vulnerabilities
+        if: github.ref == format('refs/heads/{0}', inputs.production-branch)
         uses: './.github/actions/scan-app'
         with:
           app: ${{ inputs.app }}
