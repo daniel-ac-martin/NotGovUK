@@ -40,7 +40,7 @@ export default HtmlComponent;
 
   return [
     {
-      name: 'html-react-loader-pre',
+      name: 'html-react-pre',
       enforce: 'pre',
 
       resolveId(source, importer) {
@@ -50,38 +50,26 @@ export default HtmlComponent;
             !importer.startsWith('virtual:') &&
             isMatch(source)
         ) {
-          // Convert to a virtual module ID so Vite does NOT treat it as an HTML page
           const basedir = dirname(importer);
           return join(basedir, source) + '?' + TAG;
         }
       }
     },{
-      name: 'html-react-loader',
+      name: 'html-react',
 
       load (id) {
         const [ filepath, tag ] = id.split('?');
         if (tag !== TAG) return;
 
-        console.log('htmlReactLoader.load()');
-        console.log(id);
-
         const content = readFileSync(filepath, 'utf-8');
 
-        console.log(content);
-
-        // return content;
         return jsWrap(content);
       },
       transform (_code, id) {
         const [ filepath, tag ] = id.split('?');
         if (!isMatch(filepath) || (tag === TAG && _code.startsWith('//HTML\n'))) return;
 
-        console.log('htmlReactLoader.transform()');
-        console.log(id);
-
         const code = jsWrap(_code);
-
-        console.log(code);
 
         return {
           code,
