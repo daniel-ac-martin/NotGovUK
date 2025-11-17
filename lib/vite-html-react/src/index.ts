@@ -19,24 +19,6 @@ export const htmlReact = (options: HtmlReactOptions = {
 }): PluginOption => {
   const { extensions = defaultExtensions } = options;
   const isMatch = (id: string): boolean => extensions.reduce((acc, cur) => acc || id.endsWith(cur), false);
-  const jsWrap = (html: string): string => {
-    const clean = (
-          JSON.stringify(html)
-            .replace(/\u2028/g, '\\u2028')
-            .replace(/\u2029/g, '\\u2029')
-        );
-    return `//HTML
-import { createElement as h } from 'react';
-
-const html = ${clean};
-const HtmlComponent = () => h('div', {
-  dangerouslySetInnerHTML: { __html: html }
-});
-
-export const test = 'FOO';
-export default HtmlComponent;
-`;
-  };
 
   return [
     {
@@ -78,6 +60,25 @@ export default HtmlComponent;
       }
     }
   ];
-}
+};
+
+const jsWrap = (html: string): string => {
+  const clean = (
+    JSON.stringify(html)
+      .replace(/\u2028/g, '\\u2028')
+      .replace(/\u2029/g, '\\u2029')
+  );
+  return `//HTML
+import { createElement as h } from 'react';
+
+const html = ${clean};
+const HtmlComponent = () => h('div', {
+  dangerouslySetInnerHTML: { __html: html }
+});
+
+export const test = 'FOO';
+export default HtmlComponent;
+`;
+};
 
 export default htmlReact;
