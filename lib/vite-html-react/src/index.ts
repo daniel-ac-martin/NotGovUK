@@ -1,65 +1,33 @@
-import type { PluginOption } from 'vite';
-
-import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import type { Plugin } from 'vite';
 
 export type HtmlReactOptions = undefined | {
   extensions?: string[]
 };
 
 const defaultExtensions = [
-  '.htm',
-  '.html'
+  '.htm'
 ];
-
-const TAG = 'html-react';
 
 export const htmlReact = (options: HtmlReactOptions = {
   extensions: defaultExtensions
-}): PluginOption => {
+}): Plugin => {
   const { extensions = defaultExtensions } = options;
   const isMatch = (id: string): boolean => extensions.reduce((acc, cur) => acc || id.endsWith(cur), false);
 
-  return [
-    {
-      name: 'html-react-pre',
-      enforce: 'pre',
+  return {
+    name: 'html-react',
 
-      resolveId(source, importer) {
-        if (
-          importer &&
-            !importer.startsWith('\0') &&
-            !importer.startsWith('virtual:') &&
-            isMatch(source)
-        ) {
-          const basedir = dirname(importer);
-          return join(basedir, source) + '?' + TAG;
-        }
-      }
-    },{
-      name: 'html-react',
+    transform (_code, id) {
+      if (!isMatch(id)) return;
 
-      load (id) {
-        const [ filepath, tag ] = id.split('?');
-        if (tag !== TAG) return;
+      const code = jsWrap(_code);
 
-        const content = readFileSync(filepath, 'utf-8');
-
-        return jsWrap(content);
-      },
-      transform (_code, id) {
-        const [ filepath, tag ] = id.split('?');
-        if (!isMatch(filepath) || (tag === TAG && _code.startsWith('//HTML\n'))) return;
-
-        const code = jsWrap(_code);
-
-        return {
-          code,
-          map: null
-        };
-      }
+      return {
+        code,
+        map: null
+      };
     }
-  ];
+  };
 };
 
 const jsWrap = (html: string): string => {

@@ -44,6 +44,8 @@ const Component = () => (
 
 Typically, the HTML file would only contain a portion of your HTML, rather than a full page.
 
+**Note:**: Vite doesn't allow for `.html` files to be used; by default we us `.htm` instead.
+
 
 Working on this package
 -----------------------
