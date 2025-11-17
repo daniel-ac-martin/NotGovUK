@@ -2,19 +2,20 @@
   "name": "@not-govuk/vite-html-react",
   "version": "0.16.3",
   "description": "A Vite plugin for importing HTML files as React components.",
+  "type": "module",
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts"
   },
   "publishConfig": {
-    "main": "dist/index.js",
-    "module": "dist/index.mjs",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
     "typings": "dist/index.d.ts",
     "exports": {
       ".": {
-        "default": "./dist/index.mjs",
-        "import": "./dist/index.mjs",
-        "require": "./dist/index.js",
+        "default": "./dist/index.js",
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs",
         "types": "./dist/index.d.ts"
       }
     }
@@ -25,9 +26,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:esm": "tsc -m es2022",
+    "build:cjs": "tsc -m commonjs && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.cjs\"' {} \\;",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
