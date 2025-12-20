@@ -44,7 +44,6 @@ const HtmlComponent = () => h('div', {
   dangerouslySetInnerHTML: { __html: html }
 });
 
-export const test = 'FOO';
 export default HtmlComponent;
 `;
 };
