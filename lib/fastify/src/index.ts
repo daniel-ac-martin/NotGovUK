@@ -1,17 +1,22 @@
 import type { FastifyInstance, FastifyServerOptions, onCloseAsyncHookHandler, RouteHandlerMethod } from 'fastify';
+import type { FastifyAuthOptions } from '@not-govuk/fastify-auth';
 import type { FastifyHardenOptions } from '@not-govuk/fastify-harden';
 
 import closeWithGrace from 'close-with-grace';
 import _Fastify from 'fastify';
+import fastifyAuth from '@not-govuk/fastify-auth';
 import fastifyHarden from '@not-govuk/fastify-harden';
 import { NodeEnv } from './config-helpers';
 
 export type IsFunction = (() => Promise<boolean>) | (() => boolean);
 export type OnClose = (() => Promise<void>) | (() => void);
 export type FastifyOptions = FastifyServerOptions & FastifyHardenOptions & {
+  auth?: FastifyAuthOptions
+  cookies?: Required<FastifyAuthOptions>['session']['cookies']
   isLive?: IsFunction
   isReady?: IsFunction
   onClose?: OnClose
+  session?: Omit<FastifyAuthOptions['session'], 'cookies'>
 };
 
 type FastifyLogger = FastifyServerOptions['logger'];
@@ -38,6 +43,10 @@ const parseForwarded = (hdr: undefined | string | string[]): undefined | string 
 };
 
 export const Fastify = ({
+  auth,
+  cookies = {
+    secret: 'changeme'
+  },
   contentSecurityPolicy,
   dev = process.env.NODE_ENV === NodeEnv.Development,
   isLive = is,
@@ -45,6 +54,7 @@ export const Fastify = ({
   logger,
   onClose,
   permissionsPolicy,
+  session,
   ...options
 }: FastifyOptions): FastifyInstance => {
   const isTTY = process.stdout.isTTY;
@@ -92,6 +102,16 @@ export const Fastify = ({
     permissionsPolicy
   });
 
+  if (auth || session) {
+    httpd.register(fastifyAuth, {
+      ...auth,
+      session: {
+        ...session,
+        cookies
+      }
+    });
+  }
+
   httpd.get('/healthz', probeHandler(isLive));
   httpd.get('/readiness', probeHandler(isReady));
 
@@ -120,4 +140,5 @@ export const Fastify = ({
 
 export default Fastify;
 export type { FastifyInstance, RouteHandlerMethod };
+export { AuthMethod, SessionStore } from '@not-govuk/fastify-auth';
 export * from './config-helpers';
