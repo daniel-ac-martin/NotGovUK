@@ -10,6 +10,7 @@ import {
 } from 'react-router';
 import type { Route } from './+types/root';
 import { A, NotGovUKPage } from '@not-govuk/components';
+import { cspNonceContext } from '@not-govuk/react-router-context';
 
 import './app.scss';
 
@@ -17,7 +18,7 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export const loader = async ({ context }: Route.LoaderArgs) => ({
-  nonce: context?.nonce
+  nonce: context.get(cspNonceContext)
 });
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -138,6 +139,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
   return (
     <main>
+      <title>{message}</title>
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (

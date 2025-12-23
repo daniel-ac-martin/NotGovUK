@@ -9,5 +9,5 @@ await httpd.register(fastifyReactRouterDev, reactRouterOptions);
 
 await httpd.listen({
   host: '::1',
-  port: 5173
+  port: config.httpd.port
 });
