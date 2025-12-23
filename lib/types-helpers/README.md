@@ -10,7 +10,7 @@ Using this package
 First install the package into your project:
 
 ```shell
-npm install -S @not-govuk/types-helpers
+npm install -S -D @not-govuk/types-helpers
 ```
 
 Then use it in your code as follows:
