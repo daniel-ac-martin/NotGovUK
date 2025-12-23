@@ -50,7 +50,7 @@ const httpd = Fastify();
 
 httpd.register(fastifyConsentCookies, {
   cookies: myCookies,
-  secret: 'my-encryption-secret'
+  secret: 'changeme' // Change this to a secret string that is shared across instances of your application
 });
 
 httpd.get('/', async (req, reply) => {
