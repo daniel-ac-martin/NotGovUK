@@ -116,6 +116,7 @@ export default defineConfig({
       '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
       '@not-govuk/head': '@not-govuk/head/dummy',
       '@not-govuk/router': '@not-govuk/router/remix',
+      '@not-govuk/sass-base': '@not-govuk/sass-base/vite',
     }
   }
   [...]
@@ -146,6 +147,33 @@ import { Panel } from '@not-govuk/simple-components';
 ```
 
 You should also alter your `next.config.js` to modify some of the modules to versions that are designed to work under Next.js.
+
+
+#### With Turbopack (newer)
+
+```js
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  // This allows us to handle next-example, the same way we do standard apps, in CI
+  distDir: 'dist',
+  sassOptions: {
+    quietDeps: true, // Works around issues with govuk-frontend
+    silenceDeprecations: ['import'] // This is required until govuk-frontend moves to using modules
+  },
+  turbopack: {
+    resolveAlias: {
+      '@not-govuk/head': '@not-govuk/head/dummy',    // ADD THIS LINE
+      '@not-govuk/router': '@not-govuk/router/next', // ADD THIS LINE
+    }
+  }
+};
+
+export default nextConfig;
+```
+
+
+#### With Webpack (older)
 
 ```js
 import webpack from 'webpack';
