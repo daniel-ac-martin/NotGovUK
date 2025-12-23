@@ -1,16 +1,19 @@
 // Inspired by @react-router/express
 // See: https://github.com/remix-run/react-router/blob/c1cddedf656271a3eec8368f2854c733b3fe27da/packages/react-router-express/server.ts
 
-import type { FastifyInstance, FastifyRequest, RouteHandlerMethod } from 'fastify';
+import type { FastifyInstance, FastifyRequest } from 'fastify';
 import type {
   AppLoadContext,
   RouterContext,
   ServerBuild,
   UNSAFE_MiddlewareEnabled as MiddlewareEnabled
 } from 'react-router';
+import type { RouteHandlerMethod } from '@not-govuk/fastify-auth';
 import type { FastifyReply } from '@not-govuk/fastify-harden';
+import { EnhancedProvider } from '@not-govuk/react-router-context';
 
 import { RouterContextProvider, createRequestHandler } from 'react-router';
+import { cspNonceContext, userInfoContext } from '@not-govuk/react-router-context';
 import { createRequest, sendResponse } from './fetch';
 
 type MaybePromise<T> = T | Promise<T>;
@@ -30,8 +33,6 @@ export type Options = {
   stream?: boolean
 };
 
-export const nonceContext = 'CSP_NONCE' as RouterContext<string | undefined>;
-
 const allowedMethods = new Set(['GET', 'HEAD', 'POST']);
 
 export const addHandler = (
@@ -50,14 +51,17 @@ export const addHandler = (
     }
 
     const nonce = reply.cspNonce;
+    const user = req.user;
     const context: RouterContextProvider | AppLoadContext = await getLoadContext?.(req, reply) ?? new RouterContextProvider();
 
     if (context instanceof RouterContextProvider) {
-      context.set(nonceContext, nonce);
+      context.set(cspNonceContext, nonce);
+      context.set(userInfoContext, user);
     }
-    (context as any).nonce = nonce; // Legacy support (remove in React Router v8?)
+    (context as EnhancedProvider).cspNonce = nonce; // Legacy support (remove in React Router v8?)
+    (context as EnhancedProvider).user = user; // Legacy support (remove in React Router v8?)
 
-    const appRequest = createRequest(req);
+    const appRequest = createRequest(req, { cspNonce: reply.cspNonce });
     const appResponse = await handleAppRequest(appRequest, context as LoadContext);
 
     await sendResponse(reply, appResponse, stream);
@@ -69,3 +73,4 @@ export const addHandler = (
 };
 
 export type { ServerBuild };
+export type { EnhancedRequest as Request } from './fetch';

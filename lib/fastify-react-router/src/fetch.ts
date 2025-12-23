@@ -10,6 +10,12 @@ import {
   readableStreamToString,
 } from './stream';
 
+type ExtraData = {
+  cspNonce?: string
+};
+
+export type EnhancedRequest = Request & ExtraData;
+
 type EnhancedRequestInit = RequestInit & {
   duplex?: 'half'
 };
@@ -25,7 +31,7 @@ export const createRequest = ({
   originalUrl,
   protocol,
   raw
-}: FastifyRequest): Request => {
+}: FastifyRequest, extra: ExtraData): EnhancedRequest => {
   const url = new URL(`${protocol}://${host}${originalUrl}`);
   const headers = new Headers(_headers as SimpleHeaders);
   const controller = new AbortController();
@@ -36,7 +42,7 @@ export const createRequest = ({
   };
   const init: EnhancedRequestInit = (
     safeMethods.has(method)
-    ? baseInit
+      ? baseInit
       : {
         ...baseInit,
         body: createReadableStreamFromReadable(raw),
@@ -48,7 +54,11 @@ export const createRequest = ({
   raw.on('finish', () => { finished = true; });
   raw.on('close', () => !finished && controller.abort());
 
-  return new Request(url.href, init);
+  const request = new Request(url.href, init);
+
+  Object.assign(request, extra);
+
+  return request;
 };
 
 export const sendResponse = async (reply: FastifyReply, res: Response, stream: boolean = false): Promise<void> => {
