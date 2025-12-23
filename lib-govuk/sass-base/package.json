@@ -3,6 +3,17 @@
   "version": "0.16.3",
   "description": "The base SASS code for GovUK styling.",
   "sass": "src/index.scss",
+  "exports": {
+    ".": {
+      "sass": "./src/index.scss"
+    },
+    "./turbopack": {
+      "sass": "./src/turbopack.scss"
+    },
+    "./vite": {
+      "sass": "./src/vite.scss"
+    }
+  },
   "files": [
     "/src"
   ],

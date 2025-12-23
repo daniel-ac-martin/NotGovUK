@@ -8,8 +8,8 @@ $govuk-font-family: inherit;
 $govuk-text-colour: inherit;
 $govuk-link-active-colour: inherit;
 
-// Set the asset path to be relative to the SCSS components
-$govuk-assets-path: '../../assets/';
+// Set the default asset path to be relative to the SCSS components
+$govuk-assets-path: '../../assets/' !default; // This default should probably change in the future
 
 // Enable new organisation colours
 $govuk-new-organisation-colours: true;
