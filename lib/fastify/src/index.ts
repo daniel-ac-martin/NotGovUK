@@ -4,7 +4,7 @@ import type { FastifyHardenOptions } from '@not-govuk/fastify-harden';
 
 import closeWithGrace from 'close-with-grace';
 import _Fastify from 'fastify';
-import fastifyAuth from '@not-govuk/fastify-auth';
+import fastifyAuth, { AuthMethod } from '@not-govuk/fastify-auth';
 import fastifyHarden from '@not-govuk/fastify-harden';
 import { NodeEnv } from './config-helpers';
 
@@ -43,7 +43,7 @@ const parseForwarded = (hdr: undefined | string | string[]): undefined | string 
 };
 
 export const Fastify = ({
-  auth,
+  auth: _auth,
   cookies = {
     secret: 'changeme'
   },
@@ -103,6 +103,17 @@ export const Fastify = ({
     logger,
     ...options
   });
+  const auth = (
+    (session?.store === undefined) && (_auth === undefined || _auth.method === AuthMethod.None)
+      ? undefined
+      : {
+        ...(_auth || {}),
+        session: {
+          ...(session || {}),
+          cookies
+        }
+      }
+  );
 
   httpd.register(fastifyHarden, {
     contentSecurityPolicy,
@@ -110,14 +121,8 @@ export const Fastify = ({
     permissionsPolicy
   });
 
-  if (auth || session) {
-    httpd.register(fastifyAuth, {
-      ...auth,
-      session: {
-        ...session,
-        cookies
-      }
-    });
+  if (auth) {
+    httpd.register(fastifyAuth, auth);
   }
 
   httpd.get('/healthz', probeHandler(isLive));
@@ -148,5 +153,6 @@ export const Fastify = ({
 
 export default Fastify;
 export type { FastifyInstance, RouteHandlerMethod };
-export { AuthMethod, SessionStore } from '@not-govuk/fastify-auth';
+export { AuthMethod };
+export { SessionStore } from '@not-govuk/fastify-auth';
 export * from './config-helpers';
