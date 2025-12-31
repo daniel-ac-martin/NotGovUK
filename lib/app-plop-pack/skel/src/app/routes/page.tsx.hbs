@@ -1,0 +1,136 @@
+{{#if param}}
+import type { Route } from "./+types/{{{name}}}.${{{param}}}";
+{{else}}
+import type { Route } from "./+types/{{{name}}}";
+{{/if}}
+{{#if data}}
+import { data } from 'react-router';
+{{/if}}
+{{#if query}}
+import { useLocation } from '@not-govuk/router';
+{{/if}}
+{{#if userinfo}}
+{{#if data}}
+import { userInfoContext } from '@not-govuk/react-router-context';
+{{/if}}
+import { useUserInfo } from '@not-govuk/user-info';
+{{/if}}
+import { siteTitle } from '../config';
+
+export const title = '{{{title}}}';
+const description = '{{{description}}}';
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: `${title} - ${siteTitle}` },
+    { name: 'description', content: description },
+    { name: 'og:title', content: title },
+    { name: 'og:description', content: description },
+  ];
+}
+
+{{#if data}}
+export async function loader({
+{{#if userinfo}}
+  context,
+{{/if}}
+{{#if param}}
+  params,
+{{/if}}
+}: Route.LoaderArgs) {
+  let error: string = '';
+
+  const Redact = <T = unknown>(roles: string[]) => (obj: Record<string, T>) => (key: string, role: string) => {
+    if (!roles.includes(role)) {
+      error = `You do not have permission to access the property '${key}' on this object.`
+    }
+
+    return obj[key];
+  };
+  const user = context.get(userInfoContext);
+  const redactor = Redact<string>(user?.roles || []);
+
+  // Some fake data
+  const bookData: Book[] = [
+    {
+      title: "Harry Potter and the Sorcerer's stone",
+      author: 'J.K. Rowling',
+    },
+    {
+      title: 'Jurassic Park',
+      author: 'Michael Crichton',
+    },
+  ];
+  const books: Book[] = bookData.map(e => {
+    const redact = redactor(e);
+
+    return {
+      title: redact('title', 'books.title'),
+      author: redact('author', 'books.author')
+    }
+  });
+
+  return (
+    error
+    ? data({ error }, 403)
+    : data({ books })
+  );
+}
+
+{{/if}}
+{{#if action}}
+export async function action({
+{{#if userinfo}}
+  context,
+{{/if}}
+{{#if param}}
+  params,
+{{/if}}
+  request,
+}: Route.ActionArgs) {
+{{#if userinfo}}
+  const user = context.get(userInfoContext);
+{{/if}}
+  const formData = await request.formData();
+
+  return {
+    result: !!(formData.get('feedback')),
+    formData: Object.fromEntries(formData)
+  };
+}
+
+{{/if}}
+export default function {{{properCase title}}}({
+{{#if action}}
+  actionData,
+{{/if}}
+{{#if data}}
+  loaderData,
+{{/if}}
+}: Route.ComponentProps) {
+{{#if userinfo}}
+  const { displayName, name } = useUserInfo() || {};
+  const { givenName } = name || {};
+  const user = displayName || givenName || 'Guest';
+{{/if}}
+{{#if query}}
+  const location = useLocation();
+  const n = Number(location.query['n']) || 0;
+{{/if}}
+
+  return (
+    <>
+      <h1>{title}</h1>
+      <p>{description}</p>
+{{#if userinfo}}
+      <h2>Accessing user info</h2>
+      <p>Hello {user}!</p>
+{{/if}}
+{{#if query}}
+      <h2>Accessing query parameters</h2>
+      <p>n = {n}</p>
+      <p><a href={`/{{{ name }}}?n=${n + 1}`}>Next</a></p>
+{{/if}}
+    </>
+  );
+}
