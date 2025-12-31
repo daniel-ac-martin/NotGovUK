@@ -1,6 +1,24 @@
 {
-  "extends": "../../tsconfig.webpack.json",
+  "extends": "../../tsconfig.vite.json",
+  "compilerOptions": {
+    "rootDirs": [".", ".react-router/types"],
+    "outDir": "dist",
+    "paths": {
+      "~/*": ["./src/app/*"]
+    }
+  },
   "include": [
-    "src"
+    "src",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*",
+    "../../components-internal/*/src",
+    "../../components/*/src",
+    "../../lib-govuk/*/src",
+    "../../lib/*/src"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
   ]
 }

@@ -1,18 +1,11 @@
-FROM node:24.11.0-alpine
+FROM public.ecr.aws/lambda/nodejs:22
 
-RUN apk add --no-cache ca-certificates \
- && apk upgrade --no-cache \
- && addgroup -S app \
- && adduser -S app -G app -u 31337 -h /app/ \
- && chown -R app:app /app/
-
-USER app
-WORKDIR /app
 ENV NODE_ENV production
-ENV MODE server
+ENV MODE serverless
 
-COPY package.json /app/
-COPY dist/ /app/dist/
+COPY package.json ${LAMBDA_TASK_ROOT}/
+COPY dist/ ${LAMBDA_TASK_ROOT}/dist/
+COPY aws-lambda-entry.js ${LAMBDA_TASK_ROOT}/entry.js
 
 USER 31337
 ENV LISTEN_HOST="::" \
@@ -27,6 +20,4 @@ ENV LISTEN_HOST="::" \
     AUTH_HEADER_USERNAME="x-auth-username" \
     AUTH_HEADER_GROUPS="x-auth-groups" \
     AUTH_HEADER_ROLES="x-auth-roles"
-EXPOSE ${LISTEN_PORT:-8080}
-HEALTHCHECK CMD wget -q -O /dev/null http://localhost/healthz:${LISTEN_PORT} || exit 1
-CMD ["node", "."]
+CMD ["entry.handler"]
