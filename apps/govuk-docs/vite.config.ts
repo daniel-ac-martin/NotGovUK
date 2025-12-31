@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import mdx from '@mdx-js/rollup'
+import html from '@not-govuk/vite-html-react';
 import { reactRouter } from '@react-router/dev/vite';
 import { vite as csf } from '@storybook/csf-plugin';
 import reactDocgenTypescript from '@joshwooding/vite-plugin-react-docgen-typescript';
@@ -23,6 +24,7 @@ export default defineConfig({
   plugins: [
     reactDocgenTypescript(),
     csf(),
+    html(),
     mdx(),
     reactRouter(),
   ],

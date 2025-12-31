@@ -9,21 +9,30 @@ import {
   useRouteLoaderData
 } from 'react-router';
 import type { Route } from './+types/root';
-import { A, NotGovUKPage } from '@not-govuk/components';
-import { cspNonceContext } from '@not-govuk/react-router-context';
+import { A, NotGovUKPage as Page } from '@not-govuk/components';
+import { cspNonceContext, sanitiseUserInfo, userInfoContext } from '@not-govuk/react-router-context';
+import { UserInfoContext } from '@not-govuk/user-info';
+import { siteTitle } from './config';
 
 import './app.scss';
 
 export const links: Route.LinksFunction = () => [
 ];
 
-export const loader = async ({ context }: Route.LoaderArgs) => ({
-  nonce: context.get(cspNonceContext)
-});
+export const loader = async ({ context }: Route.LoaderArgs) => {
+  const nonce = context.get(cspNonceContext);
+  const user = context.get(userInfoContext);
+
+  return {
+    nonce,
+    user: user && sanitiseUserInfo(user)
+  };
+};
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const data = useRouteLoaderData('root');
   const nonce = data?.nonce;
+  const userInfo = data?.user;
 
   return (
     <html lang="en">
@@ -41,35 +50,37 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <NotGovUKPage
-          feedbackHref="https://github.com/daniel-ac-martin/NotGovUK/issues/new"
-          footerContent={(
-            <>
-              Copyright (C) 2019-2025 Crown Copyright<br />
-              Copyright (C) 2019-2025 <A href="https://github.com/daniel-ac-martin">Daniel A.C. Martin</A><br />
-              NotGovUK operates independently from <A href="https://gov.uk">GOV.UK</A> and is not affiliated, endorsed or supported by HM Government
-            </>
-          )}
-          navigation={[
-            { href: '/get-started', text: 'Get started' },
-            { href: '/styles', text: 'Styles' },
-            { href: '/components', text: 'Components' },
-            { href: '/contributing', text: 'Contributing' }
-          ]}
-          meta={[
-            { href: "https://github.com/daniel-ac-martin/NotGovUK", text: "GitHub" },
-            { href: "/sitemap", text: "Sitemap" },
-            { href: "https://github.com/daniel-ac-martin/NotGovUK/issues/new", text: "Contact" },
-          ]}
-          organisationHref="/"
-          organisationText="!GOV.UK"
-          serviceHref="/"
-          serviceName="NotGovUK"
-          title="NotGovUK"
-          maxContentsWidth={1100}
-        >
-          {children}
-        </NotGovUKPage>
+        <UserInfoContext.Provider value={userInfo}>
+          <Page
+            feedbackHref="https://github.com/daniel-ac-martin/NotGovUK/issues/new"
+            footerContent={(
+              <>
+                Copyright (C) 2019-2025 Crown Copyright<br />
+                Copyright (C) 2019-2025 <A href="https://github.com/daniel-ac-martin">Daniel A.C. Martin</A><br />
+                NotGovUK operates independently from <A href="https://gov.uk">GOV.UK</A> and is not affiliated, endorsed or supported by HM Government
+              </>
+            )}
+            navigation={[
+              { href: '/get-started', text: 'Get started' },
+              { href: '/styles', text: 'Styles' },
+              { href: '/components', text: 'Components' },
+              { href: '/contributing', text: 'Contributing' }
+            ]}
+            meta={[
+              { href: "https://github.com/daniel-ac-martin/NotGovUK", text: "GitHub" },
+              { href: "/sitemap", text: "Sitemap" },
+              { href: "https://github.com/daniel-ac-martin/NotGovUK/issues/new", text: "Contact" },
+            ]}
+            organisationHref="/"
+            organisationText="!GOV.UK"
+            serviceHref="/"
+            serviceName={siteTitle}
+            title={siteTitle}
+            maxContentsWidth={1100}
+          >
+            {children}
+          </Page>
+        </UserInfoContext.Provider>
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
       </body>

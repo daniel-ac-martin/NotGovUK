@@ -1,10 +1,8 @@
 import type { Route } from "./+types/components";
-import { redirect } from 'react-router';
+import { Outlet, redirect } from 'react-router';
 import { NavigationMenu } from '@not-govuk/components';
-import { DocsPage } from '@not-govuk/docs-components';
 import { internalComponentLinks, mainComponentLinks, unofficialComponentLinks  } from '../stories';
 import { siteTitle } from '../config';
-import Markdown from '../../../../../docs/components.md';
 
 export const title = 'Components';
 const description = `The components provided in ${siteTitle}`;
@@ -30,7 +28,7 @@ export default function Components() {
         <NavigationMenu items={internalComponentLinks} />
       </div>
       <div className="govuk-grid-column-three-quarters">
-        <Markdown />
+        <Outlet />
       </div>
     </div>
   );

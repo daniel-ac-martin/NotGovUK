@@ -1,5 +1,5 @@
 import type { Route } from "./+types/styles";
-import { redirect } from 'react-router';
+import { Outlet, redirect } from 'react-router';
 import { NavigationMenu } from '@not-govuk/components';
 import { DocsPage } from '@not-govuk/docs-components';
 import { styleLinks } from '../stories';
@@ -25,13 +25,7 @@ export default function Styles() {
         <NavigationMenu items={styleLinks} />
       </div>
       <div className="govuk-grid-column-three-quarters">
-        <h1>{title}</h1>
-        <p>
-          Make your service look and feel like GOV.UK.
-        </p>
-        <p>
-          If you need to apply styles manually, you should still follow existing GOV.UK conventions. For example, do not assign new meanings to colours, do not change the style of buttons or adjust the thickness of borders on form inputs.
-        </p>
+        <Outlet />
       </div>
     </div>
   );
