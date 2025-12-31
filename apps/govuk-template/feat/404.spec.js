@@ -3,7 +3,7 @@ const target = '/404';
 const pageWorks = () => {
   it('is the correct page', () => {
     cy.contains('Page not found').should('be.visible');
-    cy.contains('/404 does not exist.').should('be.visible');
+    cy.contains('If you typed the web address, check it is correct.').should('be.visible');
   });
 
   it('has the correct title', () => {
