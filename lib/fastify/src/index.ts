@@ -115,6 +115,10 @@ export const Fastify = ({
       }
   );
 
+  httpd.log.debug(`Privacy mode: ${!!auth?.privacy}`);
+  httpd.log.debug(`Authentication method: ${auth?.method || 'none'}`);
+  httpd.log.debug(`Session store: ${session?.store}`);
+
   httpd.register(fastifyHarden, {
     contentSecurityPolicy,
     dev,
