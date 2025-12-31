@@ -51,7 +51,7 @@ export const Fastify = ({
   dev = process.env.NODE_ENV === NodeEnv.Development,
   isLive = is,
   isReady = is,
-  logger,
+  logger: _logger = {},
   onClose,
   permissionsPolicy,
   session,
@@ -87,12 +87,20 @@ export const Fastify = ({
       target: '@not-govuk/fastify-dev-logger'
     }
   };
+  const logger = (
+    _logger instanceof Object
+      ? {
+        ...(
+          !(dev && isTTY)
+            ? stdLogger
+            : devLogger
+        ),
+        ..._logger
+      }
+      : _logger
+  );
   const httpd = _Fastify({
-    logger: logger || (
-      !(dev && isTTY)
-        ? stdLogger
-        : devLogger
-    ),
+    logger,
     ...options
   });
 
