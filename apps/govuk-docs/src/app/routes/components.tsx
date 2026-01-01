@@ -1,7 +1,7 @@
 import type { Route } from "./+types/components";
 import { Outlet, redirect } from 'react-router';
 import { NavigationMenu } from '@not-govuk/components';
-import { internalComponentLinks, mainComponentLinks, unofficialComponentLinks  } from '../stories';
+import { internalComponentLinks, mainComponentLinks, unofficialComponentLinks } from '../stories';
 import { siteTitle } from '../config';
 
 export const title = 'Components';
