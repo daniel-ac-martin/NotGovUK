@@ -1,6 +1,7 @@
 import type { FastifyInstance, FastifyServerOptions, onCloseAsyncHookHandler, RouteHandlerMethod } from 'fastify';
 import type { FastifyAuthOptions } from '@not-govuk/fastify-auth';
 import type { FastifyHardenOptions } from '@not-govuk/fastify-harden';
+import type { Maybe } from '@not-govuk/types-helpers';
 
 import closeWithGrace from 'close-with-grace';
 import _Fastify from 'fastify';
@@ -8,15 +9,16 @@ import fastifyAuth, { AuthMethod } from '@not-govuk/fastify-auth';
 import fastifyHarden from '@not-govuk/fastify-harden';
 import { NodeEnv } from './config-helpers';
 
+type SessionOptions = Required<FastifyAuthOptions>['session'];
 export type IsFunction = (() => Promise<boolean>) | (() => boolean);
 export type OnClose = (() => Promise<void>) | (() => void);
 export type FastifyOptions = FastifyServerOptions & FastifyHardenOptions & {
   auth?: FastifyAuthOptions
-  cookies?: Required<FastifyAuthOptions>['session']['cookies']
+  cookies?: SessionOptions['cookies']
   isLive?: IsFunction
   isReady?: IsFunction
   onClose?: OnClose
-  session?: Omit<FastifyAuthOptions['session'], 'cookies'>
+  session?: Omit<SessionOptions, 'cookies'>
 };
 
 type FastifyLogger = FastifyServerOptions['logger'];
@@ -103,13 +105,13 @@ export const Fastify = ({
     logger,
     ...options
   });
-  const auth = (
+  const auth: Maybe<FastifyAuthOptions> = (
     (session?.store === undefined) && (_auth === undefined || _auth.method === AuthMethod.None)
       ? undefined
       : {
         ...(_auth || {}),
         session: {
-          ...(session || {}),
+          ...(session || {} as any),
           cookies
         }
       }
