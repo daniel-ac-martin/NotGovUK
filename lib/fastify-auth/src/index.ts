@@ -1,4 +1,5 @@
 import type { FastifyPluginCallback } from 'fastify';
+import type { RateLimitPluginOptions } from '@fastify/rate-limit';
 import type { FastifySessionOptions } from '@not-govuk/fastify-session';
 import type { Options as _BasicOptions } from './basic';
 import type { Options as _DummyOptions } from './dummy';
@@ -7,6 +8,7 @@ import type { Options as _OIDCOptions } from './oidc';
 import type { Maybe, Reply, Request, RequestFull, Serialize, SerDes, UserProfile } from './common';
 
 import fp from 'fastify-plugin';
+import fastifyRateLimit from '@fastify/rate-limit';
 import fastifySession, { SessionStore } from '@not-govuk/fastify-session';
 import { basic } from './basic';
 import { dummy } from './dummy';
@@ -47,6 +49,7 @@ export type FastifyAuthPluginOptions = MethodOptions & {
   signOutPath?: string
   callbackPath?: string
   redirectPath?: string
+  rateLimit?: Omit<RateLimitPluginOptions, 'global'>
 };
 
 const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async (
@@ -59,6 +62,10 @@ const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async
     signOutPath = 'sign-out',
     callbackPath = 'callback',
     redirectPath = '/',
+    rateLimit: _rateLimit = {
+      max: 60,
+      timeWindow: 60000, // 1 minute
+    },
     ...methodOptions
   }
 ) => {
@@ -75,6 +82,10 @@ const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async
   );
   const redirect = async (_req: Request, reply: Reply) => {
     return reply.redirect(redirectPath, 302);
+  };
+  const rateLimit = _rateLimit && {
+    ..._rateLimit,
+    global: true
   };
 
   const {
@@ -102,6 +113,8 @@ const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async
   fastify.decorateRequest('user', null)
 
   if (authenticate) {
+    fastify.register(fastifyRateLimit, rateLimit);
+
     if (useSession) {
       fastify.addHook('onSend', async (req: Request, _reply, _payload) => {
         if (req.user) {
