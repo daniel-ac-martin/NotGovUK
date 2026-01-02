@@ -1,10 +1,12 @@
 import type { FastifyInstance, FastifyServerOptions, onCloseAsyncHookHandler, RouteHandlerMethod } from 'fastify';
+import type { RateLimitPluginOptions } from '@fastify/rate-limit';
 import type { FastifyAuthOptions } from '@not-govuk/fastify-auth';
 import type { FastifyHardenOptions } from '@not-govuk/fastify-harden';
 import type { Maybe } from '@not-govuk/types-helpers';
 
 import closeWithGrace from 'close-with-grace';
 import _Fastify from 'fastify';
+import fastifyRateLimit from '@fastify/rate-limit';
 import fastifyAuth, { AuthMethod } from '@not-govuk/fastify-auth';
 import fastifyHarden from '@not-govuk/fastify-harden';
 import { NodeEnv } from './config-helpers';
@@ -18,6 +20,7 @@ export type FastifyOptions = FastifyServerOptions & FastifyHardenOptions & {
   isLive?: IsFunction
   isReady?: IsFunction
   onClose?: OnClose
+  rateLimit?: Omit<RateLimitPluginOptions, 'global'>
   session?: Omit<SessionOptions, 'cookies'>
 };
 
@@ -56,6 +59,7 @@ export const Fastify = ({
   logger: _logger = {},
   onClose,
   permissionsPolicy,
+  rateLimit: _rateLimit,
   session,
   ...options
 }: FastifyOptions): FastifyInstance => {
@@ -109,6 +113,7 @@ export const Fastify = ({
     (session?.store === undefined) && (_auth === undefined || _auth.method === AuthMethod.None)
       ? undefined
       : {
+        rateLimit: _rateLimit,
         ...(_auth || {}),
         session: {
           ...(session || {} as any),
@@ -116,6 +121,10 @@ export const Fastify = ({
         }
       }
   );
+  const rateLimit = _rateLimit && {
+    ..._rateLimit,
+    global: true
+  };
 
   httpd.log.debug(`Privacy mode: ${!!auth?.privacy}`);
   httpd.log.debug(`Authentication method: ${auth?.method || 'none'}`);
@@ -126,6 +135,10 @@ export const Fastify = ({
     dev,
     permissionsPolicy
   });
+
+  if (rateLimit) {
+    httpd.register(fastifyRateLimit, rateLimit);
+  }
 
   if (auth) {
     httpd.register(fastifyAuth, auth);
