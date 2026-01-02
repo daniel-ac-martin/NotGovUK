@@ -1,5 +1,5 @@
 import type { FastifyPluginCallback } from 'fastify';
-import type { RateLimitPluginOptions } from '@fastify/rate-limit';
+import type { RateLimitOptions, RateLimitPluginOptions } from '@fastify/rate-limit';
 import type { FastifySessionOptions } from '@not-govuk/fastify-session';
 import type { Options as _BasicOptions } from './basic';
 import type { Options as _DummyOptions } from './dummy';
@@ -50,6 +50,7 @@ export type FastifyAuthPluginOptions = MethodOptions & {
   callbackPath?: string
   redirectPath?: string
   rateLimit?: Omit<RateLimitPluginOptions, 'global'>
+  authRateLimit?: RateLimitOptions
 };
 
 const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async (
@@ -65,6 +66,10 @@ const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async
     rateLimit: _rateLimit = {
       max: 60,
       timeWindow: 60000, // 1 minute
+    },
+    authRateLimit = {
+      max: 100,
+      timeWindow: 15 * 60000 // 15 minutes
     },
     ...methodOptions
   }
@@ -86,6 +91,11 @@ const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async
   const rateLimit = _rateLimit && {
     ..._rateLimit,
     global: true
+  };
+  const authConfig = {
+    config: {
+      rateLimit: authRateLimit
+    }
   };
 
   const {
@@ -167,7 +177,7 @@ const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async
       });
     } else {
       // Sign-in endpoint
-      fastify.get(pathPrefix + signInPath, async (req: Request, reply) => {
+      fastify.get(pathPrefix + signInPath, authConfig, async (req: Request, reply) => {
         const r = await authenticate(req as RequestFull, reply);
 
         if (!callback) {
@@ -184,7 +194,7 @@ const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async
 
     if (callback) {
       // Callback endpoint
-      fastify.get(pathPrefix + callbackPath, async (req: Request, reply) => {
+      fastify.get(pathPrefix + callbackPath, authConfig, async (req: Request, reply) => {
         const r = await callback(req as RequestFull, reply);
 
         req.log.debug(`User, '${req.user?.username}', authenticated`);
