@@ -122,9 +122,11 @@ const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async
 
   fastify.decorateRequest('user', null)
 
-  if (authenticate) {
+  if (!fastify.hasDecorator('rateLimit') && (authenticate || callback)) {
     fastify.register(fastifyRateLimit, rateLimit);
+  }
 
+  if (authenticate) {
     if (useSession) {
       fastify.addHook('onSend', async (req: Request, _reply, _payload) => {
         if (req.user) {
