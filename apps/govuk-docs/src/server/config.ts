@@ -39,6 +39,8 @@ const serverConfig = {
   },
   devMode,
   env,
+  formAction: [],
+  frameAncestors: [],
   logger: {
     destination: process.env.LOG_DESTINATION,
     level: process.env.LOG_LEVEL || ( devMode ? 'debug' : 'info' )
