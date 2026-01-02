@@ -11,6 +11,7 @@ import type { RouterContextProvider } from "@not-govuk/react-router-context";
 import { cspNonceContext } from "@not-govuk/react-router-context";
 
 export const streamTimeout = 5_000;
+const isServerless = process.env['MODE'] === 'serverless';
 
 export default function handleRequest(
   request: Request,
@@ -28,7 +29,7 @@ export default function handleRequest(
     // Ensure requests from bots and SPA Mode renders wait for all content to load before responding
     // https://react.dev/reference/react-dom/server/renderToPipeableStream#waiting-for-all-content-to-load-for-crawlers-and-static-generation
     let readyOption: keyof RenderToPipeableStreamOptions =
-      (userAgent && isbot(userAgent)) || routerContext.isSpaMode || true
+      (userAgent && isbot(userAgent)) || routerContext.isSpaMode || isServerless
         ? "onAllReady"
         : "onShellReady";
 
