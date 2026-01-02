@@ -90,7 +90,7 @@ const fastifyAuthPlugin: FastifyPluginCallback<FastifyAuthPluginOptions> = async
   };
   const rateLimit = _rateLimit && {
     ..._rateLimit,
-    global: true
+    global: privacy
   };
   const authConfig = {
     config: {
