@@ -9,7 +9,7 @@ const pageWorks = () => (
 describe('Markdown', () => {
   describe('when visiting the page directly', () => {
     it('successfully loads', () => {
-      cy.visit('/mdx');
+      cy.visitReady('/mdx');
     });
 
     pageWorks();
@@ -17,7 +17,7 @@ describe('Markdown', () => {
 
   describe('when visiting the page indirectly', () => {
     before(() => {
-      cy.visit('/');
+      cy.visitReady('/');
       cy.contains('MDX').click();
     });
 

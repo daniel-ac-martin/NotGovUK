@@ -33,7 +33,7 @@ const pageWorks = () => {
 
     describe.skip('after logging in', () => {
       before(() => {
-        cy.visit('/sign-in');
+        cy.visitReady('/sign-in');
         cy.contains('Data flow').click();
       });
 
@@ -46,7 +46,7 @@ const pageWorks = () => {
 describe('Data flow', () => {
   describe('when visiting the page directly', () => {
     it('successfully loads', () => {
-      cy.visit('/data', { failOnStatusCode: false });
+      cy.visitReady('/data', { failOnStatusCode: false });
     });
 
     pageWorks();
@@ -54,7 +54,7 @@ describe('Data flow', () => {
 
   describe('when visiting the page indirectly', () => {
     before(() => {
-      cy.visit('/');
+      cy.visitReady('/');
       cy.contains('Data').click();
     });
 

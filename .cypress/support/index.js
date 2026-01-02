@@ -12,3 +12,12 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
+
+Cypress.Commands.add('visitReady', (
+  url,
+  options,
+  selector = '.js-enabled'
+) => {
+  cy.visit(url, options);
+  cy.get(selector).should('exist');
+});

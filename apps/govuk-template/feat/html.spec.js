@@ -8,7 +8,7 @@ const pageWorks = () => (
 describe('HTML', () => {
   describe('when visiting the page directly', () => {
     it('successfully loads', () => {
-      cy.visit('/html');
+      cy.visitReady('/html');
     });
 
     pageWorks();
@@ -16,7 +16,7 @@ describe('HTML', () => {
 
   describe('when visiting the page indirectly', () => {
     before(() => {
-      cy.visit('/');
+      cy.visitReady('/');
       cy.contains('Html').click();
     });
 

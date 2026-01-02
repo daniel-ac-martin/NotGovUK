@@ -9,7 +9,7 @@ const logInBasic = () => {
       .toString('base64')
   );
 
-  cy.visit('/auth/sign-in', {
+  cy.visitReady('/auth/sign-in', {
     headers: {
       authorization: `Basic ${encoded}`
     }
@@ -20,7 +20,7 @@ describe(`Authentication (${config.auth.method})`, () => {
   describe('when we have NOT logged in', () => {
     describe('and visit the user-info page', () => {
       before(() => {
-        cy.visit('/user-info');
+        cy.visitReady('/user-info');
       });
 
       it('is the correct page', () => {

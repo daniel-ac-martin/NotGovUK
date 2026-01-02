@@ -22,6 +22,7 @@ describe('404 (non-existent) page', () => {
 
     it('successfully loads', () => {
       cy.visit(target, { failOnStatusCode: false });
+      cy.get('main').should('exist');
     });
 
     pageWorks();
@@ -29,7 +30,7 @@ describe('404 (non-existent) page', () => {
 
   describe('when visiting the page indirectly', () => {
     before(() => {
-      cy.visit('/');
+      cy.visitReady('/');
       cy.contains('404').click();
     });
 

@@ -8,7 +8,7 @@ const pageWorks = () => (
 describe('Markdown', () => {
   describe('when visiting the page directly', () => {
     it('successfully loads', () => {
-      cy.visit('/md');
+      cy.visitReady('/md');
     });
 
     pageWorks();
@@ -16,7 +16,7 @@ describe('Markdown', () => {
 
   describe('when visiting the page indirectly', () => {
     before(() => {
-      cy.visit('/');
+      cy.visitReady('/');
       cy.contains('Md').click();
     });
 
