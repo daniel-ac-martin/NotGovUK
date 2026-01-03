@@ -15,8 +15,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
-      '@not-govuk/head': '@not-govuk/head/dummy'
+      '~govuk-frontend': 'govuk-frontend' // Vite doesn't seem to support tilde's but other frameworks require it
     }
   }
 });

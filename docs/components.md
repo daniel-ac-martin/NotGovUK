@@ -114,7 +114,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
-      '@not-govuk/head': '@not-govuk/head/dummy',
       '@not-govuk/router': '@not-govuk/router/remix',
       '@not-govuk/sass-base': '@not-govuk/sass-base/vite',
     }
@@ -163,7 +162,6 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     resolveAlias: {
-      '@not-govuk/head': '@not-govuk/head/dummy',    // ADD THIS LINE
       '@not-govuk/router': '@not-govuk/router/next', // ADD THIS LINE
     }
   }
@@ -186,7 +184,6 @@ const nextConfig = {
     ...config,
     plugins: [
       ...config.plugins,
-      new webpack.NormalModuleReplacementPlugin(/^@not-govuk\/head$/, '@not-govuk\/head\/dummy'),    // ADD THIS LINE
       new webpack.NormalModuleReplacementPlugin(/^@not-govuk\/router$/, '@not-govuk\/router\/next'), // ADD THIS LINE
     ]
   })

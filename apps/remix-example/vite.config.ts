@@ -34,7 +34,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
-      '@not-govuk/head': '@not-govuk/head/dummy',
       '@not-govuk/router': '@not-govuk/router/remix',
       '@not-govuk/sass-base': '@not-govuk/sass-base/vite',
     }

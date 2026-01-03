@@ -41,7 +41,7 @@ export default function Components({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <span className="govuk-caption-xl">{title}</span>
-      <DocsPage siteName={siteTitle} stories={stories} />
+      <DocsPage stories={stories} />
     </>
   );
 }
