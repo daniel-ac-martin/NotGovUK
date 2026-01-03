@@ -5,7 +5,6 @@ import { BackLink } from '@not-govuk/back-link';
 import { Breadcrumb, Breadcrumbs } from '@not-govuk/breadcrumbs';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
 import { Footer, FooterProps, NavMenu } from '@not-govuk/footer';
-import { Head } from '@not-govuk/head';
 import { Header, HeaderProps } from '@not-govuk/header';
 import { A } from '@not-govuk/link';
 import { PhaseBanner, PhaseBannerProps } from '@not-govuk/phase-banner';
@@ -38,8 +37,6 @@ export type PageProps = (
     phaseBannerContent?: ReactNode
     /** If true, use the redesigned styles */
     rebrand?: boolean
-    /** Title of the HTML page (can be overridden via Helmet  */
-    title?: string
   }
 );
 
@@ -69,7 +66,6 @@ export const Page: FC<PageProps> = ({
   serviceName,
   signOutHref,
   signOutText,
-  title: _title,
   ...attrs
 }) => {
   const classModifiers = (
@@ -79,7 +75,6 @@ export const Page: FC<PageProps> = ({
   );
   const className = _className || '';
   const classes = classBuilder('not-govuk-page', classBlock, [...classModifiers, department], className + (rebrand ? ' govuk-template--rebranded' : ''));
-  const title = _title || serviceName || 'NotGovUK';
   const headerProps = {
     department,
     govUK,
@@ -111,10 +106,9 @@ export const Page: FC<PageProps> = ({
 
   return (
     <div {...attrs} className={classes()}>
-      <Head>
-        <title>{title}</title>
+      <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-      </Head>
+      </head>
       <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
       <Header {...headerProps} className={classes('header')} classModifiers={showNavigation ? 'full-width-border' : undefined} />
       { !showNavigation ? null : (

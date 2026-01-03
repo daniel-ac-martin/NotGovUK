@@ -2,7 +2,6 @@
 'use client';
 
 import { FC, createElement as h } from 'react';
-import { Head } from '@not-govuk/head';
 import { Page, PageProps } from './Page';
 import { unwrapImage } from './types';
 
@@ -32,7 +31,7 @@ export const NotGovUKPage: FC<NotGovUKPageProps> = ({ children, classModifiers, 
     govUK={false}
     rebrand={rebrand}
   >
-    <Head>
+    <head>
       <meta name="theme-color" content={ rebrand ? '#000000' : '#0b0c0c' } />
       <link rel="shortcut icon" sizes="16x16 32x32 48x48" href={favicon} type="image/x-icon" />
       <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon180} />
@@ -40,7 +39,7 @@ export const NotGovUKPage: FC<NotGovUKPageProps> = ({ children, classModifiers, 
       <link rel="apple-touch-icon" sizes="152x152" href={appleTouchIcon152} />
       <link rel="apple-touch-icon" href={appleTouchIcon} />
       <meta property="og:image" content={ogImage} />
-    </Head>
+    </head>
     {children}
   </Page>
 );
