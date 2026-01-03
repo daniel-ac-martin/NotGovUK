@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { NotGovUKPage } from '@not-govuk/simple-components';
+import { GovUKPage } from '@not-govuk/simple-components';
 import { AddBodyClass } from '../components/AddBodyClass';
 
 
@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AddBodyClass />
-        <NotGovUKPage
+        <GovUKPage
           breadcrumbs={[
             {
               href: "/",
@@ -63,7 +63,7 @@ export default function RootLayout({
           title="NotGovUK"
         >
           {children}
-        </NotGovUKPage>
+        </GovUKPage>
       </body>
     </html>
   );

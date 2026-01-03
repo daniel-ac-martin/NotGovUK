@@ -28,14 +28,20 @@ const plopFunction = async (plop) => {
       actions: [
         {
           type: 'copy',
+          destination: 'apps/{{{name}}}/public/',
+          source: rel('app/public/'),
+          overwrite: true
+        },
+        {
+          type: 'copy',
           destination: 'apps/{{{name}}}/src/',
           source: rel('app/src/'),
           overwrite: true
         },
         {
           type: 'add',
-          path: 'apps/{{{name}}}/src/common/page-wrap.tsx',
-          templateFile: rel('app/src/common/page-wrap.tsx.hbs'),
+          path: 'apps/{{{name}}}/src/app/root.tsx',
+          templateFile: rel('app/src/app/root.tsx.hbs'),
           force: true
         },
         {

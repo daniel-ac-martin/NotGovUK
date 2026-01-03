@@ -1,17 +1,27 @@
 import type { FastifyInstance, FastifyServerOptions, onCloseAsyncHookHandler, RouteHandlerMethod } from 'fastify';
+import type { RateLimitPluginOptions } from '@fastify/rate-limit';
+import type { FastifyAuthOptions } from '@not-govuk/fastify-auth';
 import type { FastifyHardenOptions } from '@not-govuk/fastify-harden';
+import type { Maybe } from '@not-govuk/types-helpers';
 
 import closeWithGrace from 'close-with-grace';
 import _Fastify from 'fastify';
+import fastifyRateLimit from '@fastify/rate-limit';
+import fastifyAuth, { AuthMethod } from '@not-govuk/fastify-auth';
 import fastifyHarden from '@not-govuk/fastify-harden';
 import { NodeEnv } from './config-helpers';
 
+type SessionOptions = Required<FastifyAuthOptions>['session'];
 export type IsFunction = (() => Promise<boolean>) | (() => boolean);
 export type OnClose = (() => Promise<void>) | (() => void);
 export type FastifyOptions = FastifyServerOptions & FastifyHardenOptions & {
+  auth?: FastifyAuthOptions
+  cookies?: SessionOptions['cookies']
   isLive?: IsFunction
   isReady?: IsFunction
   onClose?: OnClose
+  rateLimit?: Omit<RateLimitPluginOptions, 'global'>
+  session?: Omit<SessionOptions, 'cookies'>
 };
 
 type FastifyLogger = FastifyServerOptions['logger'];
@@ -38,13 +48,19 @@ const parseForwarded = (hdr: undefined | string | string[]): undefined | string 
 };
 
 export const Fastify = ({
+  auth: _auth,
+  cookies = {
+    secret: 'changeme'
+  },
   contentSecurityPolicy,
   dev = process.env.NODE_ENV === NodeEnv.Development,
   isLive = is,
   isReady = is,
-  logger,
+  logger: _logger = {},
   onClose,
   permissionsPolicy,
+  rateLimit: _rateLimit,
+  session,
   ...options
 }: FastifyOptions): FastifyInstance => {
   const isTTY = process.stdout.isTTY;
@@ -77,20 +93,56 @@ export const Fastify = ({
       target: '@not-govuk/fastify-dev-logger'
     }
   };
+  const logger = (
+    _logger instanceof Object
+      ? {
+        ...(
+          !(dev && isTTY)
+            ? stdLogger
+            : devLogger
+        ),
+        ..._logger
+      }
+      : _logger
+  );
   const httpd = _Fastify({
-    logger: logger || (
-      !(dev && isTTY)
-        ? stdLogger
-        : devLogger
-    ),
+    logger,
     ...options
   });
+  const auth: Maybe<FastifyAuthOptions> = (
+    (session?.store === undefined) && (_auth === undefined || _auth.method === AuthMethod.None)
+      ? undefined
+      : {
+        rateLimit: _rateLimit,
+        ...(_auth || {}),
+        session: {
+          ...(session || {} as any),
+          cookies
+        }
+      }
+  );
+  const rateLimit = _rateLimit && {
+    ..._rateLimit,
+    global: true
+  };
+
+  httpd.log.debug(`Privacy mode: ${!!auth?.privacy}`);
+  httpd.log.debug(`Authentication method: ${auth?.method || 'none'}`);
+  httpd.log.debug(`Session store: ${session?.store}`);
 
   httpd.register(fastifyHarden, {
     contentSecurityPolicy,
     dev,
     permissionsPolicy
   });
+
+  if (rateLimit) {
+    httpd.register(fastifyRateLimit, rateLimit);
+  }
+
+  if (auth) {
+    httpd.register(fastifyAuth, auth);
+  }
 
   httpd.get('/healthz', probeHandler(isLive));
   httpd.get('/readiness', probeHandler(isReady));
@@ -120,4 +172,6 @@ export const Fastify = ({
 
 export default Fastify;
 export type { FastifyInstance, RouteHandlerMethod };
+export { AuthMethod };
+export { SessionStore } from '@not-govuk/fastify-auth';
 export * from './config-helpers';

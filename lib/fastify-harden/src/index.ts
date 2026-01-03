@@ -7,7 +7,7 @@ import { permissionsPolicy } from './permissions-policy'
 import { contentSecurityPolicy } from './content-security-policy'
 
 type FastifyHardenPluginOptions = {
-  contentSecurityPolicy?: Omit<CSPOptions, 'dev'>
+  contentSecurityPolicy?: Omit<CSPOptions, 'dev' | 'nonce'>
   dev?: boolean
   permissionsPolicy?: PPOptions
 };

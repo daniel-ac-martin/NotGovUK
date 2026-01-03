@@ -7,7 +7,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import { NotGovUKPage } from '@not-govuk/components';
+import { GovUKPage } from '@not-govuk/components';
 
 import "./style.scss";
 
@@ -31,7 +31,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <NotGovUKPage
+        <GovUKPage
           breadcrumbs={[
             {
               href: "/",
@@ -73,7 +73,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           title="NotGovUK"
         >
           {children}
-        </NotGovUKPage>
+        </GovUKPage>
         <ScrollRestoration />
         <Scripts />
       </body>

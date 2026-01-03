@@ -27,10 +27,12 @@ export const Fork: FC<any> = props => {
     return h(Fragment, {
       children: [
         h(Registry, {
+          key: 0,
           children: props.then,
           value: leftRegister
         }),
         h(Registry, {
+          key: 1,
           children: props.else,
           value: rightRegister
         })

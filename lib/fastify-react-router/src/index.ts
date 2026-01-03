@@ -33,5 +33,4 @@ export default fastifyReactRouter;
 export type {
   FastifyReactRouterPluginOptions as FastifyReactRouterOptions
 };
-export type { GetLoadContextFunction } from './common';
-export { nonceContext } from './common';
+export type { GetLoadContextFunction, Request } from './common';

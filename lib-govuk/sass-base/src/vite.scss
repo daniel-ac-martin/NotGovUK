@@ -1,0 +1,5 @@
+// Set the asset path to go through the NPM package (alternatively can be
+// defined relative to the _base_ .scss file, so via node_modules)
+$govuk-assets-path: 'govuk-frontend/dist/govuk/assets/';
+
+@import "./index.scss";

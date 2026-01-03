@@ -1,7 +1,8 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
 import mdx from '@mdx-js/rollup'
-import { reactRouter } from "@react-router/dev/vite";
-import { vite as csf } from "@storybook/csf-plugin";
+import html from '@not-govuk/vite-html-react';
+import { reactRouter } from '@react-router/dev/vite';
+import { vite as csf } from '@storybook/csf-plugin';
 import reactDocgenTypescript from '@joshwooding/vite-plugin-react-docgen-typescript';
 
 export default defineConfig({
@@ -23,6 +24,7 @@ export default defineConfig({
   plugins: [
     reactDocgenTypescript(),
     csf(),
+    html(),
     mdx(),
     reactRouter(),
   ],
@@ -30,6 +32,7 @@ export default defineConfig({
     alias: {
       '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
       '@not-govuk/head': '@not-govuk/head/dummy',
+      '@not-govuk/sass-base': '@not-govuk/sass-base/vite',
       '@storybook/addon-docs/blocks': '@not-govuk/docs-components'
     }
   },

@@ -42,13 +42,13 @@ docs_app = govuk-docs
 docs_source_dir = $(source_dir)/apps/$(docs_app)
 docs_target_dir = $(target_dir)/apps/docs
 docs_sources := $(wildcard \
-	$(docs_source_dir)/src/mdx.d.ts \
-	$(docs_source_dir)/src/common/page-wrap.tsx \
-	$(docs_source_dir)/src/common/pages/contributing.tsx \
-	$(docs_source_dir)/src/common/pages/get-started.tsx \
-	$(docs_source_dir)/src/common/pages/working-on-your-project.tsx \
-	$(docs_source_dir)/src/common/pages/index.tsx \
-	$(docs_source_dir)/webpack.config.mjs \
+	$(docs_source_dir)/src/app/mdx.d.ts \
+	$(docs_source_dir)/src/app/root.tsx \
+	$(docs_source_dir)/src/app/routes/contributing.tsx \
+	$(docs_source_dir)/src/app/routes/get-started.tsx \
+	$(docs_source_dir)/src/app/routes/working-on-your-project.tsx \
+	$(docs_source_dir)/src/app/routes/_index.tsx \
+	$(docs_source_dir)/vite.config.ts \
 )
 ci_deps = $(patsubst $(source_dir)/%,$(target_dir)/%,$(ci_sources))
 skel_deps = \
@@ -83,15 +83,15 @@ $(build_dir)/skel-prototype/package.json: $(plopfile) $(target_dir)/.github/work
 	$(cp) -r '$(target_dir)/.jest/' '$(@D)/.jest'
 	$(cp) '$(target_dir)/cypress.config.mjs' '$(@D)'
 	$(cp) '$(target_dir)/jest.config.base.js' '$(@D)/jest.config.base.js'
-	sed -i 's/..\/..\/jest.config.base/.\/jest.config.base/' '$(@D)/jest.config.js'
+	sed -i 's/..\/..\/jest.config.base/.\/jest.config.base/' '$(@D)/jest.config.cjs'
 	rm '$(@D)/README.md' '$(@D)/tsconfig.json' '$(@D)/.github/actions/setup/action.yml' '$(@D)/.github/workflows/change-assurance.yml' '$(@D)/.github/workflows/deploy.yml'
 
-$(build_dir)/skel-prototype/tsconfig.json: $(source_dir)/tsconfig.json $(source_dir)/tsconfig.webpack.json $(build_dir)/skel-prototype/package.json
+$(build_dir)/skel-prototype/tsconfig.json: $(source_dir)/tsconfig.json $(source_dir)/tsconfig.vite.json $(build_dir)/skel-prototype/package.json
 	mkdir -p '$(@D)'
 	jq -s '.[0].compilerOptions * .[1].compilerOptions | { compilerOptions: . }' '$(<)' '$(word 2,$^)' > '$(@)'
 
 $(build_dir)/package.app.json: $(build_dir)/skel-prototype/package.json $(docs_source_dir)
-	rm '$(docs_target_dir)/webpack.config.mjs' '$(docs_target_dir)/src/common/pages/'* '$(docs_target_dir)/src/common/page-wrap.tsx'
+	rm '$(docs_target_dir)/vite.config.ts' '$(docs_target_dir)/src/app/routes/'* '$(docs_target_dir)/src/app/root.tsx'
 	mv '$(docs_target_dir)/package.json' '$(@)'
 
 $(build_dir)/package.docs.json: $(docs_source_dir)/package.json
