@@ -83,6 +83,9 @@ importers:
       react-dom:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
+      react-is:
+        specifier: 19.2.3
+        version: 19.2.3
       react-router:
         specifier: 7.9.5
         version: 7.9.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -2562,7 +2565,7 @@ importers:
         version: 1.0.0
       react-element-to-jsx-string:
         specifier: ^17.0.1
-        version: 17.0.1(react-dom@19.2.3(react@19.2.3))(react-is@18.3.1)(react@19.2.3)
+        version: 17.0.1(react-dom@19.2.3(react@19.2.3))(react-is@19.2.3)(react@19.2.3)
       storybook:
         specifier: 9.1.17
         version: 9.1.17(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.2.2(@types/node@24.10.4)(sass-embedded@1.93.3)(sass@1.93.3)(yaml@2.8.1))
@@ -8890,6 +8893,9 @@ packages:
 
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+
+  react-is@19.2.3:
+    resolution: {integrity: sha512-qJNJfu81ByyabuG7hPFEbXqNcWSU3+eVus+KJs+0ncpGfMyYdvSmxiJxbWR65lYi1I+/0HBcliO029gc4F+PnA==}
 
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
@@ -17315,13 +17321,13 @@ snapshots:
       react: 19.2.3
       scheduler: 0.27.0
 
-  react-element-to-jsx-string@17.0.1(react-dom@19.2.3(react@19.2.3))(react-is@18.3.1)(react@19.2.3):
+  react-element-to-jsx-string@17.0.1(react-dom@19.2.3(react@19.2.3))(react-is@19.2.3)(react@19.2.3):
     dependencies:
       '@base2/pretty-print-object': 1.0.2
       is-plain-object: 5.0.0
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
-      react-is: 18.3.1
+      react-is: 19.2.3
 
   react-fast-compare@2.0.4: {}
 
@@ -17330,6 +17336,8 @@ snapshots:
   react-is@17.0.2: {}
 
   react-is@18.3.1: {}
+
+  react-is@19.2.3: {}
 
   react-refresh@0.14.2: {}
 
