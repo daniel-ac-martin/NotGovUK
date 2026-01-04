@@ -106,9 +106,7 @@ export const Page: FC<PageProps> = ({
 
   return (
     <div {...attrs} className={classes()}>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-      </head>
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
       <Header {...headerProps} className={classes('header')} classModifiers={showNavigation ? 'full-width-border' : undefined} />
       { !showNavigation ? null : (
