@@ -1,8 +1,8 @@
-import type { CookieSerializeOptions } from 'cookie';
+import type { SerializeOptions } from 'cookie';
 import type { FastifyInstance, FastifyRequest as _Request, FastifyReply as _Reply } from 'fastify';
 import type { Promised } from '@not-govuk/types-helpers';
 
-export type CookieOptions = Omit<CookieSerializeOptions, 'encode'>;
+export type CookieOptions = Omit<SerializeOptions, 'encode'>;
 
 export type SetCookie = (this: ReplyFull, name: string, value: any, options?: Omit<CookieOptions, 'httpOnly'>) => void;
 export type SetCookieConsent = (this: ReplyFull, value: string[]) => void;
