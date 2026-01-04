@@ -10,10 +10,6 @@ const Providers: FC<{ children?: ReactNode, routerProps?: object }> = ({
   routerProps
 }) => (
   h(MemoryRouter, routerProps || {
-    future: {
-      v7_relativeSplatPath: true,
-      v7_startTransition: true
-    },
     initialEntries: ['/previous', '/current', '/next'],
     initialIndex: 1
   }, children)
