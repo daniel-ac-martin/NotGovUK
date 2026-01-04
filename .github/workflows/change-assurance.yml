@@ -80,7 +80,7 @@ jobs:
           app: ${{ matrix.app }}
 
       - name: Save build directory
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: 'build-${{ matrix.app }}'
           path: "${{ matrix.app && format('apps/{0}/', matrix.app) }}dist"
@@ -107,7 +107,7 @@ jobs:
           node: 24
 
       - name: Download build directory
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: 'build-${{ matrix.app }}'
           path: "${{ matrix.app && format('apps/{0}/', matrix.app) }}dist"
