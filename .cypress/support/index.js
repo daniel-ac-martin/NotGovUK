@@ -19,5 +19,7 @@ Cypress.Commands.add('visitReady', (
   selector = '.js-enabled'
 ) => {
   cy.visit(url, options);
-  cy.get(selector).should('exist');
+  cy.get(selector, {
+    timeout: Cypress.config('pageLoadTimeout')
+  }).should('exist');
 });
