@@ -40,26 +40,24 @@ export const GovUKPage: FC<GovUKPageProps> = ({ children, classModifiers, rebran
     govUK={true}
     rebrand={rebrand}
   >
-    <head>
-      <meta name="theme-color" content={rebrand ? '#1d70b8' : '#0b0c0c'} />
-      {rebrand ? (
-        <Fragment>
-          <link rel="icon" sizes="48x48" href={favicon} />
-          <link rel="icon" sizes="any" href={faviconSVG} type="image/svg+xml" />
-          <link rel="mask-icon" href={maskIcon} color="#0b0c0c" />
-          <link rel="apple-touch-icon" href={appleTouchIcon180} />
-          <meta property="og:image" content={ogImage} />
-        </Fragment>
-      ) : (
-        <Fragment>
-          <link rel="icon" sizes="48x48" href={faviconOld} />
-          <link rel="icon" sizes="any" href={faviconSVGOld} type="image/svg+xml" />
-          <link rel="mask-icon" href={maskIconOld} color="#0b0c0c" />
-          <link rel="apple-touch-icon" href={appleTouchIcon180Old} />
-          <meta property="og:image" content={ogImageOld} />
-        </Fragment>
-      )}
-    </head>
+    <meta name="theme-color" content={rebrand ? '#1d70b8' : '#0b0c0c'} />
+    {rebrand ? (
+      <Fragment>
+        <link rel="icon" sizes="48x48" href={favicon} />
+        <link rel="icon" sizes="any" href={faviconSVG} type="image/svg+xml" />
+        <link rel="mask-icon" href={maskIcon} color="#0b0c0c" />
+        <link rel="apple-touch-icon" href={appleTouchIcon180} />
+        <meta property="og:image" content={ogImage} />
+      </Fragment>
+    ) : (
+      <Fragment>
+        <link rel="icon" sizes="48x48" href={faviconOld} />
+        <link rel="icon" sizes="any" href={faviconSVGOld} type="image/svg+xml" />
+        <link rel="mask-icon" href={maskIconOld} color="#0b0c0c" />
+        <link rel="apple-touch-icon" href={appleTouchIcon180Old} />
+        <meta property="og:image" content={ogImageOld} />
+      </Fragment>
+    )}
     {children}
   </Page>
 );
