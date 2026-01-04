@@ -319,9 +319,6 @@ importers:
 
   apps/next-example:
     dependencies:
-      '@not-govuk/head':
-        specifier: workspace:^0.16.3
-        version: link:../../lib/head
       '@not-govuk/router':
         specifier: workspace:^0.16.3
         version: link:../../lib/router
@@ -1562,9 +1559,6 @@ importers:
       '@not-govuk/footer':
         specifier: workspace:^0.16.3
         version: link:../footer
-      '@not-govuk/head':
-        specifier: workspace:^0.16.3
-        version: link:../../lib/head
       '@not-govuk/header':
         specifier: workspace:^0.16.3
         version: link:../header
@@ -2663,9 +2657,6 @@ importers:
       '@not-govuk/component-helpers':
         specifier: workspace:^0.16.3
         version: link:../component-helpers
-      '@not-govuk/head':
-        specifier: workspace:^0.16.3
-        version: link:../head
       '@not-govuk/memoize':
         specifier: workspace:^0.16.3
         version: link:../memoize
