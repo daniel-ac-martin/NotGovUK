@@ -8,7 +8,6 @@ import parserBabel from 'prettier/plugins/babel';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import Prism from 'prismjs';
 import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { HeadProvider } from '@not-govuk/head';
 import { memoize } from '@not-govuk/memoize';
 import { Tabs } from '@not-govuk/tabs-internal';
 
@@ -18,9 +17,7 @@ import '../assets/ReactPreview.scss';
 import 'prismjs-github/scheme.css';
 
 const DummyContext: FC<{ children?: ReactNode }> = ({ children }) => (
-  h(HeadProvider, {},
-    h(StaticRouter, { location: ''}, children)
-  )
+  h(StaticRouter, { location: ''}, children)
 );
 
 const renderToMarkup = (node: ReactNode): string => {

@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     resolveAlias: {
-      '@not-govuk/head': '@not-govuk/head/dummy',    // ADD THIS LINE
       '@not-govuk/router': '@not-govuk/router/next', // ADD THIS LINE
     }
   }

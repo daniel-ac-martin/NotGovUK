@@ -1,3 +1,5 @@
+import type { Maybe } from '@not-govuk/types-helpers';
+
 export enum Mode {
   Server = 'server',
   Serverless = 'serverless',
@@ -12,10 +14,10 @@ export enum NodeEnv {
 type Pattern = RegExp | string;
 
 const parseBoolean = (pattern: Pattern) => (
-  (s: string): boolean => !!(
+  (s: Maybe<string>): boolean => !!(
     s && s.match(pattern)
   )
 );
 
 export const defaultsFalse = parseBoolean(/(yes|on|true|1)/i);
-export const defaultsTrue = (s: string) => !parseBoolean(/(no|off|false|0)/i)(s);
+export const defaultsTrue = (s: Maybe<string>) => !parseBoolean(/(no|off|false|0)/i)(s);

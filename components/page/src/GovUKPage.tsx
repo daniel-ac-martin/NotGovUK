@@ -2,7 +2,6 @@
 'use client';
 
 import { FC, Fragment, createElement as h } from 'react';
-import { Head } from '@not-govuk/head';
 import { Page, PageProps } from './Page';
 import { unwrapImage } from './types';
 
@@ -41,7 +40,7 @@ export const GovUKPage: FC<GovUKPageProps> = ({ children, classModifiers, rebran
     govUK={true}
     rebrand={rebrand}
   >
-    <Head>
+    <head>
       <meta name="theme-color" content={rebrand ? '#1d70b8' : '#0b0c0c'} />
       {rebrand ? (
         <Fragment>
@@ -60,7 +59,7 @@ export const GovUKPage: FC<GovUKPageProps> = ({ children, classModifiers, rebran
           <meta property="og:image" content={ogImageOld} />
         </Fragment>
       )}
-    </Head>
+    </head>
     {children}
   </Page>
 );

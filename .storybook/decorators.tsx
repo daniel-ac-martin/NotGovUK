@@ -1,5 +1,4 @@
 import React, { FC, ReactNode, createElement as h } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router';
 
 const Root: FC<any> = props => (
@@ -8,11 +7,9 @@ const Root: FC<any> = props => (
     fontFamily: [ 'GDS Transport', 'Roboto', 'Arial', 'sans-serif' ],
     padding: '1em'
   }}>
-    <HelmetProvider>
-      <Router>
-        {props.children}
-      </Router>
-    </HelmetProvider>
+    <Router>
+      {props.children}
+    </Router>
   </div>
 );
 
