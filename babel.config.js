@@ -30,7 +30,6 @@ module.exports = {
     ]
   ],
   plugins: [
-    [ 'transform-class-properties', { loose: true } ],
-    '@babel/plugin-proposal-export-namespace-from'
+    '@babel/plugin-transform-export-namespace-from'
   ]
 };
