@@ -2604,8 +2604,8 @@ importers:
         specifier: 2.4.0
         version: 2.4.0
       fastify:
-        specifier: 5.6.1
-        version: 5.6.1
+        specifier: 5.6.2
+        version: 5.6.2
     devDependencies:
       '@not-govuk/types-helpers':
         specifier: workspace:^0.16.3
@@ -2645,8 +2645,8 @@ importers:
         version: 5.7.1
     devDependencies:
       fastify:
-        specifier: 5.6.1
-        version: 5.6.1
+        specifier: 5.6.2
+        version: 5.6.2
       jest:
         specifier: 30.2.0
         version: 30.2.0(@types/node@24.10.4)(esbuild-register@3.6.0(esbuild@0.27.2))
@@ -2676,8 +2676,8 @@ importers:
         specifier: workspace:^0.16.3
         version: link:../types-helpers
       fastify:
-        specifier: 5.6.1
-        version: 5.6.1
+        specifier: 5.6.2
+        version: 5.6.2
       jest:
         specifier: 30.2.0
         version: 30.2.0(@types/node@24.10.4)(esbuild-register@3.6.0(esbuild@0.27.2))
@@ -2717,8 +2717,8 @@ importers:
         version: 5.1.0
     devDependencies:
       fastify:
-        specifier: 5.6.1
-        version: 5.6.1
+        specifier: 5.6.2
+        version: 5.6.2
       jest:
         specifier: 30.2.0
         version: 30.2.0(@types/node@24.10.4)(esbuild-register@3.6.0(esbuild@0.27.2))
@@ -2757,8 +2757,8 @@ importers:
         specifier: workspace:^0.16.3
         version: link:../fastify-harden
       fastify:
-        specifier: 5.6.1
-        version: 5.6.1
+        specifier: 5.6.2
+        version: 5.6.2
       jest:
         specifier: 30.2.0
         version: 30.2.0(@types/node@24.10.4)(esbuild-register@3.6.0(esbuild@0.27.2))
@@ -2791,8 +2791,8 @@ importers:
         specifier: workspace:^0.16.3
         version: link:../types-helpers
       fastify:
-        specifier: 5.6.1
-        version: 5.6.1
+        specifier: 5.6.2
+        version: 5.6.2
       jest:
         specifier: 30.2.0
         version: 30.2.0(@types/node@24.10.4)(esbuild-register@3.6.0(esbuild@0.27.2))
@@ -6939,8 +6939,8 @@ packages:
   fastify-plugin@5.1.0:
     resolution: {integrity: sha512-FAIDA8eovSt5qcDgcBvDuX/v0Cjz0ohGhENZ/wpc3y+oZCY2afZ9Baqql3g/lC+OHRnciQol4ww7tuthOb9idw==}
 
-  fastify@5.6.1:
-    resolution: {integrity: sha512-WjjlOciBF0K8pDUPZoGPhqhKrQJ02I8DKaDIfO51EL0kbSMwQFl85cRwhOvmSDWoukNOdTo27gLN549pLCcH7Q==}
+  fastify@5.6.2:
+    resolution: {integrity: sha512-dPugdGnsvYkBlENLhCgX8yhyGCsCPrpA8lFWbTNU428l+YOnLgYHR69hzV8HWPC79n536EqzqQtvhtdaCE0dKg==}
 
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
@@ -8799,10 +8799,6 @@ packages:
 
   pino@10.1.0:
     resolution: {integrity: sha512-0zZC2ygfdqvqK8zJIr1e+wT1T/L+LF6qvqvbzEQ6tiMAoTqEVK9a1K3YRu8HEUvGEvNqZyPJTtb2sNIoTkB83w==}
-    hasBin: true
-
-  pino@9.14.0:
-    resolution: {integrity: sha512-8OEwKp5juEvb/MjpIc4hjqfgCNysrS94RIOMXYvpYCdm/jglrKEiAYmiumbmGhCvs+IcInsphYDFwqrjr7398w==}
     hasBin: true
 
   pirates@4.0.7:
@@ -14783,7 +14779,7 @@ snapshots:
 
   fastify-plugin@5.1.0: {}
 
-  fastify@5.6.1:
+  fastify@5.6.2:
     dependencies:
       '@fastify/ajv-compiler': 4.0.5
       '@fastify/error': 4.2.0
@@ -14794,7 +14790,7 @@ snapshots:
       fast-json-stringify: 6.1.1
       find-my-way: 9.3.0
       light-my-request: 6.6.0
-      pino: 9.14.0
+      pino: 10.1.0
       process-warning: 5.0.0
       rfdc: 1.4.1
       secure-json-parse: 4.1.0
@@ -17320,20 +17316,6 @@ snapshots:
   pino-std-serializers@7.0.0: {}
 
   pino@10.1.0:
-    dependencies:
-      '@pinojs/redact': 0.4.0
-      atomic-sleep: 1.0.0
-      on-exit-leak-free: 2.1.2
-      pino-abstract-transport: 2.0.0
-      pino-std-serializers: 7.0.0
-      process-warning: 5.0.0
-      quick-format-unescaped: 4.0.4
-      real-require: 0.2.0
-      safe-stable-stringify: 2.5.0
-      sonic-boom: 4.2.0
-      thread-stream: 3.1.0
-
-  pino@9.14.0:
     dependencies:
       '@pinojs/redact': 0.4.0
       atomic-sleep: 1.0.0
