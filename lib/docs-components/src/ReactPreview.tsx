@@ -1,4 +1,4 @@
-import { FC, ReactNode, createElement as h, useEffect, useState } from 'react';
+import { FC, ReactNode, Suspense, createElement as h, use } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { format } from 'prettier/standalone';
@@ -66,6 +66,46 @@ const prettyJsx = async (s: string) => highlightJsx(await formatJsx(s));
 const prettyHtmlFromMemo = memoize(prettyHtml);
 const prettyJsxFromMemo = memoize(prettyJsx);
 
+const RenderingCode: FC<{}> = () => (
+  <code>Rendering...</code>
+);
+
+type CodeProps = {
+  source: string
+};
+
+const HtmlCode: FC<CodeProps> = ({
+  source
+}) => {
+  const html = use(
+    prettyHtmlFromMemo(source)
+      .catch((_e) => 'An error occurred')
+  );
+
+  return (
+    <code className="language-html" dangerouslySetInnerHTML={{__html: html}} />
+  );
+};
+
+type CodeWithAltProps = CodeProps & {
+  altSource: string
+};
+
+const ReactCode: FC<CodeWithAltProps> = ({
+  source,
+  altSource
+}) => {
+  const react = use(
+    prettyJsxFromMemo(source)
+      .catch((_e) => prettyJsxFromMemo(altSource))
+      .catch((_e) => 'An error occurred')
+  );
+
+  return (
+    <code className="language-jsx" dangerouslySetInnerHTML={{__html: react}} />
+  );
+};
+
 export type ReactPreviewProps = Omit<StandardProps, 'id'> & {
   children?: ReactNode
   /** 'id' attribute to place on the base HTML element */
@@ -84,8 +124,6 @@ export const ReactPreview: FC<ReactPreviewProps> = ({
   ...attrs
 }) => {
   const classes = classBuilder('penultimate-react-preview', classBlock, classModifiers, className);
-  const [html, setHtml] = useState('Rendering...');
-  const [react, setReact] = useState('Rendering...');
   const markup = renderToMarkup(children);
   const generatedSource = renderToSource(children);
   const [ source, altSource ] = (
@@ -93,16 +131,6 @@ export const ReactPreview: FC<ReactPreviewProps> = ({
     ? [ _source, generatedSource ]
     : [ generatedSource, _source ]
   );
-
-  useEffect(() => {
-    prettyHtmlFromMemo(markup)
-      .then(setHtml)
-      .catch((_e) => setHtml('An error occurred'));
-    prettyJsxFromMemo(source)
-      .catch((_e) => prettyJsxFromMemo(altSource))
-      .then(setReact)
-      .catch((_e) => setReact('An error occurred'));
-  });
 
   return (
     <div {...attrs} id={id} className={classes()}>
@@ -115,7 +143,9 @@ export const ReactPreview: FC<ReactPreviewProps> = ({
           label: 'HTML',
           content: (
             <pre>
-              <code className="language-html" dangerouslySetInnerHTML={{__html: html}} />
+              <Suspense fallback={<RenderingCode />}>
+                <HtmlCode source={markup} />
+              </Suspense>
             </pre>
           )
         },
@@ -124,7 +154,9 @@ export const ReactPreview: FC<ReactPreviewProps> = ({
           label: 'React',
           content: (
             <pre>
-              <code className="language-jsx" dangerouslySetInnerHTML={{__html: react}} />
+              <Suspense fallback={<RenderingCode />}>
+                <ReactCode source={source} altSource={altSource} />
+              </Suspense>
             </pre>
           )
         },
