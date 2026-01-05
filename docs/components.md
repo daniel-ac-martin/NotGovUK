@@ -107,15 +107,16 @@ export default defineConfig({
       scss: {
         api: 'modern-compiler',
         quietDeps: true, // Works around issues with govuk-frontend
-        silenceDeprecations: ['import'] // This is required until govuk-frontend moves to using modules
+        silenceDeprecations: [
+          'if-function', // Required until if functionality is more common in browsers and SASS v1.95 gets a bit older
+          'import'       // Required until govuk-frontend moves to using modules
+        ]
       }
     }
   },
   resolve: {
     alias: {
-      '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
-      '@not-govuk/router': '@not-govuk/router/remix',
-      '@not-govuk/sass-base': '@not-govuk/sass-base/vite',
+      '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbo/webpack
     }
   }
   [...]
@@ -126,7 +127,6 @@ You should ensure that you set the `js-enabled` class on an element that encompa
 
 #### Limitations on Remix
 
-- You will need to manage your own `<head>` including the favicon.
 - It's not currently possible to do a named import, as Remix uses Vite, which is stricter than Webpack.
 
 **See:** [Example Remix application using NotGovUK components]
