@@ -24,10 +24,10 @@
     "react-components"
   ],
   "dependencies": {
-    "@not-govuk/client-component-helpers": "workspace:^0.16.3",
-    "@not-govuk/component-helpers": "workspace:^0.16.3",
-    "@not-govuk/router": "workspace:^0.16.3",
-    "@not-govuk/uri": "workspace:^0.16.3"
+    "@not-govuk/client-component-helpers": "workspace:*",
+    "@not-govuk/component-helpers": "workspace:*",
+    "@not-govuk/router": "workspace:*",
+    "@not-govuk/uri": "workspace:*"
   },
   "peerDependencies": {
     "@not-govuk/docs-components": "^0.16.3",
@@ -43,7 +43,7 @@
     }
   },
   "devDependencies": {
-    "@not-govuk/component-test-helpers": "workspace:^0.16.3",
+    "@not-govuk/component-test-helpers": "workspace:*",
     "@types/react": "19.2.7",
     "jest": "30.2.0",
     "jest-environment-jsdom": "30.2.0",
