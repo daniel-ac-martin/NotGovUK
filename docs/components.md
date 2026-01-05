@@ -107,15 +107,16 @@ export default defineConfig({
       scss: {
         api: 'modern-compiler',
         quietDeps: true, // Works around issues with govuk-frontend
-        silenceDeprecations: ['import'] // This is required until govuk-frontend moves to using modules
+        silenceDeprecations: [
+          'if-function', // Required until if functionality is more common in browsers and SASS v1.95 gets a bit older
+          'import'       // Required until govuk-frontend moves to using modules
+        ]
       }
     }
   },
   resolve: {
     alias: {
-      '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
-      '@not-govuk/router': '@not-govuk/router/remix',
-      '@not-govuk/sass-base': '@not-govuk/sass-base/vite',
+      '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbo/webpack
     }
   }
   [...]
@@ -126,7 +127,6 @@ You should ensure that you set the `js-enabled` class on an element that encompa
 
 #### Limitations on Remix
 
-- You will need to manage your own `<head>` including the favicon.
 - It's not currently possible to do a named import, as Remix uses Vite, which is stricter than Webpack.
 
 **See:** [Example Remix application using NotGovUK components]
@@ -154,11 +154,12 @@ You should also alter your `next.config.js` to modify some of the modules to ver
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // This allows us to handle next-example, the same way we do standard apps, in CI
-  distDir: 'dist',
   sassOptions: {
     quietDeps: true, // Works around issues with govuk-frontend
-    silenceDeprecations: ['import'] // This is required until govuk-frontend moves to using modules
+    silenceDeprecations: [
+      'if-function', // Required until if functionality is more common in browsers and SASS v1.95 gets a bit older
+      'import'       // Required until govuk-frontend moves to using modules
+    ]
   },
   turbopack: {
     resolveAlias: {
@@ -178,8 +179,6 @@ import webpack from 'webpack';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // This allows us to handle next-example, the same way we do standard apps, in CI
-  distDir: 'dist',
   webpack: (config, _options) => ({
     ...config,
     plugins: [
@@ -203,7 +202,6 @@ Your application will need to make use of Next.js' the newer '_App router_'.
 #### Limitations on Next.js
 
 - You will not be able to make use of the [Form] framework, as this does not currently support Next.js.
-- You will need to manage your own `<head>` including the favicon.
 
 **See:** [Example Next.js application using NotGovUK components]
 
