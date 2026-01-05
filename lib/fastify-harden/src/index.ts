@@ -1,4 +1,4 @@
-import type { FastifyPluginCallback, FastifyReply as _FastifyReply } from 'fastify';
+import type { FastifyError, FastifyPluginCallback, FastifyReply as _FastifyReply } from 'fastify';
 import type { CSPOptions } from './content-security-policy';
 import type { PPOptions } from './permissions-policy';
 
@@ -26,7 +26,7 @@ const fastifyHardenPlugin: FastifyPluginCallback<FastifyHardenPluginOptions> = a
 ) => {
   // Censor internal server errors in Production
   if (!dev) {
-    fastify.setErrorHandler((error, req, reply) => {
+    fastify.setErrorHandler<FastifyError>((error, req, reply) => {
       const statusCode = error && error.statusCode
 
       if ( !statusCode || statusCode === 500 ) {
