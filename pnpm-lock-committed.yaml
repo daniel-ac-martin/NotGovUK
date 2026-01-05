@@ -30,16 +30,16 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1
       '@not-govuk/components':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:lib-govuk/components
       '@not-govuk/docs-components':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:lib/docs-components
       '@not-govuk/plop-pack':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:lib-govuk/plop-pack
       '@not-govuk/user-info':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:lib/user-info
       '@storybook/addon-a11y':
         specifier: 9.1.17
@@ -111,25 +111,25 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(rollup@4.54.0)
       '@not-govuk/anchor-list':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/anchor-list
       '@not-govuk/components':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/components
       '@not-govuk/docs-components':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/docs-components
       '@not-govuk/fastify':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/fastify
       '@not-govuk/fastify-react-router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/fastify-react-router
       '@not-govuk/react-router-context':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/react-router-context
       '@not-govuk/router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/router
       '@react-router/fs-routes':
         specifier: ^7.11.0
@@ -154,10 +154,10 @@ importers:
         version: 4.0.0
     devDependencies:
       '@not-govuk/app-plop-pack':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/app-plop-pack
       '@not-govuk/vite-html-react':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/vite-html-react
       '@react-router/dev':
         specifier: ^7.11.0
@@ -208,22 +208,22 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(rollup@4.54.0)
       '@not-govuk/anchor-list':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/anchor-list
       '@not-govuk/components':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/components
       '@not-govuk/fastify':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/fastify
       '@not-govuk/fastify-react-router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/fastify-react-router
       '@not-govuk/react-router-context':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/react-router-context
       '@not-govuk/router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/router
       '@react-router/fs-routes':
         specifier: ^7.11.0
@@ -248,10 +248,10 @@ importers:
         version: 4.0.0
     devDependencies:
       '@not-govuk/app-plop-pack':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/app-plop-pack
       '@not-govuk/vite-html-react':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/vite-html-react
       '@react-router/dev':
         specifier: ^7.11.0
@@ -296,10 +296,10 @@ importers:
   apps/next-example:
     dependencies:
       '@not-govuk/router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/router
       '@not-govuk/simple-components':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/simple-components
       next:
         specifier: 16.1.1
@@ -345,7 +345,7 @@ importers:
   apps/remix-example:
     dependencies:
       '@not-govuk/components':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/components
       '@remix-run/node':
         specifier: ^2.17.2
@@ -427,20 +427,20 @@ importers:
   components-internal/anchor:
     dependencies:
       '@not-govuk/client-component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/client-component-helpers
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/router
       '@not-govuk/uri':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/uri
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -461,17 +461,17 @@ importers:
   components-internal/anchor-list:
     dependencies:
       '@not-govuk/anchor':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../anchor
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/router
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -492,11 +492,11 @@ importers:
   components-internal/simple-table:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -517,17 +517,17 @@ importers:
   components-internal/tabs:
     dependencies:
       '@not-govuk/client-component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/client-component-helpers
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/router
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -548,20 +548,20 @@ importers:
   components/aside:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -582,26 +582,26 @@ importers:
   components/back-link:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/router
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/panel':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../panel
       '@types/react':
         specifier: 19.2.7
@@ -622,23 +622,23 @@ importers:
   components/breadcrumbs:
     dependencies:
       '@not-govuk/anchor-list':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/anchor-list
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/panel':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../panel
       '@types/react':
         specifier: 19.2.7
@@ -659,13 +659,13 @@ importers:
   components/button:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
@@ -675,16 +675,16 @@ importers:
         specifier: 30.2.0
         version: 30.2.0
       '@not-govuk/button-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../button-group
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/panel':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../panel
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -705,23 +705,23 @@ importers:
   components/button-group:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -742,29 +742,29 @@ importers:
   components/checkboxes:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/form-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../form-group
       '@not-govuk/hint':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../hint
       '@not-govuk/label':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../label
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/text-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../text-input
       '@types/react':
         specifier: 19.2.7
@@ -785,32 +785,32 @@ importers:
   components/cookie-banner:
     dependencies:
       '@not-govuk/button-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../button-group
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/width-container':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../width-container
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/button':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../button
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -831,26 +831,26 @@ importers:
   components/date-input:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/form-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../form-group
       '@not-govuk/input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../input
       '@not-govuk/label':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../label
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -871,17 +871,17 @@ importers:
   components/details:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -902,20 +902,20 @@ importers:
   components/error-message:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/visually-hidden':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../visually-hidden
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -936,32 +936,32 @@ importers:
   components/error-summary:
     dependencies:
       '@not-govuk/anchor-list':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/anchor-list
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/checkboxes':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../checkboxes
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/date-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../date-input
       '@not-govuk/page':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../page
       '@not-govuk/text-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../text-input
       '@types/react':
         specifier: 19.2.7
@@ -982,26 +982,26 @@ importers:
   components/fieldset:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../input
       '@not-govuk/label':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../label
       '@not-govuk/visually-hidden':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../visually-hidden
       '@types/react':
         specifier: 19.2.7
@@ -1022,20 +1022,20 @@ importers:
   components/file-upload:
     dependencies:
       '@not-govuk/form-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../form-group
       '@not-govuk/input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../input
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -1056,23 +1056,23 @@ importers:
   components/footer:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/width-container':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../width-container
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -1093,47 +1093,47 @@ importers:
   components/form:
     dependencies:
       '@not-govuk/button':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../button
       '@not-govuk/checkboxes':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../checkboxes
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/date-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../date-input
       '@not-govuk/form-field':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../form-field
       '@not-govuk/forms':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/forms
       '@not-govuk/radios':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../radios
       '@not-govuk/search-box':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../search-box
       '@not-govuk/select':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../select
       '@not-govuk/standalone-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../standalone-input
       '@not-govuk/text-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../text-input
       '@not-govuk/textarea':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../textarea
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1154,29 +1154,29 @@ importers:
   components/form-field:
     dependencies:
       '@not-govuk/checkboxes':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../checkboxes
       '@not-govuk/date-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../date-input
       '@not-govuk/radios':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../radios
       '@not-govuk/select':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../select
       '@not-govuk/text-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../text-input
       '@not-govuk/textarea':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../textarea
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1197,32 +1197,32 @@ importers:
   components/form-group:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/error-message':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../error-message
       '@not-govuk/fieldset':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../fieldset
       '@not-govuk/hint':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../hint
       '@not-govuk/label':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../label
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1243,26 +1243,26 @@ importers:
   components/header:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/width-container':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../width-container
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1283,20 +1283,20 @@ importers:
   components/hint:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1317,20 +1317,20 @@ importers:
   components/input:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1351,17 +1351,17 @@ importers:
   components/inset-text:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -1382,20 +1382,20 @@ importers:
   components/label:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1416,23 +1416,23 @@ importers:
   components/link:
     dependencies:
       '@not-govuk/anchor':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/anchor
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/panel':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../panel
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1453,23 +1453,23 @@ importers:
   components/navigation-menu:
     dependencies:
       '@not-govuk/anchor-list':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/anchor-list
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1490,20 +1490,20 @@ importers:
   components/notification-banner:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1524,53 +1524,53 @@ importers:
   components/page:
     dependencies:
       '@not-govuk/back-link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../back-link
       '@not-govuk/breadcrumbs':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../breadcrumbs
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/footer':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../footer
       '@not-govuk/header':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../header
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/phase-banner':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../phase-banner
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/service-navigation':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../service-navigation
       '@not-govuk/skip-link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../skip-link
       '@not-govuk/width-container':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../width-container
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/aside':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../aside
       '@not-govuk/button':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../button
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1591,26 +1591,26 @@ importers:
   components/pagination:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/uri':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/uri
       '@not-govuk/visually-hidden':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../visually-hidden
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -1631,23 +1631,23 @@ importers:
   components/panel:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/button':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../button
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1668,20 +1668,20 @@ importers:
   components/phase-banner:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -1702,29 +1702,29 @@ importers:
   components/radios:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/form-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../form-group
       '@not-govuk/hint':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../hint
       '@not-govuk/label':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../label
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/text-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../text-input
       '@types/react':
         specifier: 19.2.7
@@ -1745,20 +1745,20 @@ importers:
   components/search-box:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/standalone-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../standalone-input
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1779,20 +1779,20 @@ importers:
   components/select:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/form-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../form-group
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -1813,32 +1813,32 @@ importers:
   components/service-navigation:
     dependencies:
       '@not-govuk/anchor-list':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/anchor-list
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/width-container':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../width-container
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/header':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../header
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1859,17 +1859,17 @@ importers:
   components/skip-link:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -1890,26 +1890,26 @@ importers:
   components/standalone-input:
     dependencies:
       '@not-govuk/button':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../button
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/form-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../form-group
       '@not-govuk/input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../input
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -1930,26 +1930,26 @@ importers:
   components/summary-card:
     dependencies:
       '@not-govuk/anchor-list':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/anchor-list
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@not-govuk/visually-hidden':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../visually-hidden
       '@types/react':
         specifier: 19.2.7
@@ -1970,29 +1970,29 @@ importers:
   components/summary-list:
     dependencies:
       '@not-govuk/anchor-list':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/anchor-list
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../link
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/summary-card':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../summary-card
       '@not-govuk/visually-hidden':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../visually-hidden
       '@types/react':
         specifier: 19.2.7
@@ -2013,20 +2013,20 @@ importers:
   components/table:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/simple-table':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/simple-table
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -2047,23 +2047,23 @@ importers:
   components/tabs:
     dependencies:
       '@not-govuk/client-component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/client-component-helpers
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/table':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../table
       '@types/react':
         specifier: 19.2.7
@@ -2084,20 +2084,20 @@ importers:
   components/tag:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/table':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../table
       '@types/react':
         specifier: 19.2.7
@@ -2118,14 +2118,14 @@ importers:
   components/text-input:
     dependencies:
       '@not-govuk/form-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../form-group
       '@not-govuk/input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../input
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -2146,20 +2146,20 @@ importers:
   components/textarea:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/form-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../form-group
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -2180,20 +2180,20 @@ importers:
   components/visually-hidden:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -2214,20 +2214,20 @@ importers:
   components/warning-text:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       '@not-govuk/visually-hidden':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../visually-hidden
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@types/react':
         specifier: 19.2.7
@@ -2248,23 +2248,23 @@ importers:
   components/width-container:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-helpers
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib-govuk/sass-base
       govuk-frontend:
         specifier: 5.13.0
         version: 5.13.0
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/component-test-helpers
       '@not-govuk/panel':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../panel
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../tag
       '@types/react':
         specifier: 19.2.7
@@ -2285,13 +2285,13 @@ importers:
   lib-govuk/components:
     dependencies:
       '@not-govuk/form':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/form
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../sass-base
       '@not-govuk/simple-components':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../simple-components
       govuk-frontend:
         specifier: 5.13.0
@@ -2313,13 +2313,13 @@ importers:
   lib-govuk/create:
     dependencies:
       '@not-govuk/create-internal':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/create
       '@not-govuk/plop-pack':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../plop-pack
       '@not-govuk/plop-pack-internal':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/plop-pack
     devDependencies:
       plop:
@@ -2329,7 +2329,7 @@ importers:
   lib-govuk/plop-pack:
     dependencies:
       '@not-govuk/plop-pack-internal':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../lib/plop-pack
 
   lib-govuk/sass-base:
@@ -2341,130 +2341,130 @@ importers:
   lib-govuk/simple-components:
     dependencies:
       '@not-govuk/aside':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/aside
       '@not-govuk/back-link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/back-link
       '@not-govuk/breadcrumbs':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/breadcrumbs
       '@not-govuk/button':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/button
       '@not-govuk/checkboxes':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/checkboxes
       '@not-govuk/cookie-banner':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/cookie-banner
       '@not-govuk/date-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/date-input
       '@not-govuk/details':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/details
       '@not-govuk/error-message':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/error-message
       '@not-govuk/error-summary':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/error-summary
       '@not-govuk/fieldset':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/fieldset
       '@not-govuk/file-upload':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/file-upload
       '@not-govuk/footer':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/footer
       '@not-govuk/form-field':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/form-field
       '@not-govuk/form-group':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/form-group
       '@not-govuk/header':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/header
       '@not-govuk/hint':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/hint
       '@not-govuk/input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/input
       '@not-govuk/inset-text':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/inset-text
       '@not-govuk/label':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/label
       '@not-govuk/link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/link
       '@not-govuk/navigation-menu':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/navigation-menu
       '@not-govuk/notification-banner':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/notification-banner
       '@not-govuk/page':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/page
       '@not-govuk/pagination':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/pagination
       '@not-govuk/panel':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/panel
       '@not-govuk/phase-banner':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/phase-banner
       '@not-govuk/radios':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/radios
       '@not-govuk/sass-base':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../sass-base
       '@not-govuk/search-box':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/search-box
       '@not-govuk/select':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/select
       '@not-govuk/service-navigation':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/service-navigation
       '@not-govuk/skip-link':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/skip-link
       '@not-govuk/standalone-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/standalone-input
       '@not-govuk/summary-card':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/summary-card
       '@not-govuk/summary-list':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/summary-list
       '@not-govuk/table':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/table
       '@not-govuk/tabs':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/tabs
       '@not-govuk/tag':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/tag
       '@not-govuk/text-input':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/text-input
       '@not-govuk/textarea':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/textarea
       '@not-govuk/warning-text':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components/warning-text
     devDependencies:
       jest:
@@ -2483,7 +2483,7 @@ importers:
   lib/app-plop-pack:
     dependencies:
       '@not-govuk/plop-pack-internal':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../plop-pack
     devDependencies:
       plop:
@@ -2530,7 +2530,7 @@ importers:
   lib/create:
     dependencies:
       '@not-govuk/plop-pack-internal':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../plop-pack
       shelljs:
         specifier: ^0.10.0
@@ -2543,16 +2543,16 @@ importers:
   lib/docs-components:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../component-helpers
       '@not-govuk/memoize':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../memoize
       '@not-govuk/simple-table':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/simple-table
       '@not-govuk/tabs-internal':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../../components-internal/tabs
       prettier:
         specifier: ^3.7.4
@@ -2592,13 +2592,13 @@ importers:
         specifier: 10.3.0
         version: 10.3.0
       '@not-govuk/fastify-auth':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../fastify-auth
       '@not-govuk/fastify-dev-logger':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../fastify-dev-logger
       '@not-govuk/fastify-harden':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../fastify-harden
       close-with-grace:
         specifier: 2.4.0
@@ -2608,7 +2608,7 @@ importers:
         version: 5.6.2
     devDependencies:
       '@not-govuk/types-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../types-helpers
       jest:
         specifier: 30.2.0
@@ -2632,7 +2632,7 @@ importers:
         specifier: 10.3.0
         version: 10.3.0
       '@not-govuk/fastify-session':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../fastify-session
       base64url:
         specifier: ^3.0.1
@@ -2673,7 +2673,7 @@ importers:
         version: 5.1.0
     devDependencies:
       '@not-govuk/types-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../types-helpers
       fastify:
         specifier: 5.6.2
@@ -2741,7 +2741,7 @@ importers:
         specifier: 9.0.0
         version: 9.0.0
       '@not-govuk/react-router-context':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../react-router-context
       '@react-router/node':
         specifier: 7.11.0
@@ -2751,10 +2751,10 @@ importers:
         version: 5.1.0
     devDependencies:
       '@not-govuk/fastify-auth':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../fastify-auth
       '@not-govuk/fastify-harden':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../fastify-harden
       fastify:
         specifier: 5.6.2
@@ -2781,14 +2781,14 @@ importers:
   lib/fastify-session:
     dependencies:
       '@not-govuk/fastify-consent-cookies':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../fastify-consent-cookies
       fastify-plugin:
         specifier: 5.1.0
         version: 5.1.0
     devDependencies:
       '@not-govuk/types-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../types-helpers
       fastify:
         specifier: 5.6.2
@@ -2809,13 +2809,13 @@ importers:
   lib/forms:
     dependencies:
       '@not-govuk/component-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../component-helpers
       '@not-govuk/router':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../router
       '@not-govuk/uri':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../uri
       fast-deep-equal:
         specifier: ^3.1.3
@@ -2895,7 +2895,7 @@ importers:
   lib/react-router-context:
     devDependencies:
       '@not-govuk/types':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../types
       jest:
         specifier: 30.2.0
@@ -2916,7 +2916,7 @@ importers:
   lib/router:
     dependencies:
       '@not-govuk/uri':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../uri
     devDependencies:
       '@remix-run/react':
@@ -2944,7 +2944,7 @@ importers:
   lib/types:
     devDependencies:
       '@not-govuk/types-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../types-helpers
       jest:
         specifier: 30.2.0
@@ -2999,10 +2999,10 @@ importers:
   lib/user-info:
     devDependencies:
       '@not-govuk/component-test-helpers':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../component-test-helpers
       '@not-govuk/types':
-        specifier: workspace:^0.16.3
+        specifier: workspace:*
         version: link:../types
       '@types/react':
         specifier: 19.2.7
