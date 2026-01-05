@@ -36,9 +36,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '~govuk-frontend': 'govuk-frontend', // Vite doesn't seem to support tilde's but other frameworks require it
       '@not-govuk/router': '@not-govuk/router/remix',
-      '@not-govuk/sass-base': '@not-govuk/sass-base/vite',
+      '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbo/webpack
     }
   }
 });
