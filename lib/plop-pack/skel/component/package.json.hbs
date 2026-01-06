@@ -4,6 +4,26 @@
   "description": "{{{description}}}",
   "main": "src/{{{properCase name}}}.tsx",
   "sass": "assets/{{{properCase name}}}.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/{{{properCase name}}}.scss",
+      "default": "./src/{{{properCase name}}}.tsx"
+    }
+  },
+  "publishConfig": {
+    "main": "dist/{{{properCase name}}}.js",
+    "module": "dist/{{{properCase name}}}.mjs",
+    "typings": "dist/{{{properCase name}}}.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/{{{properCase name}}}.scss",
+        "types": "./dist/{{{properCase name}}}.d.ts",
+        "import": "./dist/{{{properCase name}}}.mjs",
+        "require": "./dist/{{{properCase name}}}.js",
+        "default": "./dist/{{{properCase name}}}.mjs"
+      }
+    }
+  },
   "publishConfig": {
     "main": "dist/{{{properCase name}}}.js",
     "typings": "dist/{{{properCase name}}}.d.ts"
@@ -15,7 +35,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "{{{pkg 'author'}}}",
