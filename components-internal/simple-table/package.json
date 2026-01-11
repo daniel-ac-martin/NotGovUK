@@ -4,9 +4,25 @@
   "description": "A simple table for displaying data.",
   "main": "src/SimpleTable.tsx",
   "sass": "assets/SimpleTable.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/SimpleTable.scss",
+      "default": "./src/SimpleTable.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/SimpleTable.js",
-    "typings": "dist/SimpleTable.d.ts"
+    "module": "dist/SimpleTable.mjs",
+    "typings": "dist/SimpleTable.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/SimpleTable.scss",
+        "types": "./dist/SimpleTable.d.ts",
+        "import": "./dist/SimpleTable.mjs",
+        "require": "./dist/SimpleTable.js",
+        "default": "./dist/SimpleTable.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

@@ -4,9 +4,25 @@
   "description": "A component to help users navigate back one page.",
   "main": "src/BackLink.tsx",
   "sass": "assets/BackLink.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/BackLink.scss",
+      "default": "./src/BackLink.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/BackLink.js",
-    "typings": "dist/BackLink.d.ts"
+    "module": "dist/BackLink.mjs",
+    "typings": "dist/BackLink.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/BackLink.scss",
+        "types": "./dist/BackLink.d.ts",
+        "import": "./dist/BackLink.mjs",
+        "require": "./dist/BackLink.js",
+        "default": "./dist/BackLink.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

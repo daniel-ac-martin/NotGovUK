@@ -4,9 +4,25 @@
   "description": "A component for displaying indirectly related content.",
   "main": "src/Aside.tsx",
   "sass": "assets/Aside.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/Aside.scss",
+      "default": "./src/Aside.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/Aside.js",
-    "typings": "dist/Aside.d.ts"
+    "module": "dist/Aside.mjs",
+    "typings": "dist/Aside.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/Aside.scss",
+        "types": "./dist/Aside.d.ts",
+        "import": "./dist/Aside.mjs",
+        "require": "./dist/Aside.js",
+        "default": "./dist/Aside.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

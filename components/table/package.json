@@ -4,9 +4,25 @@
   "description": "A component to make information easier to compare and scan for users.",
   "main": "src/Table.tsx",
   "sass": "assets/Table.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/Table.scss",
+      "default": "./src/Table.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/Table.js",
-    "typings": "dist/Table.d.ts"
+    "module": "dist/Table.mjs",
+    "typings": "dist/Table.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/Table.scss",
+        "types": "./dist/Table.d.ts",
+        "import": "./dist/Table.mjs",
+        "require": "./dist/Table.js",
+        "default": "./dist/Table.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

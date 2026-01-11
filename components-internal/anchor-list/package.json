@@ -4,9 +4,25 @@
   "description": "A list of anchors.",
   "main": "src/AnchorList.tsx",
   "sass": "assets/AnchorList.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/AnchorList.scss",
+      "default": "./src/AnchorList.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/AnchorList.js",
-    "typings": "dist/AnchorList.d.ts"
+    "module": "dist/AnchorList.mjs",
+    "typings": "dist/AnchorList.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/AnchorList.scss",
+        "types": "./dist/AnchorList.d.ts",
+        "import": "./dist/AnchorList.mjs",
+        "require": "./dist/AnchorList.js",
+        "default": "./dist/AnchorList.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

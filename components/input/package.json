@@ -4,9 +4,25 @@
   "description": "A component to allow users to enter a small, single piece of data.",
   "main": "src/Input.tsx",
   "sass": "assets/Input.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/Input.scss",
+      "default": "./src/Input.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/Input.js",
-    "typings": "dist/Input.d.ts"
+    "module": "dist/Input.mjs",
+    "typings": "dist/Input.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/Input.scss",
+        "types": "./dist/Input.d.ts",
+        "import": "./dist/Input.mjs",
+        "require": "./dist/Input.js",
+        "default": "./dist/Input.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

@@ -4,9 +4,25 @@
   "description": "A component to make a page easier to scan by letting users reveal more detailed information only if they need it.",
   "main": "src/Details.tsx",
   "sass": "assets/Details.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/Details.scss",
+      "default": "./src/Details.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/Details.js",
-    "typings": "dist/Details.d.ts"
+    "module": "dist/Details.mjs",
+    "typings": "dist/Details.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/Details.scss",
+        "types": "./dist/Details.d.ts",
+        "import": "./dist/Details.mjs",
+        "require": "./dist/Details.js",
+        "default": "./dist/Details.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
