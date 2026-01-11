@@ -4,7 +4,7 @@ import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import globalDecorator from './decorators';
 
 // FIXME: Temporary hack to get CSS
-import '@not-govuk/components/assets/index.scss';
+import './app.scss';
 
 export const preview: Preview = {
   decorators: [
