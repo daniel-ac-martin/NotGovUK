@@ -55,11 +55,11 @@ export const addHandler = (
     const context: RouterContextProvider | AppLoadContext = await getLoadContext?.(req, reply) ?? new RouterContextProvider();
 
     if (context instanceof RouterContextProvider) {
-      context.set(cspNonceContext, nonce);
-      context.set(userInfoContext, user);
+      context.set(cspNonceContext, nonce as any);
+      context.set(userInfoContext, user as any);
     }
-    (context as EnhancedProvider).cspNonce = nonce; // Legacy support (remove in React Router v8?)
-    (context as EnhancedProvider).user = user; // Legacy support (remove in React Router v8?)
+    (context as unknown as EnhancedProvider).cspNonce = nonce; // Legacy support (remove in React Router v8?)
+    (context as unknown as EnhancedProvider).user = user; // Legacy support (remove in React Router v8?)
 
     const appRequest = createRequest(req, { cspNonce: reply.cspNonce });
     const appResponse = await handleAppRequest(appRequest, context as LoadContext);
