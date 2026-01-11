@@ -4,9 +4,25 @@
   "description": "A component for collecting a piece of data from the user.",
   "main": "src/FormField.ts",
   "sass": "assets/FormField.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/FormField.scss",
+      "default": "./src/FormField.ts"
+    }
+  },
   "publishConfig": {
     "main": "dist/FormField.js",
-    "typings": "dist/FormField.d.ts"
+    "module": "dist/FormField.mjs",
+    "typings": "dist/FormField.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/FormField.scss",
+        "types": "./dist/FormField.d.ts",
+        "import": "./dist/FormField.mjs",
+        "require": "./dist/FormField.js",
+        "default": "./dist/FormField.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

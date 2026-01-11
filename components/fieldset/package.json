@@ -4,9 +4,25 @@
   "description": "A set of form fields.",
   "main": "src/FieldSet.tsx",
   "sass": "assets/FieldSet.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/FieldSet.scss",
+      "default": "./src/FieldSet.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/FieldSet.js",
-    "typings": "dist/FieldSet.d.ts"
+    "module": "dist/FieldSet.mjs",
+    "typings": "dist/FieldSet.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/FieldSet.scss",
+        "types": "./dist/FieldSet.d.ts",
+        "import": "./dist/FieldSet.mjs",
+        "require": "./dist/FieldSet.js",
+        "default": "./dist/FieldSet.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

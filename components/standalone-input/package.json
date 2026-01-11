@@ -4,9 +4,25 @@
   "description": "A single-line, form field with a submit button.",
   "main": "src/StandaloneInput.tsx",
   "sass": "assets/StandaloneInput.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/StandaloneInput.scss",
+      "default": "./src/StandaloneInput.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/StandaloneInput.js",
-    "typings": "dist/StandaloneInput.d.ts"
+    "module": "dist/StandaloneInput.mjs",
+    "typings": "dist/StandaloneInput.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/StandaloneInput.scss",
+        "types": "./dist/StandaloneInput.d.ts",
+        "import": "./dist/StandaloneInput.mjs",
+        "require": "./dist/StandaloneInput.js",
+        "default": "./dist/StandaloneInput.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

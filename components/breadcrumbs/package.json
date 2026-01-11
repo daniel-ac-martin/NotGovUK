@@ -4,9 +4,25 @@
   "description": "A component to help users to understand where they are within a website's structure and move between levels.",
   "main": "src/Breadcrumbs.tsx",
   "sass": "assets/Breadcrumbs.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/Breadcrumbs.scss",
+      "default": "./src/Breadcrumbs.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/Breadcrumbs.js",
-    "typings": "dist/Breadcrumbs.d.ts"
+    "module": "dist/Breadcrumbs.mjs",
+    "typings": "dist/Breadcrumbs.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/Breadcrumbs.scss",
+        "types": "./dist/Breadcrumbs.d.ts",
+        "import": "./dist/Breadcrumbs.mjs",
+        "require": "./dist/Breadcrumbs.js",
+        "default": "./dist/Breadcrumbs.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

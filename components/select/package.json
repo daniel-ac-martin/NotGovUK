@@ -4,9 +4,25 @@
   "description": "A component to allow users to choose from many options.",
   "main": "src/Select.tsx",
   "sass": "assets/Select.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/Select.scss",
+      "default": "./src/Select.tsx"
+    }
+  },
   "publishConfig": {
     "main": "dist/Select.js",
-    "typings": "dist/Select.d.ts"
+    "module": "dist/Select.mjs",
+    "typings": "dist/Select.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/Select.scss",
+        "types": "./dist/Select.d.ts",
+        "import": "./dist/Select.mjs",
+        "require": "./dist/Select.js",
+        "default": "./dist/Select.mjs"
+      }
+    }
   },
   "files": [
     "/assets",
@@ -15,7 +31,9 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+    "build:cjs": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
