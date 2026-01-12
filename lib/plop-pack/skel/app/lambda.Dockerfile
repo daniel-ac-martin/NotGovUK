@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/nodejs:22
+FROM public.ecr.aws/lambda/nodejs:24
 
 ENV NODE_ENV production
 ENV MODE serverless
