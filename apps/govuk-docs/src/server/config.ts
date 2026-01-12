@@ -2,7 +2,7 @@ import { AuthMethod, Mode, NodeEnv, SessionStore, defaultsTrue, defaultsFalse } 
 
 const env = process.env.NODE_ENV as NodeEnv;
 const devMode = env === NodeEnv.Development;
-const standardRoles = [];
+const standardRoles: string[] = [];
 
 const serverConfig = {
   auth: {

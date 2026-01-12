@@ -2,7 +2,7 @@ import { AuthMethod, Mode, NodeEnv, SessionStore, defaultsTrue, defaultsFalse } 
 
 const env = process.env.NODE_ENV as NodeEnv;
 const devMode = env === NodeEnv.Development;
-const standardRoles = ['books.author', 'books.title'];
+const standardRoles: string[] = ['books.author', 'books.title'];
 
 const serverConfig = {
   auth: {
