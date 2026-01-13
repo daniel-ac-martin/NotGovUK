@@ -4,8 +4,12 @@
   "description": "A Vite plugin for importing HTML files as React components.",
   "type": "module",
   "main": "src/index.ts",
+  "typings": "types/vite-html-react.d.ts",
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./types/vite-html-react.d.ts",
+      "default": "./src/index.ts"
+    }
   },
   "publishConfig": {
     "main": "dist/index.cjs",
@@ -21,7 +25,8 @@
     }
   },
   "files": [
-    "/dist"
+    "/dist",
+    "/types"
   ],
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
