@@ -42,7 +42,6 @@ docs_app = govuk-docs
 docs_source_dir = $(source_dir)/apps/$(docs_app)
 docs_target_dir = $(target_dir)/apps/docs
 docs_sources := $(wildcard \
-	$(docs_source_dir)/src/app/mdx.d.ts \
 	$(docs_source_dir)/src/app/root.tsx \
 	$(docs_source_dir)/src/app/routes/contributing.tsx \
 	$(docs_source_dir)/src/app/routes/get-started.tsx \
