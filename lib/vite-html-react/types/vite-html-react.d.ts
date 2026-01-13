@@ -1,7 +1,6 @@
 declare module '*.htm' {
-  import { FC } from 'react';
+  import type { FC } from 'react';
 
   const HtmlComponent: FC;
   export default HtmlComponent;
 }
-

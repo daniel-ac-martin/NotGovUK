@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.vite.json",
   "compilerOptions": {
+    "types": ["node", "vite/client", "mdx", "@not-govuk/vite-html-react"],
     "rootDirs": [".", ".react-router/types"],
     "outDir": "dist",
     "paths": {
@@ -9,13 +10,7 @@
   },
   "include": [
     "src",
-    "**/.server/**/*",
-    "**/.client/**/*",
-    ".react-router/types/**/*",
-    "../../components-internal/*/src",
-    "../../components/*/src",
-    "../../lib-govuk/*/src",
-    "../../lib/*/src"
+    ".react-router/types"
   ],
   "exclude": [
     "dist",
