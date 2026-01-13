@@ -13,16 +13,16 @@
     "typings": "dist/index.d.ts",
     "exports": {
       ".": {
-        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.ts",
         "import": "./dist/index.mjs",
         "require": "./dist/index.js",
-        "types": "./dist/index.d.ts"
+        "default": "./dist/index.mjs"
       },
       "./dev": {
-        "default": "./dist/dev.mjs",
+        "types": "./dist/dev.d.ts",
         "import": "./dist/dev.mjs",
         "require": "./dist/dev.js",
-        "types": "./dist/dev.d.ts"
+        "default": "./dist/dev.mjs"
       }
     }
   },
