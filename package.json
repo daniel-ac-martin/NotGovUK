@@ -12,6 +12,7 @@
     "pnpm:all": "npm run pnpm -- -r",
     "pnpm:apps": "npm run pnpm:all -- --filter './apps/**'",
     "pnpm:libs": "npm run pnpm:all -- --filter './components/**' --filter './components-internal/**' --filter './lib/**' --filter './lib-govuk/**'",
+    "pnpm:storybook": "npm run pnpm:all -- --filter './apps/storybook'",
     "all:build": "npm run pnpm:all -- run build",
     "all:clean": "npm run pnpm:all -- run clean",
     "all:publish": "npm run libs:publish",
@@ -28,10 +29,10 @@
     "postversion": "echo 'Done. You should now publish (with `npm run all:publish`), push your branch, push your tags and merge to master.'",
     "distclean": "pnpm recursive exec -- rm -rf node_modules && rm -rf node_modules",
     "start": "echo 'Error: This is the root of the monorepo, you should run `cd apps/YOUR_APP && npm start` or run `npm run storybook` to start Storybook.' && false",
-    "storybook": "storybook dev -p 9009",
-    "build:storybook": "storybook build",
-    "clean:storybook": "rm -rf storybook-static",
-    "chromatic": "chromatic --exit-zero-on-changes",
+    "storybook": "npm run pnpm:storybook -- run dev",
+    "build:storybook": "npm run pnpm:storybook -- run build",
+    "clean:storybook": "npm run pnpm:storybook -- run clean",
+    "chromatic": "npm run pnpm:storybook -- run chromatic",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --json --outputFile=.jest-results.json"
   },
   "repository": {
