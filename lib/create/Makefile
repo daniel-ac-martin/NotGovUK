@@ -21,9 +21,16 @@ sources := $(wildcard \
 	$(source_dir)/.gitignore \
 	$(source_dir)/.jest/*/* \
 	$(source_dir)/.npm/* \
-	$(source_dir)/.storybook/decorators.tsx \
-	$(source_dir)/.storybook/manager.ts \
-	$(source_dir)/.storybook/preview.ts \
+	$(source_dir)/apps/storybook/.gitignore \
+	$(source_dir)/apps/storybook/package.json \
+	$(source_dir)/apps/storybook/README \
+	$(source_dir)/apps/storybook/tsconfig.json \
+	$(source_dir)/apps/storybook/vite.config.js \
+	$(source_dir)/apps/storybook/README \
+	$(source_dir)/apps/storybook/src/app.scss \
+	$(source_dir)/apps/storybook/src/decorators.tsx \
+	$(source_dir)/apps/storybook/src/manager.ts \
+	$(source_dir)/apps/storybook/src/preview.ts \
 	$(source_dir)/apps/README.md \
 	$(source_dir)/babel.config.js \
 	$(source_dir)/cypress.config.mjs \

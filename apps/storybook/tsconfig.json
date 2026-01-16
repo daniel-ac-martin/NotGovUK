@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.vite.json",
+  "compilerOptions": {
+    "types": ["node", "vite/client", "mdx"],
+    "rootDirs": [".", ".react-router/types"],
+    "outDir": "dist",
+    "paths": {
+      "~/*": ["./src/app/*"]
+    }
+  },
+  "include": [
+    "src",
+    ".react-router/types"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
+}
