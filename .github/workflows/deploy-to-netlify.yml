@@ -53,6 +53,10 @@ jobs:
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
           production-branch: ${{ inputs.production-branch }}
 
+      - name: Warm CDN assets
+        run: |
+          wget --page-requisites --delete-after '${{ steps.deploy.outputs.deploy-url }}'
+
   test:
     name: Test
     needs:
