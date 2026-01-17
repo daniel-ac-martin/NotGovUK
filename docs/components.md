@@ -73,7 +73,7 @@ export default MyComponent;
 ```
 
 
-### Using the components in Remix applications
+### Using the components in React Router Framework applications
 
 You should import the components from the `@not-govuk/components` package, which you should install with NPM.
 
@@ -125,11 +125,39 @@ export default defineConfig({
 
 You should ensure that you set the `js-enabled` class on an element that encompasses all of your components (such as your `<body` element or the Page component), when and only when client-side JavaScript executes. Otherwise some components will not render correctly.
 
-#### Limitations on Remix
+#### Limitations on React Router Framework and Vite
 
 - It's not currently possible to do a named import, as Remix uses Vite, which is stricter than Webpack.
 
 **See:** [Example Remix application using NotGovUK components]
+
+
+### Using the components in Remix applications
+
+Using the components on Remix is the same as on the React Router framework, but
+you will need an _extra_ alias in your Vite config:
+
+```js
+[...]
+
+export default defineConfig({
+  [...]
+  resolve: {
+    alias: {
+      '@not-govuk/router': '@not-govuk/router/remix',     // ADD THIS EXTRA LINE
+      '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbo/webpack
+    }
+  }
+  [...]
+});
+```
+
+**See:** [Example Remix application](https://github.com/daniel-ac-martin/NotGovUK/tree/bbf5efffa3bf4f79c8feab800f6533d836520ed5/apps/remix-example)
+
+**Note:** Remix has been replaced by the React Router Framework (v7); users
+should migrate to this. Support for Remix will be dropped in a future version of
+NotGovUK.
+
 
 ### Using the components in Next.js applications
 
