@@ -1,13 +1,13 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { Route } from "./+types/one._index";
 
 const title = "One";
 
-export const meta: MetaFunction = () => {
+export function meta({}: Route.MetaArgs) {
   return [
     { title },
     { name: "description", content: "First page" },
   ];
-};
+}
 
 export default function Page() {
   return (

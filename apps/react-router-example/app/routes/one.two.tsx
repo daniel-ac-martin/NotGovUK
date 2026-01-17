@@ -1,14 +1,14 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { Route } from "./+types/one.two";
 import { BackLink } from "@not-govuk/components";
 
 const title = "Two";
 
-export const meta: MetaFunction = () => {
+export function meta({}: Route.MetaArgs) {
   return [
     { title },
     { name: "description", content: "Second page" },
   ];
-};
+}
 
 export default function Page() {
   return (

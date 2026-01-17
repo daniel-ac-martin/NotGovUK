@@ -1,18 +1,16 @@
 import { useEffect } from 'react';
 import {
+  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+} from "react-router";
 import { GovUKPage } from '@not-govuk/components';
 
-import "./style.scss";
-
-export const links: LinksFunction = () => [
-];
+import type { Route } from "./+types/root";
+import "./app.scss";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -60,7 +58,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           organisationHref="/"
           organisationText="!GOV.UK"
           phase="alpha"
-          serviceName="Remix App"
+          serviceName="React Router App"
           serviceHref="/"
           title="NotGovUK"
         >
@@ -79,4 +77,33 @@ export default function App() {
   }, []);
 
   return <Outlet />;
+}
+
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  let message = "Oops!";
+  let details = "An unexpected error occurred.";
+  let stack: string | undefined;
+
+  if (isRouteErrorResponse(error)) {
+    message = error.status === 404 ? "404" : "Error";
+    details =
+      error.status === 404
+        ? "The requested page could not be found."
+        : error.statusText || details;
+  } else if (import.meta.env.DEV && error && error instanceof Error) {
+    details = error.message;
+    stack = error.stack;
+  }
+
+  return (
+    <main>
+      <h1>{message}</h1>
+      <p>{details}</p>
+      {stack && (
+        <pre>
+          <code>{stack}</code>
+        </pre>
+      )}
+    </main>
+  );
 }

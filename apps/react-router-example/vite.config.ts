@@ -1,12 +1,6 @@
-import { vitePlugin as remix } from "@remix-run/dev";
+import { reactRouter } from "@react-router/dev/vite";
 import { defineConfig } from "vite";
 //import tsconfigPaths from "vite-tsconfig-paths"; // Users probably don't need to comment this out.
-
-declare module "@remix-run/node" {
-  interface Future {
-    v3_singleFetch: true;
-  }
-}
 
 export default defineConfig({
   css: {
@@ -22,21 +16,11 @@ export default defineConfig({
     }
   },
   plugins: [
-    remix({
-      buildDirectory: 'dist',
-      future: {
-        v3_fetcherPersist: true,
-        v3_relativeSplatPath: true,
-        v3_throwAbortReason: true,
-        v3_singleFetch: true,
-        v3_lazyRouteDiscovery: true,
-      },
-    }),
-    //tsconfigPaths(), // End-users probably don't need to comment this out.
+    reactRouter(),
+    //tsconfigPaths() // End-users probably don't need to comment this out.
   ],
   resolve: {
     alias: {
-      '@not-govuk/router': '@not-govuk/router/remix',
       '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbo/webpack
     }
   }
