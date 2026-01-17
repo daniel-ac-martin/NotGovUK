@@ -1,14 +1,14 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { Route } from "./+types/three";
 import { Radios, TextInput } from '@not-govuk/components';
 
 const title = "Three";
 
-export const meta: MetaFunction = () => {
+export function meta({}: Route.MetaArgs) {
   return [
     { title },
     { name: "description", content: "Third page" },
   ];
-};
+}
 
 export default function Page() {
   return (
