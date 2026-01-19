@@ -14,7 +14,7 @@ pnpm recursive up --workspace "@${name}/*"
 # Update references in template files
 sed -i -E "s/workspace:([^*\^0-9]*)(\^)?[^*]+\"/workspace:\1\2${version}\"/g" \
   {lib,lib-govuk}/*/skel/*/package.json*
-sed -i -E "s/workspace:\*\{\{else\}\}(\^)?[^*]+\{\{\/if\}\}\"/workspace:*{{else}}\1${version}{{\/if}}\"/g" \
+sed -i -E "s/workspace:([\*\^])\{\{else\}\}(\^)?[^*]+\{\{\/if\}\}\"/workspace:\1{{else}}\2${version}{{\/if}}\"/g" \
   {lib,lib-govuk}/*/skel/*/package.json*
 
 # Update references in peerDependencies
