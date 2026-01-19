@@ -48,27 +48,28 @@
     "url": "https://github.com/daniel-ac-martin/NotGovUK/issues"
   },
   "homepage": "https://github.com/daniel-ac-martin/NotGovUK#readme",
+  "dependencies": {
+    "@not-govuk/docs-components": "workspace:*",
+    "@not-govuk/user-info": "workspace:*",
+    "@storybook/addon-docs": "9.1.17",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-router": "7.12.0"
+  },
   "devDependencies": {
     "@babel/core": "7.28.6",
     "@babel/plugin-transform-export-namespace-from": "7.27.1",
     "@babel/preset-env": "7.28.6",
     "@babel/preset-react": "7.28.5",
     "@babel/preset-typescript": "7.28.5",
-    "@mdx-js/mdx": "3.1.1",
-    "@not-govuk/docs-components": "workspace:*",
     "@not-govuk/plop-pack": "workspace:*",
-    "@not-govuk/user-info": "workspace:*",
-    "@storybook/addon-docs": "9.1.17",
     "@types/jest": "30.0.0",
     "@types/react": "19.2.8",
     "babel-jest": "30.2.0",
     "jest": "30.2.0",
     "jest-environment-jsdom": "30.2.0",
     "plop": "4.0.4",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
     "react-is": "19.2.3",
-    "react-router": "7.12.0",
     "ts-jest": "29.4.6",
     "typescript": "5.9.3"
   }
