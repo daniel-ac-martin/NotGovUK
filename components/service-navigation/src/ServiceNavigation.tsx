@@ -72,7 +72,14 @@ export const ServiceNavigation: FC<ServiceNavigationProps> = ({
   );
   const nav = !items.length ? null : (
     <nav {...attrs} className={classes('wrapper')} aria-label={navigationLabel}>
-      <button type="button" className={classes('toggle', undefined, 'govuk-js-service-navigation-toggle')} aria-controls={navigationId} aria-label={menuButtonLabel} hidden>
+      <button
+        type="button"
+        className={classes('toggle', undefined, 'govuk-js-service-navigation-toggle')}
+        aria-controls={navigationId}
+        aria-label={menuButtonLabel}
+        hidden
+        aria-hidden="true"
+      >
         {menuButtonText}
       </button>
       <AnchorList id={navigationId} classBlock={classes('list')} items={items} />

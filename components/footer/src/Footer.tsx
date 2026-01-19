@@ -25,6 +25,8 @@ export type NavMenu = {
 
 export type FooterProps = StandardProps & HTMLAttributes<HTMLElement> & {
   children?: ReactNode
+  /** The content licence information within the footer component. Defaults to OGL on GOV.UK */
+  contentLicence?: ReactNode
   /** Department branding to use (e.g. home-office) */
   department?: string
   /** Whether to add the standard Gov.UK content */
@@ -46,6 +48,7 @@ export const Footer: FC<FooterProps> = ({
   classBlock,
   classModifiers: _classModifiers = [],
   className,
+  contentLicence: _contentLicence,
   department,
   govUK = false,
   maxContentsWidth,
@@ -62,6 +65,18 @@ export const Footer: FC<FooterProps> = ({
   );
   const classes = classBuilder('govuk-footer', classBlock, [...classModifiers, department], className);
   const A = (props: LinkProps) => h(Link, { classBlock: classes('link'), ...props });
+  const contentLicence = _contentLicence || (
+    !govUK
+    ? null
+    : (
+      <Fragment>
+        <OGLLogo focusable="false" className={classes('licence-logo')} height="17" width="41" />
+        <span className={classes('license-description')}>
+          All content is available under the <A href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</A>, except where otherwise stated
+        </span>
+      </Fragment>
+    )
+  );
 
   return (
     <footer {...attrs} className={classes()}>
@@ -112,14 +127,7 @@ export const Footer: FC<FooterProps> = ({
                     {children}
                   </div>
                 ) }
-                { !govUK ? null : (
-                  <Fragment>
-                    <OGLLogo focusable="false" className={classes('licence-logo')} height="17" width="41" />
-                    <span className={classes('license-description')}>
-                      All content is available under the <A href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</A>, except where otherwise stated
-                    </span>
-                  </Fragment>
-                ) }
+                { contentLicence }
               </div>
               { !govUK ? null : (
                 <div className={classes('meta-item')}>
