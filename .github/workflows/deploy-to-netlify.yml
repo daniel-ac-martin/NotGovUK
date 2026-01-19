@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [ 'firefox' ]
+        browser: [ 'electron' ]
     steps:
 
       - name: Check out repository
