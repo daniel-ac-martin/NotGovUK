@@ -61,8 +61,8 @@ importers:
         specifier: 30.2.0
         version: 30.2.0
       plop:
-        specifier: 4.0.4
-        version: 4.0.4(@types/node@24.10.9)
+        specifier: 4.0.5
+        version: 4.0.5(@types/node@24.10.9)
       react-is:
         specifier: 19.2.3
         version: 19.2.3
@@ -2204,8 +2204,8 @@ importers:
         version: 0.1.1(@types/node@24.10.9)
     devDependencies:
       plop:
-        specifier: 4.0.4
-        version: 4.0.4(@types/node@24.10.9)
+        specifier: 4.0.5
+        version: 4.0.5(@types/node@24.10.9)
 
   lib/plop-pack:
     dependencies:
@@ -6938,11 +6938,6 @@ packages:
 
   pkg-types@2.3.0:
     resolution: {integrity: sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig==}
-
-  plop@4.0.4:
-    resolution: {integrity: sha512-YdxtHWcPV8hDsszVPr4VQBVGNdn5ZQmEW+cZakZkuVeQHtENmrtY4AhuyoZW6s7ZjpmrS+llLQrfDgRKNQNsmg==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   plop@4.0.5:
     resolution: {integrity: sha512-pJz6oWC9LyBp5mBrRp8AUV2RNiuGW+t/HOs4zwN+b/3YxoObZOOFvjn1mJMpAeKi2pbXADMFOOVQVTVXEdDHDw==}
@@ -13352,19 +13347,6 @@ snapshots:
       confbox: 0.2.2
       exsolve: 1.0.8
       pathe: 2.0.3
-
-  plop@4.0.4(@types/node@24.10.9):
-    dependencies:
-      '@types/liftoff': 4.0.3
-      interpret: 3.1.1
-      liftoff: 5.0.1
-      minimist: 1.2.8
-      nanospinner: 1.2.2
-      node-plop: 0.32.3(@types/node@24.10.9)
-      picocolors: 1.1.1
-      v8flags: 4.0.1
-    transitivePeerDependencies:
-      - '@types/node'
 
   plop@4.0.5(@types/node@24.10.9):
     dependencies:
