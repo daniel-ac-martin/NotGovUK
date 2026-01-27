@@ -64,7 +64,7 @@ You might want to locally preview the documentation website. To do so,
 simply move to the 'docs' app with:
 
 ```shell
-cd apps/govuk-docs
+cd apps/docs
 ```
 
 Then bring up the application in _dev-mode_ using:
