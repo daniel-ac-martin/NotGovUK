@@ -95,7 +95,7 @@ problems or have any questions, please do [get in touch].
 [Typescript]: https://www.typescriptlang.org/
 [Storybook]: https://storybook.js.org/
 [MDX]: https://mdxjs.com/
-[our documentation site]: https://not-govuk.netlify.app
+[our documentation site]: https://not-gov.uk
 [our Storybook]: https://master--5f1488148c817700223adb9a.chromatic.com
 [Webpack]: https://webpack.js.org/
 [Sass]: https://sass-lang.com/
