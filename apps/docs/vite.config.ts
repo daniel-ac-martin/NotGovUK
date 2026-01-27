@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import mdx from '@mdx-js/rollup'
-import html from '@not-govuk/vite-html-react';
+import html from '@react-foundry/vite-html-react';
 import { reactRouter } from '@react-router/dev/vite';
 import { vite as csf } from '@storybook/csf-plugin';
 import reactDocgenTypescript from '@joshwooding/vite-plugin-react-docgen-typescript';
@@ -34,7 +34,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@not-govuk/sass-base': '@not-govuk/sass-base/vite', // Vite resolves url() differently from Turbo/webpack
-      '@storybook/addon-docs/blocks': '@not-govuk/docs-components'
+      '@storybook/addon-docs/blocks': '@react-foundry/docs-components'
     }
   },
   ssr: {

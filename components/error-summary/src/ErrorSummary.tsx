@@ -1,6 +1,6 @@
 import { FC, ReactNode, createElement as h } from 'react';
-import { Anchor, AnchorList, AnchorListProps } from '@not-govuk/anchor-list';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { Anchor, AnchorList, AnchorListProps } from '@react-foundry/anchor-list';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 
 import '../assets/ErrorSummary.scss';
 

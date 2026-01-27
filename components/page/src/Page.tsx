@@ -3,7 +3,7 @@
 import { FC, Fragment, HTMLProps, ReactNode, createElement as h } from 'react';
 import { BackLink } from '@not-govuk/back-link';
 import { Breadcrumb, Breadcrumbs } from '@not-govuk/breadcrumbs';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { Footer, FooterProps, NavMenu } from '@not-govuk/footer';
 import { Header, HeaderProps } from '@not-govuk/header';
 import { A } from '@not-govuk/link';

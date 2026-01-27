@@ -1,7 +1,7 @@
 import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
-import { Anchor, AnchorList } from '@not-govuk/anchor-list';
+import { Anchor, AnchorList } from '@react-foundry/anchor-list';
 import { A } from '@not-govuk/link';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 
 export type Action = Anchor;
 

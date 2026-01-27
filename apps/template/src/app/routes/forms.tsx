@@ -7,7 +7,7 @@ import {
   required,
   validator
 } from '@not-govuk/components';
-import { useLocation } from '@not-govuk/router';
+import { useLocation } from '@react-foundry/router';
 import { siteTitle } from '../config';
 
 export const title = 'Forms';

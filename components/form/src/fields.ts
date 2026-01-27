@@ -1,5 +1,5 @@
 import { ComponentType } from 'react';
-import { FieldProps, date, integer, minimum, range, withForm } from '@not-govuk/forms';
+import { FieldProps, date, integer, minimum, range, withForm } from '@react-foundry/forms';
 import { Checkboxes as _Checkboxes, CheckboxesProps } from '@not-govuk/checkboxes';
 import { DateInput as _DateInput, DateInputProps } from '@not-govuk/date-input';
 import { FormField as _Field, FormFieldProps } from '@not-govuk/form-field';

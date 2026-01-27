@@ -1,4 +1,4 @@
-import { AuthMethod, Mode, NodeEnv, SessionStore, defaultsTrue, defaultsFalse } from '@not-govuk/fastify';
+import { AuthMethod, Mode, NodeEnv, SessionStore, defaultsTrue, defaultsFalse } from '@react-foundry/fastify';
 
 const env = process.env.NODE_ENV as NodeEnv;
 const devMode = env === NodeEnv.Development;

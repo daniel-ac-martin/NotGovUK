@@ -10,8 +10,8 @@ import {
 } from 'react-router';
 import type { Route } from './+types/root';
 import { A, GovUKPage as Page } from '@not-govuk/components';
-import { cspNonceContext, sanitiseUserInfo, userInfoContext } from '@not-govuk/react-router-context';
-import { UserInfoContext } from '@not-govuk/user-info';
+import { cspNonceContext, sanitiseUserInfo, userInfoContext } from '@react-foundry/react-router-context';
+import { UserInfoContext } from '@react-foundry/user-info';
 import { siteTitle } from './config';
 
 import './app.scss';

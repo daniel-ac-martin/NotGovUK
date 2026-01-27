@@ -1,5 +1,5 @@
 import type { Route } from "./+types/user-info";
-import { useUserInfo } from '@not-govuk/user-info';
+import { useUserInfo } from '@react-foundry/user-info';
 import { siteTitle } from '../config';
 
 export const title = 'User info';

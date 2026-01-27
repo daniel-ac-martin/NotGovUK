@@ -1,6 +1,6 @@
 import type { Route } from "./+types/search";
 import { Form } from '@not-govuk/components';
-import { useLocation } from '@not-govuk/router';
+import { useLocation } from '@react-foundry/router';
 import { siteTitle } from '../config';
 
 export const title = 'Search';

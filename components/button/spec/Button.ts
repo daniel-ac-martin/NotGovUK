@@ -1,6 +1,6 @@
 import { createElement as h } from 'react';
 import { jest } from '@jest/globals';
-import { render, screen, userEvent } from '@not-govuk/component-test-helpers';
+import { render, screen, userEvent } from '@react-foundry/component-test-helpers';
 import Button from '../src/Button';
 
 describe('Button', () => {

@@ -42,7 +42,7 @@
     "react-components"
   ],
   "dependencies": {
-    "@not-govuk/component-helpers": "workspace:^",
+    "@react-foundry/component-helpers": "^0.1.0",
     "@not-govuk/form-group": "workspace:^",
     "@not-govuk/hint": "workspace:^",
     "@not-govuk/label": "workspace:^",
@@ -50,12 +50,12 @@
     "govuk-frontend": "^5.13.0"
   },
   "peerDependencies": {
-    "@not-govuk/docs-components": "^0.16.3",
+    "@react-foundry/docs-components": "^0.1.0",
     "@storybook/addon-docs": "^9.1.17",
     "react": "^19.2.3"
   },
   "peerDependenciesMeta": {
-    "@not-govuk/docs-components": {
+    "@react-foundry/docs-components": {
       "optional": true
     },
     "@storybook/addon-docs": {
@@ -63,7 +63,7 @@
     }
   },
   "devDependencies": {
-    "@not-govuk/component-test-helpers": "workspace:*",
+    "@react-foundry/component-test-helpers": "0.1.0",
     "@not-govuk/text-input": "workspace:*",
     "@types/react": "19.2.8",
     "jest": "30.2.0",

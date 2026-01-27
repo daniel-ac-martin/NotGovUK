@@ -1,6 +1,6 @@
 import type { Route } from "./+types/components.$id";
 import { data } from 'react-router';
-import { DocsPage } from '@not-govuk/docs-components';
+import { DocsPage } from '@react-foundry/docs-components';
 import { components as subpages } from '../stories';
 import { siteTitle } from '../config';
 

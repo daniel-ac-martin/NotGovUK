@@ -1,6 +1,6 @@
 import { FC, HTMLAttributes, createElement as h } from 'react';
-import { AnchorList, Item } from '@not-govuk/anchor-list';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { AnchorList, Item } from '@react-foundry/anchor-list';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 
 import '../assets/NavigationMenu.scss';
 
@@ -28,4 +28,4 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
 };
 
 export default NavigationMenu;
-export type { Item } from '@not-govuk/anchor-list';
+export type { Item } from '@react-foundry/anchor-list';

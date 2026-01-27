@@ -6,9 +6,9 @@ import { ServerRouter } from "react-router";
 import { isbot } from "isbot";
 import type { RenderToPipeableStreamOptions } from "react-dom/server";
 import { renderToPipeableStream } from "react-dom/server";
-import type { Request } from "@not-govuk/fastify-react-router";
-import type { RouterContextProvider } from "@not-govuk/react-router-context";
-import { cspNonceContext } from "@not-govuk/react-router-context";
+import type { Request } from "@react-foundry/fastify-react-router";
+import type { RouterContextProvider } from "@react-foundry/react-router-context";
+import { cspNonceContext } from "@react-foundry/react-router-context";
 
 export const streamTimeout = 5_000;
 const isServerless = process.env['MODE'] === 'serverless';

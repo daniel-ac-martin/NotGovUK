@@ -1,5 +1,5 @@
 import type { Route } from "./+types/sitemap";
-import { AnchorList } from '@not-govuk/anchor-list';
+import { AnchorList } from '@react-foundry/anchor-list';
 import { A } from '@not-govuk/components';
 import { siteTitle } from '../config';
 

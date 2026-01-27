@@ -42,18 +42,18 @@
     "react-components"
   ],
   "dependencies": {
-    "@not-govuk/component-helpers": "workspace:^",
+    "@react-foundry/component-helpers": "^0.1.0",
     "@not-govuk/link": "workspace:^",
     "@not-govuk/sass-base": "workspace:^",
     "govuk-frontend": "^5.13.0"
   },
   "peerDependencies": {
-    "@not-govuk/docs-components": "^0.16.3",
+    "@react-foundry/docs-components": "^0.1.0",
     "@storybook/addon-docs": "^9.1.17",
     "react": "^19.2.3"
   },
   "peerDependenciesMeta": {
-    "@not-govuk/docs-components": {
+    "@react-foundry/docs-components": {
       "optional": true
     },
     "@storybook/addon-docs": {
@@ -63,7 +63,7 @@
   "devDependencies": {
     "@jest/globals": "30.2.0",
     "@not-govuk/button-group": "workspace:*",
-    "@not-govuk/component-test-helpers": "workspace:*",
+    "@react-foundry/component-test-helpers": "0.1.0",
     "@not-govuk/panel": "workspace:*",
     "@not-govuk/tag": "workspace:*",
     "@types/react": "19.2.8",

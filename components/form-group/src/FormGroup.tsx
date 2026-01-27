@@ -1,5 +1,5 @@
 import { FC, Fragment, HTMLAttributes, ReactNode, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { ErrorMessage } from '@not-govuk/error-message';
 import { FieldSet } from '@not-govuk/fieldset';
 import { Hint } from '@not-govuk/hint';

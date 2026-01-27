@@ -1,7 +1,7 @@
 import type { Route } from "./+types/styles";
 import { Outlet, redirect } from 'react-router';
 import { NavigationMenu } from '@not-govuk/components';
-import { DocsPage } from '@not-govuk/docs-components';
+import { DocsPage } from '@react-foundry/docs-components';
 import { styleLinks } from '../stories';
 import { siteTitle } from '../config';
 

@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, ComponentProps, FC, Fragment, ReactNode, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { A } from '@not-govuk/link';
 
 import '../assets/Button.scss';

@@ -1,6 +1,6 @@
 import type { Route } from "./+types/result";
 import { A } from '@not-govuk/components';
-import { useLocation } from '@not-govuk/router';
+import { useLocation } from '@react-foundry/router';
 import { siteTitle } from '../config';
 
 export const title = 'Result';

@@ -1,5 +1,5 @@
 import { createElement as h } from 'react';
-import { render, screen } from '@not-govuk/component-test-helpers';
+import { render, screen } from '@react-foundry/component-test-helpers';
 import Tag from '../src/Tag';
 
 describe('Tag', () => {

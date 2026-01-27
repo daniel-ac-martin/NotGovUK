@@ -1,6 +1,6 @@
 import { FC, ReactNode, createElement as h } from 'react';
 import { SubmitButton } from '@not-govuk/button';
-import { classBuilder } from '@not-govuk/component-helpers';
+import { classBuilder } from '@react-foundry/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 import { Input, InputProps } from '@not-govuk/input';
 
