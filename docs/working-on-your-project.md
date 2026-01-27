@@ -75,7 +75,7 @@ the `master` branch.
 Continuous Integration
 ----------------------
 
-You project comes with configuration files for running Continuous
+Your project comes with configuration files for running Continuous
 Integration (CI) via [GitHub Actions]. These files are found in the
 `[.github/workflows]` directory.
 
