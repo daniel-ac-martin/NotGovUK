@@ -1,6 +1,6 @@
 import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
-import { Anchor, AnchorList } from "@not-govuk/anchor-list";
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
+import { Anchor, AnchorList } from "@react-foundry/anchor-list";
 
 import '../assets/SummaryCard.scss';
 

@@ -1,6 +1,6 @@
 import { ComponentProps, FC, createElement as h } from 'react';
 import { A } from '@not-govuk/link';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 
 export type LinkProps = ComponentProps<typeof A>;
 

@@ -144,8 +144,8 @@ export default defineConfig({
   [...]
   resolve: {
     alias: {
-      '@not-govuk/router': '@not-govuk/router/remix',     // ADD THIS EXTRA LINE
-      '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbo/webpack
+      '@react-foundry/router': '@react-foundry/router/remix', // ADD THIS EXTRA LINE
+      '@not-govuk/sass-base': '@not-govuk/sass-base/vite'     // Vite resolves url() differently from Turbo/webpack
     }
   }
   [...]
@@ -191,7 +191,7 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     resolveAlias: {
-      '@not-govuk/router': '@not-govuk/router/next', // ADD THIS LINE
+      '@react-foundry/router': '@react-foundry/router/next', // ADD THIS LINE
     }
   }
 };

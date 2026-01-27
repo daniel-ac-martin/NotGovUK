@@ -1,5 +1,5 @@
 {
-  "name": "@not-govuk/create-internal",
+  "name": "@not-govuk/create",
   "version": "0.16.3",
   "description": "A project and prototype initialiser.",
   "type": "module",
@@ -11,8 +11,7 @@
   "files": [
     "/bin",
     "/dist",
-    "/plopfile.js",
-    "/skel"
+    "/plopfile.js"
   ],
   "scripts": {
     "prepublishOnly": "npm run clean && npm run build",
@@ -25,8 +24,9 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "@not-govuk/plop-pack-internal": "workspace:^",
-    "shelljs": "^0.10.0"
+    "@not-govuk/plop-pack": "workspace:^",
+    "@react-foundry/create": "^0.1.1",
+    "@react-foundry/plop-pack": "^0.1.1"
   },
   "devDependencies": {
     "plop": "4.0.4"

@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     resolveAlias: {
-      '@not-govuk/router': '@not-govuk/router/next', // ADD THIS LINE
+      '@react-foundry/router': '@react-foundry/router/next', // ADD THIS LINE
     }
   }
 };

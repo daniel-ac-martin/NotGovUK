@@ -1,5 +1,5 @@
 {
-  "name": "@not-govuk/plop-pack-internal",
+  "name": "@not-govuk/plop-pack",
   "version": "0.16.3",
   "description": "Plop pack with misc tools.",
   "type": "module",
@@ -12,7 +12,7 @@
     "/skel"
   ],
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "true",
     "clean": "true"
   },
@@ -22,17 +22,6 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "fs-extra": "^11.3.3",
-    "lodash": "^4.17.21",
-    "minimist": "^1.2.8",
-    "node-plop": "^0.32.3",
-    "plop": "^4.0.4",
-    "resolve": "^1.22.11",
-    "shelljs": "^0.10.0"
-  },
-  "devDependencies": {
-    "handlebars": "4.7.8",
-    "jest": "30.2.0",
-    "jest-environment-jsdom": "30.2.0"
+    "@react-foundry/plop-pack": "^0.1.1"
   }
 }

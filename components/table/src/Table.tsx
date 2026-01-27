@@ -1,6 +1,6 @@
 import { ComponentProps, FC, createElement as h } from 'react';
-import { classBuilder } from '@not-govuk/component-helpers';
-import { SimpleTable as _Table } from '@not-govuk/simple-table';
+import { classBuilder } from '@react-foundry/component-helpers';
+import { SimpleTable as _Table } from '@react-foundry/simple-table';
 
 import '../assets/Table.scss';
 

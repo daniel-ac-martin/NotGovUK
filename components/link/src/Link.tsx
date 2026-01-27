@@ -1,5 +1,5 @@
 import { ComponentProps, FC, createElement as h } from 'react';
-import { A as _A } from '@not-govuk/anchor';
+import { A as _A } from '@react-foundry/anchor';
 
 import '../assets/Link.scss';
 

@@ -1,5 +1,5 @@
 import { FC, Fragment, InputHTMLAttributes, ReactNode, createElement as h, useRef } from 'react';
-import { ClassBuilder } from '@not-govuk/component-helpers';
+import { ClassBuilder } from '@react-foundry/component-helpers';
 import { Hint } from '@not-govuk/hint';
 import { Label } from '@not-govuk/label';
 

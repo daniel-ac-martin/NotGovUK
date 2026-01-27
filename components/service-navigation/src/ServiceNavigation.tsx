@@ -1,12 +1,12 @@
 import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
-import { AnchorList, Anchor } from '@not-govuk/anchor-list';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { AnchorList, Anchor } from '@react-foundry/anchor-list';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { A } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
 
 import '../assets/ServiceNavigation.scss';
 
-export type { Anchor } from '@not-govuk/anchor-list';
+export type { Anchor } from '@react-foundry/anchor-list';
 export type Item = Anchor;
 
 export type ServiceNavigationProps = StandardProps & HTMLAttributes<HTMLElement> & {

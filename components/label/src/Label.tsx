@@ -1,5 +1,5 @@
 import { FC, LabelHTMLAttributes, ReactNode, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 
 import '../assets/Label.scss';
 

@@ -1,8 +1,8 @@
 'use client';
 
 import { FC, HTMLAttributes, KeyboardEvent, ReactNode, SyntheticEvent, createElement as h, useRef, useState } from 'react';
-import { useIsMounted } from '@not-govuk/client-component-helpers';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { useIsMounted } from '@react-foundry/client-component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 
 import '../assets/Tabs.scss';
 

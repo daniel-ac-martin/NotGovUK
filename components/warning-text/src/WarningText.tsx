@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@not-govuk/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { VisuallyHidden } from '@not-govuk/visually-hidden';
 
 import '../assets/WarningText.scss';

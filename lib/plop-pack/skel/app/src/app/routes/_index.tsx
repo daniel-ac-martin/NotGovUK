@@ -1,4 +1,7 @@
 import type { Route } from "./+types/_index";
+import {
+  StartButton
+} from '@not-govuk/components';
 import { siteTitle } from '../config';
 
 export const title = 'Home';
@@ -15,9 +18,12 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <>
-      <h1>{title}</h1>
-      <p>This is the home page.</p>
-    </>
+    <div className="govuk-grid-row">
+      <div className="govuk-grid-column-two-thirds">
+        <h1>{title}</h1>
+        <p className="lead">This is the home page.</p>
+        <StartButton href="/" />
+      </div>
+    </div>
   );
 }

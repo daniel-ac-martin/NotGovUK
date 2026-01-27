@@ -1,5 +1,5 @@
 import { FC, Fragment, createElement as h } from 'react';
-import { classBuilder } from '@not-govuk/component-helpers';
+import { classBuilder } from '@react-foundry/component-helpers';
 import { StandaloneInput, StandaloneInputProps } from '@not-govuk/standalone-input';
 
 import '../assets/SearchBox.scss';

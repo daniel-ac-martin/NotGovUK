@@ -38,7 +38,7 @@ jobs:
     name: Deploy to Netlify and test
     uses: './.github/workflows/deploy-to-netlify.yml'
     with:
-      app: govuk-docs
+      app: docs
       node: 24
       production-branch: master
     secrets:

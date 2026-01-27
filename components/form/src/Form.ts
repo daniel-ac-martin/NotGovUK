@@ -6,7 +6,7 @@ import WTForm, {
   alphanumeric as localAlphanumeric,
   mobileNumber as localMobileNumber,
   postalCode as localPostalCode
-} from '@not-govuk/forms';
+} from '@react-foundry/forms';
 import { Submit } from './controls';
 import {
   Checkboxes,
@@ -100,5 +100,5 @@ export {
   withControl,
   withForm,
   withField
-} from '@not-govuk/forms';
-export type { RawField } from '@not-govuk/forms';
+} from '@react-foundry/forms';
+export type { RawField } from '@react-foundry/forms';
