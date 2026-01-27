@@ -44,12 +44,11 @@ See: [PLOP]
 Installing your packages
 ------------------------
 
-You will often need to install the libraries and components that you
-create into each other or into your applications. This can be done just
-as you would install any other package:
+You will often need to install the libraries and components that you create into
+each other or into your applications. This can be done as follows:
 
 ```shell
-pnpm install @{{{ dashCase name }}}/your-new-package
+pnpm add --workspace @{{{ dashCase name }}}/your-new-package
 ```
 
 Under the hood, this will create a symlink so you need not worry about
@@ -69,8 +68,8 @@ cd apps/docs
 npm run dev
 ```
 
-We advise that you set up CI publish your documentation site when
-pushing to the `master` branch.
+We advise that you set up CI to publish your documentation site when pushing to
+the `master` branch.
 
 
 Continuous Integration
