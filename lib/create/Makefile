@@ -8,19 +8,23 @@ target_dir = $(build_dir)/skel
 sources := $(wildcard \
 	$(source_dir)/plopfile.mjs \
 	$(source_dir)/pnpm-lock-committed.yaml \
+	$(source_dir)/apps/storybook/vite.config.ts \
 )
-docs_source_dir = $(build_dir)/apps/template
+template_source_dir = $(build_dir)/apps/template
+docs_source_dir = $(source_dir)/apps/docs
 docs_target_dir = $(target_dir)/apps/docs
 docs_targets = \
 	$(docs_target_dir)/src/app/app.scss \
-	$(docs_target_dir)/src/app/root.tsx
+	$(docs_target_dir)/src/app/root.tsx \
+	$(docs_target_dir)/vite.config.ts
 skel_deps = \
 	$(patsubst $(source_dir)/%,$(target_dir)/%,$(sources)) \
 	$(docs_targets)
 proto_target_dir = $(build_dir)/skel-prototype
 skel_proto_deps = \
 	$(proto_target_dir)/src/app/app.scss \
-	$(proto_target_dir)/src/app/root.tsx
+	$(proto_target_dir)/src/app/root.tsx \
+	$(proto_target_dir)/vite.config.ts
 plopfile = $(build_dir)/plopfile.mjs
 
 .PHONY: all clean debug
@@ -45,7 +49,7 @@ $(dist_dir)/package.base.json: $(source_dir)/package.json
 $(dist_dir)/package.app.json: $(plopfile) $(build_dir)/.github/workflows/change-assurance.yml
 	mkdir -p '$(@D)'
 	./node_modules/.bin/plop --plopfile '$(plopfile)' app 'template' 'Template' 'Template.' 'n'
-	$(strip_package) '$(docs_source_dir)/package.json' > '$(@)'
+	$(strip_package) '$(template_source_dir)/package.json' > '$(@)'
 
 $(dist_dir)/skel.tar: $(skel_deps)
 	mkdir -p '$(@D)'
@@ -59,17 +63,21 @@ $(plopfile): $(source_dir)/plopfile.mjs
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
 
-$(docs_target_dir)/src/app/root.tsx: $(source_dir)/apps/govuk-docs/src/app/root.tsx
+$(docs_target_dir)/src/app/root.tsx: $(source_dir)/apps/docs/src/app/root.tsx
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
 
+$(docs_target_dir)/vite.config.ts: $(dist_dir)/package.app.json
+	mkdir -p '$(@D)'
+	$(cp) '$(docs_source_dir)/vite.config.ts' '$(@D)'
+
 $(docs_target_dir)/%: $(dist_dir)/package.app.json
 	mkdir -p '$(@D)'
-	$(cp) '$(docs_source_dir)/$(*)' '$(@D)'
+	$(cp) '$(template_source_dir)/$(*)' '$(@D)'
 
 $(proto_target_dir)/%: $(dist_dir)/package.app.json
 	mkdir -p '$(@D)'
-	$(cp) '$(docs_source_dir)/$(*)' '$(@D)'
+	$(cp) '$(template_source_dir)/$(*)' '$(@D)'
 
 $(build_dir)/%: $(source_dir)/%
 	mkdir -p '$(@D)'
