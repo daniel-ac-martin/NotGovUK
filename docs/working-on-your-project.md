@@ -44,12 +44,11 @@ See: [PLOP]
 Installing your packages
 ------------------------
 
-You will often need to install the libraries and components that you
-create into each other or into your applications. This can be done just
-as you would install any other package:
+You will often need to install the libraries and components that you create into
+each other or into your applications. This can be done as follows:
 
 ```shell
-pnpm install @{{{ dashCase name }}}/your-new-package
+pnpm add --workspace @{{{ dashCase name }}}/your-new-package
 ```
 
 Under the hood, this will create a symlink so you need not worry about
@@ -69,14 +68,14 @@ cd apps/docs
 npm run dev
 ```
 
-We advise that you set up CI publish your documentation site when
-pushing to the `master` branch.
+We advise that you set up CI to publish your documentation site when pushing to
+the `master` branch.
 
 
 Continuous Integration
 ----------------------
 
-You project comes with configuration files for running Continuous
+Your project comes with configuration files for running Continuous
 Integration (CI) via [GitHub Actions]. These files are found in the
 `[.github/workflows]` directory.
 
@@ -86,7 +85,7 @@ documentation to [Netlify].
 
 
 [set up your project]: ./get-started
-[pnpm]: https://pnpm.js.org/
+[pnpm]: https://pnpm.io
 [Applications]: https://not-gov.uk/#applications
 [Libraries]: https://not-gov.uk/#libraries
 [Components]: https://not-gov.uk/components
@@ -95,7 +94,7 @@ documentation to [Netlify].
 [components/]: ../components/
 [pnpm-workspaces.yaml]: ../pnpm-workspaces.yaml
 [plopfile.js]: ../plopfile.js
-[install pnpm]: https://pnpm.js.org/en/installation
+[install pnpm]: https://pnpm.io/installation
 [PLOP]: https://plopjs.com/
 [documentation application]: ../apps/docs
 [GitHub Actions]: https://github.com/features/actions
