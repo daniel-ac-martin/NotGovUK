@@ -11,7 +11,7 @@
     "pnpm": "pnpm",
     "pnpm:all": "npm run pnpm -- -r",
     "pnpm:apps": "npm run pnpm:all -- --filter './apps/**'",
-    "pnpm:libs": "npm run pnpm:all -- --filter './components/**' --filter './components-internal/**' --filter './lib/**' --filter './lib-govuk/**'",
+    "pnpm:libs": "npm run pnpm:all -- --filter './components/**' --filter './lib/**'",
     "pnpm:storybook": "npm run pnpm:all -- --filter './apps/storybook'",
     "all:build": "npm run pnpm:all -- run build",
     "all:clean": "npm run pnpm:all -- run clean",
