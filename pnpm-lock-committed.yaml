@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@react-foundry/docs-components':
         specifier: 0.1.7
-        version: 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+        version: 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@react-foundry/user-info':
         specifier: 0.1.7
         version: 0.1.7(react@19.2.4)
@@ -24,8 +24,8 @@ importers:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
       react-router:
-        specifier: 7.13.0
-        version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 7.13.2
+        version: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
       '@babel/core':
         specifier: 7.29.0
@@ -86,25 +86,25 @@ importers:
         version: link:../../lib/components
       '@react-foundry/anchor-list':
         specifier: 0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@react-foundry/fastify':
         specifier: 0.1.7
         version: 0.1.7
       '@react-foundry/fastify-react-router':
         specifier: 0.1.7
-        version: 0.1.7(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+        version: 0.1.7(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@react-foundry/react-router-context':
         specifier: 0.1.7
         version: 0.1.7
       '@react-foundry/router':
         specifier: 0.1.7
-        version: 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+        version: 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       '@react-router/fs-routes':
-        specifier: 7.13.0
-        version: 7.13.0(@react-router/dev@7.13.0(@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(typescript@5.9.3)
+        specifier: 7.13.2
+        version: 7.13.2(@react-router/dev@7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(typescript@5.9.3)
       '@react-router/node':
-        specifier: 7.13.0
-        version: 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+        specifier: 7.13.2
+        version: 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       isbot:
         specifier: 5.1.36
         version: 5.1.36
@@ -115,8 +115,8 @@ importers:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
       react-router:
-        specifier: 7.13.0
-        version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 7.13.2
+        version: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       serverless-http:
         specifier: 4.0.0
         version: 4.0.0
@@ -128,8 +128,8 @@ importers:
         specifier: 0.1.7
         version: 0.1.7
       '@react-router/dev':
-        specifier: 7.13.0
-        version: 7.13.0(@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+        specifier: 7.13.2
+        version: 7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@storybook/csf-plugin':
         specifier: 9.1.19
         version: 9.1.19(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))
@@ -180,7 +180,7 @@ importers:
         version: link:../../lib/simple-components
       '@react-foundry/router':
         specifier: 0.1.7
-        version: 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+        version: 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       next:
         specifier: 16.1.7
         version: 16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3)
@@ -228,14 +228,14 @@ importers:
         specifier: workspace:*
         version: link:../../lib/components
       '@react-router/fs-routes':
-        specifier: 7.13.0
-        version: 7.13.0(@react-router/dev@7.13.0(@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(typescript@5.9.3)
+        specifier: 7.13.2
+        version: 7.13.2(@react-router/dev@7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(typescript@5.9.3)
       '@react-router/node':
-        specifier: 7.13.0
-        version: 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+        specifier: 7.13.2
+        version: 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       '@react-router/serve':
-        specifier: 7.13.0
-        version: 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+        specifier: 7.13.2
+        version: 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       isbot:
         specifier: 5.1.36
         version: 5.1.36
@@ -246,12 +246,12 @@ importers:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
       react-router:
-        specifier: 7.13.0
-        version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 7.13.2
+        version: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
       '@react-router/dev':
-        specifier: 7.13.0
-        version: 7.13.0(@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+        specifier: 7.13.2
+        version: 7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@types/node':
         specifier: 24.10.13
         version: 24.10.13
@@ -329,8 +329,8 @@ importers:
         specifier: 5.1.4
         version: 5.1.4(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       react-router:
-        specifier: 7.13.0
-        version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 7.13.2
+        version: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       sass-embedded:
         specifier: 1.97.3
         version: 1.97.3
@@ -354,25 +354,25 @@ importers:
         version: link:../../lib/components
       '@react-foundry/anchor-list':
         specifier: 0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@react-foundry/fastify':
         specifier: 0.1.7
         version: 0.1.7
       '@react-foundry/fastify-react-router':
         specifier: 0.1.7
-        version: 0.1.7(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+        version: 0.1.7(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@react-foundry/react-router-context':
         specifier: 0.1.7
         version: 0.1.7
       '@react-foundry/router':
         specifier: 0.1.7
-        version: 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+        version: 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       '@react-router/fs-routes':
-        specifier: 7.13.0
-        version: 7.13.0(@react-router/dev@7.13.0(@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(typescript@5.9.3)
+        specifier: 7.13.2
+        version: 7.13.2(@react-router/dev@7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(typescript@5.9.3)
       '@react-router/node':
-        specifier: 7.13.0
-        version: 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+        specifier: 7.13.2
+        version: 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       isbot:
         specifier: 5.1.36
         version: 5.1.36
@@ -383,8 +383,8 @@ importers:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
       react-router:
-        specifier: 7.13.0
-        version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 7.13.2
+        version: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       sass-embedded:
         specifier: 1.97.3
         version: 1.97.3
@@ -399,8 +399,8 @@ importers:
         specifier: 0.1.7
         version: 0.1.7
       '@react-router/dev':
-        specifier: 7.13.0
-        version: 7.13.0(@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+        specifier: 7.13.2
+        version: 7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@types/mdx':
         specifier: 2.0.13
         version: 2.0.13
@@ -455,7 +455,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -485,7 +485,7 @@ importers:
         version: 0.1.7
       '@react-foundry/router':
         specifier: ^0.1.7
-        version: 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+        version: 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -495,7 +495,7 @@ importers:
         version: link:../panel
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -519,7 +519,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@react-foundry/component-helpers':
         specifier: ^0.1.7
         version: 0.1.7
@@ -532,7 +532,7 @@ importers:
         version: link:../panel
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -578,7 +578,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -615,7 +615,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -658,7 +658,7 @@ importers:
         version: link:../text-input
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -704,7 +704,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -744,7 +744,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -775,7 +775,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -809,7 +809,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -833,7 +833,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@react-foundry/component-helpers':
         specifier: ^0.1.7
         version: 0.1.7
@@ -855,7 +855,7 @@ importers:
         version: link:../text-input
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -895,7 +895,7 @@ importers:
         version: link:../visually-hidden
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -929,7 +929,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -966,7 +966,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1020,14 +1020,14 @@ importers:
         version: 0.1.7
       '@react-foundry/forms':
         specifier: ^0.1.7
-        version: 0.1.7(@types/react@19.2.14)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react@19.2.14)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
     devDependencies:
       '@not-govuk/tag':
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1070,7 +1070,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1116,7 +1116,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1156,7 +1156,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1190,7 +1190,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1224,7 +1224,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1255,7 +1255,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1289,7 +1289,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1313,7 +1313,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor':
         specifier: ^0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1326,7 +1326,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1350,7 +1350,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@react-foundry/component-helpers':
         specifier: ^0.1.7
         version: 0.1.7
@@ -1363,7 +1363,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1397,7 +1397,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1464,7 +1464,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1504,7 +1504,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1541,7 +1541,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1575,7 +1575,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1618,7 +1618,7 @@ importers:
         version: link:../text-input
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1652,7 +1652,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1686,7 +1686,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1716,7 +1716,7 @@ importers:
         version: link:../width-container
       '@react-foundry/anchor-list':
         specifier: ^0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@react-foundry/component-helpers':
         specifier: ^0.1.7
         version: 0.1.7
@@ -1732,7 +1732,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1763,7 +1763,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1803,7 +1803,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1827,7 +1827,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@react-foundry/component-helpers':
         specifier: ^0.1.7
         version: 0.1.7
@@ -1843,7 +1843,7 @@ importers:
         version: link:../visually-hidden
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1870,7 +1870,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@react-foundry/component-helpers':
         specifier: ^0.1.7
         version: 0.1.7
@@ -1886,7 +1886,7 @@ importers:
         version: link:../visually-hidden
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1913,14 +1913,14 @@ importers:
         version: 0.1.7
       '@react-foundry/simple-table':
         specifier: ^0.1.7
-        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(react@19.2.4)
+        version: 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(react@19.2.4)
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1957,7 +1957,7 @@ importers:
         version: link:../table
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -1991,7 +1991,7 @@ importers:
         version: link:../table
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -2019,7 +2019,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -2053,7 +2053,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -2087,7 +2087,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -2121,7 +2121,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -2158,7 +2158,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.1.7
-        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -2401,10 +2401,6 @@ packages:
     resolution: {integrity: sha512-CGOfOJqWjg2qW/Mb6zNsDm+u5vFQ8DxXfbM09z69p5Z6+mE1ikP2jUXw+j42Pf1XTYED2Rni5f95npYeuwMDQA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/generator@7.28.6':
-    resolution: {integrity: sha512-lOoVRwADj8hjf7al89tvQ2a1lf53Z+7tiXMgpZJL3maQPDxh0DgLMN62B2MKUOFcoodBHLMbDM6WAbKgNy5Suw==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/generator@7.29.1':
     resolution: {integrity: sha512-qsaF+9Qcm2Qv8SRIMMscAvG4O3lJ0F1GuMo5HR/Bp02LopNgnZBC/EkbevHFeGs4ls/oPz9v+Bsmzbkbe+0dUw==}
     engines: {node: '>=6.9.0'}
@@ -2499,11 +2495,6 @@ packages:
   '@babel/helpers@7.28.6':
     resolution: {integrity: sha512-xOBvwq86HHdB7WUDTfKfT/Vuxh7gElQ+Sfti2Cy6yIWNW05P8iUslOVcZ4/sKbE+/jQaukQAdz/gf3724kYdqw==}
     engines: {node: '>=6.9.0'}
-
-  '@babel/parser@7.28.6':
-    resolution: {integrity: sha512-TeR9zWR18BvbfPmGbLampPMW+uW1NZnJlRuuHso8i87QZNq2JRF9i6RgxRqtEq+wQGsS19NNTWr2duhnE49mfQ==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
 
   '@babel/parser@7.29.0':
     resolution: {integrity: sha512-IyDgFV5GeDUVX4YdF/3CPULtVGSXXMLh1xVIgdCgxApktqnQV0r7/8Nqthg+8YLGaAtdyIlo2qIdZrbCv4+7ww==}
@@ -3032,10 +3023,6 @@ packages:
 
   '@babel/template@7.28.6':
     resolution: {integrity: sha512-YA6Ma2KsCdGb+WC6UpBVFJGXL58MDA6oyONbjyF/+5sBgxY/dwkhLogbMT2GXXyU84/IhRw/2D1Os1B/giz+BQ==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/traverse@7.28.6':
-    resolution: {integrity: sha512-fgWX62k02qtjqdSNTAGxmKYY/7FSL9WAS1o2Hu5+I5m9T0yxZzr4cnrfXQ/MX0rIifthCSs6FKTlzYbJcPtMNg==}
     engines: {node: '>=6.9.0'}
 
   '@babel/traverse@7.29.0':
@@ -4192,14 +4179,14 @@ packages:
     resolution: {integrity: sha512-bbVu5pyg8URpPBTsO4niYiwSMvkIsddvS+kvdiIWXh8+SNehntyBAdlAS/xxNPzU7nlu+jvGsJ0WwgCW255Frw==}
     engines: {node: '>=18.0.0'}
 
-  '@react-router/dev@7.13.0':
-    resolution: {integrity: sha512-0vRfTrS6wIXr9j0STu614Cv2ytMr21evnv1r+DXPv5cJ4q0V2x2kBAXC8TAqEXkpN5vdhbXBlbGQ821zwOfhvg==}
+  '@react-router/dev@7.13.2':
+    resolution: {integrity: sha512-8Lgf+WCEIPDhp22YB3fyoiWnNyM39sjkfWnSxAwy+Sg83OHxnQFQg0OK1oPM9lm1n/hxJe4lLYOPNwDSyeGiog==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     peerDependencies:
-      '@react-router/serve': ^7.13.0
+      '@react-router/serve': ^7.13.2
       '@vitejs/plugin-rsc': ~0.5.7
-      react-router: ^7.13.0
+      react-router: ^7.13.2
       react-server-dom-webpack: ^19.2.3
       typescript: ^5.1.0
       vite: ^5.1.0 || ^6.0.0 || ^7.0.0
@@ -4216,43 +4203,43 @@ packages:
       wrangler:
         optional: true
 
-  '@react-router/express@7.13.0':
-    resolution: {integrity: sha512-9az5P7sjbfxb0l4TtS5tlyV2tI8ZY4dWeuddxK2JLtgWwe+MGGSEO62fY87PidmgTqpQXguT6iyR5RXP9gJucA==}
+  '@react-router/express@7.13.2':
+    resolution: {integrity: sha512-OuhenOg3LmCLT23+WA6CU/nIyhGv0/3kmyqpQuXxearj6Gbn1ufI+mkejFWPXsNJf+/y1ttY6P6XL8PzNX5E8w==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       express: ^4.17.1 || ^5
-      react-router: 7.13.0
+      react-router: 7.13.2
       typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  '@react-router/fs-routes@7.13.0':
-    resolution: {integrity: sha512-S7rilodzsn+8oKHk3VHo+M3gKB2znHZoUJEu1wD6ZTtb1sj+vkV/36M+bfbqXnbpXKs4+z3J4CWj53lpzEDiWA==}
+  '@react-router/fs-routes@7.13.2':
+    resolution: {integrity: sha512-z7n0BSgWW4UP+ZK0jokdAZ0Jc8UaL8wlbvTw3APQBKBzne5BCbbxnMNJI0SdWqp00hDajXGwnR0TxR3lyYE31g==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@react-router/dev': ^7.13.0
+      '@react-router/dev': ^7.13.2
       typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  '@react-router/node@7.13.0':
-    resolution: {integrity: sha512-Mhr3fAou19oc/S93tKMIBHwCPfqLpWyWM/m0NWd3pJh/wZin8/9KhAdjwxhYbXw1TrTBZBLDENa35uZ+Y7oh3A==}
+  '@react-router/node@7.13.2':
+    resolution: {integrity: sha512-1q0v1gclPga2mNQ7Q+MLuLdEPRpDefAmz25jOlrEz+jSyYkaFt9qbSdkTUPw/QIg/DDnnT3QV8lhgr6r5iIAOA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      react-router: 7.13.0
+      react-router: 7.13.2
       typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  '@react-router/serve@7.13.0':
-    resolution: {integrity: sha512-bgpA3YdUvuSAQa0vRM9xeZaBsglgUvxsVCUqdJpxF87ZF9pT5uoAITrWYd1soDB8jSksnH3btJEXHasvG7cikA==}
+  '@react-router/serve@7.13.2':
+    resolution: {integrity: sha512-H/clM2tMw7daRd7bTM0kYYim4ZLrcWd30DY+R/xu8h2t2YvdfLAfHD0GfqGu3Ds8yAOrWFqH5Ly7BM7jk7fvCg==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     peerDependencies:
-      react-router: 7.13.0
+      react-router: 7.13.2
 
   '@remix-run/node-fetch-server@0.13.0':
     resolution: {integrity: sha512-1EsNo0ZpgXu/90AWoRZf/oE3RVTUS80tiTUpt+hv5pjtAkw7icN4WskDwz/KdAw5ARbJLMhZBrO1NqThmy/McA==}
@@ -6673,9 +6660,6 @@ packages:
     resolution: {integrity: sha512-ugkC31VaVg9cF0DFVoADH12k6061zNZkZON+aX8AWsR9GhPcErkcMBceb6znR8wLERM2AkkOxy2nWRLpT9Jq5w==}
     engines: {node: 20 || >=22}
 
-  minimatch@3.1.2:
-    resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
-
   minimatch@3.1.5:
     resolution: {integrity: sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==}
 
@@ -7145,8 +7129,8 @@ packages:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
     engines: {node: '>=0.10.0'}
 
-  react-router@7.13.0:
-    resolution: {integrity: sha512-PZgus8ETambRT17BUm/LL8lX3Of+oiLaPuVTRH3l1eLvSPpKO3AvhAEb5N7ihAFZQrYDqkvvWfFh9p0z9VsjLw==}
+  react-router@7.13.2:
+    resolution: {integrity: sha512-tX1Aee+ArlKQP+NIUd7SE6Li+CiGKwQtbS+FfRxPX6Pe4vHOo6nr9d++u5cwg+Z8K/x8tP+7qLmujDtfrAoUJA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -8211,14 +8195,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/generator@7.28.6':
-    dependencies:
-      '@babel/parser': 7.28.6
-      '@babel/types': 7.29.0
-      '@jridgewell/gen-mapping': 0.3.13
-      '@jridgewell/trace-mapping': 0.3.31
-      jsesc: 3.1.0
-
   '@babel/generator@7.29.1':
     dependencies:
       '@babel/parser': 7.29.0
@@ -8345,10 +8321,6 @@ snapshots:
   '@babel/helpers@7.28.6':
     dependencies:
       '@babel/template': 7.28.6
-      '@babel/types': 7.29.0
-
-  '@babel/parser@7.28.6':
-    dependencies:
       '@babel/types': 7.29.0
 
   '@babel/parser@7.29.0':
@@ -8994,18 +8966,6 @@ snapshots:
       '@babel/code-frame': 7.29.0
       '@babel/parser': 7.29.0
       '@babel/types': 7.29.0
-
-  '@babel/traverse@7.28.6':
-    dependencies:
-      '@babel/code-frame': 7.28.6
-      '@babel/generator': 7.28.6
-      '@babel/helper-globals': 7.28.0
-      '@babel/parser': 7.28.6
-      '@babel/template': 7.28.6
-      '@babel/types': 7.29.0
-      debug: 4.4.3(supports-color@8.1.1)
-    transitivePeerDependencies:
-      - supports-color
 
   '@babel/traverse@7.29.0':
     dependencies:
@@ -9893,29 +9853,29 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@react-foundry/anchor-list@0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
+  '@react-foundry/anchor-list@0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-foundry/anchor': 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+      '@react-foundry/anchor': 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@react-foundry/component-helpers': 0.1.7
-      '@react-foundry/router': 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+      '@react-foundry/router': 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       react: 19.2.4
     optionalDependencies:
-      '@react-foundry/docs-components': 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+      '@react-foundry/docs-components': 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@storybook/addon-docs': 9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))
     transitivePeerDependencies:
       - '@remix-run/react'
       - next
       - react-router
 
-  '@react-foundry/anchor@0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
+  '@react-foundry/anchor@0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-foundry/client-component-helpers': 0.1.7(react@19.2.4)
       '@react-foundry/component-helpers': 0.1.7
-      '@react-foundry/router': 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+      '@react-foundry/router': 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       '@react-foundry/uri': 0.1.7
       react: 19.2.4
     optionalDependencies:
-      '@react-foundry/docs-components': 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+      '@react-foundry/docs-components': 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@storybook/addon-docs': 9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))
     transitivePeerDependencies:
       - '@remix-run/react'
@@ -9934,14 +9894,14 @@ snapshots:
 
   '@react-foundry/component-helpers@0.1.7': {}
 
-  '@react-foundry/component-test-helpers@0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
+  '@react-foundry/component-test-helpers@0.1.7(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@testing-library/dom': 10.4.1
       '@testing-library/jest-dom': 6.9.1
       '@testing-library/react': 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
       react: 19.2.4
-      react-router: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react-router: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -9954,12 +9914,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))':
+  '@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))':
     dependencies:
       '@react-foundry/component-helpers': 0.1.7
       '@react-foundry/memoize': 0.1.7
-      '@react-foundry/simple-table': 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(react@19.2.4)
-      '@react-foundry/tabs': 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+      '@react-foundry/simple-table': 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(react@19.2.4)
+      '@react-foundry/tabs': 0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       prettier: 3.8.1
       prismjs: 1.30.0
       prismjs-github: 1.0.0
@@ -10003,14 +9963,14 @@ snapshots:
     dependencies:
       fastify-plugin: 5.1.0
 
-  '@react-foundry/fastify-react-router@0.1.7(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))':
+  '@react-foundry/fastify-react-router@0.1.7(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))':
     dependencies:
       '@fastify/middie': 9.1.0
       '@fastify/static': 9.0.0
       '@react-foundry/react-router-context': 0.1.7
-      '@react-router/node': 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+      '@react-router/node': 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       fastify-plugin: 5.1.0
-      react-router: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react-router: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     optionalDependencies:
       vite: 7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)
     transitivePeerDependencies:
@@ -10030,16 +9990,16 @@ snapshots:
       close-with-grace: 2.4.0
       fastify: 5.7.2
 
-  '@react-foundry/forms@0.1.7(@types/react@19.2.14)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
+  '@react-foundry/forms@0.1.7(@types/react@19.2.14)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-foundry/component-helpers': 0.1.7
-      '@react-foundry/router': 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+      '@react-foundry/router': 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       '@react-foundry/uri': 0.1.7
       fast-deep-equal: 3.1.3
       formik: 2.4.9(@types/react@19.2.14)(react@19.2.4)
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
-      react-router: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react-router: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       validator: 13.15.26
     transitivePeerDependencies:
       - '@remix-run/react'
@@ -10062,29 +10022,29 @@ snapshots:
 
   '@react-foundry/react-router-context@0.1.7': {}
 
-  '@react-foundry/router@0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))':
+  '@react-foundry/router@0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))':
     dependencies:
       '@react-foundry/uri': 0.1.7
     optionalDependencies:
       next: 16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3)
-      react-router: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react-router: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
 
-  '@react-foundry/simple-table@0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(react@19.2.4)':
+  '@react-foundry/simple-table@0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(react@19.2.4)':
     dependencies:
       '@react-foundry/component-helpers': 0.1.7
       react: 19.2.4
     optionalDependencies:
-      '@react-foundry/docs-components': 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+      '@react-foundry/docs-components': 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@storybook/addon-docs': 9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))
 
-  '@react-foundry/tabs@0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
+  '@react-foundry/tabs@0.1.7(@react-foundry/docs-components@0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-foundry/client-component-helpers': 0.1.7(react@19.2.4)
       '@react-foundry/component-helpers': 0.1.7
-      '@react-foundry/router': 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+      '@react-foundry/router': 0.1.7(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       react: 19.2.4
     optionalDependencies:
-      '@react-foundry/docs-components': 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+      '@react-foundry/docs-components': 0.1.7(@storybook/addon-docs@9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))))(@testing-library/dom@10.4.1)(next@16.1.7(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.97.3))(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       '@storybook/addon-docs': 9.1.19(@types/react@19.2.14)(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))
     transitivePeerDependencies:
       - '@remix-run/react'
@@ -10101,16 +10061,16 @@ snapshots:
 
   '@react-foundry/vite-html-react@0.1.7': {}
 
-  '@react-router/dev@7.13.0(@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))':
+  '@react-router/dev@7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))':
     dependencies:
       '@babel/core': 7.29.0
-      '@babel/generator': 7.28.6
-      '@babel/parser': 7.28.6
+      '@babel/generator': 7.29.1
+      '@babel/parser': 7.29.0
       '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.29.0)
       '@babel/preset-typescript': 7.28.5(@babel/core@7.29.0)
-      '@babel/traverse': 7.28.6
-      '@babel/types': 7.28.6
-      '@react-router/node': 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+      '@babel/traverse': 7.29.0
+      '@babel/types': 7.29.0
+      '@react-router/node': 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       '@remix-run/node-fetch-server': 0.13.0
       arg: 5.0.2
       babel-dead-code-elimination: 1.0.10
@@ -10127,14 +10087,14 @@ snapshots:
       pkg-types: 2.3.0
       prettier: 3.8.1
       react-refresh: 0.14.2
-      react-router: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react-router: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       semver: 7.7.3
       tinyglobby: 0.2.15
       valibot: 1.2.0(typescript@5.9.3)
       vite: 7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)
       vite-node: 3.2.4(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)
     optionalDependencies:
-      '@react-router/serve': 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+      '@react-router/serve': 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       typescript: 5.9.3
     transitivePeerDependencies:
       - '@types/node'
@@ -10151,38 +10111,38 @@ snapshots:
       - tsx
       - yaml
 
-  '@react-router/express@7.13.0(express@4.21.2)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)':
+  '@react-router/express@7.13.2(express@4.21.2)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)':
     dependencies:
-      '@react-router/node': 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+      '@react-router/node': 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       express: 4.21.2
-      react-router: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react-router: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     optionalDependencies:
       typescript: 5.9.3
 
-  '@react-router/fs-routes@7.13.0(@react-router/dev@7.13.0(@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(typescript@5.9.3)':
+  '@react-router/fs-routes@7.13.2(@react-router/dev@7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3)))(typescript@5.9.3)':
     dependencies:
-      '@react-router/dev': 7.13.0(@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
+      '@react-router/dev': 7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.10.13)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(sass-embedded@1.97.3)(sass@1.97.3)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(sass-embedded@1.97.3)(sass@1.97.3))
       minimatch: 9.0.5
     optionalDependencies:
       typescript: 5.9.3
 
-  '@react-router/node@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)':
+  '@react-router/node@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)':
     dependencies:
       '@mjackson/node-fetch-server': 0.2.0
-      react-router: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react-router: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     optionalDependencies:
       typescript: 5.9.3
 
-  '@react-router/serve@7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)':
+  '@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)':
     dependencies:
       '@mjackson/node-fetch-server': 0.2.0
-      '@react-router/express': 7.13.0(express@4.21.2)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
-      '@react-router/node': 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+      '@react-router/express': 7.13.2(express@4.21.2)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
+      '@react-router/node': 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       compression: 1.8.1
       express: 4.21.2
       get-port: 5.1.1
       morgan: 1.10.1
-      react-router: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react-router: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       source-map-support: 0.5.21
     transitivePeerDependencies:
       - supports-color
@@ -10408,7 +10368,7 @@ snapshots:
 
   '@types/babel__core@7.20.5':
     dependencies:
-      '@babel/parser': 7.28.6
+      '@babel/parser': 7.29.0
       '@babel/types': 7.29.0
       '@types/babel__generator': 7.27.0
       '@types/babel__template': 7.4.4
@@ -10420,7 +10380,7 @@ snapshots:
 
   '@types/babel__template@7.4.4':
     dependencies:
-      '@babel/parser': 7.28.6
+      '@babel/parser': 7.29.0
       '@babel/types': 7.29.0
 
   '@types/babel__traverse@7.28.0':
@@ -10779,7 +10739,7 @@ snapshots:
   babel-dead-code-elimination@1.0.10:
     dependencies:
       '@babel/core': 7.29.0
-      '@babel/parser': 7.28.6
+      '@babel/parser': 7.29.0
       '@babel/traverse': 7.29.0
       '@babel/types': 7.29.0
     transitivePeerDependencies:
@@ -11888,7 +11848,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.1.2
+      minimatch: 3.1.5
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -12184,7 +12144,7 @@ snapshots:
   istanbul-lib-instrument@6.0.3:
     dependencies:
       '@babel/core': 7.29.0
-      '@babel/parser': 7.28.6
+      '@babel/parser': 7.29.0
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.2
       semver: 7.7.3
@@ -12471,7 +12431,7 @@ snapshots:
   jest-snapshot@30.2.0:
     dependencies:
       '@babel/core': 7.29.0
-      '@babel/generator': 7.28.6
+      '@babel/generator': 7.29.1
       '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.29.0)
       '@babel/plugin-syntax-typescript': 7.27.1(@babel/core@7.29.0)
       '@babel/types': 7.29.0
@@ -13076,10 +13036,6 @@ snapshots:
     dependencies:
       brace-expansion: 5.0.2
 
-  minimatch@3.1.2:
-    dependencies:
-      brace-expansion: 1.1.12
-
   minimatch@3.1.5:
     dependencies:
       brace-expansion: 1.1.12
@@ -13558,7 +13514,7 @@ snapshots:
 
   react-refresh@0.18.0: {}
 
-  react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       cookie: 1.1.1
       react: 19.2.4
@@ -14241,7 +14197,7 @@ snapshots:
     dependencies:
       '@istanbuljs/schema': 0.1.3
       glob: 7.2.3
-      minimatch: 3.1.2
+      minimatch: 3.1.5
 
   thread-stream@4.0.0:
     dependencies:
