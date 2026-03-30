@@ -76,8 +76,8 @@ importers:
   apps/docs:
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript':
-        specifier: 0.6.4
-        version: 0.6.4(typescript@5.9.3)(vite@7.3.1(@types/node@24.12.0)(sass-embedded@1.98.0)(sass@1.98.0))
+        specifier: 0.7.0
+        version: 0.7.0(typescript@5.9.3)(vite@7.3.1(@types/node@24.12.0)(sass-embedded@1.98.0)(sass@1.98.0))
       '@mdx-js/rollup':
         specifier: 3.1.1
         version: 3.1.1(rollup@4.55.1)
@@ -3748,11 +3748,11 @@ packages:
       typescript:
         optional: true
 
-  '@joshwooding/vite-plugin-react-docgen-typescript@0.6.4':
-    resolution: {integrity: sha512-6PyZBYKnnVNqOSB0YFly+62R7dmov8segT27A+RVTBVd4iAE6kbW9QBJGlyR2yG4D4ohzhZSTIu7BK1UTtmFFA==}
+  '@joshwooding/vite-plugin-react-docgen-typescript@0.7.0':
+    resolution: {integrity: sha512-qvsTEwEFefhdirGOPnu9Wp6ChfIwy2dBCRuETU3uE+4cC+PFoxMSiiEhxk4lOluA34eARHA0OxqsEUYDqRMgeQ==}
     peerDependencies:
       typescript: '>= 4.3.x'
-      vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+      vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -9657,7 +9657,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  '@joshwooding/vite-plugin-react-docgen-typescript@0.6.4(typescript@5.9.3)(vite@7.3.1(@types/node@24.12.0)(sass-embedded@1.98.0)(sass@1.98.0))':
+  '@joshwooding/vite-plugin-react-docgen-typescript@0.7.0(typescript@5.9.3)(vite@7.3.1(@types/node@24.12.0)(sass-embedded@1.98.0)(sass@1.98.0))':
     dependencies:
       glob: 13.0.3
       react-docgen-typescript: 2.4.0(typescript@5.9.3)
