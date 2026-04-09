@@ -211,7 +211,7 @@ const nextConfig = {
     ...config,
     plugins: [
       ...config.plugins,
-      new webpack.NormalModuleReplacementPlugin(/^@not-govuk\/router$/, '@not-govuk\/router\/next'), // ADD THIS LINE
+      new webpack.NormalModuleReplacementPlugin(/^@react-foundry\/router$/, '@react-foundry\/router\/next'), // ADD THIS LINE
     ]
   })
 };
