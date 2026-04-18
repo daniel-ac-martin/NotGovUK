@@ -22,7 +22,7 @@ const config = {
     "^.+\\.jsx?$": 'babel-jest',
     "^.+\\.tsx?$": ['ts-jest', {
       tsconfig: path.resolve(__dirname, 'tsconfig.jest.json'),
-      useESM: false
+      useESM: true
     }]
   },
   transformIgnorePatterns: [
