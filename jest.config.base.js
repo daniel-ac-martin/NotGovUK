@@ -28,6 +28,12 @@ const config = {
   transformIgnorePatterns: [
     'node_modules/\.pnpm/(?!@)'
   ],
+  extensionsToTreatAsEsm: [
+    '.mts',
+    '.jsx',
+    '.ts',
+    '.tsx'
+  ]
 };
 
 module.exports = config;
