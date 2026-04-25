@@ -2,6 +2,7 @@
   "name": "@not-govuk/hint",
   "version": "0.17.4",
   "description": "Hint text for a form field.",
+  "type": "module",
   "main": "src/Hint.tsx",
   "sass": "assets/Hint.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/Hint.js",
-    "module": "dist/Hint.mjs",
+    "module": "dist/Hint.js",
     "typings": "dist/Hint.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/Hint.scss",
         "types": "./dist/Hint.d.ts",
-        "import": "./dist/Hint.mjs",
-        "require": "./dist/Hint.js",
-        "default": "./dist/Hint.mjs"
+        "import": "./dist/Hint.js",
+        "default": "./dist/Hint.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

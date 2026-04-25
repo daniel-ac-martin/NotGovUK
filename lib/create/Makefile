@@ -6,7 +6,7 @@ dist_dir = ./dist
 source_dir = ../..
 target_dir = $(build_dir)/skel
 sources := $(wildcard \
-	$(source_dir)/plopfile.mjs \
+	$(source_dir)/plopfile.js \
 	$(source_dir)/pnpm-lock-committed.yaml \
 	$(source_dir)/apps/storybook/vite.config.ts \
 )
@@ -25,7 +25,7 @@ skel_proto_deps = \
 	$(proto_target_dir)/src/app/app.scss \
 	$(proto_target_dir)/src/app/root.tsx \
 	$(proto_target_dir)/vite.config.ts
-plopfile = $(build_dir)/plopfile.mjs
+plopfile = $(build_dir)/plopfile.js
 
 .PHONY: all clean debug
 
@@ -59,7 +59,7 @@ $(dist_dir)/skel-prototype.tar: $(skel_proto_deps)
 	mkdir -p '$(@D)'
 	cd 'build/' && tar -cf '../$(@)' 'skel-prototype/'
 
-$(plopfile): $(source_dir)/plopfile.mjs
+$(plopfile): $(source_dir)/plopfile.js
 	mkdir -p '$(@D)'
 	$(cp) '$(<)' '$(@D)'
 

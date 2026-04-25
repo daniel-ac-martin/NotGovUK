@@ -2,6 +2,7 @@
   "name": "@not-govuk/service-navigation",
   "version": "0.17.4",
   "description": "A component to help users understand that they’re using your service and lets them navigate around your service.",
+  "type": "module",
   "main": "src/ServiceNavigation.tsx",
   "sass": "assets/ServiceNavigation.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/ServiceNavigation.js",
-    "module": "dist/ServiceNavigation.mjs",
+    "module": "dist/ServiceNavigation.js",
     "typings": "dist/ServiceNavigation.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/ServiceNavigation.scss",
         "types": "./dist/ServiceNavigation.d.ts",
-        "import": "./dist/ServiceNavigation.mjs",
-        "require": "./dist/ServiceNavigation.js",
-        "default": "./dist/ServiceNavigation.mjs"
+        "import": "./dist/ServiceNavigation.js",
+        "default": "./dist/ServiceNavigation.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

@@ -2,6 +2,7 @@
   "name": "@not-govuk/header",
   "version": "0.17.4",
   "description": "A component that shows users whether they are on GOV.UK and which service they are using.",
+  "type": "module",
   "main": "src/Header.tsx",
   "sass": "assets/Header.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/Header.js",
-    "module": "dist/Header.mjs",
+    "module": "dist/Header.js",
     "typings": "dist/Header.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/Header.scss",
         "types": "./dist/Header.d.ts",
-        "import": "./dist/Header.mjs",
-        "require": "./dist/Header.js",
-        "default": "./dist/Header.mjs"
+        "import": "./dist/Header.js",
+        "default": "./dist/Header.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

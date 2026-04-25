@@ -2,6 +2,7 @@
   "name": "@not-govuk/table",
   "version": "0.17.4",
   "description": "A component to make information easier to compare and scan for users.",
+  "type": "module",
   "main": "src/Table.tsx",
   "sass": "assets/Table.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/Table.js",
-    "module": "dist/Table.mjs",
+    "module": "dist/Table.js",
     "typings": "dist/Table.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/Table.scss",
         "types": "./dist/Table.d.ts",
-        "import": "./dist/Table.mjs",
-        "require": "./dist/Table.js",
-        "default": "./dist/Table.mjs"
+        "import": "./dist/Table.js",
+        "default": "./dist/Table.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

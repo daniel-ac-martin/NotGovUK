@@ -2,6 +2,7 @@
   "name": "@not-govuk/search-box",
   "version": "0.17.4",
   "description": "A single-line, form field for searching, with submit button.",
+  "type": "module",
   "main": "src/SearchBox.tsx",
   "sass": "assets/SearchBox.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/SearchBox.js",
-    "module": "dist/SearchBox.mjs",
+    "module": "dist/SearchBox.js",
     "typings": "dist/SearchBox.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/SearchBox.scss",
         "types": "./dist/SearchBox.d.ts",
-        "import": "./dist/SearchBox.mjs",
-        "require": "./dist/SearchBox.js",
-        "default": "./dist/SearchBox.mjs"
+        "import": "./dist/SearchBox.js",
+        "default": "./dist/SearchBox.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

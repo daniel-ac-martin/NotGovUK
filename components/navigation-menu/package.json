@@ -2,6 +2,7 @@
   "name": "@not-govuk/navigation-menu",
   "version": "0.17.4",
   "description": "A component that provides users with a list of pages to choose from.",
+  "type": "module",
   "main": "src/NavigationMenu.tsx",
   "sass": "assets/NavigationMenu.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/NavigationMenu.js",
-    "module": "dist/NavigationMenu.mjs",
+    "module": "dist/NavigationMenu.js",
     "typings": "dist/NavigationMenu.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/NavigationMenu.scss",
         "types": "./dist/NavigationMenu.d.ts",
-        "import": "./dist/NavigationMenu.mjs",
-        "require": "./dist/NavigationMenu.js",
-        "default": "./dist/NavigationMenu.mjs"
+        "import": "./dist/NavigationMenu.js",
+        "default": "./dist/NavigationMenu.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

@@ -2,6 +2,7 @@
   "name": "@not-govuk/inset-text",
   "version": "0.17.4",
   "description": "A block of text that is inset.",
+  "type": "module",
   "main": "src/InsetText.tsx",
   "sass": "assets/InsetText.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/InsetText.js",
-    "module": "dist/InsetText.mjs",
+    "module": "dist/InsetText.js",
     "typings": "dist/InsetText.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/InsetText.scss",
         "types": "./dist/InsetText.d.ts",
-        "import": "./dist/InsetText.mjs",
-        "require": "./dist/InsetText.js",
-        "default": "./dist/InsetText.mjs"
+        "import": "./dist/InsetText.js",
+        "default": "./dist/InsetText.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
