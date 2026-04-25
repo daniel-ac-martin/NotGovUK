@@ -9,3 +9,6 @@ autoInstallPeers: false             # Needed to avoid build errors
 onlyBuiltDependencies:
   - bun                             # Required in v10
   - cypress                         # Required in v10
+allowBuilds:
+  bun: true                         # Required in v11
+  cypress: true                     # Required in v11
