@@ -26,7 +26,3 @@ $not-govuk-dark-mode-border-colour: #000000;
 .js-enabled {
   @extend .govuk-frontend-supported !optional;
 }
-
-// Allow for Webpack to override this with legacy convention
-$not-govuk-module-prefix: '' !default;
-$govuk-assets-path-external: $not-govuk-module-prefix + 'govuk-frontend/dist/govuk/assets/';
