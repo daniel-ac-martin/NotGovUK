@@ -114,7 +114,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbo/webpack
+      '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbopack
     }
   }
   [...]
@@ -142,9 +142,6 @@ import { Panel } from '@not-govuk/simple-components';
 
 You should also alter your `next.config.js` to modify some of the modules to versions that are designed to work under Next.js.
 
-
-#### With Turbopack (newer)
-
 ```js
 import type { NextConfig } from 'next';
 
@@ -166,25 +163,7 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 ```
 
-
-#### With Webpack (older)
-
-```js
-import webpack from 'webpack';
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  webpack: (config, _options) => ({
-    ...config,
-    plugins: [
-      ...config.plugins,
-      new webpack.NormalModuleReplacementPlugin(/^@react-foundry\/router$/, '@react-foundry\/router\/next'), // ADD THIS LINE
-    ]
-  })
-};
-
-export default nextConfig;
-```
+(Note that Turbopack should be used rather than Webpack.)
 
 You should ensure that you set the `js-enabled` class on an element that encompasses all of your components (such as your `<body` element or the Page component), when and only when client-side JavaScript executes. Otherwise some components will not render correctly.
 
