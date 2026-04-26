@@ -95,7 +95,7 @@ You can also override some global styles by importing `@not-govuk/components` in
 @import "@not-govuk/components";
 ```
 
-You should also alter your `vite.config.js` to modify some of the modules to versions that are designed to work under Remix, and to silence some warnings.
+You should also alter your `vite.config.js` to modify some of the modules to versions that are designed to work under React Router, and to silence some warnings.
 
 ```js
 [...]
@@ -125,38 +125,7 @@ export default defineConfig({
 
 You should ensure that you set the `js-enabled` class on an element that encompasses all of your components (such as your `<body` element or the Page component), when and only when client-side JavaScript executes. Otherwise some components will not render correctly.
 
-#### Limitations on React Router Framework and Vite
-
-- It's not currently possible to do a named import, as Remix uses Vite, which is stricter than Webpack.
-
-**See:** [Example Remix application using NotGovUK components]
-
-
-### Using the components in Remix applications
-
-Using the components on Remix is the same as on the React Router framework, but
-you will need an _extra_ alias in your Vite config:
-
-```js
-[...]
-
-export default defineConfig({
-  [...]
-  resolve: {
-    alias: {
-      '@react-foundry/router': '@react-foundry/router/remix', // ADD THIS EXTRA LINE
-      '@not-govuk/sass-base': '@not-govuk/sass-base/vite'     // Vite resolves url() differently from Turbo/webpack
-    }
-  }
-  [...]
-});
-```
-
-**See:** [Example Remix application](https://github.com/daniel-ac-martin/NotGovUK/tree/bbf5efffa3bf4f79c8feab800f6533d836520ed5/apps/remix-example)
-
-**Note:** Remix has been replaced by the React Router Framework (v7); users
-should migrate to this. Support for Remix will be dropped in a future version of
-NotGovUK.
+**See:** [Example React Router application using NotGovUK components]
 
 
 ### Using the components in Next.js applications
@@ -236,5 +205,5 @@ Your application will need to make use of Next.js' the newer '_App router_'.
 
 [Getting started]: https://not-gov.uk/get-started
 [Form]: https://not-gov.uk/components?name=Form
-[Example Remix application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/remix-example
+[Example React Router application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/react-router-example
 [Example Next.js application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/next-example
