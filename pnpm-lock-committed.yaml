@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@react-foundry/docs-components':
-        specifier: 0.2.4
-        version: 0.2.4(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
+        specifier: 0.3.0
+        version: 0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@react-foundry/user-info':
-        specifier: 0.2.4
-        version: 0.2.4(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(react@19.2.5)
       '@storybook/addon-docs':
         specifier: 10.3.5
         version: 10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
@@ -56,7 +56,7 @@ importers:
         version: 30.3.0(@babel/core@7.29.0)
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
@@ -68,7 +68,7 @@ importers:
         version: 19.2.5
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -85,20 +85,20 @@ importers:
         specifier: workspace:*
         version: link:../../lib/components
       '@react-foundry/anchor-list':
-        specifier: 0.2.4
-        version: 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+        specifier: 0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@react-foundry/fastify':
-        specifier: 0.2.4
-        version: 0.2.4
+        specifier: 0.3.0
+        version: 0.3.0
       '@react-foundry/fastify-react-router':
-        specifier: 0.2.4
-        version: 0.2.4(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
+        specifier: 0.3.0
+        version: 0.3.0(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
       '@react-foundry/react-router-context':
-        specifier: 0.2.4
-        version: 0.2.4
+        specifier: 0.3.0
+        version: 0.3.0
       '@react-foundry/router':
-        specifier: 0.2.4
-        version: 0.2.4(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+        specifier: 0.3.0
+        version: 0.3.0(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
       '@react-router/fs-routes':
         specifier: 7.13.2
         version: 7.13.2(@react-router/dev@7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3))(@types/node@24.12.2)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(sass-embedded@1.99.0)(sass@1.99.0)(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(typescript@5.9.3)
@@ -122,11 +122,11 @@ importers:
         version: 4.0.0
     devDependencies:
       '@react-foundry/app-plop-pack':
-        specifier: 0.2.4
-        version: 0.2.4(@types/node@24.12.2)
+        specifier: 0.3.0
+        version: 0.3.0(@types/node@24.12.2)
       '@react-foundry/vite-html-react':
-        specifier: 0.2.4
-        version: 0.2.4
+        specifier: 0.3.0
+        version: 0.3.0
       '@react-router/dev':
         specifier: 7.13.2
         version: 7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3))(@types/node@24.12.2)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(sass-embedded@1.99.0)(sass@1.99.0)(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
@@ -153,7 +153,7 @@ importers:
         version: 15.14.1
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
@@ -165,7 +165,7 @@ importers:
         version: 3.0.2
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -179,8 +179,8 @@ importers:
         specifier: workspace:*
         version: link:../../lib/simple-components
       '@react-foundry/router':
-        specifier: 0.2.4
-        version: 0.2.4(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+        specifier: 0.3.0
+        version: 0.3.0(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
       next:
         specifier: 16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0)
@@ -205,7 +205,7 @@ importers:
         version: 15.14.1
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
@@ -217,7 +217,7 @@ importers:
         version: 3.0.2
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -266,7 +266,7 @@ importers:
         version: 15.14.1
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
@@ -278,7 +278,7 @@ importers:
         version: 3.0.2
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -353,20 +353,20 @@ importers:
         specifier: workspace:*
         version: link:../../lib/components
       '@react-foundry/anchor-list':
-        specifier: 0.2.4
-        version: 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+        specifier: 0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@react-foundry/fastify':
-        specifier: 0.2.4
-        version: 0.2.4
+        specifier: 0.3.0
+        version: 0.3.0
       '@react-foundry/fastify-react-router':
-        specifier: 0.2.4
-        version: 0.2.4(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
+        specifier: 0.3.0
+        version: 0.3.0(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
       '@react-foundry/react-router-context':
-        specifier: 0.2.4
-        version: 0.2.4
+        specifier: 0.3.0
+        version: 0.3.0
       '@react-foundry/router':
-        specifier: 0.2.4
-        version: 0.2.4(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+        specifier: 0.3.0
+        version: 0.3.0(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
       '@react-router/fs-routes':
         specifier: 7.13.2
         version: 7.13.2(@react-router/dev@7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3))(@types/node@24.12.2)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(sass-embedded@1.99.0)(sass@1.99.0)(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(typescript@5.9.3)
@@ -393,11 +393,11 @@ importers:
         version: 4.0.0
     devDependencies:
       '@react-foundry/app-plop-pack':
-        specifier: 0.2.4
-        version: 0.2.4(@types/node@24.12.2)
+        specifier: 0.3.0
+        version: 0.3.0(@types/node@24.12.2)
       '@react-foundry/vite-html-react':
-        specifier: 0.2.4
-        version: 0.2.4
+        specifier: 0.3.0
+        version: 0.3.0
       '@react-router/dev':
         specifier: 7.13.2
         version: 7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3))(@types/node@24.12.2)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(sass-embedded@1.99.0)(sass@1.99.0)(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
@@ -421,7 +421,7 @@ importers:
         version: 15.14.1
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
@@ -430,7 +430,7 @@ importers:
         version: 3.0.2
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -444,8 +444,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -454,20 +454,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -481,11 +481,11 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       '@react-foundry/router':
-        specifier: ^0.2.4
-        version: 0.2.4(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+        specifier: ^0.3.0
+        version: 0.3.0(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -494,20 +494,20 @@ importers:
         specifier: workspace:*
         version: link:../panel
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -518,11 +518,11 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
-        specifier: ^0.2.4
-        version: 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+        specifier: ^0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -531,20 +531,20 @@ importers:
         specifier: workspace:*
         version: link:../panel
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -558,8 +558,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -577,20 +577,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -601,8 +601,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -614,20 +614,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -647,8 +647,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -657,20 +657,20 @@ importers:
         specifier: workspace:*
         version: link:../text-input
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -687,8 +687,8 @@ importers:
         specifier: workspace:^
         version: link:../width-container
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -703,20 +703,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -736,27 +736,27 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -767,27 +767,27 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -801,27 +801,27 @@ importers:
         specifier: workspace:^
         version: link:../visually-hidden
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -832,11 +832,11 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
-        specifier: ^0.2.4
-        version: 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+        specifier: ^0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -854,20 +854,20 @@ importers:
         specifier: workspace:*
         version: link:../text-input
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -878,8 +878,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -894,20 +894,20 @@ importers:
         specifier: workspace:*
         version: link:../visually-hidden
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -928,20 +928,20 @@ importers:
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -958,27 +958,27 @@ importers:
         specifier: workspace:^
         version: link:../width-container
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1016,30 +1016,30 @@ importers:
         specifier: workspace:^
         version: link:../textarea
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       '@react-foundry/forms':
-        specifier: ^0.2.4
-        version: 0.2.4(@types/react@19.2.14)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: ^0.3.0
+        version: 0.3.0(@types/react@19.2.14)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
     devDependencies:
       '@not-govuk/tag':
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1069,20 +1069,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1105,8 +1105,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1115,20 +1115,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1145,8 +1145,8 @@ importers:
         specifier: workspace:^
         version: link:../width-container
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1155,20 +1155,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1179,8 +1179,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1189,20 +1189,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1213,8 +1213,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1223,20 +1223,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1247,27 +1247,27 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1278,8 +1278,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1288,20 +1288,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1312,8 +1312,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/anchor':
-        specifier: ^0.2.4
-        version: 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+        specifier: ^0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1325,20 +1325,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1349,11 +1349,11 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
-        specifier: ^0.2.4
-        version: 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+        specifier: ^0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1362,20 +1362,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1386,8 +1386,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1396,20 +1396,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1447,8 +1447,8 @@ importers:
         specifier: workspace:^
         version: link:../width-container
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1463,20 +1463,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1493,30 +1493,30 @@ importers:
         specifier: workspace:^
         version: link:../visually-hidden
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       '@react-foundry/uri':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1527,8 +1527,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1540,20 +1540,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1567,27 +1567,27 @@ importers:
         specifier: workspace:^
         version: link:../tag
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1607,8 +1607,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1617,20 +1617,20 @@ importers:
         specifier: workspace:*
         version: link:../text-input
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1644,27 +1644,27 @@ importers:
         specifier: workspace:^
         version: link:../standalone-input
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@not-govuk/tag':
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1678,27 +1678,27 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1715,11 +1715,11 @@ importers:
         specifier: workspace:^
         version: link:../width-container
       '@react-foundry/anchor-list':
-        specifier: ^0.2.4
-        version: 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+        specifier: ^0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1731,20 +1731,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1755,27 +1755,27 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1795,27 +1795,27 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@not-govuk/tag':
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1826,11 +1826,11 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
-        specifier: ^0.2.4
-        version: 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+        specifier: ^0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1842,20 +1842,20 @@ importers:
         specifier: workspace:*
         version: link:../visually-hidden
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1869,11 +1869,11 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
-        specifier: ^0.2.4
-        version: 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+        specifier: ^0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1885,20 +1885,20 @@ importers:
         specifier: workspace:*
         version: link:../visually-hidden
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1909,30 +1909,30 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       '@react-foundry/simple-table':
-        specifier: ^0.2.4
-        version: 0.2.4(@react-foundry/docs-components@0.2.4(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(react@19.2.5)
+        specifier: ^0.3.0
+        version: 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(react@19.2.5)
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1943,11 +1943,11 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/client-component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4(react@19.2.5)
+        specifier: ^0.3.0
+        version: 0.3.0(react@19.2.5)
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1956,20 +1956,20 @@ importers:
         specifier: workspace:*
         version: link:../table
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1980,8 +1980,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -1990,20 +1990,20 @@ importers:
         specifier: workspace:*
         version: link:../table
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2018,20 +2018,20 @@ importers:
         version: link:../input
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2045,27 +2045,27 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2076,8 +2076,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -2086,20 +2086,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2113,27 +2113,27 @@ importers:
         specifier: workspace:^
         version: link:../visually-hidden
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
     devDependencies:
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2144,8 +2144,8 @@ importers:
         specifier: workspace:^
         version: link:../../lib/sass-base
       '@react-foundry/component-helpers':
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.3.0
+        version: 0.3.0
       govuk-frontend:
         specifier: ^5.14.0
         version: 5.14.0
@@ -2157,20 +2157,20 @@ importers:
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
-        specifier: 0.2.4
-        version: 0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        specifier: 0.3.0
+        version: 0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2192,13 +2192,13 @@ importers:
     devDependencies:
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2209,11 +2209,11 @@ importers:
         specifier: workspace:^
         version: link:../plop-pack
       '@react-foundry/create':
-        specifier: ^0.2.4
-        version: 0.2.4(@types/node@24.12.2)
+        specifier: ^0.3.0
+        version: 0.3.0(@types/node@24.12.2)
       '@react-foundry/plop-pack':
-        specifier: ^0.2.4
-        version: 0.2.4(@types/node@24.12.2)
+        specifier: ^0.3.0
+        version: 0.3.0(@types/node@24.12.2)
     devDependencies:
       plop:
         specifier: 4.0.5
@@ -2222,8 +2222,8 @@ importers:
   lib/plop-pack:
     dependencies:
       '@react-foundry/plop-pack':
-        specifier: ^0.2.4
-        version: 0.2.4(@types/node@24.12.2)
+        specifier: ^0.3.0
+        version: 0.3.0(@types/node@24.12.2)
 
   lib/sass-base:
     dependencies:
@@ -2362,13 +2362,13 @@ importers:
     devDependencies:
       jest:
         specifier: 30.3.0
-        version: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+        version: 30.3.0(@types/node@24.12.2)
       jest-environment-jsdom:
         specifier: 30.3.0
         version: 30.3.0
       ts-jest:
         specifier: 29.4.9
-        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3)
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -3084,34 +3084,16 @@ packages:
   '@emnapi/wasi-threads@1.1.0':
     resolution: {integrity: sha512-WI0DdZ8xFSbgMjR1sFsKABJ/C5OnRrjT06JXbZKexJGrDuPTzZdDYfFlsgcCXCyf+suG5QU2e/y1Wo2V/OapLQ==}
 
-  '@esbuild/aix-ppc64@0.25.12':
-    resolution: {integrity: sha512-Hhmwd6CInZ3dwpuGTF8fJG6yoWmsToE+vYgD4nytZVxcu1ulHpUQRAB1UJ8+N1Am3Mz4+xOByoQoSZf4D+CpkA==}
-    engines: {node: '>=18'}
-    cpu: [ppc64]
-    os: [aix]
-
   '@esbuild/aix-ppc64@0.27.2':
     resolution: {integrity: sha512-GZMB+a0mOMZs4MpDbj8RJp4cw+w1WV5NYD6xzgvzUJ5Ek2jerwfO2eADyI6ExDSUED+1X8aMbegahsJi+8mgpw==}
     engines: {node: '>=18'}
     cpu: [ppc64]
     os: [aix]
 
-  '@esbuild/android-arm64@0.25.12':
-    resolution: {integrity: sha512-6AAmLG7zwD1Z159jCKPvAxZd4y/VTO0VkprYy+3N2FtJ8+BQWFXU+OxARIwA46c5tdD9SsKGZ/1ocqBS/gAKHg==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [android]
-
   '@esbuild/android-arm64@0.27.2':
     resolution: {integrity: sha512-pvz8ZZ7ot/RBphf8fv60ljmaoydPU12VuXHImtAs0XhLLw+EXBi2BLe3OYSBslR4rryHvweW5gmkKFwTiFy6KA==}
     engines: {node: '>=18'}
     cpu: [arm64]
-    os: [android]
-
-  '@esbuild/android-arm@0.25.12':
-    resolution: {integrity: sha512-VJ+sKvNA/GE7Ccacc9Cha7bpS8nyzVv0jdVgwNDaR4gDMC/2TTRc33Ip8qrNYUcpkOHUT5OZ0bUcNNVZQ9RLlg==}
-    engines: {node: '>=18'}
-    cpu: [arm]
     os: [android]
 
   '@esbuild/android-arm@0.27.2':
@@ -3120,34 +3102,16 @@ packages:
     cpu: [arm]
     os: [android]
 
-  '@esbuild/android-x64@0.25.12':
-    resolution: {integrity: sha512-5jbb+2hhDHx5phYR2By8GTWEzn6I9UqR11Kwf22iKbNpYrsmRB18aX/9ivc5cabcUiAT/wM+YIZ6SG9QO6a8kg==}
-    engines: {node: '>=18'}
-    cpu: [x64]
-    os: [android]
-
   '@esbuild/android-x64@0.27.2':
     resolution: {integrity: sha512-z8Ank4Byh4TJJOh4wpz8g2vDy75zFL0TlZlkUkEwYXuPSgX8yzep596n6mT7905kA9uHZsf/o2OJZubl2l3M7A==}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [android]
 
-  '@esbuild/darwin-arm64@0.25.12':
-    resolution: {integrity: sha512-N3zl+lxHCifgIlcMUP5016ESkeQjLj/959RxxNYIthIg+CQHInujFuXeWbWMgnTo4cp5XVHqFPmpyu9J65C1Yg==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [darwin]
-
   '@esbuild/darwin-arm64@0.27.2':
     resolution: {integrity: sha512-davCD2Zc80nzDVRwXTcQP/28fiJbcOwvdolL0sOiOsbwBa72kegmVU0Wrh1MYrbuCL98Omp5dVhQFWRKR2ZAlg==}
     engines: {node: '>=18'}
     cpu: [arm64]
-    os: [darwin]
-
-  '@esbuild/darwin-x64@0.25.12':
-    resolution: {integrity: sha512-HQ9ka4Kx21qHXwtlTUVbKJOAnmG1ipXhdWTmNXiPzPfWKpXqASVcWdnf2bnL73wgjNrFXAa3yYvBSd9pzfEIpA==}
-    engines: {node: '>=18'}
-    cpu: [x64]
     os: [darwin]
 
   '@esbuild/darwin-x64@0.27.2':
@@ -3156,22 +3120,10 @@ packages:
     cpu: [x64]
     os: [darwin]
 
-  '@esbuild/freebsd-arm64@0.25.12':
-    resolution: {integrity: sha512-gA0Bx759+7Jve03K1S0vkOu5Lg/85dou3EseOGUes8flVOGxbhDDh/iZaoek11Y8mtyKPGF3vP8XhnkDEAmzeg==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [freebsd]
-
   '@esbuild/freebsd-arm64@0.27.2':
     resolution: {integrity: sha512-lS/9CN+rgqQ9czogxlMcBMGd+l8Q3Nj1MFQwBZJyoEKI50XGxwuzznYdwcav6lpOGv5BqaZXqvBSiB/kJ5op+g==}
     engines: {node: '>=18'}
     cpu: [arm64]
-    os: [freebsd]
-
-  '@esbuild/freebsd-x64@0.25.12':
-    resolution: {integrity: sha512-TGbO26Yw2xsHzxtbVFGEXBFH0FRAP7gtcPE7P5yP7wGy7cXK2oO7RyOhL5NLiqTlBh47XhmIUXuGciXEqYFfBQ==}
-    engines: {node: '>=18'}
-    cpu: [x64]
     os: [freebsd]
 
   '@esbuild/freebsd-x64@0.27.2':
@@ -3180,22 +3132,10 @@ packages:
     cpu: [x64]
     os: [freebsd]
 
-  '@esbuild/linux-arm64@0.25.12':
-    resolution: {integrity: sha512-8bwX7a8FghIgrupcxb4aUmYDLp8pX06rGh5HqDT7bB+8Rdells6mHvrFHHW2JAOPZUbnjUpKTLg6ECyzvas2AQ==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [linux]
-
   '@esbuild/linux-arm64@0.27.2':
     resolution: {integrity: sha512-hYxN8pr66NsCCiRFkHUAsxylNOcAQaxSSkHMMjcpx0si13t1LHFphxJZUiGwojB1a/Hd5OiPIqDdXONia6bhTw==}
     engines: {node: '>=18'}
     cpu: [arm64]
-    os: [linux]
-
-  '@esbuild/linux-arm@0.25.12':
-    resolution: {integrity: sha512-lPDGyC1JPDou8kGcywY0YILzWlhhnRjdof3UlcoqYmS9El818LLfJJc3PXXgZHrHCAKs/Z2SeZtDJr5MrkxtOw==}
-    engines: {node: '>=18'}
-    cpu: [arm]
     os: [linux]
 
   '@esbuild/linux-arm@0.27.2':
@@ -3204,22 +3144,10 @@ packages:
     cpu: [arm]
     os: [linux]
 
-  '@esbuild/linux-ia32@0.25.12':
-    resolution: {integrity: sha512-0y9KrdVnbMM2/vG8KfU0byhUN+EFCny9+8g202gYqSSVMonbsCfLjUO+rCci7pM0WBEtz+oK/PIwHkzxkyharA==}
-    engines: {node: '>=18'}
-    cpu: [ia32]
-    os: [linux]
-
   '@esbuild/linux-ia32@0.27.2':
     resolution: {integrity: sha512-MJt5BRRSScPDwG2hLelYhAAKh9imjHK5+NE/tvnRLbIqUWa+0E9N4WNMjmp/kXXPHZGqPLxggwVhz7QP8CTR8w==}
     engines: {node: '>=18'}
     cpu: [ia32]
-    os: [linux]
-
-  '@esbuild/linux-loong64@0.25.12':
-    resolution: {integrity: sha512-h///Lr5a9rib/v1GGqXVGzjL4TMvVTv+s1DPoxQdz7l/AYv6LDSxdIwzxkrPW438oUXiDtwM10o9PmwS/6Z0Ng==}
-    engines: {node: '>=18'}
-    cpu: [loong64]
     os: [linux]
 
   '@esbuild/linux-loong64@0.27.2':
@@ -3228,22 +3156,10 @@ packages:
     cpu: [loong64]
     os: [linux]
 
-  '@esbuild/linux-mips64el@0.25.12':
-    resolution: {integrity: sha512-iyRrM1Pzy9GFMDLsXn1iHUm18nhKnNMWscjmp4+hpafcZjrr2WbT//d20xaGljXDBYHqRcl8HnxbX6uaA/eGVw==}
-    engines: {node: '>=18'}
-    cpu: [mips64el]
-    os: [linux]
-
   '@esbuild/linux-mips64el@0.27.2':
     resolution: {integrity: sha512-nlP2I6ArEBewvJ2gjrrkESEZkB5mIoaTswuqNFRv/WYd+ATtUpe9Y09RnJvgvdag7he0OWgEZWhviS1OTOKixw==}
     engines: {node: '>=18'}
     cpu: [mips64el]
-    os: [linux]
-
-  '@esbuild/linux-ppc64@0.25.12':
-    resolution: {integrity: sha512-9meM/lRXxMi5PSUqEXRCtVjEZBGwB7P/D4yT8UG/mwIdze2aV4Vo6U5gD3+RsoHXKkHCfSxZKzmDssVlRj1QQA==}
-    engines: {node: '>=18'}
-    cpu: [ppc64]
     os: [linux]
 
   '@esbuild/linux-ppc64@0.27.2':
@@ -3252,22 +3168,10 @@ packages:
     cpu: [ppc64]
     os: [linux]
 
-  '@esbuild/linux-riscv64@0.25.12':
-    resolution: {integrity: sha512-Zr7KR4hgKUpWAwb1f3o5ygT04MzqVrGEGXGLnj15YQDJErYu/BGg+wmFlIDOdJp0PmB0lLvxFIOXZgFRrdjR0w==}
-    engines: {node: '>=18'}
-    cpu: [riscv64]
-    os: [linux]
-
   '@esbuild/linux-riscv64@0.27.2':
     resolution: {integrity: sha512-B5BOmojNtUyN8AXlK0QJyvjEZkWwy/FKvakkTDCziX95AowLZKR6aCDhG7LeF7uMCXEJqwa8Bejz5LTPYm8AvA==}
     engines: {node: '>=18'}
     cpu: [riscv64]
-    os: [linux]
-
-  '@esbuild/linux-s390x@0.25.12':
-    resolution: {integrity: sha512-MsKncOcgTNvdtiISc/jZs/Zf8d0cl/t3gYWX8J9ubBnVOwlk65UIEEvgBORTiljloIWnBzLs4qhzPkJcitIzIg==}
-    engines: {node: '>=18'}
-    cpu: [s390x]
     os: [linux]
 
   '@esbuild/linux-s390x@0.27.2':
@@ -3276,34 +3180,16 @@ packages:
     cpu: [s390x]
     os: [linux]
 
-  '@esbuild/linux-x64@0.25.12':
-    resolution: {integrity: sha512-uqZMTLr/zR/ed4jIGnwSLkaHmPjOjJvnm6TVVitAa08SLS9Z0VM8wIRx7gWbJB5/J54YuIMInDquWyYvQLZkgw==}
-    engines: {node: '>=18'}
-    cpu: [x64]
-    os: [linux]
-
   '@esbuild/linux-x64@0.27.2':
     resolution: {integrity: sha512-uwp2Tip5aPmH+NRUwTcfLb+W32WXjpFejTIOWZFw/v7/KnpCDKG66u4DLcurQpiYTiYwQ9B7KOeMJvLCu/OvbA==}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [linux]
 
-  '@esbuild/netbsd-arm64@0.25.12':
-    resolution: {integrity: sha512-xXwcTq4GhRM7J9A8Gv5boanHhRa/Q9KLVmcyXHCTaM4wKfIpWkdXiMog/KsnxzJ0A1+nD+zoecuzqPmCRyBGjg==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [netbsd]
-
   '@esbuild/netbsd-arm64@0.27.2':
     resolution: {integrity: sha512-Kj6DiBlwXrPsCRDeRvGAUb/LNrBASrfqAIok+xB0LxK8CHqxZ037viF13ugfsIpePH93mX7xfJp97cyDuTZ3cw==}
     engines: {node: '>=18'}
     cpu: [arm64]
-    os: [netbsd]
-
-  '@esbuild/netbsd-x64@0.25.12':
-    resolution: {integrity: sha512-Ld5pTlzPy3YwGec4OuHh1aCVCRvOXdH8DgRjfDy/oumVovmuSzWfnSJg+VtakB9Cm0gxNO9BzWkj6mtO1FMXkQ==}
-    engines: {node: '>=18'}
-    cpu: [x64]
     os: [netbsd]
 
   '@esbuild/netbsd-x64@0.27.2':
@@ -3312,22 +3198,10 @@ packages:
     cpu: [x64]
     os: [netbsd]
 
-  '@esbuild/openbsd-arm64@0.25.12':
-    resolution: {integrity: sha512-fF96T6KsBo/pkQI950FARU9apGNTSlZGsv1jZBAlcLL1MLjLNIWPBkj5NlSz8aAzYKg+eNqknrUJ24QBybeR5A==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [openbsd]
-
   '@esbuild/openbsd-arm64@0.27.2':
     resolution: {integrity: sha512-DNIHH2BPQ5551A7oSHD0CKbwIA/Ox7+78/AWkbS5QoRzaqlev2uFayfSxq68EkonB+IKjiuxBFoV8ESJy8bOHA==}
     engines: {node: '>=18'}
     cpu: [arm64]
-    os: [openbsd]
-
-  '@esbuild/openbsd-x64@0.25.12':
-    resolution: {integrity: sha512-MZyXUkZHjQxUvzK7rN8DJ3SRmrVrke8ZyRusHlP+kuwqTcfWLyqMOE3sScPPyeIXN/mDJIfGXvcMqCgYKekoQw==}
-    engines: {node: '>=18'}
-    cpu: [x64]
     os: [openbsd]
 
   '@esbuild/openbsd-x64@0.27.2':
@@ -3336,23 +3210,11 @@ packages:
     cpu: [x64]
     os: [openbsd]
 
-  '@esbuild/openharmony-arm64@0.25.12':
-    resolution: {integrity: sha512-rm0YWsqUSRrjncSXGA7Zv78Nbnw4XL6/dzr20cyrQf7ZmRcsovpcRBdhD43Nuk3y7XIoW2OxMVvwuRvk9XdASg==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [openharmony]
-
   '@esbuild/openharmony-arm64@0.27.2':
     resolution: {integrity: sha512-LRBbCmiU51IXfeXk59csuX/aSaToeG7w48nMwA6049Y4J4+VbWALAuXcs+qcD04rHDuSCSRKdmY63sruDS5qag==}
     engines: {node: '>=18'}
     cpu: [arm64]
     os: [openharmony]
-
-  '@esbuild/sunos-x64@0.25.12':
-    resolution: {integrity: sha512-3wGSCDyuTHQUzt0nV7bocDy72r2lI33QL3gkDNGkod22EsYl04sMf0qLb8luNKTOmgF/eDEDP5BFNwoBKH441w==}
-    engines: {node: '>=18'}
-    cpu: [x64]
-    os: [sunos]
 
   '@esbuild/sunos-x64@0.27.2':
     resolution: {integrity: sha512-kMtx1yqJHTmqaqHPAzKCAkDaKsffmXkPHThSfRwZGyuqyIeBvf08KSsYXl+abf5HDAPMJIPnbBfXvP2ZC2TfHg==}
@@ -3360,34 +3222,16 @@ packages:
     cpu: [x64]
     os: [sunos]
 
-  '@esbuild/win32-arm64@0.25.12':
-    resolution: {integrity: sha512-rMmLrur64A7+DKlnSuwqUdRKyd3UE7oPJZmnljqEptesKM8wx9J8gx5u0+9Pq0fQQW8vqeKebwNXdfOyP+8Bsg==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [win32]
-
   '@esbuild/win32-arm64@0.27.2':
     resolution: {integrity: sha512-Yaf78O/B3Kkh+nKABUF++bvJv5Ijoy9AN1ww904rOXZFLWVc5OLOfL56W+C8F9xn5JQZa3UX6m+IktJnIb1Jjg==}
     engines: {node: '>=18'}
     cpu: [arm64]
     os: [win32]
 
-  '@esbuild/win32-ia32@0.25.12':
-    resolution: {integrity: sha512-HkqnmmBoCbCwxUKKNPBixiWDGCpQGVsrQfJoVGYLPT41XWF8lHuE5N6WhVia2n4o5QK5M4tYr21827fNhi4byQ==}
-    engines: {node: '>=18'}
-    cpu: [ia32]
-    os: [win32]
-
   '@esbuild/win32-ia32@0.27.2':
     resolution: {integrity: sha512-Iuws0kxo4yusk7sw70Xa2E2imZU5HoixzxfGCdxwBdhiDgt9vX9VUCBhqcwY7/uh//78A1hMkkROMJq9l27oLQ==}
     engines: {node: '>=18'}
     cpu: [ia32]
-    os: [win32]
-
-  '@esbuild/win32-x64@0.25.12':
-    resolution: {integrity: sha512-alJC0uCZpTFrSL0CCDjcgleBXPnCrEAhTBILpeAp7M/OFgoqtAetfBzX0xM00MUsVVPpVjlPuMbREqnZCXaTnA==}
-    engines: {node: '>=18'}
-    cpu: [x64]
     os: [win32]
 
   '@esbuild/win32-x64@0.27.2':
@@ -4013,11 +3857,11 @@ packages:
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@react-foundry/anchor-list@0.2.4':
-    resolution: {integrity: sha512-EOk5fa4Agu04C7ZzeTf+Bx8H0ALIElvd83GS5jgqX6aKA3/o3HPb+NO/6K4hVvOV+hDtdmSNJZzygfnH/XLBxg==}
+  '@react-foundry/anchor-list@0.3.0':
+    resolution: {integrity: sha512-CjehWaM3eF8MrQCMZJOCCyOE4q7i6sOv2z1Am+yY47to0G+H2Yscc7+pNkA7baO4YlUtq1Oc9+Mj+LlMgk5Vww==}
     peerDependencies:
-      '@react-foundry/docs-components': ^0.2.4
-      '@storybook/addon-docs': ^9.1.20
+      '@react-foundry/docs-components': ^0.3.0
+      '@storybook/addon-docs': ^10.3.5
       react: ^19.2.5
     peerDependenciesMeta:
       '@react-foundry/docs-components':
@@ -4025,11 +3869,11 @@ packages:
       '@storybook/addon-docs':
         optional: true
 
-  '@react-foundry/anchor@0.2.4':
-    resolution: {integrity: sha512-6V/iUwQpM8ya9Wpz2PV1cyuDGM0qmNm636nei+V8P2hzED5gP1zPXGh/zvLAohCI1DAU5RGtzzJ4+U8eAEo53w==}
+  '@react-foundry/anchor@0.3.0':
+    resolution: {integrity: sha512-MZcbxneKzr/E+dTRZSu+yKk9A5ruO4QHfcpBq01QE80jxpqd/Rm4qaFk+KJPOrjT6PPiV9kep6YlINdXq0EZTg==}
     peerDependencies:
-      '@react-foundry/docs-components': ^0.2.4
-      '@storybook/addon-docs': ^9.1.20
+      '@react-foundry/docs-components': ^0.3.0
+      '@storybook/addon-docs': ^10.3.5
       react: ^19.2.5
     peerDependenciesMeta:
       '@react-foundry/docs-components':
@@ -4037,89 +3881,89 @@ packages:
       '@storybook/addon-docs':
         optional: true
 
-  '@react-foundry/app-plop-pack@0.2.4':
-    resolution: {integrity: sha512-XH8y7we4zF0zuVz3CSTcWY+iyuzrizc/xQwutS84miK9w2SCR6urZ7Ajz9eIFmXnwPTgYfEmIze2M7hH/G/lSw==}
+  '@react-foundry/app-plop-pack@0.3.0':
+    resolution: {integrity: sha512-sh7LmxM5TTPQUO2csKUx/937oP3PuMsGNV3B9HDx5weWC826IOe09QTtOJnBx7dQSARfTZtMTY5H8d/mexWMyA==}
     engines: {node: '>=12.0.0'}
 
-  '@react-foundry/client-component-helpers@0.2.4':
-    resolution: {integrity: sha512-XS9WLC8fr4EJifh4g7dqXv4rpl+SRRFUKNbPMu6ZwrUPdLxFADWCTJxmj+wRGmK7rxWTN58go9KrxsPI8BQpqA==}
+  '@react-foundry/client-component-helpers@0.3.0':
+    resolution: {integrity: sha512-dkCmmqz2X/MJ6aXxqcDXIA/eB/mtFclxdMhTu8BK9nV4BhifCTGubZaQV3k3/juczslrnW+7RSvBAdSngc0CQw==}
     peerDependencies:
       react: ^19.2.5
 
-  '@react-foundry/component-helpers@0.2.4':
-    resolution: {integrity: sha512-eIslA+/g98ECq2CJmCzCK+dMxJKhZ/X8sEzwg+UEJSWVH3/V2TZ4otqAfOYySqd2QSbGyXf5+82DViTOpO6bKA==}
+  '@react-foundry/component-helpers@0.3.0':
+    resolution: {integrity: sha512-gNM0/y8QrHw1ubyk5JCvvetaTa1UJMDdczSng45yW7rh79V2urPVtVVzmuveXEzAPvrnHjVaPr8+pGd6NsECRw==}
 
-  '@react-foundry/component-test-helpers@0.2.4':
-    resolution: {integrity: sha512-ZRQSL6hKSTQVzvM5PyMWzE+5Haztg8B1E67BK8EHbfcF1Zd0Wfn2uSsiK0acBWXc4bt4tC5HO8Iqj54EfcH33g==}
+  '@react-foundry/component-test-helpers@0.3.0':
+    resolution: {integrity: sha512-oqd4RXK1/08radUpNe695aR6MU9FrTWrYP1FBwgbAFoQt7XFBOMsqJR6gMsDwkaWKftqeqfmm9Hirxws0ALVNg==}
     peerDependencies:
       react: ^19.2.5
-      react-router: ^7.13.0
+      react-router: ^7.14.2
 
-  '@react-foundry/create@0.2.4':
-    resolution: {integrity: sha512-4NmxSmmNzda+K2qK3cRpT9KzGBceRY/ih+jI3HhRkmuhDWw1vpqbcTvbP5R0MpzHuCZ8oPr5QHzXcFemYX6v7g==}
+  '@react-foundry/create@0.3.0':
+    resolution: {integrity: sha512-8Q2KSRzODDkhcP+vRqKfu+jLMaf6Hhqf9mNajYfaaKcVaCnE94X2kJ9Fao3BWxNmXxrSc2ye+2PDfuPDnFGXAQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  '@react-foundry/docs-components@0.2.4':
-    resolution: {integrity: sha512-yGQW+9d4Kui6dAjeM05A8dXnCX5uGZ0R7y0pdYm0A7SZz1JhlK3a9OKS1+lk/g82XaG761hCydA5ZzUKNJKFqg==}
+  '@react-foundry/docs-components@0.3.0':
+    resolution: {integrity: sha512-7O9xKQ6JsuLQKm9gQz4Q7NYpZ7xmt1nBgsG6/G3ZsFLRTs9DZTfKaZ9mEpViE/rpjPusFUiHBIzzpP6DSE7UtA==}
     peerDependencies:
       react: ^19.2.5
 
-  '@react-foundry/fastify-auth@0.2.4':
-    resolution: {integrity: sha512-tE2r3uUFUVvlrADBfBMCUClJwL6/BXOqf5GfVzGNmdvokmr1WOexiP9w7nkWv0CZUYROCLi95WN8lkpLiwqYQg==}
+  '@react-foundry/fastify-auth@0.3.0':
+    resolution: {integrity: sha512-I862RcX+bBJJmtUSu6WsmPF+ghaBSYZ7cn8eQUl7t4yEMLAkldttcDCtrN+ff/vp7xbevKZgXpvyQ8J2EKY95A==}
     engines: {node: '>=22.0.0'}
 
-  '@react-foundry/fastify-consent-cookies@0.2.4':
-    resolution: {integrity: sha512-8mPr0TGNutEO9xhBwH22DJBT7iBDZDo3RVXtX7nM8NkSxvUCQn7Bw2IiIBFSLCFu69vuYxC1SE04lHVPEeM4Sg==}
+  '@react-foundry/fastify-consent-cookies@0.3.0':
+    resolution: {integrity: sha512-mEISWF7Ew76tjoEdCBPPTSnHQJbd1AH261tPGvBnN6Eb5hgOpAM1xZEsoOjzXNSSbq5W2xBmGeTxNizGZhqobA==}
     engines: {node: '>=22.0.0'}
 
-  '@react-foundry/fastify-dev-logger@0.2.4':
-    resolution: {integrity: sha512-/t4+voqNJMEb0w/zNQsWf4loOUSqPrcuqqkV6p5Ts5bNxl32eKr8uvks8lCd8TmjxZDBB5nC7IQJFBjONcEsGA==}
+  '@react-foundry/fastify-dev-logger@0.3.0':
+    resolution: {integrity: sha512-Y+JBGGfPqJPSdoQQJ+uNN535WUPzGY+Gt5lenuEZ5d/BN25HDgkl7UpFWxg84TkhPoDdlWATe6hQK+7WRtiwoQ==}
     engines: {node: '>=18.0.0'}
 
-  '@react-foundry/fastify-harden@0.2.4':
-    resolution: {integrity: sha512-nmVOE8TAnUGmcaxjNQQUXuksyzWZ4hcIQWjCDniiDqbaeo6CE4Fmo1l/0OX4ce89Qr+5WvwiCvnsB8FGDZyrzA==}
+  '@react-foundry/fastify-harden@0.3.0':
+    resolution: {integrity: sha512-9I41xHEkWTtTKlLFKyuFn5k9CSM51mwbRP4n8/wahkTfy/ztgfZQ2TUo/clq7MtStxH3XpIuXyMfL+V66MoX4w==}
     engines: {node: '>=18.0.0'}
 
-  '@react-foundry/fastify-react-router@0.2.4':
-    resolution: {integrity: sha512-maEMWExBbHBLY9/gQ/pMzEKoMCXFspASwaykBgVgSggyvhY/PfHRgmqVbQY+AB4vC3ztDmaqEDN0MuU+Y+oRWg==}
+  '@react-foundry/fastify-react-router@0.3.0':
+    resolution: {integrity: sha512-8FMWnovhB4EggeObUf+Pq4dCm5Ny1V4RtCH7B4UWQ7EYOf65vSByABNpjz6Xj9Q5ohX/lhrqHqvcOjQ75eh1xw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      react-router: ^7.13.0
+      react-router: ^7.14.2
       vite: ^7.3.2
     peerDependenciesMeta:
       vite:
         optional: true
 
-  '@react-foundry/fastify-session@0.2.4':
-    resolution: {integrity: sha512-iYdq9FBlrtky/5+QmK9qxsdRDQhS/vieFdc+ibQi1dLPmybxNl4cVdW4R2U/G6MSE2IKwfTWQwPwTqAlCgzMHw==}
+  '@react-foundry/fastify-session@0.3.0':
+    resolution: {integrity: sha512-iynQsulPZZygkdtv/Zex3cHb0P2142IOyZPJzzMxf/mnDqpxj6A+vfA1t8/abqwsFZ4RkXLfFw8/xpr8HovGQg==}
     engines: {node: '>=22.0.0'}
 
-  '@react-foundry/fastify@0.2.4':
-    resolution: {integrity: sha512-9rNW/wjpQeV5HUEcs45ozazXC2RLsHS0/yr9vmg1wrICgQ9zC11cv8Gren1EoxzznClcuJhjlTVukgYfWRicJg==}
+  '@react-foundry/fastify@0.3.0':
+    resolution: {integrity: sha512-gNXqNgCmumadvxBa0Hci4Vk6msYg1L5pPpD4iJvNNKqQYD3MC5TNNxJlPOdko9YeoO6H7Rmh3MMxezqNCXUk3w==}
     engines: {node: '>=18.0.0'}
 
-  '@react-foundry/forms@0.2.4':
-    resolution: {integrity: sha512-26wD/mx+JF1+7gjFxOZVu/+ls7GYPhfNG6FLYahdbSJEEb2WDOfUI30EATW/ByloigUoat8n02hFVznVCykyJA==}
+  '@react-foundry/forms@0.3.0':
+    resolution: {integrity: sha512-95K0V3aySI6IlgNHeOtY6XjqLoiHu5oNy7RPBCHXUIckWJ8CWidmyB+W/C8Lf1SJkJOFqlY67r3jJM3XT1rQMw==}
     peerDependencies:
       react: ^19.2.5
       react-dom: ^19.2.5
-      react-router: ^7.13.0
+      react-router: ^7.14.2
 
-  '@react-foundry/memoize@0.2.4':
-    resolution: {integrity: sha512-Pvc/0j+32qo6R+tNVaznSj2mwxWvjLypCdKIr1JBxiQzV0eCW3qGOvIcAHuFSMxxFwjzts4DxQtRa+7CUAyCdQ==}
+  '@react-foundry/memoize@0.3.0':
+    resolution: {integrity: sha512-lsM0U+pEPMq3flKYvFdp5+9vEmXaWD+JFLqUJAkgX+F7p+jvPPbV/iDAI36Qx9n2IGVkx5xlevZGA/u0rbiY4A==}
     engines: {node: '>=12.0.0'}
 
-  '@react-foundry/plop-pack@0.2.4':
-    resolution: {integrity: sha512-bjl5/JBnoFEXGXw+0ogkJWH/HnxfRiGKc2dQhNAO2zZiWTcJxABlBnBJlo4aCV9izb0S5WnAgzRCu6NnbUzXjQ==}
+  '@react-foundry/plop-pack@0.3.0':
+    resolution: {integrity: sha512-oI8GWoo/UHYdhE5EQHFih4U5aN06DmntSrOaCo+vWBUwef+f/q2ZlFicJMOzaM6eDkrspoClsJfiwe39FSz/WA==}
     engines: {node: '>=12.0.0'}
 
-  '@react-foundry/react-router-context@0.2.4':
-    resolution: {integrity: sha512-md49JHQw8up0oJp8wP6FjJ6DvtOQEsuF2qHVKoRDPxph4wXKIccre/MD3JnTprr38k+fxcMtlzV8aB7Yt2/ZoQ==}
+  '@react-foundry/react-router-context@0.3.0':
+    resolution: {integrity: sha512-tVpLGFgc8x9pxYsxuNzIGuk2ow1QEHaFyNoQsjs9Kr/G55lsR18BeoF5VXDNO71GkQZ/XclACZFZ7Qkh+sfnZQ==}
     engines: {node: '>=18.0.0'}
 
-  '@react-foundry/router@0.2.4':
-    resolution: {integrity: sha512-RhaqtIbQh51CGEl/Wz8Sle9vtYC8KDNaChIin1qWq2I/fxx+nktd8+fArf5HdX6c6o1Rsv8IuBVBoCAylTTg/Q==}
+  '@react-foundry/router@0.3.0':
+    resolution: {integrity: sha512-+vl8j6GEU5Lfo8IS+HFEmWt+rVeVSfY5whFmbs1ku1W0ILMebjM2j3j6Fqsx7sewtSdp2gzOsA3iLnBaDswCwQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@remix-run/react': '>2.17'
@@ -4133,11 +3977,11 @@ packages:
       react-router:
         optional: true
 
-  '@react-foundry/simple-table@0.2.4':
-    resolution: {integrity: sha512-+HZQa70ZpovYxu0aU3actugpjkGa1AaAm8Ex0HtAv1GkkAP8fX41szmI3fMU0lMhoGj4g2nekikatWa92GZUTg==}
+  '@react-foundry/simple-table@0.3.0':
+    resolution: {integrity: sha512-qNVDL1FAbpv2sH2WppJPf4yM5T8vi09VNeRYwAxwZn3d2DtqqLe1MOveW2UqBFXKlQ2oMS7KihAL9/DjabRR7A==}
     peerDependencies:
-      '@react-foundry/docs-components': ^0.2.4
-      '@storybook/addon-docs': ^9.1.20
+      '@react-foundry/docs-components': ^0.3.0
+      '@storybook/addon-docs': ^10.3.5
       react: ^19.2.5
     peerDependenciesMeta:
       '@react-foundry/docs-components':
@@ -4145,11 +3989,11 @@ packages:
       '@storybook/addon-docs':
         optional: true
 
-  '@react-foundry/tabs@0.2.4':
-    resolution: {integrity: sha512-7ZY+7KqkDesxqn66TTb3ppiERo5ki7OWGzWv6PXV3JxY2zJY0Dej0LLZIPQVmkOrNnicb1pQMVseNUdDU/WfAg==}
+  '@react-foundry/tabs@0.3.0':
+    resolution: {integrity: sha512-yuut7hr2ToJnRix0PDPfqq9yJVnEVn522DuRfUFD4j/W8JXW0MbpMpWFvBp2kgWSY+xziJCZoycVO309p4T3Ug==}
     peerDependencies:
-      '@react-foundry/docs-components': ^0.2.4
-      '@storybook/addon-docs': ^9.1.20
+      '@react-foundry/docs-components': ^0.3.0
+      '@storybook/addon-docs': ^10.3.5
       react: ^19.2.5
     peerDependenciesMeta:
       '@react-foundry/docs-components':
@@ -4157,17 +4001,17 @@ packages:
       '@storybook/addon-docs':
         optional: true
 
-  '@react-foundry/uri@0.2.4':
-    resolution: {integrity: sha512-QGpZyK81Fkj8U1pBnkI3UqRx6e9TlLosIPcPkXsqS77Df/zufr1v6FkY55ErwkGbaP2etlnYqK8lKbzKgvYyVg==}
+  '@react-foundry/uri@0.3.0':
+    resolution: {integrity: sha512-W8Eo2NOoq+yZJxve+83GqEeTMKDsdL+xBtoh93fN2Irqea9AIdLQzHEiXD0Bf6IFAvaAwybUpbvPfE8ASLqAHg==}
     engines: {node: '>=12.0.0'}
 
-  '@react-foundry/user-info@0.2.4':
-    resolution: {integrity: sha512-1A6eRujAJWtdFOIe7Xrif0gwc558Qvdttb4RyU/Gt0yd+5mKhUg5DP/x7pD/GAotVq06eBHcRmUbr3QJu6ESNg==}
+  '@react-foundry/user-info@0.3.0':
+    resolution: {integrity: sha512-kY6d3pkaP3VDbeS5+KPPjQqNO5MPuN/gwkmkftULVBCITZualBX2gSrSqySJNvGGjz5VKBscF01Z4G7LZcfSyQ==}
     peerDependencies:
       react: ^19.2.5
 
-  '@react-foundry/vite-html-react@0.2.4':
-    resolution: {integrity: sha512-99PJq+GNwPmxA4tsqubrjww3h0Ovos5/pEK8vataUI+yJJuc2NZTULGjKuI6bOcJbXDgw/8ZRc66O1qPwRMP8g==}
+  '@react-foundry/vite-html-react@0.3.0':
+    resolution: {integrity: sha512-Vdiuh9EXb+bNXPRN2j3pfF/LoBPqkiw+2danEsUeOOnhiQZ+p62VfVWjzyrOdIAIJ3GxkRaWsD/HIxz2cx4SuQ==}
     engines: {node: '>=18.0.0'}
 
   '@react-router/dev@7.13.2':
@@ -4221,6 +4065,16 @@ packages:
     peerDependencies:
       react-router: 7.13.2
       typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  '@react-router/node@7.14.2':
+    resolution: {integrity: sha512-8zxVfgKOXjk0k8YxSBDTFyNAuVdr+og1wFbQpmJJOxo7ObxfI81EbHenyyxGvFiw77rNFLS9Dqgnv5xZgHZfCw==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react-router: 7.14.2
+      typescript: ^5.1.0 || ^6.0.0
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -4740,17 +4594,6 @@ packages:
   '@vitest/expect@3.2.4':
     resolution: {integrity: sha512-Io0yyORnB6sikFlt8QW5K7slY4OjqNX9jmJQ02QDda8lyM6B5oNgVWoSoKPac8/kgnCUzuHQKrSLtu/uOqqrig==}
 
-  '@vitest/mocker@3.2.4':
-    resolution: {integrity: sha512-46ryTE9RZO/rfDd7pEqFl7etuyzekzEhUbTW3BvmeO/BcCMEgq59BKhek3dXDWgAj4oMK6OZi+vRr1wPW6qjEQ==}
-    peerDependencies:
-      msw: ^2.4.9
-      vite: ^5.0.0 || ^6.0.0 || ^7.0.0-0
-    peerDependenciesMeta:
-      msw:
-        optional: true
-      vite:
-        optional: true
-
   '@vitest/pretty-format@3.2.4':
     resolution: {integrity: sha512-IVNZik8IVRJRTr9fxlitMKeJeXFFFN0JaB9PHPGQ8NKQbGpfjlTx9zO4RefN8gp7eqjNy8nyK3NZmBzOPeIxtA==}
 
@@ -4980,10 +4823,6 @@ packages:
 
   bcrypt-pbkdf@1.0.2:
     resolution: {integrity: sha512-qeFIXtP4MSoi6NLqO12WfqARWWuCKi2Rn/9hJLEmtB5yTNr9DqFWkJRCf2qShWzPeAMRnOgCrq0sg/KLv5ES9w==}
-
-  better-opn@3.0.2:
-    resolution: {integrity: sha512-aVNobHnJqLiUelTaHat9DZ1qM2w0C0Eym4LPI/3JxOnSokGVdsl1T1kN7TFvsEAD8G47A6VKQ0TVHqbBnYMJlQ==}
-    engines: {node: '>=12.0.0'}
 
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
@@ -5405,10 +5244,6 @@ packages:
   defaults@1.0.4:
     resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}
 
-  define-lazy-prop@2.0.0:
-    resolution: {integrity: sha512-Ds09qNh8yw3khSjiJjiUInaGX9xlqZDY7JVryGxdxV7NPeuqQfplOpQ66yJFZut3jLa5zOwkXw1g9EI2uKh4Og==}
-    engines: {node: '>=8'}
-
   define-lazy-prop@3.0.0:
     resolution: {integrity: sha512-N+MeXYoqr3pOgn8xfyRPREN7gHakLYjhsHhWGT3fWAiL4IkAt0iDw14QiiEm2bE30c5XX5q0FtAA3CK5f9/BUg==}
     engines: {node: '>=12'}
@@ -5538,16 +5373,6 @@ packages:
 
   esast-util-from-js@2.0.1:
     resolution: {integrity: sha512-8Ja+rNJ0Lt56Pcf3TAmpBZjmx8ZcK5Ts4cAzIOjsjevg9oSXJnl6SUQ2EevU8tv3h6ZLWmoKL5H4fgWvdvfETw==}
-
-  esbuild-register@3.6.0:
-    resolution: {integrity: sha512-H2/S7Pm8a9CL1uhp9OvjwrBh5Pvx0H8qVOxNu8Wed9Y7qv56MPtq+GGM8RJpq6glYJn9Wspr8uw7l55uyinNeg==}
-    peerDependencies:
-      esbuild: '>=0.12 <1'
-
-  esbuild@0.25.12:
-    resolution: {integrity: sha512-bbPBYYrtZbkt6Os6FiTLCTFxvq4tt3JKall1vRwshA3fdVztsLAatFaZobhkBC8/BrPetoa0oksYoKXoG4ryJg==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   esbuild@0.27.2:
     resolution: {integrity: sha512-HyNQImnsOC7X9PMNaCIeAm4ISCQXs5a5YasTXVliKv4uuBo1dKrG0A+uQS8M5eXjVMnLg3WgXaKvprHlFJQffw==}
@@ -6844,10 +6669,6 @@ packages:
     resolution: {integrity: sha512-YgBpdJHPyQ2UE5x+hlSXcnejzAvD0b22U2OuAP+8OnlJT+PjWPxtgmGqKKc+RgTM63U9gN0YzrYc71R2WT/hTA==}
     engines: {node: '>=18'}
 
-  open@8.4.2:
-    resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
-    engines: {node: '>=12'}
-
   openid-client@5.7.1:
     resolution: {integrity: sha512-jDBPgSVfTnkIh71Hg9pRvtJc6wTwqjRkN88+gCFtYWrlP4Yx2Dsrow8uPi3qLr/aeymPF3o2+dS+wOpglK04ew==}
 
@@ -7608,15 +7429,6 @@ packages:
 
   storybook@10.3.5:
     resolution: {integrity: sha512-uBSZu/GZa9aEIW3QMGvdQPMZWhGxSe4dyRWU8B3/Vd47Gy/XLC7tsBxRr13txmmPOEDHZR94uLuq0H50fvuqBw==}
-    hasBin: true
-    peerDependencies:
-      prettier: ^2 || ^3
-    peerDependenciesMeta:
-      prettier:
-        optional: true
-
-  storybook@9.1.20:
-    resolution: {integrity: sha512-6rME2tww6PFhm96iG2Xx44yzwLDWBiDWy+kJ2ub6x90werSTOiuo+tZJ94BgCfFutR0tEfLRIq59s+Zg6YyChA==}
     hasBin: true
     peerDependencies:
       prettier: ^2 || ^3
@@ -9100,157 +8912,79 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@esbuild/aix-ppc64@0.25.12':
-    optional: true
-
   '@esbuild/aix-ppc64@0.27.2':
-    optional: true
-
-  '@esbuild/android-arm64@0.25.12':
     optional: true
 
   '@esbuild/android-arm64@0.27.2':
     optional: true
 
-  '@esbuild/android-arm@0.25.12':
-    optional: true
-
   '@esbuild/android-arm@0.27.2':
-    optional: true
-
-  '@esbuild/android-x64@0.25.12':
     optional: true
 
   '@esbuild/android-x64@0.27.2':
     optional: true
 
-  '@esbuild/darwin-arm64@0.25.12':
-    optional: true
-
   '@esbuild/darwin-arm64@0.27.2':
-    optional: true
-
-  '@esbuild/darwin-x64@0.25.12':
     optional: true
 
   '@esbuild/darwin-x64@0.27.2':
     optional: true
 
-  '@esbuild/freebsd-arm64@0.25.12':
-    optional: true
-
   '@esbuild/freebsd-arm64@0.27.2':
-    optional: true
-
-  '@esbuild/freebsd-x64@0.25.12':
     optional: true
 
   '@esbuild/freebsd-x64@0.27.2':
     optional: true
 
-  '@esbuild/linux-arm64@0.25.12':
-    optional: true
-
   '@esbuild/linux-arm64@0.27.2':
-    optional: true
-
-  '@esbuild/linux-arm@0.25.12':
     optional: true
 
   '@esbuild/linux-arm@0.27.2':
     optional: true
 
-  '@esbuild/linux-ia32@0.25.12':
-    optional: true
-
   '@esbuild/linux-ia32@0.27.2':
-    optional: true
-
-  '@esbuild/linux-loong64@0.25.12':
     optional: true
 
   '@esbuild/linux-loong64@0.27.2':
     optional: true
 
-  '@esbuild/linux-mips64el@0.25.12':
-    optional: true
-
   '@esbuild/linux-mips64el@0.27.2':
-    optional: true
-
-  '@esbuild/linux-ppc64@0.25.12':
     optional: true
 
   '@esbuild/linux-ppc64@0.27.2':
     optional: true
 
-  '@esbuild/linux-riscv64@0.25.12':
-    optional: true
-
   '@esbuild/linux-riscv64@0.27.2':
-    optional: true
-
-  '@esbuild/linux-s390x@0.25.12':
     optional: true
 
   '@esbuild/linux-s390x@0.27.2':
     optional: true
 
-  '@esbuild/linux-x64@0.25.12':
-    optional: true
-
   '@esbuild/linux-x64@0.27.2':
-    optional: true
-
-  '@esbuild/netbsd-arm64@0.25.12':
     optional: true
 
   '@esbuild/netbsd-arm64@0.27.2':
     optional: true
 
-  '@esbuild/netbsd-x64@0.25.12':
-    optional: true
-
   '@esbuild/netbsd-x64@0.27.2':
-    optional: true
-
-  '@esbuild/openbsd-arm64@0.25.12':
     optional: true
 
   '@esbuild/openbsd-arm64@0.27.2':
     optional: true
 
-  '@esbuild/openbsd-x64@0.25.12':
-    optional: true
-
   '@esbuild/openbsd-x64@0.27.2':
-    optional: true
-
-  '@esbuild/openharmony-arm64@0.25.12':
     optional: true
 
   '@esbuild/openharmony-arm64@0.27.2':
     optional: true
 
-  '@esbuild/sunos-x64@0.25.12':
-    optional: true
-
   '@esbuild/sunos-x64@0.27.2':
-    optional: true
-
-  '@esbuild/win32-arm64@0.25.12':
     optional: true
 
   '@esbuild/win32-arm64@0.27.2':
     optional: true
 
-  '@esbuild/win32-ia32@0.25.12':
-    optional: true
-
   '@esbuild/win32-ia32@0.27.2':
-    optional: true
-
-  '@esbuild/win32-x64@0.25.12':
     optional: true
 
   '@esbuild/win32-x64@0.27.2':
@@ -9464,7 +9198,7 @@ snapshots:
       jest-util: 30.3.0
       slash: 3.0.0
 
-  '@jest/core@30.3.0(esbuild-register@3.6.0(esbuild@0.27.2))':
+  '@jest/core@30.3.0':
     dependencies:
       '@jest/console': 30.3.0
       '@jest/pattern': 30.0.1
@@ -9479,7 +9213,7 @@ snapshots:
       exit-x: 0.2.2
       graceful-fs: 4.2.11
       jest-changed-files: 30.3.0
-      jest-config: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+      jest-config: 30.3.0(@types/node@24.12.2)
       jest-haste-map: 30.3.0
       jest-message-util: 30.3.0
       jest-regex-util: 30.0.1
@@ -9887,48 +9621,48 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@react-foundry/anchor-list@0.2.4(5f2b197969841e4a881734f8d7b49a1b)':
+  '@react-foundry/anchor-list@0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
     dependencies:
-      '@react-foundry/anchor': 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
-      '@react-foundry/component-helpers': 0.2.4
-      '@react-foundry/router': 0.2.4(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+      '@react-foundry/anchor': 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+      '@react-foundry/component-helpers': 0.3.0
+      '@react-foundry/router': 0.3.0(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
       react: 19.2.5
     optionalDependencies:
-      '@react-foundry/docs-components': 0.2.4(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
+      '@react-foundry/docs-components': 0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@storybook/addon-docs': 10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
     transitivePeerDependencies:
       - '@remix-run/react'
       - next
       - react-router
 
-  '@react-foundry/anchor@0.2.4(5f2b197969841e4a881734f8d7b49a1b)':
+  '@react-foundry/anchor@0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
     dependencies:
-      '@react-foundry/client-component-helpers': 0.2.4(react@19.2.5)
-      '@react-foundry/component-helpers': 0.2.4
-      '@react-foundry/router': 0.2.4(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
-      '@react-foundry/uri': 0.2.4
+      '@react-foundry/client-component-helpers': 0.3.0(react@19.2.5)
+      '@react-foundry/component-helpers': 0.3.0
+      '@react-foundry/router': 0.3.0(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+      '@react-foundry/uri': 0.3.0
       react: 19.2.5
     optionalDependencies:
-      '@react-foundry/docs-components': 0.2.4(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
+      '@react-foundry/docs-components': 0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@storybook/addon-docs': 10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
     transitivePeerDependencies:
       - '@remix-run/react'
       - next
       - react-router
 
-  '@react-foundry/app-plop-pack@0.2.4(@types/node@24.12.2)':
+  '@react-foundry/app-plop-pack@0.3.0(@types/node@24.12.2)':
     dependencies:
-      '@react-foundry/plop-pack': 0.2.4(@types/node@24.12.2)
+      '@react-foundry/plop-pack': 0.3.0(@types/node@24.12.2)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@react-foundry/client-component-helpers@0.2.4(react@19.2.5)':
+  '@react-foundry/client-component-helpers@0.3.0(react@19.2.5)':
     dependencies:
       react: 19.2.5
 
-  '@react-foundry/component-helpers@0.2.4': {}
+  '@react-foundry/component-helpers@0.3.0': {}
 
-  '@react-foundry/component-test-helpers@0.2.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
+  '@react-foundry/component-test-helpers@0.3.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@testing-library/dom': 10.4.1
       '@testing-library/jest-dom': 6.9.1
@@ -9941,68 +9675,65 @@ snapshots:
       - '@types/react-dom'
       - react-dom
 
-  '@react-foundry/create@0.2.4(@types/node@24.12.2)':
+  '@react-foundry/create@0.3.0(@types/node@24.12.2)':
     dependencies:
-      '@react-foundry/plop-pack': 0.2.4(@types/node@24.12.2)
+      '@react-foundry/plop-pack': 0.3.0(@types/node@24.12.2)
       shelljs: 0.10.0
     transitivePeerDependencies:
       - '@types/node'
 
-  '@react-foundry/docs-components@0.2.4(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))':
+  '@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
     dependencies:
-      '@react-foundry/component-helpers': 0.2.4
-      '@react-foundry/memoize': 0.2.4
-      '@react-foundry/simple-table': 0.2.4(@react-foundry/docs-components@0.2.4(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(react@19.2.5)
-      '@react-foundry/tabs': 0.2.4(5f2b197969841e4a881734f8d7b49a1b)
+      '@react-foundry/component-helpers': 0.3.0
+      '@react-foundry/memoize': 0.3.0
+      '@react-foundry/simple-table': 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(react@19.2.5)
+      '@react-foundry/tabs': 0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       prettier: 3.8.3
       prismjs: 1.30.0
       prismjs-github: 1.0.0
       react: 19.2.5
       react-element-to-jsx-string: 17.0.1(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react@19.2.5)
-      storybook: 9.1.20(@testing-library/dom@10.4.1)(prettier@3.8.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
+      storybook: 10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
     transitivePeerDependencies:
       - '@remix-run/react'
       - '@storybook/addon-docs'
       - '@testing-library/dom'
       - bufferutil
-      - msw
       - next
       - react-dom
       - react-is
       - react-router
-      - supports-color
       - utf-8-validate
-      - vite
 
-  '@react-foundry/fastify-auth@0.2.4':
+  '@react-foundry/fastify-auth@0.3.0':
     dependencies:
       '@fastify/error': 4.2.0
       '@fastify/rate-limit': 10.3.0
-      '@react-foundry/fastify-session': 0.2.4
+      '@react-foundry/fastify-session': 0.3.0
       base64url: 3.0.1
       fastify-plugin: 5.1.0
       openid-client: 5.7.1
 
-  '@react-foundry/fastify-consent-cookies@0.2.4':
+  '@react-foundry/fastify-consent-cookies@0.3.0':
     dependencies:
       cookie: 1.1.1
       cryptr: 6.4.0
       fastify-plugin: 5.1.0
 
-  '@react-foundry/fastify-dev-logger@0.2.4':
+  '@react-foundry/fastify-dev-logger@0.3.0':
     dependencies:
       pino-pretty: 13.1.3
 
-  '@react-foundry/fastify-harden@0.2.4':
+  '@react-foundry/fastify-harden@0.3.0':
     dependencies:
       fastify-plugin: 5.1.0
 
-  '@react-foundry/fastify-react-router@0.2.4(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))':
+  '@react-foundry/fastify-react-router@0.3.0(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))':
     dependencies:
       '@fastify/middie': 9.3.2
       '@fastify/static': 9.1.3
-      '@react-foundry/react-router-context': 0.2.4
-      '@react-router/node': 7.13.2(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)
+      '@react-foundry/react-router-context': 0.3.0
+      '@react-router/node': 7.14.2(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)
       fastify-plugin: 5.1.0
       react-router: 7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
     optionalDependencies:
@@ -10010,25 +9741,25 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@react-foundry/fastify-session@0.2.4':
+  '@react-foundry/fastify-session@0.3.0':
     dependencies:
-      '@react-foundry/fastify-consent-cookies': 0.2.4
+      '@react-foundry/fastify-consent-cookies': 0.3.0
       fastify-plugin: 5.1.0
 
-  '@react-foundry/fastify@0.2.4':
+  '@react-foundry/fastify@0.3.0':
     dependencies:
       '@fastify/rate-limit': 10.3.0
-      '@react-foundry/fastify-auth': 0.2.4
-      '@react-foundry/fastify-dev-logger': 0.2.4
-      '@react-foundry/fastify-harden': 0.2.4
+      '@react-foundry/fastify-auth': 0.3.0
+      '@react-foundry/fastify-dev-logger': 0.3.0
+      '@react-foundry/fastify-harden': 0.3.0
       close-with-grace: 2.5.0
       fastify: 5.8.5
 
-  '@react-foundry/forms@0.2.4(@types/react@19.2.14)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
+  '@react-foundry/forms@0.3.0(@types/react@19.2.14)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
     dependencies:
-      '@react-foundry/component-helpers': 0.2.4
-      '@react-foundry/router': 0.2.4(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
-      '@react-foundry/uri': 0.2.4
+      '@react-foundry/component-helpers': 0.3.0
+      '@react-foundry/router': 0.3.0(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+      '@react-foundry/uri': 0.3.0
       fast-deep-equal: 3.1.3
       formik: 2.4.9(@types/react@19.2.14)(react@19.2.5)
       react: 19.2.5
@@ -10040,9 +9771,9 @@ snapshots:
       - '@types/react'
       - next
 
-  '@react-foundry/memoize@0.2.4': {}
+  '@react-foundry/memoize@0.3.0': {}
 
-  '@react-foundry/plop-pack@0.2.4(@types/node@24.12.2)':
+  '@react-foundry/plop-pack@0.3.0(@types/node@24.12.2)':
     dependencies:
       fs-extra: 11.3.4
       lodash: 4.18.1
@@ -10054,46 +9785,46 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@react-foundry/react-router-context@0.2.4': {}
+  '@react-foundry/react-router-context@0.3.0': {}
 
-  '@react-foundry/router@0.2.4(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))':
+  '@react-foundry/router@0.3.0(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))':
     dependencies:
-      '@react-foundry/uri': 0.2.4
+      '@react-foundry/uri': 0.3.0
     optionalDependencies:
       next: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0)
       react-router: 7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
 
-  '@react-foundry/simple-table@0.2.4(@react-foundry/docs-components@0.2.4(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(react@19.2.5)':
+  '@react-foundry/simple-table@0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(react@19.2.5)':
     dependencies:
-      '@react-foundry/component-helpers': 0.2.4
+      '@react-foundry/component-helpers': 0.3.0
       react: 19.2.5
     optionalDependencies:
-      '@react-foundry/docs-components': 0.2.4(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
+      '@react-foundry/docs-components': 0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@storybook/addon-docs': 10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
 
-  '@react-foundry/tabs@0.2.4(5f2b197969841e4a881734f8d7b49a1b)':
+  '@react-foundry/tabs@0.3.0(@react-foundry/docs-components@0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5))(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
     dependencies:
-      '@react-foundry/client-component-helpers': 0.2.4(react@19.2.5)
-      '@react-foundry/component-helpers': 0.2.4
-      '@react-foundry/router': 0.2.4(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+      '@react-foundry/client-component-helpers': 0.3.0(react@19.2.5)
+      '@react-foundry/component-helpers': 0.3.0
+      '@react-foundry/router': 0.3.0(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
       react: 19.2.5
     optionalDependencies:
-      '@react-foundry/docs-components': 0.2.4(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
+      '@react-foundry/docs-components': 0.3.0(@storybook/addon-docs@10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)))(@testing-library/dom@10.4.1)(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(sass@1.99.0))(react-dom@19.2.5(react@19.2.5))(react-is@19.2.5)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@storybook/addon-docs': 10.3.5(@types/react@19.2.14)(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
     transitivePeerDependencies:
       - '@remix-run/react'
       - next
       - react-router
 
-  '@react-foundry/uri@0.2.4':
+  '@react-foundry/uri@0.3.0':
     dependencies:
       qs: 6.15.1
 
-  '@react-foundry/user-info@0.2.4(react@19.2.5)':
+  '@react-foundry/user-info@0.3.0(react@19.2.5)':
     dependencies:
       react: 19.2.5
 
-  '@react-foundry/vite-html-react@0.2.4': {}
+  '@react-foundry/vite-html-react@0.3.0': {}
 
   '@react-router/dev@7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3))(@types/node@24.12.2)(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(sass-embedded@1.99.0)(sass@1.99.0)(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))':
     dependencies:
@@ -10161,6 +9892,13 @@ snapshots:
       typescript: 5.9.3
 
   '@react-router/node@7.13.2(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)':
+    dependencies:
+      '@mjackson/node-fetch-server': 0.2.0
+      react-router: 7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+    optionalDependencies:
+      typescript: 5.9.3
+
+  '@react-router/node@7.14.2(react-router@7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)':
     dependencies:
       '@mjackson/node-fetch-server': 0.2.0
       react-router: 7.13.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -10634,14 +10372,6 @@ snapshots:
       chai: 5.3.3
       tinyrainbow: 2.0.0
 
-  '@vitest/mocker@3.2.4(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))':
-    dependencies:
-      '@vitest/spy': 3.2.4
-      estree-walker: 3.0.3
-      magic-string: 0.30.21
-    optionalDependencies:
-      vite: 7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)
-
   '@vitest/pretty-format@3.2.4':
     dependencies:
       tinyrainbow: 2.0.0
@@ -10885,10 +10615,6 @@ snapshots:
   bcrypt-pbkdf@1.0.2:
     dependencies:
       tweetnacl: 0.14.5
-
-  better-opn@3.0.2:
-    dependencies:
-      open: 8.4.2
 
   bl@4.1.0:
     dependencies:
@@ -11301,8 +11027,6 @@ snapshots:
     dependencies:
       clone: 1.0.4
 
-  define-lazy-prop@2.0.0: {}
-
   define-lazy-prop@3.0.0: {}
 
   delayed-stream@1.0.0: {}
@@ -11411,50 +11135,6 @@ snapshots:
       acorn: 8.15.0
       esast-util-from-estree: 2.0.0
       vfile-message: 4.0.3
-
-  esbuild-register@3.6.0(esbuild@0.25.12):
-    dependencies:
-      debug: 4.4.3(supports-color@8.1.1)
-      esbuild: 0.25.12
-    transitivePeerDependencies:
-      - supports-color
-
-  esbuild-register@3.6.0(esbuild@0.27.2):
-    dependencies:
-      debug: 4.4.3(supports-color@8.1.1)
-      esbuild: 0.27.2
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
-
-  esbuild@0.25.12:
-    optionalDependencies:
-      '@esbuild/aix-ppc64': 0.25.12
-      '@esbuild/android-arm': 0.25.12
-      '@esbuild/android-arm64': 0.25.12
-      '@esbuild/android-x64': 0.25.12
-      '@esbuild/darwin-arm64': 0.25.12
-      '@esbuild/darwin-x64': 0.25.12
-      '@esbuild/freebsd-arm64': 0.25.12
-      '@esbuild/freebsd-x64': 0.25.12
-      '@esbuild/linux-arm': 0.25.12
-      '@esbuild/linux-arm64': 0.25.12
-      '@esbuild/linux-ia32': 0.25.12
-      '@esbuild/linux-loong64': 0.25.12
-      '@esbuild/linux-mips64el': 0.25.12
-      '@esbuild/linux-ppc64': 0.25.12
-      '@esbuild/linux-riscv64': 0.25.12
-      '@esbuild/linux-s390x': 0.25.12
-      '@esbuild/linux-x64': 0.25.12
-      '@esbuild/netbsd-arm64': 0.25.12
-      '@esbuild/netbsd-x64': 0.25.12
-      '@esbuild/openbsd-arm64': 0.25.12
-      '@esbuild/openbsd-x64': 0.25.12
-      '@esbuild/openharmony-arm64': 0.25.12
-      '@esbuild/sunos-x64': 0.25.12
-      '@esbuild/win32-arm64': 0.25.12
-      '@esbuild/win32-ia32': 0.25.12
-      '@esbuild/win32-x64': 0.25.12
 
   esbuild@0.27.2:
     optionalDependencies:
@@ -12269,15 +11949,15 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  jest-cli@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)):
+  jest-cli@30.3.0(@types/node@24.12.2):
     dependencies:
-      '@jest/core': 30.3.0(esbuild-register@3.6.0(esbuild@0.27.2))
+      '@jest/core': 30.3.0
       '@jest/test-result': 30.3.0
       '@jest/types': 30.3.0
       chalk: 4.1.2
       exit-x: 0.2.2
       import-local: 3.2.0
-      jest-config: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+      jest-config: 30.3.0(@types/node@24.12.2)
       jest-util: 30.3.0
       jest-validate: 30.3.0
       yargs: 17.7.2
@@ -12288,7 +11968,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  jest-config@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)):
+  jest-config@30.3.0(@types/node@24.12.2):
     dependencies:
       '@babel/core': 7.29.0
       '@jest/get-type': 30.1.0
@@ -12315,7 +11995,6 @@ snapshots:
       strip-json-comments: 3.1.1
     optionalDependencies:
       '@types/node': 24.12.2
-      esbuild-register: 3.6.0(esbuild@0.27.2)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
@@ -12586,12 +12265,12 @@ snapshots:
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)):
+  jest@30.3.0(@types/node@24.12.2):
     dependencies:
-      '@jest/core': 30.3.0(esbuild-register@3.6.0(esbuild@0.27.2))
+      '@jest/core': 30.3.0
       '@jest/types': 30.3.0
       import-local: 3.2.0
-      jest-cli: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+      jest-cli: 30.3.0(@types/node@24.12.2)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -13269,12 +12948,6 @@ snapshots:
       define-lazy-prop: 3.0.0
       is-inside-container: 1.0.0
       wsl-utils: 0.1.0
-
-  open@8.4.2:
-    dependencies:
-      define-lazy-prop: 2.0.0
-      is-docker: 2.2.1
-      is-wsl: 2.2.0
 
   openid-client@5.7.1:
     dependencies:
@@ -14167,30 +13840,6 @@ snapshots:
       - react-dom
       - utf-8-validate
 
-  storybook@9.1.20(@testing-library/dom@10.4.1)(prettier@3.8.3)(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0)):
-    dependencies:
-      '@storybook/global': 5.0.0
-      '@testing-library/jest-dom': 6.9.1
-      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
-      '@vitest/expect': 3.2.4
-      '@vitest/mocker': 3.2.4(vite@7.3.2(@types/node@24.12.2)(sass-embedded@1.99.0)(sass@1.99.0))
-      '@vitest/spy': 3.2.4
-      better-opn: 3.0.2
-      esbuild: 0.25.12
-      esbuild-register: 3.6.0(esbuild@0.25.12)
-      recast: 0.23.11
-      semver: 7.7.4
-      ws: 8.18.3
-    optionalDependencies:
-      prettier: 3.8.3
-    transitivePeerDependencies:
-      - '@testing-library/dom'
-      - bufferutil
-      - msw
-      - supports-color
-      - utf-8-validate
-      - vite
-
   string-length@4.0.2:
     dependencies:
       char-regex: 1.0.2
@@ -14345,12 +13994,12 @@ snapshots:
 
   ts-dedent@2.2.0: {}
 
-  ts-jest@29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2)))(typescript@5.9.3):
+  ts-jest@29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(esbuild@0.27.2)(jest-util@30.3.0)(jest@30.3.0(@types/node@24.12.2))(typescript@5.9.3):
     dependencies:
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       handlebars: 4.7.9
-      jest: 30.3.0(@types/node@24.12.2)(esbuild-register@3.6.0(esbuild@0.27.2))
+      jest: 30.3.0(@types/node@24.12.2)
       json5: 2.2.3
       lodash.memoize: 4.1.2
       make-error: 1.3.6
