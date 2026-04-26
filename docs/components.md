@@ -84,9 +84,7 @@ $ npm install @not-govuk/components
 You can then import the components.
 
 ```jsx
-import components from '@not-govuk/components';
-
-const Panel = components.Panel;
+import { Panel } from '@not-govuk/components';
 ```
 
 You can also override some global styles by importing `@not-govuk/components` into your SASS. e.g. `app/style.scss`
