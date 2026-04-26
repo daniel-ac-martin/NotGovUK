@@ -181,6 +181,7 @@ const nextConfig = {
     plugins: [
       ...config.plugins,
       new webpack.NormalModuleReplacementPlugin(/^@react-foundry\/router$/, '@react-foundry\/router\/next'), // ADD THIS LINE
+      new webpack.NormalModuleReplacementPlugin(/^@not-govuk\/sass-base$/, '@not-govuk\/sass-base\/webpack'), // ADD THIS LINE; webpack requires tilde/~ prefixes on modules
     ]
   })
 };

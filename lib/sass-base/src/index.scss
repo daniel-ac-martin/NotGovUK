@@ -9,7 +9,7 @@ $govuk-text-colour: inherit;
 $govuk-link-active-colour: inherit;
 
 // Set the default asset path to be relative to the SCSS components
-$govuk-assets-path: '../../assets/' !default; // This default should probably change in the future
+$govuk-assets-path: '../../assets/' !default;
 
 // Enable new organisation colours
 $govuk-new-organisation-colours: true;
@@ -27,6 +27,6 @@ $not-govuk-dark-mode-border-colour: #000000;
   @extend .govuk-frontend-supported !optional;
 }
 
-// Webpack support; legacy convention
-$not-govuk-module-prefix: '~' !default;
+// Allow for Webpack to override this with legacy convention
+$not-govuk-module-prefix: '' !default;
 $govuk-assets-path-external: $not-govuk-module-prefix + 'govuk-frontend/dist/govuk/assets/';
