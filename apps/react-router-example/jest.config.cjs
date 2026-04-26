@@ -1,6 +1,6 @@
 'use strict';
 
-const baseConfig = require('../../jest.config.base');
+const baseConfig = require('../../jest.config.base.cjs');
 
 const config = {
   ...baseConfig,

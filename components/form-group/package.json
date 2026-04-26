@@ -2,6 +2,7 @@
   "name": "@not-govuk/form-group",
   "version": "0.17.4",
   "description": "A group of form fields.",
+  "type": "module",
   "main": "src/FormGroup.tsx",
   "sass": "assets/FormGroup.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/FormGroup.js",
-    "module": "dist/FormGroup.mjs",
+    "module": "dist/FormGroup.js",
     "typings": "dist/FormGroup.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/FormGroup.scss",
         "types": "./dist/FormGroup.d.ts",
-        "import": "./dist/FormGroup.mjs",
-        "require": "./dist/FormGroup.js",
-        "default": "./dist/FormGroup.mjs"
+        "import": "./dist/FormGroup.js",
+        "default": "./dist/FormGroup.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

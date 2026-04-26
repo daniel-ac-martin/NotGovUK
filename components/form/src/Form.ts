@@ -1,3 +1,5 @@
+import type { Validator } from '@react-foundry/forms';
+
 import { ComponentProps, ComponentType, FC, createElement as h } from 'react';
 import WTForm, {
   Fork,
@@ -65,10 +67,10 @@ const defaultLanguage = 'en';
 const defaultCountry = 'GB';
 const defaultLocale = `${defaultLanguage}-${defaultCountry}`;
 
-export const alpha = localAlpha(defaultLocale as any);
-export const alphanumeric = localAlphanumeric(defaultLocale as any);
-export const mobileNumber = localMobileNumber(defaultLocale as any);
-export const postcode = localPostalCode(defaultCountry as any);
+export const alpha: Validator = localAlpha(defaultLocale as any);
+export const alphanumeric: Validator = localAlphanumeric(defaultLocale as any);
+export const mobileNumber: Validator = localMobileNumber(defaultLocale as any);
+export const postcode: Validator = localPostalCode(defaultCountry as any);
 
 export default Form;
 export {

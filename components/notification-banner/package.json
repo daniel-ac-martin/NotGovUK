@@ -2,6 +2,7 @@
   "name": "@not-govuk/notification-banner",
   "version": "0.17.4",
   "description": "A component to tell the user about something they need to know about, but that’s not directly related to the page content.",
+  "type": "module",
   "main": "src/NotificationBanner.tsx",
   "sass": "assets/NotificationBanner.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/NotificationBanner.js",
-    "module": "dist/NotificationBanner.mjs",
+    "module": "dist/NotificationBanner.js",
     "typings": "dist/NotificationBanner.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/NotificationBanner.scss",
         "types": "./dist/NotificationBanner.d.ts",
-        "import": "./dist/NotificationBanner.mjs",
-        "require": "./dist/NotificationBanner.js",
-        "default": "./dist/NotificationBanner.mjs"
+        "import": "./dist/NotificationBanner.js",
+        "default": "./dist/NotificationBanner.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",

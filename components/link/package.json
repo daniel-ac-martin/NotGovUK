@@ -2,6 +2,7 @@
   "name": "@not-govuk/link",
   "version": "0.17.4",
   "description": "A drop-in replacement for the 'a' element with GovUK styling.",
+  "type": "module",
   "main": "src/Link.tsx",
   "sass": "assets/Link.scss",
   "exports": {
@@ -12,15 +13,14 @@
   },
   "publishConfig": {
     "main": "dist/Link.js",
-    "module": "dist/Link.mjs",
+    "module": "dist/Link.js",
     "typings": "dist/Link.d.ts",
     "exports": {
       ".": {
         "sass": "./assets/Link.scss",
         "types": "./dist/Link.d.ts",
-        "import": "./dist/Link.mjs",
-        "require": "./dist/Link.js",
-        "default": "./dist/Link.mjs"
+        "import": "./dist/Link.js",
+        "default": "./dist/Link.js"
       }
     }
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "npm run clean && npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -m es2022 && find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
-    "build:cjs": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
