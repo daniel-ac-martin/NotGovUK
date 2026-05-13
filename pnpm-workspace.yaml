@@ -12,3 +12,7 @@ onlyBuiltDependencies:
 allowBuilds:
   bun: true                         # Required in v11
   cypress: true                     # Required in v11
+  "@parcel/watcher": false
+  esbuild: false
+  sharp: false
+  unrs-resolver: false
