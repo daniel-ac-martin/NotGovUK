@@ -161,8 +161,8 @@ importers:
         specifier: 1.100.0
         version: 1.100.0
       start-server-and-test:
-        specifier: 3.0.6
-        version: 3.0.6
+        specifier: 3.0.8
+        version: 3.0.8
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.12.4))(typescript@5.9.3)
@@ -213,8 +213,8 @@ importers:
         specifier: 1.100.0
         version: 1.100.0
       start-server-and-test:
-        specifier: 3.0.6
-        version: 3.0.6
+        specifier: 3.0.8
+        version: 3.0.8
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.12.4))(typescript@5.9.3)
@@ -274,8 +274,8 @@ importers:
         specifier: 1.100.0
         version: 1.100.0
       start-server-and-test:
-        specifier: 3.0.6
-        version: 3.0.6
+        specifier: 3.0.8
+        version: 3.0.8
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.12.4))(typescript@5.9.3)
@@ -426,8 +426,8 @@ importers:
         specifier: 30.4.1
         version: 30.4.1
       start-server-and-test:
-        specifier: 3.0.6
-        version: 3.0.6
+        specifier: 3.0.8
+        version: 3.0.8
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.12.4))(typescript@5.9.3)
@@ -6676,8 +6676,8 @@ packages:
     resolution: {integrity: sha512-gqXddjPqQ6G40VdnI6T6yObEC+pDNvyP95wdQhkWkg7crHH3km5qP1FsOXEkzEQwnz6gz5qGTn1c2Y52wP3OyQ==}
     engines: {'0': node >=0.6.0}
 
-  lazy-ass@1.6.0:
-    resolution: {integrity: sha512-cc8oEVoctTvsFZ/Oje/kGnHbpWHYBe8IAJe4C0QNc3t8uM/0Y8+erSz/7Y1ALuXTEZTMvxXwO6YbX1ey3ujiZw==}
+  lazy-ass@2.0.3:
+    resolution: {integrity: sha512-/O3/DoQmI1XAhklDvF1dAjFf/epE8u3lzOZegQfLZ8G7Ud5bTRSZiFOpukHCu6jODrCA4gtIdwUCC7htxcDACA==}
     engines: {node: '> 0.8'}
 
   leven@3.1.0:
@@ -7854,8 +7854,8 @@ packages:
     resolution: {integrity: sha512-XlkWvfIm6RmsWtNJx+uqtKLS8eqFbxUg0ZzLXqY0caEy9l7hruX8IpiDnjsLavoBgqCCR71TqWO8MaXYheJ3RQ==}
     engines: {node: '>=10'}
 
-  start-server-and-test@3.0.6:
-    resolution: {integrity: sha512-rgEVH+MKOCVB63R50WS1DXD/fJ4A07aGw/9J6MxkO88ZPOewa4VukGEuayinTdt+feKefeynw/iDJBzn+tW4Jw==}
+  start-server-and-test@3.0.8:
+    resolution: {integrity: sha512-BG1tHNyEW/mPhw50DFPb0uKoq7f7yNQFO+CJb83MKZkCPKmWqb522YGMM3f4XG1Kra2v3xU3ou6O+s8taChM6A==}
     engines: {node: ^22 || >=24}
     hasBin: true
 
@@ -13374,7 +13374,7 @@ snapshots:
       json-schema: 0.4.0
       verror: 1.10.0
 
-  lazy-ass@1.6.0: {}
+  lazy-ass@2.0.3: {}
 
   leven@3.1.0: {}
 
@@ -14867,13 +14867,13 @@ snapshots:
     dependencies:
       escape-string-regexp: 2.0.0
 
-  start-server-and-test@3.0.6:
+  start-server-and-test@3.0.8:
     dependencies:
       arg: 5.0.2
       check-more-types: 2.24.0
       debug: 4.4.3(supports-color@8.1.1)
       execa: 5.1.1
-      lazy-ass: 1.6.0
+      lazy-ass: 2.0.3
       tree-kill: 1.2.2
       wait-on: 9.0.10(debug@4.4.3)
     transitivePeerDependencies:
