@@ -23,5 +23,11 @@ export default defineConfig({
     alias: {
       '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbo/webpack
     }
+  },
+  ssr: { // FIXME: Remove once Node.js ESM imports are fixed
+    noExternal: [
+      /^@not-govuk/,
+      /^@react-foundry/
+    ]
   }
 });
