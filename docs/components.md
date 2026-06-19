@@ -116,6 +116,12 @@ export default defineConfig({
     alias: {
       '@not-govuk/sass-base': '@not-govuk/sass-base/vite' // Vite resolves url() differently from Turbopack
     }
+  },
+  ssr: {
+    noExternal: [
+      /^@not-govuk/,
+      /^@react-foundry/
+    ]
   }
   [...]
 });
