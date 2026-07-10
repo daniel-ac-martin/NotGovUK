@@ -1,5 +1,6 @@
 cp = cp -P --preserve=all
-patch_package = sed -Ei 's/"@(not-govuk)\/([^"]+)": "workspace:(.+)"/"@\1\/\2": "\3"/'
+version := $(shell jq -r '.version' '../../package.json')
+patch_package = sed -Ei 's/"@(not-govuk)\/([^"]+)": "workspace:.+"/"@\1\/\2": "$(version)"/'
 strip_package = jq '{ scripts: .scripts, dependencies: .dependencies, devDependencies: .devDependencies }'
 build_dir = ./build
 dist_dir = ./dist
