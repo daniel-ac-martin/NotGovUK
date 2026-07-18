@@ -4,11 +4,6 @@ import html from '@react-foundry/vite-html-react';
 import { reactRouter } from '@react-router/dev/vite';
 
 export default defineConfig({
-  build: {
-    commonjsOptions: {
-      defaultIsModuleExports: true // Mimics Node.js, aligns dev and prod
-    }
-  },
   css: {
     preprocessorOptions: {
       scss: {
@@ -24,7 +19,7 @@ export default defineConfig({
   plugins: [
     html(),
     mdx(),
-    reactRouter(),
+    reactRouter()
   ],
   resolve: {
     alias: {
@@ -32,6 +27,9 @@ export default defineConfig({
     }
   },
   ssr: {
-    noExternal: /\.mdx$/
+    noExternal: [
+      /\.mdx$/,
+      'react-is'
+    ]
   }
 });

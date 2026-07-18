@@ -7,10 +7,7 @@ import reactDocgenTypescript from '@joshwooding/vite-plugin-react-docgen-typescr
 
 export default defineConfig({
   build: {
-    commonjsOptions: {
-      defaultIsModuleExports: true // Mimics Node.js, aligns dev and prod
-    },
-    minify: false, // Needed to get proper JSX snippets (only useful for docs)
+    minify: false // Needed to get proper JSX snippets (only useful for docs)
   },
   css: {
     preprocessorOptions: {
@@ -29,7 +26,7 @@ export default defineConfig({
     csf(),
     html(),
     mdx(),
-    reactRouter(),
+    reactRouter()
   ],
   resolve: {
     alias: {
@@ -38,6 +35,9 @@ export default defineConfig({
     }
   },
   ssr: {
-    noExternal: /\.mdx$/
+    noExternal: [
+      /\.mdx$/,
+      'react-is' // This can be removed if/when Formik is removed
+    ]
   }
 });
