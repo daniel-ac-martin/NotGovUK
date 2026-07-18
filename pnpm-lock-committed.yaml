@@ -56,10 +56,10 @@ importers:
         version: 30.4.1(@babel/core@8.0.1)
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       plop:
         specifier: 4.0.5
         version: 4.0.5(@types/node@24.13.3)
@@ -68,7 +68,7 @@ importers:
         version: 19.2.7
       ts-jest:
         specifier: 29.4.11
-        version: 29.4.11(@babel/core@8.0.1)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@8.0.1))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
+        version: 29.4.11(@babel/core@8.0.1)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@8.0.1))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3)(supports-color@8.1.1))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -106,8 +106,8 @@ importers:
         specifier: 7.18.1
         version: 7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3)
       isbot:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
       react:
         specifier: 19.2.7
         version: 19.2.7
@@ -129,7 +129,7 @@ importers:
         version: 0.4.0
       '@react-router/dev':
         specifier: 7.18.1
-        version: 7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))
+        version: 7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(supports-color@8.1.1)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))
       '@storybook/csf-plugin':
         specifier: 10.4.6
         version: 10.4.6(esbuild@0.27.2)(rollup@4.55.1)(storybook@10.4.6(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@testing-library/dom@10.4.1)(@types/react@19.2.17)(prettier@3.9.4)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))
@@ -153,16 +153,16 @@ importers:
         version: 15.18.1
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       sass-embedded:
         specifier: 1.100.0
         version: 1.100.0
       start-server-and-test:
         specifier: 3.0.11
-        version: 3.0.11
+        version: 3.0.11(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -205,16 +205,16 @@ importers:
         version: 15.18.1
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       sass-embedded:
         specifier: 1.100.0
         version: 1.100.0
       start-server-and-test:
         specifier: 3.0.11
-        version: 3.0.11
+        version: 3.0.11(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -237,8 +237,8 @@ importers:
         specifier: 7.18.1
         version: 7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3)
       isbot:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
       react:
         specifier: 19.2.7
         version: 19.2.7
@@ -251,7 +251,7 @@ importers:
     devDependencies:
       '@react-router/dev':
         specifier: 7.18.1
-        version: 7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))
+        version: 7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(supports-color@8.1.1)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))
       '@types/node':
         specifier: 24.13.3
         version: 24.13.3
@@ -266,16 +266,16 @@ importers:
         version: 15.18.1
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       sass-embedded:
         specifier: 1.100.0
         version: 1.100.0
       start-server-and-test:
         specifier: 3.0.11
-        version: 3.0.11
+        version: 3.0.11(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -374,8 +374,8 @@ importers:
         specifier: 7.18.1
         version: 7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3)
       isbot:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
       react:
         specifier: 19.2.7
         version: 19.2.7
@@ -400,7 +400,7 @@ importers:
         version: 0.4.0
       '@react-router/dev':
         specifier: 7.18.1
-        version: 7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))
+        version: 7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(supports-color@8.1.1)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))
       '@types/mdx':
         specifier: 2.0.14
         version: 2.0.14
@@ -421,13 +421,13 @@ importers:
         version: 15.18.1
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       start-server-and-test:
         specifier: 3.0.11
-        version: 3.0.11
+        version: 3.0.11(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -461,10 +461,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -501,10 +501,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -538,10 +538,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -584,10 +584,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -621,10 +621,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -664,10 +664,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -710,10 +710,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -750,10 +750,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -781,10 +781,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -815,10 +815,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -861,10 +861,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -901,10 +901,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -935,10 +935,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -972,10 +972,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1033,10 +1033,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1076,10 +1076,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1122,10 +1122,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1162,10 +1162,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1196,10 +1196,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1230,10 +1230,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1261,10 +1261,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1295,10 +1295,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1332,10 +1332,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1369,10 +1369,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1403,10 +1403,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1470,10 +1470,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1510,10 +1510,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1547,10 +1547,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1581,10 +1581,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1624,10 +1624,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1658,10 +1658,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1692,10 +1692,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1738,10 +1738,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1769,10 +1769,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1809,10 +1809,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1849,10 +1849,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1892,10 +1892,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1926,10 +1926,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1963,10 +1963,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -1997,10 +1997,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -2025,10 +2025,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -2059,10 +2059,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -2093,10 +2093,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -2127,10 +2127,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -2164,10 +2164,10 @@ importers:
         version: 19.2.17
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -2192,10 +2192,10 @@ importers:
     devDependencies:
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -2362,10 +2362,10 @@ importers:
     devDependencies:
       jest:
         specifier: 30.4.2
-        version: 30.4.2(@types/node@24.13.3)
+        version: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       jest-environment-jsdom:
         specifier: 30.4.1
-        version: 30.4.1
+        version: 30.4.1(supports-color@8.1.1)
       ts-jest:
         specifier: 29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3)
@@ -4836,9 +4836,6 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@24.13.2':
-    resolution: {integrity: sha512-fRa09kZTgu8o71KFcDjUFuc7F+dEbZYZmkI0mg5YBTRs0yMKjYHsq/c0urDKeDb+D5qVgXOdFcuu+DZPKOITwA==}
-
   '@types/node@24.13.3':
     resolution: {integrity: sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q==}
 
@@ -6386,8 +6383,8 @@ packages:
     resolution: {integrity: sha512-I+NmIfBHUl+r2wcDd6JwE9yWje/PIVY/R5/CmV8dXLZd5K+L9X2klAOwfAHNnondLXkbHyTAleQAWonpTJBTtw==}
     engines: {node: '>= 18.0.0'}
 
-  isbot@5.2.0:
-    resolution: {integrity: sha512-gbZiGCb4B5xaoxg9mS7koAyRdvJnArk10VLSHOgz6rtBG93/pi1xOFaVvXMKZ7JXgyZ8zAbNRK5uIBdIUTFSqw==}
+  isbot@5.2.1:
+    resolution: {integrity: sha512-dJ+LpKyClQZ7NG+j3OensC/mAZkGpukE9YUrgPYvAZj2doVL0edfDgywTUh5CXa0o+nW9a1V9e5+CJTX8+SxRw==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -9799,11 +9796,11 @@ snapshots:
       jest-util: 30.4.1
       slash: 3.0.0
 
-  '@jest/core@30.4.2':
+  '@jest/core@30.4.2(supports-color@8.1.1)':
     dependencies:
       '@jest/console': 30.4.1
       '@jest/pattern': 30.4.0
-      '@jest/reporters': 30.4.1
+      '@jest/reporters': 30.4.1(supports-color@8.1.1)
       '@jest/test-result': 30.4.1
       '@jest/transform': 30.4.1
       '@jest/types': 30.4.1
@@ -9848,7 +9845,7 @@ snapshots:
       '@types/node': 24.13.3
       jest-mock: 30.4.1
       jest-util: 30.4.1
-      jsdom: 26.1.0
+      jsdom: 26.1.0(supports-color@8.1.1)
 
   '@jest/environment@30.4.1':
     dependencies:
@@ -9899,10 +9896,10 @@ snapshots:
 
   '@jest/pattern@30.4.0':
     dependencies:
-      '@types/node': 24.13.2
+      '@types/node': 24.13.3
       jest-regex-util: 30.4.0
 
-  '@jest/reporters@30.4.1':
+  '@jest/reporters@30.4.1(supports-color@8.1.1)':
     dependencies:
       '@bcoe/v8-coverage': 0.2.3
       '@jest/console': 30.4.1
@@ -9919,7 +9916,7 @@ snapshots:
       istanbul-lib-coverage: 3.2.2
       istanbul-lib-instrument: 6.0.3
       istanbul-lib-report: 3.0.1
-      istanbul-lib-source-maps: 5.0.6
+      istanbul-lib-source-maps: 5.0.6(supports-color@8.1.1)
       istanbul-reports: 3.2.0
       jest-message-util: 30.4.1
       jest-util: 30.4.1
@@ -10000,7 +9997,7 @@ snapshots:
       '@jest/schemas': 30.4.1
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 24.13.2
+      '@types/node': 24.13.3
       '@types/yargs': 17.0.34
       chalk: 4.1.2
 
@@ -10648,7 +10645,7 @@ snapshots:
 
   '@react-foundry/vite-html-react@0.4.0': {}
 
-  '@react-router/dev@7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))':
+  '@react-router/dev@7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(supports-color@8.1.1)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/generator': 7.29.7
@@ -10665,7 +10662,7 @@ snapshots:
       dedent: 1.7.0
       es-module-lexer: 1.7.0
       exit-hook: 2.2.1
-      isbot: 5.2.0
+      isbot: 5.2.1
       jsesc: 3.0.2
       lodash: 4.18.1
       p-map: 7.0.4
@@ -10679,7 +10676,7 @@ snapshots:
       tinyglobby: 0.2.15
       valibot: 1.2.0(typescript@5.9.3)
       vite: 7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0)
-      vite-node: 3.2.4(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0)
+      vite-node: 3.2.4(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0)(supports-color@8.1.1)
     optionalDependencies:
       '@react-router/serve': 7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3)
       typescript: 5.9.3
@@ -10708,7 +10705,7 @@ snapshots:
 
   '@react-router/fs-routes@7.18.1(@react-router/dev@7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0)))(typescript@5.9.3)':
     dependencies:
-      '@react-router/dev': 7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))
+      '@react-router/dev': 7.18.1(@react-router/serve@7.18.1(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@5.9.3))(@types/node@24.13.3)(react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(sass-embedded@1.100.0)(sass@1.100.0)(supports-color@8.1.1)(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0))
       minimatch: 9.0.5
     optionalDependencies:
       typescript: 5.9.3
@@ -11113,10 +11110,6 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@24.13.2':
-    dependencies:
-      undici-types: 7.18.2
-
   '@types/node@24.13.3':
     dependencies:
       undici-types: 7.18.2
@@ -11269,7 +11262,7 @@ snapshots:
 
   acorn@8.15.0: {}
 
-  agent-base@6.0.2:
+  agent-base@6.0.2(supports-color@8.1.1):
     dependencies:
       debug: 4.4.3(supports-color@8.1.1)
     transitivePeerDependencies:
@@ -11368,11 +11361,11 @@ snapshots:
 
   axe-core@4.11.0: {}
 
-  axios@1.16.1(debug@4.4.3):
+  axios@1.16.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
       follow-redirects: 1.16.0(debug@4.4.3)
       form-data: 4.0.5
-      https-proxy-agent: 5.0.1
+      https-proxy-agent: 5.0.1(supports-color@8.1.1)
       proxy-from-env: 2.1.0
     transitivePeerDependencies:
       - debug
@@ -12592,7 +12585,7 @@ snapshots:
       statuses: 2.0.1
       toidentifier: 1.0.1
 
-  http-proxy-agent@7.0.2:
+  http-proxy-agent@7.0.2(supports-color@8.1.1):
     dependencies:
       agent-base: 7.1.4
       debug: 4.4.3(supports-color@8.1.1)
@@ -12605,14 +12598,14 @@ snapshots:
       jsprim: 2.0.2
       sshpk: 1.18.0
 
-  https-proxy-agent@5.0.1:
+  https-proxy-agent@5.0.1(supports-color@8.1.1):
     dependencies:
-      agent-base: 6.0.2
+      agent-base: 6.0.2(supports-color@8.1.1)
       debug: 4.4.3(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  https-proxy-agent@7.0.6:
+  https-proxy-agent@7.0.6(supports-color@8.1.1):
     dependencies:
       agent-base: 7.1.4
       debug: 4.4.3(supports-color@8.1.1)
@@ -12775,7 +12768,7 @@ snapshots:
 
   isbinaryfile@5.0.6: {}
 
-  isbot@5.2.0: {}
+  isbot@5.2.1: {}
 
   isexe@2.0.0: {}
 
@@ -12801,7 +12794,7 @@ snapshots:
       make-dir: 4.0.0
       supports-color: 7.2.0
 
-  istanbul-lib-source-maps@5.0.6:
+  istanbul-lib-source-maps@5.0.6(supports-color@8.1.1):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       debug: 4.4.3(supports-color@8.1.1)
@@ -12858,7 +12851,7 @@ snapshots:
 
   jest-cli@30.4.2(@types/node@24.13.3):
     dependencies:
-      '@jest/core': 30.4.2
+      '@jest/core': 30.4.2(supports-color@8.1.1)
       '@jest/test-result': 30.4.1
       '@jest/types': 30.4.1
       chalk: 4.1.2
@@ -12932,11 +12925,11 @@ snapshots:
       jest-util: 30.4.1
       pretty-format: 30.4.1
 
-  jest-environment-jsdom@30.4.1:
+  jest-environment-jsdom@30.4.1(supports-color@8.1.1):
     dependencies:
       '@jest/environment': 30.4.1
       '@jest/environment-jsdom-abstract': 30.4.1(jsdom@26.1.0)
-      jsdom: 26.1.0
+      jsdom: 26.1.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -12955,7 +12948,7 @@ snapshots:
   jest-haste-map@30.4.1:
     dependencies:
       '@jest/types': 30.4.1
-      '@types/node': 24.13.2
+      '@types/node': 24.13.3
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -13141,7 +13134,7 @@ snapshots:
   jest-util@30.4.1:
     dependencies:
       '@jest/types': 30.4.1
-      '@types/node': 24.13.2
+      '@types/node': 24.13.3
       chalk: 4.1.2
       ci-info: 4.3.1
       graceful-fs: 4.2.11
@@ -13169,15 +13162,15 @@ snapshots:
 
   jest-worker@30.4.1:
     dependencies:
-      '@types/node': 24.13.2
+      '@types/node': 24.13.3
       '@ungap/structured-clone': 1.3.0
       jest-util: 30.4.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jest@30.4.2(@types/node@24.13.3):
+  jest@30.4.2(@types/node@24.13.3)(supports-color@8.1.1):
     dependencies:
-      '@jest/core': 30.4.2
+      '@jest/core': 30.4.2(supports-color@8.1.1)
       '@jest/types': 30.4.1
       import-local: 3.2.0
       jest-cli: 30.4.2(@types/node@24.13.3)
@@ -13213,14 +13206,14 @@ snapshots:
 
   jsbn@0.1.1: {}
 
-  jsdom@26.1.0:
+  jsdom@26.1.0(supports-color@8.1.1):
     dependencies:
       cssstyle: 4.6.0
       data-urls: 5.0.0
       decimal.js: 10.6.0
       html-encoding-sniffer: 4.0.0
-      http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.6
+      http-proxy-agent: 7.0.2(supports-color@8.1.1)
+      https-proxy-agent: 7.0.6(supports-color@8.1.1)
       is-potential-custom-element-name: 1.0.1
       nwsapi: 2.2.22
       parse5: 7.3.0
@@ -14795,7 +14788,7 @@ snapshots:
     dependencies:
       escape-string-regexp: 2.0.0
 
-  start-server-and-test@3.0.11:
+  start-server-and-test@3.0.11(supports-color@8.1.1):
     dependencies:
       arg: 5.0.2
       check-more-types: 2.24.0
@@ -14803,7 +14796,7 @@ snapshots:
       execa: 5.1.1
       lazy-ass: 2.0.3
       tree-kill: 1.2.2
-      wait-on: 9.0.10(debug@4.4.3)
+      wait-on: 9.0.10(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -15043,7 +15036,7 @@ snapshots:
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       handlebars: 4.7.9
-      jest: 30.4.2(@types/node@24.13.3)
+      jest: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       json5: 2.2.3
       lodash.memoize: 4.1.2
       make-error: 1.3.6
@@ -15059,12 +15052,12 @@ snapshots:
       esbuild: 0.27.2
       jest-util: 30.4.1
 
-  ts-jest@29.4.11(@babel/core@8.0.1)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@8.0.1))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3))(typescript@5.9.3):
+  ts-jest@29.4.11(@babel/core@8.0.1)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@8.0.1))(esbuild@0.27.2)(jest-util@30.4.1)(jest@30.4.2(@types/node@24.13.3)(supports-color@8.1.1))(typescript@5.9.3):
     dependencies:
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       handlebars: 4.7.9
-      jest: 30.4.2(@types/node@24.13.3)
+      jest: 30.4.2(@types/node@24.13.3)(supports-color@8.1.1)
       json5: 2.2.3
       lodash.memoize: 4.1.2
       make-error: 1.3.6
@@ -15258,7 +15251,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite-node@3.2.4(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0):
+  vite-node@3.2.4(@types/node@24.13.3)(sass-embedded@1.100.0)(sass@1.100.0)(supports-color@8.1.1):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3(supports-color@8.1.1)
@@ -15297,9 +15290,9 @@ snapshots:
     dependencies:
       xml-name-validator: 5.0.0
 
-  wait-on@9.0.10(debug@4.4.3):
+  wait-on@9.0.10(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
-      axios: 1.16.1(debug@4.4.3)
+      axios: 1.16.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       joi: 18.2.1
       lodash: 4.18.1
       minimist: 1.2.8
