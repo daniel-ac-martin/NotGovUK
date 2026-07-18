@@ -10,6 +10,9 @@ export default defineConfig({
     minify: false // Needed to get proper JSX snippets (only useful for docs)
   },
   css: {
+    lightningcss: {
+      errorRecovery: true // Required until govuk-frontend removes the '@media zero' hack
+    },
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',

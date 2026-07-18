@@ -5,6 +5,9 @@ import { reactRouter } from '@react-router/dev/vite';
 
 export default defineConfig({
   css: {
+    lightningcss: {
+      errorRecovery: true // Required until govuk-frontend removes the '@media zero' hack
+    },
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',
