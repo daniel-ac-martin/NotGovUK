@@ -2,16 +2,12 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   build: {
-    commonjsOptions: {
-      defaultIsModuleExports: true // Mimics Node.js
-    },
     copyPublicDir: false,
     minify: false,
     modulePreload: false,
-    rollupOptions: {
+    rolldownOptions: {
       output: {
-        manualChunks: null,
-        inlineDynamicImports: true
+        codeSplitting: false
       }
     },
     ssr: 'src/server/index.ts',

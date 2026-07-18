@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react';
 // https://vite.dev/config/
 export default defineConfig({
   css: {
+    lightningcss: {
+      errorRecovery: true // Required until govuk-frontend removes the '@media zero' hack
+    },
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',
