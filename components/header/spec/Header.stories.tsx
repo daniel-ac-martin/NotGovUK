@@ -46,48 +46,6 @@ export const ServiceName: Story = {
   name: 'Service name'
 };
 
-export const Navigation: Story = {
-  args: {
-    govUK: true,
-    organisationHref: '#',
-    serviceName: 'Service name',
-    serviceHref: '#'
-  },
-  render: ({ ...props }) => (
-    <Header
-      {...props}
-      navigation={[
-        {
-          href: '#1',
-          text: 'Navigation item 1',
-          active: true
-        },
-        {
-          href: '?2',
-          text: 'Navigation item 2'
-        },
-        {
-          href: '?3',
-          text: 'Navigation item 3'
-        },
-        {
-          href: '?4',
-          text: 'Navigation item 4'
-        }
-      ]}
-    />
-  )
-};
-
-export const SignOut: Story = {
-  args: {
-    signOutHref: '#sign-out',
-    serviceName: 'My service',
-    serviceHref: '#my-service'
-  },
-  name: 'Sign out'
-};
-
 export const FullWidth: Story = {
   args: { maxContentsWidth: -1 },
   name: 'Full width'

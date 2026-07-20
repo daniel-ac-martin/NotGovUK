@@ -1,19 +1,12 @@
 import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
-import { Link, LinkProps } from '@not-govuk/link';
+import { A } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
 import { CrownLogo } from './CrownLogo';
 import { CrownLogoOld } from './CrownLogoOld';
 import { CoatLogo } from './CoatLogo';
 
 import '../assets/Header.scss';
-
-export type NavigationLink = LinkProps & {
-  /** Whether the link is for the current page */
-  active?: boolean,
-  /** Text of the link */
-  text: string
-};
 
 export type HeaderProps = StandardProps & HTMLAttributes<HTMLElement> & {
   /** Department branding to use (e.g. home-office) */
@@ -22,8 +15,6 @@ export type HeaderProps = StandardProps & HTMLAttributes<HTMLElement> & {
   govUK?: boolean
   /** Maximum width of the contents in px units (-1 for full width) */
   maxContentsWidth?: number
-  /** Navigation links */
-  navigation?: NavigationLink[]
   /** Organisation link URL */
   organisationHref?: string
   /** Organisation link text */
@@ -34,10 +25,6 @@ export type HeaderProps = StandardProps & HTMLAttributes<HTMLElement> & {
   serviceHref?: string
   /** Service link text */
   serviceName?: string
-  /** Sign out link URL */
-  signOutHref?: string
-  /** Sign out link text */
-  signOutText?: string
   /** Custom logo, use null to remove */
   logo?: ReactNode
 };
@@ -92,14 +79,11 @@ export const Header: FC<HeaderProps> = ({
   department,
   govUK = false,
   maxContentsWidth,
-  navigation = [],
   organisationHref,
   organisationText,
   rebrand = false,
   serviceHref = '/',
   serviceName,
-  signOutHref,
-  signOutText = 'Sign out',
   logo: _logo,
   ...attrs
 }) => {
@@ -109,14 +93,8 @@ export const Header: FC<HeaderProps> = ({
     : [_classModifiers]
   );
   const classes = classBuilder('govuk-header', classBlock, [...classModifiers, department], className);
-  const A = (props: LinkProps) => h(Link, { classBlock: classes('link'), ...props });
   const orgHref = organisationHref || ( govUK ? 'https://www.gov.uk/' : '/' );
   const orgText = organisationText || ( govUK ? 'GOV.UK' : departmentText(department) );
-  const navLinks = !signOutHref ? navigation : [...navigation, {
-    href: signOutHref,
-    text: signOutText,
-    forceExternal: true
-  }];
 
   const logo = (
     _logo !== undefined
@@ -140,30 +118,16 @@ export const Header: FC<HeaderProps> = ({
     <header {...attrs} className={classes()} data-module="govuk-header">
       <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
         <div className={classes('logo')}>
-          <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
+          <A href={orgHref} classBlock={classes('homepage-link')} classModifiers={(orgText && orgText.length > 9) ? 'small' : undefined}>
             {logo}
             {govUK ? null : (
               <span className={classes('logotype-text')}>{orgText}</span>
             )}
           </A>
         </div>
-        {!(serviceName || navLinks.length) ? null : (
+        {!serviceName ? null : (
           <div className={classes('content')}>
-            {!serviceName ? null : (
-              <A href={serviceHref} className={classes('service-name')}>{serviceName}</A>
-            )}
-            {!navLinks.length ? null : (
-              <nav className={classes('navigation')} aria-label="Menu">
-                <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" hidden>Menu</button>
-                <ul id="navigation" className={classes('navigation-list')}>
-                  {navLinks.map(({ active, text, ...linkAttrs }, i) => (
-                    <li key={i} className={classes('navigation-item', active ? 'active' : undefined)}>
-                      <A {...linkAttrs}>{text}</A>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            )}
+            <A href={serviceHref} classBlock={classes('homepage-link')} className={classes('service-name')}>{serviceName}</A>
           </div>
         )}
       </WidthContainer>

@@ -38,19 +38,6 @@
 
       .govuk-header__container {
         border-color: $colour !important;
-
-        .govuk-header__navigation-item--active a,
-        .govuk-header__navigation-item a.govuk-header__link--active {
-          &:link,
-          &:hover,
-          &:visited {
-            color: $light-colour !important;
-          }
-
-          &:focus {
-            color: $govuk-focus-text-colour !important;
-          }
-        }
       }
     }
   }
@@ -62,60 +49,25 @@
     }
   }
 
-  &__link {
-    &--homepage {
-      // Must reinstate this to allow for text on non-GOV.UK pages
-      font-weight: $govuk-font-weight-bold;
-      line-height: 1;
-    }
+  &__homepage-link {
+    // Must reinstate this to allow for text on non-GOV.UK pages
+    font-weight: $govuk-font-weight-bold;
+    line-height: 1;
 
     &--small {
       @include govuk-font(24);
 
-      &.govuk-header__link--homepage {
-        @extend .govuk-header__link--small;
+      &.govuk-header__homepage-link {
+        @extend .govuk-header__homepage-link--small;
       }
     }
   }
 
-  // Reset some things from base style
-  &__navigation {
-    color: initial;
-    font-size: initial;
-    font-weight: initial;
-    line-height: initial;
-  }
+  &__service-name {
+    @include govuk-font(24);
+    @include govuk-responsive-margin(2, "bottom");
 
-  // Reset some things from base style
-  &__menu-button {
-    box-sizing: initial;
-    width: initial;
-    border-radius: initial;
-    box-shadow: initial;
-    text-align: initial;
-    vertical-align: initial;
-    cursor: initial;
-    -webkit-appearance: initial;
-  }
-
-  &__navigation-item {
-    // Reset some things from base style
-    margin-bottom: initial;
-
-    // Links set to active by the router
-    .govuk-header__link--active {
-      $govuk-header-link-active: #1d8feb;
-
-      &:link,
-      &:hover,
-      &:visited {
-        color: $govuk-header-link-active;
-      }
-
-      &:focus {
-        color: $govuk-focus-text-colour;
-      }
-    }
+    display: inline-block;
   }
 }
 
