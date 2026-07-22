@@ -4,9 +4,15 @@
 // Let's have the font cascade from the body tag like a normal website.
 $govuk-font-family: inherit;
 
-// Let's have the text colour cascade
-$govuk-text-colour: inherit;
-$govuk-link-active-colour: inherit;
+// Let's have the text colour cascade (useful for dark-mode)
+/* FIXME: Reinstate if/when this PR is merged: https://github.com/alphagov/govuk-frontend/pull/7315
+$govuk-functional-colours: (
+  (
+    text: inherit,
+    link-active: inherit,
+  )
+);
+*/
 
 // Set the default asset path to be relative to the SCSS components
 $govuk-assets-path: '../../assets/' !default;
