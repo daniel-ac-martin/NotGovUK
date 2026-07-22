@@ -79,8 +79,8 @@ export const DWP: Story = {
   args: { department: 'department-for-work-pensions' }
 };
 
-export const FCO: Story = {
-  args: { department: 'foreign-commonwealth-office' }
+export const FCDO: Story = {
+  args: { department: 'foreign-commonwealth-development-office' }
 };
 
 export const HomeOffice: Story = {

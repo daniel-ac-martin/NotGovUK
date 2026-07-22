@@ -562,11 +562,11 @@ export const DWP: Story = {
   )
 };
 
-export const FCO: Story = {
+export const FCDO: Story = {
   args: {},
   render: ({ ...props }) => (
     <NotGovUKPage
-      department="foreign-commonwealth-office"
+      department="foreign-commonwealth-development-office"
       maxContentsWidth="690"
       meta={[
         {
