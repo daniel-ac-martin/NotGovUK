@@ -10,13 +10,13 @@
       padding: 0.3125em;
 
       &:nth-child(even) {
-        background-color: govuk-colour('light-grey');
-        color: $govuk-text-colour;
+        background-color: govuk-colour('black', $variant: 'tint-95');
+        color: govuk-functional-colour(text);
       }
 
       &[disabled],
       &:nth-child(even)[disabled] {
-        color: govuk-colour('mid-grey');
+        color: govuk-colour('black', $variant: 'tint-80');
       }
     }
   }
@@ -40,12 +40,12 @@ select {
 option,
 select {
   background-color: govuk-colour('white');
-  color: $govuk-text-colour;
+  color: govuk-functional-colour(text);
 }
 
 option[disabled],
 option:nth-child(even)[disabled] {
-  color: govuk-colour('mid-grey');
+  color: govuk-colour('black', $variant: 'tint-80');
 }
 
 select[multiple] {
@@ -58,6 +58,6 @@ select[multiple] > option {
 }
 
 option:nth-child(even) {
-  background-color: govuk-colour('light-grey');
-  color: $govuk-text-colour;
+  background-color: govuk-colour('black', $variant: 'tint-95');
+  color: govuk-functional-colour(text);
 }

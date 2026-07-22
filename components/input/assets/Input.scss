@@ -88,7 +88,7 @@ input[type="range"]:focus {
 
 input {
   background-color: govuk-colour('white');
-  color: $govuk-text-colour;
+  color: govuk-functional-colour(text);
 }
 
 // FIXME: Do we still need these? - Use a react prop instead?

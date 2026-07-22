@@ -3,7 +3,7 @@
 @import "govuk-frontend/dist/govuk/components/button/index";
 @import "govuk-frontend/dist/govuk/core/_links";
 
-$govuk-inverse-button-text-colour: $govuk-brand-colour !default;
+$govuk-inverse-button-text-colour: govuk-functional-colour(brand) !default;
 
 .govuk-panel {
   &--confirmation {

@@ -5,7 +5,7 @@
 textarea {
   @extend .govuk-textarea;
   background-color: govuk-colour('white');
-  color: $govuk-text-colour;
+  color: govuk-functional-colour(text);
 
   &.govuk-textarea--error {
     @extend .govuk-textarea--error;

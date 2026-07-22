@@ -3,7 +3,7 @@
 
 .govuk-warning-text {
   &__icon {
-    $colour: if($govuk-text-colour == inherit, govuk-colour("black"), $govuk-text-colour);
+    $colour: if(govuk-functional-colour(text) == inherit, govuk-colour("black"), govuk-functional-colour(text));
     border: 3px solid $colour !important;
     background: $colour !important;
   }
