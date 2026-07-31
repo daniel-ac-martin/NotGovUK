@@ -12,7 +12,7 @@
     &--#{$i} {
       $contrast-safe: map.get($v, "contrast-safe");
       $light-colour: map.get($v, "colour");
-      $colour: if($contrast-safe, $contrast-safe, $light-colour);
+      $colour: if(sass($contrast-safe): $contrast-safe; else: $light-colour);
       --govuk-brand-colour: #{$colour};
       border-bottom-width: govuk-spacing(2);
 
