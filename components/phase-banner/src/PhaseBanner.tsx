@@ -1,11 +1,11 @@
 import { FC, HTMLProps, ReactNode, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
+import { classBuilder } from '@react-foundry/component-helpers';
 import { Tag } from '@not-govuk/tag';
+import { WidthContainer, WidthContainerProps } from '@not-govuk/width-container';
 
 import '../assets/PhaseBanner.scss';
 
-export type PhaseBannerProps = StandardProps & HTMLProps<HTMLDivElement> & {
-  children?: ReactNode
+export type PhaseBannerProps = WidthContainerProps & {
   /** The phase the service is in */
   phase: string
 };
@@ -21,14 +21,14 @@ export const PhaseBanner: FC<PhaseBannerProps> = ({
   const classes = classBuilder('govuk-phase-banner', classBlock, classModifiers, className);
 
   return (
-    <div {...attrs} className={classes()}>
+    <WidthContainer {...attrs} className={classes()}>
       <p className={classes('content')}>
         <Tag className={classes('tag')}>{phase}</Tag>
         <span className={classes('text')}>
           {children}
         </span>
       </p>
-    </div>
+    </WidthContainer>
   );
 };
 

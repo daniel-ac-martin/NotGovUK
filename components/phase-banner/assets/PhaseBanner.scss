@@ -10,6 +10,9 @@
   }
 }
 
-.not-govuk-page--dark .govuk-phase-banner {
-  border-color: $not-govuk-dark-mode-text-colour;
+// Reinstate width container for docs website
+.govuk-width-container .govuk-template__page {
+  .govuk-width-container.govuk-phase-banner {
+    @include govuk-width-container;
+  }
 }
