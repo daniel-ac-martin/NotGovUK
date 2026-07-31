@@ -10,7 +10,7 @@ describe('Footer', () => {
       render(h(Footer, minimalProps));
     });
 
-    it('renders an element', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
+    it('renders an element', async () => expect(screen.getAllByRole('generic')[0]).toBeInTheDocument());
   });
 
   describe('when given all valid props', () => {
@@ -145,7 +145,7 @@ describe('Footer', () => {
       render(h(Footer, props, 'Child'));
     });
 
-    it('renders an element', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
-    it('with the children provided', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Child'));
+    it('renders an element', async () => expect(screen.getAllByRole('generic')[0]).toBeInTheDocument());
+    it('with the children provided', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Child'));
   });
 });
