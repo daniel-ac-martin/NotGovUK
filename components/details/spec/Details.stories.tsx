@@ -24,8 +24,8 @@ export const Primary: Story = {
     <Details {...props}>
       <p>
         We need to know your nationality so we can work out which elections
-        you\u2019re entitled to vote in. If you cannot provide your nationality,
-        you\u2019ll have to send copies of identity documents through the post.
+        you're entitled to vote in. If you cannot provide your nationality,
+        you'll have to send copies of identity documents through the post.
       </p>
     </Details>
   )
@@ -37,8 +37,8 @@ export const Standard: Story = {
     <Details {...props}>
       <p>
         We need to know your nationality so we can work out which elections
-        you\u2019re entitled to vote in. If you cannot provide your nationality,
-        you\u2019ll have to send copies of identity documents through the post.
+        you're entitled to vote in. If you cannot provide your nationality,
+        you'll have to send copies of identity documents through the post.
       </p>
     </Details>
   )
