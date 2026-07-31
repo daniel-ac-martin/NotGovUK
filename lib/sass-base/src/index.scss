@@ -1,13 +1,14 @@
 // Aim: Configure govuk-frontend prior to importing and set some other
 //      variables centrally
 
-// Let's have the font cascade from the body tag like a normal website.
-$govuk-font-family: inherit;
-
 // Set the default asset path to be relative to the SCSS components
-$govuk-assets-path: '../../assets/' !default;
+$assets-path: '../../assets/' !default;
 
-@import "govuk-frontend/dist/govuk/_base";
+@forward "govuk-frontend/dist/govuk/_base" with (
+  $govuk-assets-path: $assets-path,
+  // Let's have the font cascade from the body tag like a normal website.
+  $govuk-font-family: inherit
+);
 
 // Dark mode variables
 $not-govuk-dark-mode-text-colour: #FFFFFF;
