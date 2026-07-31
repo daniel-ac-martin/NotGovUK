@@ -111,26 +111,3 @@ export const Subitems: Story = {
   ),
   name: 'Sub-items'
 };
-
-export const Horizontal: Story = {
-  args: { classModifiers: 'horizontal' },
-  render: ({ ...props }) => (
-    <NavigationMenu
-      {...props}
-      items={[
-        {
-          href: '/styles',
-          text: 'Inactive 1'
-        },
-        {
-          href: '#main-content',
-          text: 'Active'
-        },
-        {
-          href: '/contributing',
-          text: 'Inactive 2'
-        }
-      ]}
-    />
-  )
-};
