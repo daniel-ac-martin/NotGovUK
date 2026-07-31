@@ -226,30 +226,6 @@ export const CustomLogo: Story = {
   name: 'Custom logo'
 };
 
-export const NoLogo: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <NotGovUKPage logo={null}>
-      <div className="govuk-grid-row">
-        <div className="govuk-grid-column-two-thirds">
-          <h1>
-            <span className="caption">Caption</span>
-            My page
-          </h1>
-          <p>My content</p>
-        </div>
-        <div className="govuk-grid-column-one-third">
-          <aside>
-            <h2>Did you know?</h2>
-            <p>NotGovUK can cater for both public and internal websites.</p>
-          </aside>
-        </div>
-      </div>
-    </NotGovUKPage>
-  ),
-  name: 'No logo'
-};
-
 export const DBT: Story = {
   args: {},
   render: ({ ...props }) => (
