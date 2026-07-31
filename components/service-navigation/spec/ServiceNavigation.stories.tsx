@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Header } from '@not-govuk/header';
 import { ServiceNavigation } from '../src/ServiceNavigation';
 
 const meta = {
@@ -65,33 +64,6 @@ export const Rebrand: Story = {
       />
     </div>
   )
-};
-
-export const WithHeader: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <>
-      <Header govUK classModifiers="full-width-border" />
-      <ServiceNavigation
-        {...props}
-        items={[
-          {
-            href: '/styles',
-            text: 'Navigation item 1'
-          },
-          {
-            href: '#active',
-            text: 'Navigation item 2'
-          },
-          {
-            href: '/contributing',
-            text: 'Navigation item 3'
-          }
-        ]}
-      />
-    </>
-  ),
-  name: 'With header'
 };
 
 export const ServiceName: Story = {
