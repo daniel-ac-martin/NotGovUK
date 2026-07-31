@@ -84,7 +84,9 @@ export const Button: FC<ButtonProps> = ({
   const classes = classBuilder(defaultClassBlock, props.classBlock, props.classModifiers, props.className);
   const children = (
     <Fragment>
-      {_children}
+      {!(props.start && typeof _children !== 'string') ? _children : (
+        <span>{_children}</span>
+      )}
       {!props.start ? null : (
         <svg
           className={classes('start-icon')}
