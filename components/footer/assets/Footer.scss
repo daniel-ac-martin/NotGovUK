@@ -2,7 +2,7 @@
 @import "govuk-frontend/dist/govuk/components/footer/index";
 
 .govuk-footer {
-  .govuk-link, a {
+  .govuk-link, a:not(.govuk-footer__copyright-logo) {
     @extend .govuk-footer__link;
   }
 
@@ -14,7 +14,7 @@
 .govuk-template__page--not-govuk {
   .govuk-footer {
     &__link,
-    .govuk-link, a {
+    .govuk-link, a:not(.govuk-footer__copyright-logo), a {
       color: govuk-functional-colour('text');
     }
   }
