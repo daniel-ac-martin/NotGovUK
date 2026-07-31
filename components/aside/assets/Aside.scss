@@ -1,4 +1,3 @@
-@use "sass:map";
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/core/_typography";
 
@@ -45,27 +44,4 @@ aside {
   h4 {
     @extend .govuk-heading-s;
   }
-}
-
-// Department colours
-@each $i, $v in $govuk-colours-organisations {
-  .not-govuk-page--#{$i} .not-govuk-aside,
-  .not-govuk-page--#{$i} aside {
-    $contrast-safe: map.get($v, "contrast-safe");
-    $light-colour: map.get($v, "colour");
-    $colour: if($contrast-safe, $contrast-safe, $light-colour);
-    border-color: $colour;
-  }
-}
-
-.not-govuk-page--hm-passport-office .not-govuk-aside,
-.not-govuk-page--hm-passport-office aside,
-.not-govuk-page--hmpo .not-govuk-aside,
-.not-govuk-page--hmpo aside {
-  $home-office: map.get($govuk-colours-organisations, "home-office");
-  $contrast-safe: map.get($home-office, "contrast-safe");
-  $light-colour: map.get($home-office, "colour");
-  $colour: if($contrast-safe, $contrast-safe, $light-colour);
-
-  border-color: $colour;
 }
