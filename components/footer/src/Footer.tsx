@@ -39,8 +39,6 @@ export type FooterProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   metaTitle?: string
   /** Secondary navigation menus */
   navigation?: NavMenu[]
-  /** If true, use the redesigned footer with the GOV.UK crown  */
-  rebrand?: boolean
 };
 
 export const Footer: FC<FooterProps> = ({
@@ -55,7 +53,6 @@ export const Footer: FC<FooterProps> = ({
   meta,
   metaTitle = 'Support links',
   navigation,
-  rebrand = false,
   ...attrs
 }) => {
   const classModifiers = (
@@ -81,7 +78,7 @@ export const Footer: FC<FooterProps> = ({
   return (
     <div {...attrs} className={classes()}>
       <WidthContainer maxWidth={maxContentsWidth}>
-        { !(rebrand && govUK) ? null : (
+        { !govUK ? null : (
           <CrownLogo focusable="false" className={classes('crown')} height="30" width="32" />
         )}
         { !navigation ? null : (
