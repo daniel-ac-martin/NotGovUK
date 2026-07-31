@@ -131,19 +131,21 @@ export const Page: FC<PageProps> = ({
             </PhaseBanner>
         ) }
       </header>
-      <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
-        { breadcrumbs?.length
-          ? (
-            <Breadcrumbs id="breadcrumbs" items={breadcrumbs} />
-          )
-          : ( !backHref ? null : (
-            <BackLink id="back-link" href={backHref} />
-          ) )
-        }
-        <main id={mainId} className={classes('main')}>
-          {children}
-        </main>
-      </WidthContainer>
+      <div className={classes('middle')}>
+        <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
+          { breadcrumbs?.length
+            ? (
+              <Breadcrumbs id="breadcrumbs" items={breadcrumbs} />
+            )
+            : ( !backHref ? null : (
+              <BackLink id="back-link" href={backHref} />
+            ) )
+          }
+          <main id={mainId} className={classes('main')}>
+            {children}
+          </main>
+        </WidthContainer>
+      </div>
       <footer className={classes('footer')}>
         <Footer {...footerProps}>{footerContent}</Footer>
       </footer>
