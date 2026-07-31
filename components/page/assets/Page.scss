@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "@not-govuk/sass-base";
 @import "govuk-frontend/dist/govuk/components/back-link/index";
 @import "govuk-frontend/dist/govuk/components/breadcrumbs/index";
@@ -8,56 +9,91 @@
 
 $govuk-inverse-button-text-colour: govuk-functional-colour(brand) !default;
 
-.not-govuk-page {
-  @extend .govuk-template__body;
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  font-family: sans-serif;
-  overflow: initial;
-  padding: initial;
+.govuk-template {
+  &__page {
+    @extend .govuk-template__body;
 
-  &--govuk {
-    font-family: 'GDS Transport', 'Arial', sans-serif;
-  }
-
-  &--not-govuk {
-    font-family: 'Roboto', 'Arial', sans-serif;
-  }
-
-  &--dark {
-    background-color: $not-govuk-dark-mode-background-colour;
-    color: $not-govuk-dark-mode-text-colour;
-
-    .govuk-back-link {
-      @extend .govuk-back-link--inverse;
-    }
-
-    .govuk-breadcrumbs {
-      @extend .govuk-breadcrumbs--inverse;
-    }
-
-    .govuk-button {
-      @extend .govuk-button--inverse;
-
-      &,
-      &:link,
-      &:visited,
-      &:active,
-      &:hover {
-        color: $govuk-inverse-button-text-colour;
+    @if $govuk-output-custom-properties {
+      @each $name, $value in $govuk-functional-colours {
+        --govuk-#{$name}-colour: #{govuk-resolve-colour($value)};
       }
     }
 
-    a, .govuk-link {
-      @extend .govuk-link--inverse;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    font-family: sans-serif;
+    overflow: initial;
+    padding: initial;
+    background-color: var(--govuk-body-background-colour);
+    color: var(--govuk-text-colour);
+
+    &--govuk {
+      font-family: 'GDS Transport', 'Arial', sans-serif;
+    }
+
+    &--not-govuk {
+      --govuk-surface-text-colour: #{govuk-colour('black')};
+      --govuk-template-background-colour: #{govuk-colour('black', $variant: 'tint-95')};
+      --govuk-surface-background-colour: #{govuk-colour('black', $variant: 'tint-95')};
+      --govuk-surface-border-colour: #{govuk-colour('black', $variant: 'tint-80')};
+
+      font-family: 'Roboto', 'Arial', sans-serif;
+    }
+
+    &--dark {
+      --govuk-body-background-colour: #{$not-govuk-dark-mode-background-colour};
+      --govuk-text-colour: #{$not-govuk-dark-mode-text-colour};
+      --govuk-secondary-text-colour: #{$not-govuk-dark-mode-secondary-text-colour};
+      --govuk-surface-text-colour: #{$not-govuk-dark-mode-text-colour};
+      --govuk-template-background-colour: #{$not-govuk-dark-mode-footer-colour};
+      --govuk-surface-background-colour: #{$not-govuk-dark-mode-footer-colour};
+      --govuk-surface-border-colour: #{$not-govuk-dark-mode-border-colour};
+
+      /*
+      background-color: $not-govuk-dark-mode-background-colour;
+      color: $not-govuk-dark-mode-text-colour;
+     */
+
+      .govuk-back-link {
+        @extend .govuk-back-link--inverse;
+      }
+
+      .govuk-breadcrumbs {
+        @extend .govuk-breadcrumbs--inverse;
+      }
+
+      .govuk-button {
+        @extend .govuk-button--inverse;
+
+        &,
+        &:link,
+        &:visited,
+        &:active,
+        &:hover {
+          color: $govuk-inverse-button-text-colour;
+        }
+      }
+
+      a, .govuk-link {
+        @extend .govuk-link--inverse;
+      }
+    }
+
+    // Department colours
+    @each $i, $v in $govuk-colours-organisations {
+      &--#{$i} {
+        $contrast-safe: map.get($v, "contrast-safe");
+        $light-colour: map.get($v, "colour");
+        $colour: if($contrast-safe, $contrast-safe, $light-colour);
+        --govuk-brand-colour: #{$colour};
+      }
     }
   }
 
-  &__body {
+  &__container {
     // Keep the footer at the bottom
     flex: 1 1 auto;
-    width: 100%;
   }
 
   &__main {
@@ -69,13 +105,18 @@ html {
   @extend .govuk-template;
 }
 
-html, body, #root, #story-root {
+body, #root, #story-root {
   @extend .govuk-template__body;
+}
+
+html, body, #root, #story-root {
   background-color: govuk-colour('white');
   color: govuk-colour('black');
   height: 100%;
+}
 
-  > .not-govuk-page {
+body, #root, #story-root {
+  > .govuk-template__page {
     height: 100%;
   }
 }

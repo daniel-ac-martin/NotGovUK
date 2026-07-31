@@ -24,14 +24,13 @@ import '../assets/NotGovUKPage.scss';
 export type NotGovUKPageProps = Omit<PageProps, 'govUK'>;
 
 // FIXME: Under the re-brand, theme-color should be set to the departmental colour
-export const NotGovUKPage: FC<NotGovUKPageProps> = ({ children, classModifiers, rebrand = false, ...props }) => (
+export const NotGovUKPage: FC<NotGovUKPageProps> = ({ children, classModifiers, ...props }) => (
   <Page
     {...props}
     classModifiers={[ ...(Array.isArray(classModifiers) ? classModifiers : [classModifiers]), 'not-govuk' ]}
     govUK={false}
-    rebrand={rebrand}
   >
-    <meta name="theme-color" content={ rebrand ? '#000000' : '#0b0c0c' } />
+    <meta name="theme-color" content={'#0b0c0c'} />
     <link rel="shortcut icon" sizes="16x16 32x32 48x48" href={favicon} type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon180} />
     <link rel="apple-touch-icon" sizes="167x167" href={appleTouchIcon167} />

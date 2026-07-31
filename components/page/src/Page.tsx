@@ -5,10 +5,11 @@ import { BackLink } from '@not-govuk/back-link';
 import { Breadcrumb, Breadcrumbs } from '@not-govuk/breadcrumbs';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { Footer, FooterProps, NavMenu } from '@not-govuk/footer';
+import { GenericHeader, GenericHeaderProps } from '@not-govuk/generic-header';
 import { Header, HeaderProps } from '@not-govuk/header';
 import { A } from '@not-govuk/link';
 import { PhaseBanner, PhaseBannerProps } from '@not-govuk/phase-banner';
-import { ServiceNavigation } from '@not-govuk/service-navigation';
+import { ServiceNavigation, ServiceNavigationProps } from '@not-govuk/service-navigation';
 import { SkipLink } from '@not-govuk/skip-link';
 import { WidthContainer } from '@not-govuk/width-container';
 
@@ -17,7 +18,8 @@ import '../assets/Page.scss';
 export type PageProps = (
   StandardProps &
   HTMLProps<HTMLDivElement> &
-  HeaderProps &
+  GenericHeaderProps &
+  Omit<ServiceNavigationProps, 'items'> &
   Omit<FooterProps, 'navigation'> &
   Partial<PhaseBannerProps> &
   {
@@ -33,10 +35,10 @@ export type PageProps = (
     footerContent?: ReactNode
     /** Content for the footer */
     footerNavigation?: NavMenu[]
+    /** Navigation items */
+    navigation?: NavMenu[]
     /** Content for the phase-banner */
     phaseBannerContent?: ReactNode
-    /** If true, use the redesigned styles */
-    rebrand?: boolean
   }
 );
 
@@ -61,28 +63,22 @@ export const Page: FC<PageProps> = ({
   organisationText,
   phase,
   phaseBannerContent,
-  rebrand = false,
   serviceHref,
   serviceName,
   signOutHref,
   signOutText,
   ...attrs
 }) => {
-  const classModifiers = (
+  const classModifiers = [...(
     Array.isArray(_classModifiers)
       ? _classModifiers
       : [_classModifiers]
-  );
+  ), department];
   const className = _className || '';
-  const classes = classBuilder('not-govuk-page', classBlock, [...classModifiers, department], className + (rebrand ? ' govuk-template--rebranded' : ''));
-  const headerProps = {
-    department,
-    govUK,
-    logo,
+  const classes = classBuilder('govuk-template', classBlock, classModifiers, className);
+  const commonHeaderProps = {
     maxContentsWidth,
-    organisationHref,
-    organisationText,
-    rebrand
+    organisationHref
   };
   const navigationProps = {
     maxContentsWidth,
@@ -98,49 +94,59 @@ export const Page: FC<PageProps> = ({
     maxContentsWidth,
     meta,
     metaTitle,
-    navigation: footerNavigation,
-    rebrand
+    navigation: footerNavigation
   };
   const showNavigation = navigation?.length || serviceName;
   const mainId = 'main-content';
+  const header = (
+    govUK
+    ? (
+      <Header {...commonHeaderProps} />
+    )
+    : (
+      <GenericHeader {...commonHeaderProps} department={department} logo={logo} organisationText={organisationText} />
+    )
+  );
 
   return (
-    <div {...attrs} className={classes()}>
+    <div {...attrs} className={classes('page', classModifiers, className)}>
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
-      <Header {...headerProps} className={classes('header')} classModifiers={showNavigation ? 'full-width-border' : undefined} />
-      { !showNavigation ? null : (
-        <ServiceNavigation {...navigationProps} className={classes('navigation')} />
-      ) }
-      <div className={classes('body')}>
-        <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
-          { !phase ? null : (
-            <PhaseBanner id="phase-banner" phase={phase}>
+      <header className={classes('header')}>
+        {header}
+        { !showNavigation ? null : (
+          <ServiceNavigation {...navigationProps} className={classes('navigation')} />
+        ) }
+        { !phase ? null : (
+            <PhaseBanner id="phase-banner" phase={phase} maxWidth={maxContentsWidth}>
               { phaseBannerContent || (
-                <Fragment>
-                  This is a new service - your {
-                    feedbackHref
+                  <Fragment>
+                    This is a new service - your {
+                      feedbackHref
                       ? (<A href={feedbackHref}>feedback</A>)
                       : 'feedback'
-                  } will help us to improve it.
-                </Fragment>
+                    } will help us to improve it.
+                  </Fragment>
               ) }
             </PhaseBanner>
-          ) }
-          { breadcrumbs?.length
-            ? (
-              <Breadcrumbs id="breadcrumbs" items={breadcrumbs} />
-            )
-            : ( !backHref ? null : (
-              <BackLink id="back-link" href={backHref} />
-            ) )
-          }
-          <main id={mainId} className={classes('main')}>
-            {children}
-          </main>
-        </WidthContainer>
-      </div>
-      <Footer {...footerProps} className={classes('footer')}>{footerContent}</Footer>
+        ) }
+      </header>
+      <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
+        { breadcrumbs?.length
+          ? (
+            <Breadcrumbs id="breadcrumbs" items={breadcrumbs} />
+          )
+          : ( !backHref ? null : (
+            <BackLink id="back-link" href={backHref} />
+          ) )
+        }
+        <main id={mainId} className={classes('main')}>
+          {children}
+        </main>
+      </WidthContainer>
+      <footer className={classes('footer')}>
+        <Footer {...footerProps}>{footerContent}</Footer>
+      </footer>
     </div>
   );
 };

@@ -113,30 +113,6 @@ export const GovUK: Story = {
   )
 };
 
-export const GovUKRebrand: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <GovUKPage maxContentsWidth="690" rebrand>
-      <div className="govuk-grid-row">
-        <div className="govuk-grid-column-two-thirds">
-          <h1>
-            <span className="caption">Caption</span>
-            My page
-          </h1>
-          <p>My content</p>
-        </div>
-        <div className="govuk-grid-column-one-third">
-          <aside>
-            <h2>Did you know?</h2>
-            <p>NotGovUK can cater for both public and internal websites.</p>
-          </aside>
-        </div>
-      </div>
-    </GovUKPage>
-  ),
-  name: 'GovUK rebrand'
-};
-
 export const FullWidth: Story = {
   args: {},
   render: ({ ...props }) => (
@@ -224,72 +200,6 @@ export const DarkMode: Story = {
     </NotGovUKPage>
   ),
   name: 'Dark mode'
-};
-
-export const DarkModeRebrand: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <NotGovUKPage
-      breadcrumbs={[
-        {
-          href: '',
-          text: 'Home'
-        },
-        {
-          href: '',
-          text: 'Passports, travel and living abroad'
-        },
-        {
-          href: '',
-          text: 'Travel abroad'
-        }
-      ]}
-      classModifiers="dark"
-      department="home-office"
-      maxContentsWidth="690"
-      meta={[
-        {
-          href: '#',
-          text: 'Help'
-        },
-        {
-          href: '#',
-          text: 'Accessibility statement'
-        },
-        {
-          href: '#',
-          text: 'Contact'
-        }
-      ]}
-      organisationHref="#"
-      organisationText="HMPO"
-      phase="Alpha"
-      rebrand
-      serviceName="My service"
-      serviceHref="#"
-    >
-      <div className="govuk-grid-row">
-        <div className="govuk-grid-column-two-thirds">
-          <h1>
-            <span className="caption">Caption</span>
-            My page
-          </h1>
-          <p>My content</p>
-          <StartButton href="#" />
-        </div>
-        <div className="govuk-grid-column-one-third">
-          <aside>
-            <h2>Did you know?</h2>
-            <p>
-              <a href="#">NotGovUK</a> can cater for both public and internal
-              websites.
-            </p>
-          </aside>
-        </div>
-      </div>
-    </NotGovUKPage>
-  ),
-  name: 'Dark mode rebrand'
 };
 
 export const CustomLogo: Story = {
@@ -384,52 +294,6 @@ export const DBT: Story = {
   )
 };
 
-export const DBTRebrand: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <NotGovUKPage
-      department="department-for-business-trade"
-      maxContentsWidth="690"
-      meta={[
-        {
-          href: '#',
-          text: 'Help'
-        },
-        {
-          href: '#',
-          text: 'Accessibility statement'
-        },
-        {
-          href: '#',
-          text: 'Contact'
-        }
-      ]}
-      organisationHref="#"
-      phase="Alpha"
-      rebrand
-      serviceName="My service"
-      serviceHref="#"
-    >
-      <div className="govuk-grid-row">
-        <div className="govuk-grid-column-two-thirds">
-          <h1>
-            <span className="caption">Caption</span>
-            My page
-          </h1>
-          <p>My content</p>
-        </div>
-        <div className="govuk-grid-column-one-third">
-          <aside>
-            <h2>Did you know?</h2>
-            <p>NotGovUK can cater for both public and internal websites.</p>
-          </aside>
-        </div>
-      </div>
-    </NotGovUKPage>
-  ),
-  name: 'DBT rebrand'
-};
-
 export const DCMS: Story = {
   args: {},
   render: ({ ...props }) => (
@@ -479,6 +343,50 @@ export const DEFRA: Story = {
   render: ({ ...props }) => (
     <NotGovUKPage
       department="department-for-environment-food-rural-affairs"
+      maxContentsWidth="690"
+      meta={[
+        {
+          href: '#',
+          text: 'Help'
+        },
+        {
+          href: '#',
+          text: 'Accessibility statement'
+        },
+        {
+          href: '#',
+          text: 'Contact'
+        }
+      ]}
+      organisationHref="#"
+      phase="Alpha"
+      serviceName="My service"
+      serviceHref="#"
+    >
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-two-thirds">
+          <h1>
+            <span className="caption">Caption</span>
+            My page
+          </h1>
+          <p>My content</p>
+        </div>
+        <div className="govuk-grid-column-one-third">
+          <aside>
+            <h2>Did you know?</h2>
+            <p>NotGovUK can cater for both public and internal websites.</p>
+          </aside>
+        </div>
+      </div>
+    </NotGovUKPage>
+  )
+};
+
+export const DHSC: Story = {
+  args: {},
+  render: ({ ...props }) => (
+    <NotGovUKPage
+      department="department-of-health-social-care"
       maxContentsWidth="690"
       meta={[
         {
@@ -850,7 +758,6 @@ export const OfficeOfTheLeaderOfTheHouseOfLords: Story = {
         }
       ]}
       organisationHref="#"
-      organisationText="House of Lords"
       phase="Alpha"
       serviceName="My service"
       serviceHref="#"
