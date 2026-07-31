@@ -44,6 +44,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <UserInfoContext.Provider value={userInfo}>
           <Page
+            department="not-govuk"
             feedbackHref="https://github.com/daniel-ac-martin/NotGovUK/issues/new"
             footerContent={(
               <>
