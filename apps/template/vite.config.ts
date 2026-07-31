@@ -11,7 +11,6 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',
-        quietDeps: true, // Works around issues with govuk-frontend
         silenceDeprecations: [
           'import'       // Required until govuk-frontend moves to using modules
         ]

@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
   distDir: 'dist',
   sassOptions: {
     implementation: 'sass-embedded',
-    quietDeps: true, // Works around issues with govuk-frontend
     silenceDeprecations: [
       'import'       // Required until govuk-frontend moves to using modules
     ]
