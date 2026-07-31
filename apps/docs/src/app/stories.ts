@@ -54,6 +54,7 @@ const mainComponents = [
   'fieldset',
   'file-upload',
   'footer',
+  'generic-header',
   'header',
   'inset-text',
   'notification-banner',
