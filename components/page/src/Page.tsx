@@ -4,6 +4,7 @@ import { FC, Fragment, HTMLProps, ReactNode, createElement as h } from 'react';
 import { BackLink } from '@not-govuk/back-link';
 import { Breadcrumb, Breadcrumbs } from '@not-govuk/breadcrumbs';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
+import { useIsMounted } from '@react-foundry/client-component-helpers';
 import { Footer, FooterProps, NavMenu } from '@not-govuk/footer';
 import { GenericHeader, GenericHeaderProps } from '@not-govuk/generic-header';
 import { Header, HeaderProps } from '@not-govuk/header';
@@ -107,9 +108,10 @@ export const Page: FC<PageProps> = ({
       <GenericHeader {...commonHeaderProps} department={department} logo={logo} organisationText={organisationText} />
     )
   );
+  const isMounted = useIsMounted();
 
   return (
-    <div {...attrs} className={classes('page', classModifiers, className)}>
+    <div {...attrs} className={classes('page', classModifiers, className + (!isMounted ? '' : ' govuk-frontend-supported'))}>
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       <SkipLink id="skip-link" for={mainId}>Skip to main content</SkipLink>
       <header className={classes('header')}>
