@@ -1,0 +1,42 @@
+@use "govuk-frontend/dist/govuk/core/typography";
+
+:where(.govuk-template__page) {
+  h1 {
+    @extend .govuk-heading-xl;
+  }
+
+  h2 {
+    @extend .govuk-heading-l;
+  }
+
+  h3 {
+    @extend .govuk-heading-m;
+  }
+
+  h4, h5, h6, h7 {
+    @extend .govuk-heading-s;
+  }
+
+  // FIXME: Remove?
+  .govuk-caption,
+  .caption {
+    @extend .govuk-caption-xl;
+    font-size: 0.5625em;
+    margin-bottom: 0.28em;
+  }
+
+  p {
+    @extend .govuk-body;
+  }
+
+  // Lead paragraph
+  p.lead {
+    @extend .govuk-body-lead;
+  }
+
+  // Small paragraph
+  p.small {
+    @extend .govuk-body-s;
+  }
+
+}

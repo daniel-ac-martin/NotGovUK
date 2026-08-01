@@ -7,6 +7,21 @@
 @use "govuk-frontend/dist/govuk/objects/template";
 @use "govuk-frontend/dist/govuk/objects/main-wrapper";
 
+// Core
+@use 'core';
+
+// Custom properties
+@use 'custom-properties';
+
+// Objects
+@use 'objects';
+
+// Overrides
+@use 'overrides';
+
+// Code
+@use "code";
+
 $govuk-inverse-button-text-colour: govuk-functional-colour(brand) !default;
 
 .govuk-template {

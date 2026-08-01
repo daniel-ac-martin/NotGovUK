@@ -1,0 +1,19 @@
+@use "govuk-frontend/dist/govuk/core/lists";
+
+:where(.govuk-template__page) {
+  ol, ul {
+    @extend .govuk-list;
+  }
+
+  ol {
+    @extend .govuk-list--number;
+  }
+
+  ul {
+    @extend .govuk-list--bullet;
+  }
+
+  ul.plain {
+    @extend .govuk-list;
+  }
+}
