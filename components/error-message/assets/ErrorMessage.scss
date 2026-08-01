@@ -1,6 +1,6 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/error-message";
-@import "govuk-frontend/dist/govuk/utilities/visually-hidden";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/error-message";
+@use "govuk-frontend/dist/govuk/utilities/visually-hidden";
 
 .govuk-error-message {
   &--hidden {

@@ -1,6 +1,6 @@
 @use "sass:map";
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/generic-header";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/generic-header";
 
 .govuk-generic-header {
   border-color: govuk-functional-colour("brand");

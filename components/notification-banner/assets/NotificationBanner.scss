@@ -1,5 +1,5 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/notification-banner";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/notification-banner";
 
 .govuk-notification-banner {
   &__content {

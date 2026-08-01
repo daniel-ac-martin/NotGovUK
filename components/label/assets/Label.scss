@@ -1,6 +1,6 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/label";
-@import "govuk-frontend/dist/govuk/utilities/visually-hidden";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/label";
+@use "govuk-frontend/dist/govuk/utilities/visually-hidden";
 
 .govuk-label {
   h1, h2, h3, h4, h5, h6 {
