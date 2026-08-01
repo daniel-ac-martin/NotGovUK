@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { GovUKPage } from '@not-govuk/simple-components';
-import { AddBodyClass } from '../components/AddBodyClass';
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AddBodyClass />
         <GovUKPage
           breadcrumbs={[
             {
