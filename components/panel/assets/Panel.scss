@@ -6,7 +6,8 @@
 $govuk-inverse-button-text-colour: govuk-functional-colour(brand) !default;
 
 .govuk-panel {
-  &--confirmation {
+  &--confirmation,
+  &--interruption {
     .govuk-button {
       @extend .govuk-button--inverse;
       color: $govuk-inverse-button-text-colour;
@@ -22,11 +23,5 @@ $govuk-inverse-button-text-colour: govuk-functional-colour(brand) !default;
     a, .govuk-link {
       @include govuk-link-style-inverse;
     }
-  }
-
-  &--interruption {
-    @extend .govuk-panel--confirmation;
-    background: govuk-colour("blue");
-    text-align: left !important;
   }
 }
