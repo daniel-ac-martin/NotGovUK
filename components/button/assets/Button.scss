@@ -13,10 +13,4 @@
   input[type=button] {
     @extend .govuk-button--secondary
   }
-
-  button:disabled,
-  input[type=button]:disabled,
-  input[type=submit]:disabled {
-    @extend .govuk-button:disabled
-  }
 }
