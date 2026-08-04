@@ -22,42 +22,44 @@
   }
 }
 
-// Global override
-select {
-  @extend .govuk-select;
-
-  &.govuk-select--error {
-    @extend .govuk-select--error;
-  }
-}
-
-@include govuk-media-query($from: 'tablet') {
+// Overrides
+:where(.govuk-template__page) {
   select {
-    width: auto;
+    @extend .govuk-select;
+
+    &.govuk-select--error {
+      @extend .govuk-select--error;
+    }
   }
-}
 
-option,
-select {
-  background-color: govuk-colour('white');
-  color: govuk-functional-colour(text);
-}
+  @include govuk-media-query($from: 'tablet') {
+    select {
+      width: auto;
+    }
+  }
 
-option[disabled],
-option:nth-child(even)[disabled] {
-  color: govuk-colour('black', $variant: 'tint-80');
-}
+  option,
+  select {
+    background-color: govuk-colour('white');
+    color: govuk-functional-colour(text);
+  }
 
-select[multiple] {
-  height: auto;
-  padding: 0;
-}
+  option[disabled],
+  option:nth-child(even)[disabled] {
+    color: govuk-colour('black', $variant: 'tint-80');
+  }
 
-select[multiple] > option {
-  padding: 0.3125em;
-}
+  select[multiple] {
+    height: auto;
+    padding: 0;
+  }
 
-option:nth-child(even) {
-  background-color: govuk-colour('black', $variant: 'tint-95');
-  color: govuk-functional-colour(text);
+  select[multiple] > option {
+    padding: 0.3125em;
+  }
+
+  option:nth-child(even) {
+    background-color: govuk-colour('black', $variant: 'tint-95');
+    color: govuk-functional-colour(text);
+  }
 }
