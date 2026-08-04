@@ -1,13 +1,15 @@
 @use "@not-govuk/sass-base" as *;
 @use "govuk-frontend/dist/govuk/components/textarea";
 
-// Global override
-textarea {
-  @extend .govuk-textarea;
-  background-color: govuk-colour('white');
-  color: govuk-functional-colour(text);
+// Override
+:where(.govuk-template__page) {
+  textarea {
+    @extend .govuk-textarea;
+    background-color: govuk-colour('white');
+    color: govuk-functional-colour(text);
 
-  &.govuk-textarea--error {
-    @extend .govuk-textarea--error;
+    &.govuk-textarea--error {
+      @extend .govuk-textarea--error;
+    }
   }
 }
