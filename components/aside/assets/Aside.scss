@@ -2,7 +2,7 @@
 @use "govuk-frontend/dist/govuk/core/typography";
 
 .not-govuk-aside,
-aside {
+:where(.govuk-template__page) aside {
   border-style: solid;
   border-color: govuk-functional-colour(brand);
   border-width: govuk-spacing(1) 0 0 0;
