@@ -41,31 +41,6 @@ export const Primary: Story = {
   )
 };
 
-export const Rebrand: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <div className="govuk-template--rebranded">
-      <ServiceNavigation
-        {...props}
-        items={[
-          {
-            href: '/styles',
-            text: 'Navigation item 1'
-          },
-          {
-            href: '#active',
-            text: 'Navigation item 2'
-          },
-          {
-            href: '/contributing',
-            text: 'Navigation item 3'
-          }
-        ]}
-      />
-    </div>
-  )
-};
-
 export const ServiceName: Story = {
   args: { serviceName: 'Service name', serviceHref: '#' },
   name: 'Service name'

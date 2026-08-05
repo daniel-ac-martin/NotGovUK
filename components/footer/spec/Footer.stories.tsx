@@ -32,16 +32,6 @@ export const GOVUK: Story = {
   name: 'GOV.UK'
 };
 
-export const RebrandedGOVUK: Story = {
-  args: { govUK: true, rebrand: true },
-  render: ({ ...props }) => (
-    <div className="govuk-template--rebranded">
-      <Footer {...props} />
-    </div>
-  ),
-  name: 'Re-branded GOV.UK'
-};
-
 export const Navigation: Story = {
   args: { govUK: true },
   render: ({ ...props }) => (
