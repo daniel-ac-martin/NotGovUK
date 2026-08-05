@@ -6,11 +6,19 @@
   button,
   input[type=button],
   input[type=submit] {
-    @extend .govuk-button
+    @extend .govuk-button;
+
+    &.govuk-button--start {
+      @extend .govuk-button--start;
+    }
+
+    &.govuk-button--secondary {
+      @extend .govuk-button--secondary;
+    }
   }
 
   button:not([type=submit]),
   input[type=button] {
-    @extend .govuk-button--secondary
+    @extend .govuk-button--secondary;
   }
 }
