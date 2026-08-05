@@ -2,7 +2,7 @@
 //      variables centrally
 
 // Set the default asset path to be relative to the SCSS components
-$assets-path: '../../assets/' !default;
+$assets-path: "../../assets/" !default;
 
 @forward "govuk-frontend/dist/govuk/_base" with (
   $govuk-assets-path: $assets-path,

@@ -30,17 +30,17 @@
     }
 
     &.govuk-button:focus {
-      border: $govuk-border-width-form-element solid govuk-functional-colour(focus);
+      border: $govuk-border-width-form-element solid govuk-functional-colour("focus");
       outline: $govuk-focus-width solid transparent;
-      box-shadow: inset 0 0 0 1px govuk-functional-colour(focus);
+      box-shadow: inset 0 0 0 1px govuk-functional-colour("focus");
     }
 
     &.govuk-button:focus:not(:active):not(:hover) {
-      border-color: govuk-functional-colour(focus);
-      color: govuk-functional-colour(focus-text);
-      background-color: govuk-functional-colour(focus);
+      border-color: govuk-functional-colour("focus");
+      color: govuk-functional-colour("focus-text");
+      background-color: govuk-functional-colour("focus");
       box-shadow: none;
-      border-bottom: 2px solid govuk-functional-colour(focus-text);
+      border-bottom: 2px solid govuk-functional-colour("focus-text");
     }
   }
 
@@ -57,14 +57,14 @@
 
   &--secondary {
     .not-govuk-standalone-input__button {
-      background-color: govuk-colour('black', $variant: 'tint-95');
+      background-color: govuk-colour("black", $variant: "tint-95");
       color: govuk-colour("black");
       border: 2px solid govuk-colour("black");
       width: 40px;
       height: 40px;
 
       &:hover {
-        background-color: color.adjust(govuk-colour('black', $variant: 'tint-95'), $lightness: 5%);
+        background-color: color.adjust(govuk-colour("black", $variant: "tint-95"), $lightness: 5%);
         color: govuk-colour("black");
       }
     }

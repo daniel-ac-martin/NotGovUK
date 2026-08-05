@@ -76,7 +76,7 @@
     box-shadow: none;
   }
 
-  @include govuk-media-query($from: 'tablet') {
+  @include govuk-media-query($from: "tablet") {
     input[type="date"],
     input[type="datetime-local"],
     input[type="month"],
@@ -89,7 +89,7 @@
 
   input {
     background-color: govuk-functional-colour("body-background");
-    color: govuk-functional-colour(text);
+    color: govuk-functional-colour("text");
   }
 
   // FIXME: Do we still need these? - Use a react prop instead?

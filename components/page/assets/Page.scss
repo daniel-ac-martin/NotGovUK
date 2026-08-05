@@ -8,21 +8,21 @@
 @use "govuk-frontend/dist/govuk/objects/main-wrapper";
 
 // Core
-@use 'core';
+@use "core";
 
 // Custom properties
-@use 'custom-properties';
+@use "custom-properties";
 
 // Objects
-@use 'objects';
+@use "objects";
 
 // Overrides
-@use 'overrides';
+@use "overrides";
 
 // Code
 @use "code";
 
-$govuk-inverse-button-text-colour: govuk-functional-colour(brand) !default;
+$govuk-inverse-button-text-colour: govuk-functional-colour("brand") !default;
 
 .govuk-template {
   &__page {
@@ -44,16 +44,16 @@ $govuk-inverse-button-text-colour: govuk-functional-colour(brand) !default;
     color: var(--govuk-text-colour);
 
     &--govuk {
-      font-family: 'GDS Transport', 'Arial', sans-serif;
+      font-family: "GDS Transport", "Arial", sans-serif;
     }
 
     &--not-govuk {
-      --govuk-surface-text-colour: #{govuk-colour('black')};
-      --govuk-template-background-colour: #{govuk-colour('black', $variant: 'tint-95')};
-      --govuk-surface-background-colour: #{govuk-colour('black', $variant: 'tint-95')};
-      --govuk-surface-border-colour: #{govuk-colour('black', $variant: 'tint-80')};
+      --govuk-surface-text-colour: #{govuk-colour("black")};
+      --govuk-template-background-colour: #{govuk-colour("black", $variant: "tint-95")};
+      --govuk-surface-background-colour: #{govuk-colour("black", $variant: "tint-95")};
+      --govuk-surface-border-colour: #{govuk-colour("black", $variant: "tint-80")};
 
-      font-family: 'Roboto', 'Arial', sans-serif;
+      font-family: "Roboto", "Arial", sans-serif;
     }
 
     &--dark {
@@ -128,8 +128,8 @@ body, #root, #story-root {
 }
 
 html, body, #root, #story-root {
-  background-color: govuk-colour('white');
-  color: govuk-colour('black');
+  background-color: govuk-colour("white");
+  color: govuk-colour("black");
   height: 100%;
 }
 
