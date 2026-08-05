@@ -56,6 +56,7 @@ export const ButtonButton: FC<ButtonButtonProps> = ({
   className,
   disabled = false,
   start = false,
+  type = 'submit',
   ...attrs
 }) => {
   const classModifiers = [
@@ -69,6 +70,7 @@ export const ButtonButton: FC<ButtonButtonProps> = ({
       aria-disabled={!!disabled ? 'true' : undefined}
       data-module={defaultClassBlock}
       disabled={!!disabled}
+      type={type}
       {...attrs}
       className={classes()}
     >
