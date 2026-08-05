@@ -2,6 +2,10 @@
 @use "govuk-frontend/dist/govuk/components/notification-banner";
 
 .govuk-notification-banner {
+  &__title {
+    color: inherit;
+  }
+
   &__content {
     & .heading,
     & .govuk-heading,
