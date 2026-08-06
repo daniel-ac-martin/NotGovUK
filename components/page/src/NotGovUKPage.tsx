@@ -21,7 +21,6 @@ import '../assets/NotGovUKPage.scss';
 
 export type NotGovUKPageProps = Omit<PageProps, 'govUK'>;
 
-// FIXME: Under the re-brand, theme-color should be set to the departmental colour
 export const NotGovUKPage: FC<NotGovUKPageProps> = ({ children, classModifiers, ...props }) => (
   <Page
     {...props}
