@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   distDir: 'dist',
   sassOptions: {
     implementation: 'sass-embedded',
-    silenceDeprecations: [
-      'import'       // Required until govuk-frontend moves to using modules
-    ]
   },
   turbopack: {
     resolveAlias: {

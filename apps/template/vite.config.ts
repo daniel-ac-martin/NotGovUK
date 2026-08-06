@@ -10,10 +10,7 @@ export default defineConfig({
     },
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler',
-        silenceDeprecations: [
-          'import'       // Required until govuk-frontend moves to using modules
-        ]
+        api: 'modern-compiler'
       }
     }
   },
