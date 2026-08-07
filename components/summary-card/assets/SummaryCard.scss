@@ -1,6 +1,6 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/summary-list/index";
-@import "govuk-frontend/dist/govuk/core/links";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/summary-list";
+@use "govuk-frontend/dist/govuk/core/links";
 
 .govuk-summary-card {
   &__actions {

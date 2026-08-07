@@ -103,12 +103,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler',
-        quietDeps: true, // Works around issues with govuk-frontend
-        silenceDeprecations: [
-          'if-function', // Required until if functionality is more common in browsers and SASS v1.95 gets a bit older
-          'import'       // Required until govuk-frontend moves to using modules
-        ]
+        api: 'modern-compiler'
       }
     }
   },
@@ -127,7 +122,7 @@ export default defineConfig({
 });
 ```
 
-You should ensure that you set the `js-enabled` class on an element that encompasses all of your components (such as your `<body` element or the Page component), when and only when client-side JavaScript executes. Otherwise some components will not render correctly.
+You should ensure that you set the `govuk-frontend-supported` class on an element that encompasses all of your components (such as your `<body>` element), when and only when client-side JavaScript executes. Otherwise some components will not render correctly. If you make use of the `Page` component, this will be done for you.
 
 **See:** [Example React Router application using NotGovUK components]
 
@@ -152,13 +147,6 @@ You should also alter your `next.config.js` to modify some of the modules to ver
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  sassOptions: {
-    quietDeps: true, // Works around issues with govuk-frontend
-    silenceDeprecations: [
-      'if-function', // Required until if functionality is more common in browsers and SASS v1.95 gets a bit older
-      'import'       // Required until govuk-frontend moves to using modules
-    ]
-  },
   turbopack: {
     resolveAlias: {
       '@react-foundry/router': '@react-foundry/router/next', // ADD THIS LINE
@@ -171,7 +159,7 @@ export default nextConfig;
 
 (Note that Turbopack should be used rather than Webpack.)
 
-You should ensure that you set the `js-enabled` class on an element that encompasses all of your components (such as your `<body` element or the Page component), when and only when client-side JavaScript executes. Otherwise some components will not render correctly.
+You should ensure that you set the `govuk-frontend-supported` class on an element that encompasses all of your components (such as your `<body>` element), when and only when client-side JavaScript executes. Otherwise some components will not render correctly. If you make use of the `Page` component, this will be done for you.
 
 
 #### Pre-requisites on Next.js

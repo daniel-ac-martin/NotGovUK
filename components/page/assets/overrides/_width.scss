@@ -1,0 +1,28 @@
+@use "govuk-frontend/dist/govuk/overrides/width";
+
+:where(.govuk-template__page) {
+  // Width override classes
+  .width-full {
+    @extend .govuk-\!-width-full;
+  }
+
+  .width-three-quarters {
+    @extend .govuk-\!-width-three-quarters;
+  }
+
+  .width-two-thirds {
+    @extend .govuk-\!-width-two-thirds;
+  }
+
+  .width-one-half {
+    @extend .govuk-\!-width-one-half;
+  }
+
+  .width-one-third {
+    @extend .govuk-\!-width-one-third;
+  }
+
+  .width-one-quarter {
+    @extend .govuk-\!-width-one-quarter;
+  }
+}

@@ -23,7 +23,7 @@ export type NavMenu = {
   title: string
 };
 
-export type FooterProps = StandardProps & HTMLAttributes<HTMLElement> & {
+export type FooterProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   children?: ReactNode
   /** The content licence information within the footer component. Defaults to OGL on GOV.UK */
   contentLicence?: ReactNode
@@ -39,8 +39,6 @@ export type FooterProps = StandardProps & HTMLAttributes<HTMLElement> & {
   metaTitle?: string
   /** Secondary navigation menus */
   navigation?: NavMenu[]
-  /** If true, use the redesigned footer with the GOV.UK crown  */
-  rebrand?: boolean
 };
 
 export const Footer: FC<FooterProps> = ({
@@ -55,7 +53,6 @@ export const Footer: FC<FooterProps> = ({
   meta,
   metaTitle = 'Support links',
   navigation,
-  rebrand = false,
   ...attrs
 }) => {
   const classModifiers = (
@@ -79,9 +76,9 @@ export const Footer: FC<FooterProps> = ({
   );
 
   return (
-    <footer {...attrs} className={classes()}>
+    <div {...attrs} className={classes()}>
       <WidthContainer maxWidth={maxContentsWidth}>
-        { !(rebrand && govUK) ? null : (
+        { !govUK ? null : (
           <CrownLogo focusable="false" className={classes('crown')} height="30" width="32" />
         )}
         { !navigation ? null : (
@@ -137,7 +134,7 @@ export const Footer: FC<FooterProps> = ({
             </div>
         ) }
       </WidthContainer>
-    </footer>
+    </div>
   );
 };
 

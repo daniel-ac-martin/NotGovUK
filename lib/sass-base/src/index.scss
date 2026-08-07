@@ -1,20 +1,14 @@
 // Aim: Configure govuk-frontend prior to importing and set some other
 //      variables centrally
 
-// Let's have the font cascade from the body tag like a normal website.
-$govuk-font-family: inherit;
-
-// Let's have the text colour cascade
-$govuk-text-colour: inherit;
-$govuk-link-active-colour: inherit;
-
 // Set the default asset path to be relative to the SCSS components
-$govuk-assets-path: '../../assets/' !default;
+$assets-path: "../../assets/" !default;
 
-// Enable new organisation colours
-$govuk-new-organisation-colours: true;
-
-@import "govuk-frontend/dist/govuk/_base";
+@forward "govuk-frontend/dist/govuk/_base" with (
+  $govuk-assets-path: $assets-path,
+  // Let's have the font cascade from the body tag like a normal website.
+  $govuk-font-family: inherit
+);
 
 // Dark mode variables
 $not-govuk-dark-mode-text-colour: #FFFFFF;
@@ -22,7 +16,3 @@ $not-govuk-dark-mode-secondary-text-colour: #999999;
 $not-govuk-dark-mode-background-colour: #333333;
 $not-govuk-dark-mode-footer-colour: #222222;
 $not-govuk-dark-mode-border-colour: #000000;
-
-.js-enabled {
-  @extend .govuk-frontend-supported !optional;
-}

@@ -57,44 +57,6 @@ export const Primary: Story = {
   )
 };
 
-export const Rebrand: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <div className="govuk-template--rebranded">
-      <CookieBanner
-        {...props}
-        messages={[
-          {
-            heading: 'Cookies on [name of service]',
-            content: (
-              <Fragment>
-                <p className="govuk-body">
-                  We use some essential cookies to make this service work.
-                </p>
-                <p className="govuk-body">
-                  We’d also like to use analytics cookies so we can understand
-                  how you use the service and make improvements.
-                </p>
-              </Fragment>
-            ),
-            actions: (
-              <Fragment>
-                <Button value="accept" name="cookies">
-                  Accept analytics cookies
-                </Button>
-                <Button value="reject" name="cookies">
-                  Reject analytics cookies
-                </Button>
-                <A href="#">View cookies</A>
-              </Fragment>
-            )
-          }
-        ]}
-      />
-    </div>
-  )
-};
-
 export const Form: Story = {
   args: {},
   render: ({ ...props }) => (

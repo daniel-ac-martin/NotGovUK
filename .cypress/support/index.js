@@ -16,7 +16,7 @@
 Cypress.Commands.add('visitReady', (
   url,
   options,
-  selector = '.js-enabled'
+  selector = '.govuk-frontend-supported'
 ) => {
   cy.visit(url, options);
   cy.get(selector, {

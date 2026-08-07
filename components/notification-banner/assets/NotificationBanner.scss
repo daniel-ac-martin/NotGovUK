@@ -1,7 +1,11 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/notification-banner/index";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/notification-banner";
 
 .govuk-notification-banner {
+  &__title {
+    color: inherit;
+  }
+
   &__content {
     & .heading,
     & .govuk-heading,

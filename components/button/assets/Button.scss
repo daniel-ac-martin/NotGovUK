@@ -1,2 +1,24 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/button/index";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/button";
+
+:where(.govuk-template__page) {
+  a[role=button],
+  button,
+  input[type=button],
+  input[type=submit] {
+    @extend .govuk-button;
+
+    &.govuk-button--start {
+      @extend .govuk-button--start;
+    }
+
+    &.govuk-button--secondary {
+      @extend .govuk-button--secondary;
+    }
+  }
+
+  button:not([type=submit]),
+  input[type=button] {
+    @extend .govuk-button--secondary;
+  }
+}

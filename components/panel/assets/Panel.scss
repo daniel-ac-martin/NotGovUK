@@ -1,12 +1,13 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/panel/index";
-@import "govuk-frontend/dist/govuk/components/button/index";
-@import "govuk-frontend/dist/govuk/core/_links";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/panel";
+@use "govuk-frontend/dist/govuk/components/button";
+@use "govuk-frontend/dist/govuk/core/links";
 
-$govuk-inverse-button-text-colour: $govuk-brand-colour !default;
+$govuk-inverse-button-text-colour: govuk-functional-colour("brand") !default;
 
 .govuk-panel {
-  &--confirmation {
+  &--confirmation,
+  &--interruption {
     .govuk-button {
       @extend .govuk-button--inverse;
       color: $govuk-inverse-button-text-colour;
@@ -22,11 +23,5 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
     a, .govuk-link {
       @include govuk-link-style-inverse;
     }
-  }
-
-  &--interruption {
-    @extend .govuk-panel--confirmation;
-    background: govuk-colour("blue");
-    text-align: left !important;
   }
 }

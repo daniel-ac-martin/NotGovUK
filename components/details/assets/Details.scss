@@ -1,5 +1,5 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/details/index";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/details";
 
 details {
   @extend .govuk-details;

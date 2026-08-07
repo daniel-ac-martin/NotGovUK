@@ -1,5 +1,5 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/select/index";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/select";
 
 .govuk-select {
   &[multiple] {
@@ -10,54 +10,65 @@
       padding: 0.3125em;
 
       &:nth-child(even) {
-        background-color: govuk-colour('light-grey');
-        color: $govuk-text-colour;
+        background-color: govuk-colour("black", $variant: "tint-95");
+        color: govuk-functional-colour("text");
       }
 
       &[disabled],
       &:nth-child(even)[disabled] {
-        color: govuk-colour('mid-grey');
+        color: govuk-colour("black", $variant: "tint-80");
       }
     }
   }
 }
 
-// Global override
-select {
-  @extend .govuk-select;
-
-  &.govuk-select--error {
-    @extend .govuk-select--error;
-  }
-}
-
-@include govuk-media-query($from: 'tablet') {
+// Overrides
+:where(.govuk-template__page) {
   select {
-    width: auto;
+    @extend .govuk-select;
+
+    &.govuk-select--error {
+      @extend .govuk-select--error;
+    }
   }
-}
 
-option,
-select {
-  background-color: govuk-colour('white');
-  color: $govuk-text-colour;
-}
+  @include govuk-media-query($from: "tablet") {
+    select {
+      width: auto;
+    }
+  }
 
-option[disabled],
-option:nth-child(even)[disabled] {
-  color: govuk-colour('mid-grey');
-}
+  option,
+  select {
+    background-color: govuk-functional-colour("body-background");
+    color: govuk-functional-colour("text");
+  }
 
-select[multiple] {
-  height: auto;
-  padding: 0;
-}
+  option[disabled],
+  option:nth-child(even)[disabled] {
+    color: govuk-colour("black", $variant: "tint-80");
+  }
 
-select[multiple] > option {
-  padding: 0.3125em;
-}
+  select[multiple] {
+    height: auto;
+    padding: 0;
+  }
 
-option:nth-child(even) {
-  background-color: govuk-colour('light-grey');
-  color: $govuk-text-colour;
+  select[multiple] > option {
+    padding: 0.3125em;
+  }
+
+  option:nth-child(even) {
+    background-color: govuk-colour("black", $variant: "tint-95");
+    color: govuk-functional-colour("text");
+  }
+
+  &:where(.govuk-template__page--dark) {
+    select[multiple] option:nth-child(even),
+    select option:nth-child(even) {
+      // Could/should this be done with a new CSS variable?
+      background-color: govuk-colour("black", $variant: "tint-25");
+      color: govuk-functional-colour("text");
+    }
+  }
 }

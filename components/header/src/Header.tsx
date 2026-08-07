@@ -1,173 +1,51 @@
 import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
-import { Link, LinkProps } from '@not-govuk/link';
+import { A } from '@not-govuk/link';
 import { WidthContainer } from '@not-govuk/width-container';
 import { CrownLogo } from './CrownLogo';
-import { CrownLogoOld } from './CrownLogoOld';
-import { CoatLogo } from './CoatLogo';
 
 import '../assets/Header.scss';
 
-export type NavigationLink = LinkProps & {
-  /** Whether the link is for the current page */
-  active?: boolean,
-  /** Text of the link */
-  text: string
-};
-
-export type HeaderProps = StandardProps & HTMLAttributes<HTMLElement> & {
-  /** Department branding to use (e.g. home-office) */
-  department?: string
-  /** Whether to add the standard Gov.UK content */
-  govUK?: boolean
+export type HeaderProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** Maximum width of the contents in px units (-1 for full width) */
   maxContentsWidth?: number
-  /** Navigation links */
-  navigation?: NavigationLink[]
   /** Organisation link URL */
   organisationHref?: string
-  /** Organisation link text */
-  organisationText?: string
-  /** If true, use the redesigned header and new GOV.UK logotype */
-  rebrand?: boolean
   /** Service link URL */
   serviceHref?: string
   /** Service link text */
   serviceName?: string
-  /** Sign out link URL */
-  signOutHref?: string
-  /** Sign out link text */
-  signOutText?: string
-  /** Custom logo, use null to remove */
-  logo?: ReactNode
 };
-
-const departmentMap: Record<string, string> = {
-  'home-office': 'Home Office',
-  'department-for-communities-and-local-government': 'DCLG',
-  'department-for-culture-media-sport': 'DCMS',
-  'department-for-environment-food-rural-affairs': 'DEFRA',
-  'department-for-work-pensions': 'DWP',
-  'foreign-commonwealth-development-office': 'FCDO',
-  'foreign-commonwealth-office': 'FCO',
-  'hm-revenue-customs': 'HMRC',
-  'hm-treasury': 'HM Treasury',
-  'ministry-of-justice': 'MoJ',
-  'office-of-the-leader-of-the-house-of-lords': '',
-  'scotland-office': 'Scotland Office',
-  'wales-office': 'Wales Office'
-};
-
-const departmentText = (d?: string) => (
-  !d ? null
-  : (
-    departmentMap[d] || (
-      d
-        .split('-')
-        .map(e => {
-          switch (e) {
-            case 'and':
-              return '';
-            case 'hm':
-              return 'HM';
-            case 'for':
-              return '';
-            case 'of':
-              return 'o';
-            case 'the':
-              return '';
-            default:
-              return e.charAt(0).toUpperCase();
-          }
-        })
-        .join('')
-    )
-  )
-);
 
 export const Header: FC<HeaderProps> = ({
   classBlock,
-  classModifiers: _classModifiers = [],
+  classModifiers,
   className,
-  department,
-  govUK = false,
   maxContentsWidth,
-  navigation = [],
-  organisationHref,
-  organisationText,
-  rebrand = false,
+  organisationHref = 'https://www.gov.uk/',
   serviceHref = '/',
   serviceName,
-  signOutHref,
-  signOutText = 'Sign out',
-  logo: _logo,
   ...attrs
 }) => {
-  const classModifiers = (
-    Array.isArray(_classModifiers)
-    ? _classModifiers
-    : [_classModifiers]
-  );
-  const classes = classBuilder('govuk-header', classBlock, [...classModifiers, department], className);
-  const A = (props: LinkProps) => h(Link, { classBlock: classes('link'), ...props });
-  const orgHref = organisationHref || ( govUK ? 'https://www.gov.uk/' : '/' );
-  const orgText = organisationText || ( govUK ? 'GOV.UK' : departmentText(department) );
-  const navLinks = !signOutHref ? navigation : [...navigation, {
-    href: signOutHref,
-    text: signOutText,
-    forceExternal: true
-  }];
-
+  const classes = classBuilder('govuk-header', classBlock, classModifiers, className);
+  const logoHref = (serviceName && serviceHref) || organisationHref;
   const logo = (
-    _logo !== undefined
-    ? _logo
-    : (
-      govUK
-      ? (
-        rebrand ? (
-          <CrownLogo focusable="false" className={classes('logotype')} height="30" width="162" />
-        ) : (
-          <CrownLogoOld focusable="false" className={classes('logotype')} height="30" width="148" />
-        )
-      )
-      : (
-        <CoatLogo aria-hidden="true" focusable="false" className={classes('logotype', ['coat'])} height="30" width="36" />
-      )
-    )
+    <CrownLogo focusable="false" className={classes('logotype')} height="30" width="162" />
   );
 
   return (
-    <header {...attrs} className={classes()} data-module="govuk-header">
+    <div {...attrs} className={classes()}>
       <WidthContainer maxWidth={maxContentsWidth} className={classes('container')}>
         <div className={classes('logo')}>
-          <A href={orgHref} classModifiers={[ 'homepage', (orgText && orgText.length > 9) ? 'small' : undefined ]}>
+          <A href={logoHref} classBlock={classes('homepage-link')}>
             {logo}
-            {govUK ? null : (
-              <span className={classes('logotype-text')}>{orgText}</span>
+            {!serviceName ? null : (
+              <span className={classes('product-name')}>{serviceName}</span>
             )}
           </A>
         </div>
-        {!(serviceName || navLinks.length) ? null : (
-          <div className={classes('content')}>
-            {!serviceName ? null : (
-              <A href={serviceHref} className={classes('service-name')}>{serviceName}</A>
-            )}
-            {!navLinks.length ? null : (
-              <nav className={classes('navigation')} aria-label="Menu">
-                <button type="button" className={classes('menu-button', undefined, 'govuk-js-header-toggle')} aria-controls="navigation" hidden>Menu</button>
-                <ul id="navigation" className={classes('navigation-list')}>
-                  {navLinks.map(({ active, text, ...linkAttrs }, i) => (
-                    <li key={i} className={classes('navigation-item', active ? 'active' : undefined)}>
-                      <A {...linkAttrs}>{text}</A>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            )}
-          </div>
-        )}
       </WidthContainer>
-    </header>
+    </div>
   );
 };
 

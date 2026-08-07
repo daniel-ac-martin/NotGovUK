@@ -5,11 +5,6 @@ const nextConfig: NextConfig = {
   distDir: 'dist',
   sassOptions: {
     implementation: 'sass-embedded',
-    quietDeps: true, // Works around issues with govuk-frontend
-    silenceDeprecations: [
-      'if-function', // Required until if functionality is more common in browsers and SASS v1.95 gets a bit older
-      'import'       // Required until govuk-frontend moves to using modules
-    ]
   },
   turbopack: {
     resolveAlias: {

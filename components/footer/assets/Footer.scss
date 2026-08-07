@@ -1,59 +1,33 @@
-@use "sass:color";
-@use "sass:map";
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/footer/index";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/footer";
 
 .govuk-footer {
-  .govuk-link, a {
+  .govuk-link, a:not(.govuk-footer__copyright-logo) {
     @extend .govuk-footer__link;
   }
 
   ol, ul, p {
     font-size: inherit;
   }
-
-  // Department colours
-  @each $i, $v in $govuk-colours-organisations {
-    &--#{$i} {
-      $contrast-safe: map.get($v, "contrast-safe");
-      $light-colour: map.get($v, "colour");
-      $colour: if($contrast-safe, $contrast-safe, $light-colour);
-      border-color: $colour !important;
-    }
-  }
 }
 
-.not-govuk-page--dark .govuk-footer {
-  background-color: $not-govuk-dark-mode-footer-colour;
-}
-
-.govuk-template--rebranded {
+.govuk-template__page--not-govuk {
   .govuk-footer {
-    // Department colours
-    @each $i, $v in $govuk-colours-organisations {
-      &--#{$i} {
-        $contrast-safe: map.get($v, "contrast-safe");
-        $light-colour: map.get($v, "colour");
-        $colour: if($contrast-safe, $contrast-safe, $light-colour);
-
-        $background-colour: color.change($colour, $lightness: 97.3%, $chroma: 2.2, $space: lch);
-
-        background-color: $background-colour !important;
-      }
+    &__link,
+    .govuk-link, a:not(.govuk-footer__copyright-logo), a {
+      color: govuk-functional-colour("text");
     }
   }
 
-  &.not-govuk-page--dark .govuk-footer {
-    // Department colours
-    @each $i, $v in $govuk-colours-organisations {
-      &--#{$i} {
-        $contrast-safe: map.get($v, "contrast-safe");
-        $light-colour: map.get($v, "colour");
-        $colour: if($contrast-safe, $contrast-safe, $light-colour);
+  .govuk-template__page:not(.govuk-template__page--not-govuk) {
+    .govuk-footer {
+      &__link,
+      .govuk-link, a {
+        @include govuk-link-style-default;
+      }
 
-        $background-colour: color.change($colour, $lightness: 15%, $chroma: 25, $space: lch);
-
-        background-color: $background-colour !important;
+      &__copyright-logo {
+        color: govuk-functional-colour("text") !important;
       }
     }
   }

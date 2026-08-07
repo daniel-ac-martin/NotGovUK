@@ -1,5 +1,5 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/core/_lists";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/core/lists";
 
 .not-govuk-navigation-menu {
   border-color: $govuk-link-colour;
@@ -53,8 +53,8 @@
       }
 
       &::before {
-        content: '— ';
-        color: govuk-colour('dark-grey');
+        content: "— ";
+        color: govuk-colour("black", $variant: "tint-25");
         font-weight: normal;
         margin-left: -18px;
       }
@@ -83,35 +83,6 @@
 
       &:not(:hover) {
         text-decoration: none;
-      }
-    }
-  }
-
-  &--horizontal {
-    @include govuk-font(19);
-
-    .not-govuk-navigation-menu__list {
-      margin: 0;
-      padding: 0;
-
-      & > li,
-      &__item {
-        display: inline-block;
-        font-weight: bold;
-        margin: 0;
-        @include govuk-responsive-padding(2, "top");
-        @include govuk-responsive-padding(3, "left");
-        @include govuk-responsive-padding(2, "bottom");
-        @include govuk-responsive-padding(3, "right");
-
-        &--active {
-          border-left-width: 0;
-          border-bottom-width: $border-width;
-
-          .not-govuk-navigation-menu__list__link {
-            text-decoration: none;
-          }
-        }
       }
     }
   }

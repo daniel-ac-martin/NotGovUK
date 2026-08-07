@@ -1,13 +1,2 @@
-@import "@not-govuk/sass-base";
-
-// Core
-@import 'core';
-
-// Objects
-@import 'objects';
-
-// Overrides
-@import 'overrides';
-
-// Code
-@import 'code';
+@forward "@not-govuk/simple-components";
+@forward "@not-govuk/form";

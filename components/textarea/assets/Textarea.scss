@@ -1,13 +1,15 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/components/textarea/index";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/components/textarea";
 
-// Global override
-textarea {
-  @extend .govuk-textarea;
-  background-color: govuk-colour('white');
-  color: $govuk-text-colour;
+// Override
+:where(.govuk-template__page) {
+  textarea {
+    @extend .govuk-textarea;
+    background-color: govuk-functional-colour("body-background");
+    color: govuk-functional-colour("text");
 
-  &.govuk-textarea--error {
-    @extend .govuk-textarea--error;
+    &.govuk-textarea--error {
+      @extend .govuk-textarea--error;
+    }
   }
 }

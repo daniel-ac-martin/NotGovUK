@@ -1,0 +1,71 @@
+{
+  "name": "@not-govuk/generic-header",
+  "version": "0.18.1",
+  "description": "A component that tells users they're using a government service that's not part of the GOV.UK website.",
+  "type": "module",
+  "main": "src/GenericHeader.tsx",
+  "sass": "assets/GenericHeader.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/GenericHeader.scss",
+      "default": "./src/GenericHeader.tsx"
+    }
+  },
+  "publishConfig": {
+    "main": "dist/GenericHeader.js",
+    "module": "dist/GenericHeader.js",
+    "typings": "dist/GenericHeader.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/GenericHeader.scss",
+        "types": "./dist/GenericHeader.d.ts",
+        "import": "./dist/GenericHeader.js",
+        "default": "./dist/GenericHeader.js"
+      }
+    }
+  },
+  "files": [
+    "/assets",
+    "/dist"
+  ],
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "MIT",
+  "keywords": [
+    "react-components"
+  ],
+  "dependencies": {
+    "@not-govuk/link": "workspace:^",
+    "@not-govuk/sass-base": "workspace:^",
+    "@not-govuk/width-container": "workspace:^",
+    "@react-foundry/component-helpers": "^0.5.1",
+    "govuk-frontend": "^6.4.0"
+  },
+  "peerDependencies": {
+    "@react-foundry/docs-components": "^0.5.1",
+    "@storybook/addon-docs": "^10.5.2",
+    "react": "^19.2.7"
+  },
+  "peerDependenciesMeta": {
+    "@react-foundry/docs-components": {
+      "optional": true
+    },
+    "@storybook/addon-docs": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@not-govuk/tag": "workspace:*",
+    "@react-foundry/component-test-helpers": "0.5.1",
+    "@types/react": "19.2.17",
+    "jest": "30.4.2",
+    "jest-environment-jsdom": "30.4.1",
+    "ts-jest": "29.4.11",
+    "typescript": "5.9.3"
+  }
+}

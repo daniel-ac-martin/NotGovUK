@@ -72,10 +72,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  useEffect(() => {
-    document.body.classList.add('js-enabled');
-  }, []);
-
   return <Outlet />;
 }
 

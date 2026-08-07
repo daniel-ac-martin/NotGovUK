@@ -2,7 +2,7 @@ import React, { FC, ReactNode, createElement as h } from 'react';
 import { BrowserRouter as Router } from 'react-router';
 
 const Root: FC<any> = props => (
-  <div id="story-root" className="js-enabled" {...props} style={{
+  <div id="story-root" className="js-enabled govuk-template__page govuk-frontend-supported" {...props} style={{
     backgroundColor: 'white',
     fontFamily: [ 'GDS Transport', 'Roboto', 'Arial', 'sans-serif' ],
     padding: '1em'

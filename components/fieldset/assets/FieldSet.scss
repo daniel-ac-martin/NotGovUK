@@ -1,6 +1,6 @@
-@import "@not-govuk/sass-base";
-@import "govuk-frontend/dist/govuk/core/_typography";
-@import "govuk-frontend/dist/govuk/components/fieldset/index";
+@use "@not-govuk/sass-base" as *;
+@use "govuk-frontend/dist/govuk/core/typography";
+@use "govuk-frontend/dist/govuk/components/fieldset";
 
 .govuk-fieldset {
   &__legend {
