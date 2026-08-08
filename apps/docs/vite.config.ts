@@ -20,7 +20,12 @@ export default defineConfig({
     }
   },
   plugins: [
-    reactDocgenTypescript(),
+    reactDocgenTypescript({
+      compilerOptions: {},
+      include: [
+        '../../components/*/src/**/*.ts*'
+      ]
+    }),
     csf(),
     html(),
     mdx(),
