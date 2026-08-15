@@ -43,7 +43,7 @@ export default Page;
 Alternatively, if you are just building a prototype, you may wish to simply use the supplied HTML code, without the need to worry about importing anything from packages.
 
 
-### Using the components in re-usable components
+### Using the components in other components
 
 If you are publishing your own, individually packaged, re-usable components (as we facilitate in NotGovUK projects) you should import the components from their individual packages rather than the group packages.
 
