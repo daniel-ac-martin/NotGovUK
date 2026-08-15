@@ -78,7 +78,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             phase="Alpha"
             serviceHref="/"
             serviceName={siteTitle}
-            title={siteTitle}
             signOutHref={sign.href}
             signOutText={sign.text}
           >

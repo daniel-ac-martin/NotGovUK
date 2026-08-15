@@ -53,11 +53,9 @@ export default function RootLayout({
             }
           ]}
           organisationHref="/"
-          organisationText="!GOV.UK"
           phase="alpha"
           serviceName="Next.js App"
           serviceHref="/"
-          title="NotGovUK"
         >
           {children}
         </GovUKPage>

@@ -60,7 +60,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           phase="alpha"
           serviceName="React Router App"
           serviceHref="/"
-          title="NotGovUK"
         >
           {children}
         </GovUKPage>
