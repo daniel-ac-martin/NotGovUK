@@ -75,6 +75,8 @@ export default MyComponent;
 
 ### Using the components in React Router Framework applications
 
+If you are starting a brand new application, we recommend using our [GitHub template for a React Router framework application with NotGovUK components] but full details are below.
+
 You should import the components from the `@not-govuk/components` package, which you should install with NPM.
 
 ```shell
@@ -101,6 +103,9 @@ You should also alter your `vite.config.js` to modify some of the modules to ver
 export default defineConfig({
   // ADD THE FOLLOWING LINES
   css: {
+    lightningcss: {
+      errorRecovery: true // Required until govuk-frontend removes the '@media zero' hack
+    },
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler'
@@ -176,5 +181,6 @@ Your application will need to make use of Next.js' the newer '_App router_'.
 
 [Getting started]: https://not-gov.uk/get-started
 [Form]: https://not-gov.uk/components?name=Form
-[Example React Router application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/react-router-example
+[GitHub template for a React Router framework application with NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK-template-react-router
+[Example React Router application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK-template-react-router
 [Example Next.js application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/next-example
