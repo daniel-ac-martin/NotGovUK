@@ -145,6 +145,8 @@ You should ensure that you set the `govuk-frontend-supported` class on an elemen
 
 ### Using the components in Next.js applications
 
+If you are starting a brand new application, we recommend using our [GitHub template for a Next.js application with NotGovUK components] but full details are below.
+
 You should import the components from the `@not-govuk/simple-components` package, which you should install with NPM. You should also install `sass`.
 
 ```shell
@@ -196,5 +198,6 @@ Your application will need to make use of Next.js' the newer '_App router_'.
 [Fastify]: https://fastify.dev/
 [Form]: https://not-gov.uk/components?name=Form
 [GitHub template for a React Router framework application with NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK-template-react-router
+[GitHub template for a Next.js application with NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK-template-next
 [Example React Router application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK-template-react-router
-[Example Next.js application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/next-example
+[Example Next.js application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK-template-next
