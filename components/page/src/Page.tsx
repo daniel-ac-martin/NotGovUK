@@ -37,7 +37,7 @@ export type PageProps = (
     /** Content for the footer */
     footerNavigation?: NavMenu[]
     /** Navigation items */
-    navigation?: NavMenu[]
+    navigation?: ServiceNavigationProps['items']
     /** Content for the phase-banner */
     phaseBannerContent?: ReactNode
   }
