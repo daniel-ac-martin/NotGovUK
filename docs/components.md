@@ -17,14 +17,25 @@ The components are published in NPM packages, both individually and all altogeth
 If you have initiated a project or prototype using the instructors in [Getting started]. You should import the components from the `@not-govuk/components` package, which you should already have installed.
 
 ```jsx
-// src/common/pages/your-page.tsx
-import { FC, createElement as h } from 'react';
-import { PageProps } from '@not-govuk/app-composer';
+// src/app/routes/your-page.tsx
+import type { Route } from "./+types/your-page";
 import { Panel } from '@not-govuk/components';
+import { siteTitle } from '../config';
 
-export title = 'Your title'
+export const title = 'Your page';
+const description = 'This is the description of your page';
 
-const Page: FC<PageProps> = () => {
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: `${title} - ${siteTitle}` },
+    { name: 'description', content: description },
+    { name: 'og:title', content: title },
+    { name: 'og:description', content: description },
+    { name: 'og:article:section', content: title },
+  ];
+}
+
+export default function YourPage() {
   return (
     <Panel
       classModifiers="confirmation"
@@ -35,15 +46,15 @@ const Page: FC<PageProps> = () => {
       <strong>HDJ2123F</strong>
     </Panel>
   );
-};
-
-export default Page;
+}
 ```
 
 Alternatively, if you are just building a prototype, you may wish to simply use the supplied HTML code, without the need to worry about importing anything from packages.
 
+**Note:** Recent versions of the NotGovUK framework uses [react-foundry] which is just the [React Router] framework with some customisations, including a server based on [Fastify].
 
-### Using the components in re-usable components
+
+### Using the components in other components
 
 If you are publishing your own, individually packaged, re-usable components (as we facilitate in NotGovUK projects) you should import the components from their individual packages rather than the group packages.
 
@@ -75,6 +86,8 @@ export default MyComponent;
 
 ### Using the components in React Router Framework applications
 
+If you are starting a brand new application, we recommend using our [GitHub template for a React Router framework application with NotGovUK components] but full details are below.
+
 You should import the components from the `@not-govuk/components` package, which you should install with NPM.
 
 ```shell
@@ -101,6 +114,9 @@ You should also alter your `vite.config.js` to modify some of the modules to ver
 export default defineConfig({
   // ADD THE FOLLOWING LINES
   css: {
+    lightningcss: {
+      errorRecovery: true // Required until govuk-frontend removes the '@media zero' hack
+    },
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler'
@@ -175,6 +191,10 @@ Your application will need to make use of Next.js' the newer '_App router_'.
 
 
 [Getting started]: https://not-gov.uk/get-started
+[react-foundry]: https://github.com/daniel-ac-martin/react-foundry/
+[React Router]: https://reactrouter.com/
+[Fastify]: https://fastify.dev/
 [Form]: https://not-gov.uk/components?name=Form
-[Example React Router application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/react-router-example
+[GitHub template for a React Router framework application with NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK-template-react-router
+[Example React Router application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK-template-react-router
 [Example Next.js application using NotGovUK components]: https://github.com/daniel-ac-martin/NotGovUK/tree/master/apps/next-example

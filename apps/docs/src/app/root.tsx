@@ -68,7 +68,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             organisationText="!GOV.UK"
             serviceHref="/"
             serviceName={siteTitle}
-            title={siteTitle}
             maxContentsWidth={1100}
           >
             {children}
