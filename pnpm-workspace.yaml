@@ -6,6 +6,7 @@ dedupePeerDependents: true          # Default
 resolutionMode: highest             # Default
 resolvePeersFromWorkspaceRoot: true # Default
 autoInstallPeers: false             # Needed to avoid build errors
+ignoreWorkspaceCycles: true         # We have cycles due to docs
 minimumReleaseAgeExclude:
 - '@react-foundry/*'
 onlyBuiltDependencies:
