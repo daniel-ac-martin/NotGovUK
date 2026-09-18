@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@react-foundry/docs-components':
         specifier: 0.5.4
-        version: 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/user-info':
         specifier: 0.5.4
         version: 0.5.4(react@19.3.0)
@@ -24,8 +24,8 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
       react-router:
-        specifier: 8.3.1
-        version: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        specifier: 8.4.0
+        version: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     devDependencies:
       '@babel/core':
         specifier: 8.0.5
@@ -86,25 +86,25 @@ importers:
         version: link:../../lib/components
       '@react-foundry/anchor-list':
         specifier: 0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/fastify':
         specifier: 0.5.4
         version: 0.5.4
       '@react-foundry/fastify-react-router':
         specifier: 0.5.4
-        version: 0.5.4(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
+        version: 0.5.4(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
       '@react-foundry/react-router-context':
         specifier: 0.5.4
         version: 0.5.4
       '@react-foundry/router':
         specifier: 0.5.4
-        version: 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+        version: 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       '@react-router/fs-routes':
-        specifier: 8.3.1
-        version: 8.3.1(@react-router/dev@8.3.1(@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)))(typescript@5.9.3)
+        specifier: 8.4.0
+        version: 8.4.0(@react-router/dev@8.4.0(@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)))(typescript@5.9.3)
       '@react-router/node':
-        specifier: 8.3.1
-        version: 8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
+        specifier: 8.4.0
+        version: 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
       isbot:
         specifier: 5.2.2
         version: 5.2.2
@@ -115,8 +115,8 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
       react-router:
-        specifier: 8.3.1
-        version: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        specifier: 8.4.0
+        version: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       serverless-http:
         specifier: 4.0.0
         version: 4.0.0
@@ -128,8 +128,8 @@ importers:
         specifier: 0.5.4
         version: 0.5.4
       '@react-router/dev':
-        specifier: 8.3.1
-        version: 8.3.1(@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
+        specifier: 8.4.0
+        version: 8.4.0(@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
       '@storybook/csf-plugin':
         specifier: 10.5.10
         version: 10.5.10(esbuild@0.27.2)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
@@ -180,7 +180,7 @@ importers:
         version: link:../../lib/simple-components
       '@react-foundry/router':
         specifier: 0.5.4
-        version: 0.5.4(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+        version: 0.5.4(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       next:
         specifier: 16.3.5
         version: 16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0)
@@ -228,14 +228,14 @@ importers:
         specifier: workspace:*
         version: link:../../lib/components
       '@react-router/fs-routes':
-        specifier: 8.3.1
-        version: 8.3.1(@react-router/dev@8.3.1(@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)))(typescript@5.9.3)
+        specifier: 8.4.0
+        version: 8.4.0(@react-router/dev@8.4.0(@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)))(typescript@5.9.3)
       '@react-router/node':
-        specifier: 8.3.1
-        version: 8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
+        specifier: 8.4.0
+        version: 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
       '@react-router/serve':
-        specifier: 8.3.1
-        version: 8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)
+        specifier: 8.4.0
+        version: 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)
       isbot:
         specifier: 5.2.2
         version: 5.2.2
@@ -246,12 +246,12 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
       react-router:
-        specifier: 8.3.1
-        version: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        specifier: 8.4.0
+        version: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     devDependencies:
       '@react-router/dev':
-        specifier: 8.3.1
-        version: 8.3.1(@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
+        specifier: 8.4.0
+        version: 8.4.0(@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
       '@types/node':
         specifier: 24.13.4
         version: 24.13.4
@@ -329,8 +329,8 @@ importers:
         specifier: 6.1.1
         version: 6.1.1(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
       react-router:
-        specifier: 8.3.1
-        version: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        specifier: 8.4.0
+        version: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       sass-embedded:
         specifier: 1.104.1
         version: 1.104.1
@@ -354,25 +354,25 @@ importers:
         version: link:../../lib/components
       '@react-foundry/anchor-list':
         specifier: 0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/fastify':
         specifier: 0.5.4
         version: 0.5.4
       '@react-foundry/fastify-react-router':
         specifier: 0.5.4
-        version: 0.5.4(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
+        version: 0.5.4(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
       '@react-foundry/react-router-context':
         specifier: 0.5.4
         version: 0.5.4
       '@react-foundry/router':
         specifier: 0.5.4
-        version: 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+        version: 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       '@react-router/fs-routes':
-        specifier: 8.3.1
-        version: 8.3.1(@react-router/dev@8.3.1(@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)))(typescript@5.9.3)
+        specifier: 8.4.0
+        version: 8.4.0(@react-router/dev@8.4.0(@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)))(typescript@5.9.3)
       '@react-router/node':
-        specifier: 8.3.1
-        version: 8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
+        specifier: 8.4.0
+        version: 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
       isbot:
         specifier: 5.2.2
         version: 5.2.2
@@ -383,8 +383,8 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
       react-router:
-        specifier: 8.3.1
-        version: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        specifier: 8.4.0
+        version: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       sass-embedded:
         specifier: 1.104.1
         version: 1.104.1
@@ -399,8 +399,8 @@ importers:
         specifier: 0.5.4
         version: 0.5.4
       '@react-router/dev':
-        specifier: 8.3.1
-        version: 8.3.1(@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
+        specifier: 8.4.0
+        version: 8.4.0(@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
       '@types/mdx':
         specifier: 2.0.14
         version: 2.0.14
@@ -455,7 +455,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -485,7 +485,7 @@ importers:
         version: 0.5.4
       '@react-foundry/router':
         specifier: ^0.5.4
-        version: 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+        version: 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       govuk-frontend:
         specifier: ^6.5.1
         version: 6.5.1
@@ -495,7 +495,7 @@ importers:
         version: link:../panel
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -519,7 +519,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/component-helpers':
         specifier: ^0.5.4
         version: 0.5.4
@@ -532,7 +532,7 @@ importers:
         version: link:../panel
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -578,7 +578,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -615,7 +615,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -658,7 +658,7 @@ importers:
         version: link:../text-input
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -704,7 +704,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -744,7 +744,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -775,7 +775,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -809,7 +809,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -833,7 +833,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/component-helpers':
         specifier: ^0.5.4
         version: 0.5.4
@@ -855,7 +855,7 @@ importers:
         version: link:../text-input
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -895,7 +895,7 @@ importers:
         version: link:../visually-hidden
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -929,7 +929,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -966,7 +966,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1020,14 +1020,14 @@ importers:
         version: 0.5.4
       '@react-foundry/forms':
         specifier: ^0.5.4
-        version: 0.5.4(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
     devDependencies:
       '@not-govuk/tag':
         specifier: workspace:*
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1070,7 +1070,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1116,7 +1116,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1156,7 +1156,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1196,7 +1196,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1230,7 +1230,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1264,7 +1264,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1295,7 +1295,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1329,7 +1329,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1353,7 +1353,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor':
         specifier: ^0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       govuk-frontend:
         specifier: ^6.5.1
         version: 6.5.1
@@ -1366,7 +1366,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1390,7 +1390,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/component-helpers':
         specifier: ^0.5.4
         version: 0.5.4
@@ -1403,7 +1403,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1437,7 +1437,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1510,7 +1510,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1550,7 +1550,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1587,7 +1587,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1624,7 +1624,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1667,7 +1667,7 @@ importers:
         version: link:../text-input
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1701,7 +1701,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1735,7 +1735,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1765,7 +1765,7 @@ importers:
         version: link:../width-container
       '@react-foundry/anchor-list':
         specifier: ^0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/component-helpers':
         specifier: ^0.5.4
         version: 0.5.4
@@ -1778,7 +1778,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1809,7 +1809,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1849,7 +1849,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1873,7 +1873,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/component-helpers':
         specifier: ^0.5.4
         version: 0.5.4
@@ -1889,7 +1889,7 @@ importers:
         version: link:../visually-hidden
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1916,7 +1916,7 @@ importers:
         version: link:../../lib/sass-base
       '@react-foundry/anchor-list':
         specifier: ^0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/component-helpers':
         specifier: ^0.5.4
         version: 0.5.4
@@ -1932,7 +1932,7 @@ importers:
         version: link:../visually-hidden
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -1959,14 +1959,14 @@ importers:
         version: 0.5.4
       '@react-foundry/simple-table':
         specifier: ^0.5.4
-        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)
+        version: 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)
       govuk-frontend:
         specifier: ^6.5.1
         version: 6.5.1
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -2003,7 +2003,7 @@ importers:
         version: link:../table
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -2037,7 +2037,7 @@ importers:
         version: link:../table
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -2065,7 +2065,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -2099,7 +2099,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -2133,7 +2133,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -2167,7 +2167,7 @@ importers:
     devDependencies:
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -2204,7 +2204,7 @@ importers:
         version: link:../tag
       '@react-foundry/component-test-helpers':
         specifier: 0.5.4
-        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        version: 0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
@@ -4507,14 +4507,14 @@ packages:
     resolution: {integrity: sha512-ud3STugWwz+NikSxPAxfpAvxE/wpghXVuDfLXJl2JKYomT9oOVxWv33pGLBJo25H1uPs8JclVC9OpPZmGO/jfQ==}
     engines: {node: '>=18.0.0'}
 
-  '@react-router/dev@8.3.1':
-    resolution: {integrity: sha512-yvhMiOq+LLmGPgTOYYWjzfapUN4B2/T3nfr8P81bLTiyh0YSx88OAz5y2D/KKS0boF9EoHyhzeMH4ZweMTwjJA==}
+  '@react-router/dev@8.4.0':
+    resolution: {integrity: sha512-GKznpn6h8c52xGXwtsypD5ZwNiWFSeqoKPdyGq7SfG+T9rFjGO8F0i/R/yECfZqHXaNz1NVmpODuBamBy9FfMg==}
     engines: {node: '>=22.22.0'}
     hasBin: true
     peerDependencies:
-      '@react-router/serve': ^8.3.1
+      '@react-router/serve': ^8.4.0
       '@vitejs/plugin-rsc': ~0.5.26
-      react-router: ^8.3.1
+      react-router: ^8.4.0
       react-server-dom-webpack: ^19.2.7
       typescript: ^5.1.0 || ^6.0.0 || ^7.0.0
       vite: ^7.0.0 || ^8.0.0
@@ -4531,46 +4531,49 @@ packages:
       wrangler:
         optional: true
 
-  '@react-router/express@8.3.1':
-    resolution: {integrity: sha512-b4Qj+gNc/8zBojI7jouoie8zf/Vv4sBmE1P41tfLl5alxQPyUgH4kXlJzc+GY59lB3poanhBXVcj9P2A+5B2fw==}
+  '@react-router/express@8.4.0':
+    resolution: {integrity: sha512-JPujWEE0LZuwuuBoZwXwYDZSrqft63GU1c0XZ1JOGQPqmR8/nrzvBU/UgPCFHAuPsfRk79ebxljmlri+4sGR+w==}
     engines: {node: '>=22.22.0'}
     peerDependencies:
       express: ^4.22.2 || ^5
-      react-router: 8.3.1
+      react-router: 8.4.0
       typescript: ^5.1.0 || ^6.0.0 || ^7.0.0
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  '@react-router/fs-routes@8.3.1':
-    resolution: {integrity: sha512-bAIk7cvs9ie+Lu0WkznmEPZTLmaocrdg/DrSM7P01UkTG16VTlWP7TDRY8yszLGm6DnR1fbf0sOaa2L7/8QBzg==}
+  '@react-router/fs-routes@8.4.0':
+    resolution: {integrity: sha512-CIEYxrapbr6iO589fBmN7/RBJ10H8X/Tl2i7MNkuJZQ9W2Z3wPifPCHv9bFR/+FlmzeLXJlYyHyUgaCkgOIZYg==}
     engines: {node: '>=22.22.0'}
     peerDependencies:
-      '@react-router/dev': ^8.3.1
+      '@react-router/dev': ^8.4.0
       typescript: ^5.1.0 || ^6.0.0 || ^7.0.0
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  '@react-router/node@8.3.1':
-    resolution: {integrity: sha512-JQI2vPd0twfHXxRxD1QWxKkCfu5I7bxojgEZFL97EvbJLm1B6p4qeqvGc9hl9g/3ZYbieczQY6ElM3zZjiG4sA==}
+  '@react-router/node@8.4.0':
+    resolution: {integrity: sha512-1teZHtk7XDm1pteQ2Plgtvtjjup5C5sIwFlOMYVIyoOH7X3bId3Qb//kUdbydX6NRIxcGK28UnfZlz4SrD/mkg==}
     engines: {node: '>=22.22.0'}
     peerDependencies:
-      react-router: 8.3.1
+      react-router: 8.4.0
       typescript: ^5.1.0 || ^6.0.0 || ^7.0.0
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  '@react-router/serve@8.3.1':
-    resolution: {integrity: sha512-BtR3jw0Uw8/2KzeFdOMSDhKOL1NPXIbxfthDNZcsy4Wz7VfrxdfgDOkDMzcsk47nOGyI+C5Y+x8TSyv6oBvVqg==}
+  '@react-router/serve@8.4.0':
+    resolution: {integrity: sha512-R2i5hed/7wwPxARQxSNM99rFnjy6bCigu8vUVyghaB6Si1VdUAjz7u7zhyBQ/T+8fdPHXIZ9SMV4rPmguD0nEw==}
     engines: {node: '>=22.22.0'}
     hasBin: true
     peerDependencies:
-      react-router: 8.3.1
+      react-router: 8.4.0
 
   '@remix-run/node-fetch-server@0.14.1':
     resolution: {integrity: sha512-pKenF5ysIN5lDCnCyvoUxDhKP0tfnGagvGbZh01xxHG6DJXSIXWVC9NpLSDGjxcxd1CKdCOKuZFleXBF3pChIg==}
+
+  '@remix-run/route-pattern@0.22.1':
+    resolution: {integrity: sha512-czdGJWh09Lapvcqt7Vb09KlrU2PhRJ8xQaI+AItTuD9aDJ5MAgxnS38lnys6Ll+6RJEqPiaUqTwIQhVLwFvv+w==}
 
   '@rolldown/binding-android-arm-eabi@1.2.8':
     resolution: {integrity: sha512-tN5aztYkKCte4i5SIrrz5yK/HMjEuCqCSCJa418jOV8tZ1cBY3YF2otxB1ktPxzsLA1BeTqwapK0bfjxNvHJVw==}
@@ -7580,8 +7583,8 @@ packages:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
     engines: {node: '>=0.10.0'}
 
-  react-router@8.3.1:
-    resolution: {integrity: sha512-TEOpiO2g0TJHEOJeRVv4amUFun9v1npCKszvcquNvzETUtJ8udV86ah5eFoHT7g26bsBvT6EiIhqulR8eDF++A==}
+  react-router@8.4.0:
+    resolution: {integrity: sha512-JtydAkBvU9UTEe5qNC+POhu+ZBNM7rlKY2IegwXc7Idj7xfRG16x5RZrw3mju+XlqBxfvb2ky9P3jUp9WyWC1g==}
     engines: {node: '>=22.22.0'}
     peerDependencies:
       react: '>=19.2.7'
@@ -10617,58 +10620,58 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@react-foundry/anchor-list@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/anchor-list@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
-      '@react-foundry/anchor': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/anchor': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/component-helpers': 0.5.4
-      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
     transitivePeerDependencies:
       - '@remix-run/react'
       - next
       - react-router
 
-  '@react-foundry/anchor-list@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/anchor-list@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
-      '@react-foundry/anchor': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/anchor': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@react-foundry/component-helpers': 0.5.4
-      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
     transitivePeerDependencies:
       - '@remix-run/react'
       - next
       - react-router
 
-  '@react-foundry/anchor@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/anchor@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@react-foundry/client-component-helpers': 0.5.4(react@19.3.0)
       '@react-foundry/component-helpers': 0.5.4
-      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       '@react-foundry/uri': 0.5.4
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
     transitivePeerDependencies:
       - '@remix-run/react'
       - next
       - react-router
 
-  '@react-foundry/anchor@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/anchor@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@react-foundry/client-component-helpers': 0.5.4(react@19.3.0)
       '@react-foundry/component-helpers': 0.5.4
-      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       '@react-foundry/uri': 0.5.4
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
     transitivePeerDependencies:
       - '@remix-run/react'
@@ -10687,14 +10690,14 @@ snapshots:
 
   '@react-foundry/component-helpers@0.5.4': {}
 
-  '@react-foundry/component-test-helpers@0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/component-test-helpers@0.5.4(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@testing-library/dom': 10.4.1
       '@testing-library/jest-dom': 7.0.1(@testing-library/dom@10.4.1)
       '@testing-library/react': 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@testing-library/user-event': 14.6.4(@testing-library/dom@10.4.1)
       react: 19.3.0
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -10708,12 +10711,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@react-foundry/component-helpers': 0.5.4
       '@react-foundry/memoize': 0.5.4
-      '@react-foundry/simple-table': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)
-      '@react-foundry/tabs': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/simple-table': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)
+      '@react-foundry/tabs': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       prettier: 3.9.6
       prismjs: 1.30.0
       prismjs-github: 1.0.0
@@ -10733,12 +10736,12 @@ snapshots:
       - vite-plus
     optional: true
 
-  '@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@react-foundry/component-helpers': 0.5.4
       '@react-foundry/memoize': 0.5.4
-      '@react-foundry/simple-table': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)
-      '@react-foundry/tabs': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/simple-table': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)
+      '@react-foundry/tabs': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       prettier: 3.9.6
       prismjs: 1.30.0
       prismjs-github: 1.0.0
@@ -10757,12 +10760,12 @@ snapshots:
       - utf-8-validate
       - vite-plus
 
-  '@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@react-foundry/component-helpers': 0.5.4
       '@react-foundry/memoize': 0.5.4
-      '@react-foundry/simple-table': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)
-      '@react-foundry/tabs': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/simple-table': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)
+      '@react-foundry/tabs': 0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       prettier: 3.9.6
       prismjs: 1.30.0
       prismjs-github: 1.0.0
@@ -10804,14 +10807,14 @@ snapshots:
     dependencies:
       fastify-plugin: 6.0.0
 
-  '@react-foundry/fastify-react-router@0.5.4(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))':
+  '@react-foundry/fastify-react-router@0.5.4(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))':
     dependencies:
       '@fastify/middie': 9.3.3
       '@fastify/static': 10.1.3
       '@react-foundry/react-router-context': 0.5.4
-      '@react-router/node': 8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
+      '@react-router/node': 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
       fastify-plugin: 6.0.0
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     optionalDependencies:
       vite: 8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)
     transitivePeerDependencies:
@@ -10831,16 +10834,16 @@ snapshots:
       close-with-grace: 2.5.0
       fastify: 5.12.0
 
-  '@react-foundry/forms@0.5.4(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/forms@0.5.4(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@react-foundry/component-helpers': 0.5.4
-      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       '@react-foundry/uri': 0.5.4
       fast-deep-equal: 3.1.3
       formik: 2.4.9(@types/react@19.3.0)(react@19.3.0)
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       validator: 13.15.35
     transitivePeerDependencies:
       - '@remix-run/react'
@@ -10875,67 +10878,67 @@ snapshots:
 
   '@react-foundry/react-router-context@0.5.4': {}
 
-  '@react-foundry/router@0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
+  '@react-foundry/router@0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
     dependencies:
       '@react-foundry/uri': 0.5.4
     optionalDependencies:
       next: 16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0)
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
 
-  '@react-foundry/router@0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
+  '@react-foundry/router@0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
     dependencies:
       '@react-foundry/uri': 0.5.4
     optionalDependencies:
       next: 16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0)
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
 
-  '@react-foundry/router@0.5.4(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
+  '@react-foundry/router@0.5.4(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
     dependencies:
       '@react-foundry/uri': 0.5.4
     optionalDependencies:
       next: 16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0)
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
 
-  '@react-foundry/router@0.5.4(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
+  '@react-foundry/router@0.5.4(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
     dependencies:
       '@react-foundry/uri': 0.5.4
     optionalDependencies:
       next: 16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0)
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
 
-  '@react-foundry/simple-table@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)':
+  '@react-foundry/simple-table@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)':
     dependencies:
       '@react-foundry/component-helpers': 0.5.4
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
 
-  '@react-foundry/simple-table@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)':
+  '@react-foundry/simple-table@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)':
     dependencies:
       '@react-foundry/component-helpers': 0.5.4
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
 
-  '@react-foundry/simple-table@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)':
+  '@react-foundry/simple-table@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(react@19.3.0)':
     dependencies:
       '@react-foundry/component-helpers': 0.5.4
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
     optional: true
 
-  '@react-foundry/tabs@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/tabs@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@react-foundry/client-component-helpers': 0.5.4(react@19.3.0)
       '@react-foundry/component-helpers': 0.5.4
-      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
     transitivePeerDependencies:
       - '@remix-run/react'
@@ -10943,28 +10946,28 @@ snapshots:
       - react-router
     optional: true
 
-  '@react-foundry/tabs@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/tabs@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@react-foundry/client-component-helpers': 0.5.4(react@19.3.0)
       '@react-foundry/component-helpers': 0.5.4
-      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@8.0.5)(@types/node@24.13.3)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.2.7(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
     transitivePeerDependencies:
       - '@remix-run/react'
       - next
       - react-router
 
-  '@react-foundry/tabs@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@react-foundry/tabs@0.5.4(@react-foundry/docs-components@0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0))(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@react-foundry/client-component-helpers': 0.5.4(react@19.3.0)
       '@react-foundry/component-helpers': 0.5.4
-      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@react-foundry/router': 0.5.4(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       react: 19.3.0
     optionalDependencies:
-      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@react-foundry/docs-components': 0.5.4(@storybook/addon-docs@10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)))(@types/react@19.3.0)(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sass@1.104.0))(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@storybook/addon-docs': 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
     transitivePeerDependencies:
       - '@remix-run/react'
@@ -10982,14 +10985,14 @@ snapshots:
 
   '@react-foundry/vite-html-react@0.5.4': {}
 
-  '@react-router/dev@8.3.1(@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))':
+  '@react-router/dev@8.4.0(@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))':
     dependencies:
       '@babel/core': 7.29.7(supports-color@8.1.1)
       '@babel/generator': 7.29.7
       '@babel/parser': 7.29.7
       '@babel/traverse': 7.29.7(supports-color@8.1.1)
       '@babel/types': 7.29.7
-      '@react-router/node': 8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
+      '@react-router/node': 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
       '@remix-run/node-fetch-server': 0.14.1
       babel-dead-code-elimination: 1.0.12(supports-color@8.1.1)
       chokidar: 5.0.0
@@ -11004,55 +11007,57 @@ snapshots:
       picocolors: 1.1.1
       pkg-types: 2.3.1
       react-refresh: 0.18.0
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       semver: 7.8.5
       tinyglobby: 0.2.17
       valibot: 1.4.2(typescript@5.9.3)
       vite: 8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)
     optionalDependencies:
-      '@react-router/serve': 8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)
+      '@react-router/serve': 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)
       typescript: 5.9.3
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
 
-  '@react-router/express@8.3.1(express@5.2.1(supports-color@8.1.1))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)':
+  '@react-router/express@8.4.0(express@5.2.1(supports-color@8.1.1))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)':
     dependencies:
-      '@react-router/node': 8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
+      '@react-router/node': 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
       express: 5.2.1(supports-color@8.1.1)
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     optionalDependencies:
       typescript: 5.9.3
 
-  '@react-router/fs-routes@8.3.1(@react-router/dev@8.3.1(@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)))(typescript@5.9.3)':
+  '@react-router/fs-routes@8.4.0(@react-router/dev@8.4.0(@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0)))(typescript@5.9.3)':
     dependencies:
-      '@react-router/dev': 8.3.1(@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
+      '@react-router/dev': 8.4.0(@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.27.2)(sass-embedded@1.104.1)(sass@1.104.0))
       minimatch: 10.2.5
     optionalDependencies:
       typescript: 5.9.3
 
-  '@react-router/node@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)':
+  '@react-router/node@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)':
     dependencies:
       '@remix-run/node-fetch-server': 0.14.1
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     optionalDependencies:
       typescript: 5.9.3
 
-  '@react-router/serve@8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)':
+  '@react-router/serve@8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@5.9.3)':
     dependencies:
-      '@react-router/express': 8.3.1(express@5.2.1(supports-color@8.1.1))(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
-      '@react-router/node': 8.3.1(react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
+      '@react-router/express': 8.4.0(express@5.2.1(supports-color@8.1.1))(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
+      '@react-router/node': 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)
       '@remix-run/node-fetch-server': 0.14.1
       compression: 1.8.1(supports-color@8.1.1)
       express: 5.2.1(supports-color@8.1.1)
       morgan: 1.10.1(supports-color@8.1.1)
-      react-router: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react-router: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       source-map-support: 0.5.21
     transitivePeerDependencies:
       - supports-color
       - typescript
 
   '@remix-run/node-fetch-server@0.14.1': {}
+
+  '@remix-run/route-pattern@0.22.1': {}
 
   '@rolldown/binding-android-arm-eabi@1.2.8':
     optional: true
@@ -14727,8 +14732,9 @@ snapshots:
 
   react-refresh@0.18.0: {}
 
-  react-router@8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+  react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
     dependencies:
+      '@remix-run/route-pattern': 0.22.1
       cookie-es: 3.1.1
       react: 19.3.0
     optionalDependencies:
