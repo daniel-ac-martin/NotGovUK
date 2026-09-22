@@ -3,6 +3,20 @@ import { render, screen } from '@react-foundry/component-test-helpers';
 import Checkboxes from '../src/Checkboxes';
 
 describe('Checkboxes', () => {
+  it('renders extra option content outside checkbox labels in one fieldset', async () => {
+    render(h(Checkboxes, {
+      label: 'Indicators',
+      name: 'indicators',
+      options: [{ value: 'one', label: 'Select indicator one' }],
+      renderOption: (checkbox) => h('div', {}, checkbox, h('a', { href: '/one' }, 'Indicator one'))
+    }));
+
+    expect(screen.getAllByRole('group')).toHaveLength(1);
+    expect(screen.getByRole('checkbox', { name: 'Select indicator one' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Indicator one' })).toBeInTheDocument();
+    expect(screen.getByRole('link').closest('label')).toBeNull();
+  });
+
   describe('when given minimal valid props', () => {
     const props = {
       label: 'Which types of waste do you transport?',
