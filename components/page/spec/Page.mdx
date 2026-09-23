@@ -53,6 +53,15 @@ A custom logo, for the page's header, can be provided, via the `logo` prop.
 <Canvas of={Stories.CustomLogo} />
 
 
+### Back link
+
+A [Back link] can be shown above the page's content, via the `backHref`
+prop. Its text defaults to 'Back' and can be changed via the `backText`
+prop. The Back link is not shown if `breadcrumbs` are provided.
+
+<Canvas of={Stories.BackLink} />
+
+
 ### Department colours
 
 If you are building an internal application you can supply the name of
@@ -133,3 +142,6 @@ your department in order to use their colours.
 A page with lots of customisation.
 
 <Canvas of={Stories.Custom} />
+
+
+[Back link]: https://design-system.service.gov.uk/components/back-link/
