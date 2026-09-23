@@ -35,7 +35,9 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <Textarea
       {...props}
-      label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
+      isPageHeading
+      label="Can you provide more detail?"
+      labelSize="l"
     />
   )
 };
