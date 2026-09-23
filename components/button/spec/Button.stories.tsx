@@ -77,7 +77,7 @@ export const GroupWithLink: Story = {
 };
 
 export const PreventDoubleClick: Story = {
-  args: { children: 'Confirm and send', 'data-prevent-double-click': 'true' },
+  args: { children: 'Confirm and send', preventDoubleClick: true },
   name: 'Prevent double click'
 };
 
