@@ -1,0 +1,70 @@
+{
+  "name": "@not-govuk/task-list",
+  "version": "0.19.1",
+  "description": "A component to show all the tasks a user needs to do, and allow them to easily identify which ones are done and which they still need to do.",
+  "type": "module",
+  "main": "src/TaskList.tsx",
+  "sass": "assets/TaskList.scss",
+  "exports": {
+    ".": {
+      "sass": "./assets/TaskList.scss",
+      "default": "./src/TaskList.tsx"
+    }
+  },
+  "publishConfig": {
+    "main": "dist/TaskList.js",
+    "module": "dist/TaskList.js",
+    "typings": "dist/TaskList.d.ts",
+    "exports": {
+      ".": {
+        "sass": "./assets/TaskList.scss",
+        "types": "./dist/TaskList.d.ts",
+        "import": "./dist/TaskList.js",
+        "default": "./dist/TaskList.js"
+      }
+    }
+  },
+  "files": [
+    "/assets",
+    "/dist"
+  ],
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
+  "license": "MIT",
+  "keywords": [
+    "react-components"
+  ],
+  "dependencies": {
+    "@not-govuk/link": "workspace:^",
+    "@not-govuk/sass-base": "workspace:^",
+    "@react-foundry/component-helpers": "^0.5.4",
+    "govuk-frontend": "^6.5.1"
+  },
+  "peerDependencies": {
+    "@react-foundry/docs-components": "^0.5.4",
+    "@storybook/addon-docs": "^10.6.0",
+    "react": "^19.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@react-foundry/docs-components": {
+      "optional": true
+    },
+    "@storybook/addon-docs": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@not-govuk/tag": "workspace:*",
+    "@react-foundry/component-test-helpers": "0.5.4",
+    "@types/react": "19.3.0",
+    "jest": "30.5.1",
+    "jest-environment-jsdom": "30.5.1",
+    "ts-jest": "29.4.12",
+    "typescript": "5.9.3"
+  }
+}
