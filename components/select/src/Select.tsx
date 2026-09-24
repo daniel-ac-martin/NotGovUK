@@ -15,9 +15,9 @@ export type Option = {
 
 export type SelectProps = StandardProps & Omit<SelectHTMLAttributes<HTMLSelectElement>, 'label'> & {
   /** Error message */
-  error?: string
+  error?: ReactNode
   /** Hint */
-  hint?: string
+  hint?: ReactNode
   /** HTML id (If not specified then the name will be used) */
   id?: string
   /** Label */
@@ -45,7 +45,7 @@ export const Select: FC<SelectProps> = ({
   ...attrs
 }) => {
   const classModifiers = [
-    error && 'error',
+    error ? 'error' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder('govuk-select', classBlock, classModifiers, className);
