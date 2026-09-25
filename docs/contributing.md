@@ -79,12 +79,9 @@ you will be able to access it at http://localhost:8080 .
 
 ### Adding a new component
 
-You can add a brand new component using the included generator by
-running:
-
-```shell
-npm run create:component
-```
+You can add a brand new component by copying an existing component as a
+starting point and then updating its package metadata, implementation,
+tests and stories.
 
 See also: [Working on your project]
 

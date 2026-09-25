@@ -20,9 +20,6 @@
     "clean": "rm -rf dist/ pkg/ node_modules/.vite/ node_modules/.vite-temp/ .react-router/",
     "dev": "NODE_ENV=development bun --watch --inspect ./src/server/dev.ts",
     "cypress": "cypress open",
-    "create": "plop",
-    "create:deployment": "plop deployment",
-    "create:page": "plop page",
     "typecheck": "react-router typegen && tsc"
   },
   "author": "Daniel A.C. Martin <npm@daniel-martin.co.uk> (http://daniel-martin.co.uk/)",
@@ -48,7 +45,6 @@
     "@react-foundry/user-info": "^0.5.4"
   },
   "devDependencies": {
-    "@react-foundry/app-plop-pack": "0.5.4",
     "@react-foundry/vite-html-react": "0.5.4",
     "@react-router/dev": "8.4.0",
     "@types/mdx": "2.0.14",

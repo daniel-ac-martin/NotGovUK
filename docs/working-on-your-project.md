@@ -11,7 +11,7 @@ varieties:
 - [Components] (found in `[components/]`)
 
 **Note:** If you would like add more varieties you can do so by modifying
-your `[pnpm-workspaces.yaml]` and `[plopfile.js]`.
+your `[pnpm-workspace.yaml]`.
 
 
 Getting started
@@ -30,15 +30,18 @@ pnpm install
 Creating a new package
 ----------------------
 
-To create a new package, simply run:
-```shell
-npm run create
-```
+Packages are now created manually. The simplest approach is to copy an
+existing package of the same kind and then update its metadata, source,
+tests and any workspace dependencies.
 
-This is all orchestrated from your `[plopfile.js]` so you can modify how
-it works.
+For example:
+- create a new application under `[apps/]`
+- create a new library under `[lib/]`
+- create a new component under `[components/]`
 
-See: [PLOP]
+After creating the directory, update the package name in its
+`package.json` and adjust any imports or documentation that refer to the
+original package.
 
 
 Installing your packages
@@ -89,13 +92,8 @@ documentation to [Netlify].
 [Applications]: https://not-gov.uk/#applications
 [Libraries]: https://not-gov.uk/#libraries
 [Components]: https://not-gov.uk/components
-[apps/]: ../apps/
-[lib/]: ../lib/
-[components/]: ../components/
-[pnpm-workspaces.yaml]: ../pnpm-workspaces.yaml
-[plopfile.js]: ../plopfile.js
+[pnpm-workspace.yaml]: ../pnpm-workspace.yaml
 [install pnpm]: https://pnpm.io/installation
-[PLOP]: https://plopjs.com/
 [documentation application]: ../apps/docs
 [GitHub Actions]: https://github.com/features/actions
 [.github/workflows]: ../.github/workflows
