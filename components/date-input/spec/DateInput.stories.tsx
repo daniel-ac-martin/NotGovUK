@@ -57,6 +57,19 @@ export const Autocomplete: Story = {
   name: 'Auto-complete'
 };
 
+export const DayAndMonth: Story = {
+  args: { name: 'year-end', hint: 'For example, 31 3', parts: ['day', 'month'] },
+  render: ({ ...props }) => (
+    <DateInput
+      {...props}
+      label={
+        <h1 className="govuk-heading-l">When does your financial year end?</h1>
+      }
+    />
+  ),
+  name: 'Day and month'
+};
+
 export const Errors: Story = {
   args: { error: 'The date your passport was issued must be in the past' },
   render: ({ ...props }) => (
