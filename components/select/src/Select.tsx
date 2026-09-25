@@ -1,6 +1,6 @@
 import { FC, SelectHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
-import { FormGroup } from '@not-govuk/form-group';
+import { FormGroup, LabelSize } from '@not-govuk/form-group';
 
 import '../assets/Select.scss';
 
@@ -20,8 +20,12 @@ export type SelectProps = StandardProps & Omit<SelectHTMLAttributes<HTMLSelectEl
   hint?: ReactNode
   /** HTML id (If not specified then the name will be used) */
   id?: string
+  /** Whether the label is the page heading */
+  isPageHeading?: boolean
   /** Label */
   label: ReactNode
+  /** Size of the label text */
+  labelSize?: LabelSize
   /** HTML name */
   name: string
   /** List of options to select from */
@@ -38,7 +42,9 @@ export const Select: FC<SelectProps> = ({
   error,
   hint,
   id: _id,
+  isPageHeading,
   label,
+  labelSize,
   multiple,
   options,
   width,
@@ -91,7 +97,9 @@ export const Select: FC<SelectProps> = ({
     <FormGroup
       id={id}
       fieldId={fieldId}
+      isPageHeading={isPageHeading}
       label={label}
+      labelSize={labelSize}
       hint={hint}
       hintId={hintId}
       error={error}

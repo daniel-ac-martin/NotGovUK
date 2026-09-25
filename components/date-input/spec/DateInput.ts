@@ -75,4 +75,20 @@ describe('DateInput', () => {
     it('has a month value', async () => expect(screen.getByLabelText('Month')).toHaveDisplayValue('12'));
     it('has a year value', async () => expect(screen.getByLabelText('Year')).toHaveDisplayValue('2024'));
   });
+
+  describe('when the label is the page heading', () => {
+    const props = {
+      ...minimalProps,
+      isPageHeading: true,
+      labelSize: 'l' as const
+    };
+
+    beforeEach(async () => {
+      render(h(DateInput, props));
+    });
+
+    it('renders the legend as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('My date'));
+    it('sizes the legend', async () => expect(screen.getByRole('heading', { level: 1 }).parentElement).toHaveClass('govuk-fieldset__legend', 'govuk-fieldset__legend--l'));
+    it('still names the fieldset', async () => expect(screen.getByRole('group', { name: 'My date' })).toBeInTheDocument());
+  });
 });

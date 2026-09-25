@@ -34,9 +34,9 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <DateInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">When was your passport issued?</h1>
-      }
+      isPageHeading
+      label="When was your passport issued?"
+      labelSize="l"
     />
   )
 };

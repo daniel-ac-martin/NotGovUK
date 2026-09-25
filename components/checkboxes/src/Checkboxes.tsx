@@ -1,6 +1,6 @@
 import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
-import { FormGroup } from '@not-govuk/form-group';
+import { FormGroup, LabelSize } from '@not-govuk/form-group';
 import { Checkbox } from './Checkbox';
 
 import '../assets/Checkboxes.scss';
@@ -37,8 +37,12 @@ export type CheckboxesProps = StandardProps & Omit<InputHTMLAttributes<HTMLInput
   hint?: ReactNode
   /** HTML id (If not specified then the name will be used) */
   id?: string
+  /** Whether the label is the page heading */
+  isPageHeading?: boolean
   /** Label */
   label: ReactNode
+  /** Size of the label text */
+  labelSize?: LabelSize
   /** HTML name */
   name: string
   /** List of options to select from */
@@ -53,7 +57,9 @@ export const Checkboxes: FC<CheckboxesProps> = ({
   error,
   hint,
   id: _id,
+  isPageHeading,
   label,
+  labelSize,
   options,
   value,
   ...attrs
@@ -65,7 +71,9 @@ export const Checkboxes: FC<CheckboxesProps> = ({
   return (
     <FormGroup
       id={id}
+      isPageHeading={isPageHeading}
       label={label}
+      labelSize={labelSize}
       hint={hint}
       hintId={hintId}
       error={error}

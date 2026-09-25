@@ -76,7 +76,9 @@ export const LegendAsPageHeading: Story = {
   render: ({ ...props }) => (
     <FieldSet
       {...props}
-      legend={<h1 className="govuk-heading-l">Legend as page heading</h1>}
+      isPageHeading
+      legend="Legend as page heading"
+      legendSize="l"
     />
   ),
   name: 'Legend as page heading'

@@ -2,7 +2,7 @@
 
 import { FC, InputHTMLAttributes, ReactNode, createElement as h, useState } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
-import { FormGroup } from '@not-govuk/form-group';
+import { FormGroup, LabelSize } from '@not-govuk/form-group';
 import { Radio } from './Radio';
 
 import '../assets/Radios.scss';
@@ -37,8 +37,12 @@ export type RadiosProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElem
   hint?: ReactNode
   /** HTML id (If not specified then the name will be used) */
   id?: string
+  /** Whether the label is the page heading */
+  isPageHeading?: boolean
   /** Label */
   label: ReactNode
+  /** Size of the label text */
+  labelSize?: LabelSize
   /** HTML name */
   name: string
   /** List of options to select from */
@@ -53,7 +57,9 @@ export const Radios: FC<RadiosProps> = ({
   error,
   hint,
   id: _id,
+  isPageHeading,
   label,
+  labelSize,
   onChange: _onChange,
   options,
   value,
@@ -74,7 +80,9 @@ export const Radios: FC<RadiosProps> = ({
   return (
     <FormGroup
       id={id}
+      isPageHeading={isPageHeading}
       label={label}
+      labelSize={labelSize}
       hint={hint}
       hintId={hintId}
       error={error}

@@ -31,4 +31,14 @@ describe('FileUpload', () => {
     it('contains the label', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Document'));
     it('is described by the error and the hint', async () => expect(screen.getByLabelText('Document')).toHaveAccessibleDescription('Your document Error: Upload your document'));
   });
+
+  describe('when the label is the page heading', () => {
+    beforeEach(async () => {
+      render(h(FileUpload, { ...minimalProps, isPageHeading: true, labelSize: 'l' }));
+    });
+
+    it('renders the label inside a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toContainElement(screen.getByText('Document')));
+    it('sizes the label', async () => expect(screen.getByText('Document')).toHaveClass('govuk-label', 'govuk-label--l'));
+    it('still labels the field', async () => expect(screen.getByLabelText('Document')).toBeInTheDocument());
+  });
 });

@@ -40,4 +40,14 @@ describe('Select', () => {
     it('renders the label', async () => expect(screen.getByLabelText('Sort by')).toBeInTheDocument());
     it('is described by the error and the hint', async () => expect(screen.getByLabelText('Sort by')).toHaveAccessibleDescription('Pick some Error: Pick at least one'));
   });
+
+  describe('when the label is the page heading', () => {
+    beforeEach(async () => {
+      render(h(Select, { ...minimalProps, isPageHeading: true, labelSize: 'l' }));
+    });
+
+    it('renders the label inside a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toContainElement(screen.getByText('Sort by')));
+    it('sizes the label', async () => expect(screen.getByText('Sort by')).toHaveClass('govuk-label', 'govuk-label--l'));
+    it('still labels the field', async () => expect(screen.getByLabelText('Sort by')).toBeInTheDocument());
+  });
 });

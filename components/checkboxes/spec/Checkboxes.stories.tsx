@@ -51,11 +51,9 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <Checkboxes
       {...props}
-      label={
-        <h1 className="govuk-heading-l">
-          Which types of waste do you transport?
-        </h1>
-      }
+      isPageHeading
+      label="Which types of waste do you transport?"
+      labelSize="l"
       options={[
         {
           value: 'carcasses',
