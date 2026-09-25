@@ -32,9 +32,9 @@ export const isOption = (v: OptionOrSeperator): v is Option => !isSeperator(v);
 
 export type CheckboxesProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'label'> & {
   /** Error message */
-  error?: string
+  error?: ReactNode
   /** Hint */
-  hint?: string
+  hint?: ReactNode
   /** HTML id (If not specified then the name will be used) */
   id?: string
   /** Label */
