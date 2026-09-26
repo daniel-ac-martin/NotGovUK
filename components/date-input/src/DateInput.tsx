@@ -12,6 +12,8 @@ export type DateInputValue = {
   year: string
 }
 
+export type DateInputPart = keyof DateInputValue;
+
 export type DateInputPreValidateError = {
   day?: string
   month?: string
@@ -30,7 +32,7 @@ export const isPreValidateError = (v: DateInputError): v is DateInputPreValidate
 
 export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'label' | 'value' | 'defaultValue'> & {
   /** Initial value of the field */
-  defaultValue?: DateInputValue,
+  defaultValue?: Partial<DateInputValue>,
   /** Error message */
   error?: DateInputError,
   /** Hint */
@@ -41,8 +43,10 @@ export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputE
   label: ReactNode
   /** HTML name */
   name: string
+  /** The parts of the date to ask for, such as only the day and month (Default: all three) */
+  parts?: DateInputPart[]
   /** Value for controlled fields */
-  value?: DateInputValue
+  value?: Partial<DateInputValue>
 };
 
 interface WithFormat<T> {
@@ -54,6 +58,26 @@ interface WithDeformat<T> {
 
 export type RawField<P, V> = FC<P> & WithFormat<V> & WithDeformat<V>
 
+const allParts: DateInputPart[] = ['day', 'month', 'year'];
+
+const partLabels: Record<DateInputPart, string> = {
+  day: 'Day',
+  month: 'Month',
+  year: 'Year'
+};
+
+const partWidths: Record<DateInputPart, string> = {
+  day: 'width-2',
+  month: 'width-2',
+  year: 'width-4'
+};
+
+const exampleDate: DateInputValue = {
+  day: '12',
+  month: '11',
+  year: '2007'
+};
+
 export const DateInput: RawField<DateInputProps, DateInputValue> = ({
   autoComplete,
   classBlock,
@@ -61,10 +85,11 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
   className,
   defaultValue,
   error: _error,
-  hint = 'For example, 12 11 2007',
+  hint: _hint,
   id: _id,
   label,
   name,
+  parts = allParts,
   value: _value,
   width,
   ...attrs
@@ -91,22 +116,16 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
       }
     }
   );
+  const shownParts = allParts.filter(part => parts.includes(part));
+  const hint = (
+    _hint === undefined
+    ? `For example, ${shownParts.map(part => exampleDate[part]).join(' ')}`
+    : _hint
+  );
   const partValue = (v: any) => (
     v == null
     ? ''
     : v
-  );
-  const value = (
-    _value === undefined
-    ? {
-      day: undefined,
-      month: undefined,
-      year: undefined
-    } : {
-      day: partValue(_value.day),
-      month: partValue(_value.month),
-      year: partValue(_value.year)
-    }
   );
 
   return (
@@ -118,51 +137,23 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
       error={error}
     >
       <div className={classes()}>
-        <div className={classes('item')}>
-          <Label htmlFor={`${id}-day`}>Day</Label>
-          <Input
-            {...attrs}
-            id={`${id}-day`}
-            name={`${name}[day]`}
-            type="text"
-            inputMode="numeric"
-            className={classes('input')}
-            classModifiers={['width-2', invalid.day && 'error']}
-            defaultValue={defaultValue && defaultValue.day}
-            autoComplete={autoComplete && `${autoComplete}-day`}
-            value={value.day}
-          />
-        </div>
-        <div className={classes('item')}>
-          <Label htmlFor={`${id}-month`}>Month</Label>
-          <Input
-            {...attrs}
-            id={`${id}-month`}
-            name={`${name}[month]`}
-            type="text"
-            inputMode="numeric"
-            className={classes('input')}
-            classModifiers={['width-2', invalid.month && 'error']}
-            defaultValue={defaultValue && defaultValue.month}
-            autoComplete={autoComplete && `${autoComplete}-month`}
-            value={value.month}
-          />
-        </div>
-        <div className={classes('item')}>
-          <Label htmlFor={`${id}-year`}>Year</Label>
-          <Input
-            {...attrs}
-            id={`${id}-year`}
-            name={`${name}[year]`}
-            type="text"
-            inputMode="numeric"
-            className={classes('input')}
-            classModifiers={['width-4', invalid.year && 'error']}
-            defaultValue={defaultValue && defaultValue.year}
-            autoComplete={autoComplete && `${autoComplete}-year`}
-            value={value.year}
-          />
-        </div>
+        {shownParts.map(part => (
+          <div key={part} className={classes('item')}>
+            <Label htmlFor={`${id}-${part}`}>{partLabels[part]}</Label>
+            <Input
+              {...attrs}
+              id={`${id}-${part}`}
+              name={`${name}[${part}]`}
+              type="text"
+              inputMode="numeric"
+              className={classes('input')}
+              classModifiers={[partWidths[part], invalid[part] && 'error']}
+              defaultValue={defaultValue && defaultValue[part]}
+              autoComplete={autoComplete && `${autoComplete}-${part}`}
+              value={_value === undefined ? undefined : partValue(_value[part])}
+            />
+          </div>
+        ))}
       </div>
     </FormGroup>
   );

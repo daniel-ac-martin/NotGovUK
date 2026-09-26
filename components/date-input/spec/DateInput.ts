@@ -75,4 +75,32 @@ describe('DateInput', () => {
     it('has a month value', async () => expect(screen.getByLabelText('Month')).toHaveDisplayValue('12'));
     it('has a year value', async () => expect(screen.getByLabelText('Year')).toHaveDisplayValue('2024'));
   });
+
+  describe('when given only some parts', () => {
+    const props = {
+      ...minimalProps,
+      parts: ['day', 'month'] as ('day' | 'month' | 'year')[],
+      defaultValue: {
+        day: '31',
+        month: '3'
+      }
+    };
+    beforeEach(async () => {
+      render(h(DateInput, props));
+    });
+
+    it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
+    it('has a day value', async () => expect(screen.getByLabelText('Day')).toHaveDisplayValue('31'));
+    it('has a month value', async () => expect(screen.getByLabelText('Month')).toHaveDisplayValue('3'));
+    it('has no year', async () => expect(screen.queryByLabelText('Year')).not.toBeInTheDocument());
+    it('gives an example of those parts alone', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('For example, 12 11'));
+  });
+
+  describe('when given parts out of order', () => {
+    beforeEach(async () => {
+      render(h(DateInput, { ...minimalProps, parts: ['year', 'month'] as ('day' | 'month' | 'year')[] }));
+    });
+
+    it('asks for them in date order', async () => expect(screen.getAllByRole('textbox').map(input => input.getAttribute('name'))).toEqual(['my-date[month]', 'my-date[year]']));
+  });
 });
