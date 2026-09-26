@@ -26,6 +26,8 @@ export type PageProps = (
   {
     /** Location for the Back link */
     backHref?: string
+    /** Text for the Back link */
+    backText?: string
     /** List of links to parent pages */
     breadcrumbs?: Breadcrumb[]
     /** The content that displays in the page. */
@@ -45,6 +47,7 @@ export type PageProps = (
 
 export const Page: FC<PageProps> = ({
   backHref,
+  backText,
   breadcrumbs,
   children,
   classBlock,
@@ -140,7 +143,7 @@ export const Page: FC<PageProps> = ({
               <Breadcrumbs id="breadcrumbs" items={breadcrumbs} />
             )
             : ( !backHref ? null : (
-              <BackLink id="back-link" href={backHref} />
+              <BackLink id="back-link" href={backHref} text={backText} />
             ) )
           }
           <main id={mainId} className={classes('main')}>

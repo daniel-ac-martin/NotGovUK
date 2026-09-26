@@ -33,10 +33,36 @@ describe('Page', () => {
     it('contains the logo', async () => expect(screen.getByRole('img')).toHaveTextContent('GOV.UK'));
   });
 
+  describe('when given a backHref', () => {
+    beforeEach(async () => {
+      render(h(Page, {
+        ...minimalProps,
+        backHref: '/back'
+      }));
+    });
+
+    it('renders a back link', async () => expect(screen.getByRole('link', { name: 'Back' })).toBeInTheDocument());
+    it('that links to the backHref', async () => expect(screen.getByRole('link', { name: 'Back' })).toHaveAttribute('href', '/back'));
+  });
+
+  describe('when given a backHref and backText', () => {
+    beforeEach(async () => {
+      render(h(Page, {
+        ...minimalProps,
+        backHref: '/back',
+        backText: 'Back to task list'
+      }));
+    });
+
+    it('renders a back link with the backText', async () => expect(screen.getByRole('link', { name: 'Back to task list' })).toBeInTheDocument());
+    it('that links to the backHref', async () => expect(screen.getByRole('link', { name: 'Back to task list' })).toHaveAttribute('href', '/back'));
+  });
+
   describe('when given all valid props', () => {
     const props = {
       ...minimalProps,
       backHref: '/back',
+      backText: 'Back to task list',
       breadcrumbs: [
         {
           href: '#1',
