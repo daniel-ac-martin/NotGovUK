@@ -33,36 +33,29 @@ describe('Page', () => {
     it('contains the logo', async () => expect(screen.getByRole('img')).toHaveTextContent('GOV.UK'));
   });
 
-  describe('when given a backHref', () => {
-    beforeEach(async () => {
-      render(h(Page, {
-        ...minimalProps,
-        backHref: '/back'
-      }));
-    });
-
-    it('renders a back link', async () => expect(screen.getByRole('link', { name: 'Back' })).toBeInTheDocument());
-    it('that links to the backHref', async () => expect(screen.getByRole('link', { name: 'Back' })).toHaveAttribute('href', '/back'));
-  });
-
   describe('when given a backHref and backText', () => {
     beforeEach(async () => {
       render(h(Page, {
         ...minimalProps,
         backHref: '/back',
-        backText: 'Back to task list'
+        backText: 'Reverse'
       }));
     });
 
-    it('renders a back link with the backText', async () => expect(screen.getByRole('link', { name: 'Back to task list' })).toBeInTheDocument());
-    it('that links to the backHref', async () => expect(screen.getByRole('link', { name: 'Back to task list' })).toHaveAttribute('href', '/back'));
+    it('renders an element', async () => expect(screen.getAllByRole('generic')[0]).toBeInTheDocument());
+    it('renders a skip-link', async () => expect(screen.getAllByRole('link')[0]).toHaveTextContent('Skip to main content'));
+    it('renders a header', async () => expect(screen.getByRole('banner')).toBeInTheDocument());
+    it('renders a footer', async () => expect(screen.getByRole('contentinfo')).toBeInTheDocument());
+    it('is NOT GOV.UK branded', async () => expect(screen.queryByText('GOV.UK')).toBeNull());
+    it('contains a back link with the backText', async () => expect(screen.getByRole('link', { name: 'Reverse' })).toBeInTheDocument());
+    it('that links to the backHref', async () => expect(screen.getByRole('link', { name: 'Reverse' })).toHaveAttribute('href', '/back'));
   });
 
   describe('when given all valid props', () => {
     const props = {
       ...minimalProps,
       backHref: '/back',
-      backText: 'Back to task list',
+      backText: 'Reverse',
       breadcrumbs: [
         {
           href: '#1',
@@ -139,6 +132,7 @@ describe('Page', () => {
     it('is NOT GOV.UK branded', async () => expect(screen.queryByText('GOV.UK')).toBeNull());
     it('does NOT contain a logo', async () => expect(screen.queryByRole('img')).not.toBeInTheDocument());
     it('contains the breadcrumbs', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Breadcrumb 2'));
+    it('does NOT contain a back link', async () => expect(screen.queryByRole('link', { name: 'Reverse' })).not.toBeInTheDocument());
     it('contains the footer content', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Footer content'));
     it('contains the footer navigation', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Footer navigation'));
     it('contains the meta navigation', async () => expect(screen.getByRole('contentinfo')).toHaveTextContent('Meta item 2'));

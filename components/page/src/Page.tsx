@@ -142,7 +142,7 @@ export const Page: FC<PageProps> = ({
             ? (
               <Breadcrumbs id="breadcrumbs" items={breadcrumbs} />
             )
-            : ( !backHref ? null : (
+            : ( !(backHref || backText) ? null : (
               <BackLink id="back-link" href={backHref} text={backText} />
             ) )
           }
