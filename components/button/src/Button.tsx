@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonHTMLAttributes, ComponentProps, FC, Fragment, MouseEvent, MouseEventHandler, ReactNode, createElement as h, useRef } from 'react';
+import { ButtonHTMLAttributes, ComponentProps, FC, Fragment, MouseEventHandler, ReactNode, createElement as h, useRef } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { A } from '@not-govuk/link';
 
@@ -8,12 +8,13 @@ import '../assets/Button.scss';
 
 type CommonButtonProps = StandardProps & {
   children?: ReactNode
-  /** Prevent accidental double clicks on submit buttons from submitting forms multiple times. A click within one second of the last accepted click is ignored. */
-  preventDoubleClick?: boolean
   start?: boolean
 };
 type AnchorButtonProps = CommonButtonProps & ComponentProps<typeof A>;
-type ButtonButtonProps = CommonButtonProps & ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonButtonProps = CommonButtonProps & ButtonHTMLAttributes<HTMLButtonElement> & {
+  /** Prevent double clicks on buttons from submitting forms multiple times; a click within one second of the last accepted click is ignored. */
+  preventDoubleClick?: boolean
+};
 export type ButtonProps = AnchorButtonProps | ButtonButtonProps;
 
 const isAnchorProps = (v: ButtonProps): v is AnchorButtonProps => (
@@ -26,33 +27,11 @@ const isButtonProps = (v: ButtonProps): v is ButtonButtonProps => (
 const defaultClassBlock = 'govuk-button';
 const debounceTimeout = 1000;
 
-// Mirrors the debounce in govuk-frontend's Button JavaScript
-// See: https://github.com/alphagov/govuk-frontend/blob/v6.5.1/packages/govuk-frontend/src/govuk/components/button/button.mjs
-const useDebouncedClick = <T extends Element>(
-  preventDoubleClick: boolean,
-  onClick?: MouseEventHandler<T>
-): MouseEventHandler<T> | undefined => {
-  const lastClick = useRef<number | undefined>(undefined);
-
-  return !preventDoubleClick ? onClick : (e: MouseEvent<T>) => {
-    const now = Date.now();
-
-    if (lastClick.current !== undefined && now - lastClick.current < debounceTimeout) {
-      e.preventDefault();
-    } else {
-      lastClick.current = now;
-      onClick && onClick(e);
-    }
-  };
-};
-
 export const AnchorButton: FC<AnchorButtonProps> = ({
   children,
   classBlock,
   classModifiers: _classModifiers = [],
   draggable = 'false',
-  onClick: _onClick,
-  preventDoubleClick = false,
   role = 'button',
   start = false,
   ...attrs
@@ -61,17 +40,14 @@ export const AnchorButton: FC<AnchorButtonProps> = ({
     start ? 'start' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
-  const onClick = useDebouncedClick(preventDoubleClick, _onClick);
 
   return (
     <A
       data-module={defaultClassBlock}
-      data-prevent-double-click={preventDoubleClick ? 'true' : undefined}
       {...attrs}
       classBlock={classBlock || defaultClassBlock}
       classModifiers={classModifiers}
       draggable={draggable}
-      onClick={onClick}
       role={role}
     >
       {children}
@@ -96,7 +72,18 @@ export const ButtonButton: FC<ButtonButtonProps> = ({
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder(defaultClassBlock, classBlock, classModifiers, className);
-  const onClick = useDebouncedClick(preventDoubleClick, _onClick);
+  const lastClick = useRef<number | undefined>(undefined);
+  // Mirrors the debounce in govuk-frontend's Button JavaScript
+  const onClick: MouseEventHandler<HTMLButtonElement> | undefined = !preventDoubleClick ? _onClick : e => {
+    const now = Date.now();
+
+    if (lastClick.current !== undefined && now - lastClick.current < debounceTimeout) {
+      e.preventDefault();
+    } else {
+      lastClick.current = now;
+      _onClick && _onClick(e);
+    }
+  };
 
   return (
     <button
