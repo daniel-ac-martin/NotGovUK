@@ -18,7 +18,6 @@ describe('Button', () => {
   describe('when given all valid props (inc. href)', () => {
     const props = {
       ...minimalProps,
-      disabled: true,
       href: '/foo/bar',
       id: 'my-button',
       start: true
