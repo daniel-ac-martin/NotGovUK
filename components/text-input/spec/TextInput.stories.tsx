@@ -34,9 +34,9 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">What is the name of the event?</h1>
-      }
+      isPageHeading
+      label="What is the name of the event?"
+      labelSize="l"
     />
   )
 };

@@ -9,7 +9,8 @@
       margin: 0;
     }
 
-    h1, .govuk-heading-xl {
+    // Leave headings from `isPageHeading` to the legend's size modifier
+    h1:where(:not(.govuk-fieldset__heading)), .govuk-heading-xl {
       @extend .govuk-fieldset__legend--xl;
       margin-bottom: govuk-spacing(1);
     }
@@ -28,6 +29,11 @@
       @extend .govuk-fieldset__legend--s;
       margin-bottom: 0;
     }
+  }
+
+  // Take the line height from the legend, not from page-level heading styles
+  &__heading {
+    line-height: inherit;
   }
 }
 

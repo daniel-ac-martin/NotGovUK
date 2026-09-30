@@ -6,6 +6,8 @@ import '../assets/Label.scss';
 export type LabelProps = StandardProps & LabelHTMLAttributes<HTMLLabelElement> & {
   children?: ReactNode
   hidden?: boolean
+  /** Whether the label is the page heading (wraps it in an h1) */
+  isPageHeading?: boolean
 };
 
 export const Label: FC<LabelProps> = ({
@@ -14,6 +16,7 @@ export const Label: FC<LabelProps> = ({
   classModifiers: _classModifiers = [],
   className,
   hidden = false,
+  isPageHeading = false,
   ...attrs
 }) => {
   const classModifiers = [
@@ -21,9 +24,14 @@ export const Label: FC<LabelProps> = ({
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   const classes = classBuilder('govuk-label', classBlock, classModifiers, className);
+  const label = (
+    <label {...attrs} className={classes()} aria-hidden={hidden}>{children}</label>
+  );
 
   return (
-    <label {...attrs} className={classes()} aria-hidden={hidden}>{children}</label>
+    isPageHeading
+    ? <h1 className="govuk-label-wrapper">{label}</h1>
+    : label
   );
 };
 

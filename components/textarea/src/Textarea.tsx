@@ -1,6 +1,6 @@
 import { FC, TextareaHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
-import { FormGroup } from '@not-govuk/form-group';
+import { FormGroup, LabelSize } from '@not-govuk/form-group';
 
 import '../assets/Textarea.scss';
 
@@ -9,8 +9,12 @@ export type TextareaProps = StandardProps & TextareaHTMLAttributes<HTMLTextAreaE
   error?: ReactNode
   /** Hint */
   hint?: ReactNode
+  /** Whether the label is the page heading */
+  isPageHeading?: boolean
   /** Label */
   label: ReactNode
+  /** Size of the label text */
+  labelSize?: LabelSize
   /** HTML name */
   name: string
   /** Width of the field in characters (approximate) */
@@ -24,7 +28,9 @@ export const Textarea: FC<TextareaProps> = ({
   error,
   hint,
   id: _id,
+  isPageHeading,
   label,
+  labelSize,
   rows = 5,
   width,
   ...attrs
@@ -59,7 +65,9 @@ export const Textarea: FC<TextareaProps> = ({
     <FormGroup
       id={id}
       fieldId={fieldId}
+      isPageHeading={isPageHeading}
       label={label}
+      labelSize={labelSize}
       hint={hint}
       hintId={hintId}
       error={error}

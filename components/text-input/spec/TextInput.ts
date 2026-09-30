@@ -31,4 +31,14 @@ describe('TextInput', () => {
     it('renders the label', async () => expect(screen.getByLabelText('Name')).toBeInTheDocument());
     it('is described by the error and the hint', async () => expect(screen.getByLabelText('Name')).toHaveAccessibleDescription('Your full name Error: Enter your full name'));
   });
+
+  describe('when the label is the page heading', () => {
+    beforeEach(async () => {
+      render(h(TextInput, { ...minimalProps, isPageHeading: true, labelSize: 'l' }));
+    });
+
+    it('renders the label inside a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toContainElement(screen.getByText('Name')));
+    it('sizes the label', async () => expect(screen.getByText('Name')).toHaveClass('govuk-label', 'govuk-label--l'));
+    it('still labels the field', async () => expect(screen.getByLabelText('Name')).toBeInTheDocument());
+  });
 });

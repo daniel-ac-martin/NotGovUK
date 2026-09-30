@@ -1,5 +1,5 @@
 import { FC, ReactNode, createElement as h } from 'react';
-import { FormGroup } from '@not-govuk/form-group';
+import { FormGroup, LabelSize } from '@not-govuk/form-group';
 import { Input, InputProps } from '@not-govuk/input';
 
 import '../assets/TextInput.scss';
@@ -9,8 +9,12 @@ export type TextInputProps = InputProps & {
   error?: ReactNode
   /** Hint */
   hint?: ReactNode
+  /** Whether the label is the page heading */
+  isPageHeading?: boolean
   /** Label */
   label: ReactNode
+  /** Size of the label text */
+  labelSize?: LabelSize
   /** HTML name */
   name: string
 };
@@ -22,7 +26,9 @@ export const TextInput: FC<TextInputProps> = ({
   error,
   hint,
   id: _id,
+  isPageHeading,
   label,
+  labelSize,
   ...attrs
 }) => {
   const classModifiers = [
@@ -45,7 +51,9 @@ export const TextInput: FC<TextInputProps> = ({
     <FormGroup
       id={id}
       fieldId={fieldId}
+      isPageHeading={isPageHeading}
       label={label}
+      labelSize={labelSize}
       hint={hint}
       hintId={hintId}
       error={error}

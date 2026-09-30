@@ -1,11 +1,13 @@
 import { FC, Fragment, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { ErrorMessage } from '@not-govuk/error-message';
-import { FieldSet } from '@not-govuk/fieldset';
+import { FieldSet, LegendSize } from '@not-govuk/fieldset';
 import { Hint } from '@not-govuk/hint';
 import { Label } from '@not-govuk/label';
 
 import '../assets/FormGroup.scss';
+
+export type LabelSize = LegendSize;
 
 export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>, 'id' | 'label'> & {
   children?: ReactNode
@@ -15,7 +17,11 @@ export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>
   hint?: ReactNode
   hintId?: string
   id: string
+  /** Whether the label (or legend) is the page heading */
+  isPageHeading?: boolean
   label: ReactNode
+  /** Size of the label (or legend) text */
+  labelSize?: LabelSize
   standalone?: boolean
 };
 
@@ -30,7 +36,9 @@ export const FormGroup: FC<FormGroupProps> = ({
   hint,
   hintId: _hintId,
   id,
+  isPageHeading = false,
   label,
+  labelSize,
   standalone = false,
   ...attrs
 }) => {
@@ -62,11 +70,23 @@ export const FormGroup: FC<FormGroupProps> = ({
     <div id={id} {...attrs} className={classes()}>
       { fieldId ? (
           <Fragment>
-            <Label htmlFor={fieldId} hidden={standalone}>{label}</Label>
+            <Label
+              classModifiers={labelSize}
+              hidden={standalone}
+              htmlFor={fieldId}
+              isPageHeading={isPageHeading}
+            >
+              {label}
+            </Label>
             {children}
           </Fragment>
         ) : (
-          <FieldSet aria-describedby={describedBy} legend={label}>
+          <FieldSet
+            aria-describedby={describedBy}
+            isPageHeading={isPageHeading}
+            legend={label}
+            legendSize={labelSize}
+          >
             {children}
           </FieldSet>
       ) }

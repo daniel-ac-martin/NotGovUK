@@ -57,3 +57,23 @@ export const Error: Story = {
     </FormGroup>
   )
 };
+
+export const LabelSize: Story = {
+  args: { labelSize: 'm' },
+  render: ({ ...props }) => (
+    <FormGroup {...props}>
+      <p>Content</p>
+    </FormGroup>
+  ),
+  name: 'Label size'
+};
+
+export const PageHeading: Story = {
+  args: { isPageHeading: true, labelSize: 'l' },
+  render: ({ ...props }) => (
+    <FormGroup {...props}>
+      <p>Content</p>
+    </FormGroup>
+  ),
+  name: 'Page heading'
+};

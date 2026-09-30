@@ -67,4 +67,25 @@ describe('Radios', () => {
     it('renders the 4th option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional Four'));
     it.skip('renders the 4th option\'s conditional as invisible', async () => expect(screen.getByText('Conditional Four')).not.toBeVisible());
   });
+
+  describe('when the label is the page heading', () => {
+    const props = {
+      label: 'Where do you live?',
+      name: 'where-do-you-live',
+      options: [
+        { value: 'england', label: 'England' },
+        { value: 'wales', label: 'Wales' }
+      ],
+      isPageHeading: true,
+      labelSize: 'l' as const
+    };
+
+    beforeEach(async () => {
+      render(h(Radios, props));
+    });
+
+    it('renders the legend as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Where do you live?'));
+    it('sizes the legend', async () => expect(screen.getByRole('heading', { level: 1 }).parentElement).toHaveClass('govuk-fieldset__legend', 'govuk-fieldset__legend--l'));
+    it('still names the fieldset', async () => expect(screen.getByRole('group', { name: 'Where do you live?' })).toBeInTheDocument());
+  });
 });

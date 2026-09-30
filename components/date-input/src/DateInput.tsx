@@ -1,6 +1,6 @@
 import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
-import { FormGroup } from '@not-govuk/form-group';
+import { FormGroup, LabelSize } from '@not-govuk/form-group';
 import { Input } from '@not-govuk/input';
 import { Label } from '@not-govuk/label';
 
@@ -37,8 +37,12 @@ export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputE
   hint?: ReactNode
   /** HTML id (If not specified then the name will be used) */
   id?: string
+  /** Whether the label is the page heading */
+  isPageHeading?: boolean
   /** Label */
   label: ReactNode
+  /** Size of the label text */
+  labelSize?: LabelSize
   /** HTML name */
   name: string
   /** Value for controlled fields */
@@ -63,7 +67,9 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
   error: _error,
   hint = 'For example, 12 11 2007',
   id: _id,
+  isPageHeading,
   label,
+  labelSize,
   name,
   value: _value,
   width,
@@ -112,7 +118,9 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
   return (
     <FormGroup
       id={id}
+      isPageHeading={isPageHeading}
       label={label}
+      labelSize={labelSize}
       hint={hint}
       hintId={hintId}
       error={error}

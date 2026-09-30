@@ -61,4 +61,25 @@ describe('Checkboxes', () => {
     it('renders the 3rd option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional Three'));
     it.skip('renders the 3rd option\'s conditional as invisible', async () => expect(screen.getByText('Conditional Three')).not.toBeVisible());
   });
+
+  describe('when the label is the page heading', () => {
+    const props = {
+      label: 'Which types of waste do you transport?',
+      name: 'waste',
+      options: [
+        { value: 'carcasses', label: 'Waste from animal carcasses' },
+        { value: 'mines', label: 'Waste from mines or quarries' }
+      ],
+      isPageHeading: true,
+      labelSize: 'l' as const
+    };
+
+    beforeEach(async () => {
+      render(h(Checkboxes, props));
+    });
+
+    it('renders the legend as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Which types of waste do you transport?'));
+    it('sizes the legend', async () => expect(screen.getByRole('heading', { level: 1 }).parentElement).toHaveClass('govuk-fieldset__legend', 'govuk-fieldset__legend--l'));
+    it('still names the fieldset', async () => expect(screen.getByRole('group', { name: 'Which types of waste do you transport?' })).toBeInTheDocument());
+  });
 });

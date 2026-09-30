@@ -52,7 +52,9 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={<h1 className="govuk-heading-l">Where do you live?</h1>}
+      isPageHeading
+      label="Where do you live?"
+      labelSize="l"
       options={[
         {
           value: 'england',
