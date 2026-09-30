@@ -2,7 +2,7 @@ import type { FormEvent } from 'react';
 
 import { createElement as h } from 'react';
 import { jest } from '@jest/globals';
-import { fireEvent, render, screen } from '@react-foundry/component-test-helpers';
+import { fireEvent, render, screen, userEvent } from '@react-foundry/component-test-helpers';
 import Button from '../src/Button';
 
 describe('Button', () => {
@@ -18,14 +18,20 @@ describe('Button', () => {
   });
 
   describe('when given all valid props (inc. href)', () => {
+    const clickSpy = jest.fn();
+    const keySpy = jest.fn();
     const props = {
       ...minimalProps,
       href: '/foo/bar',
       id: 'my-button',
+      onClick: clickSpy,
+      onKeyDown: keySpy,
       start: true
     };
 
     beforeEach(async () => {
+      clickSpy.mockClear();
+      keySpy.mockClear();
       render(h(Button, props, 'Go'));
     });
 
@@ -33,6 +39,40 @@ describe('Button', () => {
     it('that contains the expected text', async () => expect(screen.getByRole('button')).toHaveTextContent('Go'));
     it('that links to the href', async () => expect(screen.getByRole('button')).toHaveAttribute('href', '/foo/bar'));
     it('that has the supplied id', async () => expect(screen.getByRole('button')).toHaveAttribute('id', 'my-button'));
+
+    describe('when the space bar is pressed', () => {
+      let result: boolean;
+
+      beforeEach(async () => {
+        result = fireEvent.keyDown(screen.getByRole('button'), { key: ' ' });
+      });
+
+      it('prevents the default action, so the page does NOT scroll', async () => expect(result).toBe(false));
+      it('activates the button', async () => expect(clickSpy).toHaveBeenCalledTimes(1));
+      it('still calls the onKeyDown prop', async () => expect(keySpy).toHaveBeenCalledTimes(1));
+    });
+
+    // FIXME: Un-skip when the userEvent import is fixed; fireEvent cannot check that a keyboard user can reach the button at all
+    describe.skip('when tabbed to and the space bar is pressed', () => {
+      beforeEach(async () => {
+        await userEvent.tab();
+        await userEvent.keyboard(' ');
+      });
+
+      it('activates the button', async () => expect(clickSpy).toHaveBeenCalledTimes(1));
+    });
+
+    describe('when any other key is pressed', () => {
+      let result: boolean;
+
+      beforeEach(async () => {
+        result = fireEvent.keyDown(screen.getByRole('button'), { key: 'a' });
+      });
+
+      it('does NOT prevent the default action', async () => expect(result).toBe(true));
+      it('does NOT activate the button', async () => expect(clickSpy).not.toHaveBeenCalled());
+      it('still calls the onKeyDown prop', async () => expect(keySpy).toHaveBeenCalledTimes(1));
+    });
   });
 
   describe('when given all valid props besides a href', () => {
@@ -185,6 +225,32 @@ describe('Button', () => {
 
         it('submits the form once', async () => expect(spy).toHaveBeenCalledTimes(1));
       });
+    });
+  });
+
+  describe('when given a href and a role other than button', () => {
+    const clickSpy = jest.fn();
+    const props = {
+      ...minimalProps,
+      href: '/foo/bar',
+      onClick: clickSpy,
+      role: 'link'
+    };
+
+    beforeEach(async () => {
+      clickSpy.mockClear();
+      render(h(Button, props, 'Go'));
+    });
+
+    describe('when the space bar is pressed', () => {
+      let result: boolean;
+
+      beforeEach(async () => {
+        result = fireEvent.keyDown(screen.getByRole('link'), { key: ' ' });
+      });
+
+      it('does NOT prevent the default action', async () => expect(result).toBe(true));
+      it('does NOT activate the link', async () => expect(clickSpy).not.toHaveBeenCalled());
     });
   });
 });
