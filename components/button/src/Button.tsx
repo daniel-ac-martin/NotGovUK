@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonHTMLAttributes, ComponentProps, FC, Fragment, MouseEventHandler, ReactNode, createElement as h, useRef } from 'react';
+import { ButtonHTMLAttributes, ComponentProps, FC, Fragment, KeyboardEventHandler, MouseEventHandler, ReactNode, createElement as h, useRef } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { A } from '@not-govuk/link';
 
@@ -32,6 +32,7 @@ export const AnchorButton: FC<AnchorButtonProps> = ({
   classBlock,
   classModifiers: _classModifiers = [],
   draggable = 'false',
+  onKeyDown: _onKeyDown,
   role = 'button',
   start = false,
   ...attrs
@@ -40,6 +41,19 @@ export const AnchorButton: FC<AnchorButtonProps> = ({
     start ? 'start' : undefined,
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
+  // Screen readers offer the space bar for role="button", which browsers do not honour on a link
+  const onKeyDown: KeyboardEventHandler<HTMLAnchorElement> | undefined = (
+    role !== 'button'
+    ? _onKeyDown
+    : (e => {
+      _onKeyDown && _onKeyDown(e);
+
+      if (e.key === ' ' && !e.defaultPrevented) {
+        e.preventDefault();
+        e.currentTarget.click();
+      }
+    })
+  );
 
   return (
     <A
@@ -48,6 +62,7 @@ export const AnchorButton: FC<AnchorButtonProps> = ({
       classBlock={classBlock || defaultClassBlock}
       classModifiers={classModifiers}
       draggable={draggable}
+      onKeyDown={onKeyDown}
       role={role}
     >
       {children}
@@ -74,16 +89,20 @@ export const ButtonButton: FC<ButtonButtonProps> = ({
   const classes = classBuilder(defaultClassBlock, classBlock, classModifiers, className);
   const lastClick = useRef<number | undefined>(undefined);
   // Mirrors the debounce in govuk-frontend's Button JavaScript
-  const onClick: MouseEventHandler<HTMLButtonElement> | undefined = !preventDoubleClick ? _onClick : e => {
-    const now = Date.now();
+  const onClick: MouseEventHandler<HTMLButtonElement> | undefined = (
+    !preventDoubleClick
+    ? _onClick
+    : (e => {
+      const now = Date.now();
 
-    if (lastClick.current !== undefined && now - lastClick.current < debounceTimeout) {
-      e.preventDefault();
-    } else {
-      lastClick.current = now;
-      _onClick && _onClick(e);
-    }
-  };
+      if (lastClick.current !== undefined && now - lastClick.current < debounceTimeout) {
+        e.preventDefault();
+      } else {
+        lastClick.current = now;
+        _onClick && _onClick(e);
+      }
+    })
+  );
 
   return (
     <button
