@@ -42,14 +42,18 @@ export const AnchorButton: FC<AnchorButtonProps> = ({
     ...(Array.isArray(_classModifiers) ? _classModifiers : [_classModifiers])
   ];
   // Screen readers offer the space bar for role="button", which browsers do not honour on a link
-  const onKeyDown: KeyboardEventHandler<HTMLAnchorElement> | undefined = role !== 'button' ? _onKeyDown : e => {
-    _onKeyDown && _onKeyDown(e);
+  const onKeyDown: KeyboardEventHandler<HTMLAnchorElement> | undefined = (
+    role !== 'button'
+    ? _onKeyDown
+    : (e => {
+      _onKeyDown && _onKeyDown(e);
 
-    if (e.key === ' ' && !e.defaultPrevented) {
-      e.preventDefault();
-      e.currentTarget.click();
-    }
-  };
+      if (e.key === ' ' && !e.defaultPrevented) {
+        e.preventDefault();
+        e.currentTarget.click();
+      }
+    })
+  );
 
   return (
     <A
@@ -85,16 +89,20 @@ export const ButtonButton: FC<ButtonButtonProps> = ({
   const classes = classBuilder(defaultClassBlock, classBlock, classModifiers, className);
   const lastClick = useRef<number | undefined>(undefined);
   // Mirrors the debounce in govuk-frontend's Button JavaScript
-  const onClick: MouseEventHandler<HTMLButtonElement> | undefined = !preventDoubleClick ? _onClick : e => {
-    const now = Date.now();
+  const onClick: MouseEventHandler<HTMLButtonElement> | undefined = (
+    !preventDoubleClick
+    ? _onClick
+    : (e => {
+      const now = Date.now();
 
-    if (lastClick.current !== undefined && now - lastClick.current < debounceTimeout) {
-      e.preventDefault();
-    } else {
-      lastClick.current = now;
-      _onClick && _onClick(e);
-    }
-  };
+      if (lastClick.current !== undefined && now - lastClick.current < debounceTimeout) {
+        e.preventDefault();
+      } else {
+        lastClick.current = now;
+        _onClick && _onClick(e);
+      }
+    })
+  );
 
   return (
     <button
