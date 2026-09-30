@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
+import { FC, Fragment, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 import { Checkbox } from './Checkbox';
@@ -43,6 +43,8 @@ export type CheckboxesProps = StandardProps & Omit<InputHTMLAttributes<HTMLInput
   name: string
   /** List of options to select from */
   options: OptionOrSeperator[]
+  /** Render content alongside an option without putting it inside the checkbox label */
+  renderOption?: (checkbox: ReactNode, option: Option, index: number) => ReactNode
 };
 
 export const Checkboxes: FC<CheckboxesProps> = ({
@@ -55,6 +57,7 @@ export const Checkboxes: FC<CheckboxesProps> = ({
   id: _id,
   label,
   options,
+  renderOption,
   value,
   ...attrs
 }) => {
@@ -85,15 +88,19 @@ export const Checkboxes: FC<CheckboxesProps> = ({
               )
             );
 
-            return (
+            const checkbox = (
               <Checkbox
                 {...rest}
                 {...attrs}
                 classes={classes}
                 defaultChecked={defaultChecked}
                 id={optionId}
-                key={i}
               />
+            );
+            return (
+              <Fragment key={i}>
+                {renderOption ? renderOption(checkbox, v, i) : checkbox}
+              </Fragment>
             );
           } else {
             return (
