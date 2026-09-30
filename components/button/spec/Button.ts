@@ -1,4 +1,4 @@
-import type { FormEvent } from 'react';
+import type { FormEvent, KeyboardEvent } from 'react';
 
 import { createElement as h } from 'react';
 import { jest } from '@jest/globals';
@@ -225,6 +225,29 @@ describe('Button', () => {
 
         it('submits the form once', async () => expect(spy).toHaveBeenCalledTimes(1));
       });
+    });
+  });
+
+  describe('when given a href and an onKeyDown that prevents the default action', () => {
+    const clickSpy = jest.fn();
+    const props = {
+      ...minimalProps,
+      href: '/foo/bar',
+      onClick: clickSpy,
+      onKeyDown: (e: KeyboardEvent) => e.preventDefault()
+    };
+
+    beforeEach(async () => {
+      clickSpy.mockClear();
+      render(h(Button, props, 'Go'));
+    });
+
+    describe('when the space bar is pressed', () => {
+      beforeEach(async () => {
+        fireEvent.keyDown(screen.getByRole('button'), { key: ' ' });
+      });
+
+      it('does NOT activate the button, as a real button would not', async () => expect(clickSpy).not.toHaveBeenCalled());
     });
   });
 

@@ -45,7 +45,7 @@ export const AnchorButton: FC<AnchorButtonProps> = ({
   const onKeyDown: KeyboardEventHandler<HTMLAnchorElement> | undefined = role !== 'button' ? _onKeyDown : e => {
     _onKeyDown && _onKeyDown(e);
 
-    if (e.key === ' ') {
+    if (e.key === ' ' && !e.defaultPrevented) {
       e.preventDefault();
       e.currentTarget.click();
     }
