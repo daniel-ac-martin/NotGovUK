@@ -96,7 +96,7 @@ describe('Button', () => {
     it('that has the data-prevent-double-click attribute', async () => expect(screen.getByRole('button')).toHaveAttribute('data-prevent-double-click', 'true'));
 
     describe('when clicked', () => {
-      beforeEach(async () => fireEvent.click(screen.getByRole('button'))); // FIXME: Consider switching to userEvent when the import is fixed
+      beforeEach(async () => userEvent.click(screen.getByRole('button')));
 
       it('does NOT call the onClick prop, since it is disabled', async () => expect(spy).not.toHaveBeenCalled());
     });
