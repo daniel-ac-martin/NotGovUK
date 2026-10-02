@@ -52,8 +52,7 @@ describe('Button', () => {
       it('still calls the onKeyDown prop', async () => expect(keySpy).toHaveBeenCalledTimes(1));
     });
 
-    // FIXME: Un-skip when the userEvent import is fixed; fireEvent cannot check that a keyboard user can reach the button at all
-    describe.skip('when tabbed to and the space bar is pressed', () => {
+    describe('when tabbed to and the space bar is pressed', () => {
       beforeEach(async () => {
         await userEvent.tab();
         await userEvent.keyboard(' ');
@@ -97,7 +96,7 @@ describe('Button', () => {
     it('that has the data-prevent-double-click attribute', async () => expect(screen.getByRole('button')).toHaveAttribute('data-prevent-double-click', 'true'));
 
     describe('when clicked', () => {
-      beforeEach(async () => fireEvent.click(screen.getByRole('button'))); // FIXME: Consider switching to userEvent when the import is fixed
+      beforeEach(async () => userEvent.click(screen.getByRole('button')));
 
       it('does NOT call the onClick prop, since it is disabled', async () => expect(spy).not.toHaveBeenCalled());
     });
