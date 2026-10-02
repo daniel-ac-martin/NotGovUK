@@ -52,8 +52,7 @@ describe('Button', () => {
       it('still calls the onKeyDown prop', async () => expect(keySpy).toHaveBeenCalledTimes(1));
     });
 
-    // FIXME: Un-skip when the userEvent import is fixed; fireEvent cannot check that a keyboard user can reach the button at all
-    describe.skip('when tabbed to and the space bar is pressed', () => {
+    describe('when tabbed to and the space bar is pressed', () => {
       beforeEach(async () => {
         await userEvent.tab();
         await userEvent.keyboard(' ');
