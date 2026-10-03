@@ -1,6 +1,11 @@
-import { createElement as h } from 'react';
-import { render, screen } from '@react-foundry/component-test-helpers';
+import type { FC } from 'react';
+
+import { Fragment, createElement as h } from 'react';
+import { fireEvent, render, screen } from '@react-foundry/component-test-helpers';
+import { useLocation } from '@react-foundry/router';
 import BackLink from '../src/BackLink';
+
+const Location: FC<{}> = () => h('data', { 'aria-label': 'location' }, useLocation().pathname);
 
 describe('BackLink', () => {
   describe('when given a href', () => {
@@ -27,14 +32,22 @@ describe('BackLink', () => {
 
   describe('when NOT given a href', () => {
     beforeEach(async () => {
-      render(h(BackLink, { id: 'back' }));
+      render(h(Fragment, {}, h(BackLink, { id: 'back' }), h(Location)));
     });
 
     it('is a link', async () => expect(screen.getByRole('link')).toBeInTheDocument());
     it('is a link with the text \'Back\'', async () => expect(screen.getByRole('link')).toHaveTextContent('Back'));
+    it('starts on the current page', async () => expect(screen.getByLabelText('location')).toHaveTextContent('/current'));
 
-    describe.skip('when clicked', () => {
-      it('takes a step back in the history', async () => expect(false).toEqual(true));
+    describe('when clicked', () => {
+      let result: boolean;
+
+      beforeEach(async () => {
+        result = fireEvent.click(screen.getByRole('link'));
+      });
+
+      it('prevents the default action, so the browser does NOT follow the href', async () => expect(result).toBe(false));
+      it('takes a step back in the history', async () => expect(screen.getByLabelText('location')).toHaveTextContent('/previous'));
     });
   });
 });
