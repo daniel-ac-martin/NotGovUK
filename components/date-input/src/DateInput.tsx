@@ -28,9 +28,23 @@ export const isPreValidateError = (v: DateInputError): v is DateInputPreValidate
   )
 );
 
-export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'label' | 'value' | 'defaultValue'> & {
+// A date always has a month; the day or the year may be dropped, but not both
+export type DateInputParts = {
+  /** Set to false to ask for a month and year, with no day */
+  day?: never
+  /** Set to false to ask for a day and month, with no year */
+  year?: never
+} | {
+  day: false
+  year?: never
+} | {
+  day?: never
+  year: false
+};
+
+export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'label' | 'value' | 'defaultValue'> & DateInputParts & {
   /** Initial value of the field */
-  defaultValue?: DateInputValue,
+  defaultValue?: Partial<DateInputValue>,
   /** Error message */
   error?: DateInputError,
   /** Hint */
@@ -42,7 +56,7 @@ export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputE
   /** HTML name */
   name: string
   /** Value for controlled fields */
-  value?: DateInputValue
+  value?: Partial<DateInputValue>
 };
 
 interface WithFormat<T> {
@@ -54,19 +68,21 @@ interface WithDeformat<T> {
 
 export type RawField<P, V> = FC<P> & WithFormat<V> & WithDeformat<V>
 
-export const DateInput: RawField<DateInputProps, DateInputValue> = ({
+export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
   autoComplete,
   classBlock,
   classModifiers,
   className,
+  day,
   defaultValue,
   error: _error,
-  hint = 'For example, 12 11 2007',
+  hint: _hint,
   id: _id,
   label,
   name,
   value: _value,
   width,
+  year,
   ...attrs
 }) => {
   const classes = classBuilder('govuk-date-input', classBlock, classModifiers, className);
@@ -90,6 +106,16 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
         year: undefined
       }
     }
+  );
+  const example = [
+    day === false ? undefined : '12',
+    '11',
+    year === false ? undefined : '2007'
+  ].filter(Boolean).join(' ');
+  const hint = (
+    _hint === undefined
+    ? `For example, ${example}`
+    : _hint
   );
   const partValue = (v: any) => (
     v == null
@@ -118,21 +144,23 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
       error={error}
     >
       <div className={classes()}>
-        <div className={classes('item')}>
-          <Label htmlFor={`${id}-day`}>Day</Label>
-          <Input
-            {...attrs}
-            id={`${id}-day`}
-            name={`${name}[day]`}
-            type="text"
-            inputMode="numeric"
-            className={classes('input')}
-            classModifiers={['width-2', invalid.day && 'error']}
-            defaultValue={defaultValue && defaultValue.day}
-            autoComplete={autoComplete && `${autoComplete}-day`}
-            value={value.day}
-          />
-        </div>
+        {day === false ? null : (
+          <div className={classes('item')}>
+            <Label htmlFor={`${id}-day`}>Day</Label>
+            <Input
+              {...attrs}
+              id={`${id}-day`}
+              name={`${name}[day]`}
+              type="text"
+              inputMode="numeric"
+              className={classes('input')}
+              classModifiers={['width-2', invalid.day && 'error']}
+              defaultValue={defaultValue && defaultValue.day}
+              autoComplete={autoComplete && `${autoComplete}-day`}
+              value={value.day}
+            />
+          </div>
+        )}
         <div className={classes('item')}>
           <Label htmlFor={`${id}-month`}>Month</Label>
           <Input
@@ -148,53 +176,64 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
             value={value.month}
           />
         </div>
-        <div className={classes('item')}>
-          <Label htmlFor={`${id}-year`}>Year</Label>
-          <Input
-            {...attrs}
-            id={`${id}-year`}
-            name={`${name}[year]`}
-            type="text"
-            inputMode="numeric"
-            className={classes('input')}
-            classModifiers={['width-4', invalid.year && 'error']}
-            defaultValue={defaultValue && defaultValue.year}
-            autoComplete={autoComplete && `${autoComplete}-year`}
-            value={value.year}
-          />
-        </div>
+        {year === false ? null : (
+          <div className={classes('item')}>
+            <Label htmlFor={`${id}-year`}>Year</Label>
+            <Input
+              {...attrs}
+              id={`${id}-year`}
+              name={`${name}[year]`}
+              type="text"
+              inputMode="numeric"
+              className={classes('input')}
+              classModifiers={['width-4', invalid.year && 'error']}
+              defaultValue={defaultValue && defaultValue.year}
+              autoComplete={autoComplete && `${autoComplete}-year`}
+              value={value.year}
+            />
+          </div>
+        )}
       </div>
     </FormGroup>
   );
 };
 
-DateInput.format = (v: DateInputValue): string => {
+DateInput.format = (v: Partial<DateInputValue>): string => {
   const pad = (size: number, v: string): string =>
     String(v).padStart(size, '0');
 
   const isSet = (v: any): boolean =>
     !!(v || v === 0);
 
-  if (isSet(v.day) && isSet(v.month) && isSet(v.year)) {
+  const dd = isSet(v.day) && pad(2, v.day as string);
+  const mm = isSet(v.month) && pad(2, v.month as string);
+  const yyyy = isSet(v.year) && pad(4, v.year as string);
 
-    const dd = pad(2, v.day);
-    const mm = pad(2, v.month);
-    const yyyy = pad(4, v.year);
-
+  if (dd && mm && yyyy) {
     return `${yyyy}-${mm}-${dd}`;
+  } else if (mm && yyyy) {
+    return `${yyyy}-${mm}`;
+  } else if (dd && mm) {
+    return `--${mm}-${dd}`;
   } else {
     return '';
   }
 };
 
-DateInput.deformat = (v: string): DateInputValue => {
+DateInput.deformat = (v: string): Partial<DateInputValue> => {
   const unpad = (v: any): string => Number(v).toString();
 
   const arr = v.split('-');
 
   return (
-    arr.length === 3 ? {
+    v.startsWith('--') ? {
+      day: unpad(arr[3]),
+      month: unpad(arr[2])
+    } : arr.length === 3 ? {
       day: unpad(arr[2]),
+      month: unpad(arr[1]),
+      year: arr[0]
+    } : arr.length === 2 ? {
       month: unpad(arr[1]),
       year: arr[0]
     } : {

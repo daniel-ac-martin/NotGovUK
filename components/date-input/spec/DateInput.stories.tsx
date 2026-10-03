@@ -83,3 +83,29 @@ export const SubErrors: Story = {
     />
   )
 };
+
+export const MonthAndYear: Story = {
+  args: { name: 'moved-in', hint: undefined, day: false },
+  render: ({ ...props }) => (
+    <DateInput
+      {...props}
+      label={
+        <h1 className="govuk-heading-l">When did you move into this property?</h1>
+      }
+    />
+  ),
+  name: 'Month and year'
+};
+
+export const DayAndMonth: Story = {
+  args: { name: 'year-end', hint: undefined, year: false },
+  render: ({ ...props }) => (
+    <DateInput
+      {...props}
+      label={
+        <h1 className="govuk-heading-l">When does your financial year end?</h1>
+      }
+    />
+  ),
+  name: 'Day and month'
+};
