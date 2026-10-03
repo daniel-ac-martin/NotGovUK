@@ -54,7 +54,7 @@ interface WithDeformat<T> {
 
 export type RawField<P, V> = FC<P> & WithFormat<V> & WithDeformat<V>
 
-export const DateInput: RawField<DateInputProps, DateInputValue> = ({
+export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
   autoComplete,
   classBlock,
   classModifiers,
@@ -168,33 +168,42 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
   );
 };
 
-DateInput.format = (v: DateInputValue): string => {
+DateInput.format = (v: Partial<DateInputValue>): string => {
   const pad = (size: number, v: string): string =>
     String(v).padStart(size, '0');
 
   const isSet = (v: any): boolean =>
     !!(v || v === 0);
 
-  if (isSet(v.day) && isSet(v.month) && isSet(v.year)) {
+  const dd = isSet(v.day) && pad(2, v.day as string);
+  const mm = isSet(v.month) && pad(2, v.month as string);
+  const yyyy = isSet(v.year) && pad(4, v.year as string);
 
-    const dd = pad(2, v.day);
-    const mm = pad(2, v.month);
-    const yyyy = pad(4, v.year);
-
+  if (dd && mm && yyyy) {
     return `${yyyy}-${mm}-${dd}`;
+  } else if (mm && yyyy) {
+    return `${yyyy}-${mm}`;
+  } else if (dd && mm) {
+    return `--${mm}-${dd}`;
   } else {
     return '';
   }
 };
 
-DateInput.deformat = (v: string): DateInputValue => {
+DateInput.deformat = (v: string): Partial<DateInputValue> => {
   const unpad = (v: any): string => Number(v).toString();
 
   const arr = v.split('-');
 
   return (
-    arr.length === 3 ? {
+    v.startsWith('--') ? {
+      day: unpad(arr[3]),
+      month: unpad(arr[2])
+    } : arr.length === 3 ? {
       day: unpad(arr[2]),
+      month: unpad(arr[1]),
+      year: arr[0]
+    } : arr.length === 2 ? {
       month: unpad(arr[1]),
       year: arr[0]
     } : {
