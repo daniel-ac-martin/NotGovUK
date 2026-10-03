@@ -28,9 +28,23 @@ export const isPreValidateError = (v: DateInputError): v is DateInputPreValidate
   )
 );
 
-export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'label' | 'value' | 'defaultValue'> & {
+// A date always has a month; the day or the year may be dropped, but not both
+export type DateInputParts = {
+  /** Set to false to ask for a month and year, with no day */
+  day?: never
+  /** Set to false to ask for a day and month, with no year */
+  year?: never
+} | {
+  day: false
+  year?: never
+} | {
+  day?: never
+  year: false
+};
+
+export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'label' | 'value' | 'defaultValue'> & DateInputParts & {
   /** Initial value of the field */
-  defaultValue?: DateInputValue,
+  defaultValue?: Partial<DateInputValue>,
   /** Error message */
   error?: DateInputError,
   /** Hint */
@@ -42,7 +56,7 @@ export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputE
   /** HTML name */
   name: string
   /** Value for controlled fields */
-  value?: DateInputValue
+  value?: Partial<DateInputValue>
 };
 
 interface WithFormat<T> {
@@ -59,14 +73,16 @@ export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
   classBlock,
   classModifiers,
   className,
+  day,
   defaultValue,
   error: _error,
-  hint = 'For example, 12 11 2007',
+  hint: _hint,
   id: _id,
   label,
   name,
   value: _value,
   width,
+  year,
   ...attrs
 }) => {
   const classes = classBuilder('govuk-date-input', classBlock, classModifiers, className);
@@ -90,6 +106,16 @@ export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
         year: undefined
       }
     }
+  );
+  const example = [
+    day === false ? undefined : '12',
+    '11',
+    year === false ? undefined : '2007'
+  ].filter(Boolean).join(' ');
+  const hint = (
+    _hint === undefined
+    ? `For example, ${example}`
+    : _hint
   );
   const partValue = (v: any) => (
     v == null
@@ -118,21 +144,23 @@ export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
       error={error}
     >
       <div className={classes()}>
-        <div className={classes('item')}>
-          <Label htmlFor={`${id}-day`}>Day</Label>
-          <Input
-            {...attrs}
-            id={`${id}-day`}
-            name={`${name}[day]`}
-            type="text"
-            inputMode="numeric"
-            className={classes('input')}
-            classModifiers={['width-2', invalid.day && 'error']}
-            defaultValue={defaultValue && defaultValue.day}
-            autoComplete={autoComplete && `${autoComplete}-day`}
-            value={value.day}
-          />
-        </div>
+        {day === false ? null : (
+          <div className={classes('item')}>
+            <Label htmlFor={`${id}-day`}>Day</Label>
+            <Input
+              {...attrs}
+              id={`${id}-day`}
+              name={`${name}[day]`}
+              type="text"
+              inputMode="numeric"
+              className={classes('input')}
+              classModifiers={['width-2', invalid.day && 'error']}
+              defaultValue={defaultValue && defaultValue.day}
+              autoComplete={autoComplete && `${autoComplete}-day`}
+              value={value.day}
+            />
+          </div>
+        )}
         <div className={classes('item')}>
           <Label htmlFor={`${id}-month`}>Month</Label>
           <Input
@@ -148,21 +176,23 @@ export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
             value={value.month}
           />
         </div>
-        <div className={classes('item')}>
-          <Label htmlFor={`${id}-year`}>Year</Label>
-          <Input
-            {...attrs}
-            id={`${id}-year`}
-            name={`${name}[year]`}
-            type="text"
-            inputMode="numeric"
-            className={classes('input')}
-            classModifiers={['width-4', invalid.year && 'error']}
-            defaultValue={defaultValue && defaultValue.year}
-            autoComplete={autoComplete && `${autoComplete}-year`}
-            value={value.year}
-          />
-        </div>
+        {year === false ? null : (
+          <div className={classes('item')}>
+            <Label htmlFor={`${id}-year`}>Year</Label>
+            <Input
+              {...attrs}
+              id={`${id}-year`}
+              name={`${name}[year]`}
+              type="text"
+              inputMode="numeric"
+              className={classes('input')}
+              classModifiers={['width-4', invalid.year && 'error']}
+              defaultValue={defaultValue && defaultValue.year}
+              autoComplete={autoComplete && `${autoComplete}-year`}
+              value={value.year}
+            />
+          </div>
+        )}
       </div>
     </FormGroup>
   );

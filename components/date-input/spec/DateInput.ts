@@ -18,6 +18,29 @@ describe('DateInput', () => {
 
     it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
     it('contains the label', async () => expect(screen.getByRole('group')).toHaveTextContent('My date'));
+    it('gives an example of all three parts', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('For example, 12 11 2007'));
+  });
+
+  describe('when asked for a month and year', () => {
+    beforeEach(async () => {
+      render(h(DateInput, { ...minimalProps, day: false as const }));
+    });
+
+    it('does NOT ask for a day', async () => expect(screen.queryByLabelText('Day')).not.toBeInTheDocument());
+    it('asks for a month', async () => expect(screen.getByLabelText('Month')).toBeInTheDocument());
+    it('asks for a year', async () => expect(screen.getByLabelText('Year')).toBeInTheDocument());
+    it('gives an example of those parts alone', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('For example, 11 2007'));
+  });
+
+  describe('when asked for a day and month', () => {
+    beforeEach(async () => {
+      render(h(DateInput, { ...minimalProps, year: false as const }));
+    });
+
+    it('asks for a day', async () => expect(screen.getByLabelText('Day')).toBeInTheDocument());
+    it('asks for a month', async () => expect(screen.getByLabelText('Month')).toBeInTheDocument());
+    it('does NOT ask for a year', async () => expect(screen.queryByLabelText('Year')).not.toBeInTheDocument());
+    it('gives an example of those parts alone', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('For example, 12 11'));
   });
 
   describe('when given all valid props', () => {
