@@ -1,5 +1,5 @@
 import { ComponentType } from 'react';
-import { FieldProps, date, integer, minimum, range, withForm } from '@react-foundry/forms';
+import { FieldProps, date, integer, minimum, range, required, withForm } from '@react-foundry/forms';
 import { Checkboxes as _Checkboxes, CheckboxesProps } from '@not-govuk/checkboxes';
 import { DateInput as _DateInput, DateInputProps } from '@not-govuk/date-input';
 import { FormField as _Field, FormFieldProps } from '@not-govuk/form-field';
@@ -12,9 +12,9 @@ import { Textarea as _Textarea, TextareaProps } from '@not-govuk/textarea';
 
 export const Checkboxes: ComponentType<CheckboxesProps & FieldProps> = withForm(_Checkboxes);
 export const DateInput: ComponentType<DateInputProps & FieldProps> = withForm(_DateInput, [date()], {
-  day: [integer(), range(1, 31)('Enter a day between 1 and 31')],
-  month: [integer(), range(1, 12)('Enter a month between 1 and 12')],
-  year: [integer(), minimum(1000)('Enter a 4-digit year')]
+  day: [required(), integer(), range(1, 31)('Enter a day between 1 and 31')],
+  month: [required(), integer(), range(1, 12)('Enter a month between 1 and 12')],
+  year: [required(), integer(), minimum(1000)('Enter a 4-digit year')]
 });
 export const Field: ComponentType<FormFieldProps & FieldProps> = withForm(_Field as any);
 export const Radios: ComponentType<RadiosProps & FieldProps> = withForm(_Radios);
