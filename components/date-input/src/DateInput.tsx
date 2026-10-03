@@ -54,7 +54,7 @@ interface WithDeformat<T> {
 
 export type RawField<P, V> = FC<P> & WithFormat<V> & WithDeformat<V>
 
-export const DateInput: RawField<DateInputProps, DateInputValue> = ({
+export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
   autoComplete,
   classBlock,
   classModifiers,
@@ -168,41 +168,51 @@ export const DateInput: RawField<DateInputProps, DateInputValue> = ({
   );
 };
 
-DateInput.format = (v: DateInputValue): string => {
-  const pad = (size: number, v: string): string =>
-    String(v).padStart(size, '0');
+const isSet = (v: unknown): boolean =>
+  !!(v || v === 0);
 
-  const isSet = (v: any): boolean =>
-    !!(v || v === 0);
+const pad = (size: number, v: unknown): string =>
+  String(v).padStart(size, '0');
 
-  if (isSet(v.day) && isSet(v.month) && isSet(v.year)) {
+const unpad = (v?: string): string | undefined => (
+  !v || isNaN(Number(v))
+  ? undefined
+  : Number(v).toString()
+);
 
-    const dd = pad(2, v.day);
-    const mm = pad(2, v.month);
-    const yyyy = pad(4, v.year);
-
-    return `${yyyy}-${mm}-${dd}`;
-  } else {
+// ISO 8601:2000 omits parts from one end or the other, never from the middle
+DateInput.format = (v: Partial<DateInputValue>): string => {
+  if (isSet(v.day) && !isSet(v.month) && isSet(v.year)) {
     return '';
   }
+
+  // Each part omitted before the one being added is stood in for by a hyphen
+  let result = '';
+
+  if (isSet(v.year)) {
+    result = pad(4, v.year);
+  }
+
+  if (isSet(v.month)) {
+    result = `${result || '-'}-${pad(2, v.month)}`;
+  }
+
+  if (isSet(v.day)) {
+    result = `${result || '--'}-${pad(2, v.day)}`;
+  }
+
+  return result;
 };
 
-DateInput.deformat = (v: string): DateInputValue => {
-  const unpad = (v: any): string => Number(v).toString();
+DateInput.deformat = (v: string): Partial<DateInputValue> => {
+  const arr = v.replace('--', '-').split('-');
+  const year = unpad(arr[0]);
 
-  const arr = v.split('-');
-
-  return (
-    arr.length === 3 ? {
-      day: unpad(arr[2]),
-      month: unpad(arr[1]),
-      year: arr[0]
-    } : {
-      day: '',
-      month: '',
-      year: ''
-    }
-  );
+  return {
+    day: unpad(arr[2]),
+    month: unpad(arr[1]),
+    year: year && pad(4, year)
+  };
 };
 
 DateInput.displayName = 'DateInput';
