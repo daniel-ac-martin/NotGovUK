@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { Fragment, createElement as h } from 'react';
-import { render, screen, userEvent } from '@react-foundry/component-test-helpers';
+import { fireEvent, render, screen } from '@react-foundry/component-test-helpers';
 import { useLocation } from '@react-foundry/router';
 import BackLink from '../src/BackLink';
 
@@ -40,10 +40,13 @@ describe('BackLink', () => {
     it('starts on the current page', async () => expect(screen.getByLabelText('location')).toHaveTextContent('/current'));
 
     describe('when clicked', () => {
+      let result: boolean;
+
       beforeEach(async () => {
-        await userEvent.click(screen.getByRole('link'));
+        result = fireEvent.click(screen.getByRole('link'));
       });
 
+      it('prevents the default action, so the browser does NOT follow the href', async () => expect(result).toBe(false));
       it('takes a step back in the history', async () => expect(screen.getByLabelText('location')).toHaveTextContent('/previous'));
     });
   });

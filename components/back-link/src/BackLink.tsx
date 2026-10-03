@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentProps, FC, ReactNode, createElement as h } from 'react';
+import { ComponentProps, FC, MouseEventHandler, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { A } from '@not-govuk/link';
 import { useNavigate } from '@react-foundry/router';
@@ -30,7 +30,10 @@ export const BackLink: FC<BackLinkProps> = ({
   const classes = classBuilder(defaultClassBlock, classBlock, classModifiers, className);
   const navigate = useNavigate();
   const text = _text || children || 'Back';
-  const goBack = () => navigate && navigate(-1);
+  const goBack: MouseEventHandler<HTMLAnchorElement> = e => {
+    e.preventDefault();
+    navigate && navigate(-1);
+  };
 
   return href ? (
     <A {...attrs}
