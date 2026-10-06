@@ -1,4 +1,5 @@
 import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
 import * as Stories from './DateInput.stories';
 export const meta = Stories.default;
 
@@ -185,6 +186,26 @@ For example, ‘The date of Gordon’s last exam must be the same as or before 3
 Say ‘[whatever it is] must be between [date] and [date and optional description]’.
 
 For example, ‘The date your contract started must be between 1 September 2017 and 30 September 2017 when you were self-employed’.
+
+
+### If you do not need the day
+
+<p><Tag text="Unofficial" /></p>
+
+Set `day` to `false` to ask for a month and year, such as when someone moved
+into a property.
+
+<Canvas of={Stories.MonthAndYear} />
+
+
+### If you do not need the year
+
+<p><Tag text="Unofficial" /></p>
+
+Set `year` to `false` to ask for a day and month, such as the day a financial
+year ends on.
+
+<Canvas of={Stories.DayAndMonth} />
 
 
 [one question per page]: https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page

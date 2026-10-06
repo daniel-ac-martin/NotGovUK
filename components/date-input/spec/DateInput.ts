@@ -8,6 +8,8 @@ describe('DateInput', () => {
     name: 'my-date',
     label: 'My date'
   };
+  const format = DateInput.format!;
+  const deformat = DateInput.deformat!;
 
   describe('when given minimal valid props', () => {
     beforeEach(async () => {
@@ -16,6 +18,51 @@ describe('DateInput', () => {
 
     it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
     it('contains the label', async () => expect(screen.getByRole('group')).toHaveTextContent('My date'));
+    it('gives an example of all three parts', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('For example, 12 11 2007'));
+  });
+
+  describe('when asked for a month and year', () => {
+    beforeEach(async () => {
+      render(h(DateInput, { ...minimalProps, day: false }));
+    });
+
+    it('does NOT ask for a day', async () => expect(screen.queryByLabelText('Day')).not.toBeInTheDocument());
+    it('asks for a month', async () => expect(screen.getByLabelText('Month')).toBeInTheDocument());
+    it('asks for a year', async () => expect(screen.getByLabelText('Year')).toBeInTheDocument());
+    it('gives an example of those parts alone', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('For example, 11 2007'));
+  });
+
+  describe('when asked for a day and month', () => {
+    beforeEach(async () => {
+      render(h(DateInput, { ...minimalProps, year: false }));
+    });
+
+    it('asks for a day', async () => expect(screen.getByLabelText('Day')).toBeInTheDocument());
+    it('asks for a month', async () => expect(screen.getByLabelText('Month')).toBeInTheDocument());
+    it('does NOT ask for a year', async () => expect(screen.queryByLabelText('Year')).not.toBeInTheDocument());
+    it('gives an example of those parts alone', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('For example, 12 11'));
+  });
+
+  describe('when asked for a year alone', () => {
+    beforeEach(async () => {
+      render(h(DateInput, { ...minimalProps, day: false, month: false }));
+    });
+
+    it('does NOT ask for a day', async () => expect(screen.queryByLabelText('Day')).not.toBeInTheDocument());
+    it('does NOT ask for a month', async () => expect(screen.queryByLabelText('Month')).not.toBeInTheDocument());
+    it('asks for a year', async () => expect(screen.getByLabelText('Year')).toBeInTheDocument());
+    it('gives an example of that part alone', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('For example, 2007'));
+  });
+
+  describe('when asked for a month alone', () => {
+    beforeEach(async () => {
+      render(h(DateInput, { ...minimalProps, day: false, year: false }));
+    });
+
+    it('does NOT ask for a day', async () => expect(screen.queryByLabelText('Day')).not.toBeInTheDocument());
+    it('asks for a month', async () => expect(screen.getByLabelText('Month')).toBeInTheDocument());
+    it('does NOT ask for a year', async () => expect(screen.queryByLabelText('Year')).not.toBeInTheDocument());
+    it('gives an example of that part alone', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('For example, 11'));
   });
 
   describe('when given all valid props', () => {
@@ -74,5 +121,42 @@ describe('DateInput', () => {
     it('has a day value', async () => expect(screen.getByLabelText('Day')).toHaveDisplayValue('06'));
     it('has a month value', async () => expect(screen.getByLabelText('Month')).toHaveDisplayValue('12'));
     it('has a year value', async () => expect(screen.getByLabelText('Year')).toHaveDisplayValue('2024'));
+  });
+
+  describe('format', () => {
+    it('writes a day, month and year', async () => expect(format({ day: '12', month: '11', year: '2007' })).toEqual('2007-11-12'));
+    it('pads each part out', async () => expect(format({ day: '1', month: '2', year: '7' })).toEqual('0007-02-01'));
+    it('writes a month and year with no day', async () => expect(format({ month: '11', year: '2007' })).toEqual('2007-11'));
+    it('writes a day and month with no year', async () => expect(format({ day: '12', month: '11' })).toEqual('--11-12'));
+    it('writes a year on its own', async () => expect(format({ year: '2007' })).toEqual('2007'));
+    it('writes a month on its own', async () => expect(format({ month: '11' })).toEqual('--11'));
+    it('writes a day on its own', async () => expect(format({ day: '12' })).toEqual('---12'));
+    it('writes nothing when a part in the middle is missing', async () => expect(format({ day: '12', year: '2007' })).toEqual(''));
+    it('writes nothing when nothing has been entered', async () => expect(format({})).toEqual(''));
+  });
+
+  describe('deformat', () => {
+    it('reads a day, month and year', async () => expect(deformat('2007-11-12')).toEqual({ day: '12', month: '11', year: '2007' }));
+    it('reads a month and year', async () => expect(deformat('2007-11')).toEqual({ month: '11', year: '2007' }));
+    it('reads a day and month', async () => expect(deformat('--11-12')).toEqual({ day: '12', month: '11' }));
+    it('reads a year on its own', async () => expect(deformat('2007')).toEqual({ year: '2007' }));
+    it('reads a day on its own', async () => expect(deformat('---12')).toEqual({ day: '12' }));
+    it('strips the padding from the day and the month', async () => expect(deformat('2007-01-02')).toEqual({ day: '2', month: '1', year: '2007' }));
+  });
+
+  describe('deformat then format', () => {
+    const roundTrip = (v: string) => format(deformat(v));
+
+    it('gives back a day, month and year', async () => expect(roundTrip('2007-11-12')).toEqual('2007-11-12'));
+    it('gives back a month and year', async () => expect(roundTrip('2007-11')).toEqual('2007-11'));
+    it('gives back a day and month', async () => expect(roundTrip('--11-12')).toEqual('--11-12'));
+    it('gives back a year on its own', async () => expect(roundTrip('2007')).toEqual('2007'));
+    it('gives back a day on its own', async () => expect(roundTrip('---12')).toEqual('---12'));
+  });
+
+  describe('format then deformat', () => {
+    it('gives back the parts it was given', async () => expect(deformat(format({ day: '12', month: '11', year: '2007' }))).toEqual({ day: '12', month: '11', year: '2007' }));
+    it('gives back the parts of a partial date', async () => expect(deformat(format({ month: '3', year: '2026' }))).toEqual({ month: '3', year: '2026' }));
+    it('gives back a short year at four digits', async () => expect(deformat(format({ day: '1', month: '2', year: '7' }))).toEqual({ day: '1', month: '2', year: '0007' }));
   });
 });
