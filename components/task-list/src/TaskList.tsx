@@ -1,36 +1,36 @@
-import { FC, HTMLAttributes, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
+import { FC, createElement as h } from 'react';
+import { TaskListContainer, TaskListContainerProps } from './TaskListContainer';
 import { TaskListItem, TaskListItemProps } from './TaskListItem';
 
 import '../assets/TaskList.scss';
 
-export type { TaskListItemProps };
+export type { TaskListContainerProps, TaskListItemProps };
 
-export type TaskListProps = StandardProps & HTMLAttributes<HTMLUListElement> & {
-  /** Prefix for the ids of each task's hint and status */
-  idPrefix?: string
+export type TaskListProps = TaskListContainerProps & {
   /** Tasks to be listed */
   items: TaskListItemProps[]
 };
 
-export const TaskList: FC<TaskListProps> = ({
-  classBlock,
-  classModifiers,
-  className,
-  idPrefix = 'task-list',
+const TaskListComponent: FC<TaskListProps> = ({
+  classBlock = 'govuk-task-list',
   items,
-  ...attrs
+  ...props
 }) => {
-  const classes = classBuilder('govuk-task-list', classBlock, classModifiers, className);
+  const idPrefix = props.id || 'task-list';
 
   return (
-    <ul {...attrs} className={classes()}>
-      {items.map((item, i: number) => (
-        <TaskListItem key={i} {...item} classes={classes} idPrefix={`${idPrefix}-${i + 1}`} />
+    <TaskListContainer {...props} classBlock={classBlock}>
+      {items.map((itemProps, i: number) => (
+        <TaskListItem key={i} classBlock={classBlock} id={`${idPrefix}-${i + 1}`} {...itemProps} />
       ))}
-    </ul>
+    </TaskListContainer>
   );
 };
+
+export const TaskList: FC<TaskListProps> & {
+  Container: FC<TaskListContainerProps>,
+  Item: FC<TaskListItemProps>
+} = Object.assign(TaskListComponent, { Container: TaskListContainer, Item: TaskListItem });
 
 TaskList.displayName = 'TaskList';
 
