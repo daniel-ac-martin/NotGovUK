@@ -1,6 +1,6 @@
 {
   "name": "@not-govuk/task-list",
-  "version": "0.19.1",
+  "version": "0.19.2",
   "description": "A component to show all the tasks a user needs to do, and allow them to easily identify which ones are done and which they still need to do.",
   "type": "module",
   "main": "src/TaskList.tsx",
@@ -42,12 +42,12 @@
   "dependencies": {
     "@not-govuk/link": "workspace:^",
     "@not-govuk/sass-base": "workspace:^",
-    "@react-foundry/component-helpers": "^0.5.4",
+    "@react-foundry/component-helpers": "^0.6.2",
     "govuk-frontend": "^6.5.1"
   },
   "peerDependencies": {
-    "@react-foundry/docs-components": "^0.5.4",
-    "@storybook/addon-docs": "^10.6.0",
+    "@react-foundry/docs-components": "^0.6.2",
+    "@storybook/addon-docs": "^10.6.1",
     "react": "^19.3.0"
   },
   "peerDependenciesMeta": {
@@ -60,11 +60,11 @@
   },
   "devDependencies": {
     "@not-govuk/tag": "workspace:*",
-    "@react-foundry/component-test-helpers": "0.5.4",
+    "@react-foundry/component-test-helpers": "0.6.2",
     "@types/react": "19.3.0",
-    "jest": "30.5.1",
-    "jest-environment-jsdom": "30.5.1",
-    "ts-jest": "29.4.12",
+    "jest": "30.5.2",
+    "jest-environment-jsdom": "30.5.2",
+    "ts-jest": "29.4.14",
     "typescript": "5.9.3"
   }
 }
