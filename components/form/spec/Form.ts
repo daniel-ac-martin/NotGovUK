@@ -76,4 +76,62 @@ describe('Form', () => {
       it('submits the day on its own', async () => expect(screen.getByLabelText('submitted')).toHaveTextContent('dob=---31'));
     });
   });
+
+  describe('when given checkboxes with an exclusive option', () => {
+    const renderForm = () => render(h(Fragment, {},
+      h(Submitted),
+      h(Form, minimalProps,
+        h(Form.Page, {},
+          h(Form.Checkboxes, {
+            name: 'countries',
+            label: 'Which countries will you be travelling to?',
+            options: [
+              { value: 'france', label: 'France' },
+              { value: 'spain', label: 'Spain' },
+              { value: 'none', label: 'None of the above', exclusive: true }
+            ]
+          }),
+          h(Form.Submit, {}, 'Continue')
+        )
+      )
+    ));
+    const submit = () => userEvent.click(screen.getByRole('button'));
+    const check = (name: string) => userEvent.click(screen.getByRole('checkbox', { name }));
+
+    describe('and the exclusive option is checked after the others', () => {
+      beforeEach(async () => {
+        renderForm();
+        await check('France');
+        await check('Spain');
+        await check('None of the above');
+        await submit();
+      });
+
+      it('submits the exclusive option', async () => (
+        expect(screen.getByLabelText('submitted')).toHaveTextContent('none')
+      ));
+      it('does NOT submit the 1st option it cleared', async () => (
+        expect(screen.getByLabelText('submitted')).not.toHaveTextContent('france')
+      ));
+      it('does NOT submit the 2nd option it cleared', async () => (
+        expect(screen.getByLabelText('submitted')).not.toHaveTextContent('spain')
+      ));
+    });
+
+    describe('and another option is checked after the exclusive one', () => {
+      beforeEach(async () => {
+        renderForm();
+        await check('None of the above');
+        await check('Spain');
+        await submit();
+      });
+
+      it('submits the option that was checked', async () => (
+        expect(screen.getByLabelText('submitted')).toHaveTextContent('spain')
+      ));
+      it('does NOT submit the exclusive option it cleared', async () => (
+        expect(screen.getByLabelText('submitted')).not.toHaveTextContent('none')
+      ));
+    });
+  });
 });
