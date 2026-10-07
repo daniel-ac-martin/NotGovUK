@@ -1,4 +1,5 @@
 import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+import { Tag } from '@not-govuk/tag';
 import * as Stories from './Checkboxes.stories';
 export const meta = Stories.default;
 
@@ -204,6 +205,26 @@ Say ‘Select [option label text] or select “[none of the above label text]”
 
 For example, ‘Select countries you will be travelling to, or select “No, I will
 not be travelling to any of these countries”’
+
+
+### Display additional content with an option
+
+<p><Tag text="Unofficial" />{' '}<Tag text="Experimental" /></p>
+
+A label may only hold phrasing content, so an option cannot be labelled with a
+heading, a list, or a link. Where the thing being chosen needs more than a line
+of text beside it, give the option some `content`. It is rendered within the
+option, after the label and any hint, and outside the label itself.
+
+<Canvas of={Stories.OptionContent} />
+
+It is laid out like a hint, on its own line beneath the label. Style
+`govuk-checkboxes__content` yourself if you need it anywhere else.
+
+The content neither names the option nor describes it, so it is not announced
+when the checkbox takes focus. Keep it to things the user can take or leave:
+anything they need in order to answer the question belongs in the label or the
+hint.
 
 
 [one question per page]: https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page
