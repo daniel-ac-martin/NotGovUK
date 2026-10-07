@@ -69,6 +69,7 @@ const mainComponents = [
   'table',
   'tabs',
   'tag',
+  'task-list',
   'text-input',
   'textarea',
   'warning-text'
