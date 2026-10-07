@@ -1,8 +1,10 @@
 import { FC, createElement as h } from 'react';
 import { SummaryListContainer, SummaryListContainerProps } from './SummaryListContainer';
-import { SummaryListItem, SummaryListItemProps } from './SummaryListItem';
+import { Action, SummaryListItem, SummaryListItemProps } from './SummaryListItem';
 
 import '../assets/SummaryList.scss';
+
+export type { Action, SummaryListContainerProps, SummaryListItemProps };
 
 export type SummaryListProps = SummaryListContainerProps & {
   /** Items to be summarised */
