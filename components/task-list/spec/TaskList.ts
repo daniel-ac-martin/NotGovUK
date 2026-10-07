@@ -44,7 +44,7 @@ describe('TaskList', () => {
 
   describe('when given all valid props', () => {
     const props = {
-      idPrefix: 'application',
+      id: 'application',
       items: [
         { title: 'Task A', href: '/a', status: 'Completed' },
         { title: 'Task B', href: '/b', hint: 'Hint B', status: 'Incomplete' },

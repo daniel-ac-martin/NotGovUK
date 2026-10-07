@@ -23,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    idPrefix: 'company-details',
+    id: 'company-details',
     items: [
       {
         title: 'Company Directors',
@@ -100,7 +100,7 @@ export const Grouped: Story = {
     <>
       <h2 className="govuk-heading-m">Check before you start</h2>
       <TaskList
-        idPrefix="before-you-start"
+        id="before-you-start"
         items={[
           {
             title: 'Check eligibility',
@@ -116,7 +116,7 @@ export const Grouped: Story = {
       />
       <h2 className="govuk-heading-m govuk-!-margin-top-5">Prepare application</h2>
       <TaskList
-        idPrefix="prepare-application"
+        id="prepare-application"
         items={[
           {
             title: 'Company information',
