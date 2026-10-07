@@ -1,8 +1,8 @@
 import { FC, HTMLAttributes, ReactNode, createElement as h } from 'react';
-import { ClassBuilder, StandardProps } from '@react-foundry/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { A } from '@not-govuk/link';
 
-export type TaskListItemProps = Omit<StandardProps, 'classBlock' | 'id'> & Omit<HTMLAttributes<HTMLLIElement>, 'id' | 'title'> & {
+export type TaskListItemProps = StandardProps & Omit<HTMLAttributes<HTMLLIElement>, 'title'> & {
   /** Name of the task */
   title: ReactNode
   /** Link to the task (omit if the task cannot be started yet) */
@@ -15,26 +15,21 @@ export type TaskListItemProps = Omit<StandardProps, 'classBlock' | 'id'> & Omit<
   statusClassModifiers?: StandardProps['classModifiers']
 };
 
-type TaskListItemInternalProps = TaskListItemProps & {
-  classes: ClassBuilder
-  /** Prefix for the ids of the hint and status */
-  idPrefix: string
-};
-
-export const TaskListItem: FC<TaskListItemInternalProps> = ({
+export const TaskListItem: FC<TaskListItemProps> = ({
+  classBlock,
   classModifiers: _classModifiers,
   className,
-  classes,
   hint,
   href,
-  idPrefix,
+  id = 'task-list',
   status,
   statusClassModifiers,
   title,
   ...attrs
 }) => {
-  const hintId = `${idPrefix}-hint`;
-  const statusId = `${idPrefix}-status`;
+  const classes = classBuilder('govuk-task-list', classBlock);
+  const hintId = `${id}-hint`;
+  const statusId = `${id}-status`;
   const classModifiers = [
     ...(
       Array.isArray(_classModifiers)
@@ -46,7 +41,7 @@ export const TaskListItem: FC<TaskListItemInternalProps> = ({
   const describedBy = hint ? `${hintId} ${statusId}` : statusId;
 
   return (
-    <li {...attrs} className={classes('item', classModifiers, className)}>
+    <li {...attrs} id={id} className={classes('item', classModifiers, className)}>
       <div className={classes('name-and-hint')}>
         { href ? (
           <A className={classes('link')} href={href} aria-describedby={describedBy}>{title}</A>
