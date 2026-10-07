@@ -178,6 +178,7 @@ describe('Pagination', () => {
   describe('when given full valid props for numbered navigation with generated links', () => {
     const props = {
       ...minimalProps,
+      classBlock: 'my-pager',
       currentPage: 7,
       nextText: 'Forward',
       pageParameter: 'p',
@@ -196,5 +197,12 @@ describe('Pagination', () => {
     it('renders a link to the current page', async () => expect(screen.getAllByRole('link')[3]).toHaveTextContent('7'));
     it('renders a link to the last page', async () => expect(screen.getAllByRole('link')[5]).toHaveTextContent('42'));
     it('renders a \'Next\' link with the provided text', async () => expect(screen.getAllByRole('link')[6]).toHaveTextContent('Forward'));
+    it('applies the class block to the navigation block', async () => expect(screen.getByRole('navigation')).toHaveClass('my-pager'));
+    it('applies the class block to the list', async () => expect(screen.getByRole('list')).toHaveClass('my-pager__list'));
+    it('applies the class block to the items', async () => expect(screen.getAllByRole('listitem')[0]).toHaveClass('my-pager__item'));
+    it('applies the class block to the links', async () => expect(screen.getAllByRole('link')[1]).toHaveClass('my-pager__link'));
+    it('applies the class block to the ellipses', async () => (
+      expect(screen.getAllByRole('listitem').filter(v => v.textContent === '\u22ef')[0]).toHaveClass('my-pager__item--ellipsis')
+    ));
   });
 });

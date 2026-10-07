@@ -165,7 +165,7 @@ export const Pagination: FC<PaginationProps> = ({
 
     return (
       link === undefined ? null : (
-        <PageList.Link key={n} {...attrs} current={currentPage === n}>{n}</PageList.Link>
+        <PageList.Link key={n} classBlock={classBlock} {...attrs} current={currentPage === n}>{n}</PageList.Link>
       )
     );
   };
@@ -186,7 +186,7 @@ export const Pagination: FC<PaginationProps> = ({
       {links === undefined || backAndForth ? undefined : ([
         createLink(1),
         (current - adjacentPages <= 2 ? null : (
-          <PageList.Ellipsis key={2} />
+          <PageList.Ellipsis key={2} classBlock={classBlock} />
         )),
 
         ...(Array.from(Array(2 * adjacentPages + 1), (_v, i) => {
@@ -200,7 +200,7 @@ export const Pagination: FC<PaginationProps> = ({
         })),
 
         (current + adjacentPages >= total - 1 ? null : (
-          <PageList.Ellipsis key={total - 1} />
+          <PageList.Ellipsis key={total - 1} classBlock={classBlock} />
         )),
         createLink(total)
       ])}
