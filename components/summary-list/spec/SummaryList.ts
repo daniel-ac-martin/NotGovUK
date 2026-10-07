@@ -22,11 +22,13 @@ describe('SummaryList', () => {
     it('contains the value of the 1st item', async () => expect(screen.getByText('One')).toBeInTheDocument());
     it('contains the value of the 2nd item', async () => expect(screen.getByText('Two')).toBeInTheDocument());
     it('contains the value of the 3rd item', async () => expect(screen.getByText('Three')).toBeInTheDocument());
+    it('uses the default class block', async () => expect(screen.getByText('Item A').closest('div')).toHaveClass('govuk-summary-list__row'));
   });
 
   describe('when given all valid props', () => {
     const props = {
       ...minimalProps,
+      classBlock: 'my-list',
       items: [
         { name: 'Item A', children: 'One' },
         { name: 'Item B', actions: [ { href: '/b', text: 'Change B' } ], children: 'Two' },
@@ -49,17 +51,21 @@ describe('SummaryList', () => {
     it('contains the text of the 2nd action', async () => expect(screen.getAllByRole('link')[1]).toHaveTextContent('Change C'));
     it('links to the href of the 1st action', async () => expect(screen.getAllByRole('link')[0]).toHaveAttribute('href', '/b'));
     it('links to the href of the 2nd action', async () => expect(screen.getAllByRole('link')[1]).toHaveAttribute('href', '/c'));
+    it('applies the class block to the list', async () => expect(screen.getByText('Item A').closest('dl')).toHaveClass('my-list'));
+    it('applies the class block to the rows', async () => expect(screen.getByText('Item A').closest('div')).toHaveClass('my-list__row'));
+    it('applies the class block to the keys', async () => expect(screen.getByText('Item A')).toHaveClass('my-list__key'));
+    it('applies the class block to the values', async () => expect(screen.getByText('One')).toHaveClass('my-list__value'));
     it('adds the no-actions class to the 1st item', async () => (
       expect(screen.getByText('Item A').closest('div'))
-        .toHaveClass('govuk-summary-list__row--no-actions')
+        .toHaveClass('my-list__row--no-actions')
     ));
     it('does NOT add the no-actions class to the 2nd item', async () => (
       expect(screen.getByText('Item B').closest('div'))
-        .not.toHaveClass('govuk-summary-list__row--no-actions')
+        .not.toHaveClass('my-list__row--no-actions')
     ));
     it('does NOT add the no-actions class to the 3rd item', async () => (
       expect(screen.getByText('Item C').closest('div'))
-        .not.toHaveClass('govuk-summary-list__row--no-actions')
+        .not.toHaveClass('my-list__row--no-actions')
     ));
   });
 });

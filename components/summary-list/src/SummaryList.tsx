@@ -40,7 +40,7 @@ const SummaryListComponent: FC<SummaryListProps> = ({
   return (
     <SummaryListContainer {...props} classBlock={classBlock}>
       {items.map((itemProps, i: number) => (
-        <SummaryListItem key={i}  {...itemProps} />
+        <SummaryListItem key={i} classBlock={classBlock} {...itemProps} />
       ))}
     </SummaryListContainer>
   );
