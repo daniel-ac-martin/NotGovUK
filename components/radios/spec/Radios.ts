@@ -40,6 +40,7 @@ describe('Radios', () => {
         'or',
         { value: 'abroad', label: 'None of the above', hint: 'I am a British citizen living abroad' }
       ],
+      classBlock: 'my-radios',
       error: 'Select an option',
       hint: 'Select one.'
     };
@@ -77,7 +78,44 @@ describe('Radios', () => {
     it('leaves the name of the option to its label', async () => (
       expect(screen.getByRole('radio', { name: 'Wales' })).toHaveAccessibleName('Wales')
     ));
+    it('applies the class block to the inputs', async () => (
+      expect(screen.getByRole('radio', { name: 'None of the above' })).toHaveClass('my-radios__input')
+    ));
+    it('applies the class block to the items', async () => (
+      expect(screen.getByRole('radio', { name: 'None of the above' }).parentElement).toHaveClass('my-radios__item')
+    ));
+    it('applies the class block to the hints', async () => (
+      expect(screen.getByText('I am a British citizen living abroad')).toHaveClass('my-radios__hint')
+    ));
+    it('applies the class block to the dividers', async () => expect(screen.getByText('or')).toHaveClass('my-radios__divider'));
+    it('applies the class block to the content', async () => (
+      expect(screen.getByRole('link', { name: 'Living in Wales' }).parentElement).toHaveClass('my-radios__content')
+    ));
     it('renders the 4th option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional Four'));
     it.skip('renders the 4th option\'s conditional as invisible', async () => expect(screen.getByText('Conditional Four')).not.toBeVisible());
+  });
+
+  describe('when composed from its container and items', () => {
+    beforeEach(async () => {
+      render(
+        h(Radios.Container, { id: 'where', label: 'Where do you live?' }, [
+          h(Radios.Item, { key: 'a', id: 'where-england', name: 'where', value: 'england', label: 'England', hint: 'Including the Isles of Scilly' }),
+          h(Radios.Divider, { key: 'b' }, 'or'),
+          h(Radios.Item, { key: 'c', id: 'where-abroad', name: 'where', value: 'abroad', label: 'None of the above' })
+        ])
+      );
+    });
+
+    it('renders a single fieldset', async () => expect(screen.getAllByRole('group')).toHaveLength(1));
+    it('renders the label', async () => expect(screen.getByRole('group')).toHaveTextContent('Where do you live?'));
+    it('renders a radio for each item', async () => expect(screen.getAllByRole('radio')).toHaveLength(2));
+    it('names each radio by its label', async () => expect(screen.getByRole('radio', { name: 'None of the above' })).toBeInTheDocument());
+    it('takes the hint id from the item id', async () => (
+      expect(screen.getByText('Including the Isles of Scilly')).toHaveAttribute('id', 'where-england-hint')
+    ));
+    it('describes an item by its hint', async () => (
+      expect(screen.getByRole('radio', { name: 'England' })).toHaveAccessibleDescription('Including the Isles of Scilly')
+    ));
+    it('renders the divider', async () => expect(screen.getByText('or')).toHaveClass('govuk-radios__divider'));
   });
 });
