@@ -13,6 +13,7 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'label'>
 };
 
 export const Checkbox: FC<CheckboxProps> = ({
+  'aria-describedby': ariaDescribedBy,
   classes,
   conditional,
   defaultChecked,
@@ -32,6 +33,8 @@ export const Checkbox: FC<CheckboxProps> = ({
   const onChange = withUpdate(_onChange);
   const ref = useRef<HTMLInputElement>(null);
   const conditionalId = `conditional-${id}`;
+  const hintId = `${id}-hint`;
+  const describedBy = [ariaDescribedBy, hint && hintId].filter(e => e).join(' ') || undefined;
 
   const isChecked = () => (
     ref.current === null
@@ -50,11 +53,12 @@ export const Checkbox: FC<CheckboxProps> = ({
           type="checkbox"
           ref={ref}
           onChange={onChange}
+          aria-describedby={describedBy}
           aria-controls={conditional ? conditionalId : undefined}
           aria-expanded={conditional ? !!isChecked() : undefined}
         />
         <Label htmlFor={id} className={classes('label')}>{label}</Label>
-        {hint && <Hint id={`${id}-hint`} className={classes('hint')}>{hint}</Hint>}
+        {hint && <Hint id={hintId} className={classes('hint')}>{hint}</Hint>}
       </div>
       { !conditional ? null : (
           <div

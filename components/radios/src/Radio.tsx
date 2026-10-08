@@ -11,6 +11,7 @@ export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'label'> & 
 };
 
 export const Radio: FC<RadioProps> = ({
+  'aria-describedby': ariaDescribedBy,
   classes,
   conditional,
   defaultChecked,
@@ -21,6 +22,8 @@ export const Radio: FC<RadioProps> = ({
 }) => {
   const ref = useRef<HTMLInputElement>(null);
   const conditionalId = `conditional-${id}`;
+  const hintId = `${id}-hint`;
+  const describedBy = [ariaDescribedBy, hint && hintId].filter(e => e).join(' ') || undefined;
 
   const isChecked = () => (
     ref.current === null
@@ -38,11 +41,12 @@ export const Radio: FC<RadioProps> = ({
           defaultChecked={defaultChecked}
           type="radio"
           ref={ref}
+          aria-describedby={describedBy}
           aria-controls={conditional ? conditionalId : undefined}
           aria-expanded={conditional ? !!isChecked() : undefined}
         />
         <Label htmlFor={id} className={classes('label')}>{label}</Label>
-        {hint && <Hint id={`${id}-hint`} className={classes('hint')}>{hint}</Hint>}
+        {hint && <Hint id={hintId} className={classes('hint')}>{hint}</Hint>}
       </div>
       { !conditional ? null : (
           <div
