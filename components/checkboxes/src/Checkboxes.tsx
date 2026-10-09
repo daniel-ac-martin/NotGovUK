@@ -1,4 +1,6 @@
-import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
+'use client';
+
+import { ChangeEventHandler, FC, InputHTMLAttributes, ReactNode, RefObject, createElement as h, createRef, useRef } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 import { Checkbox } from './Checkbox';
@@ -54,6 +56,7 @@ export const Checkboxes: FC<CheckboxesProps> = ({
   hint,
   id: _id,
   label,
+  onChange: _onChange,
   options,
   value,
   ...attrs
@@ -61,6 +64,37 @@ export const Checkboxes: FC<CheckboxesProps> = ({
   const classes = classBuilder('govuk-checkboxes', classBlock, classModifiers, className);
   const id = _id || attrs.name;
   const hintId = `${id}-hint`;
+  const optionId = (i: number) => `${id}-checkbox-${i}`;
+  const boxes = useRef<RefObject<HTMLInputElement | null>[]>([]);
+  const boxRef = (i: number) => (boxes.current[i] ||= createRef<HTMLInputElement>());
+  const indexesOf = (f: (v: Option) => boolean) => options
+    .map((v, i) => (isOption(v) && f(v) ? i : undefined))
+    .filter(e => e !== undefined);
+  const optionIndexes = indexesOf(() => true);
+  const exclusiveIndexes = indexesOf(v => !!v.exclusive);
+
+  // Cleared with a click, so that each box tells its own handlers that it changed.
+  // FIXME: One to a task is for Formik, which rebuilds an array field from the values it
+  // last rendered, so that changes dispatched together are all computed from the same
+  // stale array and only the last of them survives.
+  const uncheck = (indexes: number[], except: number) => indexes
+    .filter(v => v !== except)
+    .forEach(v => setTimeout(() => {
+      const box = boxes.current[v]?.current;
+
+      if (box?.checked) {
+        box.click();
+      }
+    }, 0));
+
+  // An exclusive option drives the rest of the group, so the group owns the handler.
+  const onChangeFor = (i: number): ChangeEventHandler<HTMLInputElement> => e => {
+    if (e.target.checked) {
+      uncheck(exclusiveIndexes.includes(i) ? optionIndexes : exclusiveIndexes, i);
+    }
+
+    return _onChange && _onChange(e);
+  };
 
   return (
     <FormGroup
@@ -73,7 +107,6 @@ export const Checkboxes: FC<CheckboxesProps> = ({
       <div className={classes()}>
         {options.map((v, i) => {
           if (isOption(v)) {
-            const optionId = `${id}-checkbox-${i}`;
             const { exclusive, selected, ...rest } = v;
             const defaultChecked = (
               defaultValue === undefined
@@ -91,8 +124,10 @@ export const Checkboxes: FC<CheckboxesProps> = ({
                 {...attrs}
                 classes={classes}
                 defaultChecked={defaultChecked}
-                id={optionId}
+                id={optionId(i)}
                 key={i}
+                onChange={exclusiveIndexes.length ? onChangeFor(i) : _onChange}
+                ref={boxRef(i)}
               />
             );
           } else {

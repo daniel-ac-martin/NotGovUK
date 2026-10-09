@@ -152,7 +152,8 @@ export const None: Story = {
         'or',
         {
           value: 'none',
-          label: 'No, I will not be travelling to any of these countries'
+          label: 'No, I will not be travelling to any of these countries',
+          exclusive: true
         }
       ]}
     />
