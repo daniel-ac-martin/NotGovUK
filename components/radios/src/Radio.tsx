@@ -1,19 +1,26 @@
+'use client';
+
 import { FC, Fragment, InputHTMLAttributes, ReactNode, createElement as h, useRef } from 'react';
-import { ClassBuilder } from '@react-foundry/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { Hint } from '@not-govuk/hint';
 import { Label } from '@not-govuk/label';
 
-export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'content' | 'label'> & {
-  classes: ClassBuilder
+export type RadioProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'content' | 'label'> & {
+  /** Content to render only when the option is selected */
   conditional?: ReactNode
+  /** Content for the option, rendered outside of its label */
   content?: ReactNode
+  /** Hint for the option */
   hint?: string
+  /** Label for the option */
   label: ReactNode
 };
 
 export const Radio: FC<RadioProps> = ({
   'aria-describedby': ariaDescribedBy,
-  classes,
+  classBlock,
+  classModifiers,
+  className,
   conditional,
   content,
   defaultChecked,
@@ -22,6 +29,7 @@ export const Radio: FC<RadioProps> = ({
   label,
   ...attrs
 }) => {
+  const classes = classBuilder('govuk-radios', classBlock);
   const ref = useRef<HTMLInputElement>(null);
   const conditionalId = `conditional-${id}`;
   const hintId = `${id}-hint`;
@@ -35,7 +43,7 @@ export const Radio: FC<RadioProps> = ({
 
   return (
     <Fragment>
-      <div className={classes('item')}>
+      <div className={classes('item', classModifiers, className)}>
         <input
           {...attrs}
           id={id}

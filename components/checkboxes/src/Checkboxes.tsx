@@ -1,9 +1,12 @@
 import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
-import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
-import { FormGroup } from '@not-govuk/form-group';
-import { Checkbox } from './Checkbox';
+import { StandardProps } from '@react-foundry/component-helpers';
+import { Checkbox, CheckboxProps } from './Checkbox';
+import { CheckboxesContainer, CheckboxesContainerProps } from './CheckboxesContainer';
+import { CheckboxesDivider, CheckboxesDividerProps } from './CheckboxesDivider';
 
 import '../assets/Checkboxes.scss';
+
+export type { CheckboxProps, CheckboxesContainerProps, CheckboxesDividerProps };
 
 export type Option = {
   /** Content to render only when the option is selected */
@@ -47,7 +50,7 @@ export type CheckboxesProps = StandardProps & Omit<InputHTMLAttributes<HTMLInput
   options: OptionOrSeperator[]
 };
 
-export const Checkboxes: FC<CheckboxesProps> = ({
+const CheckboxesComponent: FC<CheckboxesProps> = ({
   classBlock,
   classModifiers,
   className,
@@ -60,55 +63,63 @@ export const Checkboxes: FC<CheckboxesProps> = ({
   value,
   ...attrs
 }) => {
-  const classes = classBuilder('govuk-checkboxes', classBlock, classModifiers, className);
   const id = _id || attrs.name;
-  const hintId = `${id}-hint`;
 
   return (
-    <FormGroup
+    <CheckboxesContainer
+      classBlock={classBlock}
+      classModifiers={classModifiers}
+      className={className}
+      error={error}
+      hint={hint}
       id={id}
       label={label}
-      hint={hint}
-      hintId={hintId}
-      error={error}
     >
-      <div className={classes()}>
-        {options.map((v, i) => {
-          if (isOption(v)) {
-            const optionId = `${id}-checkbox-${i}`;
-            const { exclusive, selected, ...rest } = v;
-            const defaultChecked = (
-              defaultValue === undefined
-              ? selected
-              : (
-                Array.isArray(defaultValue)
-                  ? defaultValue.includes(v.value)
-                  : defaultValue === v.value
-              )
-            );
+      {options.map((v, i) => {
+        if (isOption(v)) {
+          const optionId = `${id}-checkbox-${i}`;
+          const { exclusive, selected, ...rest } = v;
+          const defaultChecked = (
+            defaultValue === undefined
+            ? selected
+            : (
+              Array.isArray(defaultValue)
+                ? defaultValue.includes(v.value)
+                : defaultValue === v.value
+            )
+          );
 
-            return (
-              <Checkbox
-                {...rest}
-                {...attrs}
-                classes={classes}
-                defaultChecked={defaultChecked}
-                id={optionId}
-                key={i}
-              />
-            );
-          } else {
-            return (
-              <div className={classes('divider')} key={i}>
-                {v}
-              </div>
-            );
-          }
-        } ) }
-      </div>
-    </FormGroup>
+          return (
+            <Checkbox
+              classBlock={classBlock}
+              {...rest}
+              {...attrs}
+              defaultChecked={defaultChecked}
+              id={optionId}
+              key={i}
+            />
+          );
+        } else {
+          return (
+            <CheckboxesDivider classBlock={classBlock} key={i}>
+              {v}
+            </CheckboxesDivider>
+          );
+        }
+      } ) }
+    </CheckboxesContainer>
   );
 };
+
+export const Checkboxes: FC<CheckboxesProps> & {
+  Container: FC<CheckboxesContainerProps>,
+  Divider: FC<CheckboxesDividerProps>,
+  Item: FC<CheckboxProps>
+} = Object.assign(CheckboxesComponent, {
+  Container: CheckboxesContainer,
+  Divider: CheckboxesDivider,
+  Item: Checkbox
+});
 
 Checkboxes.displayName = 'Checkboxes';
 
