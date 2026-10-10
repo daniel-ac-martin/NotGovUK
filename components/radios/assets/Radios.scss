@@ -1,2 +1,7 @@
 @use "@not-govuk/sass-base" as *;
 @use "govuk-frontend/dist/govuk/components/radios";
+
+.govuk-radios__content {
+  @extend .govuk-radios__hint;
+  @include govuk-font($size: 19);
+}

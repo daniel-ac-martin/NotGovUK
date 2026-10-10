@@ -1,2 +1,7 @@
 @use "@not-govuk/sass-base" as *;
 @use "govuk-frontend/dist/govuk/components/checkboxes";
+
+.govuk-checkboxes__content {
+  @extend .govuk-checkboxes__hint;
+  @include govuk-font($size: 19);
+}
