@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+import { Tag } from '@not-govuk/tag';
 import { TextInput } from '@not-govuk/text-input';
 import { Checkboxes } from '../src/Checkboxes';
 
@@ -317,4 +318,31 @@ export const Errors: Story = {
       ]}
     />
   )
+};
+
+export const OptionContent: Story = {
+  args: {
+    label: (
+      <h1 className="govuk-heading-l">
+        Which types of waste do you transport?
+      </h1>
+    ),
+    options: [
+      {
+        value: 'carcasses',
+        label: 'Waste from animal carcasses',
+        content: <Tag classModifiers="red">Hazardous</Tag>
+      },
+      {
+        value: 'mines',
+        label: 'Waste from mines or quarries',
+        content: <Tag classModifiers="grey">Inert</Tag>
+      },
+      {
+        value: 'farm',
+        label: 'Farm or agricultural waste',
+        content: <Tag classModifiers="green">Non-hazardous</Tag>
+      }
+    ]
+  }
 };

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+import { Tag } from '@not-govuk/tag';
 import { TextInput } from '@not-govuk/text-input';
 import { Radios } from '../src/Radios';
 
@@ -358,4 +359,31 @@ export const ContentError: Story = {
       ]}
     />
   )
+};
+
+export const OptionContent: Story = {
+  args: {
+    label: <h1 className="govuk-heading-l">Where do you live?</h1>,
+    options: [
+      {
+        value: 'england',
+        label: 'England'
+      },
+      {
+        value: 'scotland',
+        label: 'Scotland',
+        content: <Tag>Devolved</Tag>
+      },
+      {
+        value: 'wales',
+        label: 'Wales',
+        content: <Tag>Devolved</Tag>
+      },
+      {
+        value: 'northern-ireland',
+        label: 'Northern Ireland',
+        content: <Tag>Devolved</Tag>
+      }
+    ]
+  }
 };

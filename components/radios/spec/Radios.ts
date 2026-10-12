@@ -35,7 +35,7 @@ describe('Radios', () => {
       options: [
         { value: 'england', label: 'England', conditional: 'Conditional One' },
         { value: 'scotland', label: 'Scotland', conditional: 'Conditional Two' },
-        { value: 'wales', label: 'Wales', conditional: 'Conditional Three' },
+        { value: 'wales', label: 'Wales', conditional: 'Conditional Three', content: h('a', { href: '/wales' }, 'Living in Wales') },
         { value: 'northern-ireland', label: 'Northern Ireland', conditional: 'Conditional Four' },
         'or',
         { value: 'abroad', label: 'None of the above', hint: 'I am a British citizen living abroad' }
@@ -70,6 +70,13 @@ describe('Radios', () => {
     it('renders the 2nd option\'s conditional as visible', async () => expect(screen.getByText('Conditional Two')).toBeVisible());
     it('renders the 3rd option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional Three'));
     it.skip('renders the 3rd option\'s conditional as invisible', async () => expect(screen.getByText('Conditional Three')).not.toBeVisible());
+    it('renders the 3rd option\'s content', async () => expect(screen.getByRole('link', { name: 'Living in Wales' })).toBeInTheDocument());
+    it('renders the content outside of the label', async () => (
+      expect(screen.getByRole('link', { name: 'Living in Wales' }).closest('label')).toBeNull()
+    ));
+    it('leaves the name of the option to its label', async () => (
+      expect(screen.getByRole('radio', { name: 'Wales' })).toHaveAccessibleName('Wales')
+    ));
     it('renders the 4th option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional Four'));
     it.skip('renders the 4th option\'s conditional as invisible', async () => expect(screen.getByText('Conditional Four')).not.toBeVisible());
   });

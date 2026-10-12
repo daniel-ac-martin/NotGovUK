@@ -10,6 +10,8 @@ import '../assets/Radios.scss';
 export type Option = {
   /** Content to render only when the option is selected */
   conditional?: ReactNode
+  /** Content for the option, rendered outside of its label */
+  content?: ReactNode
   /** Whether the the option is disabled */
   disabled?: boolean
   /** Hint for the option */

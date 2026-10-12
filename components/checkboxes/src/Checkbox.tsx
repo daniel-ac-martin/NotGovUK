@@ -5,9 +5,10 @@ import { ClassBuilder } from '@react-foundry/component-helpers';
 import { Hint } from '@not-govuk/hint';
 import { Label } from '@not-govuk/label';
 
-export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'label'> & {
+export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'content' | 'label'> & {
   classes: ClassBuilder
   conditional?: ReactNode
+  content?: ReactNode
   hint?: string
   label: ReactNode
 };
@@ -16,6 +17,7 @@ export const Checkbox: FC<CheckboxProps> = ({
   'aria-describedby': ariaDescribedBy,
   classes,
   conditional,
+  content,
   defaultChecked,
   hint,
   id,
@@ -59,6 +61,7 @@ export const Checkbox: FC<CheckboxProps> = ({
         />
         <Label htmlFor={id} className={classes('label')}>{label}</Label>
         {hint && <Hint id={hintId} className={classes('hint')}>{hint}</Hint>}
+        {content && <div className={classes('content')}>{content}</div>}
       </div>
       { !conditional ? null : (
           <div

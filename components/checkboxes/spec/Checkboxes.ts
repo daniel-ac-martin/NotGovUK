@@ -33,7 +33,7 @@ describe('Checkboxes', () => {
       options: [
         { value: 'carcasses', label: 'Waste from animal carcasses', conditional: 'Conditional One' },
         { value: 'mines', label: 'Waste from mines or quarries', conditional: 'Conditional Two', selected: true },
-        { value: 'farm', label: 'Farm or agricultural waste', conditional: 'Conditional Three' },
+        { value: 'farm', label: 'Farm or agricultural waste', conditional: 'Conditional Three', content: h('a', { href: '/guidance' }, 'Waste guidance') },
         'or',
         { value: 'abroad', label: 'None of the above', hint: 'I am NOT a waste carrier', exclusive: true }
       ],
@@ -66,5 +66,12 @@ describe('Checkboxes', () => {
     it('renders the 2nd option\'s conditional as visible', async () => expect(screen.getByText('Conditional Two')).toBeVisible());
     it('renders the 3rd option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional Three'));
     it.skip('renders the 3rd option\'s conditional as invisible', async () => expect(screen.getByText('Conditional Three')).not.toBeVisible());
+    it('renders the 3rd option\'s content', async () => expect(screen.getByRole('link', { name: 'Waste guidance' })).toBeInTheDocument());
+    it('renders the content outside of the label', async () => (
+      expect(screen.getByRole('link', { name: 'Waste guidance' }).closest('label')).toBeNull()
+    ));
+    it('leaves the name of the option to its label', async () => (
+      expect(screen.getByRole('checkbox', { name: 'Farm or agricultural waste' })).toHaveAccessibleName('Farm or agricultural waste')
+    ));
   });
 });
