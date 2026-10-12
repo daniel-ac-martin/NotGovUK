@@ -1,11 +1,14 @@
 'use client';
 
 import { FC, InputHTMLAttributes, ReactNode, createElement as h, useState } from 'react';
-import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
-import { FormGroup } from '@not-govuk/form-group';
-import { Radio } from './Radio';
+import { StandardProps } from '@react-foundry/component-helpers';
+import { Radio, RadioProps } from './Radio';
+import { RadiosContainer, RadiosContainerProps } from './RadiosContainer';
+import { RadiosDivider, RadiosDividerProps } from './RadiosDivider';
 
 import '../assets/Radios.scss';
+
+export type { RadioProps, RadiosContainerProps, RadiosDividerProps };
 
 export type Option = {
   /** Content to render only when the option is selected */
@@ -47,7 +50,7 @@ export type RadiosProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElem
   options: OptionOrSeperator[]
 };
 
-export const Radios: FC<RadiosProps> = ({
+const RadiosComponent: FC<RadiosProps> = ({
   classBlock,
   classModifiers,
   className,
@@ -61,9 +64,7 @@ export const Radios: FC<RadiosProps> = ({
   value,
   ...attrs
 }) => {
-  const classes = classBuilder('govuk-radios', classBlock, classModifiers, className);
   const id = _id || attrs.name;
-  const hintId = `${id}-hint`;
   const setState = useState({})[1];
   const forceUpdate = () => setState({});
   const withUpdate = <A, B>(f?: (a: A) => B) => (e: A): B | undefined => {
@@ -74,51 +75,61 @@ export const Radios: FC<RadiosProps> = ({
   const onChange = withUpdate(_onChange);
 
   return (
-    <FormGroup
+    <RadiosContainer
+      classBlock={classBlock}
+      classModifiers={classModifiers}
+      className={className}
+      error={error}
+      hint={hint}
       id={id}
       label={label}
-      hint={hint}
-      hintId={hintId}
-      error={error}
     >
-      <div className={classes()}>
-        {options.map((v, i) => {
-          if (isOption(v)) {
-            const optionId = `${id}-radio-${i}`;
-            const { selected, ...rest } = v;
-            const defaultChecked = (
-              defaultValue === undefined
-              ? selected
-              : (
-                Array.isArray(defaultValue)
-                  ? defaultValue.includes(v.value)
-                  : defaultValue === v.value
-              )
-            );
+      {options.map((v, i) => {
+        if (isOption(v)) {
+          const optionId = `${id}-radio-${i}`;
+          const { selected, ...rest } = v;
+          const defaultChecked = (
+            defaultValue === undefined
+            ? selected
+            : (
+              Array.isArray(defaultValue)
+                ? defaultValue.includes(v.value)
+                : defaultValue === v.value
+            )
+          );
 
-            return (
-              <Radio
-                {...rest}
-                {...attrs}
-                classes={classes}
-                defaultChecked={defaultChecked}
-                id={optionId}
-                key={i}
-                onChange={onChange}
-              />
-            );
-          } else {
-            return (
-              <div className={classes('divider')} key={i}>
-                {v}
-              </div>
-            );
-          }
-        } ) }
-      </div>
-    </FormGroup>
+          return (
+            <Radio
+              classBlock={classBlock}
+              {...rest}
+              {...attrs}
+              defaultChecked={defaultChecked}
+              id={optionId}
+              key={i}
+              onChange={onChange}
+            />
+          );
+        } else {
+          return (
+            <RadiosDivider classBlock={classBlock} key={i}>
+              {v}
+            </RadiosDivider>
+          );
+        }
+      } ) }
+    </RadiosContainer>
   );
 };
+
+export const Radios: FC<RadiosProps> & {
+  Container: FC<RadiosContainerProps>,
+  Divider: FC<RadiosDividerProps>,
+  Item: FC<RadioProps>
+} = Object.assign(RadiosComponent, {
+  Container: RadiosContainer,
+  Divider: RadiosDivider,
+  Item: Radio
+});
 
 Radios.displayName = 'Radios';
 

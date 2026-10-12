@@ -1,21 +1,26 @@
 'use client';
 
 import { FC, Fragment, InputHTMLAttributes, ReactNode, createElement as h, useRef, useState } from 'react';
-import { ClassBuilder } from '@react-foundry/component-helpers';
+import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { Hint } from '@not-govuk/hint';
 import { Label } from '@not-govuk/label';
 
-export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'content' | 'label'> & {
-  classes: ClassBuilder
+export type CheckboxProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'content' | 'label'> & {
+  /** Content to render only when the option is selected */
   conditional?: ReactNode
+  /** Content for the option, rendered outside of its label */
   content?: ReactNode
+  /** Hint for the option */
   hint?: string
+  /** Label for the option */
   label: ReactNode
 };
 
 export const Checkbox: FC<CheckboxProps> = ({
   'aria-describedby': ariaDescribedBy,
-  classes,
+  classBlock,
+  classModifiers,
+  className,
   conditional,
   content,
   defaultChecked,
@@ -33,6 +38,7 @@ export const Checkbox: FC<CheckboxProps> = ({
   };
 
   const onChange = withUpdate(_onChange);
+  const classes = classBuilder('govuk-checkboxes', classBlock);
   const ref = useRef<HTMLInputElement>(null);
   const conditionalId = `conditional-${id}`;
   const hintId = `${id}-hint`;
@@ -46,7 +52,7 @@ export const Checkbox: FC<CheckboxProps> = ({
 
   return (
     <Fragment>
-      <div className={classes('item')}>
+      <div className={classes('item', classModifiers, className)}>
         <input
           {...attrs}
           id={id}

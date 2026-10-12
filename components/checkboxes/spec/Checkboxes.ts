@@ -37,6 +37,7 @@ describe('Checkboxes', () => {
         'or',
         { value: 'abroad', label: 'None of the above', hint: 'I am NOT a waste carrier', exclusive: true }
       ],
+      classBlock: 'my-checkboxes',
       error: 'Select an option',
       hint: 'Select all that apply.'
     };
@@ -73,5 +74,42 @@ describe('Checkboxes', () => {
     it('leaves the name of the option to its label', async () => (
       expect(screen.getByRole('checkbox', { name: 'Farm or agricultural waste' })).toHaveAccessibleName('Farm or agricultural waste')
     ));
+    it('applies the class block to the inputs', async () => (
+      expect(screen.getByRole('checkbox', { name: 'None of the above' })).toHaveClass('my-checkboxes__input')
+    ));
+    it('applies the class block to the items', async () => (
+      expect(screen.getByRole('checkbox', { name: 'None of the above' }).parentElement).toHaveClass('my-checkboxes__item')
+    ));
+    it('applies the class block to the hints', async () => (
+      expect(screen.getByText('I am NOT a waste carrier')).toHaveClass('my-checkboxes__hint')
+    ));
+    it('applies the class block to the dividers', async () => expect(screen.getByText('or')).toHaveClass('my-checkboxes__divider'));
+    it('applies the class block to the content', async () => (
+      expect(screen.getByRole('link', { name: 'Waste guidance' }).parentElement).toHaveClass('my-checkboxes__content')
+    ));
+  });
+
+  describe('when composed from its container and items', () => {
+    beforeEach(async () => {
+      render(
+        h(Checkboxes.Container, { id: 'waste', label: 'Which types of waste do you transport?' }, [
+          h(Checkboxes.Item, { key: 'a', id: 'waste-mines', name: 'waste', value: 'mines', label: 'Waste from mines or quarries', hint: 'Including spoil' }),
+          h(Checkboxes.Divider, { key: 'b' }, 'or'),
+          h(Checkboxes.Item, { key: 'c', id: 'waste-none', name: 'waste', value: 'none', label: 'None of the above' })
+        ])
+      );
+    });
+
+    it('renders a single fieldset', async () => expect(screen.getAllByRole('group')).toHaveLength(1));
+    it('renders the label', async () => expect(screen.getByRole('group')).toHaveTextContent('Which types of waste do you transport?'));
+    it('renders a checkbox for each item', async () => expect(screen.getAllByRole('checkbox')).toHaveLength(2));
+    it('names each checkbox by its label', async () => (
+      expect(screen.getByRole('checkbox', { name: 'None of the above' })).toBeInTheDocument()
+    ));
+    it('takes the hint id from the item id', async () => expect(screen.getByText('Including spoil')).toHaveAttribute('id', 'waste-mines-hint'));
+    it('describes an item by its hint', async () => (
+      expect(screen.getByRole('checkbox', { name: 'Waste from mines or quarries' })).toHaveAccessibleDescription('Including spoil')
+    ));
+    it('renders the divider', async () => expect(screen.getByText('or')).toHaveClass('govuk-checkboxes__divider'));
   });
 });
