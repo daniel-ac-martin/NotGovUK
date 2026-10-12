@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, Fragment, InputHTMLAttributes, ReactNode, createElement as h, useRef, useState } from 'react';
+import { FC, Fragment, InputHTMLAttributes, ReactNode, RefObject, createElement as h, useRef, useState } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { Hint } from '@not-govuk/hint';
 import { Label } from '@not-govuk/label';
@@ -14,6 +14,7 @@ export type CheckboxProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputEl
   hint?: string
   /** Label for the option */
   label: ReactNode
+  ref?: RefObject<HTMLInputElement | null>
 };
 
 export const Checkbox: FC<CheckboxProps> = ({
@@ -28,6 +29,7 @@ export const Checkbox: FC<CheckboxProps> = ({
   id,
   label,
   onChange: _onChange,
+  ref: _ref,
   ...attrs
 }) => {
   const setState = useState({})[1];
@@ -39,7 +41,8 @@ export const Checkbox: FC<CheckboxProps> = ({
 
   const onChange = withUpdate(_onChange);
   const classes = classBuilder('govuk-checkboxes', classBlock);
-  const ref = useRef<HTMLInputElement>(null);
+  const ownRef = useRef<HTMLInputElement>(null);
+  const ref = _ref || ownRef;
   const conditionalId = `conditional-${id}`;
   const hintId = `${id}-hint`;
   const describedBy = [ariaDescribedBy, hint && hintId].filter(e => e).join(' ') || undefined;
