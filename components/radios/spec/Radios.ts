@@ -58,6 +58,12 @@ describe('Radios', () => {
     it('renders the 4th option', async () => expect(screen.getByRole('group')).toHaveTextContent('Northern Ireland'));
     it('renders the 5th option', async () => expect(screen.getByRole('group')).toHaveTextContent('None of the above'));
     it('renders the 5th option hint', async () => expect(screen.getByRole('group')).toHaveTextContent('I am a British citizen living abroad'));
+    it('describes the hinted option by its hint', async () => (
+      expect(screen.getByRole('radio', { name: 'None of the above' })).toHaveAccessibleDescription('I am a British citizen living abroad')
+    ));
+    it('does NOT describe an option without a hint', async () => (
+      expect(screen.getByRole('radio', { name: 'England' })).toHaveAccessibleDescription('')
+    ));
     it('renders the 1st option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional One'));
     it.skip('renders the 1st option\'s conditional as invisible', async () => expect(screen.getByText('Conditional One')).not.toBeVisible());
     it('renders the 2nd option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional Two'));

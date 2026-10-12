@@ -54,6 +54,12 @@ describe('Checkboxes', () => {
     it('renders the 3rd option', async () => expect(screen.getByRole('group')).toHaveTextContent('Farm or agricultural waste'));
     it('renders the 4th option', async () => expect(screen.getByRole('group')).toHaveTextContent('None of the above'));
     it('renders the 5th option hint', async () => expect(screen.getByRole('group')).toHaveTextContent('I am NOT a waste carrier'));
+    it('describes the hinted option by its hint', async () => (
+      expect(screen.getByRole('checkbox', { name: 'None of the above' })).toHaveAccessibleDescription('I am NOT a waste carrier')
+    ));
+    it('does NOT describe an option without a hint', async () => (
+      expect(screen.getByRole('checkbox', { name: 'Waste from animal carcasses' })).toHaveAccessibleDescription('')
+    ));
     it('renders the 1st option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional One'));
     it.skip('renders the 1st option\'s conditional as invisible', async () => expect(screen.getByText('Conditional One')).not.toBeVisible());
     it('renders the 2nd option\'s conditional', async () => expect(screen.getByRole('group')).toHaveTextContent('Conditional Two'));
