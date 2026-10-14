@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, InputHTMLAttributes, ReactNode, createElement as h, useState } from 'react';
+import { ElementType, FC, InputHTMLAttributes, ReactNode, createElement as h, useState } from 'react';
 import { StandardProps } from '@react-foundry/component-helpers';
 import { Radio, RadioProps } from './Radio';
 import { RadiosContainer, RadiosContainerProps } from './RadiosContainer';
@@ -44,6 +44,10 @@ export type RadiosProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElem
   id?: string
   /** Label */
   label: ReactNode
+  /** BEM style modifiers to apply to the label */
+  labelClassModifiers?: StandardProps['classModifiers']
+  /** Component to wrap the label in, making it a heading */
+  labelHeading?: ElementType
   /** HTML name */
   name: string
   /** List of options to select from */
@@ -59,6 +63,8 @@ const RadiosComponent: FC<RadiosProps> = ({
   hint,
   id: _id,
   label,
+  labelClassModifiers,
+  labelHeading,
   onChange: _onChange,
   options,
   value,
@@ -81,8 +87,10 @@ const RadiosComponent: FC<RadiosProps> = ({
       className={className}
       error={error}
       hint={hint}
+      labelHeading={labelHeading}
       id={id}
       label={label}
+      labelClassModifiers={labelClassModifiers}
     >
       {options.map((v, i) => {
         if (isOption(v)) {

@@ -1,10 +1,10 @@
 import { createElement as h } from 'react';
 import { render, screen } from '@react-foundry/component-test-helpers';
-import Radios from '../src/Radios';
+import Radios, { RadiosProps } from '../src/Radios';
 
 describe('Radios', () => {
   describe('when given minimal valid props', () => {
-    const props = {
+    const props: RadiosProps = {
       label: 'Where do you live?',
       name: 'where-do-you-live',
       options: [
@@ -29,7 +29,7 @@ describe('Radios', () => {
   });
 
   describe('when given all valid props', () => {
-    const props = {
+    const props: RadiosProps = {
       label: 'Where do you live?',
       name: 'where-do-you-live',
       options: [
@@ -42,7 +42,9 @@ describe('Radios', () => {
       ],
       classBlock: 'my-radios',
       error: 'Select an option',
-      hint: 'Select one.'
+      hint: 'Select one.',
+      labelHeading: 'h1',
+      labelClassModifiers: 'm'
     };
 
     beforeEach(async () => {
@@ -51,6 +53,7 @@ describe('Radios', () => {
 
     it('renders a fieldset', async () => expect(screen.getByRole('group')).toBeInTheDocument());
     it('that is described by the error and the hint', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('Select one. Error: Select an option'));
+    it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Where do you live?'));
     it('renders 5 radios', async () => expect(screen.getAllByRole('radio')).toHaveLength(5));
     it('renders the label', async () => expect(screen.getByRole('group')).toHaveTextContent('Where do you live?'));
     it('renders the 1st option', async () => expect(screen.getByRole('group')).toHaveTextContent('England'));

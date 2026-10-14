@@ -1,4 +1,4 @@
-import { FC, TextareaHTMLAttributes, ReactNode, createElement as h } from 'react';
+import { ElementType, FC, TextareaHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 
@@ -11,6 +11,10 @@ export type TextareaProps = StandardProps & TextareaHTMLAttributes<HTMLTextAreaE
   hint?: ReactNode
   /** Label */
   label: ReactNode
+  /** BEM style modifiers to apply to the label */
+  labelClassModifiers?: StandardProps['classModifiers']
+  /** Component to wrap the label in, making it a heading */
+  labelHeading?: ElementType
   /** HTML name */
   name: string
   /** Width of the field in characters (approximate) */
@@ -25,6 +29,8 @@ export const Textarea: FC<TextareaProps> = ({
   hint,
   id: _id,
   label,
+  labelClassModifiers,
+  labelHeading,
   rows = 5,
   width,
   ...attrs
@@ -57,9 +63,11 @@ export const Textarea: FC<TextareaProps> = ({
 
   return (
     <FormGroup
+      labelHeading={labelHeading}
       id={id}
       fieldId={fieldId}
       label={label}
+      labelClassModifiers={labelClassModifiers}
       hint={hint}
       hintId={hintId}
       error={error}

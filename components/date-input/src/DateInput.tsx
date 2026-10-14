@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
+import { ElementType, FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 import { Input } from '@not-govuk/input';
@@ -41,6 +41,10 @@ export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputE
   id?: string
   /** Label */
   label: ReactNode
+  /** BEM style modifiers to apply to the label */
+  labelClassModifiers?: StandardProps['classModifiers']
+  /** Component to wrap the label in, making it a heading */
+  labelHeading?: ElementType
   /** Set to false to remove the month input */
   month?: false
   /** HTML name */
@@ -71,6 +75,8 @@ export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
   hint: _hint,
   id: _id,
   label,
+  labelClassModifiers,
+  labelHeading,
   month,
   name,
   value: _value,
@@ -130,8 +136,10 @@ export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
 
   return (
     <FormGroup
+      labelHeading={labelHeading}
       id={id}
       label={label}
+      labelClassModifiers={labelClassModifiers}
       hint={hint}
       hintId={hintId}
       error={error}

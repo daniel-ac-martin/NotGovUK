@@ -1,10 +1,10 @@
 import { jest } from '@jest/globals';
 import { createElement as h } from 'react';
 import { render, screen } from '@react-foundry/component-test-helpers';
-import DateInput from '../src/DateInput';
+import DateInput, { DateInputProps } from '../src/DateInput';
 
 describe('DateInput', () => {
-  const minimalProps = {
+  const minimalProps: DateInputProps = {
     name: 'my-date',
     label: 'My date'
   };
@@ -66,10 +66,12 @@ describe('DateInput', () => {
   });
 
   describe('when given all valid props', () => {
-    const props = {
+    const props: DateInputProps = {
       ...minimalProps,
       error: 'Date must be in the past',
-      hint: 'The day you were born'
+      hint: 'The day you were born',
+      labelHeading: 'h1',
+      labelClassModifiers: 'm'
     };
     beforeEach(async () => {
       render(h(DateInput, props));
@@ -77,11 +79,12 @@ describe('DateInput', () => {
 
     it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
     it('that is described by the error and the hint', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('The day you were born Error: Date must be in the past'));
+    it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('My date'));
     it('contains the label', async () => expect(screen.getByRole('group')).toHaveTextContent('My date'));
   });
 
   describe('when given a defaultValue prop', () => {
-    const props = {
+    const props: DateInputProps = {
       ...minimalProps,
       hint: 'The day you were born',
       defaultValue: {
@@ -102,7 +105,7 @@ describe('DateInput', () => {
   });
 
   describe('when given a value prop', () => {
-    const props = {
+    const props: DateInputProps = {
       ...minimalProps,
       hint: 'The day you were born',
       value: {
