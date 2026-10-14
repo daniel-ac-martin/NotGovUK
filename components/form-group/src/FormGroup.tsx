@@ -7,6 +7,12 @@ import { Label } from '@not-govuk/label';
 
 import '../assets/FormGroup.scss';
 
+// The size a heading gives the label, as Label and FieldSet size it themselves
+const headingModifiers: Record<string, string> = { h1: 'l', h2: 'm', h3: 's', h4: 's', h5: 's', h6: 's' };
+
+// Caption sizes pair one-to-one with the label's, except that there is no small one
+const captionModifiers: Record<string, string> = { xl: 'xl', l: 'l', m: 'm', s: 'm' };
+
 export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>, 'id' | 'label'> & {
   children?: ReactNode
   error?: ReactNode
@@ -16,6 +22,8 @@ export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>
   hintId?: string
   id: string
   label: ReactNode
+  /** Caption for the section the question belongs to, shown above the label */
+  labelCaption?: ReactNode
   /** BEM style modifiers to apply to the label (or legend) */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label (or legend) in, making it a heading */
@@ -35,6 +43,7 @@ export const FormGroup: FC<FormGroupProps> = ({
   hintId: _hintId,
   id,
   label,
+  labelCaption,
   labelClassModifiers,
   labelHeading,
   standalone = false,
@@ -64,8 +73,15 @@ export const FormGroup: FC<FormGroupProps> = ({
     </Fragment>
   );
 
+  const labelModifier = (
+    (typeof labelClassModifiers === 'string' && labelClassModifiers) ||
+    (typeof labelHeading === 'string' && headingModifiers[labelHeading])
+  );
+  const captionModifier = captionModifiers[labelModifier as string] ?? 'm';
+
   return (
     <div id={id} {...attrs} className={classes()}>
+      { !labelCaption ? null : <span className={`govuk-caption-${captionModifier}`}>{labelCaption}</span> }
       { fieldId ? (
           <Fragment>
             <Label

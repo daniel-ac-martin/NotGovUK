@@ -44,6 +44,7 @@ describe('Radios', () => {
       error: 'Select an option',
       hint: 'Select one.',
       labelHeading: 'h1',
+      labelCaption: 'About you',
       labelClassModifiers: 'm'
     };
 
@@ -54,6 +55,7 @@ describe('Radios', () => {
     it('renders a fieldset', async () => expect(screen.getByRole('group')).toBeInTheDocument());
     it('that is described by the error and the hint', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('Select one. Error: Select an option'));
     it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Where do you live?'));
+    it('renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
     it('renders 5 radios', async () => expect(screen.getAllByRole('radio')).toHaveLength(5));
     it('renders the label', async () => expect(screen.getByRole('group')).toHaveTextContent('Where do you live?'));
     it('renders the 1st option', async () => expect(screen.getByRole('group')).toHaveTextContent('England'));

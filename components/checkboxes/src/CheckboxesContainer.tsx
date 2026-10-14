@@ -13,6 +13,8 @@ export type CheckboxesContainerProps = StandardProps & Omit<HTMLAttributes<HTMLD
   id: string
   /** Label */
   label: ReactNode
+  /** Caption for the section the question belongs to, shown above the label */
+  labelCaption?: ReactNode
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
@@ -28,6 +30,7 @@ export const CheckboxesContainer: FC<CheckboxesContainerProps> = ({
   hint,
   id,
   label,
+  labelCaption,
   labelClassModifiers,
   labelHeading,
   ...attrs
@@ -39,6 +42,7 @@ export const CheckboxesContainer: FC<CheckboxesContainerProps> = ({
       labelHeading={labelHeading}
       id={id}
       label={label}
+      labelCaption={labelCaption}
       labelClassModifiers={labelClassModifiers}
       hint={hint}
       hintId={`${id}-hint`}

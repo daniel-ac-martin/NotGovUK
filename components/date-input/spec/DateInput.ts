@@ -71,6 +71,7 @@ describe('DateInput', () => {
       error: 'Date must be in the past',
       hint: 'The day you were born',
       labelHeading: 'h1',
+      labelCaption: 'About you',
       labelClassModifiers: 'm'
     };
     beforeEach(async () => {
@@ -80,6 +81,7 @@ describe('DateInput', () => {
     it('renders a form-group', async () => expect(screen.getByRole('group')).toBeInTheDocument());
     it('that is described by the error and the hint', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('The day you were born Error: Date must be in the past'));
     it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('My date'));
+    it('renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
     it('contains the label', async () => expect(screen.getByRole('group')).toHaveTextContent('My date'));
   });
 

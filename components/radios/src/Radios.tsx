@@ -44,6 +44,8 @@ export type RadiosProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElem
   id?: string
   /** Label */
   label: ReactNode
+  /** Caption for the section the question belongs to, shown above the label */
+  labelCaption?: ReactNode
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
@@ -63,6 +65,7 @@ const RadiosComponent: FC<RadiosProps> = ({
   hint,
   id: _id,
   label,
+  labelCaption,
   labelClassModifiers,
   labelHeading,
   onChange: _onChange,
@@ -90,6 +93,7 @@ const RadiosComponent: FC<RadiosProps> = ({
       labelHeading={labelHeading}
       id={id}
       label={label}
+      labelCaption={labelCaption}
       labelClassModifiers={labelClassModifiers}
     >
       {options.map((v, i) => {

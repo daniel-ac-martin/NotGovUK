@@ -23,6 +23,7 @@ describe('FileUpload', () => {
       error: 'Upload your document',
       hint: 'Your document',
       labelHeading: 'h1',
+      labelCaption: 'About you',
       labelClassModifiers: 'm'
     };
     beforeEach(async () => {
@@ -33,5 +34,6 @@ describe('FileUpload', () => {
     it('contains the label', async () => expect(screen.getAllByRole('generic')[0]).toHaveTextContent('Document'));
     it('is described by the error and the hint', async () => expect(screen.getByLabelText('Document')).toHaveAccessibleDescription('Your document Error: Upload your document'));
     it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Document'));
+    it('renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
   });
 });

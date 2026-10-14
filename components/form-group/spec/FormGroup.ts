@@ -95,4 +95,51 @@ describe('FormGroup', () => {
       it('names the fieldset', async () => expect(screen.getByRole('group', { name: 'My field' })).toBeInTheDocument());
     });
   });
+
+  describe('when given a caption', () => {
+    describe('including a fieldId', () => {
+      beforeEach(async () => {
+        render(h(FormGroup, { ...minimalProps, fieldId: 'my-field-input', labelCaption: 'About you', labelHeading: 'h1' }, 'Child'));
+      });
+
+      it('renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
+      it('outside the label', async () => expect(screen.getByText('About you').closest('label')).toBeNull());
+      it('sized to match the label', async () => expect(screen.getByText('About you')).toHaveClass('govuk-caption-l'));
+    });
+
+    describe('NOT including a fieldId', () => {
+      beforeEach(async () => {
+        render(h(FormGroup, { ...minimalProps, labelCaption: 'About you', labelHeading: 'h1' }, 'Child'));
+      });
+
+      it('renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
+      it('outside the fieldset', async () => expect(screen.getByText('About you').closest('fieldset')).toBeNull());
+      it('so that it does NOT name the group', async () => expect(screen.getByRole('group')).toHaveAccessibleName('My field'));
+    });
+
+    describe('with a lower level of heading', () => {
+      beforeEach(async () => {
+        render(h(FormGroup, { ...minimalProps, labelCaption: 'About you', labelHeading: 'h2' }, 'Child'));
+      });
+
+      it('sizes the caption to match the label', async () => expect(screen.getByText('About you')).toHaveClass('govuk-caption-m'));
+    });
+
+    describe('but no heading at all', () => {
+      beforeEach(async () => {
+        render(h(FormGroup, { ...minimalProps, labelCaption: 'About you' }, 'Child'));
+      });
+
+      it('still renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
+      it('sized to match the unsized label', async () => expect(screen.getByText('About you')).toHaveClass('govuk-caption-m'));
+    });
+
+    describe('alongside label modifiers', () => {
+      beforeEach(async () => {
+        render(h(FormGroup, { ...minimalProps, labelCaption: 'About you', labelClassModifiers: 'm', labelHeading: 'h1' }, 'Child'));
+      });
+
+      it('sizes the caption to match them', async () => expect(screen.getByText('About you')).toHaveClass('govuk-caption-m'));
+    });
+  });
 });

@@ -30,6 +30,7 @@ describe('Select', () => {
       error: 'Pick at least one',
       hint: 'Pick some',
       labelHeading: 'h1',
+      labelCaption: 'About you',
       labelClassModifiers: 'm',
       multiple: true
     };
@@ -42,5 +43,6 @@ describe('Select', () => {
     it('renders the label', async () => expect(screen.getByLabelText('Sort by')).toBeInTheDocument());
     it('is described by the error and the hint', async () => expect(screen.getByLabelText('Sort by')).toHaveAccessibleDescription('Pick some Error: Pick at least one'));
     it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Sort by'));
+    it('renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
   });
 });

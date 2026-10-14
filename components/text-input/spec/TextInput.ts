@@ -23,6 +23,7 @@ describe('TextInput', () => {
       error: 'Enter your full name',
       hint: 'Your full name',
       labelHeading: 'h1',
+      labelCaption: 'About you',
       labelClassModifiers: 'm'
     };
     beforeEach(async () => {
@@ -33,5 +34,6 @@ describe('TextInput', () => {
     it('renders the label', async () => expect(screen.getByLabelText('Name')).toBeInTheDocument());
     it('is described by the error and the hint', async () => expect(screen.getByLabelText('Name')).toHaveAccessibleDescription('Your full name Error: Enter your full name'));
     it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Name'));
+    it('renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
   });
 });
