@@ -38,10 +38,11 @@ export default function Home() {
         <div className="govuk-grid-column-two-thirds">
           <Form action="/result" method="get">
             <Form.Page>
-              <h1>Welcome to HOF2!</h1>
+              <h1 className="govuk-heading-l">Welcome to HOF2!</h1>
               <Form.TextInput
                 name="name"
-                label={<h2>What is your name?</h2>}
+                label="What is your name?"
+                labelHeading="h2"
                 hint="Write the thing people call you"
                 validators={[
                   required()
@@ -50,7 +51,8 @@ export default function Home() {
               <Form.DateInput
                 name="dob"
                 prettyName="date of birth"
-                label={<h2>What is your date of birth?</h2>}
+                label="What is your date of birth?"
+                labelHeading="h2"
                 validators={[
                   required('Provide your date of birth'),
                   past(),
@@ -59,7 +61,8 @@ export default function Home() {
               />
               <Form.Radios
                 name="sex"
-                label={<h2>Sex?</h2>}
+                label="Sex?"
+                labelHeading="h2"
                 options={[
                   { value: 'male', label: 'Male' },
                   { value: 'female', label: 'Female' },
@@ -75,9 +78,11 @@ export default function Home() {
               if={(v: any) => v.sex === 'female'}
               then={
                 <Form.Page>
+                  <h1 className="govuk-heading-l">Your father's details</h1>
                   <Form.TextInput
                     name="father_name"
-                    label={<h2>What is your father's name?</h2>}
+                    label="What is your father's name?"
+                    labelHeading="h2"
                     hint="Write the thing people call your father"
                     validators={[
                       required()
@@ -85,7 +90,8 @@ export default function Home() {
                   />
                   <Form.DateInput
                     name="father_dob"
-                    label={<h2>What is your father's date of birth?</h2>}
+                    label="What is your father's date of birth?"
+                    labelHeading="h2"
                     validators={[
                       past(),
                       after('1900-01-01')()
@@ -96,9 +102,11 @@ export default function Home() {
               }
               else={
                 <Form.Page>
+                  <h1 className="govuk-heading-l">Your mother's details</h1>
                   <Form.TextInput
                     name="mother_name"
-                    label={<h2>What is your mother's name?</h2>}
+                    label="What is your mother's name?"
+                    labelHeading="h2"
                     hint="Write the thing people call your mother"
                     validators={[
                       required()
@@ -106,7 +114,8 @@ export default function Home() {
                   />
                   <Form.DateInput
                     name="mother_dob"
-                    label={<h2>What is your mother's date of birth?</h2>}
+                    label="What is your mother's date of birth?"
+                    labelHeading="h2"
                     validators={[
                       past(),
                       after('1900-01-01')()
@@ -119,7 +128,8 @@ export default function Home() {
             <Form.Page>
               <Form.Select
                 name="nationality"
-                label={<h1>What is your nationality?</h1>}
+                label="What is your nationality?"
+                labelHeading="h1"
                 options={[
                   { value: '', label: '-' },
                   { value: 'correct', label: 'British' },
@@ -143,7 +153,8 @@ export default function Home() {
             <Form.Page>
               <Form.Checkboxes
                 name="vices"
-                label={<h1>Which vices do you have?</h1>}
+                label="Which vices do you have?"
+                labelHeading="h1"
                 hint="Check all that apply"
                 options={[
                   { value: 'drunk', label: 'Drunk' },
@@ -160,7 +171,8 @@ export default function Home() {
             <Form.Page>
               <Form.Textarea
                 name="bio"
-                label={<h1>Bio</h1>}
+                label="Bio"
+                labelHeading="h1"
                 hint="Write some stuff about yourself"
                 validators={[
                   required('Write something'),
@@ -170,18 +182,18 @@ export default function Home() {
               <Form.Submit>Submit</Form.Submit>
             </Form.Page>
           </Form>
-          <h2>Result</h2>
+          <h2 className="govuk-heading-m">Result</h2>
         </div>
       </div>
       <div className="govuk-grid-row">
         <div className="govuk-grid-column-one-half">
-          <h3>GET</h3>
+          <h3 className="govuk-heading-s">GET</h3>
           <pre>
             {prettyPrint(location.query)}
           </pre>
         </div>
         <div className="govuk-grid-column-one-half">
-          <h3>POST</h3>
+          <h3 className="govuk-heading-s">POST</h3>
           <pre>
             {prettyPrint(location.state)}
           </pre>
