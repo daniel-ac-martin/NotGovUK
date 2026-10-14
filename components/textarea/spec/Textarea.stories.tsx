@@ -21,36 +21,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Textarea
-      {...props}
-      label="Can you provide more detail?"
-      labelHeading="h1"
-    />
-  )
+  args: { label: 'Can you provide more detail?', labelHeading: 'h1' }
 };
 
 export const Standard: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Textarea
-      {...props}
-      label="Can you provide more detail?"
-      labelHeading="h1"
-    />
-  )
+  args: { label: 'Can you provide more detail?', labelHeading: 'h1' }
 };
 
 export const Sized: Story = {
-  args: { rows: '8' },
-  render: ({ ...props }) => (
-    <Textarea
-      {...props}
-      label="Can you provide more detail?"
-      labelHeading="h1"
-    />
-  )
+  args: { rows: '8', label: 'Can you provide more detail?', labelHeading: 'h1' }
 };
 
 export const NoHeading: Story = {
@@ -59,12 +38,5 @@ export const NoHeading: Story = {
 };
 
 export const Errors: Story = {
-  args: { error: 'Enter more detail' },
-  render: ({ ...props }) => (
-    <Textarea
-      {...props}
-      label="Can you provide more detail?"
-      labelHeading="h1"
-    />
-  )
+  args: { error: 'Enter more detail', label: 'Can you provide more detail?', labelHeading: 'h1' }
 };

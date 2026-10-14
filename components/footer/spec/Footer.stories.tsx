@@ -33,86 +33,80 @@ export const GOVUK: Story = {
 };
 
 export const Navigation: Story = {
-  args: { govUK: true },
-  render: ({ ...props }) => (
-    <Footer
-      {...props}
-      navigation={[
-        {
-          title: 'Two column list',
-          width: 'two-thirds',
-          columns: 2,
-          items: [
-            {
-              href: '#1',
-              text: 'Navigation item 1'
-            },
-            {
-              href: '#2',
-              text: 'Navigation item 2'
-            },
-            {
-              href: '#3',
-              text: 'Navigation item 3'
-            },
-            {
-              href: '#4',
-              text: 'Navigation item 4'
-            },
-            {
-              href: '#5',
-              text: 'Navigation item 5'
-            },
-            {
-              href: '#6',
-              text: 'Navigation item 6'
-            }
-          ]
-        },
-        {
-          title: 'Single column list',
-          width: 'one-third',
-          items: [
-            {
-              href: '#1',
-              text: 'Navigation item 1'
-            },
-            {
-              href: '#2',
-              text: 'Navigation item 2'
-            },
-            {
-              href: '#3',
-              text: 'Navigation item 3'
-            }
-          ]
-        }
-      ]}
-    />
-  )
+  args: {
+    govUK: true,
+    navigation: [
+      {
+        title: 'Two column list',
+        width: 'two-thirds',
+        columns: 2,
+        items: [
+          {
+            href: '#1',
+            text: 'Navigation item 1'
+          },
+          {
+            href: '#2',
+            text: 'Navigation item 2'
+          },
+          {
+            href: '#3',
+            text: 'Navigation item 3'
+          },
+          {
+            href: '#4',
+            text: 'Navigation item 4'
+          },
+          {
+            href: '#5',
+            text: 'Navigation item 5'
+          },
+          {
+            href: '#6',
+            text: 'Navigation item 6'
+          }
+        ]
+      },
+      {
+        title: 'Single column list',
+        width: 'one-third',
+        items: [
+          {
+            href: '#1',
+            text: 'Navigation item 1'
+          },
+          {
+            href: '#2',
+            text: 'Navigation item 2'
+          },
+          {
+            href: '#3',
+            text: 'Navigation item 3'
+          }
+        ]
+      }
+    ]
+  }
 };
 
 export const MetaLinks: Story = {
-  args: { govUK: true },
-  render: ({ ...props }) => (
-    <Footer
-      {...props}
-      meta={[
-        {
-          href: '#1',
-          text: 'Item 1'
-        },
-        {
-          href: '#2',
-          text: 'Item 2'
-        },
-        {
-          href: '#3',
-          text: 'Item 3'
-        }
-      ]}
-    />
-  ),
+  args: {
+    govUK: true,
+    meta: [
+      {
+        href: '#1',
+        text: 'Item 1'
+      },
+      {
+        href: '#2',
+        text: 'Item 2'
+      },
+      {
+        href: '#3',
+        text: 'Item 3'
+      }
+    ]
+  },
   name: 'Meta links'
 };
 

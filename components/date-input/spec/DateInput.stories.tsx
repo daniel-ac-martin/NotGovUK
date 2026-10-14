@@ -18,25 +18,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <DateInput
-      {...props}
-      label="When was your passport issued?"
-      labelHeading="h1"
-    />
-  )
+  args: { label: 'When was your passport issued?', labelHeading: 'h1' }
 };
 
 export const Standard: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <DateInput
-      {...props}
-      label="When was your passport issued?"
-      labelHeading="h1"
-    />
-  )
+  args: { label: 'When was your passport issued?', labelHeading: 'h1' }
 };
 
 export const NoHeading: Story = {
@@ -45,62 +31,46 @@ export const NoHeading: Story = {
 };
 
 export const Autocomplete: Story = {
-  args: { name: 'dob', hint: 'For example, 31 3 1980', autoComplete: 'bday' },
-  render: ({ ...props }) => (
-    <DateInput
-      {...props}
-      label="What is your date of birth?"
-      labelHeading="h1"
-    />
-  ),
+  args: {
+    name: 'dob', hint: 'For example, 31 3 1980', autoComplete: 'bday',
+    label: 'What is your date of birth?',
+    labelHeading: 'h1'
+  },
   name: 'Auto-complete'
 };
 
 export const Errors: Story = {
-  args: { error: 'The date your passport was issued must be in the past' },
-  render: ({ ...props }) => (
-    <DateInput
-      {...props}
-      label="When was your passport issued?"
-      labelHeading="h1"
-    />
-  )
+  args: {
+    error: 'The date your passport was issued must be in the past',
+    label: 'When was your passport issued?',
+    labelHeading: 'h1'
+  }
 };
 
 export const SubErrors: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <DateInput
-      {...props}
-      label="When was your passport issued?"
-      labelHeading="h1"
-      error={{
-        year: 'The date your passport was issued must include a year'
-      }}
-    />
-  )
+  args: {
+    label: 'When was your passport issued?',
+    labelHeading: 'h1',
+    error: {
+      year: 'The date your passport was issued must include a year'
+    }
+  }
 };
 
 export const MonthAndYear: Story = {
-  args: { name: 'moved-in', hint: undefined, day: false },
-  render: ({ ...props }) => (
-    <DateInput
-      {...props}
-      label="When did you move into this property?"
-      labelHeading="h1"
-    />
-  ),
+  args: {
+    name: 'moved-in', hint: undefined, day: false,
+    label: 'When did you move into this property?',
+    labelHeading: 'h1'
+  },
   name: 'Month and year'
 };
 
 export const DayAndMonth: Story = {
-  args: { name: 'year-end', hint: undefined, year: false },
-  render: ({ ...props }) => (
-    <DateInput
-      {...props}
-      label="When does your financial year end?"
-      labelHeading="h1"
-    />
-  ),
+  args: {
+    name: 'year-end', hint: undefined, year: false,
+    label: 'When does your financial year end?',
+    labelHeading: 'h1'
+  },
   name: 'Day and month'
 };
