@@ -25,7 +25,8 @@ export const Primary: Story = {
         <Form.TextInput
           name="fullName"
           prettyName="name"
-          label={<h2>What is your name?</h2>}
+          label="What is your name?"
+          labelHeading="h1"
           hint="Write your firstname followed by your surname"
           validators={[required()]}
         />
@@ -34,7 +35,8 @@ export const Primary: Story = {
       <Form.Page>
         <Form.Radios
           name="sex"
-          label={<h2>Sex?</h2>}
+          label="Sex?"
+          labelHeading="h1"
           options={[
             {
               value: 'male',
@@ -60,7 +62,8 @@ export const Primary: Story = {
             <Form.DateInput
               name="dob"
               prettyName="date of birth"
-              label={<h2>What is your date of birth?</h2>}
+              label="What is your date of birth?"
+              labelHeading="h1"
               validators={[
                 required('Provide your date of birth'),
                 past(),
@@ -74,7 +77,8 @@ export const Primary: Story = {
           <Form.Page>
             <Form.Radios
               name="married"
-              label={<h2>Are you married?</h2>}
+              label="Are you married?"
+              labelHeading="h1"
               options={[
                 {
                   value: 'Y',
@@ -99,16 +103,19 @@ export const Standard: Story = {
   args: {},
   render: ({ ...props }) => (
     <Form {...props}>
+      <h1 className="govuk-heading-l">Your details</h1>
       <Form.TextInput
         name="fullName"
         prettyName="name"
-        label={<h2>What is your name?</h2>}
+        label="What is your name?"
+        labelHeading="h2"
         hint="Write your firstname followed by your surname"
         validators={[required()]}
       />
       <Form.Radios
         name="sex"
-        label={<h2>Sex?</h2>}
+        label="Sex?"
+        labelHeading="h2"
         options={[
           {
             value: 'male',
@@ -128,7 +135,8 @@ export const Standard: Story = {
       <Form.DateInput
         name="dob"
         prettyName="date of birth"
-        label={<h2>What is your date of birth?</h2>}
+        label="What is your date of birth?"
+        labelHeading="h2"
         validators={[
           required('Provide your date of birth'),
           past(),
@@ -137,7 +145,8 @@ export const Standard: Story = {
       />
       <Form.Radios
         name="married"
-        label={<h2>Are you married?</h2>}
+        label="Are you married?"
+        labelHeading="h2"
         options={[
           {
             value: 'Y',
@@ -163,7 +172,8 @@ export const Steps: Story = {
         <Form.TextInput
           name="fullName"
           prettyName="name"
-          label={<h2>What is your name?</h2>}
+          label="What is your name?"
+          labelHeading="h1"
           hint="Write your firstname followed by your surname"
           validators={[required()]}
         />
@@ -172,7 +182,8 @@ export const Steps: Story = {
       <Form.Page>
         <Form.Radios
           name="sex"
-          label={<h2>Sex?</h2>}
+          label="Sex?"
+          labelHeading="h1"
           options={[
             {
               value: 'male',
@@ -195,7 +206,8 @@ export const Steps: Story = {
         <Form.DateInput
           name="dob"
           prettyName="date of birth"
-          label={<h2>What is your date of birth?</h2>}
+          label="What is your date of birth?"
+          labelHeading="h1"
           validators={[
             required('Provide your date of birth'),
             past(),
@@ -207,7 +219,8 @@ export const Steps: Story = {
       <Form.Page>
         <Form.Radios
           name="married"
-          label={<h2>Are you married?</h2>}
+          label="Are you married?"
+          labelHeading="h1"
           options={[
             {
               value: 'Y',
@@ -234,7 +247,8 @@ export const Forks: Story = {
         <Form.TextInput
           name="fullName"
           prettyName="name"
-          label={<h2>What is your name?</h2>}
+          label="What is your name?"
+          labelHeading="h1"
           hint="Write your firstname followed by your surname"
           validators={[required()]}
         />
@@ -243,7 +257,8 @@ export const Forks: Story = {
       <Form.Page>
         <Form.Radios
           name="sex"
-          label={<h2>Sex?</h2>}
+          label="Sex?"
+          labelHeading="h1"
           options={[
             {
               value: 'male',
@@ -269,7 +284,8 @@ export const Forks: Story = {
             <Form.DateInput
               name="dob"
               prettyName="date of birth"
-              label={<h2>What is your date of birth?</h2>}
+              label="What is your date of birth?"
+              labelHeading="h1"
               validators={[
                 required('Provide your date of birth'),
                 past(),
@@ -283,7 +299,8 @@ export const Forks: Story = {
           <Form.Page>
             <Form.Radios
               name="married"
-              label={<h2>Are you married?</h2>}
+              label="Are you married?"
+              labelHeading="h1"
               options={[
                 {
                   value: 'Y',

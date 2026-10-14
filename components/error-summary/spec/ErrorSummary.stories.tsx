@@ -100,9 +100,8 @@ export const LinkingToDateInput: Story = {
       />
       <DateInput
         id="passport-issued"
-        label={
-          <h1 className="govuk-heading-l">When was your passport issued?</h1>
-        }
+        label="When was your passport issued?"
+        labelHeading="h1"
         name="passport-issued"
         hint="For example, 12 11 2007"
         error={{
@@ -127,7 +126,8 @@ export const LinkingToCheckboxes: Story = {
         ]}
       />
       <Checkboxes
-        label={<h1 className="govuk-heading-l">What is your nationality?</h1>}
+        label="What is your nationality?"
+        labelHeading="h1"
         name="nationality"
         options={[
           {
@@ -173,11 +173,8 @@ export const WhereToPut: Story = {
           />
           <DateInput
             id="passport-issued"
-            label={
-              <h1 className="govuk-heading-l">
-                When was your passport issued?
-              </h1>
-            }
+            label="When was your passport issued?"
+            labelHeading="h1"
             name="passport-issued"
             hint="For example, 12 11 2007"
             error={{

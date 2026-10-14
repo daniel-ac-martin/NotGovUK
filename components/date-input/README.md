@@ -21,7 +21,8 @@ import DateInput from '@not-govuk/date-input';
 
 export const MyComponent = props => (
   <DateInput
-    label={<h1 className="govuk-heading-l">When was your passport issued?</h1>}
+    label="When was your passport issued?"
+    labelHeading="h1"
     name="passport-issued"
     hint="For example, 12 11 2007"
   />

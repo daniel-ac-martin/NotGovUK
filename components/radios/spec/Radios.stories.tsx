@@ -25,7 +25,8 @@ export const Primary: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={<h1 className="govuk-heading-l">Where do you live?</h1>}
+      label="Where do you live?"
+      labelHeading="h1"
       options={[
         {
           value: 'england',
@@ -53,7 +54,8 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={<h1 className="govuk-heading-l">Where do you live?</h1>}
+      label="Where do you live?"
+      labelHeading="h1"
       options={[
         {
           value: 'england',
@@ -113,7 +115,8 @@ export const Inline: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={<h1 className="govuk-heading-l">Have you changed your name?</h1>}
+      label="Have you changed your name?"
+      labelHeading="h1"
       options={[
         {
           value: 'yes',
@@ -136,7 +139,8 @@ export const Hints: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={<h1 className="govuk-heading-l">How do you want to sign in?</h1>}
+      label="How do you want to sign in?"
+      labelHeading="h1"
       options={[
         {
           value: 'government-gateway',
@@ -158,7 +162,8 @@ export const Divider: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={<h1 className="govuk-heading-l">Where do you live?</h1>}
+      label="Where do you live?"
+      labelHeading="h1"
       options={[
         {
           value: 'england',
@@ -191,11 +196,8 @@ export const Content: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={
-        <h1 className="govuk-heading-l">
-          How would you prefer to be contacted?
-        </h1>
-      }
+      label="How would you prefer to be contacted?"
+      labelHeading="h1"
       options={[
         {
           value: 'email',
@@ -252,7 +254,9 @@ export const Small: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={<h3>Filter</h3>}
+      label="Filter"
+      labelClassModifiers="m"
+      labelHeading="h1"
       options={[
         {
           value: 'month',
@@ -272,7 +276,8 @@ export const Errors: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={<h1 className="govuk-heading-l">Where do you live?</h1>}
+      label="Where do you live?"
+      labelHeading="h1"
       options={[
         {
           value: 'england',
@@ -304,11 +309,8 @@ export const ContentError: Story = {
   render: ({ ...props }) => (
     <Radios
       {...props}
-      label={
-        <h1 className="govuk-heading-l">
-          How would you prefer to be contacted?
-        </h1>
-      }
+      label="How would you prefer to be contacted?"
+      labelHeading="h1"
       options={[
         {
           value: 'email',
@@ -363,7 +365,8 @@ export const ContentError: Story = {
 
 export const OptionContent: Story = {
   args: {
-    label: <h1 className="govuk-heading-l">Where do you live?</h1>,
+    label: 'Where do you live?',
+    labelHeading: 'h1',
     options: [
       {
         value: 'england',

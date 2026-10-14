@@ -22,9 +22,8 @@ export const Primary: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">What is the name of the event?</h1>
-      }
+      label="What is the name of the event?"
+      labelHeading="h1"
     />
   )
 };
@@ -34,9 +33,8 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">What is the name of the event?</h1>
-      }
+      label="What is the name of the event?"
+      labelHeading="h1"
     />
   )
 };
@@ -105,9 +103,8 @@ export const Hints: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">What is the name of the event?</h1>
-      }
+      label="What is the name of the event?"
+      labelHeading="h1"
     />
   )
 };
@@ -123,7 +120,8 @@ export const WholeNumbers: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={<h1 className="govuk-heading-l">What is your account number?</h1>}
+      label="What is your account number?"
+      labelHeading="h1"
     />
   ),
   name: 'Whole numbers'
@@ -149,11 +147,8 @@ export const PrefixAndSuffix: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">
-          What is the cost per item, in pounds?
-        </h1>
-      }
+      label="What is the cost per item, in pounds?"
+      labelHeading="h1"
     />
   ),
   name: 'Prefix and suffix'
@@ -164,7 +159,8 @@ export const Prefix: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={<h1 className="govuk-heading-l">What is the cost in pounds?</h1>}
+      label="What is the cost in pounds?"
+      labelHeading="h1"
     />
   )
 };
@@ -174,9 +170,8 @@ export const Suffix: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">What is the weight in kilograms?</h1>
-      }
+      label="What is the weight in kilograms?"
+      labelHeading="h1"
     />
   )
 };
@@ -208,9 +203,8 @@ export const Errors: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">What is the name of the event?</h1>
-      }
+      label="What is the name of the event?"
+      labelHeading="h1"
     />
   )
 };
@@ -226,11 +220,8 @@ export const ErrorsWithPrefixAndSuffix: Story = {
   render: ({ ...props }) => (
     <TextInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">
-          What is the cost per item, in pounds?
-        </h1>
-      }
+      label="What is the cost per item, in pounds?"
+      labelHeading="h1"
     />
   ),
   name: 'Errors with prefix and suffix'

@@ -24,11 +24,8 @@ export const Primary: Story = {
   render: ({ ...props }) => (
     <Checkboxes
       {...props}
-      label={
-        <h1 className="govuk-heading-l">
-          Which types of waste do you transport?
-        </h1>
-      }
+      label="Which types of waste do you transport?"
+      labelHeading="h1"
       options={[
         {
           value: 'carcasses',
@@ -52,11 +49,8 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <Checkboxes
       {...props}
-      label={
-        <h1 className="govuk-heading-l">
-          Which types of waste do you transport?
-        </h1>
-      }
+      label="Which types of waste do you transport?"
+      labelHeading="h1"
       options={[
         {
           value: 'carcasses',
@@ -107,7 +101,8 @@ export const Hints: Story = {
   render: ({ ...props }) => (
     <Checkboxes
       {...props}
-      label={<h1 className="govuk-heading-l">What is your nationality?</h1>}
+      label="What is your nationality?"
+      labelHeading="h1"
       options={[
         {
           value: 'british',
@@ -132,11 +127,8 @@ export const None: Story = {
   render: ({ ...props }) => (
     <Checkboxes
       {...props}
-      label={
-        <h1 className="govuk-heading-l">
-          Will you be travelling to any of these countries?
-        </h1>
-      }
+      label="Will you be travelling to any of these countries?"
+      labelHeading="h1"
       options={[
         {
           value: 'france',
@@ -170,11 +162,8 @@ export const NoneError: Story = {
   render: ({ ...props }) => (
     <Checkboxes
       {...props}
-      label={
-        <h1 className="govuk-heading-l">
-          Will you be travelling to any of these countries?
-        </h1>
-      }
+      label="Will you be travelling to any of these countries?"
+      labelHeading="h1"
       options={[
         {
           value: 'france',
@@ -209,9 +198,8 @@ export const Content: Story = {
   render: ({ ...props }) => (
     <Checkboxes
       {...props}
-      label={
-        <h1 className="govuk-heading-l">How would you like to be contacted?</h1>
-      }
+      label="How would you like to be contacted?"
+      labelHeading="h1"
       options={[
         {
           value: 'email',
@@ -268,7 +256,9 @@ export const Small: Story = {
   render: ({ ...props }) => (
     <Checkboxes
       {...props}
-      label={<h3>Organisation</h3>}
+      label="Organisation"
+      labelClassModifiers="m"
+      labelHeading="h1"
       options={[
         {
           value: 'hmrc',
@@ -300,7 +290,8 @@ export const Errors: Story = {
   render: ({ ...props }) => (
     <Checkboxes
       {...props}
-      label={<h1 className="govuk-heading-l">What is your nationality?</h1>}
+      label="What is your nationality?"
+      labelHeading="h1"
       options={[
         {
           value: 'british',
@@ -322,11 +313,8 @@ export const Errors: Story = {
 
 export const OptionContent: Story = {
   args: {
-    label: (
-      <h1 className="govuk-heading-l">
-        Which types of waste do you transport?
-      </h1>
-    ),
+    label: 'Which types of waste do you transport?',
+    labelHeading: 'h1',
     options: [
       {
         value: 'carcasses',

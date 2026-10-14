@@ -25,9 +25,8 @@ export const Primary: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={
-        <h1 className="govuk-heading-l">What is the name of the event?</h1>
-      }
+      label="What is the name of the event?"
+      labelHeading="h1"
     />
   )
 };
@@ -37,9 +36,8 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={
-        <h1 className="govuk-heading-l">What is the name of the event?</h1>
-      }
+      label="What is the name of the event?"
+      labelHeading="h1"
     />
   )
 };
@@ -53,9 +51,8 @@ export const Multiline: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={
-        <h1 className="govuk-heading-l">How would you describe the event?</h1>
-      }
+      label="How would you describe the event?"
+      labelHeading="h1"
     />
   ),
   name: 'Multi-line'
@@ -66,7 +63,8 @@ export const Date: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={<h1 className="govuk-heading-l">When is the event?</h1>}
+      label="When is the event?"
+      labelHeading="h1"
     />
   )
 };
@@ -76,7 +74,8 @@ export const Datepicker: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={<h1 className="govuk-heading-l">When is the event?</h1>}
+      label="When is the event?"
+      labelHeading="h1"
     />
   ),
   name: 'Date-picker'
@@ -91,7 +90,8 @@ export const Singlechoicefew: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={<h1 className="govuk-heading-l">Is it suitable for under-18s?</h1>}
+      label="Is it suitable for under-18s?"
+      labelHeading="h1"
       options={[
         {
           value: '1',
@@ -115,9 +115,8 @@ export const Singlechoicesome: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={
-        <h1 className="govuk-heading-l">Where will the event take place?</h1>
-      }
+      label="Where will the event take place?"
+      labelHeading="h1"
       options={[
         {
           value: 'fr',
@@ -162,9 +161,8 @@ export const Singlechoicemany: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={
-        <h1 className="govuk-heading-l">Where will the event take place?</h1>
-      }
+      label="Where will the event take place?"
+      labelHeading="h1"
       options={[
         {
           value: 'bg',
@@ -266,9 +264,8 @@ export const Multiplechoicesome: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={
-        <h1 className="govuk-heading-l">Where will the event take place?</h1>
-      }
+      label="Where will the event take place?"
+      labelHeading="h1"
       options={[
         {
           value: 'fr',
@@ -315,9 +312,8 @@ export const Multiplechoicemany: Story = {
   render: ({ ...props }) => (
     <FormField
       {...props}
-      label={
-        <h1 className="govuk-heading-l">Where will the event take place?</h1>
-      }
+      label="Where will the event take place?"
+      labelHeading="h1"
       options={[
         {
           value: 'bg',

@@ -21,9 +21,11 @@ import Form from '@not-govuk/form';
 
 export const MyComponent = props => (
   <Form action="/result" method="get">
+    <h1 className="govuk-heading-l">Your details</h1>
     <Form.TextInput
       name="fullName"
-      label={<h2>What is your name?</h2>}
+      label="What is your name?"
+      labelHeading="h2"
       hint="Write your firstname followed by your surname"
       validators={[
         required()
@@ -31,7 +33,8 @@ export const MyComponent = props => (
     />
     <Form.Radios
       name="sex"
-      label={<h2>Sex?</h2>}
+      label="Sex?"
+      labelHeading="h2"
       options={[
         { value: 'male', label: 'Male' },
         { value: 'female', label: 'Female' },
@@ -44,7 +47,8 @@ export const MyComponent = props => (
     <Form.DateInput
       name="dob"
       prettyName="date of birth"
-      label={<h2>What is your date of birth?</h2>}
+      label="What is your date of birth?"
+      labelHeading="h2"
       validators={[
         required('Provide your date of birth'),
         past(),
@@ -53,7 +57,8 @@ export const MyComponent = props => (
     />
     <Form.Radios
       name="married"
-      label={<h2>Are you married?</h2>}
+      label="Are you married?"
+      labelHeading="h2"
       options={[
         { value: 'Y', label: 'Yes' },
         { value: 'N', label: 'No' }
