@@ -22,6 +22,8 @@ export type SelectProps = StandardProps & Omit<SelectHTMLAttributes<HTMLSelectEl
   id?: string
   /** Label */
   label: ReactNode
+  /** Caption for the section the question belongs to, shown above the label */
+  labelCaption?: ReactNode
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
@@ -43,6 +45,7 @@ export const Select: FC<SelectProps> = ({
   hint,
   id: _id,
   label,
+  labelCaption,
   labelClassModifiers,
   labelHeading,
   multiple,
@@ -99,6 +102,7 @@ export const Select: FC<SelectProps> = ({
       id={id}
       fieldId={fieldId}
       label={label}
+      labelCaption={labelCaption}
       labelClassModifiers={labelClassModifiers}
       hint={hint}
       hintId={hintId}

@@ -41,6 +41,7 @@ describe('Checkboxes', () => {
       error: 'Select an option',
       hint: 'Select all that apply.',
       labelHeading: 'h1',
+      labelCaption: 'About you',
       labelClassModifiers: 'm'
     };
 
@@ -51,6 +52,7 @@ describe('Checkboxes', () => {
     it('renders a fieldset', async () => expect(screen.getByRole('group')).toBeInTheDocument());
     it('that is described by the error and the hint', async () => expect(screen.getByRole('group')).toHaveAccessibleDescription('Select all that apply. Error: Select an option'));
     it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Which types of waste do you transport?'));
+    it('renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
     it('renders 4 checkboxes', async () => expect(screen.getAllByRole('checkbox')).toHaveLength(4));
     it('renders the label', async () => expect(screen.getByRole('group')).toHaveTextContent('Which types of waste do you transport?'));
     it('renders the 1st option', async () => expect(screen.getByRole('group')).toHaveTextContent('Waste from animal carcasses'));

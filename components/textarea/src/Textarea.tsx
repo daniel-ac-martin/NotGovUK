@@ -11,6 +11,8 @@ export type TextareaProps = StandardProps & TextareaHTMLAttributes<HTMLTextAreaE
   hint?: ReactNode
   /** Label */
   label: ReactNode
+  /** Caption for the section the question belongs to, shown above the label */
+  labelCaption?: ReactNode
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
@@ -29,6 +31,7 @@ export const Textarea: FC<TextareaProps> = ({
   hint,
   id: _id,
   label,
+  labelCaption,
   labelClassModifiers,
   labelHeading,
   rows = 5,
@@ -67,6 +70,7 @@ export const Textarea: FC<TextareaProps> = ({
       id={id}
       fieldId={fieldId}
       label={label}
+      labelCaption={labelCaption}
       labelClassModifiers={labelClassModifiers}
       hint={hint}
       hintId={hintId}
