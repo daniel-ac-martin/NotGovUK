@@ -76,3 +76,12 @@ export const Heading: Story = {
     </FormGroup>
   )
 };
+
+export const Caption: Story = {
+  args: { labelCaption: 'About you', labelHeading: 'h1' },
+  render: ({ ...props }) => (
+    <FormGroup {...props}>
+      <p>Content</p>
+    </FormGroup>
+  )
+};
