@@ -34,14 +34,15 @@ export default function Feedback({
         <div className="govuk-grid-column-two-thirds">
           { actionData?.result ? (
               <>
-                <h1>{title}</h1>
+                <h1 className="govuk-heading-l">{title}</h1>
                 <p>Feedback successfully submitted.</p>
               </>
           ) : (
               <Form action="?" method="post" initialValues={actionData?.formData}>
                 <Form.Textarea
                   name="feedback"
-                  label={<h1>{title}</h1>}
+                  label={title}
+                  labelHeading="h1"
                   hint="Write the feedback you would like to provide"
                   validators={[
                     required('Write something'),

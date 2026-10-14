@@ -21,7 +21,8 @@ import TextInput from '@not-govuk/text-input';
 
 export const MyComponent = props => (
   <TextInput
-    label={<h1 className="govuk-heading-l">What is the name of the event?</h1>}
+    label="What is the name of the event?"
+    labelHeading="h1"
     name="event-name"
   />
 );

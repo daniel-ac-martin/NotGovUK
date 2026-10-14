@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
+import { ElementType, FC, InputHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps } from '@react-foundry/component-helpers';
 import { Checkbox, CheckboxProps } from './Checkbox';
 import { CheckboxesContainer, CheckboxesContainerProps } from './CheckboxesContainer';
@@ -44,6 +44,10 @@ export type CheckboxesProps = StandardProps & Omit<InputHTMLAttributes<HTMLInput
   id?: string
   /** Label */
   label: ReactNode
+  /** BEM style modifiers to apply to the label */
+  labelClassModifiers?: StandardProps['classModifiers']
+  /** Component to wrap the label in, making it a heading */
+  labelHeading?: ElementType
   /** HTML name */
   name: string
   /** List of options to select from */
@@ -59,6 +63,8 @@ const CheckboxesComponent: FC<CheckboxesProps> = ({
   hint,
   id: _id,
   label,
+  labelClassModifiers,
+  labelHeading,
   options,
   value,
   ...attrs
@@ -72,8 +78,10 @@ const CheckboxesComponent: FC<CheckboxesProps> = ({
       className={className}
       error={error}
       hint={hint}
+      labelHeading={labelHeading}
       id={id}
       label={label}
+      labelClassModifiers={labelClassModifiers}
     >
       {options.map((v, i) => {
         if (isOption(v)) {

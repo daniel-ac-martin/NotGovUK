@@ -35,3 +35,26 @@ A Form group with just a label instead of a fieldset and legend.
 A Form group with a validation error.
 
 <Canvas of={Stories.Error} />
+
+
+### Label modifiers
+
+A Form group with a medium-sized label. `labelClassModifiers` applies BEM
+modifiers to the label, or to the legend where there is a fieldset.
+
+<Canvas of={Stories.LabelModifiers} />
+
+
+### Heading
+
+A Form group whose label is a heading, set with `labelHeading`. With a fieldset
+the heading goes inside the `<legend>`; with a label it goes around the
+`<label>`, which is the only place it can validly go.
+
+It takes any component, so a question that is the page heading asks for `"h1"`
+and one that is a sub-heading on a page of several asks for `"h2"`. The label
+or legend is sized to match the level, following the hierarchy GOV.UK uses on
+a page that is not long form content, unless `labelClassModifiers` says
+otherwise.
+
+<Canvas of={Stories.Heading} />

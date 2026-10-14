@@ -22,7 +22,8 @@ import FormField from '@not-govuk/form-field';
 export const MyComponent = props => (
   <FormField
     name="name"
-    label={<h1 className="govuk-heading-l">What is the name of the event?</h1>}
+    label="What is the name of the event?"
+    labelHeading="h1"
     hint="The name you’ll use on promotional material."
   />
 );

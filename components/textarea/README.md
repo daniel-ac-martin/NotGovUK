@@ -22,7 +22,8 @@ import Textarea from '@not-govuk/textarea';
 export const MyComponent = props => (
   <Textarea
     hint="Do not include personal or financial information, like your National Insurance number or credit card details."
-    label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
+    label="Can you provide more detail?"
+    labelHeading="h1"
     name="more-detail"
   />
 );

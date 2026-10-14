@@ -22,9 +22,8 @@ export const Primary: Story = {
   render: ({ ...props }) => (
     <DateInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">When was your passport issued?</h1>
-      }
+      label="When was your passport issued?"
+      labelHeading="h1"
     />
   )
 };
@@ -34,9 +33,8 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <DateInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">When was your passport issued?</h1>
-      }
+      label="When was your passport issued?"
+      labelHeading="h1"
     />
   )
 };
@@ -51,7 +49,8 @@ export const Autocomplete: Story = {
   render: ({ ...props }) => (
     <DateInput
       {...props}
-      label={<h1 className="govuk-heading-l">What is your date of birth?</h1>}
+      label="What is your date of birth?"
+      labelHeading="h1"
     />
   ),
   name: 'Auto-complete'
@@ -62,9 +61,8 @@ export const Errors: Story = {
   render: ({ ...props }) => (
     <DateInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">When was your passport issued?</h1>
-      }
+      label="When was your passport issued?"
+      labelHeading="h1"
     />
   )
 };
@@ -74,9 +72,8 @@ export const SubErrors: Story = {
   render: ({ ...props }) => (
     <DateInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">When was your passport issued?</h1>
-      }
+      label="When was your passport issued?"
+      labelHeading="h1"
       error={{
         year: 'The date your passport was issued must include a year'
       }}
@@ -89,9 +86,8 @@ export const MonthAndYear: Story = {
   render: ({ ...props }) => (
     <DateInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">When did you move into this property?</h1>
-      }
+      label="When did you move into this property?"
+      labelHeading="h1"
     />
   ),
   name: 'Month and year'
@@ -102,9 +98,8 @@ export const DayAndMonth: Story = {
   render: ({ ...props }) => (
     <DateInput
       {...props}
-      label={
-        <h1 className="govuk-heading-l">When does your financial year end?</h1>
-      }
+      label="When does your financial year end?"
+      labelHeading="h1"
     />
   ),
   name: 'Day and month'

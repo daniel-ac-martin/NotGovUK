@@ -1,9 +1,9 @@
 import { createElement as h } from 'react';
 import { render, screen } from '@react-foundry/component-test-helpers';
-import Select from '../src/Select';
+import Select, { SelectProps } from '../src/Select';
 
 describe('Select', () => {
-  const minimalProps = {
+  const minimalProps: SelectProps = {
     label: 'Sort by',
     name: 'sort',
     options: [
@@ -25,10 +25,12 @@ describe('Select', () => {
   });
 
   describe('when given all valid props', () => {
-    const props = {
+    const props: SelectProps = {
       ...minimalProps,
       error: 'Pick at least one',
       hint: 'Pick some',
+      labelHeading: 'h1',
+      labelClassModifiers: 'm',
       multiple: true
     };
     beforeEach(async () => {
@@ -39,5 +41,6 @@ describe('Select', () => {
     it('renders the options as options', async () => expect(screen.getAllByRole('option')).toHaveLength(4));
     it('renders the label', async () => expect(screen.getByLabelText('Sort by')).toBeInTheDocument());
     it('is described by the error and the hint', async () => expect(screen.getByLabelText('Sort by')).toHaveAccessibleDescription('Pick some Error: Pick at least one'));
+    it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Sort by'));
   });
 });

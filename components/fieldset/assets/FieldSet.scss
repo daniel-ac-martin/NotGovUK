@@ -9,25 +9,31 @@
       margin: 0;
     }
 
-    h1, .govuk-heading-xl {
+    // Leave a heading we rendered ourselves to the legend's own modifiers
+    h1:where(:not(.govuk-fieldset__heading)), .govuk-heading-xl {
       @extend .govuk-fieldset__legend--xl;
       margin-bottom: govuk-spacing(1);
     }
 
-    h2, .govuk-heading-l {
+    h2:where(:not(.govuk-fieldset__heading)), .govuk-heading-l {
       @extend .govuk-fieldset__legend--l;
       margin-bottom: govuk-spacing(1);
     }
 
-    h3, .govuk-heading-m {
+    h3:where(:not(.govuk-fieldset__heading)), .govuk-heading-m {
       @extend .govuk-fieldset__legend--m;
       margin-bottom: govuk-spacing(1);
     }
 
-    h4, .govuk-heading-s {
+    h4:where(:not(.govuk-fieldset__heading)), .govuk-heading-s {
       @extend .govuk-fieldset__legend--s;
       margin-bottom: 0;
     }
+  }
+
+  // Take the line height from the legend, not from page-level heading styles
+  &__heading {
+    line-height: inherit;
   }
 }
 

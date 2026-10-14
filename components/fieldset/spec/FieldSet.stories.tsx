@@ -29,7 +29,8 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <FieldSet
       {...props}
-      legend={<h1 className="govuk-heading-l">What is your address?</h1>}
+      legend="What is your address?"
+      legendHeading="h1"
     >
       <div className="govuk-form-group">
         <Label>
@@ -76,7 +77,8 @@ export const LegendAsPageHeading: Story = {
   render: ({ ...props }) => (
     <FieldSet
       {...props}
-      legend={<h1 className="govuk-heading-l">Legend as page heading</h1>}
+      legend="Legend as page heading"
+      legendHeading="h1"
     />
   ),
   name: 'Legend as page heading'

@@ -57,3 +57,22 @@ export const Error: Story = {
     </FormGroup>
   )
 };
+
+export const LabelModifiers: Story = {
+  args: { labelClassModifiers: 'm' },
+  render: ({ ...props }) => (
+    <FormGroup {...props}>
+      <p>Content</p>
+    </FormGroup>
+  ),
+  name: 'Label modifiers'
+};
+
+export const Heading: Story = {
+  args: { labelHeading: 'h1' },
+  render: ({ ...props }) => (
+    <FormGroup {...props}>
+      <p>Content</p>
+    </FormGroup>
+  )
+};

@@ -21,7 +21,8 @@ import Checkboxes from '@not-govuk/checkboxes';
 
 export const MyComponent = props => (
   <Checkboxes
-    label={<h1 className="govuk-heading-l">Which types of waste do you transport?</h1>}
+    label="Which types of waste do you transport?"
+    labelHeading="h1"
     name="waste"
     options={[
       { value: 'carcasses', label: 'Waste from animal carcasses' },

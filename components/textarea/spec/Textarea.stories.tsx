@@ -25,7 +25,8 @@ export const Primary: Story = {
   render: ({ ...props }) => (
     <Textarea
       {...props}
-      label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
+      label="Can you provide more detail?"
+      labelHeading="h1"
     />
   )
 };
@@ -35,7 +36,8 @@ export const Standard: Story = {
   render: ({ ...props }) => (
     <Textarea
       {...props}
-      label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
+      label="Can you provide more detail?"
+      labelHeading="h1"
     />
   )
 };
@@ -45,7 +47,8 @@ export const Sized: Story = {
   render: ({ ...props }) => (
     <Textarea
       {...props}
-      label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
+      label="Can you provide more detail?"
+      labelHeading="h1"
     />
   )
 };
@@ -60,7 +63,8 @@ export const Errors: Story = {
   render: ({ ...props }) => (
     <Textarea
       {...props}
-      label={<h1 className="govuk-heading-l">Can you provide more detail?</h1>}
+      label="Can you provide more detail?"
+      labelHeading="h1"
     />
   )
 };

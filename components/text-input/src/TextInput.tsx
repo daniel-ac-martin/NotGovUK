@@ -1,4 +1,4 @@
-import { FC, ReactNode, createElement as h } from 'react';
+import { ElementType, FC, ReactNode, createElement as h } from 'react';
 import { FormGroup } from '@not-govuk/form-group';
 import { Input, InputProps } from '@not-govuk/input';
 
@@ -11,6 +11,10 @@ export type TextInputProps = InputProps & {
   hint?: ReactNode
   /** Label */
   label: ReactNode
+  /** BEM style modifiers to apply to the label */
+  labelClassModifiers?: InputProps['classModifiers']
+  /** Component to wrap the label in, making it a heading */
+  labelHeading?: ElementType
   /** HTML name */
   name: string
 };
@@ -23,6 +27,8 @@ export const TextInput: FC<TextInputProps> = ({
   hint,
   id: _id,
   label,
+  labelClassModifiers,
+  labelHeading,
   ...attrs
 }) => {
   const classModifiers = [
@@ -43,9 +49,11 @@ export const TextInput: FC<TextInputProps> = ({
 
   return (
     <FormGroup
+      labelHeading={labelHeading}
       id={id}
       fieldId={fieldId}
       label={label}
+      labelClassModifiers={labelClassModifiers}
       hint={hint}
       hintId={hintId}
       error={error}

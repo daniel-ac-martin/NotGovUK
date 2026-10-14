@@ -3,17 +3,14 @@ import { Radios, TextInput } from '@not-govuk/simple-components';
 export default function Page() {
   return (
     <>
-      <h1>
+      <h1 className="govuk-heading-l">
         Three
       </h1>
       <p>Three content</p>
       <p>Here is a conditional radios example:</p>
       <Radios
-        label={
-          <h1 className="govuk-heading-l">
-            How would you prefer to be contacted?
-          </h1>
-        }
+        label="How would you prefer to be contacted?"
+        labelHeading="h2"
         name="how-contacted"
         options={[
           {

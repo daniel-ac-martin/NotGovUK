@@ -49,3 +49,13 @@ export const Inline: Story = {
   ),
   name: 'In-line'
 };
+
+export const Heading: Story = {
+  args: { heading: 'h1' },
+  render: ({ ...props }) => (
+    <form action="#" method="get">
+      <Label {...props} />
+      <input type="text" id="my-field2" name="my-field" />
+    </form>
+  )
+};

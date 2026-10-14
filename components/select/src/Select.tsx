@@ -1,4 +1,4 @@
-import { FC, SelectHTMLAttributes, ReactNode, createElement as h } from 'react';
+import { ElementType, FC, SelectHTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { FormGroup } from '@not-govuk/form-group';
 
@@ -22,6 +22,10 @@ export type SelectProps = StandardProps & Omit<SelectHTMLAttributes<HTMLSelectEl
   id?: string
   /** Label */
   label: ReactNode
+  /** BEM style modifiers to apply to the label */
+  labelClassModifiers?: StandardProps['classModifiers']
+  /** Component to wrap the label in, making it a heading */
+  labelHeading?: ElementType
   /** HTML name */
   name: string
   /** List of options to select from */
@@ -39,6 +43,8 @@ export const Select: FC<SelectProps> = ({
   hint,
   id: _id,
   label,
+  labelClassModifiers,
+  labelHeading,
   multiple,
   options,
   width,
@@ -89,9 +95,11 @@ export const Select: FC<SelectProps> = ({
 
   return (
     <FormGroup
+      labelHeading={labelHeading}
       id={id}
       fieldId={fieldId}
       label={label}
+      labelClassModifiers={labelClassModifiers}
       hint={hint}
       hintId={hintId}
       error={error}
