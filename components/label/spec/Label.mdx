@@ -26,3 +26,17 @@ A standard Label.
 ### In-line
 
 <Canvas of={Stories.Inline} />
+
+
+### Heading
+
+Where the question is a heading, give `heading` the component to wrap the
+label in. The heading goes around the label rather than inside it, which would
+not be valid HTML.
+
+The label is sized to match the level, following the hierarchy GOV.UK uses on
+a page that is not long form content: large for an `<h1>`, medium for an
+`<h2>`, small below that. Say so with `classModifiers` to size it otherwise,
+and do say so if you pass a component we cannot read a level from.
+
+<Canvas of={Stories.Heading} />
