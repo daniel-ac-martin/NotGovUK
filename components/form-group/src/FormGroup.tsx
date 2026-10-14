@@ -1,4 +1,4 @@
-import { FC, Fragment, HTMLAttributes, ReactNode, createElement as h } from 'react';
+import { ElementType, FC, Fragment, HTMLAttributes, ReactNode, createElement as h } from 'react';
 import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 import { ErrorMessage } from '@not-govuk/error-message';
 import { FieldSet } from '@not-govuk/fieldset';
@@ -16,6 +16,10 @@ export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>
   hintId?: string
   id: string
   label: ReactNode
+  /** BEM style modifiers to apply to the label (or legend) */
+  labelClassModifiers?: StandardProps['classModifiers']
+  /** Component to wrap the label (or legend) in, making it a heading */
+  labelHeading?: ElementType
   standalone?: boolean
 };
 
@@ -31,6 +35,8 @@ export const FormGroup: FC<FormGroupProps> = ({
   hintId: _hintId,
   id,
   label,
+  labelClassModifiers,
+  labelHeading,
   standalone = false,
   ...attrs
 }) => {
@@ -62,11 +68,23 @@ export const FormGroup: FC<FormGroupProps> = ({
     <div id={id} {...attrs} className={classes()}>
       { fieldId ? (
           <Fragment>
-            <Label htmlFor={fieldId} hidden={standalone}>{label}</Label>
+            <Label
+              classModifiers={labelClassModifiers}
+              heading={labelHeading}
+              hidden={standalone}
+              htmlFor={fieldId}
+            >
+              {label}
+            </Label>
             {children}
           </Fragment>
         ) : (
-          <FieldSet aria-describedby={describedBy} legend={label}>
+          <FieldSet
+            aria-describedby={describedBy}
+            legendHeading={labelHeading}
+            legend={label}
+            legendClassModifiers={labelClassModifiers}
+          >
             {children}
           </FieldSet>
       ) }
