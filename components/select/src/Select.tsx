@@ -118,7 +118,7 @@ export const Select: FC<SelectProps> = ({
         multiple={multiple}
         style={style}
       >
-        {options.map(({ label, selected, ...attrs }, i) => (
+        {options.map(({ conditional, hint, label, selected, ...attrs }, i) => (
             <option
               {...attrs}
               key={i}

@@ -29,6 +29,12 @@ describe('Select', () => {
       ...minimalProps,
       error: 'Pick at least one',
       hint: 'Pick some',
+      options: [
+        { value: 'published', label: 'Recently published', hint: 'Newest first', conditional: 'Shown when picked' },
+        { value: 'updated', label: 'Recently updated', selected: true },
+        { value: 'views', label: 'Most views' },
+        { value: 'comments', label: 'Most comments' }
+      ],
       labelHeading: 'h1',
       labelCaption: 'About you',
       labelClassModifiers: 'm',
@@ -44,5 +50,12 @@ describe('Select', () => {
     it('is described by the error and the hint', async () => expect(screen.getByLabelText('Sort by')).toHaveAccessibleDescription('Pick some Error: Pick at least one'));
     it('renders the label as a level 1 heading', async () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Sort by'));
     it('renders the caption', async () => expect(screen.getByText('About you')).toBeInTheDocument());
+    it('leaves an option\'s hint and conditional off the option, which can hold neither', async () => {
+      const option = screen.getByRole('option', { name: 'Recently published' });
+
+      expect(option).not.toHaveAttribute('hint');
+      expect(option).not.toHaveAttribute('conditional');
+    });
   });
+
 });
