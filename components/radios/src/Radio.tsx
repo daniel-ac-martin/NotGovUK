@@ -11,7 +11,7 @@ export type RadioProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputEleme
   /** Content for the option, rendered outside of its label */
   content?: ReactNode
   /** Hint for the option */
-  hint?: string
+  hint?: ReactNode
   /** Label for the option */
   label: ReactNode
 };
