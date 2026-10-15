@@ -6,7 +6,7 @@ import '../assets/SummaryCard.scss';
 
 export type SummaryCardProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** Links to perform status related actions */
-  actions?: Anchor[]
+  actions?: Anchor[] | undefined
   /** Contents */
   children?: ReactNode
   /** Title of the summary card */

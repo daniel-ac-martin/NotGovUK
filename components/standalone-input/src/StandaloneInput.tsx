@@ -12,9 +12,9 @@ export type StandaloneInputProps = InputProps & {
   /** Error message */
   error?: ReactNode
   /** Hint */
-  hint?: string
+  hint?: string | undefined
   /** Label */
-  label?: string
+  label?: string | undefined
   /** HTML name */
   name: string
 };

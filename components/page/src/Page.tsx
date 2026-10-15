@@ -25,19 +25,19 @@ export type PageProps = (
   Partial<PhaseBannerProps> &
   {
     /** Location for the Back link */
-    backHref?: string
+    backHref?: string | undefined
     /** Text for the Back link */
-    backText?: string
+    backText?: string | undefined
     /** List of links to parent pages */
-    breadcrumbs?: Breadcrumb[]
+    breadcrumbs?: Breadcrumb[] | undefined
     /** The content that displays in the page. */
     children?: ReactNode
     /** HRef for providing feedback on the service */
-    feedbackHref?: string
+    feedbackHref?: string | undefined
     /** Content for the footer */
     footerContent?: ReactNode
     /** Content for the footer */
-    footerNavigation?: NavMenu[]
+    footerNavigation?: NavMenu[] | undefined
     /** Navigation items */
     navigation?: ServiceNavigationProps['items']
     /** Content for the phase-banner */

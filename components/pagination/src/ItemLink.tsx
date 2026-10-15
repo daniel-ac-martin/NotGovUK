@@ -5,7 +5,7 @@ import { StandardProps, classBuilder } from '@react-foundry/component-helpers';
 export type LinkProps = ComponentProps<typeof A>;
 
 export type ItemLinkProps = LinkProps & StandardProps & {
-  current?: boolean
+  current?: boolean | undefined
 };
 
 export const ItemLink: FC<ItemLinkProps> = ({

@@ -16,10 +16,10 @@ const captionModifiers: Record<string, string> = { xl: 'xl', l: 'l', m: 'm', s: 
 export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>, 'id' | 'label'> & {
   children?: ReactNode
   error?: ReactNode
-  errorId?: string
-  fieldId?: string
+  errorId?: string | undefined
+  fieldId?: string | undefined
   hint?: ReactNode
-  hintId?: string
+  hintId?: string | undefined
   id: string
   label: ReactNode
   /** Caption for the section the question belongs to, shown above the label */
@@ -27,8 +27,8 @@ export type FormGroupProps = StandardProps & Omit<HTMLAttributes<HTMLDivElement>
   /** BEM style modifiers to apply to the label (or legend) */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label (or legend) in, making it a heading */
-  labelHeading?: ElementType
-  standalone?: boolean
+  labelHeading?: ElementType | undefined
+  standalone?: boolean | undefined
 };
 
 export const FormGroup: FC<FormGroupProps> = ({

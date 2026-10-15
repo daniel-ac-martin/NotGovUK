@@ -7,15 +7,15 @@ import '../assets/NotificationBanner.scss';
 
 export type NotificationBannerProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** If you set type to success, or role to alert, JavaScript moves the keyboard focus to the notification banner when the page loads. To disable this behaviour, set disableAutoFocus to true. */
-  disableAutoFocus?: boolean
+  disableAutoFocus?: boolean | undefined
   /** The content that displays in the notification banner. */
   children?: ReactNode
   /** The title that displays in the notification banner. The available default values are 'Important' and 'Success' depending on how 'type' has been set. */
   title?: ReactNode
   /** The id for the banner title, and the aria-labelledby attribute in the banner. Defaults to govuk-notification-banner-title. */
-  titleId?: string
+  titleId?: string | undefined
   /** The type of notification to render. You can use only the success or null values with this option. If you set type to success, the notification banner sets role to alert. JavaScript then moves the keyboard focus to the notification banner when the page loads. If you do not set type, the notification banner sets role to region. */
-  type?: 'success'
+  type?: 'success' | undefined
 };
 
 export const NotificationBanner: FC<NotificationBannerProps> = ({

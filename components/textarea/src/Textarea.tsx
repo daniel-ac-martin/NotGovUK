@@ -16,11 +16,11 @@ export type TextareaProps = StandardProps & TextareaHTMLAttributes<HTMLTextAreaE
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
-  labelHeading?: ElementType
+  labelHeading?: ElementType | undefined
   /** HTML name */
   name: string
   /** Width of the field in characters (approximate) */
-  width?: number
+  width?: number | undefined
 };
 
 export const Textarea: FC<TextareaProps> = ({

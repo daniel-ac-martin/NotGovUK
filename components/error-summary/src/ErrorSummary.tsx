@@ -8,7 +8,7 @@ export type Error = Anchor;
 
 export type ErrorSummaryProps = StandardProps & Pick<AnchorListProps, 'items'> & {
   /** The heading of the error summary block. */
-  title?: ReactNode[] | string
+  title?: ReactNode[] | string | undefined
 };
 
 export const ErrorSummary: FC<ErrorSummaryProps> = ({

@@ -18,7 +18,7 @@ export type CheckboxesContainerProps = StandardProps & Omit<HTMLAttributes<HTMLD
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
-  labelHeading?: ElementType
+  labelHeading?: ElementType | undefined
 };
 
 export const CheckboxesContainer: FC<CheckboxesContainerProps> = ({

@@ -7,7 +7,7 @@ import '../assets/WarningText.scss';
 export type WarningTextProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   children?: ReactNode
   /** Hidden text to be read out by a screen-reader prior to the warning */
-  iconFallbackText?: string
+  iconFallbackText?: string | undefined
 };
 
 export const WarningText: FC<WarningTextProps> = ({

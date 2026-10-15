@@ -11,7 +11,7 @@ export type SummaryListItemProps = StandardProps & HTMLAttributes<HTMLDivElement
   /** Value of the item */
   children: ReactNode
   /** Actions available for the item */
-  actions?: Action | Action[]
+  actions?: Action | Action[] | undefined
 };
 
 export const SummaryListItem: FC<SummaryListItemProps> = ({

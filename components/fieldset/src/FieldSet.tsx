@@ -13,7 +13,7 @@ export type FieldSetProps = StandardProps & FieldsetHTMLAttributes<HTMLFieldSetE
   /** BEM style modifiers to apply to the legend */
   legendClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the legend in, making it a heading */
-  legendHeading?: ElementType
+  legendHeading?: ElementType | undefined
 };
 
 export const FieldSet: FC<FieldSetProps> = ({

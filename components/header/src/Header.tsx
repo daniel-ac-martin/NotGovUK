@@ -8,13 +8,13 @@ import '../assets/Header.scss';
 
 export type HeaderProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** Maximum width of the contents in px units (-1 for full width) */
-  maxContentsWidth?: number
+  maxContentsWidth?: number | undefined
   /** Organisation link URL */
-  organisationHref?: string
+  organisationHref?: string | undefined
   /** Service link URL */
-  serviceHref?: string
+  serviceHref?: string | undefined
   /** Service link text */
-  serviceName?: string
+  serviceName?: string | undefined
 };
 
 export const Header: FC<HeaderProps> = ({

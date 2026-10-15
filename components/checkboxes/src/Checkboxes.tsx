@@ -14,15 +14,15 @@ export type Option = {
   /** Content for the option, rendered outside of its label */
   content?: ReactNode
   /** Whether the the option is disabled */
-  disabled?: boolean
+  disabled?: boolean | undefined
   /** Whether the option can only be selected on its own */
-  exclusive?: boolean
+  exclusive?: boolean | undefined
   /** Hint for the option */
   hint?: ReactNode
   /** Label for the option */
   label: ReactNode
   /** Whether the option is selected */
-  selected?: boolean
+  selected?: boolean | undefined
   /** Value of the option */
   value: string
 };
@@ -41,7 +41,7 @@ export type CheckboxesProps = StandardProps & Omit<InputHTMLAttributes<HTMLInput
   /** Hint */
   hint?: ReactNode
   /** HTML id (If not specified then the name will be used) */
-  id?: string
+  id?: string | undefined
   /** Label */
   label: ReactNode
   /** Caption for the section the question belongs to, shown above the label */
@@ -49,7 +49,7 @@ export type CheckboxesProps = StandardProps & Omit<InputHTMLAttributes<HTMLInput
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
-  labelHeading?: ElementType
+  labelHeading?: ElementType | undefined
   /** HTML name */
   name: string
   /** List of options to select from */

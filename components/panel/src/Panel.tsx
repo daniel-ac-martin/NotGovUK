@@ -7,7 +7,7 @@ export type PanelProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** The content that displays in the panel */
   children?: ReactNode
   /** Heading of the panel */
-  title?: string
+  title?: string | undefined
 };
 
 export const Panel: FC<PanelProps> = ({ children, classBlock, classModifiers, className, title, ...attrs }) => {
