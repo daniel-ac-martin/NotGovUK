@@ -18,7 +18,7 @@ export type Option = {
   /** Whether the option can only be selected on its own */
   exclusive?: boolean
   /** Hint for the option */
-  hint?: string
+  hint?: ReactNode
   /** Label for the option */
   label: ReactNode
   /** Whether the option is selected */

@@ -18,7 +18,7 @@ export type Option = {
   /** Whether the the option is disabled */
   disabled?: boolean
   /** Hint for the option */
-  hint?: string
+  hint?: ReactNode
   /** Label for the option */
   label: ReactNode
   /** Whether the option is selected */
