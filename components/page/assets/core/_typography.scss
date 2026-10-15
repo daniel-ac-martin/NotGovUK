@@ -17,12 +17,21 @@
     @extend .govuk-heading-s;
   }
 
-  // FIXME: Remove?
-  .govuk-caption,
-  .caption {
+  // A caption takes its size from the heading it sits in, as GOV.UK pairs the two.
+  // GOV.UK has no caption to go with `govuk-heading-s`, so h4 and below reuse the smallest.
+  h1 > :is(.govuk-caption, .caption) {
     @extend .govuk-caption-xl;
-    font-size: 0.5625em;
-    margin-bottom: 0.28em;
+  }
+
+  h2 > :is(.govuk-caption, .caption) {
+    @extend .govuk-caption-l;
+  }
+
+  h3 > :is(.govuk-caption, .caption),
+  h4 > :is(.govuk-caption, .caption),
+  h5 > :is(.govuk-caption, .caption),
+  h6 > :is(.govuk-caption, .caption) {
+    @extend .govuk-caption-m;
   }
 
   p {
