@@ -18,7 +18,7 @@ export type RadiosContainerProps = StandardProps & Omit<HTMLAttributes<HTMLDivEl
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
-  labelHeading?: ElementType
+  labelHeading?: ElementType | undefined
 };
 
 export const RadiosContainer: FC<RadiosContainerProps> = ({

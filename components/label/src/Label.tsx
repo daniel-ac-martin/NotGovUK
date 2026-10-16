@@ -10,8 +10,8 @@ const headingModifiers: Record<string, string> = { h1: 'l', h2: 'm', h3: 's', h4
 export type LabelProps = StandardProps & LabelHTMLAttributes<HTMLLabelElement> & {
   children?: ReactNode
   /** Component to wrap the label in, making it a heading */
-  heading?: ElementType
-  hidden?: boolean
+  heading?: ElementType | undefined
+  hidden?: boolean | undefined
 };
 
 export const Label: FC<LabelProps> = ({

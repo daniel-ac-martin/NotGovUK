@@ -10,11 +10,11 @@ import '../assets/BackLink.scss';
 export type BackLinkProps = ComponentProps<typeof A> & {
   children?: ReactNode
   /** The location to link to */
-  href?: string
+  href?: string | undefined
   /** The text of the link */
-  text?: string
+  text?: string | undefined
   /** The title of the link */
-  title?: string
+  title?: string | undefined
 };
 
 export const BackLink: FC<BackLinkProps> = ({

@@ -9,13 +9,13 @@ import '../assets/Pagination.scss';
 
 type BackForthProps = {
   /** The current page being viewed */
-  currentPage?: number
+  currentPage?: number | undefined
   /** A link to the next page, if there is a next page. */
-  next?: NextPrevProps | string
+  next?: NextPrevProps | string | undefined
   /** A link to the previous page, if there is a previous page. */
-  previous?: NextPrevProps | string
+  previous?: NextPrevProps | string | undefined
   /** The total number of pages */
-  totalPages?: number
+  totalPages?: number | undefined
 };
 
 type ListProps = {
@@ -25,22 +25,22 @@ type ListProps = {
 
 type LinkGeneratorProps = {
   /** Query parameter to use for the page number */
-  pageParameter?: string
+  pageParameter?: string | undefined
   /** Query object of the current page, to append to */
-  query?: object
+  query?: object | undefined
   /** The total number of pages */
   totalPages: number
 };
 
 type NumberedProps = (ListProps | LinkGeneratorProps) & {
   /** Whether to only show next and previous links */
-  backAndForth?: boolean
+  backAndForth?: boolean | undefined
   /** The current page being viewed */
   currentPage: number
   /** A link to the next page, if there is a next page. */
-  nextText?: string
+  nextText?: string | undefined
   /** A link to the previous page, if there is a previous page. */
-  previousText?: string
+  previousText?: string | undefined
 };
 
 export type PaginationProps = Omit<PageListProps, 'children' | 'next' | 'previous'> & (

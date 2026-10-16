@@ -13,25 +13,25 @@ export type ServiceNavigationProps = StandardProps & HTMLAttributes<HTMLElement>
   /** Elements to be injected at the end of the service header container */
   end?: ReactNode
   /** List of links to choose from */
-  items?: Item[]
+  items?: Item[] | undefined
   /** Maximum width of the contents in px units (-1 for full width) */
-  maxContentsWidth?: number
+  maxContentsWidth?: number | undefined
   /** The text of the mobile navigation menu toggle */
-  menuButtonText?: string
+  menuButtonText?: string | undefined
   /** The screen reader label for the mobile navigation menu toggle */
-  menuButtonLabel?: string
+  menuButtonLabel?: string | undefined
   /** The screen reader label for the mobile navigation menu. Defaults to the same value as menuButtonText if not specified. */
-  navigationLabel?: string
+  navigationLabel?: string | undefined
   /** The ID used to associate the mobile navigation toggle with the navigation menu. */
-  navigationId?: string
+  navigationId?: string | undefined
   /** Service link URL */
-  serviceHref?: string
+  serviceHref?: string | undefined
   /** Service link text */
-  serviceName?: string
+  serviceName?: string | undefined
   /** Sign out link URL */
-  signOutHref?: string
+  signOutHref?: string | undefined
   /** Sign out link text */
-  signOutText?: string
+  signOutText?: string | undefined
   /** Elements to be injected at the start of the service header container */
   start?: ReactNode
 };

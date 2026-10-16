@@ -5,11 +5,11 @@ import '../assets/Input.scss';
 
 export type InputProps = StandardProps & InputHTMLAttributes<HTMLInputElement> & {
   /** Prefix to show before the field */
-  prefix?: string
+  prefix?: string | undefined
   /** Suffix to show after the field */
-  suffix?: string
+  suffix?: string | undefined
   /** Width of the field in characters (approximate) */
-  width?: number
+  width?: number | undefined
 };
 
 export const Input: FC<InputProps> = ({

@@ -14,7 +14,7 @@ type TabItem = {
 
 export type TabsProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   items: TabItem[]
-  title?: string
+  title?: string | undefined
 };
 
 export const Tabs: FC<TabsProps> = ({

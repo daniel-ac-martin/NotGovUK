@@ -8,17 +8,17 @@ import '../assets/GenericHeader.scss';
 
 export type GenericHeaderProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** Department branding to use (e.g. home-office) */
-  department?: string
+  department?: string | undefined
   /** Maximum width of the contents in px units (-1 for full width) */
-  maxContentsWidth?: number
+  maxContentsWidth?: number | undefined
   /** Organisation link URL */
-  organisationHref?: string
+  organisationHref?: string | undefined
   /** Organisation link text */
-  organisationText?: string
+  organisationText?: string | undefined
   /** Service link URL */
-  serviceHref?: string
+  serviceHref?: string | undefined
   /** Service link text */
-  serviceName?: string
+  serviceName?: string | undefined
   /** Custom logo, use null to remove */
   logo?: ReactNode
 };

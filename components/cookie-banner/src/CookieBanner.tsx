@@ -16,7 +16,7 @@ export type Message = Omit<ComponentProps<typeof WidthContainer>, 'children' | '
 
 export type CookieBannerProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** Maximum width of the contents in px units (-1 for full width) */
-  maxContentsWidth?: number
+  maxContentsWidth?: number | undefined
   /** List of messages to display */
   messages: Message[]
 };

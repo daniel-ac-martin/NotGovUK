@@ -6,10 +6,10 @@ import '../assets/Select.scss';
 
 export type Option = {
   conditional?: ReactNode
-  disabled?: boolean
-  hint?: string
+  disabled?: boolean | undefined
+  hint?: string | undefined
   label: string
-  selected?: boolean
+  selected?: boolean | undefined
   value: string
 };
 
@@ -19,7 +19,7 @@ export type SelectProps = StandardProps & Omit<SelectHTMLAttributes<HTMLSelectEl
   /** Hint */
   hint?: ReactNode
   /** HTML id (If not specified then the name will be used) */
-  id?: string
+  id?: string | undefined
   /** Label */
   label: ReactNode
   /** Caption for the section the question belongs to, shown above the label */
@@ -27,13 +27,13 @@ export type SelectProps = StandardProps & Omit<SelectHTMLAttributes<HTMLSelectEl
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
-  labelHeading?: ElementType
+  labelHeading?: ElementType | undefined
   /** HTML name */
   name: string
   /** List of options to select from */
   options: Option[]
   /** Width of the field in characters (approximate) */
-  width?: number
+  width?: number | undefined
 };
 
 export const Select: FC<SelectProps> = ({

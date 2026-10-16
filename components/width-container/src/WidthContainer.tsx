@@ -6,7 +6,7 @@ import '../assets/WidthContainer.scss';
 export type WidthContainerProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   children?: ReactNode
   /** Maximum width of the container in px units (-1 for full width) */
-  maxWidth?: number
+  maxWidth?: number | undefined
 };
 
 export const WidthContainer: FC<WidthContainerProps> = ({ children, classBlock, classModifiers, className, maxWidth, ...attrs }) => {

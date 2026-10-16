@@ -14,9 +14,9 @@ type Link = LinkProps & {
 
 export type NavMenu = {
   /** Number of columns to display the links in */
-  columns?: number
+  columns?: number | undefined
   /** Width of each navigation section in the footer. Defaults to full width. You can pass any design system grid width here, for example, 'one-third'; 'two-thirds'; 'one-half'. */
-  width?: number
+  width?: number | undefined
   /** List of links to choose from */
   items: Link[]
   /** Title of the menu */
@@ -28,17 +28,17 @@ export type FooterProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   /** The content licence information within the footer component. Defaults to OGL on GOV.UK */
   contentLicence?: ReactNode
   /** Department branding to use (e.g. home-office) */
-  department?: string
+  department?: string | undefined
   /** Whether to add the standard Gov.UK content */
-  govUK?: boolean
+  govUK?: boolean | undefined
   /** Maximum width of the contents in px units (-1 for full width) */
-  maxContentsWidth?: number
+  maxContentsWidth?: number | undefined
   /** Links to meta information */
-  meta?: Link[]
+  meta?: Link[] | undefined
   /** Title for meta links (visually hidden) */
-  metaTitle?: string
+  metaTitle?: string | undefined
   /** Secondary navigation menus */
-  navigation?: NavMenu[]
+  navigation?: NavMenu[] | undefined
 };
 
 export const Footer: FC<FooterProps> = ({

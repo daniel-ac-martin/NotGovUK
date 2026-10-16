@@ -5,7 +5,7 @@ import '../assets/Hint.scss';
 
 export type HintProps = StandardProps & HTMLAttributes<HTMLDivElement> & {
   children?: ReactNode
-  hidden?: boolean
+  hidden?: boolean | undefined
 };
 
 export const Hint: FC<HintProps> = ({

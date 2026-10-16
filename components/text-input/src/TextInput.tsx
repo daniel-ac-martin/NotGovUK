@@ -16,7 +16,7 @@ export type TextInputProps = InputProps & {
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: InputProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
-  labelHeading?: ElementType
+  labelHeading?: ElementType | undefined
   /** HTML name */
   name: string
 };

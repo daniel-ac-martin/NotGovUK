@@ -12,10 +12,13 @@ export type DateInputValue = {
   year: string
 }
 
+// Every part optional, and explicitly undefined where a string could not be read.
+export type PartialDateInputValue = { [K in keyof DateInputValue]?: DateInputValue[K] | undefined };
+
 export type DateInputPreValidateError = {
-  day?: string
-  month?: string
-  year?: string
+  day?: string | undefined
+  month?: string | undefined
+  year?: string | undefined
 }
 
 export type DateInputError = ReactNode | DateInputPreValidateError;
@@ -30,15 +33,15 @@ export const isPreValidateError = (v: DateInputError): v is DateInputPreValidate
 
 export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'label' | 'value' | 'defaultValue'> & {
   /** Set to false to remove the day input */
-  day?: false
+  day?: false | undefined
   /** Initial value of the field */
-  defaultValue?: Partial<DateInputValue>,
+  defaultValue?: PartialDateInputValue | undefined,
   /** Error message */
   error?: DateInputError,
   /** Hint */
   hint?: ReactNode
   /** HTML id (If not specified then the name will be used) */
-  id?: string
+  id?: string | undefined
   /** Label */
   label: ReactNode
   /** Caption for the section the question belongs to, shown above the label */
@@ -46,15 +49,15 @@ export type DateInputProps = StandardProps & Omit<InputHTMLAttributes<HTMLInputE
   /** BEM style modifiers to apply to the label */
   labelClassModifiers?: StandardProps['classModifiers']
   /** Component to wrap the label in, making it a heading */
-  labelHeading?: ElementType
+  labelHeading?: ElementType | undefined
   /** Set to false to remove the month input */
-  month?: false
+  month?: false | undefined
   /** HTML name */
   name: string
   /** Value for controlled fields */
-  value?: Partial<DateInputValue>
+  value?: PartialDateInputValue | undefined
   /** Set to false to remove the year input */
-  year?: false
+  year?: false | undefined
 };
 
 interface WithFormat<T> {
@@ -66,7 +69,7 @@ interface WithDeformat<T> {
 
 export type RawField<P, V> = FC<P> & WithFormat<V> & WithDeformat<V>
 
-export const DateInput: RawField<DateInputProps, Partial<DateInputValue>> = ({
+export const DateInput: RawField<DateInputProps, PartialDateInputValue> = ({
   autoComplete,
   classBlock,
   classModifiers,
@@ -218,7 +221,7 @@ const unpad = (v?: string): string | undefined => (
 );
 
 // ISO 8601:2000 omits parts from one end or the other, never from the middle
-DateInput.format = (v: Partial<DateInputValue>): string => {
+DateInput.format = (v: PartialDateInputValue): string => {
   if (isSet(v.day) && !isSet(v.month) && isSet(v.year)) {
     return '';
   }
@@ -241,7 +244,7 @@ DateInput.format = (v: Partial<DateInputValue>): string => {
   return result;
 };
 
-DateInput.deformat = (v: string): Partial<DateInputValue> => {
+DateInput.deformat = (v: string): PartialDateInputValue => {
   const arr = v.replace('--', '-').split('-');
   const year = unpad(arr[0]);
 

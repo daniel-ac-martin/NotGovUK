@@ -8,18 +8,18 @@ import { EnhancedLinkProps } from './common';
 
 export type NextPrevProps = EnhancedLinkProps & {
   /** The link text to the next/previous page. Defaults to 'Next/Previous page', where 'page' is visually hidden. */
-  text?: string
+  text?: string | undefined
 };
 
 export type PageListProps = StandardProps & HTMLAttributes<HTMLElement> & {
   /** A list of links (and ellipses) to choose from. */
-  children?: ReactNode[]
+  children?: ReactNode[] | undefined
   /** The label for the navigation landmark that wraps the pagination. */
-  landmarkLabel?: string
+  landmarkLabel?: string | undefined
   /** A link to the next page, if there is a next page. */
-  next?: NextPrevProps | string
+  next?: NextPrevProps | string | undefined
   /** A link to the previous page, if there is a previous page. */
-  previous?: NextPrevProps | string
+  previous?: NextPrevProps | string | undefined
 };
 
 const PageListComponent: FC<PageListProps> = ({

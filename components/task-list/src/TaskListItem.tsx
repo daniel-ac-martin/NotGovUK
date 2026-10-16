@@ -6,7 +6,7 @@ export type TaskListItemProps = StandardProps & Omit<HTMLAttributes<HTMLLIElemen
   /** Name of the task */
   title: ReactNode
   /** Link to the task (omit if the task cannot be started yet) */
-  href?: string
+  href?: string | undefined
   /** Additional information about the task */
   hint?: ReactNode
   /** Status of the task, for example a Tag */

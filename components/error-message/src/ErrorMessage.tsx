@@ -6,7 +6,7 @@ import '../assets/ErrorMessage.scss';
 
 export type ErrorMessageProps = StandardProps & HTMLAttributes<HTMLParagraphElement> & {
   children?: ReactNode
-  hidden?: boolean
+  hidden?: boolean | undefined
 };
 
 export const ErrorMessage: FC<ErrorMessageProps> = ({

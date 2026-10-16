@@ -6,7 +6,7 @@ import '../assets/Tag.scss';
 export type TagProps = StandardProps & HTMLAttributes<HTMLElement> & {
   children?: ReactNode
   /** Text to be displayed within the tag */
-  text?: string
+  text?: string | undefined
 };
 
 export const Tag: FC<TagProps> = ({ children, classBlock, classModifiers, className, text, ...attrs }) => {

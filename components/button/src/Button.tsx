@@ -8,12 +8,12 @@ import '../assets/Button.scss';
 
 type CommonButtonProps = StandardProps & {
   children?: ReactNode
-  start?: boolean
+  start?: boolean | undefined
 };
 type AnchorButtonProps = CommonButtonProps & ComponentProps<typeof A>;
 type ButtonButtonProps = CommonButtonProps & ButtonHTMLAttributes<HTMLButtonElement> & {
   /** Prevent double clicks on buttons from submitting forms multiple times; a click within one second of the last accepted click is ignored. */
-  preventDoubleClick?: boolean
+  preventDoubleClick?: boolean | undefined
 };
 export type ButtonProps = AnchorButtonProps | ButtonButtonProps;
 
