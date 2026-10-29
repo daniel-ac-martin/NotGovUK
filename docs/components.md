@@ -106,7 +106,7 @@ You can also override some global styles by importing `@not-govuk/components` in
 @import "@not-govuk/components";
 ```
 
-You should also alter your `vite.config.js` to modify some of the modules to versions that are designed to work under React Router, and to silence some warnings.
+You should also alter your `vite.config.js` to work around a quirk in govuk-frontend's CSS, and to modify some of the modules to versions that are designed to work under React Router.
 
 ```js
 [...]
@@ -116,11 +116,6 @@ export default defineConfig({
   css: {
     lightningcss: {
       errorRecovery: true // Required until govuk-frontend removes the '@media zero' hack
-    },
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler'
-      }
     }
   },
   resolve: {
