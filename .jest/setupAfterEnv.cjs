@@ -1,7 +1,6 @@
 'use strict';
 
 const { MessageChannel } = require('node:worker_threads');
-const { TextEncoder, TextDecoder } = require('node:util');
 
 const openChannels = [];
 
@@ -22,5 +21,3 @@ afterAll(() => {
 });
 
 global.MessageChannel = TrackedMessageChannel;
-global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
