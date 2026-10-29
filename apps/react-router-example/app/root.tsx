@@ -8,6 +8,7 @@ import {
   ScrollRestoration,
 } from "react-router";
 import { GovUKPage } from '@not-govuk/components';
+import { RouteAnnouncer } from '@react-foundry/router';
 
 import type { Route } from "./+types/root";
 import "./app.scss";
@@ -63,6 +64,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         >
           {children}
         </GovUKPage>
+        <RouteAnnouncer />
         <ScrollRestoration />
         <Scripts />
       </body>

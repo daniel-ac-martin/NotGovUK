@@ -10,6 +10,7 @@ import {
 } from 'react-router';
 import type { Route } from './+types/root';
 import { A, NotGovUKPage as Page } from '@not-govuk/components';
+import { RouteAnnouncer } from '@react-foundry/router';
 import { cspNonceContext, sanitiseUserInfo, userInfoContext } from '@react-foundry/react-router-context';
 import { UserInfoContext } from '@react-foundry/user-info';
 import { siteTitle } from './config';
@@ -73,6 +74,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             {children}
           </Page>
         </UserInfoContext.Provider>
+        <RouteAnnouncer />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
       </body>
