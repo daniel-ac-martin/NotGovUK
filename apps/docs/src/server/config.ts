@@ -23,7 +23,7 @@ const serverConfig = {
       roles: standardRoles,
     },
     oidc: {
-      issuer: process.env.OIDC_ISSUER || 'http://localhost:8001/realms/demo/',
+      issuer: process.env.OIDC_ISSUER || 'http://localhost:8001/realms/demo',
       clientId: process.env.OIDC_CLIENT_ID || 'app',
       clientSecret: process.env.OIDC_CLIENT_SECRET || 'app-secret',
       redirectUri: process.env.OIDC_REDIRECT_URI || 'http://localhost:8080'
