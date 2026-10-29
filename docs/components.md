@@ -140,6 +140,25 @@ export default defineConfig({
 
 You should ensure that you set the `govuk-frontend-supported` class on an element that encompasses all of your components (such as your `<body>` element), when and only when client-side JavaScript executes. Otherwise some components will not render correctly. If you make use of the `Page` component, this will be done for you.
 
+You should also render the `RouteAnnouncer` component in your root layout, alongside `<ScrollRestoration />`. React Router does not manage focus or tell screen reader users that the page has changed after client-side navigation; `RouteAnnouncer` does this for you. It moves focus to the page's main heading and, where needed, announces the new page's title.
+
+```shell
+$ npm install @react-foundry/router
+```
+
+```jsx
+// app/root.tsx
+import { RouteAnnouncer } from '@react-foundry/router';
+
+// ...
+<body>
+  {children}
+  <RouteAnnouncer />
+  <ScrollRestoration />
+  <Scripts />
+</body>
+```
+
 **See:** [Example React Router application using NotGovUK components]
 
 
