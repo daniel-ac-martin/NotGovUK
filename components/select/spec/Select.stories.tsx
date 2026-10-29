@@ -18,57 +18,49 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Select
-      {...props}
-      options={[
-        {
-          value: 'published',
-          label: 'Recently published'
-        },
-        {
-          value: 'updated',
-          label: 'Recently updated',
-          selected: true
-        },
-        {
-          value: 'views',
-          label: 'Most views'
-        },
-        {
-          value: 'comments',
-          label: 'Most comments'
-        }
-      ]}
-    />
-  )
+  args: {
+    options: [
+      {
+        value: 'published',
+        label: 'Recently published'
+      },
+      {
+        value: 'updated',
+        label: 'Recently updated',
+        selected: true
+      },
+      {
+        value: 'views',
+        label: 'Most views'
+      },
+      {
+        value: 'comments',
+        label: 'Most comments'
+      }
+    ]
+  }
 };
 
 export const Standard: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Select
-      {...props}
-      options={[
-        {
-          value: 'published',
-          label: 'Recently published'
-        },
-        {
-          value: 'updated',
-          label: 'Recently updated',
-          selected: true
-        },
-        {
-          value: 'views',
-          label: 'Most views'
-        },
-        {
-          value: 'comments',
-          label: 'Most comments'
-        }
-      ]}
-    />
-  )
+  args: {
+    options: [
+      {
+        value: 'published',
+        label: 'Recently published'
+      },
+      {
+        value: 'updated',
+        label: 'Recently updated',
+        selected: true
+      },
+      {
+        value: 'views',
+        label: 'Most views'
+      },
+      {
+        value: 'comments',
+        label: 'Most comments'
+      }
+    ]
+  }
 };

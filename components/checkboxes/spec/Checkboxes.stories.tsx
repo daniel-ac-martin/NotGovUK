@@ -20,136 +20,117 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Checkboxes
-      {...props}
-      label="Which types of waste do you transport?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'carcasses',
-          label: 'Waste from animal carcasses'
-        },
-        {
-          value: 'mines',
-          label: 'Waste from mines or quarries'
-        },
-        {
-          value: 'farm',
-          label: 'Farm or agricultural waste'
-        }
-      ]}
-    />
-  )
+  args: {
+    label: 'Which types of waste do you transport?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'carcasses',
+        label: 'Waste from animal carcasses'
+      },
+      {
+        value: 'mines',
+        label: 'Waste from mines or quarries'
+      },
+      {
+        value: 'farm',
+        label: 'Farm or agricultural waste'
+      }
+    ]
+  }
 };
 
 export const Standard: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Checkboxes
-      {...props}
-      label="Which types of waste do you transport?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'carcasses',
-          label: 'Waste from animal carcasses'
-        },
-        {
-          value: 'mines',
-          label: 'Waste from mines or quarries'
-        },
-        {
-          value: 'farm',
-          label: 'Farm or agricultural waste'
-        }
-      ]}
-    />
-  )
+  args: {
+    label: 'Which types of waste do you transport?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'carcasses',
+        label: 'Waste from animal carcasses'
+      },
+      {
+        value: 'mines',
+        label: 'Waste from mines or quarries'
+      },
+      {
+        value: 'farm',
+        label: 'Farm or agricultural waste'
+      }
+    ]
+  }
 };
 
 export const NoHeading: Story = {
-  args: { label: 'Which types of waste do you transport?' },
-  render: ({ ...props }) => (
-    <Checkboxes
-      {...props}
-      options={[
-        {
-          value: 'carcasses',
-          label: 'Waste from animal carcasses'
-        },
-        {
-          value: 'mines',
-          label: 'Waste from mines or quarries'
-        },
-        {
-          value: 'farm',
-          label: 'Farm or agricultural waste'
-        }
-      ]}
-    />
-  ),
+  args: {
+    label: 'Which types of waste do you transport?',
+    options: [
+      {
+        value: 'carcasses',
+        label: 'Waste from animal carcasses'
+      },
+      {
+        value: 'mines',
+        label: 'Waste from mines or quarries'
+      },
+      {
+        value: 'farm',
+        label: 'Farm or agricultural waste'
+      }
+    ]
+  },
   name: 'No heading'
 };
 
 export const Hints: Story = {
   args: {
     name: 'nationality',
-    hint: 'If you have dual nationality, select all options that are relevant to you.'
-  },
-  render: ({ ...props }) => (
-    <Checkboxes
-      {...props}
-      label="What is your nationality?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'british',
-          label: 'British',
-          hint: 'including English, Scottish, Welsh and Northern Irish'
-        },
-        {
-          value: 'irish',
-          label: 'Irish'
-        },
-        {
-          value: 'other',
-          label: 'Citizen of another country'
-        }
-      ]}
-    />
-  )
+    hint: 'If you have dual nationality, select all options that are relevant to you.',
+    label: 'What is your nationality?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'british',
+        label: 'British',
+        hint: 'including English, Scottish, Welsh and Northern Irish'
+      },
+      {
+        value: 'irish',
+        label: 'Irish'
+      },
+      {
+        value: 'other',
+        label: 'Citizen of another country'
+      }
+    ]
+  }
 };
 
 export const None: Story = {
-  args: { name: 'contact', hint: 'Select all countries that apply' },
-  render: ({ ...props }) => (
-    <Checkboxes
-      {...props}
-      label="Will you be travelling to any of these countries?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'france',
-          label: 'France'
-        },
-        {
-          value: 'portugal',
-          label: 'Portugal'
-        },
-        {
-          value: 'spain',
-          label: 'Spain'
-        },
-        'or',
-        {
-          value: 'none',
-          label: 'No, I will not be travelling to any of these countries'
-        }
-      ]}
-    />
-  )
+  args: {
+    name: 'contact', hint: 'Select all countries that apply',
+    label: 'Will you be travelling to any of these countries?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'france',
+        label: 'France'
+      },
+      {
+        value: 'portugal',
+        label: 'Portugal'
+      },
+      {
+        value: 'spain',
+        label: 'Spain'
+      },
+      'or',
+      {
+        value: 'none',
+        label: 'No, I will not be travelling to any of these countries'
+      }
+    ]
+  }
 };
 
 export const NoneError: Story = {
@@ -157,37 +138,32 @@ export const NoneError: Story = {
     name: 'contact',
     hint: undefined,
     error:
-      'Select countries you will be travelling to, or select “No, I will not be travelling to any of these countries”'
-  },
-  render: ({ ...props }) => (
-    <Checkboxes
-      {...props}
-      label="Will you be travelling to any of these countries?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'france',
-          label: 'France',
-          selected: true
-        },
-        {
-          value: 'portugal',
-          label: 'Portugal'
-        },
-        {
-          value: 'spain',
-          label: 'Spain'
-        },
-        'or',
-        {
-          value: 'none',
-          label: 'No, I will not be travelling to any of these countries',
-          selected: true,
-          exclusive: true
-        }
-      ]}
-    />
-  )
+      'Select countries you will be travelling to, or select “No, I will not be travelling to any of these countries”',
+    label: 'Will you be travelling to any of these countries?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'france',
+        label: 'France',
+        selected: true
+      },
+      {
+        value: 'portugal',
+        label: 'Portugal'
+      },
+      {
+        value: 'spain',
+        label: 'Spain'
+      },
+      'or',
+      {
+        value: 'none',
+        label: 'No, I will not be travelling to any of these countries',
+        selected: true,
+        exclusive: true
+      }
+    ]
+  }
 };
 
 export const Content: Story = {
@@ -252,63 +228,55 @@ export const Content: Story = {
 };
 
 export const Small: Story = {
-  args: { name: 'organisation', hint: undefined, classModifiers: 'small' },
-  render: ({ ...props }) => (
-    <Checkboxes
-      {...props}
-      label="Organisation"
-      labelClassModifiers="m"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'hmrc',
-          label: 'HM Revenue and Customs (HMRC)'
-        },
-        {
-          value: 'employment-tribunal',
-          label: 'Employment Tribunal'
-        },
-        {
-          value: 'MoD',
-          label: 'Ministry of Defence'
-        },
-        {
-          value: 'DfT',
-          label: 'Department for Transport'
-        }
-      ]}
-    />
-  )
+  args: {
+    name: 'organisation', hint: undefined, classModifiers: 'small',
+    label: 'Organisation',
+    labelClassModifiers: 'm',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'hmrc',
+        label: 'HM Revenue and Customs (HMRC)'
+      },
+      {
+        value: 'employment-tribunal',
+        label: 'Employment Tribunal'
+      },
+      {
+        value: 'MoD',
+        label: 'Ministry of Defence'
+      },
+      {
+        value: 'DfT',
+        label: 'Department for Transport'
+      }
+    ]
+  }
 };
 
 export const Errors: Story = {
   args: {
     name: 'nationality',
     error:
-      'Select if you are British, Irish or a citizen of a different country '
-  },
-  render: ({ ...props }) => (
-    <Checkboxes
-      {...props}
-      label="What is your nationality?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'british',
-          label: 'British',
-          hint: 'including English, Scottish, Welsh and Northern Irish'
-        },
-        {
-          value: 'irish',
-          label: 'Irish'
-        },
-        {
-          value: 'other',
-          label: 'Citizen of another country'
-        }
-      ]}
-    />
-  )
+      'Select if you are British, Irish or a citizen of a different country ',
+    label: 'What is your nationality?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'british',
+        label: 'British',
+        hint: 'including English, Scottish, Welsh and Northern Irish'
+      },
+      {
+        value: 'irish',
+        label: 'Irish'
+      },
+      {
+        value: 'other',
+        label: 'Citizen of another country'
+      }
+    ]
+  }
 };
 
 export const OptionContent: Story = {
