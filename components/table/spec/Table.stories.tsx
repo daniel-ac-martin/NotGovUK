@@ -19,31 +19,28 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { caption: 'Dates and amounts' },
-  render: ({ ...props }) => (
-    <Table
-      {...props}
-      keys={['date', 'amount']}
-      headings={{
-        amount: 'Amount',
-        date: 'Date'
-      }}
-      data={[
-        {
-          amount: '£109.80 per week',
-          date: 'First 6 weeks'
-        },
-        {
-          amount: '£109.80 per week',
-          date: 'Next 33 weeks'
-        },
-        {
-          amount: '£4,282.20',
-          date: 'Total estimated pay'
-        }
-      ]}
-    />
-  )
+  args: {
+    caption: 'Dates and amounts',
+    keys: ['date', 'amount'],
+    headings: {
+      amount: 'Amount',
+      date: 'Date'
+    },
+    data: [
+      {
+        amount: '£109.80 per week',
+        date: 'First 6 weeks'
+      },
+      {
+        amount: '£109.80 per week',
+        date: 'Next 33 weeks'
+      },
+      {
+        amount: '£4,282.20',
+        date: 'Total estimated pay'
+      }
+    ]
+  }
 };
 
 export const Captions: Story = {
@@ -80,29 +77,25 @@ export const Captions: Story = {
 };
 
 export const Standard: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Table
-      {...props}
-      keys={['date', 'amount']}
-      headings={{
-        amount: 'Amount',
-        date: 'Date'
-      }}
-      data={[
-        {
-          amount: '£109.80 per week',
-          date: 'First 6 weeks'
-        },
-        {
-          amount: '£109.80 per week',
-          date: 'Next 33 weeks'
-        },
-        {
-          amount: '£4,282.20',
-          date: 'Total estimated pay'
-        }
-      ]}
-    />
-  )
+  args: {
+    keys: ['date', 'amount'],
+    headings: {
+      amount: 'Amount',
+      date: 'Date'
+    },
+    data: [
+      {
+        amount: '£109.80 per week',
+        date: 'First 6 weeks'
+      },
+      {
+        amount: '£109.80 per week',
+        date: 'Next 33 weeks'
+      },
+      {
+        amount: '£4,282.20',
+        date: 'Total estimated pay'
+      }
+    ]
+  }
 };

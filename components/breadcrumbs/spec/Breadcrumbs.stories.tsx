@@ -20,80 +20,69 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Breadcrumbs
-      {...props}
-      items={[
-        {
-          text: 'Home',
-          href: '#'
-        },
-        {
-          text: 'Passports, travel and living abroad',
-          href: '#'
-        },
-        {
-          text: 'Travel abroad',
-          href: '#'
-        }
-      ]}
-    />
-  )
+  args: {
+    items: [
+      {
+        text: 'Home',
+        href: '#'
+      },
+      {
+        text: 'Passports, travel and living abroad',
+        href: '#'
+      },
+      {
+        text: 'Travel abroad',
+        href: '#'
+      }
+    ]
+  }
 };
 
 export const Standard: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Breadcrumbs
-      {...props}
-      items={[
-        {
-          text: 'Home',
-          href: '#'
-        },
-        {
-          text: 'Passports, travel and living abroad',
-          href: '#'
-        },
-        {
-          text: 'Travel abroad',
-          href: '#'
-        }
-      ]}
-    />
-  )
+  args: {
+    items: [
+      {
+        text: 'Home',
+        href: '#'
+      },
+      {
+        text: 'Passports, travel and living abroad',
+        href: '#'
+      },
+      {
+        text: 'Travel abroad',
+        href: '#'
+      }
+    ]
+  }
 };
 
 export const Collapsing: Story = {
-  args: { classModifiers: 'collapse-on-mobile' },
-  render: ({ ...props }) => (
-    <Breadcrumbs
-      {...props}
-      items={[
-        {
-          text: 'Home',
-          href: '#'
-        },
-        {
-          text: 'Environment',
-          href: '#'
-        },
-        {
-          text: 'Rural and countryside',
-          href: '#'
-        },
-        {
-          text: 'Rural development and land management',
-          href: '#'
-        },
-        {
-          text: 'Economic growth in rural areas',
-          href: '#'
-        }
-      ]}
-    />
-  )
+  args: {
+    classModifiers: 'collapse-on-mobile',
+    items: [
+      {
+        text: 'Home',
+        href: '#'
+      },
+      {
+        text: 'Environment',
+        href: '#'
+      },
+      {
+        text: 'Rural and countryside',
+        href: '#'
+      },
+      {
+        text: 'Rural development and land management',
+        href: '#'
+      },
+      {
+        text: 'Economic growth in rural areas',
+        href: '#'
+      }
+    ]
+  }
 };
 
 export const DarkBackgrounds: Story = {

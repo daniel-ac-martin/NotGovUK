@@ -19,8 +19,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => <Pagination {...props} links={['#', '#', '#']} />
+  args: { links: ['#', '#', '#'] }
 };
 
 export const Backandforth: Story = {
@@ -29,67 +28,56 @@ export const Backandforth: Story = {
 };
 
 export const Linklabels: Story = {
-  args: { currentPage: undefined },
-  render: ({ ...props }) => (
-    <Pagination
-      {...props}
-      next={{
-        href: '#',
-        labelText: 'Driver CPC part 1 test: theory'
-      }}
-      previous={{
-        href: '#',
-        labelText: 'Applying for a provisional lorry or bus licence'
-      }}
-    />
-  ),
+  args: {
+    currentPage: undefined,
+    next: {
+      href: '#',
+      labelText: 'Driver CPC part 1 test: theory'
+    },
+    previous: {
+      href: '#',
+      labelText: 'Applying for a provisional lorry or bus licence'
+    }
+  },
   name: 'Link-labels'
 };
 
 export const Linklabelsinlist: Story = {
-  args: { backAndForth: true },
-  render: ({ ...props }) => (
-    <Pagination
-      {...props}
-      links={[
-        {
-          href: '#',
-          labelText: 'Driver CPC part 1 test: theory'
-        },
-        {
-          href: '#',
-          labelText: 'Driver CPC part 2 test: practice'
-        },
-        {
-          href: '#',
-          labelText: 'Applying for a provisional lorry or bus licence'
-        }
-      ]}
-    />
-  ),
+  args: {
+    backAndForth: true,
+    links: [
+      {
+        href: '#',
+        labelText: 'Driver CPC part 1 test: theory'
+      },
+      {
+        href: '#',
+        labelText: 'Driver CPC part 2 test: practice'
+      },
+      {
+        href: '#',
+        labelText: 'Applying for a provisional lorry or bus licence'
+      }
+    ]
+  },
   name: 'Link-labels-in-list'
 };
 
 export const Numbered: Story = {
-  args: { currentPage: 7, pageParameter: 'p', totalPages: 42 },
-  render: ({ ...props }) => (
-    <Pagination
-      {...props}
-      query={{
-        name: 'Pagination'
-      }}
-    />
-  )
+  args: {
+    currentPage: 7, pageParameter: 'p', totalPages: 42,
+    query: {
+      name: 'Pagination'
+    }
+  }
 };
 
 export const Firstpage: Story = {
-  args: { currentPage: 1 },
-  render: ({ ...props }) => <Pagination {...props} links={['#', '#', '#']} />,
+  args: { currentPage: 1, links: ['#', '#', '#'] },
   name: 'First-page'
 };
 
 export const Lastpage: Story = {
-  args: { currentPage: 3 },
-  render: ({ ...props }) => <Pagination {...props} links={['#', '#', '#']} />,
+  args: { currentPage: 3, links: ['#', '#', '#'] },
   name: 'Last-page'
 };

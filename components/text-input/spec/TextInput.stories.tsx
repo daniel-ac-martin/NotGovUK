@@ -18,25 +18,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <TextInput
-      {...props}
-      label="What is the name of the event?"
-      labelHeading="h1"
-    />
-  )
+  args: { label: 'What is the name of the event?', labelHeading: 'h1' }
 };
 
 export const Standard: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <TextInput
-      {...props}
-      label="What is the name of the event?"
-      labelHeading="h1"
-    />
-  )
+  args: { label: 'What is the name of the event?', labelHeading: 'h1' }
 };
 
 export const NoHeading: Story = {
@@ -99,14 +85,11 @@ export const FluidWidth: Story = {
 };
 
 export const Hints: Story = {
-  args: { hint: 'The name you’ll use on promotional material.' },
-  render: ({ ...props }) => (
-    <TextInput
-      {...props}
-      label="What is the name of the event?"
-      labelHeading="h1"
-    />
-  )
+  args: {
+    hint: 'The name you’ll use on promotional material.',
+    label: 'What is the name of the event?',
+    labelHeading: 'h1'
+  }
 };
 
 export const WholeNumbers: Story = {
@@ -115,15 +98,10 @@ export const WholeNumbers: Story = {
     hint: 'Must be between 6 and 8 digits long',
     inputMode: 'numeric',
     pattern: '[0-9]*',
-    width: 10
+    width: 10,
+    label: 'What is your account number?',
+    labelHeading: 'h1'
   },
-  render: ({ ...props }) => (
-    <TextInput
-      {...props}
-      label="What is your account number?"
-      labelHeading="h1"
-    />
-  ),
   name: 'Whole numbers'
 };
 
@@ -142,38 +120,27 @@ export const PrefixAndSuffix: Story = {
     name: 'cost-per-item',
     width: 5,
     prefix: '£',
-    suffix: 'per item'
+    suffix: 'per item',
+    label: 'What is the cost per item, in pounds?',
+    labelHeading: 'h1'
   },
-  render: ({ ...props }) => (
-    <TextInput
-      {...props}
-      label="What is the cost per item, in pounds?"
-      labelHeading="h1"
-    />
-  ),
   name: 'Prefix and suffix'
 };
 
 export const Prefix: Story = {
-  args: { name: 'cost', width: 5, prefix: '£' },
-  render: ({ ...props }) => (
-    <TextInput
-      {...props}
-      label="What is the cost in pounds?"
-      labelHeading="h1"
-    />
-  )
+  args: {
+    name: 'cost', width: 5, prefix: '£',
+    label: 'What is the cost in pounds?',
+    labelHeading: 'h1'
+  }
 };
 
 export const Suffix: Story = {
-  args: { name: 'weight', width: 5, suffix: 'kg' },
-  render: ({ ...props }) => (
-    <TextInput
-      {...props}
-      label="What is the weight in kilograms?"
-      labelHeading="h1"
-    />
-  )
+  args: {
+    name: 'weight', width: 5, suffix: 'kg',
+    label: 'What is the weight in kilograms?',
+    labelHeading: 'h1'
+  }
 };
 
 export const Autocomplete: Story = {
@@ -198,15 +165,10 @@ export const Spellcheck: Story = {
 export const Errors: Story = {
   args: {
     hint: 'The name you’ll use on promotional material.',
-    error: 'Enter an event name'
-  },
-  render: ({ ...props }) => (
-    <TextInput
-      {...props}
-      label="What is the name of the event?"
-      labelHeading="h1"
-    />
-  )
+    error: 'Enter an event name',
+    label: 'What is the name of the event?',
+    labelHeading: 'h1'
+  }
 };
 
 export const ErrorsWithPrefixAndSuffix: Story = {
@@ -215,14 +177,9 @@ export const ErrorsWithPrefixAndSuffix: Story = {
     width: 5,
     prefix: '£',
     suffix: 'per item',
-    error: 'Enter a cost per item, in pounds'
+    error: 'Enter a cost per item, in pounds',
+    label: 'What is the cost per item, in pounds?',
+    labelHeading: 'h1'
   },
-  render: ({ ...props }) => (
-    <TextInput
-      {...props}
-      label="What is the cost per item, in pounds?"
-      labelHeading="h1"
-    />
-  ),
   name: 'Errors with prefix and suffix'
 };

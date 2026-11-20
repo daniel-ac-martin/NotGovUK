@@ -21,88 +21,77 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Radios
-      {...props}
-      label="Where do you live?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'england',
-          label: 'England'
-        },
-        {
-          value: 'scotland',
-          label: 'Scotland'
-        },
-        {
-          value: 'wales',
-          label: 'Wales'
-        },
-        {
-          value: 'northern-ireland',
-          label: 'Northern Ireland'
-        }
-      ]}
-    />
-  )
+  args: {
+    label: 'Where do you live?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'england',
+        label: 'England'
+      },
+      {
+        value: 'scotland',
+        label: 'Scotland'
+      },
+      {
+        value: 'wales',
+        label: 'Wales'
+      },
+      {
+        value: 'northern-ireland',
+        label: 'Northern Ireland'
+      }
+    ]
+  }
 };
 
 export const Standard: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Radios
-      {...props}
-      label="Where do you live?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'england',
-          label: 'England'
-        },
-        {
-          value: 'scotland',
-          label: 'Scotland'
-        },
-        {
-          value: 'wales',
-          label: 'Wales'
-        },
-        {
-          value: 'northern-ireland',
-          label: 'Northern Ireland'
-        }
-      ]}
-    />
-  )
+  args: {
+    label: 'Where do you live?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'england',
+        label: 'England'
+      },
+      {
+        value: 'scotland',
+        label: 'Scotland'
+      },
+      {
+        value: 'wales',
+        label: 'Wales'
+      },
+      {
+        value: 'northern-ireland',
+        label: 'Northern Ireland'
+      }
+    ]
+  }
 };
 
 export const NoHeading: Story = {
-  args: { label: 'Where do you live?' },
-  render: ({ ...props }) => (
-    <Radios
-      {...props}
-      options={[
-        {
-          value: 'england',
-          label: 'England'
-        },
-        {
-          value: 'scotland',
-          label: 'Scotland'
-        },
-        {
-          value: 'wales',
-          label: 'Wales'
-        },
-        {
-          value: 'northern-ireland',
-          label: 'Northern Ireland'
-        }
-      ]}
-    />
-  ),
+  args: {
+    label: 'Where do you live?',
+    options: [
+      {
+        value: 'england',
+        label: 'England'
+      },
+      {
+        value: 'scotland',
+        label: 'Scotland'
+      },
+      {
+        value: 'wales',
+        label: 'Wales'
+      },
+      {
+        value: 'northern-ireland',
+        label: 'Northern Ireland'
+      }
+    ]
+  },
   name: 'No heading'
 };
 
@@ -110,85 +99,71 @@ export const Inline: Story = {
   args: {
     name: 'changed-name',
     classModifiers: 'inline',
-    hint: 'This includes changing your last name or spelling your name differently.'
-  },
-  render: ({ ...props }) => (
-    <Radios
-      {...props}
-      label="Have you changed your name?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'yes',
-          label: 'Yes'
-        },
-        {
-          value: 'no',
-          label: 'No'
-        }
-      ]}
-    />
-  )
+    hint: 'This includes changing your last name or spelling your name differently.',
+    label: 'Have you changed your name?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'yes',
+        label: 'Yes'
+      },
+      {
+        value: 'no',
+        label: 'No'
+      }
+    ]
+  }
 };
 
 export const Hints: Story = {
   args: {
     name: 'sign-in',
-    hint: 'This includes changing your last name or spelling your name differently.'
-  },
-  render: ({ ...props }) => (
-    <Radios
-      {...props}
-      label="How do you want to sign in?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'government-gateway',
-          label: 'Sign in with Government Gateway',
-          hint: 'You\u2019ll have a user ID if you\u2019ve registered for Self Assessment or filed a tax return online before.'
-        },
-        {
-          value: 'govuk-verify',
-          label: 'Sign in with GOV.UK Verify',
-          hint: 'You\u2019ll have an account if you\u2019ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.'
-        }
-      ]}
-    />
-  )
+    hint: 'This includes changing your last name or spelling your name differently.',
+    label: 'How do you want to sign in?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'government-gateway',
+        label: 'Sign in with Government Gateway',
+        hint: 'You\u2019ll have a user ID if you\u2019ve registered for Self Assessment or filed a tax return online before.'
+      },
+      {
+        value: 'govuk-verify',
+        label: 'Sign in with GOV.UK Verify',
+        hint: 'You\u2019ll have an account if you\u2019ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.'
+      }
+    ]
+  }
 };
 
 export const Divider: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <Radios
-      {...props}
-      label="Where do you live?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'england',
-          label: 'England'
-        },
-        {
-          value: 'scotland',
-          label: 'Scotland'
-        },
-        {
-          value: 'wales',
-          label: 'Wales'
-        },
-        {
-          value: 'northern-ireland',
-          label: 'Northern Ireland'
-        },
-        'or',
-        {
-          value: 'abroad',
-          label: 'I am a British citizen living abroad'
-        }
-      ]}
-    />
-  )
+  args: {
+    label: 'Where do you live?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'england',
+        label: 'England'
+      },
+      {
+        value: 'scotland',
+        label: 'Scotland'
+      },
+      {
+        value: 'wales',
+        label: 'Wales'
+      },
+      {
+        value: 'northern-ireland',
+        label: 'Northern Ireland'
+      },
+      'or',
+      {
+        value: 'abroad',
+        label: 'I am a British citizen living abroad'
+      }
+    ]
+  }
 };
 
 export const Content: Story = {
@@ -250,54 +225,48 @@ export const Content: Story = {
 };
 
 export const Small: Story = {
-  args: { name: 'filter', classModifiers: 'small' },
-  render: ({ ...props }) => (
-    <Radios
-      {...props}
-      label="Filter"
-      labelClassModifiers="m"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'month',
-          label: 'Monthly'
-        },
-        {
-          value: 'year',
-          label: 'Yearly'
-        }
-      ]}
-    />
-  )
+  args: {
+    name: 'filter', classModifiers: 'small',
+    label: 'Filter',
+    labelClassModifiers: 'm',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'month',
+        label: 'Monthly'
+      },
+      {
+        value: 'year',
+        label: 'Yearly'
+      }
+    ]
+  }
 };
 
 export const Errors: Story = {
-  args: { error: 'Select the country where you live' },
-  render: ({ ...props }) => (
-    <Radios
-      {...props}
-      label="Where do you live?"
-      labelHeading="h1"
-      options={[
-        {
-          value: 'england',
-          label: 'England'
-        },
-        {
-          value: 'scotland',
-          label: 'Scotland'
-        },
-        {
-          value: 'wales',
-          label: 'Wales'
-        },
-        {
-          value: 'northern-ireland',
-          label: 'Northern Ireland'
-        }
-      ]}
-    />
-  )
+  args: {
+    error: 'Select the country where you live',
+    label: 'Where do you live?',
+    labelHeading: 'h1',
+    options: [
+      {
+        value: 'england',
+        label: 'England'
+      },
+      {
+        value: 'scotland',
+        label: 'Scotland'
+      },
+      {
+        value: 'wales',
+        label: 'Wales'
+      },
+      {
+        value: 'northern-ireland',
+        label: 'Northern Ireland'
+      }
+    ]
+  }
 };
 
 export const ContentError: Story = {

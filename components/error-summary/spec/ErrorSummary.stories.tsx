@@ -23,41 +23,33 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <ErrorSummary
-      {...props}
-      items={[
-        {
-          text: 'The date your passport was issued must be in the past',
-          href: '#'
-        },
-        {
-          text: 'Enter a postcode, like AA1 1AA',
-          href: '#'
-        }
-      ]}
-    />
-  )
+  args: {
+    items: [
+      {
+        text: 'The date your passport was issued must be in the past',
+        href: '#'
+      },
+      {
+        text: 'Enter a postcode, like AA1 1AA',
+        href: '#'
+      }
+    ]
+  }
 };
 
 export const Standard: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <ErrorSummary
-      {...props}
-      items={[
-        {
-          text: 'The date your passport was issued must be in the past',
-          href: '#'
-        },
-        {
-          text: 'Enter a postcode, like AA1 1AA',
-          href: '#'
-        }
-      ]}
-    />
-  )
+  args: {
+    items: [
+      {
+        text: 'The date your passport was issued must be in the past',
+        href: '#'
+      },
+      {
+        text: 'Enter a postcode, like AA1 1AA',
+        href: '#'
+      }
+    ]
+  }
 };
 
 export const Linking: Story = {

@@ -73,13 +73,6 @@ export const Standard: Story = {
 };
 
 export const LegendAsPageHeading: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <FieldSet
-      {...props}
-      legend="Legend as page heading"
-      legendHeading="h1"
-    />
-  ),
+  args: { legend: 'Legend as page heading', legendHeading: 'h1' },
   name: 'Legend as page heading'
 };

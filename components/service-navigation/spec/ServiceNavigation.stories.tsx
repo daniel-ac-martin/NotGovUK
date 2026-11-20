@@ -19,26 +19,22 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
-  render: ({ ...props }) => (
-    <ServiceNavigation
-      {...props}
-      items={[
-        {
-          href: '/styles',
-          text: 'Navigation item 1'
-        },
-        {
-          href: '#active',
-          text: 'Navigation item 2'
-        },
-        {
-          href: '/contributing',
-          text: 'Navigation item 3'
-        }
-      ]}
-    />
-  )
+  args: {
+    items: [
+      {
+        href: '/styles',
+        text: 'Navigation item 1'
+      },
+      {
+        href: '#active',
+        text: 'Navigation item 2'
+      },
+      {
+        href: '/contributing',
+        text: 'Navigation item 3'
+      }
+    ]
+  }
 };
 
 export const ServiceName: Story = {
@@ -47,26 +43,23 @@ export const ServiceName: Story = {
 };
 
 export const Full: Story = {
-  args: { serviceName: 'Service name', serviceHref: '#' },
-  render: ({ ...props }) => (
-    <ServiceNavigation
-      {...props}
-      items={[
-        {
-          href: '/styles',
-          text: 'Navigation item 1'
-        },
-        {
-          href: '#active',
-          text: 'Navigation item 2'
-        },
-        {
-          href: '/contributing',
-          text: 'Navigation item 3'
-        }
-      ]}
-    />
-  )
+  args: {
+    serviceName: 'Service name', serviceHref: '#',
+    items: [
+      {
+        href: '/styles',
+        text: 'Navigation item 1'
+      },
+      {
+        href: '#active',
+        text: 'Navigation item 2'
+      },
+      {
+        href: '/contributing',
+        text: 'Navigation item 3'
+      }
+    ]
+  }
 };
 
 export const SignOut: Story = {
