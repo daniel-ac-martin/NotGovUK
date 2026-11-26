@@ -32,5 +32,34 @@ describe('StandaloneInput', () => {
 
     it('renders a text field', async () => expect(screen.getByRole('textbox')).toHaveAttribute('type', 'text'));
     it('renders the label', async () => expect(screen.getByLabelText('Message')).toBeInTheDocument());
+    it('describes the field with the hint and the error', async () => expect(screen.getByRole('textbox')).toHaveAttribute('aria-describedby', 'message-hint message-error'));
+  });
+
+  describe('when given an aria-describedby', () => {
+    const props = {
+      ...minimalProps,
+      'aria-describedby': 'external-hint'
+    };
+
+    beforeEach(async () => {
+      render(h(StandaloneInput, props));
+    });
+
+    it('keeps the aria-describedby', async () => expect(screen.getByRole('textbox')).toHaveAttribute('aria-describedby', 'external-hint'));
+  });
+
+  describe('when given an aria-describedby, a hint and an error', () => {
+    const props = {
+      ...minimalProps,
+      'aria-describedby': 'external-hint',
+      error: 'Something went wrong',
+      hint: 'What do you want to say?'
+    };
+
+    beforeEach(async () => {
+      render(h(StandaloneInput, props));
+    });
+
+    it('joins the aria-describedby with the hint and the error', async () => expect(screen.getByRole('textbox')).toHaveAttribute('aria-describedby', 'external-hint message-hint message-error'));
   });
 });
