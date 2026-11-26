@@ -165,7 +165,7 @@ export const Pagination: FC<PaginationProps> = ({
 
     return (
       link === undefined ? null : (
-        <PageList.Link key={n} classBlock={classBlock} {...attrs} current={currentPage === n}>{n}</PageList.Link>
+        <PageList.Link key={n} classBlock={classBlock} {...attrs} aria-label={`Page ${n}`} current={currentPage === n}>{n}</PageList.Link>
       )
     );
   };
