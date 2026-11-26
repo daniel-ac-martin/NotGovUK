@@ -89,6 +89,11 @@ describe('Pagination', () => {
     it('renders a link to the current page', async () => expect(screen.getAllByRole('link')[2]).toHaveTextContent('2'));
     it('renders a link to the last page', async () => expect(screen.getAllByRole('link')[3]).toHaveTextContent('3'));
     it('renders a \'Next\' link', async () => expect(screen.getAllByRole('link')[4]).toHaveTextContent('Next'));
+    it('labels the link to the first page', async () => expect(screen.getAllByRole('link')[1]).toHaveAccessibleName('Page 1'));
+    it('labels the link to the current page', async () => expect(screen.getAllByRole('link')[2]).toHaveAccessibleName('Page 2'));
+    it('labels the link to the last page', async () => expect(screen.getAllByRole('link')[3]).toHaveAccessibleName('Page 3'));
+    it('does NOT give the \'Previous\' link a page label', async () => expect(screen.getAllByRole('link')[0]).toHaveAccessibleName('Previous page'));
+    it('does NOT give the \'Next\' link a page label', async () => expect(screen.getAllByRole('link')[4]).toHaveAccessibleName('Next page'));
   });
 
   describe('when given full valid props for numbered navigation with defined links', () => {
@@ -173,6 +178,11 @@ describe('Pagination', () => {
     it('renders a link to the current page', async () => expect(screen.getAllByRole('link')[3]).toHaveTextContent('7'));
     it('renders a link to the last page', async () => expect(screen.getAllByRole('link')[5]).toHaveTextContent('42'));
     it('renders a \'Next\' link', async () => expect(screen.getAllByRole('link')[6]).toHaveTextContent('Next'));
+    it('labels the link to the first page', async () => expect(screen.getAllByRole('link')[1]).toHaveAccessibleName('Page 1'));
+    it('labels the link to the current page', async () => expect(screen.getAllByRole('link')[3]).toHaveAccessibleName('Page 7'));
+    it('labels the link to the last page', async () => expect(screen.getAllByRole('link')[5]).toHaveAccessibleName('Page 42'));
+    it('does NOT give the \'Previous\' link a page label', async () => expect(screen.getAllByRole('link')[0]).toHaveAccessibleName('Previous page'));
+    it('does NOT give the \'Next\' link a page label', async () => expect(screen.getAllByRole('link')[6]).toHaveAccessibleName('Next page'));
   });
 
   describe('when given full valid props for numbered navigation with generated links', () => {
