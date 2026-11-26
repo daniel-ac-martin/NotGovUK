@@ -20,6 +20,7 @@ export type StandaloneInputProps = InputProps & {
 };
 
 export const StandaloneInput: FC<StandaloneInputProps> = ({
+  'aria-describedby': ariaDescribedBy,
   button = 'Submit',
   classBlock,
   classModifiers: _classModifiers = [],
@@ -43,6 +44,7 @@ export const StandaloneInput: FC<StandaloneInputProps> = ({
   const hintId = `${id}-hint`;
   const errorId = `${id}-error`;
   const describedBy = ([
+    ariaDescribedBy,
     hint && hintId,
     error && errorId
   ]
